@@ -1,0 +1,218 @@
+body {
+  width: 100%;
+}
+
+body .wrap {
+  width: 70%;
+  margin: 0 auto;
+  /* HTML5 display-role reset for older browsers */
+}
+
+body .wrap html, body .wrap body, body .wrap div, body .wrap span, body .wrap applet, body .wrap object, body .wrap iframe,
+body .wrap h1, body .wrap h2, body .wrap h3, body .wrap h4, body .wrap h5, body .wrap h6, body .wrap p, body .wrap blockquote, body .wrap pre,
+body .wrap a, body .wrap abbr, body .wrap acronym, body .wrap address, body .wrap big, body .wrap cite, body .wrap code,
+body .wrap del, body .wrap dfn, body .wrap em, body .wrap img, body .wrap ins, body .wrap kbd, body .wrap q, body .wrap s, body .wrap samp,
+body .wrap small, body .wrap strike, body .wrap strong, body .wrap sub, body .wrap sup, body .wrap tt, body .wrap var,
+body .wrap b, body .wrap u, body .wrap i, body .wrap center,
+body .wrap dl, body .wrap dt, body .wrap dd, body .wrap ol, body .wrap ul, body .wrap li,
+body .wrap fieldset, body .wrap form, body .wrap label, body .wrap legend,
+body .wrap table, body .wrap caption, body .wrap tbody, body .wrap tfoot, body .wrap thead, body .wrap tr, body .wrap th, body .wrap td,
+body .wrap article, body .wrap aside, body .wrap canvas, body .wrap details, body .wrap embed,
+body .wrap figure, body .wrap figcaption, body .wrap footer, body .wrap header, body .wrap hgroup,
+body .wrap menu, body .wrap nav, body .wrap output, body .wrap ruby, body .wrap section, body .wrap summary,
+body .wrap time, body .wrap mark, body .wrap audio, body .wrap video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+body .wrap article, body .wrap aside, body .wrap details, body .wrap figcaption, body .wrap figure,
+body .wrap footer, body .wrap header, body .wrap hgroup, body .wrap menu, body .wrap nav, body .wrap section {
+  display: block;
+}
+
+body .wrap body {
+  line-height: 1;
+}
+
+body .wrap ol, body .wrap ul {
+  list-style: none;
+}
+
+body .wrap blockquote, body .wrap q {
+  quotes: none;
+}
+
+body .wrap blockquote:before, body .wrap blockquote:after,
+body .wrap q:before, body .wrap q:after {
+  content: '';
+  content: none;
+}
+
+body .wrap table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body .wrap .banner {
+  text-align: center;
+  margin-top: 50px;
+  width: 100%;
+  height: 100px;
+  /* position: fixed; */
+  border: 1px solid #000;
+}
+
+body .wrap .event-banner {
+  margin-top: 150px;
+  background-color: #ddd;
+  width: 100%;
+  height: 400px;
+}
+
+body .wrap .container .search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body .wrap .container .search .searchInput {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body .wrap .container .search .searchInput .searchInputItem {
+  width: 150px;
+  height: 32px;
+  margin-right: 30px;
+  margin-top: 20px;
+}
+
+body .wrap .container .search button {
+  margin-right: 30px;
+  margin-top: 20px;
+  background-color: #dddddd;
+  padding: 8px 20px;
+  border: #d0d0d0;
+  border-radius: 20px;
+}
+
+body .wrap .container .search button a {
+  text-decoration: none;
+  color: #000;
+}
+
+body .wrap .container .search button :hover {
+  color: blue;
+}
+
+body .wrap .container .search ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body .wrap .container .search ul li ul li button {
+  margin-right: 30px;
+  margin-top: 20px;
+  background-color: #dddddd;
+  padding: 8px 20px;
+  border: #d0d0d0;
+  border-radius: 20px;
+}
+
+body .wrap .container .search ul li ul li .advancedSearchForm {
+  position: absolute;
+  margin-top: 10px;
+}
+
+body .wrap .container .search ul li ul li .advancedSearchForm .advancedSearchFormItem {
+  margin-bottom: 5px;
+}
+
+body .wrap .container .search ul li ul li .advancedSearchForm .advancedSearchFormItem span {
+  font-weight: bold;
+}
+
+body .wrap .container #FirstList {
+  margin-top: 30px;
+}
+
+body .wrap .container .list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 20px;
+}
+
+body .wrap .container .list .img {
+  width: 250px;
+}
+
+body .wrap .container .list .img img {
+  width: 250px;
+  border-radius: 10px;
+}
+
+body .wrap .container .list .listIntroduction {
+  padding: 10px 20px;
+}
+
+body .wrap .container .list .listIntroduction .information h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+body .wrap .container .list .listIntroduction .information .time {
+  margin-bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body .wrap .container .list .listIntroduction .information .time li {
+  margin-right: 30px;
+  color: #1697d5;
+  font-weight: bold;
+}
+
+body .wrap .container .list .listIntroduction .information p {
+  line-height: 22px;
+}
+
+body .wrap .container .list .listIntroduction .listButton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+body .wrap .container .list .listIntroduction .listButton button {
+  margin-right: 30px;
+  margin-top: 20px;
+  background-color: #dddddd;
+  padding: 8px 20px;
+  border: #d0d0d0;
+  border-radius: 20px;
+}
+
+body .wrap .container .list .listIntroduction .listButton button a {
+  color: #000;
+  text-decoration: none;
+}
+
+body .wrap .container .list .listIntroduction .listButton button :hover {
+  color: blue;
+}
+
+body .wrap .container .message {
+  margin-top: 1000px;
+}
+/*# sourceMappingURL=activityList.css.map */

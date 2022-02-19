@@ -1,0 +1,863 @@
+@import "./var";
+$modalColor: #f8f8f8;
+
+@mixin input {
+    width: 340px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px #bfbfbf solid;
+    background: $modalColor;
+    font-weight: 300;
+    margin-top: 5px;
+}
+
+@mixin Background {
+    position: fixed;
+    margin: auto;
+    margin-top: 120px;
+    background-color: $modalColor;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1200;
+    width: 480px;
+    height: 410px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px #4b4a4a;
+    text-align: center;
+    font-size: 16px;
+    font-family: $font;
+}
+@mixin closeBtn {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    border: none;
+    background-color: $modalColor;
+}
+@mixin lastBtn {
+    position: absolute;
+    left: 10px;
+    top: 20px;
+    border: none;
+    background-color: $modalColor;
+}
+* {
+    box-sizing: border-box;
+}
+// <------lgoinModal Background------> //
+
+.loginModalBackground {
+    position: fixed;
+    margin: auto;
+    background-color: $modalColor;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1200;
+    width: 480px;
+    height: 710px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px rgb(75, 74, 74);
+    text-align: center;
+    font-size: 16px;
+    font-family: $font;
+    .loginModalContainer {
+        .loginModalcloseBtn {
+            @include closeBtn();
+        }
+
+        // <------loginModal Title------> //
+
+        .loginModaltitle {
+            position: relative;
+            margin-top: 30px;
+            hr {
+                width: 220px;
+            }
+            img {
+                max-width: 190px;
+            }
+            p {
+                font-size: 22px;
+                font-weight: 600;
+                margin-bottom: 10px;
+            }
+            span {
+                font-size: 14px;
+                a {
+                    color: #0a7cb1;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        // <------loginModal Title End------> //
+
+        // <------loginModal Body------> //
+        .loginModalbody {
+            padding-top: 15px;
+            .userInput {
+                p {
+                    text-align: left;
+                    padding-left: 75px;
+                    font-size: 16px;
+                    margin-top: 15px;
+                    margin-bottom: 5px;
+                    font-weight: 600;
+                }
+                .pswText {
+                    margin-top: 35px;
+                }
+                input {
+                    @include input();
+                    &::placeholder {
+                        font-size: 14px;
+                        font-weight: 300;
+                        padding-left: 5px;
+                    }
+                }
+            }
+
+            .userSelect {
+                margin-top: 20px;
+                label {
+                    margin-left: 5px;
+                    margin-right: 100px;
+                    font-size: 14px;
+                }
+                a {
+                    margin-left: 100px;
+                    font-size: 14px;
+                    color: red;
+                }
+            }
+
+            .loginBtn {
+                height: 40px;
+                width: 340px;
+                border-radius: 5px;
+                background-color: $primarycolor;
+                color: white;
+                border: none;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                margin-top: 5px;
+                margin-bottom: 15px;
+                font-size: 20px;
+                font-weight: 600;
+                &:hover {
+                    background-color: #0a7cb1;
+                }
+            }
+            hr {
+                width: 140px;
+            }
+        }
+
+        // <------loginModal Body End------> //
+
+        // <------loginModal Footer------> //
+
+        .loginModalfooter {
+            p {
+                font-weight: 500;
+            }
+            button {
+                display: flex;
+                height: 40px;
+                line-height: 35px;
+                width: 340px;
+                border-radius: 5px;
+                background-color: white;
+                color: black;
+                border: none;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                // margin-top: 5px;
+                margin: 20px auto 15px;
+                // margin-bottom: 15px;
+                &:hover {
+                    background-color: darkgrey;
+                }
+                .googleIcon {
+                    margin-top: 5px;
+                    margin: 5px 70px 0 0;
+                    justify-content: left;
+                }
+                .facebookIcon {
+                    margin-top: 5px;
+                    margin: 5px 60px 0 0;
+                    justify-content: left;
+                }
+            }
+        }
+
+        // <------loginModal Footer End------> //
+    }
+}
+// <------loginModal End------> //
+
+// <------signUpModal Background------> //
+.signUpModalBackground {
+    @include Background();
+    .signUpModalContainer {
+        .signUpModalCloseBtn {
+            @include closeBtn();
+        }
+
+        // <------signUpModal Title------> //
+
+        .signUpModaltitle {
+            position: relative;
+            margin-top: 30px;
+            hr {
+                width: 220px;
+            }
+            img {
+                max-width: 190px;
+            }
+            p {
+                font-size: 22px;
+                font-weight: 600;
+                margin-bottom: 10px;
+            }
+            span {
+                font-size: 14px;
+                a {
+                    color: #0a7cb1;
+                    cursor: pointer;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+        .signUpModalBody {
+            // padding-top: 20px;
+            button {
+                display: flex;
+                height: 40px;
+                line-height: 35px;
+                width: 340px;
+                border-radius: 5px;
+                background-color: white;
+                color: black;
+                border: none;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                margin: 20px auto 15px;
+                &:nth-child(1) {
+                    margin-top: 40px;
+                }
+                &:hover {
+                    background-color: darkgrey;
+                }
+                .googleIcon {
+                    margin: 5px 70px 0 0;
+                    justify-content: left;
+                }
+                .facebookIcon {
+                    margin: 5px 60px 0 0;
+                    justify-content: left;
+                }
+                .emailIcon {
+                    margin: 10px 65px 0 5px;
+                    justify-content: left;
+                }
+                a {
+                    color: black;
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// <------signUpModal_Name------> //
+.signUpModalBackground_Name {
+    @include Background();
+    .signUpModalContainer_Name {
+        .signUpModalLastBtn_Name {
+            @include lastBtn();
+        }
+        .signUpModaltitle_Name {
+            position: relative;
+            margin-top: 30px;
+            hr {
+                width: 220px;
+            }
+            img {
+                max-width: 190px;
+            }
+            p {
+                font-size: 22px;
+                font-weight: 600;
+                margin-bottom: 10px;
+            }
+            span {
+                font-size: 14px;
+                a {
+                    color: #0a7cb1;
+                    cursor: pointer;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+        .signUpModalBody_Name {
+            label {
+                position: relative;
+                font-weight: 500;
+                margin-right: 270px;
+                margin-bottom: 5px;
+            }
+            .lastName {
+                @include input();
+                &::placeholder {
+                    font-size: 14px;
+                    font-weight: 300;
+                    padding-left: 5px;
+                }
+            }
+            .userName {
+                @include input();
+                margin: 30px auto;
+                &::placeholder {
+                    font-size: 14px;
+                    font-weight: 300;
+                    padding-left: 5px;
+                }
+            }
+            .submitBtn {
+                border: none;
+                background-color: rgba(255, 255, 255, 0);
+            }
+        }
+    }
+}
+// <------signUpModal_Mail------> //
+.signUpModalBackground_Mail {
+    @include Background();
+    .signUpModalContainer_Mail {
+        .signUpModalLastBtn_Mail {
+            @include lastBtn();
+        }
+        .signUpModaltitle_Mail {
+            position: relative;
+            margin-top: 30px;
+            hr {
+                width: 220px;
+            }
+            img {
+                max-width: 190px;
+            }
+            p {
+                font-size: 22px;
+                font-weight: 600;
+                margin-bottom: 10px;
+            }
+            span {
+                font-size: 14px;
+                a {
+                    color: #0a7cb1;
+                    cursor: pointer;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+        .signUpModalBody_Mail {
+            label {
+                position: relative;
+                font-weight: 500;
+                margin-right: 240px;
+                margin-bottom: 5px;
+            }
+            .email {
+                @include input();
+                &::placeholder {
+                    font-size: 14px;
+                    font-weight: 300;
+                    padding-left: 5px;
+                }
+            }
+            .submitBtn {
+                margin-top: 100px;
+                border: none;
+                background-color: rgba(255, 255, 255, 0);
+            }
+        }
+    }
+}
+
+// <------signUpModal_Password------> //
+.signUpModalBackground_Password {
+    @include Background();
+    .signUpModalContainer_Password {
+        .signUpModalLastBtn_Password {
+            @include lastBtn();
+        }
+        .signUpModaltitle_Password {
+            position: relative;
+            margin-top: 30px;
+            hr {
+                width: 220px;
+            }
+            img {
+                max-width: 190px;
+            }
+            p {
+                font-size: 22px;
+                font-weight: 600;
+                margin-bottom: 10px;
+            }
+            span {
+                font-size: 14px;
+                a {
+                    color: #0a7cb1;
+                    cursor: pointer;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+        .signUpModalBody_Password {
+            label {
+                position: relative;
+                font-weight: 500;
+                margin-right: 270px;
+                margin-bottom: 5px;
+            }
+            .userPassword {
+                @include input();
+                &::placeholder {
+                    font-size: 14px;
+                    font-weight: 300;
+                    padding-left: 5px;
+                }
+            }
+            .userCheckPsw {
+                @include input();
+                margin: 30px auto;
+                &::placeholder {
+                    font-size: 14px;
+                    font-weight: 300;
+                    padding-left: 5px;
+                }
+            }
+            .submitBtn {
+                border: none;
+                background-color: rgba(255, 255, 255, 0);
+            }
+        }
+    }
+}
+
+// <------signUpModal_Birthday------> //
+.signUpModalBackground_Birthday {
+    @include Background();
+    .signUpModalContainer_Birthday {
+        .signUpModalLastBtn_Birthday {
+            @include lastBtn();
+        }
+        .signUpModaltitle_Birthday {
+            position: relative;
+            margin-top: 30px;
+            hr {
+                width: 220px;
+            }
+            img {
+                max-width: 190px;
+            }
+            p {
+                font-size: 22px;
+                font-weight: 600;
+                margin-bottom: 10px;
+            }
+            span {
+                font-size: 14px;
+                a {
+                    color: #0a7cb1;
+                    cursor: pointer;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+        .signUpModalBody_Birthday {
+            label {
+                position: relative;
+                font-weight: 500;
+                margin-right: 270px;
+                margin-bottom: 5px;
+            }
+            .email {
+                @include input();
+                &::placeholder {
+                    font-size: 14px;
+                    font-weight: 300;
+                    padding-left: 5px;
+                }
+            }
+            .submitBtn {
+                margin-top: 100px;
+                border: none;
+                background-color: rgba(255, 255, 255, 0);
+            }
+        }
+    }
+}
+
+// <------signUpModal_Phone------> //
+.signUpModalBackground_Phone {
+    @include Background();
+    .signUpModalContainer_Phone {
+        .signUpModalLastBtn_Phone {
+            @include lastBtn();
+        }
+        .signUpModaltitle_Phone {
+            position: relative;
+            margin-top: 30px;
+            hr {
+                width: 220px;
+            }
+            img {
+                max-width: 190px;
+            }
+            p {
+                font-size: 22px;
+                font-weight: 600;
+                margin-bottom: 10px;
+            }
+            span {
+                font-size: 14px;
+                a {
+                    color: #0a7cb1;
+                    cursor: pointer;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+        .signUpModalBody_Phone {
+            label {
+                position: relative;
+                font-weight: 500;
+                margin-right: 270px;
+                margin-bottom: 5px;
+            }
+            .phone {
+                @include input();
+                &::placeholder {
+                    font-size: 14px;
+                    font-weight: 300;
+                    padding-left: 5px;
+                }
+            }
+            .submitBtn {
+                margin-top: 100px;
+                border: none;
+                background-color: rgba(255, 255, 255, 0);
+            }
+        }
+    }
+}
+
+// <------signUpModal_Position------> //
+.signUpModalBackground_Position {
+    @include Background();
+    .signUpModalContainer_Position {
+        .signUpModalLastBtn_Position {
+            @include lastBtn();
+        }
+        .signUpModaltitle_Position {
+            position: relative;
+            margin-top: 30px;
+            hr {
+                width: 220px;
+            }
+            img {
+                max-width: 190px;
+            }
+            p {
+                font-size: 22px;
+                font-weight: 600;
+                margin-bottom: 10px;
+            }
+            span {
+                font-size: 14px;
+                a {
+                    color: #0a7cb1;
+                    cursor: pointer;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+        .signUpModalBody_Position {
+            label {
+                position: relative;
+                font-weight: 500;
+                margin-right: 270px;
+                margin-bottom: 5px;
+            }
+            // .position {
+            //     @include input();
+            //     &::placeholder {
+            //         font-size: 14px;
+            //         font-weight: 300;
+            //         padding-left: 5px;
+            //     }
+            // }
+            .ant-select {
+                .ant-select-selector {
+                    display: flex;
+                    align-items: center;
+                    @include input();
+                }
+            }
+            .forMemRules {
+                margin-top: 30px;
+            }
+            .submitBtn {
+                margin-top: 41px;
+                border: none;
+                background-color: rgba(255, 255, 255, 0);
+            }
+        }
+    }
+}
+
+// <------signUpModal_Interested------> //
+.signUpModalBackground_Interested {
+    position: fixed;
+    margin: auto;
+    margin-top: 60px;
+    background-color: $modalColor;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1200;
+    width: 850px;
+    height: 530px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px #4b4a4a;
+    text-align: center;
+    font-size: 16px;
+    font-family: $font;
+    overflow-y: scroll;
+    .signUpModalContainer_Interested {
+        .signUpModalLastBtn_Interested {
+            @include lastBtn();
+        }
+        .signUpModaltitle_Interested {
+            position: relative;
+            margin-top: 30px;
+            hr {
+                width: 220px;
+            }
+            img {
+                max-width: 190px;
+            }
+            p {
+                font-size: 22px;
+                font-weight: 600;
+                margin-bottom: 10px;
+            }
+            span {
+                font-size: 14px;
+                a {
+                    color: #0a7cb1;
+                    cursor: pointer;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+        .signUpModalBody_Interested {
+            label {
+                position: relative;
+                font-weight: 500;
+                margin-bottom: 5px;
+            }
+            .bigpic {
+                position: relative;
+                display: flex;
+                flex-direction: row;
+                justify-content: start;
+                align-items: flex-start;
+                flex-wrap: wrap;
+                margin-left: 20px;
+                margin-bottom: 40px;
+                input[type="checkbox"][id^="myCheckbox"] {
+                    display: none;
+                }
+
+                label {
+                    border: 1px solid $modalColor;
+                    display: block;
+                    position: relative;
+                    margin: 6px;
+                    height: 152px;
+                    width: 152px;
+                    cursor: pointer;
+
+                    span {
+                        position: absolute;
+                        top: 110px;
+                        left: 15px;
+                        font-size: 20px;
+                        color: white;
+                    }
+
+                    &::before {
+                        background-color: white;
+                        color: white;
+                        content: " ";
+                        display: block;
+                        border-radius: 50%;
+                        border: 1px solid gray;
+                        position: absolute;
+                        top: -5px;
+                        right: -5px;
+                        width: 25px;
+                        height: 25px;
+                        text-align: center;
+                        line-height: 28px;
+                        transition-duration: 0.4s;
+                        transform: scale(0);
+                        z-index: 1300;
+                    }
+                    img {
+                        height: 150px;
+                        width: 150px;
+                        border-radius: 20px;
+                        object-fit: cover;
+                    }
+                    .picShadow {
+                        opacity: 0;
+                        position: absolute;
+                        margin: auto;
+                        padding-top: 1.5px;
+                        width: 150px;
+                        height: 150px;
+                        top: 0;
+                        left: 0;
+                        border-radius: 20px;
+                        background-color: rgba(0, 0, 0, 0.5);
+                        &:hover {
+                            opacity: 1;
+                        }
+
+                        .picBorder {
+                            opacity: 0;
+                            margin: auto;
+                            width: 145px;
+                            height: 145px;
+                            margin-top: 1px;
+                            border: 3px white solid;
+                            border-radius: 20px;
+                            &:hover {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+
+                :checked + label:before {
+                    content: "✓";
+                    background-color: grey;
+                    transform: scale(1);
+                }
+
+                :checked + label {
+                    transform: scale(1);
+                    background-color: rgba(0, 0, 0, 0.5);
+                    width: 152px;
+                    height: 152px;
+                }
+            }
+            #lastone {
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+.buttonCase {
+    position: fixed;
+    z-index: 1200;
+    width: 850px;
+    margin: auto;
+    margin-top: 60px;
+    background-color: $modalColor;
+    top: 510px;
+    left: 0;
+    right: 0;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 16px;
+    font-family: $font;
+
+    background-color: $modalColor;
+    .intSubmitBtn {
+        height: 40px;
+        width: 800px;
+        border-radius: 5px;
+        background-color: $primarycolor;
+        color: white;
+        border: none;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        margin: 20px auto 20px;
+        font-size: 20px;
+        font-weight: 600;
+        &:hover {
+            background-color: #0a7cb1;
+        }
+    }
+}
+
+// <------signUpModal_Finish------> //
+.signUpModalBackground_Finish {
+    @include Background();
+    .signUpModalContainer_Finish {
+        .signUpModalCloseBtn_Finish {
+            @include closeBtn();
+        }
+        .signUpModaltitle_Finish {
+            position: relative;
+            margin-top: 30px;
+            hr {
+                width: 220px;
+            }
+            img {
+                max-width: 190px;
+            }
+            p {
+                font-size: 22px;
+                font-weight: 600;
+                margin-bottom: 10px;
+            }
+            span {
+                font-size: 14px;
+                a {
+                    color: #0a7cb1;
+                    cursor: pointer;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+        .signUpModalBody_Finish {
+            img {
+                width: 200px;
+                height: 200px;
+            }
+        }
+    }
+}
+
+.modalShadow {
+    position: fixed;
+    background-color: black;
+    opacity: 0.6;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1100;
+}

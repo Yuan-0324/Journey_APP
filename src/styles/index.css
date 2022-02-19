@@ -1,0 +1,297 @@
+#logIn {
+  margin: auto;
+  margin-top: 20px;
+  border-radius: 28px;
+  width: 80%;
+  -webkit-box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: white;
+  height: 80px;
+  -webkit-transition: width 4s;
+  transition: width 4s;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+}
+
+#logIn ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  list-style: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 15px 20px;
+  padding: 0 0 0 20px;
+}
+
+#logIn ul .navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#logIn ul .navbar li {
+  padding: 0 20px;
+  font-size: 20px;
+}
+
+#logIn ul .navbar li:nth-child(4) a {
+  color: #1697d5;
+}
+
+#logIn ul .navbar li .navLink {
+  text-decoration: none;
+  color: #264148;
+  display: inline-block;
+  position: relative;
+}
+
+#logIn ul .navbar li .navLink svg {
+  vertical-align: baseline;
+}
+
+#logIn ul .navbar li .navLink:hover {
+  color: #1697d5;
+}
+
+#logIn ul .navbar li .navLink:hover::after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+}
+
+#logIn ul .navbar li .navLink::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  height: 1.5px;
+  bottom: -8px;
+  left: 0;
+  background-color: #1697d5;
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+  -webkit-transition: -webkit-transform 0.4s ease-out;
+  transition: -webkit-transform 0.4s ease-out;
+  transition: transform 0.4s ease-out;
+  transition: transform 0.4s ease-out, -webkit-transform 0.4s ease-out;
+}
+
+#logIn ul .logo {
+  max-width: 190px;
+}
+
+#loggedIn {
+  margin: auto;
+  margin-top: 20px;
+  border-radius: 28px;
+  width: 80%;
+  -webkit-box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: white;
+  height: 80px;
+  -webkit-transition: width 4s;
+  transition: width 4s;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+}
+
+#loggedIn ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  list-style: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 15px 20px;
+  padding: 0 0 0 20px;
+}
+
+#loggedIn ul .navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#loggedIn ul .navbar li {
+  padding: 0 20px;
+  font-size: 20px;
+}
+
+#loggedIn ul .navbar li:nth-child(4) a {
+  color: #1697d5;
+}
+
+#loggedIn ul .navbar li .navLink {
+  text-decoration: none;
+  color: #264148;
+  display: inline-block;
+  position: relative;
+}
+
+#loggedIn ul .navbar li .navLink svg {
+  vertical-align: baseline;
+}
+
+#loggedIn ul .navbar li .navLink:hover {
+  color: #1697d5;
+}
+
+#loggedIn ul .navbar li .navLink::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  height: 1.5px;
+  bottom: -8px;
+  left: 0;
+  background-color: #1697d5;
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+  -webkit-transition: -webkit-transform 0.4s ease-out;
+  transition: -webkit-transform 0.4s ease-out;
+  transition: transform 0.4s ease-out;
+  transition: transform 0.4s ease-out, -webkit-transform 0.4s ease-out;
+}
+
+#loggedIn ul .logo {
+  max-width: 190px;
+}
+
+#scrolled {
+  margin: auto;
+  margin-top: 20px;
+  margin-right: 15%;
+  border-radius: 28px;
+  width: 20%;
+  -webkit-box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: white;
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: width 4s;
+  transition: width 4s;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+}
+
+#scrolled ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  list-style: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 20px 0 25px;
+  margin-top: 10px;
+}
+
+#scrolled ul .logo {
+  max-width: 190px;
+}
+
+#scrolled ul .navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#scrolled ul .navbar li {
+  padding: 0 20px;
+  font-size: 20px;
+}
+
+#scrolled ul .navbar li:nth-child(4) a {
+  color: #1697d5;
+}
+
+#scrolled ul .navbar li .navLink {
+  text-decoration: none;
+  color: #264148;
+  display: inline-block;
+  position: relative;
+}
+
+#scrolled ul .navbar li .navLink svg {
+  vertical-align: middle;
+  font-size: 30px;
+}
+
+#scrolled ul .navbar li .navLink:hover {
+  color: #1697d5;
+}
+
+#scrolled ul .navbar li .navLink::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  height: 1.5px;
+  bottom: -8px;
+  left: 0;
+  background-color: #1697d5;
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+  -webkit-transition: -webkit-transform 0.4s ease-out;
+  transition: -webkit-transform 0.4s ease-out;
+  transition: transform 0.4s ease-out;
+  transition: transform 0.4s ease-out, -webkit-transform 0.4s ease-out;
+}
+/*# sourceMappingURL=index.css.map */

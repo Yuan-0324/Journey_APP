@@ -1,0 +1,427 @@
+@import "../var";
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+.guidePersonalContent {
+    width: 1000px;
+    margin: auto;
+    position: relative;
+    margin-top: 130px;
+    .joinBtn {
+        position: absolute;
+        right: -100px;
+        top: -15px;
+        z-index: 100;
+        a {
+            margin-left: 20px;
+        }
+    }
+    .guideHeader {
+        width: 1000px;
+        position: relative;
+        display: flex;
+        padding-top: 50px;
+        justify-content: center;
+        color: $fontcolor;
+        .memberImgArea {
+            width: 150px;
+            height: 150px;
+            .memberImg {
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                box-shadow: 3px 3px 5px rgba(77, 77, 77, 0.856);
+            }
+        }
+        .memberInformation {
+            margin-left: 100px;
+            width: 470px;
+            position: relative;
+            .memberName {
+                padding-bottom: 10px;
+                font-size: 25px;
+                font-weight: 600;
+            }
+            .guideLevel {
+                padding-bottom: 10px;
+                .star {
+                    font-size: 14px;
+                    color: #ffb11b;
+                    text-shadow: 2px 2px 3px rgba(59, 59, 59, 0.63);
+                }
+                .guideStarNum {
+                    font-size: 14px;
+                }
+                .guideTitle {
+                    color: rebeccapurple;
+                    font-size: 14px;
+                    margin-left: 8px;
+                }
+            }
+            .memberIntroduction {
+                font-size: 16px;
+                width: 400px;
+            }
+            .Icon {
+                position: absolute;
+                font-size: 20px;
+                right: 0;
+                top: 5px;
+                letter-spacing: 15px;
+            }
+            .guideLocation {
+                .locationIcon {
+                    position: absolute;
+                    right: 35px;
+                    bottom: 1px;
+                    font-size: 15px;
+                    color: #e83015;
+                }
+                .locationContent {
+                    position: absolute;
+                    right: 0;
+                    bottom: -1px;
+                    font-size: 15px;
+                    color: #e83015;
+                }
+            }
+        }
+    }
+    .aboutArea {
+        //font-size: 16px;
+        padding-top: 50px;
+        width: 900px;
+        margin: auto;
+        display: flex;
+        position: relative;
+        .aboutMe {
+            .Title {
+                font-size: 20px;
+                color: $fontcolor;
+                font-weight: 600;
+            }
+            .aboutMeContent {
+                border: 2px cadetblue solid;
+                padding: 6px 10px;
+                border-radius: 10px;
+                width: 400px;
+                display: flex;
+                justify-content: space-between;
+                margin-top: 16px;
+                color: $fontcolor;
+            }
+        }
+        .reservation {
+            position: absolute;
+            right: -50px;
+            width: 470px;
+            height: 300px;
+            .Title {
+                font-size: 20px;
+                color: $fontcolor;
+                font-weight: 600;
+            }
+            .reservationCalendar {
+                display: flex;
+                .calendarArea {
+                    margin-top: 15px;
+                    height: 320px;
+                    width: 460px;
+                    border-radius: 10px;
+                    box-shadow: 2px 2px 2px #85858593;
+                    padding: 10px;
+                    background-color: #dfdfdf73;
+                    #calendar {
+                        color: $fontcolor;
+                    }
+                }
+                .reservationArea{
+                    margin-top: 15px;
+                    width: 100px;
+                    height: 80px;
+                    border-radius: 10px;
+                    box-shadow: 2px 2px 2px #85858593;
+                    padding: 5px;
+                    background-color: #dfdfdf73;
+                    margin: 15px 0 0 5px;
+                    .reservationDate{
+                        padding-bottom: 5px;
+                        font-size: 15px;
+                        font-weight: 600;
+                        text-align: center;
+                        border: none;
+                        background-color: #dfdfdf73;
+                        width: 90px;
+                        border-radius: 10px 10px 0 0 ;
+                        border-bottom: 2px $fontcolor solid;
+                    }
+                    .reservationBtn{
+                        margin: 8px 23px;
+                        box-shadow: 1px 1px 1px #85858593;
+                        color: $fontcolor;
+                        font-weight: 600;
+                        padding: 0 4px;
+                    }
+                }
+            }
+        }
+    }
+
+    .imgArea {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        height: 500px;
+        font-family: "Roboto", sans-serif;
+        transition: 0.25s;
+        width: 1000px;
+
+        .credit {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: inherit;
+        }
+        .options {
+            position: absolute;
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            overflow: hidden;
+            width: 920px;
+            height: 400px;
+            margin: auto;
+
+            .option {
+                position: relative;
+                overflow: hidden;
+                min-width: 90px;
+                margin: 10px;
+                background-size: auto 120%;
+                background-position: center;
+                cursor: pointer;
+                transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+                background-repeat: no-repeat;
+                background-color: rgb(202, 202, 202);
+
+                &.active {
+                    flex-grow: 10000;
+                    transform: scale(1);
+                    max-width: 600px;
+                    margin: 0 10px;
+                    border-radius: 40px;
+                    background-size: auto 100%;
+                    .shadow {
+                        box-shadow: inset 0 -120px 120px -120px black, inset 0 -120px 120px -100px black;
+                    }
+                    .label {
+                        bottom: 20px;
+                        left: 20px;
+                        .info > div {
+                            left: 0px;
+                            opacity: 1;
+                        }
+                    }
+                }
+
+                &:not(.active) {
+                    flex-grow: 1;
+                    border-radius: 30px;
+                    .shadow {
+                        bottom: -40px;
+                        box-shadow: inset 0 -120px 0px -120px black, inset 0 -120px 0px -100px black;
+                    }
+                    .label {
+                        bottom: 10px;
+                        left: 10px;
+                        .info > div {
+                            left: 20px;
+                            opacity: 0;
+                        }
+                    }
+                }
+                .shadow {
+                    position: absolute;
+                    bottom: 0px;
+                    left: 0px;
+                    right: 0px;
+                    height: 120px;
+                    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+                }
+                .label {
+                    display: flex;
+                    position: absolute;
+                    right: 0px;
+
+                    height: 40px;
+                    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+                    .icon {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        align-items: center;
+
+                        min-width: 40px;
+                        max-width: 40px;
+                        height: 40px;
+                        border-radius: 100%;
+                        margin-left: 15px;
+                        background-color: white;
+                        color: var(--defaultBackground);
+                    }
+                    .info {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        margin-left: 10px;
+                        color: white;
+                        white-space: pre;
+                        > div {
+                            position: relative;
+                            transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95), opacity 0.5s ease-out;
+                        }
+                        .main {
+                            font-weight: bold;
+                            font-size: 1.2rem;
+                        }
+                        .sub {
+                            transition-delay: 0.1s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .evaluationArea {
+        width: 900px;
+        margin: auto;
+        .Title {
+            font-size: 20px;
+            color: $fontcolor;
+            font-weight: 600;
+        }
+        .evaluations {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+
+            .evaluation {
+                width: 410px;
+                height: 100px;
+                margin-bottom: 40px;
+                display: flex;
+                .evaluationImg {
+                    img {
+                        width: 100px;
+                        height: 100px;
+                        border-radius: 50%;
+                    }
+                }
+                .evaluationBody {
+                    position: relative;
+                    width: 410px;
+                    .evaluationName {
+                        font-size: 16px;
+                        display: inline-flex;
+                        padding-left: 10px;
+                    }
+                    .evaluationstar {
+                        display: inline-flex;
+                        font-size: 14px;
+                        position: absolute;
+
+                        margin-left: 10px;
+                        .star {
+                            color: #ffb11b;
+                            text-shadow: 2px 2px 3px rgba(59, 59, 59, 0.63);
+                        }
+                        .starNum {
+                            left: 50px;
+                            margin-left: 5px;
+                            margin-top: 2px;
+                        }
+                    }
+                    .evaluationDate {
+                        display: inline;
+                        position: absolute;
+                        right: 7px;
+                        font-size: 10px;
+                        padding-top: 5px;
+                    }
+                    .evaluationContent {
+                        padding: 3px 0 0 10px;
+                        height: 70px;
+                        display: flex;
+                        align-items: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//日曆
+.fc-daygrid-day-events {
+    display: none;
+}
+
+.fc-daygrid-day-number {
+    font-weight: 400;
+    margin: 3px auto;
+    color: $fontcolor;
+    cursor: pointer;
+    &:hover {
+        text-decoration: none;
+    }
+}
+.fc-col-header-cell-cushion {
+    color: $fontcolor;
+    cursor: default;
+    &:hover {
+        text-decoration: none;
+    }
+}
+.fc-next-button, .fc-prev-button{
+    height: 30px;
+    width: 30px;
+}
+
+.fc-prev-button.fc-button.fc-button-primary{
+    margin-right: 10px;
+    position: relative;
+    span{
+        position: absolute;
+        top: 2px;
+        left:1px;
+    }
+}
+
+.fc-next-button.fc-button.fc-button-primary{
+    position: relative;
+    span{
+        position: absolute;
+        top: 2px;
+        left:3px;
+    }
+}
+#fc-dom-2{
+   font-size: 24px; 
+}
+#root > div > div > div.aboutArea > div.reservation > div.reservationCalendar > div.calendarArea > div > div.fc-header-toolbar.fc-toolbar.fc-toolbar-ltr > div:nth-child(1) > button{
+    font-size: 16px ;
+    height: 30px;
+    padding: 3px 10px;
+}
+
+#root > div > div > div.aboutArea > div.reservation > div.reservationCalendar > div.calendarArea > div > div.fc-header-toolbar.fc-toolbar.fc-toolbar-ltr{
+    margin-bottom: 15px;
+}
+

@@ -1,0 +1,141 @@
+$primarycolor: #58a8bd;
+$secondarycolor: #f08a12;
+$bgcolor: #f8f8f8;
+$fontcolor: #264148;
+
+$font: Microsoft JhengHei, sans-serif;
+
+@mixin mainBtn {
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: $primarycolor;
+    padding: 8px 20px;
+    border: 2px white solid;
+    color: white;
+    box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
+}
+
+@mixin minorBtn {
+    font-size: 16px;
+    border-radius: 30px;
+    background-color: white;
+    color: $secondarycolor;
+    padding: 8px 20px;
+    border: 2px $secondarycolor solid;
+}
+
+@mixin content-position {
+    margin-right: 20px;
+    margin-left: 15px;
+}
+
+@mixin personal-topic {
+    font-weight: 400;
+    font-size: 16px;
+    margin-right: 20px;
+    margin-left: 15px;
+    padding: 13px 10px;
+    letter-spacing: 1px;
+    margin-top: 0;
+    border-radius: 10px;
+    margin-bottom: 13px;
+    text-align: center;
+    color: #fff;
+    background-color: $primarycolor;
+}
+
+@mixin bdrs {
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2s);
+    border-radius: 10px;
+}
+
+@mixin notice-topic($color:$primarycolor) {
+    margin: 0;
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    font-weight: normal;
+    // border: 1px solid #000;
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+    padding: 5px 15px;
+    background-color: $color;
+    color: #fff;
+    @include bdrs;
+}
+
+@mixin notice-content-set($color: $primarycolor) {
+    position: relative;
+    display: flex;
+    border: 1px solid $color;
+    border-radius: 10px;
+    padding: 15px 15px;
+    align-items: center;
+    margin-bottom: 15px;
+    @include bdrs;
+    img {
+        margin-right: 15px;
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+    }
+    .content-date {
+        font-size: 14px;
+        width: 80px;
+        padding: 0px 10px;
+        letter-spacing: 1px;
+        text-align: center;
+        color: rgba(0, 0, 0, 0.5);
+        margin: 0;
+    }
+    .apply-reply-btn {
+        width: 60px;
+        .accept-apply {
+            margin-bottom: 3px;
+        }
+    }
+    .cancel-apply, .accept-apply {
+        cursor: pointer;
+        @include mainBtn;
+        width: 60px;
+        letter-spacing: 1px;
+        font-size: 14px;
+        height: 55px;
+        padding: 0px 10px;
+        background-color: $color;
+    }
+}
+
+@mixin notice-content-innerText($color: $primarycolor) {
+    border-left: 1px solid $color;
+    padding-left: 15px;
+    width: 385.5px;
+    .content-name {
+        margin: 0;
+        font-weight: normal;
+        letter-spacing: 1px;
+        font-size: 16px;
+        span {
+            font-weight: 600;
+        }
+    }
+    .content-detail {
+        position: relative;
+        margin: 0;
+        margin-top: 15px;
+        font-weight: normal;
+        display: flex;
+        justify-content: space-between;
+        width: 350px;
+        font-size: 14px;
+        .notice-location {
+            position: absolute;
+            left:55%;
+        }
+        .notice-separate {
+            position: absolute;
+            left: 44.5%;
+        }
+    }
+}

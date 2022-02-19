@@ -1,0 +1,1010 @@
+@import "./var";
+
+* {
+    box-sizing: border-box;
+    font-family: $font;
+}
+
+.off {
+    display: none;
+}
+
+body {
+    // overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: $bgcolor;
+    min-width: 100%;
+    min-height: 100vh;
+    overflow: scroll;
+}
+
+// ----------------------- modal Design Start -----------------------------
+
+.personal-article-edit {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.2);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .article-edit-container {
+        display: flex;
+        flex-direction: column;
+        margin-right: 20px;
+        border: 1px solid $primarycolor;
+        border-radius: 10px;
+        overflow: hidden;
+        &>* {
+            width: 80px;
+            height: 55px;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all .4s ease-in-out ;
+            cursor: pointer;
+            &>h1 {
+                letter-spacing: 1px;
+                font-weight: normal;
+                margin: 0;
+                font-size: 20px;
+            }
+            &:hover {
+                background-color: $primarycolor;
+                color: #fff;
+            }
+        }
+        .article-edit-head {
+            height: 45px;
+            background-color: $primarycolor;
+            color: #fff;
+            border-bottom: 2px solid #fff;
+        }
+    }
+    .edit-main-container {
+        width: 550px;
+        height: 550px;
+        background-color: #fff;
+        border-radius: 10px; 
+        overflow: hidden;
+        &>h1 {
+            position: relative;
+            text-align: center;
+            font-weight: normal;
+            font-size: 20px;
+            padding: 10px 0px;
+            letter-spacing: 1px;
+            background-color: $primarycolor;
+            color: #fff;
+            span {
+                padding: 0;
+                height: 25px;
+                display: block;
+                position: absolute;
+                right: 20px;
+                top: 5px;
+                font-size: 25px;
+                cursor: pointer;
+            }
+        }
+        .edit-title-container {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            margin-left: 15px;
+            margin-right: 15px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid $primarycolor;
+            padding-bottom: 12px;
+            &>img {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                border: 1px solid $secondarycolor;
+            }
+            .edit-title-name {
+                margin-left: 10px;
+                h1 {
+                    font-size: 20px;
+                    font-weight: normal;
+                    margin: 0;
+                    letter-spacing: 1px;
+                }
+                h6 {
+                    margin: 0;
+                    margin-top: 5px;
+                    font-size: 14px;
+                    color: rgba(0,0,0,0.5);
+                    letter-spacing: 1px;
+                }
+            }
+
+        }
+        button {
+            position: static;
+            width: 80%;
+            border: 1px solid $primarycolor;
+            margin: 15px 10%;
+            background-color: #fff;
+            padding: 8px 0px;
+            border-radius: 10px;
+            color: $primarycolor;
+            letter-spacing: 1px;
+            transition: all .4s ease-in-out;
+            &:hover {
+                background-color: $primarycolor;
+                color: #fff;
+            }
+        }
+    }
+}
+
+// ------------------------ modal Design End ------------------------------
+
+.personal-header {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .header-banner {
+        background-color: #ccc;
+        background-position: center;
+        background-size: cover;
+        height: 350px;
+        width: 100%;
+        border-bottom: 2px solid $secondarycolor;
+    }
+    .header-content {
+        width: 1000px;
+        display: flex;
+        justify-content: center;
+        height: 70px;
+        .profile-pic {
+            width: 20%;
+            position: relative;
+            img {
+                border: 2px solid $secondarycolor;
+                position: absolute;
+                left: 40px;
+                bottom: -10px;
+                width: 140px;
+                height: 140px;
+                border-radius: 50%;
+            }
+        }
+        .profile-content {
+            width: 80%;
+            display: flex;
+            position: relative;
+            margin-top: 7px;
+            * {
+                margin: 0;
+                line-height: 30px;
+            }
+            .edit-icon {
+                height: 24px;
+                font-size: 24px;
+                margin-left: 2%;
+                color: $fontcolor;
+                padding: 0;
+                cursor: pointer;
+                svg {
+                    height: 24px;
+                }
+            }
+            .profile-name {
+                margin-left: 5px;
+                font-size: 26px;
+                color: $fontcolor;
+            }
+            .profile-stars {
+                color: #ffb11b;
+                margin-left: 20px;
+                font-size: 16px;
+                text-shadow: 2px 2px 3px rgba(59, 59, 59, 0.63);
+                svg {
+                    margin-bottom: 3px;
+                }
+                span {
+                    color: $fontcolor;
+                    margin-left: 5px;
+                    text-shadow: none;
+                }
+            }
+            .profile-location {
+                position: absolute;
+                right: 50px;
+                color: #e83015;
+                font-size: 16px;
+                span {
+                    color: $fontcolor;
+                    margin-left: 7px;
+                }
+            }
+            .profile-friends {
+                cursor: pointer;
+                letter-spacing: 1px;
+                font-size: 16px;
+                position: absolute;
+                bottom: 0;
+                color: $fontcolor;
+                border-radius: 10px;
+                font-weight: 400;
+                height: 30px;
+                margin-left: 8px;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+.personal-section {
+    width: 100%;
+    position: relative;
+    .bgc-logo {
+        position: absolute;
+        z-index: -1000;
+        width: 100px;
+        top: 2%;
+        left: 8%;
+        transform: scaleX(-1);
+    }
+    .presonal-container {
+        // width: 73%;
+        width: 1075px;
+        // testing
+        @include bdrs;
+        border-bottom: none;
+        padding-top: 20px;
+        border-radius: 10px;
+        background-color: rgb(238, 238, 238);
+        margin: auto;
+        margin-top: 50px;
+        margin-bottom: 30px;
+        padding-bottom: 25px;
+        display: flex;
+        .personal-categroy {
+            width: 30%;
+            height: 100%;
+            .personal-guide {
+                @include bdrs;
+                margin-left: 20px;
+                padding: 12px;
+                text-align: center;
+                margin-bottom: 15px;
+                background-color: #fff;
+                img {
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    border: 2px solid $primarycolor;
+                }
+                h3 {
+                    margin: 0;
+                    margin-top: 12px;
+                    font-size: 16px;
+                    font-weight: normal;
+                    letter-spacing: 1px;
+                    color: $primarycolor;
+                }
+            }
+            .personal-btn {
+                @include bdrs;
+                overflow: hidden;
+                margin-left: 20px;
+                div {
+                    position: relative;
+                    letter-spacing: 1px;
+                    text-align: center;
+                    color: $primarycolor;
+                    background-color: #fff;
+                    font-size: 16px;
+                    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+                    border-color: $primarycolor;
+                    width: 100%;
+                    transition: all 0.5s ease-in-out;
+                    padding: 18px 10px 18px 10px;
+                    &:hover {
+                        background-color: $primarycolor;
+                        color: #fff;
+                        cursor: pointer;
+                    }
+                }
+            }
+            .personal-club {
+                margin-top: 15px;
+                margin-left: 20px;
+                overflow: hidden;
+                @include bdrs;
+                .club-container {
+                    width: 100%;
+                    height: 250px;
+                    overflow: hidden;
+                    background-color: #fff;
+                    h3 {
+                        font-size: 16px;
+                        letter-spacing: 1px;
+                        text-align: center;
+                        color: #fff;
+                        width: 100%;
+                        padding: 12px 0;
+                        margin: 0;
+                        border-bottom: 2px solid $primarycolor;
+                        font-weight: 400;
+                        background-color: $primarycolor;
+                    }
+                }
+            }
+        }
+        .personal-post {
+            width: 70%;
+            height: 100%;
+            // border: 1px solid blue;
+            // ---------------------------- article ------------------------------------
+
+            .article {
+                // 標題
+                .head-topic {
+                    @include bdrs;
+                    @include personal-topic;
+                }
+                // Po文
+                .article-post {
+                    @include bdrs;
+                    // width: 100%;
+                    @include content-position;
+                    padding: 15px 0px;
+                    margin-bottom: 13px;
+                    display: flex;
+                    background-color: #fff;
+                    align-items: center;
+                    img {
+                        width: 45px;
+                        height: 45px;
+                        border-radius: 50%;
+                        border: 2px solid $secondarycolor;
+                        position: relative;
+                        left: 5%;
+                    }
+                    .post-send {
+                        border: 2px solid $secondarycolor;
+                        width: 80%;
+                        border-radius: 27.5px;
+                        height: 35px;
+                        color: rgba(0, 0, 0, 0.3);
+                        position: relative;
+                        left: 7%;
+                        h4 {
+                            margin: 0;
+                            position: absolute;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            left: 2%;
+                            letter-spacing: 1px;
+                            font-size: 16px;
+                        }
+                    }
+                }
+                // 文章
+                .article-container {
+                    @include bdrs;
+                    @include content-position;
+                    margin-bottom: 15px;
+                    background-color: #fff;
+                    padding: 17px 20px;
+                    .article-title {
+                        width: 100%;
+                        display: flex;
+                        // margin-top: 17px;
+                        position: relative;
+                        img {
+                            border: 2px solid $secondarycolor;
+                            width: 45px;
+                            height: 45px;
+                            border-radius: 50%;
+                            position: relative;
+                            left: 1%;
+                        }
+                        .title-content {
+                            position: relative;
+                            left: 3%;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            * {
+                                margin: 0;
+                                color: $fontcolor;
+                                letter-spacing: 1px;
+                            }
+                            h1 {
+                                font-size: 20px;
+                            }
+                            h6 {
+                                font-size: 14px;
+                                margin-top: 5px;
+                            }
+                        }
+                        .title-edit {
+                            cursor: pointer;
+                            font-size: 16px;
+                            height: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            position: absolute;
+                            right: 3%;
+                        }
+                    }
+                    .article-body {
+                        width: 90%;
+                        // margin: 15px 0px;
+                        margin-top: 15px;
+                        margin-bottom: 10px;
+                        p {
+                            position: relative;
+                            left: 5%;
+                            font-size: 18px;
+                            padding-bottom: 15px;
+                            border-bottom: 1px solid $primarycolor;
+                        }
+                    }
+                    .article-message {
+                        position: relative;
+                        // left: 5%;
+                        width: 100%;
+                        // margin-bottom: 17px;
+                        .message-icon {
+                            position: relative;
+                            left: 5%;
+                            margin-left: -5px;
+                            button {
+                                // @include bdrs;
+                                font-size: 23px;
+                                border: none;
+                                margin-right: 8px;
+                                background-color: #fff;
+                                // background-color: $secondarycolor;
+                                // border: 2px solid $primarycolor;
+                                // color: $primarycolor;
+                                color: $primarycolor;
+                                border-radius: 10px;
+                                padding: 5px 7px;
+                                line-height: 22px;
+                            }
+                        }
+                        form {
+                            margin-top: 8px;
+                            position: relative;
+                            left: 5%;
+                            .message-send {
+                                height: 28px;
+                                width: 76%;
+                                border-radius: 10px;
+                                // @include bdrs;
+                                // border: none;
+                                padding-left: 10px;
+                                border: 1px solid $secondarycolor;
+                            }
+                            .submit-btn {
+                                // @include bdrs;
+                                border-radius: 10px;
+                                padding: 3px 17px;
+                                margin-left: 10px;
+                                border: none;
+                                background-color: $primarycolor;
+                                letter-spacing: 2px;
+                                color: #fff;
+                                border: 2px solid $primarycolor;
+                            }
+                        }
+                    }
+                }
+            }
+            // --------------------------- activities ----------------------------------
+            .activities {
+                // 標題
+                .head-topic {
+                    @include bdrs;
+                    @include personal-topic;
+                }
+                .my-activities {
+                    @include bdrs;
+                    height: 225px;
+                    @include content-position;
+                    display: flex;
+                    margin-bottom: 15px;
+                    background-color: #fff;
+                    overflow: hidden;
+                    .activities-pic {
+                        width: 40%;
+                        overflow: hidden;
+                        img {
+                            width: 300px;
+                            border-right: 2px solid $primarycolor;
+                        }
+                    }
+                    .activities-content {
+                        position: relative;
+                        width: 60%;
+                        * {
+                            margin: 0;
+                            margin-left: 20px;
+                            margin-top: 15px;
+                            font-weight: 400;
+                            letter-spacing: 1px;
+                        }
+                        .evt-time {
+                            color: rgba(0, 0, 0, 0.5);
+                        }
+                        .evt-location {
+                            position: absolute;
+                            right: 22px;
+                            top: 15px;
+                            font-weight: 600;
+                            color: $primarycolor;
+                            margin: 0;
+                            font-size: 16px;
+                            svg {
+                                margin: 0;
+                            }
+                            span {
+                                // font-size: 14px;
+                                margin: 0;
+                                margin-left: 3px;
+                            }
+                        }
+                        .evt-state {
+                            margin: 0;
+                            color: $secondarycolor;
+                            border: 2px solid $secondarycolor;
+                            border-radius: 10px;
+                            position: absolute;
+                            bottom: 15px;
+                            right: 22px;
+                            span {
+                                margin: 0;
+                                line-height: 40px;
+                                padding: 15px 20px;
+                            }
+                        }
+                    }
+                }
+            }
+            // --------------------------- collection ----------------------------------
+            .collection {
+                .head-topic {
+                    @include personal-topic;
+                }
+                .my-collection {
+                    background-color: #fff;
+                    @include content-position;
+                    padding: 17px 20px;
+                    margin-bottom: 15px;
+                    @include bdrs;
+                    .collection-title {
+                        display: flex;
+                        img {
+                            border: 2px solid $secondarycolor;
+                            width: 45px;
+                            height: 45px;
+                            border-radius: 50%;
+                            position: relative;
+                            left: 1%;
+                        }
+                        .title-content {
+                            position: relative;
+                            left: 3%;
+                            * {
+                                margin: 0;
+                                font-weight: normal;
+                            }
+                            h1 {
+                                letter-spacing: 1px;
+                                font-size: 20px;
+                            }
+                            h5 {
+                                color: rgba(0,0,0,0.5);
+                                margin-top: 3px;
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                    .collection-body {
+                        position: relative;
+                        margin-top: 15px;
+                        width: 90%;
+                        * {
+                            position: relative;
+                            left: 5%;
+                        }
+                        h1 {
+                            margin: 0;
+                            font-weight: normal;
+                            font-size: 18px;
+                        }
+                        p {
+                            margin: 0;
+                            margin-top: 10px;
+                        }
+                    }
+                }
+            }
+            // ----------------------------- notice -------------------------------------
+            .notice {
+                .head-topic {
+                    @include personal-topic;
+                }
+                .notice-btns {
+                    @include bdrs;
+                    @include content-position;
+                    height: 80px;
+                    margin-bottom: 15px;
+                    background-color: #fff;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 0 20px;
+                    .recieve-notice,
+                    .send-notice {
+                        cursor: pointer;
+                        margin: 15px 20px;
+                        border-radius: 10px;
+                        padding: 15px 10px;
+                        h1 {
+                            font-size: 18px;
+                            letter-spacing: 1px;
+                            font-weight: normal;
+                            margin: 0;
+                        }
+                    }
+                    .recieve-notice {
+                        @include bdrs;
+                        border: 1px solid $secondarycolor;
+                        color: $secondarycolor;
+                        width: 50%;
+                        text-align: center;
+                        transition: all .5s ease-in-out;
+                        &:hover {
+                            color: #fff;
+                            background-color: $secondarycolor;
+                        }
+                    }
+                    .send-notice {
+                        @include bdrs;
+                        border: 1px solid $primarycolor;
+                        color: $primarycolor;
+                        width: 50%;
+                        text-align: center;
+                        transition: all .5s ease-in-out;
+                        &:hover {
+                            color: #fff;
+                            background-color: $primarycolor;
+                        }
+                    }
+                }
+                .notice-send,
+                .notice-recieve {
+                    @include bdrs;
+                    min-height: 500px;
+                    background-color: #fff;
+                    @include content-position;
+                }
+                // 送出邀約
+                .notice-send {
+                    padding: 30px 40px;
+                    margin-bottom: 15px;
+                    // 嚮導送出邀約 ----------
+                    .notice-send-guide {
+                        .notice-send-topic {
+                            @include notice-topic;
+                        }
+                        .notice-send-guide-content {
+                            @include notice-content-set;
+                            .guide-content {
+                                @include notice-content-innerText;
+                            }
+                        }
+                    }
+                    // 活動送出邀約 ----------
+                    .notice-send-activities {
+                        .notice-send-topic {
+                            @include notice-topic;
+                        }
+                        .notice-send-activities-content {
+                            @include notice-content-set;
+                            .activity-content {
+                                @include notice-content-innerText;
+                            }
+                        }
+                    }
+
+                    // 社團送出邀約 ----------
+                    .notice-send-club {
+                        .notice-send-topic {
+                            @include notice-topic;
+                        }
+                        .notice-send-club-content {
+                            @include notice-content-set;
+                            .club-content {
+                                @include notice-content-innerText;
+                            }
+                        }
+                    }
+                }
+
+                // 收到申請
+                .notice-recieve {
+                    padding: 30px 40px;
+
+                    // 收到的嚮導申請 ---------
+                    .notice-recieve-guide {
+                        .notice-recieve-topic {
+                            @include notice-topic($secondarycolor);
+                        }
+                        .notice-recieve-guide-content {
+                            @include notice-content-set($secondarycolor);
+                            .guide-content {
+                                @include notice-content-innerText($secondarycolor);
+                            }
+                            .cancel-apply,
+                            .accept-apply {
+                                height: 35px;
+                            }
+                        }
+                    }
+
+                    // 收到的活動申請
+                    .notice-recieve-activities {
+                        .notice-recieve-topic {
+                            @include notice-topic($secondarycolor);
+                        }
+                        .notice-recieve-activities-content {
+                            // border-left: 1px solid $secondarycolor;
+                            .activities-name {
+                                @include bdrs;
+                                cursor: pointer;
+                                text-align: center;
+                                // background-color: $secondarycolor;
+                                border: 1px solid $secondarycolor;
+                                color: $secondarycolor;
+                                margin: 0;
+                                padding: 5px 10px;
+                                margin-bottom: 15px;
+                                font-size: 18px;
+                                letter-spacing: 1px;
+                                font-weight: normal;
+                                transition: all 0.4s ease-in-out;
+                                span {
+                                    margin-left: 8px;
+                                }
+                                &:hover {
+                                    background-color: $secondarycolor;
+                                    color: #fff;
+                                }
+                            }
+                            .activities-main {
+                                border-left: 2px solid $secondarycolor;
+                                margin-left: 15px;
+                                .activities-container {
+                                    @include notice-content-set($secondarycolor);
+                                    padding: 0px 10px;
+                                    margin-left: 25px;
+                                    img {
+                                        width: 45px;
+                                        height: 45px;
+                                    }
+                                    .content-date {
+                                        padding: 0;
+                                    }
+                                    .activities-content {
+                                        @include notice-content-innerText($secondarycolor);
+                                        width: 315.5px;
+                                    }
+                                    .apply-reply-btn {
+                                        width: 120px;
+                                        display: flex;
+                                        align-items: center;
+                                        .accept-apply {
+                                            margin: 0;
+                                            margin-right: 5px;
+                                        }
+                                    }
+                                    .cancel-apply,
+                                    .accept-apply {
+                                        height: 35px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    // 收到的社團申請
+                    .notice-recieve-club {
+                        .notice-recieve-topic {
+                            @include notice-topic($secondarycolor);
+                        }
+                        .club-name {
+                            @include bdrs;
+                            cursor: pointer;
+                            text-align: center;
+                            // background-color: $secondarycolor;
+                            border: 1px solid $secondarycolor;
+                            color: $secondarycolor;
+                            margin: 0;
+                            padding: 5px 10px;
+                            margin-bottom: 15px;
+                            font-size: 18px;
+                            letter-spacing: 1px;
+                            font-weight: normal;
+                            transition: all 0.4s ease-in-out;
+                            position: relative;
+                            z-index: 1000;
+                            overflow: hidden;
+                            // width: 200px;
+
+                            span {
+                                margin-left: 8px;
+                            }
+                         
+                            &:hover {
+                                color: #fff;
+                                background-color: $secondarycolor;
+                                // &::before {
+                                //     // transform-origin: top;
+                                //     transform: scaleY(1);
+                                // }
+                                // &::after {
+                                //     // transform-origin: bottom;
+                                //     transform: scaleY(1);
+                                // }
+                            }
+                        }
+                        .club-main {
+                            border-left: 2px solid $secondarycolor;
+                            margin-left: 15px;
+                            // height: 240px;
+                            // overflow: scroll;
+                            .club-container {
+                                @include notice-content-set($secondarycolor);
+                                padding: 0px 10px;
+                                margin-left: 25px;
+                                img {
+                                    width: 45px;
+                                    height: 45px;
+                                }
+                                .content-date {
+                                    padding: 0;
+                                }
+                                .club-content {
+                                    @include notice-content-innerText($secondarycolor);
+                                    width: 315.5px;
+                                }
+                                .apply-reply-btn {
+                                    width: 120px;
+                                    display: flex;
+                                    align-items: center;
+                                    .accept-apply {
+                                        margin: 0;
+                                        margin-right: 5px;
+                                    }
+                                }
+                                .cancel-apply,
+                                .accept-apply {
+                                    height: 35px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            // -------------------------- guide review ----------------------------------
+            .review {
+                h2 {
+                    @include personal-topic;
+                }
+                .my-review {
+                    background-color: #fff;
+                    margin-left: 15px;
+                    margin-right: 15px;
+                    display: flex;
+                    height: 200px;
+                    padding: 15px 25px;
+                    margin-bottom: 15px;
+                    @include bdrs;
+                    .review-guide {
+                        width: 25%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        img {
+                            border: 2px solid $secondarycolor;
+                            width: 80px;
+                            height: 80px;
+                            border-radius: 50%;
+                        }
+                        h1 {
+                            margin: 0;
+                            letter-spacing: 1px;
+                            margin-top: 2px;
+                        }
+                        h5 {
+                            margin: 0;
+                            letter-spacing: 1px;
+                            margin-top: 2px;
+                        }
+                    }
+                    .review-form {
+                        width: 75%;
+                        position: relative;
+                        .star-rate {
+                            display: flex;
+                            height: 30px;
+                            align-items: center;
+                            h5 {
+                                margin: 0;
+                                margin-top: 2px;
+                                letter-spacing: 1px;
+                                font-weight: normal;
+                                font-size: 18px;
+                            }
+                            .review-stars {
+                                display: flex;
+                                margin-left: 10px;
+                                img {
+                                    width: 23px;
+                                    // height: 20px;
+                                    margin-right: 5px;
+                                }
+                            }
+                            .review-stars-score {
+                                margin-left: 10px;
+                                letter-spacing: 1px;
+                            }
+                        }
+                        textarea {
+                            height: 80px;
+                            font-size: 16px;
+                            padding: 8px 10px;
+                            margin-top: 8px;
+                            width: 100%;
+                            border-radius: 10px;
+                        }
+                        .review-form-send {
+                            cursor: pointer;
+                            @include mainBtn;
+                            padding: 5px 20px;
+                            font-size: 16px;
+                            position: absolute;
+                            right: 0;
+                            bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.plus-container {
+    // display: flex;
+    position: fixed;
+    bottom: 0;
+    // left: 0;
+
+    height: 300px;
+    width: 300px;
+    border: 1px solid #000;
+}
+
+@media (max-width: 1000px) {
+    nav {
+        width: 85%;
+    }
+}

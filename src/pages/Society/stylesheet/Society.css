@@ -1,0 +1,423 @@
+.oo {
+  outline: 1px black solid;
+}
+
+*:focus {
+  outline: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.selfie {
+  width: 60px;
+  height: 60px;
+}
+
+.a-black {
+  color: black;
+}
+
+.a-black:hover {
+  color: gray;
+  text-decoration: none;
+}
+
+.container {
+  margin-top: 120px;
+}
+
+.container .post-area {
+  border-radius: 28px;
+  background: lightgray;
+}
+
+.container .post-area .post-btn {
+  background: white;
+  color: gray;
+  line-height: 50px;
+  width: 75%;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+}
+
+.container .post-area .post-btn:hover {
+  color: white;
+  background: gray;
+}
+
+.container .article-list .post-article {
+  border: 1px white solid;
+  border-radius: 20px;
+  -webkit-box-shadow: 0.5px 2px 4px 2px lightgray;
+          box-shadow: 0.5px 2px 4px 2px lightgray;
+}
+
+.container .article-list .post-article .article-paragraph-date {
+  margin-top: -10px;
+}
+
+.container .article-list .post-article .post-content {
+  height: 85px;
+  font-size: 20px;
+  overflow: hidden;
+}
+
+.container .article-list .post-article .post-content .more:hover {
+  font-style: italic;
+}
+
+.container .box {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.container .box .articlePop {
+  width: 70%;
+  height: 480px;
+  top: 100px;
+  background: white;
+  border: 1px white solid;
+  border-radius: 20px;
+  -webkit-box-shadow: 0.5px 2px 4px 2px lightgray;
+          box-shadow: 0.5px 2px 4px 2px lightgray;
+}
+
+.container .box .articlePop .articlePopLeft {
+  height: 400px;
+  border-right: black 1px solid;
+}
+
+.container .box .articlePop .articlePopLeft .ArticleContent {
+  height: 300px;
+  font-size: 20px;
+}
+
+.container .box .articlePop .articlePopRight .postSelfie {
+  width: 60px;
+  height: 60px;
+  outline: black 1px solid;
+}
+
+.container .box .articlePop .articlePopRight .commentList {
+  height: 480px;
+}
+
+.container .box .articlePop .articlePopRight .commentList .timePart {
+  font-size: 12px;
+}
+
+.container .box .articlePop .articlePopRight .inputComment {
+  height: 50px;
+}
+
+.container .box .articlePop .articlePopRight .inputComment input[type="text"] {
+  height: 40px;
+  border-radius: 30px;
+}
+
+.container .box .articlePop .articlePopRight .inputComment input[type="submit"] {
+  height: 40px;
+  border: none;
+  background: none;
+}
+
+.container .society-area {
+  width: 250px;
+  height: 200px;
+  border-radius: 28px;
+  background: lightgray;
+}
+
+.container .society-area .society-img {
+  width: 60px;
+  height: 60px;
+  outline: 1px black solid;
+}
+
+.container .postPlace {
+  border: black 1px solid;
+}
+
+.container .searching-area {
+  width: 250px;
+  border-radius: 28px;
+  background: lightgray;
+}
+
+.container .searching-area .society-toggle .society-toggle-btn {
+  width: 100px;
+  height: 40px;
+  display: inline-block;
+  text-align: center;
+  line-height: 40px;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.container .searching-area .society-toggle .society-toggle-btn a {
+  display: inline-block;
+  color: #082550;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 25px;
+  width: 100px;
+  height: 40px;
+}
+
+.container .searching-area .society-toggle .society-toggle-btn > a {
+  position: relative;
+}
+
+.container .searching-area .society-toggle .society-toggle-btn::before {
+  content: "";
+  width: 100%;
+  height: 0%;
+  display: block;
+  background-color: #6082b6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.container .searching-area .society-toggle .society-toggle-btn:hover::before {
+  height: 100%;
+}
+
+.container .searching-area .searching .search-icon {
+  background: white;
+  border-radius: 10px 0 0 10px;
+}
+
+.container .searching-area .searching .search-input {
+  width: 150px;
+  border-radius: 0 10px 10px 0;
+  border: none;
+}
+
+.container .searching-area .searching-list {
+  height: 300px;
+  width: 100%;
+  overflow: scroll;
+}
+
+.container .searching-area .searching-list::-webkit-scrollbar {
+  display: none;
+}
+
+.container .searching-area .demo a {
+  width: 250px;
+  padding-top: 10px;
+  display: block;
+  color: black;
+  text-decoration: none;
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
+}
+
+.container .searching-area .demo a:hover {
+  opacity: .5;
+}
+
+.container .searching-area .demo a span {
+  position: absolute;
+  margin-top: 3px;
+  width: 12px;
+  height: 12px;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  -webkit-animation: sdb05 1.5s infinite;
+          animation: sdb05 1.5s infinite;
+}
+
+@-webkit-keyframes sdb05 {
+  0% {
+    -webkit-transform: rotate(-135deg) translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotate(-135deg) translate(-20px, 20px);
+    opacity: 0;
+  }
+}
+
+@keyframes sdb05 {
+  0% {
+    -webkit-transform: rotate(-135deg) translate(0, 0);
+            transform: rotate(-135deg) translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotate(-135deg) translate(-20px, 20px);
+            transform: rotate(-135deg) translate(-20px, 20px);
+    opacity: 0;
+  }
+}
+
+.container .block {
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.container .add-article-area {
+  width: 80%;
+  height: 76%;
+  border-radius: 10px;
+  top: 21%;
+  background: rgba(92, 208, 250, 0.1);
+  -webkit-backdrop-filter: blur(50px);
+          backdrop-filter: blur(50px);
+  overflow: hidden;
+}
+
+.container .add-article-area .addition-btn {
+  border-color: #dc9090;
+  margin-top: 10px;
+  font-size: 1em;
+  font-weight: 900;
+}
+
+.container .add-article-area .addition-btn:hover {
+  background: #dc9090;
+  border-color: white;
+}
+
+.container .add-article-area .article-content {
+  background: whitesmoke;
+  border-radius: 10px;
+  height: 453px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.container .add-article-area .post-cancel {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #9DE4F6;
+  color: black;
+}
+
+.container .add-article-area .article-post {
+  background: #02313d;
+  width: 20%;
+  color: white;
+}
+
+.container .add-article-area .article-post:hover {
+  border: white 1px solid;
+}
+
+.container .add-article-area .in-bg {
+  background: transparent;
+  width: 100%;
+}
+
+.container .add-article-area .art-bg {
+  width: 100%;
+  overflow-y: auto;
+}
+
+.container .add-article-area .cancel {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  left: 3px;
+  top: 3px;
+  background: #02313d;
+  color: white;
+}
+
+.container .add-article-area .xx {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #9DE4F6;
+  color: black;
+}
+
+.container .in-delete {
+  top: 40%;
+  width: 200px;
+  padding: 10px;
+  border: 1px solid #dc9090;
+  border-radius: 10px;
+}
+
+.society-group {
+  outline: 1px black solid;
+  border-radius: 28px;
+  background: lightgray;
+}
+
+.society-group .group-swich {
+  width: 140px;
+  height: 150px;
+  outline: 1px black solid;
+  background-image: url("../../../images/logo.png");
+}
+
+.society-group .group-swich a {
+  display: block;
+  width: 140px;
+  height: 150px;
+  text-decoration: none;
+  color: #082550;
+}
+
+.society_group_bar {
+  border-radius: 28px;
+  -webkit-box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.society_group_bar .society_group_upperbar {
+  position: relative;
+}
+
+.society_group_bar .society_group_upperbar input {
+  width: 100px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
+.society_group_bar .society_group_lowerbar .group_name span {
+  line-height: 35px;
+}
+
+.society_group_bar .society_group_lowerbar ul {
+  border-top: 3px gray solid;
+}
+
+.society_group_bar .society_group_lowerbar ul li {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+}
+
+.society_group_bar .society_group_lowerbar ul li:hover {
+  background: gray;
+}
+/*# sourceMappingURL=Society.css.map */

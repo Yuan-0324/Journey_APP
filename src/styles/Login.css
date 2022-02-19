@@ -1,0 +1,1275 @@
+@charset "UTF-8";
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.loginModalBackground {
+  position: fixed;
+  margin: auto;
+  background-color: #f8f8f8;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1200;
+  width: 480px;
+  height: 710px;
+  border: none;
+  border-radius: 10px;
+  -webkit-box-shadow: 3px 3px 5px #4b4a4a;
+          box-shadow: 3px 3px 5px #4b4a4a;
+  text-align: center;
+  font-size: 16px;
+  font-family: "Noto Sans HK", 微软雅黑, "Microsoft YaHei", sans-serif;
+}
+
+.loginModalBackground .loginModalContainer .loginModalcloseBtn {
+  position: absolute;
+  right: 10px;
+  top: 20px;
+  border: none;
+  background-color: #f8f8f8;
+}
+
+.loginModalBackground .loginModalContainer .loginModaltitle {
+  position: relative;
+  margin-top: 30px;
+}
+
+.loginModalBackground .loginModalContainer .loginModaltitle hr {
+  width: 220px;
+}
+
+.loginModalBackground .loginModalContainer .loginModaltitle img {
+  max-width: 190px;
+}
+
+.loginModalBackground .loginModalContainer .loginModaltitle p {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.loginModalBackground .loginModalContainer .loginModaltitle span {
+  font-size: 14px;
+}
+
+.loginModalBackground .loginModalContainer .loginModaltitle span a {
+  color: #0a7cb1;
+  cursor: pointer;
+}
+
+.loginModalBackground .loginModalContainer .loginModalbody {
+  padding-top: 15px;
+}
+
+.loginModalBackground .loginModalContainer .loginModalbody .userInput p {
+  text-align: left;
+  padding-left: 75px;
+  font-size: 16px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.loginModalBackground .loginModalContainer .loginModalbody .userInput .pswText {
+  margin-top: 35px;
+}
+
+.loginModalBackground .loginModalContainer .loginModalbody .userInput input {
+  width: 340px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px #bfbfbf solid;
+  background: #f8f8f8;
+  font-weight: 300;
+  margin-top: 5px;
+}
+
+.loginModalBackground .loginModalContainer .loginModalbody .userInput input::-webkit-input-placeholder {
+  font-size: 14px;
+  font-weight: 300;
+  padding-left: 5px;
+}
+
+.loginModalBackground .loginModalContainer .loginModalbody .userInput input:-ms-input-placeholder {
+  font-size: 14px;
+  font-weight: 300;
+  padding-left: 5px;
+}
+
+.loginModalBackground .loginModalContainer .loginModalbody .userInput input::-ms-input-placeholder {
+  font-size: 14px;
+  font-weight: 300;
+  padding-left: 5px;
+}
+
+.loginModalBackground .loginModalContainer .loginModalbody .userInput input::placeholder {
+  font-size: 14px;
+  font-weight: 300;
+  padding-left: 5px;
+}
+
+.loginModalBackground .loginModalContainer .loginModalbody .userSelect {
+  margin-top: 20px;
+}
+
+.loginModalBackground .loginModalContainer .loginModalbody .userSelect label {
+  margin-left: 5px;
+  margin-right: 100px;
+  font-size: 14px;
+}
+
+.loginModalBackground .loginModalContainer .loginModalbody .userSelect a {
+  margin-left: 100px;
+  font-size: 14px;
+  color: red;
+}
+
+.loginModalBackground .loginModalContainer .loginModalbody .loginBtn {
+  height: 40px;
+  width: 340px;
+  border-radius: 5px;
+  background-color: #1697d5;
+  color: white;
+  border: none;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 5px;
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.loginModalBackground .loginModalContainer .loginModalbody .loginBtn:hover {
+  background-color: #0a7cb1;
+}
+
+.loginModalBackground .loginModalContainer .loginModalbody hr {
+  width: 140px;
+}
+
+.loginModalBackground .loginModalContainer .loginModalfooter p {
+  font-weight: 500;
+}
+
+.loginModalBackground .loginModalContainer .loginModalfooter button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 40px;
+  line-height: 35px;
+  width: 340px;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  border: none;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 20px auto 15px;
+}
+
+.loginModalBackground .loginModalContainer .loginModalfooter button:hover {
+  background-color: darkgrey;
+}
+
+.loginModalBackground .loginModalContainer .loginModalfooter button .googleIcon {
+  margin-top: 5px;
+  margin: 5px 70px 0 0;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+}
+
+.loginModalBackground .loginModalContainer .loginModalfooter button .facebookIcon {
+  margin-top: 5px;
+  margin: 5px 60px 0 0;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+}
+
+.signUpModalBackground {
+  position: fixed;
+  margin: auto;
+  margin-top: 120px;
+  background-color: #f8f8f8;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1200;
+  width: 480px;
+  height: 410px;
+  border: none;
+  border-radius: 10px;
+  -webkit-box-shadow: 3px 3px 5px #4b4a4a;
+          box-shadow: 3px 3px 5px #4b4a4a;
+  text-align: center;
+  font-size: 16px;
+  font-family: "Noto Sans HK", 微软雅黑, "Microsoft YaHei", sans-serif;
+}
+
+.signUpModalBackground .signUpModalContainer .signUpModalCloseBtn {
+  position: absolute;
+  right: 10px;
+  top: 20px;
+  border: none;
+  background-color: #f8f8f8;
+}
+
+.signUpModalBackground .signUpModalContainer .signUpModaltitle {
+  position: relative;
+  margin-top: 30px;
+}
+
+.signUpModalBackground .signUpModalContainer .signUpModaltitle hr {
+  width: 220px;
+}
+
+.signUpModalBackground .signUpModalContainer .signUpModaltitle img {
+  max-width: 190px;
+}
+
+.signUpModalBackground .signUpModalContainer .signUpModaltitle p {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.signUpModalBackground .signUpModalContainer .signUpModaltitle span {
+  font-size: 14px;
+}
+
+.signUpModalBackground .signUpModalContainer .signUpModaltitle span a {
+  color: #0a7cb1;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.signUpModalBackground .signUpModalContainer .signUpModalBody button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 40px;
+  line-height: 35px;
+  width: 340px;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  border: none;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 20px auto 15px;
+}
+
+.signUpModalBackground .signUpModalContainer .signUpModalBody button:nth-child(1) {
+  margin-top: 40px;
+}
+
+.signUpModalBackground .signUpModalContainer .signUpModalBody button:hover {
+  background-color: darkgrey;
+}
+
+.signUpModalBackground .signUpModalContainer .signUpModalBody button .googleIcon {
+  margin: 5px 70px 0 0;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+}
+
+.signUpModalBackground .signUpModalContainer .signUpModalBody button .facebookIcon {
+  margin: 5px 60px 0 0;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+}
+
+.signUpModalBackground .signUpModalContainer .signUpModalBody button .emailIcon {
+  margin: 10px 65px 0 5px;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+}
+
+.signUpModalBackground .signUpModalContainer .signUpModalBody button a {
+  color: black;
+}
+
+.signUpModalBackground .signUpModalContainer .signUpModalBody button a:hover {
+  text-decoration: none;
+}
+
+.signUpModalBackground_Name {
+  position: fixed;
+  margin: auto;
+  margin-top: 120px;
+  background-color: #f8f8f8;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1200;
+  width: 480px;
+  height: 410px;
+  border: none;
+  border-radius: 10px;
+  -webkit-box-shadow: 3px 3px 5px #4b4a4a;
+          box-shadow: 3px 3px 5px #4b4a4a;
+  text-align: center;
+  font-size: 16px;
+  font-family: "Noto Sans HK", 微软雅黑, "Microsoft YaHei", sans-serif;
+}
+
+.signUpModalBackground_Name .signUpModalContainer_Name .signUpModalLastBtn_Name {
+  position: absolute;
+  left: 10px;
+  top: 20px;
+  border: none;
+  background-color: #f8f8f8;
+}
+
+.signUpModalBackground_Name .signUpModalContainer_Name .signUpModaltitle_Name {
+  position: relative;
+  margin-top: 30px;
+}
+
+.signUpModalBackground_Name .signUpModalContainer_Name .signUpModaltitle_Name hr {
+  width: 220px;
+}
+
+.signUpModalBackground_Name .signUpModalContainer_Name .signUpModaltitle_Name img {
+  max-width: 190px;
+}
+
+.signUpModalBackground_Name .signUpModalContainer_Name .signUpModaltitle_Name p {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.signUpModalBackground_Name .signUpModalContainer_Name .signUpModaltitle_Name span {
+  font-size: 14px;
+}
+
+.signUpModalBackground_Name .signUpModalContainer_Name .signUpModaltitle_Name span a {
+  color: #0a7cb1;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.signUpModalBackground_Name .signUpModalContainer_Name .signUpModalBody_Name label {
+  position: relative;
+  font-weight: 500;
+  margin-right: 270px;
+  margin-bottom: 5px;
+}
+
+.signUpModalBackground_Name .signUpModalContainer_Name .signUpModalBody_Name .lastName {
+  width: 340px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px #bfbfbf solid;
+  background: #f8f8f8;
+  font-weight: 300;
+  margin-top: 5px;
+}
+
+.signUpModalBackground_Name .signUpModalContainer_Name .signUpModalBody_Name .lastName::-webkit-input-placeholder {
+  font-size: 14px;
+  font-weight: 300;
+  padding-left: 5px;
+}
+
+.signUpModalBackground_Name .signUpModalContainer_Name .signUpModalBody_Name .lastName:-ms-input-placeholder {
+  font-size: 14px;
+  font-weight: 300;
+  padding-left: 5px;
+}
+
+.signUpModalBackground_Name .signUpModalContainer_Name .signUpModalBody_Name .lastName::-ms-input-placeholder {
+  font-size: 14px;
+  font-weight: 300;
+  padding-left: 5px;
+}
+
+.signUpModalBackground_Name .signUpModalContainer_Name .signUpModalBody_Name .lastName::placeholder {
+  font-size: 14px;
+  font-weight: 300;
+  padding-left: 5px;
+}
+
+.signUpModalBackground_Name .signUpModalContainer_Name .signUpModalBody_Name .userName {
+  width: 340px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px #bfbfbf solid;
+  background: #f8f8f8;
+  font-weight: 300;
+  margin-top: 5px;
+  margin: 30px auto;
+}
+
+.signUpModalBackground_Name .signUpModalContainer_Name .signUpModalBody_Name .userName::-webkit-input-placeholder {
+  font-size: 14px;
+  font-weight: 300;
+  padding-left: 5px;
+}
+
+.signUpModalBackground_Name .signUpModalContainer_Name .signUpModalBody_Name .userName:-ms-input-placeholder {
+  font-size: 14px;
+  font-weight: 300;
+  padding-left: 5px;
+}
+
+.signUpModalBackground_Name .signUpModalContainer_Name .signUpModalBody_Name .userName::-ms-input-placeholder {
+  font-size: 14px;
+  font-weight: 300;
+  padding-left: 5px;
+}
+
+.signUpModalBackground_Name .signUpModalContainer_Name .signUpModalBody_Name .userName::placeholder {
+  font-size: 14px;
+  font-weight: 300;
+  padding-left: 5px;
+}
+
+.signUpModalBackground_Name .signUpModalContainer_Name .signUpModalBody_Name .submitBtn {
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.signUpModalBackground_Mail {
+  position: fixed;
+  margin: auto;
+  margin-top: 120px;
+  background-color: #f8f8f8;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1200;
+  width: 480px;
+  height: 410px;
+  border: none;
+  border-radius: 10px;
+  -webkit-box-shadow: 3px 3px 5px #4b4a4a;
+          box-shadow: 3px 3px 5px #4b4a4a;
+  text-align: center;
+  font-size: 16px;
+  font-family: "Noto Sans HK", 微软雅黑, "Microsoft YaHei", sans-serif;
+}
+
+.signUpModalBackground_Mail .signUpModalContainer_Mail .signUpModalLastBtn_Mail {
+  position: absolute;
+  left: 10px;
+  top: 20px;
+  border: none;
+  background-color: #f8f8f8;
+}
+
+.signUpModalBackground_Mail .signUpModalContainer_Mail .signUpModaltitle_Mail {
+  position: relative;
+  margin-top: 30px;
+}
+
+.signUpModalBackground_Mail .signUpModalContainer_Mail .signUpModaltitle_Mail hr {
+  width: 220px;
+}
+
+.signUpModalBackground_Mail .signUpModalContainer_Mail .signUpModaltitle_Mail img {
+  max-width: 190px;
+}
+
+.signUpModalBackground_Mail .signUpModalContainer_Mail .signUpModaltitle_Mail p {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.signUpModalBackground_Mail .signUpModalContainer_Mail .signUpModaltitle_Mail span {
+  font-size: 14px;
+}
+
+.signUpModalBackground_Mail .signUpModalContainer_Mail .signUpModaltitle_Mail span a {
+  color: #0a7cb1;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.signUpModalBackground_Mail .signUpModalContainer_Mail .signUpModalBody_Mail label {
+  position: relative;
+  font-weight: 500;
+  margin-right: 240px;
+  margin-bottom: 5px;
+}
+
+.signUpModalBackground_Mail .signUpModalContainer_Mail .signUpModalBody_Mail .email {
+  width: 340px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px #bfbfbf solid;
+  background: #f8f8f8;
+  font-weight: 300;
+  margin-top: 5px;
+}
+
+.signUpModalBackground_Mail .signUpModalContainer_Mail .signUpModalBody_Mail .email::-webkit-input-placeholder {
+  font-size: 14px;
+  font-weight: 300;
+  padding-left: 5px;
+}
+
+.signUpModalBackground_Mail .signUpModalContainer_Mail .signUpModalBody_Mail .email:-ms-input-placeholder {
+  font-size: 14px;
+  font-weight: 300;
+  padding-left: 5px;
+}
+
+.signUpModalBackground_Mail .signUpModalContainer_Mail .signUpModalBody_Mail .email::-ms-input-placeholder {
+  font-size: 14px;
+  font-weight: 300;
+  padding-left: 5px;
+}
+
+.signUpModalBackground_Mail .signUpModalContainer_Mail .signUpModalBody_Mail .email::placeholder {
+  font-size: 14px;
+  font-weight: 300;
+  padding-left: 5px;
+}
+
+.signUpModalBackground_Mail .signUpModalContainer_Mail .signUpModalBody_Mail .submitBtn {
+  margin-top: 100px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.signUpModalBackground_Password {
+  position: fixed;
+  margin: auto;
+  margin-top: 120px;
+  background-color: #f8f8f8;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1200;
+  width: 480px;
+  height: 410px;
+  border: none;
+  border-radius: 10px;
+  -webkit-box-shadow: 3px 3px 5px #4b4a4a;
+          box-shadow: 3px 3px 5px #4b4a4a;
+  text-align: center;
+  font-size: 16px;
+  font-family: "Noto Sans HK", 微软雅黑, "Microsoft YaHei", sans-serif;
+}
+
+.signUpModalBackground_Password .signUpModalContainer_Password .signUpModalLastBtn_Password {
+  position: absolute;
+  left: 10px;
+  top: 20px;
+  border: none;
+  background-color: #f8f8f8;
+}
+
+.signUpModalBackground_Password .signUpModalContainer_Password .signUpModaltitle_Password {
+  position: relative;
+  margin-top: 30px;
+}
+
+.signUpModalBackground_Password .signUpModalContainer_Password .signUpModaltitle_Password hr {
+  width: 220px;
+}
+
+.signUpModalBackground_Password .signUpModalContainer_Password .signUpModaltitle_Password img {
+  max-width: 190px;
+}
+
+.signUpModalBackground_Password .signUpModalContainer_Password .signUpModaltitle_Password p {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.signUpModalBackground_Password .signUpModalContainer_Password .signUpModaltitle_Password span {
+  font-size: 14px;
+}
+
+.signUpModalBackground_Password .signUpModalContainer_Password .signUpModaltitle_Password span a {
+  color: #0a7cb1;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.signUpModalBackground_Password .signUpModalContainer_Password .signUpModalBody_Password label {
+  position: relative;
+  font-weight: 500;
+  margin-right: 270px;
+  margin-bottom: 5px;
+}
+
+.signUpModalBackground_Password .signUpModalContainer_Password .signUpModalBody_Password .userPassword {
+  width: 340px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px #bfbfbf solid;
+  background: #f8f8f8;
+  font-weight: 300;
+  margin-top: 5px;
+}
+
+.signUpModalBackground_Password .signUpModalContainer_Password .signUpModalBody_Password .userPassword::-webkit-input-placeholder {
+  font-size: 14px;
+  font-weight: 300;
+  padding-left: 5px;
+}
+
+.signUpModalBackground_Password .signUpModalContainer_Password .signUpModalBody_Password .userPassword:-ms-input-placeholder {
+  font-size: 14px;
+  font-weight: 300;
+  padding-left: 5px;
+}
+
+.signUpModalBackground_Password .signUpModalContainer_Password .signUpModalBody_Password .userPassword::-ms-input-placeholder {
+  font-size: 14px;
+  font-weight: 300;
+  padding-left: 5px;
+}
+
+.signUpModalBackground_Password .signUpModalContainer_Password .signUpModalBody_Password .userPassword::placeholder {
+  font-size: 14px;
+  font-weight: 300;
+  padding-left: 5px;
+}
+
+.signUpModalBackground_Password .signUpModalContainer_Password .signUpModalBody_Password .userCheckPsw {
+  width: 340px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px #bfbfbf solid;
+  background: #f8f8f8;
+  font-weight: 300;
+  margin-top: 5px;
+  margin: 30px auto;
+}
+
+.signUpModalBackground_Password .signUpModalContainer_Password .signUpModalBody_Password .userCheckPsw::-webkit-input-placeholder {
+  font-size: 14px;
+  font-weight: 300;
+  padding-left: 5px;
+}
+
+.signUpModalBackground_Password .signUpModalContainer_Password .signUpModalBody_Password .userCheckPsw:-ms-input-placeholder {
+  font-size: 14px;
+  font-weight: 300;
+  padding-left: 5px;
+}
+
+.signUpModalBackground_Password .signUpModalContainer_Password .signUpModalBody_Password .userCheckPsw::-ms-input-placeholder {
+  font-size: 14px;
+  font-weight: 300;
+  padding-left: 5px;
+}
+
+.signUpModalBackground_Password .signUpModalContainer_Password .signUpModalBody_Password .userCheckPsw::placeholder {
+  font-size: 14px;
+  font-weight: 300;
+  padding-left: 5px;
+}
+
+.signUpModalBackground_Password .signUpModalContainer_Password .signUpModalBody_Password .submitBtn {
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.signUpModalBackground_Birthday {
+  position: fixed;
+  margin: auto;
+  margin-top: 120px;
+  background-color: #f8f8f8;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1200;
+  width: 480px;
+  height: 410px;
+  border: none;
+  border-radius: 10px;
+  -webkit-box-shadow: 3px 3px 5px #4b4a4a;
+          box-shadow: 3px 3px 5px #4b4a4a;
+  text-align: center;
+  font-size: 16px;
+  font-family: "Noto Sans HK", 微软雅黑, "Microsoft YaHei", sans-serif;
+}
+
+.signUpModalBackground_Birthday .signUpModalContainer_Birthday .signUpModalLastBtn_Birthday {
+  position: absolute;
+  left: 10px;
+  top: 20px;
+  border: none;
+  background-color: #f8f8f8;
+}
+
+.signUpModalBackground_Birthday .signUpModalContainer_Birthday .signUpModaltitle_Birthday {
+  position: relative;
+  margin-top: 30px;
+}
+
+.signUpModalBackground_Birthday .signUpModalContainer_Birthday .signUpModaltitle_Birthday hr {
+  width: 220px;
+}
+
+.signUpModalBackground_Birthday .signUpModalContainer_Birthday .signUpModaltitle_Birthday img {
+  max-width: 190px;
+}
+
+.signUpModalBackground_Birthday .signUpModalContainer_Birthday .signUpModaltitle_Birthday p {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.signUpModalBackground_Birthday .signUpModalContainer_Birthday .signUpModaltitle_Birthday span {
+  font-size: 14px;
+}
+
+.signUpModalBackground_Birthday .signUpModalContainer_Birthday .signUpModaltitle_Birthday span a {
+  color: #0a7cb1;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.signUpModalBackground_Birthday .signUpModalContainer_Birthday .signUpModalBody_Birthday label {
+  position: relative;
+  font-weight: 500;
+  margin-right: 270px;
+  margin-bottom: 5px;
+}
+
+.signUpModalBackground_Birthday .signUpModalContainer_Birthday .signUpModalBody_Birthday .email {
+  width: 340px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px #bfbfbf solid;
+  background: #f8f8f8;
+  font-weight: 300;
+  margin-top: 5px;
+}
+
+.signUpModalBackground_Birthday .signUpModalContainer_Birthday .signUpModalBody_Birthday .email::-webkit-input-placeholder {
+  font-size: 14px;
+  font-weight: 300;
+  padding-left: 5px;
+}
+
+.signUpModalBackground_Birthday .signUpModalContainer_Birthday .signUpModalBody_Birthday .email:-ms-input-placeholder {
+  font-size: 14px;
+  font-weight: 300;
+  padding-left: 5px;
+}
+
+.signUpModalBackground_Birthday .signUpModalContainer_Birthday .signUpModalBody_Birthday .email::-ms-input-placeholder {
+  font-size: 14px;
+  font-weight: 300;
+  padding-left: 5px;
+}
+
+.signUpModalBackground_Birthday .signUpModalContainer_Birthday .signUpModalBody_Birthday .email::placeholder {
+  font-size: 14px;
+  font-weight: 300;
+  padding-left: 5px;
+}
+
+.signUpModalBackground_Birthday .signUpModalContainer_Birthday .signUpModalBody_Birthday .submitBtn {
+  margin-top: 100px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.signUpModalBackground_Phone {
+  position: fixed;
+  margin: auto;
+  margin-top: 120px;
+  background-color: #f8f8f8;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1200;
+  width: 480px;
+  height: 410px;
+  border: none;
+  border-radius: 10px;
+  -webkit-box-shadow: 3px 3px 5px #4b4a4a;
+          box-shadow: 3px 3px 5px #4b4a4a;
+  text-align: center;
+  font-size: 16px;
+  font-family: "Noto Sans HK", 微软雅黑, "Microsoft YaHei", sans-serif;
+}
+
+.signUpModalBackground_Phone .signUpModalContainer_Phone .signUpModalLastBtn_Phone {
+  position: absolute;
+  left: 10px;
+  top: 20px;
+  border: none;
+  background-color: #f8f8f8;
+}
+
+.signUpModalBackground_Phone .signUpModalContainer_Phone .signUpModaltitle_Phone {
+  position: relative;
+  margin-top: 30px;
+}
+
+.signUpModalBackground_Phone .signUpModalContainer_Phone .signUpModaltitle_Phone hr {
+  width: 220px;
+}
+
+.signUpModalBackground_Phone .signUpModalContainer_Phone .signUpModaltitle_Phone img {
+  max-width: 190px;
+}
+
+.signUpModalBackground_Phone .signUpModalContainer_Phone .signUpModaltitle_Phone p {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.signUpModalBackground_Phone .signUpModalContainer_Phone .signUpModaltitle_Phone span {
+  font-size: 14px;
+}
+
+.signUpModalBackground_Phone .signUpModalContainer_Phone .signUpModaltitle_Phone span a {
+  color: #0a7cb1;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.signUpModalBackground_Phone .signUpModalContainer_Phone .signUpModalBody_Phone label {
+  position: relative;
+  font-weight: 500;
+  margin-right: 270px;
+  margin-bottom: 5px;
+}
+
+.signUpModalBackground_Phone .signUpModalContainer_Phone .signUpModalBody_Phone .phone {
+  width: 340px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px #bfbfbf solid;
+  background: #f8f8f8;
+  font-weight: 300;
+  margin-top: 5px;
+}
+
+.signUpModalBackground_Phone .signUpModalContainer_Phone .signUpModalBody_Phone .phone::-webkit-input-placeholder {
+  font-size: 14px;
+  font-weight: 300;
+  padding-left: 5px;
+}
+
+.signUpModalBackground_Phone .signUpModalContainer_Phone .signUpModalBody_Phone .phone:-ms-input-placeholder {
+  font-size: 14px;
+  font-weight: 300;
+  padding-left: 5px;
+}
+
+.signUpModalBackground_Phone .signUpModalContainer_Phone .signUpModalBody_Phone .phone::-ms-input-placeholder {
+  font-size: 14px;
+  font-weight: 300;
+  padding-left: 5px;
+}
+
+.signUpModalBackground_Phone .signUpModalContainer_Phone .signUpModalBody_Phone .phone::placeholder {
+  font-size: 14px;
+  font-weight: 300;
+  padding-left: 5px;
+}
+
+.signUpModalBackground_Phone .signUpModalContainer_Phone .signUpModalBody_Phone .submitBtn {
+  margin-top: 100px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.signUpModalBackground_Position {
+  position: fixed;
+  margin: auto;
+  margin-top: 120px;
+  background-color: #f8f8f8;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1200;
+  width: 480px;
+  height: 410px;
+  border: none;
+  border-radius: 10px;
+  -webkit-box-shadow: 3px 3px 5px #4b4a4a;
+          box-shadow: 3px 3px 5px #4b4a4a;
+  text-align: center;
+  font-size: 16px;
+  font-family: "Noto Sans HK", 微软雅黑, "Microsoft YaHei", sans-serif;
+}
+
+.signUpModalBackground_Position .signUpModalContainer_Position .signUpModalLastBtn_Position {
+  position: absolute;
+  left: 10px;
+  top: 20px;
+  border: none;
+  background-color: #f8f8f8;
+}
+
+.signUpModalBackground_Position .signUpModalContainer_Position .signUpModaltitle_Position {
+  position: relative;
+  margin-top: 30px;
+}
+
+.signUpModalBackground_Position .signUpModalContainer_Position .signUpModaltitle_Position hr {
+  width: 220px;
+}
+
+.signUpModalBackground_Position .signUpModalContainer_Position .signUpModaltitle_Position img {
+  max-width: 190px;
+}
+
+.signUpModalBackground_Position .signUpModalContainer_Position .signUpModaltitle_Position p {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.signUpModalBackground_Position .signUpModalContainer_Position .signUpModaltitle_Position span {
+  font-size: 14px;
+}
+
+.signUpModalBackground_Position .signUpModalContainer_Position .signUpModaltitle_Position span a {
+  color: #0a7cb1;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.signUpModalBackground_Position .signUpModalContainer_Position .signUpModalBody_Position label {
+  position: relative;
+  font-weight: 500;
+  margin-right: 270px;
+  margin-bottom: 5px;
+}
+
+.signUpModalBackground_Position .signUpModalContainer_Position .signUpModalBody_Position .ant-select .ant-select-selector {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 340px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px #bfbfbf solid;
+  background: #f8f8f8;
+  font-weight: 300;
+  margin-top: 5px;
+}
+
+.signUpModalBackground_Position .signUpModalContainer_Position .signUpModalBody_Position .forMemRules {
+  margin-top: 30px;
+}
+
+.signUpModalBackground_Position .signUpModalContainer_Position .signUpModalBody_Position .submitBtn {
+  margin-top: 41px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.signUpModalBackground_Interested {
+  position: fixed;
+  margin: auto;
+  margin-top: 60px;
+  background-color: #f8f8f8;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1200;
+  width: 850px;
+  height: 530px;
+  border: none;
+  border-radius: 10px;
+  -webkit-box-shadow: 3px 3px 5px #4b4a4a;
+          box-shadow: 3px 3px 5px #4b4a4a;
+  text-align: center;
+  font-size: 16px;
+  font-family: "Noto Sans HK", 微软雅黑, "Microsoft YaHei", sans-serif;
+  overflow-y: scroll;
+}
+
+.signUpModalBackground_Interested .signUpModalContainer_Interested .signUpModalLastBtn_Interested {
+  position: absolute;
+  left: 10px;
+  top: 20px;
+  border: none;
+  background-color: #f8f8f8;
+}
+
+.signUpModalBackground_Interested .signUpModalContainer_Interested .signUpModaltitle_Interested {
+  position: relative;
+  margin-top: 30px;
+}
+
+.signUpModalBackground_Interested .signUpModalContainer_Interested .signUpModaltitle_Interested hr {
+  width: 220px;
+}
+
+.signUpModalBackground_Interested .signUpModalContainer_Interested .signUpModaltitle_Interested img {
+  max-width: 190px;
+}
+
+.signUpModalBackground_Interested .signUpModalContainer_Interested .signUpModaltitle_Interested p {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.signUpModalBackground_Interested .signUpModalContainer_Interested .signUpModaltitle_Interested span {
+  font-size: 14px;
+}
+
+.signUpModalBackground_Interested .signUpModalContainer_Interested .signUpModaltitle_Interested span a {
+  color: #0a7cb1;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.signUpModalBackground_Interested .signUpModalContainer_Interested .signUpModalBody_Interested label {
+  position: relative;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.signUpModalBackground_Interested .signUpModalContainer_Interested .signUpModalBody_Interested .bigpic {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-left: 20px;
+  margin-bottom: 40px;
+}
+
+.signUpModalBackground_Interested .signUpModalContainer_Interested .signUpModalBody_Interested .bigpic input[type="checkbox"][id^="myCheckbox"] {
+  display: none;
+}
+
+.signUpModalBackground_Interested .signUpModalContainer_Interested .signUpModalBody_Interested .bigpic label {
+  border: 1px solid #f8f8f8;
+  display: block;
+  position: relative;
+  margin: 6px;
+  height: 152px;
+  width: 152px;
+  cursor: pointer;
+}
+
+.signUpModalBackground_Interested .signUpModalContainer_Interested .signUpModalBody_Interested .bigpic label span {
+  position: absolute;
+  top: 110px;
+  left: 15px;
+  font-size: 20px;
+  color: white;
+}
+
+.signUpModalBackground_Interested .signUpModalContainer_Interested .signUpModalBody_Interested .bigpic label::before {
+  background-color: white;
+  color: white;
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  border: 1px solid gray;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  line-height: 28px;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  z-index: 1300;
+}
+
+.signUpModalBackground_Interested .signUpModalContainer_Interested .signUpModalBody_Interested .bigpic label img {
+  height: 150px;
+  width: 150px;
+  border-radius: 20px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.signUpModalBackground_Interested .signUpModalContainer_Interested .signUpModalBody_Interested .bigpic label .picShadow {
+  opacity: 0;
+  position: absolute;
+  margin: auto;
+  padding-top: 1.5px;
+  width: 150px;
+  height: 150px;
+  top: 0;
+  left: 0;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.signUpModalBackground_Interested .signUpModalContainer_Interested .signUpModalBody_Interested .bigpic label .picShadow:hover {
+  opacity: 1;
+}
+
+.signUpModalBackground_Interested .signUpModalContainer_Interested .signUpModalBody_Interested .bigpic label .picShadow .picBorder {
+  opacity: 0;
+  margin: auto;
+  width: 145px;
+  height: 145px;
+  margin-top: 1px;
+  border: 3px white solid;
+  border-radius: 20px;
+}
+
+.signUpModalBackground_Interested .signUpModalContainer_Interested .signUpModalBody_Interested .bigpic label .picShadow .picBorder:hover {
+  opacity: 1;
+}
+
+.signUpModalBackground_Interested .signUpModalContainer_Interested .signUpModalBody_Interested .bigpic :checked + label:before {
+  content: "✓";
+  background-color: grey;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.signUpModalBackground_Interested .signUpModalContainer_Interested .signUpModalBody_Interested .bigpic :checked + label {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 152px;
+  height: 152px;
+}
+
+.signUpModalBackground_Interested .signUpModalContainer_Interested .signUpModalBody_Interested #lastone {
+  margin-bottom: 30px;
+}
+
+.buttonCase {
+  position: fixed;
+  z-index: 1200;
+  width: 850px;
+  margin: auto;
+  margin-top: 60px;
+  background-color: #f8f8f8;
+  top: 510px;
+  left: 0;
+  right: 0;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 16px;
+  font-family: "Noto Sans HK", 微软雅黑, "Microsoft YaHei", sans-serif;
+  background-color: #f8f8f8;
+}
+
+.buttonCase .intSubmitBtn {
+  height: 40px;
+  width: 800px;
+  border-radius: 5px;
+  background-color: #1697d5;
+  color: white;
+  border: none;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 20px auto 20px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.buttonCase .intSubmitBtn:hover {
+  background-color: #0a7cb1;
+}
+
+.signUpModalBackground_Finish {
+  position: fixed;
+  margin: auto;
+  margin-top: 120px;
+  background-color: #f8f8f8;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1200;
+  width: 480px;
+  height: 410px;
+  border: none;
+  border-radius: 10px;
+  -webkit-box-shadow: 3px 3px 5px #4b4a4a;
+          box-shadow: 3px 3px 5px #4b4a4a;
+  text-align: center;
+  font-size: 16px;
+  font-family: "Noto Sans HK", 微软雅黑, "Microsoft YaHei", sans-serif;
+}
+
+.signUpModalBackground_Finish .signUpModalContainer_Finish .signUpModalCloseBtn_Finish {
+  position: absolute;
+  right: 10px;
+  top: 20px;
+  border: none;
+  background-color: #f8f8f8;
+}
+
+.signUpModalBackground_Finish .signUpModalContainer_Finish .signUpModaltitle_Finish {
+  position: relative;
+  margin-top: 30px;
+}
+
+.signUpModalBackground_Finish .signUpModalContainer_Finish .signUpModaltitle_Finish hr {
+  width: 220px;
+}
+
+.signUpModalBackground_Finish .signUpModalContainer_Finish .signUpModaltitle_Finish img {
+  max-width: 190px;
+}
+
+.signUpModalBackground_Finish .signUpModalContainer_Finish .signUpModaltitle_Finish p {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.signUpModalBackground_Finish .signUpModalContainer_Finish .signUpModaltitle_Finish span {
+  font-size: 14px;
+}
+
+.signUpModalBackground_Finish .signUpModalContainer_Finish .signUpModaltitle_Finish span a {
+  color: #0a7cb1;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.signUpModalBackground_Finish .signUpModalContainer_Finish .signUpModalBody_Finish img {
+  width: 200px;
+  height: 200px;
+}
+
+.modalShadow {
+  position: fixed;
+  background-color: black;
+  opacity: 0.6;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1100;
+}
+/*# sourceMappingURL=Login.css.map */
