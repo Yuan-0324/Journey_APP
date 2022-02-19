@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 
-import Log_In from "./Nav/Log_In";
-import Logged_In from "./Nav/Logged_In";
-import Scrolled from "./Nav/Scrolled";
+import Log_In from "./components/Log_In";
+import Logged_In from "./components/Logged_In";
+import Scrolled from "./components/Scrolled";
+import './stylesheet/index.css';
+import './stylesheet/Login.css';
 
 const Navigation = () => {
   const [scrollPosition, setScrollPosition] = useState(0);

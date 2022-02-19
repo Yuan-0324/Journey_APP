@@ -1,20 +1,26 @@
-@import "_var.scss";
+// ----- 匯入設定樣式檔 -----
+@import '../../../../styles/var';
+// ------------------------
+
+
+
+
 @import "./activityConductRwd.scss";
 
 //TODO
 
 // 預設值
-$border: solid 1px #000 ;   
+
 $d6: #d6d6d6;
-$primarycolor: #1697d5;
-$fontcolor:#264148;
-* {
-  margin: 0;
-  padding: 0;
-  font-family: Microsoft JhengHei, sans-serif;
-  letter-spacing: 0.02em;
-  box-sizing: border-box;
-}
+
+// ----- 這段可能會把別人的樣式蓋過去喔 -----
+// * {
+//   margin: 0;
+//   padding: 0;
+//   font-family: Microsoft JhengHei, sans-serif;
+//   letter-spacing: 0.02em;
+//   box-sizing: border-box;
+// }
 
 .activityConductBody {
   color: $fontcolor;

@@ -1,19 +1,14 @@
+// ----- 匯入設定樣式檔 -----
+@import '../../../../styles/var';
+// ------------------------
+
+
 @import '../importStyle/Initialization.scss';
-// 預設值
-$border: solid 50px #000 ;   
-$d6: #0c0808;
-$primarycolor: #1697d5;
-$fontcolor:#264148;
-
-
 
 body{
-    // border: $border;
-    width: 100%;
     .wrap{
         width: 70%;
         margin: 0 auto;
-        // border: $border;
         // header
         @include Initialization;
         header{

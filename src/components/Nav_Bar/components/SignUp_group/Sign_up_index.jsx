@@ -3,7 +3,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
-import logo from '../../../images/logo.png';
+import logo from '../../../../images/logo.png';
 
 function Sign_up_index({ signUpModal, nameModal, loginModal, totalData }) {
 

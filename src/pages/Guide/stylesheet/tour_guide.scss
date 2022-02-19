@@ -1,9 +1,8 @@
-@import "../var";
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #f8f8f8;
-}
+// ----- 匯入設定樣式檔 -----
+@import "../../../styles/var";
+// ------------------------
+
+@import './guide_var';
 
 .guideContainer {
     width: 900px;

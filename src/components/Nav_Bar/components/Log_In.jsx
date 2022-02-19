@@ -16,7 +16,7 @@ import Sign_up_finish from './SignUp_group/Sign_up_finish';
 
 // ---- 更新 ---- 
 
-import logo from '../../images/sslogo.png';
+import logo from '../../../images/sslogo.png';
 
 
 

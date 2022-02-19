@@ -1,17 +1,23 @@
+// ----- 匯入設定樣式檔 -----
+@import '../../../../styles/var';
+// ------------------------
+
+
+
 @import  '../importStyle/Initialization.scss'; 
-// 預設值
-$border: solid 50px #000 ;   
-$d6: #d6d6d6;
-$primarycolor: #1697d5;
-$fontcolor:#264148;
 
 body{
-    width: 100%;
+    
     .wrap{
         width: 70%;
         margin: 0 auto;
         // 初始化
-        @include  Initialization;
+
+        // --- 嘉原的貼心小提醒 ---
+        // 這個檔案有可能會影響到其他人的樣式喔
+        // @include  Initialization;
+        
+        
         // header底
         .banner{
             // margin: 0 auto;

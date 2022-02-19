@@ -1,8 +1,10 @@
+// ---------- 設定檔 ----------
+
 $primarycolor: #1697d5;
 $fontcolor: #264148;
-
+$secondarycolor: #f08a12;
 $bgcolor: #f8f8f8;
-$fontcolor: #264148;
+
 
 $font: "Noto Sans HK", 微软雅黑, "Microsoft YaHei", sans-serif;
 
@@ -26,4 +28,19 @@ $cardShadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   color: $secondarycolor;
   padding: 8px 20px;
   border: 2px $secondarycolor solid;
+}
+
+// ------- 個頁面初始值 --------
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Microsoft JhengHei, sans-serif;
+  letter-spacing: 0.02em;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $bgcolor;
+  width: 100vw;
+  min-height: 100vh;
 }

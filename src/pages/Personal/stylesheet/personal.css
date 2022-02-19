@@ -1,20 +1,20 @@
 * {
+  margin: 0;
+  padding: 0;
+  font-family: Microsoft JhengHei, sans-serif;
+  letter-spacing: 0.02em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: Microsoft JhengHei, sans-serif;
+}
+
+body {
+  background-color: #f8f8f8;
+  width: 100vw;
+  min-height: 100vh;
 }
 
 .off {
   display: none;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #f8f8f8;
-  min-width: 100%;
-  min-height: 100vh;
-  overflow: scroll;
 }
 
 .personal-article-edit {
@@ -45,7 +45,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   margin-right: 20px;
-  border: 1px solid #58a8bd;
+  border: 1px solid #1697d5;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -76,13 +76,13 @@ body {
 }
 
 .personal-article-edit .article-edit-container > *:hover {
-  background-color: #58a8bd;
+  background-color: #1697d5;
   color: #fff;
 }
 
 .personal-article-edit .article-edit-container .article-edit-head {
   height: 45px;
-  background-color: #58a8bd;
+  background-color: #1697d5;
   color: #fff;
   border-bottom: 2px solid #fff;
 }
@@ -102,7 +102,7 @@ body {
   font-size: 20px;
   padding: 10px 0px;
   letter-spacing: 1px;
-  background-color: #58a8bd;
+  background-color: #1697d5;
   color: #fff;
 }
 
@@ -128,7 +128,7 @@ body {
   margin-left: 15px;
   margin-right: 15px;
   margin-bottom: 20px;
-  border-bottom: 1px solid #58a8bd;
+  border-bottom: 1px solid #1697d5;
   padding-bottom: 12px;
 }
 
@@ -161,19 +161,19 @@ body {
 .personal-article-edit .edit-main-container button {
   position: static;
   width: 80%;
-  border: 1px solid #58a8bd;
+  border: 1px solid #1697d5;
   margin: 15px 10%;
   background-color: #fff;
   padding: 8px 0px;
   border-radius: 10px;
-  color: #58a8bd;
+  color: #1697d5;
   letter-spacing: 1px;
   -webkit-transition: all .4s ease-in-out;
   transition: all .4s ease-in-out;
 }
 
 .personal-article-edit .edit-main-container button:hover {
-  background-color: #58a8bd;
+  background-color: #1697d5;
   color: #fff;
 }
 
@@ -356,7 +356,7 @@ body {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  border: 2px solid #58a8bd;
+  border: 2px solid #1697d5;
 }
 
 .personal-section .presonal-container .personal-categroy .personal-guide h3 {
@@ -365,7 +365,7 @@ body {
   font-size: 16px;
   font-weight: normal;
   letter-spacing: 1px;
-  color: #58a8bd;
+  color: #1697d5;
 }
 
 .personal-section .presonal-container .personal-categroy .personal-btn {
@@ -380,12 +380,12 @@ body {
   position: relative;
   letter-spacing: 1px;
   text-align: center;
-  color: #58a8bd;
+  color: #1697d5;
   background-color: #fff;
   font-size: 16px;
   -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
           box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
-  border-color: #58a8bd;
+  border-color: #1697d5;
   width: 100%;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
@@ -393,7 +393,7 @@ body {
 }
 
 .personal-section .presonal-container .personal-categroy .personal-btn div:hover {
-  background-color: #58a8bd;
+  background-color: #1697d5;
   color: #fff;
   cursor: pointer;
 }
@@ -422,9 +422,9 @@ body {
   width: 100%;
   padding: 12px 0;
   margin: 0;
-  border-bottom: 2px solid #58a8bd;
+  border-bottom: 2px solid #1697d5;
   font-weight: 400;
-  background-color: #58a8bd;
+  background-color: #1697d5;
 }
 
 .personal-section .presonal-container .personal-post {
@@ -447,7 +447,7 @@ body {
   margin-bottom: 13px;
   text-align: center;
   color: #fff;
-  background-color: #58a8bd;
+  background-color: #1697d5;
 }
 
 .personal-section .presonal-container .personal-post .article .article-post {
@@ -584,7 +584,7 @@ body {
   left: 5%;
   font-size: 18px;
   padding-bottom: 15px;
-  border-bottom: 1px solid #58a8bd;
+  border-bottom: 1px solid #1697d5;
 }
 
 .personal-section .presonal-container .personal-post .article .article-container .article-message {
@@ -603,7 +603,7 @@ body {
   border: none;
   margin-right: 8px;
   background-color: #fff;
-  color: #58a8bd;
+  color: #1697d5;
   border-radius: 10px;
   padding: 5px 7px;
   line-height: 22px;
@@ -628,10 +628,10 @@ body {
   padding: 3px 17px;
   margin-left: 10px;
   border: none;
-  background-color: #58a8bd;
+  background-color: #1697d5;
   letter-spacing: 2px;
   color: #fff;
-  border: 2px solid #58a8bd;
+  border: 2px solid #1697d5;
 }
 
 .personal-section .presonal-container .personal-post .activities .head-topic {
@@ -649,7 +649,7 @@ body {
   margin-bottom: 13px;
   text-align: center;
   color: #fff;
-  background-color: #58a8bd;
+  background-color: #1697d5;
 }
 
 .personal-section .presonal-container .personal-post .activities .my-activities {
@@ -674,7 +674,7 @@ body {
 
 .personal-section .presonal-container .personal-post .activities .my-activities .activities-pic img {
   width: 300px;
-  border-right: 2px solid #58a8bd;
+  border-right: 2px solid #1697d5;
 }
 
 .personal-section .presonal-container .personal-post .activities .my-activities .activities-content {
@@ -699,7 +699,7 @@ body {
   right: 22px;
   top: 15px;
   font-weight: 600;
-  color: #58a8bd;
+  color: #1697d5;
   margin: 0;
   font-size: 16px;
 }
@@ -741,7 +741,7 @@ body {
   margin-bottom: 13px;
   text-align: center;
   color: #fff;
-  background-color: #58a8bd;
+  background-color: #1697d5;
 }
 
 .personal-section .presonal-container .personal-post .collection .my-collection {
@@ -825,7 +825,7 @@ body {
   margin-bottom: 13px;
   text-align: center;
   color: #fff;
-  background-color: #58a8bd;
+  background-color: #1697d5;
 }
 
 .personal-section .presonal-container .personal-post .notice .notice-btns {
@@ -886,8 +886,8 @@ body {
   -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
           box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
-  border: 1px solid #58a8bd;
-  color: #58a8bd;
+  border: 1px solid #1697d5;
+  color: #1697d5;
   width: 50%;
   text-align: center;
   -webkit-transition: all .5s ease-in-out;
@@ -896,7 +896,7 @@ body {
 
 .personal-section .presonal-container .personal-post .notice .notice-btns .send-notice:hover {
   color: #fff;
-  background-color: #58a8bd;
+  background-color: #1697d5;
 }
 
 .personal-section .presonal-container .personal-post .notice .notice-send,
@@ -925,7 +925,7 @@ body {
   width: 200px;
   text-align: center;
   padding: 5px 15px;
-  background-color: #58a8bd;
+  background-color: #1697d5;
   color: #fff;
   -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
           box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
@@ -937,7 +937,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border: 1px solid #58a8bd;
+  border: 1px solid #1697d5;
   border-radius: 10px;
   padding: 15px 15px;
   -webkit-box-align: center;
@@ -977,10 +977,9 @@ body {
 .personal-section .presonal-container .personal-post .notice .notice-send .notice-send-guide .notice-send-guide-content .cancel-apply, .personal-section .presonal-container .personal-post .notice .notice-send .notice-send-guide .notice-send-guide-content .accept-apply {
   cursor: pointer;
   font-size: 20px;
-  border-radius: 10px;
-  background-color: #58a8bd;
+  background-color: #1697d5;
   padding: 8px 20px;
-  border: 2px white solid;
+  border: 1px white solid;
   color: white;
   -webkit-box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
@@ -989,11 +988,11 @@ body {
   font-size: 14px;
   height: 55px;
   padding: 0px 10px;
-  background-color: #58a8bd;
+  background-color: #1697d5;
 }
 
 .personal-section .presonal-container .personal-post .notice .notice-send .notice-send-guide .notice-send-guide-content .guide-content {
-  border-left: 1px solid #58a8bd;
+  border-left: 1px solid #1697d5;
   padding-left: 15px;
   width: 385.5px;
 }
@@ -1034,6 +1033,10 @@ body {
   left: 44.5%;
 }
 
+.personal-section .presonal-container .personal-post .notice .notice-send .notice-send-guide .notice-send-guide-content .cancel-apply {
+  border-radius: 10px;
+}
+
 .personal-section .presonal-container .personal-post .notice .notice-send .notice-send-activities .notice-send-topic {
   margin: 0;
   font-size: 20px;
@@ -1044,7 +1047,7 @@ body {
   width: 200px;
   text-align: center;
   padding: 5px 15px;
-  background-color: #58a8bd;
+  background-color: #1697d5;
   color: #fff;
   -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
           box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
@@ -1056,7 +1059,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border: 1px solid #58a8bd;
+  border: 1px solid #1697d5;
   border-radius: 10px;
   padding: 15px 15px;
   -webkit-box-align: center;
@@ -1096,10 +1099,9 @@ body {
 .personal-section .presonal-container .personal-post .notice .notice-send .notice-send-activities .notice-send-activities-content .cancel-apply, .personal-section .presonal-container .personal-post .notice .notice-send .notice-send-activities .notice-send-activities-content .accept-apply {
   cursor: pointer;
   font-size: 20px;
-  border-radius: 10px;
-  background-color: #58a8bd;
+  background-color: #1697d5;
   padding: 8px 20px;
-  border: 2px white solid;
+  border: 1px white solid;
   color: white;
   -webkit-box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
@@ -1108,11 +1110,11 @@ body {
   font-size: 14px;
   height: 55px;
   padding: 0px 10px;
-  background-color: #58a8bd;
+  background-color: #1697d5;
 }
 
 .personal-section .presonal-container .personal-post .notice .notice-send .notice-send-activities .notice-send-activities-content .activity-content {
-  border-left: 1px solid #58a8bd;
+  border-left: 1px solid #1697d5;
   padding-left: 15px;
   width: 385.5px;
 }
@@ -1153,6 +1155,10 @@ body {
   left: 44.5%;
 }
 
+.personal-section .presonal-container .personal-post .notice .notice-send .notice-send-activities .notice-send-activities-content .cancel-apply {
+  border-radius: 10px;
+}
+
 .personal-section .presonal-container .personal-post .notice .notice-send .notice-send-club .notice-send-topic {
   margin: 0;
   font-size: 20px;
@@ -1163,7 +1169,7 @@ body {
   width: 200px;
   text-align: center;
   padding: 5px 15px;
-  background-color: #58a8bd;
+  background-color: #1697d5;
   color: #fff;
   -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
           box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
@@ -1175,7 +1181,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border: 1px solid #58a8bd;
+  border: 1px solid #1697d5;
   border-radius: 10px;
   padding: 15px 15px;
   -webkit-box-align: center;
@@ -1215,10 +1221,9 @@ body {
 .personal-section .presonal-container .personal-post .notice .notice-send .notice-send-club .notice-send-club-content .cancel-apply, .personal-section .presonal-container .personal-post .notice .notice-send .notice-send-club .notice-send-club-content .accept-apply {
   cursor: pointer;
   font-size: 20px;
-  border-radius: 10px;
-  background-color: #58a8bd;
+  background-color: #1697d5;
   padding: 8px 20px;
-  border: 2px white solid;
+  border: 1px white solid;
   color: white;
   -webkit-box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
@@ -1227,11 +1232,11 @@ body {
   font-size: 14px;
   height: 55px;
   padding: 0px 10px;
-  background-color: #58a8bd;
+  background-color: #1697d5;
 }
 
 .personal-section .presonal-container .personal-post .notice .notice-send .notice-send-club .notice-send-club-content .club-content {
-  border-left: 1px solid #58a8bd;
+  border-left: 1px solid #1697d5;
   padding-left: 15px;
   width: 385.5px;
 }
@@ -1270,6 +1275,10 @@ body {
 .personal-section .presonal-container .personal-post .notice .notice-send .notice-send-club .notice-send-club-content .club-content .content-detail .notice-separate {
   position: absolute;
   left: 44.5%;
+}
+
+.personal-section .presonal-container .personal-post .notice .notice-send .notice-send-club .notice-send-club-content .cancel-apply {
+  border-radius: 10px;
 }
 
 .personal-section .presonal-container .personal-post .notice .notice-recieve {
@@ -1338,10 +1347,9 @@ body {
 .personal-section .presonal-container .personal-post .notice .notice-recieve .notice-recieve-guide .notice-recieve-guide-content .cancel-apply, .personal-section .presonal-container .personal-post .notice .notice-recieve .notice-recieve-guide .notice-recieve-guide-content .accept-apply {
   cursor: pointer;
   font-size: 20px;
-  border-radius: 10px;
-  background-color: #58a8bd;
+  background-color: #1697d5;
   padding: 8px 20px;
-  border: 2px white solid;
+  border: 1px white solid;
   color: white;
   -webkit-box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
@@ -1398,6 +1406,7 @@ body {
 .personal-section .presonal-container .personal-post .notice .notice-recieve .notice-recieve-guide .notice-recieve-guide-content .cancel-apply,
 .personal-section .presonal-container .personal-post .notice .notice-recieve .notice-recieve-guide .notice-recieve-guide-content .accept-apply {
   height: 35px;
+  border-radius: 10px;
 }
 
 .personal-section .presonal-container .personal-post .notice .notice-recieve .notice-recieve-activities .notice-recieve-topic {
@@ -1496,10 +1505,9 @@ body {
 .personal-section .presonal-container .personal-post .notice .notice-recieve .notice-recieve-activities .notice-recieve-activities-content .activities-main .activities-container .cancel-apply, .personal-section .presonal-container .personal-post .notice .notice-recieve .notice-recieve-activities .notice-recieve-activities-content .activities-main .activities-container .accept-apply {
   cursor: pointer;
   font-size: 20px;
-  border-radius: 10px;
-  background-color: #58a8bd;
+  background-color: #1697d5;
   padding: 8px 20px;
-  border: 2px white solid;
+  border: 1px white solid;
   color: white;
   -webkit-box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
@@ -1581,6 +1589,7 @@ body {
 .personal-section .presonal-container .personal-post .notice .notice-recieve .notice-recieve-activities .notice-recieve-activities-content .activities-main .activities-container .cancel-apply,
 .personal-section .presonal-container .personal-post .notice .notice-recieve .notice-recieve-activities .notice-recieve-activities-content .activities-main .activities-container .accept-apply {
   height: 35px;
+  border-radius: 10px;
 }
 
 .personal-section .presonal-container .personal-post .notice .notice-recieve .notice-recieve-club .notice-recieve-topic {
@@ -1682,10 +1691,9 @@ body {
 .personal-section .presonal-container .personal-post .notice .notice-recieve .notice-recieve-club .club-main .club-container .cancel-apply, .personal-section .presonal-container .personal-post .notice .notice-recieve .notice-recieve-club .club-main .club-container .accept-apply {
   cursor: pointer;
   font-size: 20px;
-  border-radius: 10px;
-  background-color: #58a8bd;
+  background-color: #1697d5;
   padding: 8px 20px;
-  border: 2px white solid;
+  border: 1px white solid;
   color: white;
   -webkit-box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
@@ -1767,6 +1775,7 @@ body {
 .personal-section .presonal-container .personal-post .notice .notice-recieve .notice-recieve-club .club-main .club-container .cancel-apply,
 .personal-section .presonal-container .personal-post .notice .notice-recieve .notice-recieve-club .club-main .club-container .accept-apply {
   height: 35px;
+  border-radius: 10px;
 }
 
 .personal-section .presonal-container .personal-post .review h2 {
@@ -1781,7 +1790,7 @@ body {
   margin-bottom: 13px;
   text-align: center;
   color: #fff;
-  background-color: #58a8bd;
+  background-color: #1697d5;
 }
 
 .personal-section .presonal-container .personal-post .review .my-review {
@@ -1887,10 +1896,9 @@ body {
 .personal-section .presonal-container .personal-post .review .my-review .review-form .review-form-send {
   cursor: pointer;
   font-size: 20px;
-  border-radius: 10px;
-  background-color: #58a8bd;
+  background-color: #1697d5;
   padding: 8px 20px;
-  border: 2px white solid;
+  border: 1px white solid;
   color: white;
   -webkit-box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);

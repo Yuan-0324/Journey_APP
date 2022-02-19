@@ -1,4 +1,8 @@
-@import "./var";
+// ----- 匯入設定樣式檔 -----
+@import "../../../styles/var";
+// ------------------------
+
+@import './guide_var';
 
 .nextPage {
   position: absolute;

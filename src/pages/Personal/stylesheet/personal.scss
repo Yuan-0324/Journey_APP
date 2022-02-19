@@ -1,23 +1,22 @@
-@import "./var";
+// ----- 匯入設定樣式檔 -----
+@import '../../../styles/var';
+// ------------------------
 
-* {
-    box-sizing: border-box;
-    font-family: $font;
-}
+@import './personal_var';
 
 .off {
     display: none;
 }
 
-body {
-    // overflow: hidden;
-    margin: 0;
-    padding: 0;
-    background-color: $bgcolor;
-    min-width: 100%;
-    min-height: 100vh;
-    overflow: scroll;
-}
+// body {
+//     // overflow: hidden;
+//     margin: 0;
+//     padding: 0;
+//     background-color: $bgcolor;
+//     min-width: 100%;
+//     min-height: 100vh;
+//     overflow: scroll;
+// }
 
 // ----------------------- modal Design Start -----------------------------
 
@@ -709,6 +708,9 @@ body {
                             .guide-content {
                                 @include notice-content-innerText;
                             }
+                            .cancel-apply {
+                                border-radius: 10px;
+                            }
                         }
                     }
                     // 活動送出邀約 ----------
@@ -720,6 +722,9 @@ body {
                             @include notice-content-set;
                             .activity-content {
                                 @include notice-content-innerText;
+                            }
+                            .cancel-apply {
+                                border-radius: 10px;
                             }
                         }
                     }
@@ -733,6 +738,9 @@ body {
                             @include notice-content-set;
                             .club-content {
                                 @include notice-content-innerText;
+                            }
+                            .cancel-apply {
+                                border-radius: 10px;
                             }
                         }
                     }
@@ -755,6 +763,7 @@ body {
                             .cancel-apply,
                             .accept-apply {
                                 height: 35px;
+                                border-radius: 10px;
                             }
                         }
                     }
@@ -818,6 +827,7 @@ body {
                                     .cancel-apply,
                                     .accept-apply {
                                         height: 35px;
+                                        border-radius: 10px;
                                     }
                                 }
                             }
@@ -897,6 +907,7 @@ body {
                                 .cancel-apply,
                                 .accept-apply {
                                     height: 35px;
+                                    border-radius: 10px;
                                 }
                             }
                         }

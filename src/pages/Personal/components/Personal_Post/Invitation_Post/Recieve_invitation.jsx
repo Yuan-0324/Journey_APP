@@ -152,7 +152,7 @@ const Recieve_Invitation = () => {
             {/* <!-- 收到的 社團申請 --> */}
             <div className="notice-recieve-club">
 
-                <h1 className="notice-recieve-topic">收到的活動申請</h1>
+                <h1 className="notice-recieve-topic">收到的社團申請</h1>
                 <div className="notice-recieve-club-content">
 
                     <h1 className="club-name">404退散研究社<span><i className="fas fa-caret-down"></i></span></h1>

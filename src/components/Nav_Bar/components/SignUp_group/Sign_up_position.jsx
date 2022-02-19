@@ -1,13 +1,13 @@
 import React from 'react';
 // import Axios from 'axios';
 // import logo from '../../images/logo.png';
-import arrowRight from '../../../images/arrow-right.png'
+import arrowRight from '../../../../images/arrow-right.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import { TreeSelect } from 'antd';
 import 'antd/dist/antd.css';
 
-import logo from '../../../images/logo.png';
+import logo from '../../../../images/logo.png';
 const { TreeNode } = TreeSelect;
 
 function Sign_up_position({ positionModal, phoneModal, interestedModal, setTotalData, totalData }) {

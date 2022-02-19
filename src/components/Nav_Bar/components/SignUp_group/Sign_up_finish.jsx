@@ -1,12 +1,12 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 // import logo from '../../images/logo.png';
-import finishImg from '../../../images/Success-unscreen.gif'
+import finishImg from '../../../../images/Success-unscreen.gif'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 
 
-import logo from '../../../images/logo.png';
+import logo from '../../../../images/logo.png';
 function Sign_up_finish({ finishModal }) {
     let history = useHistory();
 

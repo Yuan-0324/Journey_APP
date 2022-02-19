@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import logo from "../../images/Journeylogo.png";
+import logo from "../../../images/Journeylogo.png";
 import { Avatar } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 

@@ -764,10 +764,9 @@ form section::after {
 
 .activityConductBody #section03 .submitBtn {
   font-size: 20px;
-  border-radius: 10px;
   background-color: #1697d5;
   padding: 8px 20px;
-  border: 2px white solid;
+  border: 1px white solid;
   color: white;
   -webkit-box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
@@ -817,10 +816,9 @@ form section::after {
 
 .activityConductBody #section04 .submitBtn {
   font-size: 20px;
-  border-radius: 10px;
   background-color: #1697d5;
   padding: 8px 20px;
-  border: 2px white solid;
+  border: 1px white solid;
   color: white;
   -webkit-box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);

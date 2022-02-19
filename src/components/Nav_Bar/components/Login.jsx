@@ -14,7 +14,9 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons'
 
 // ---- 更新 ----
 
-import logo from '../../images/logo.png'
+import logo from '../../../images/logo.png';
+
+
 function Login({ loginModal, signUpModal }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');

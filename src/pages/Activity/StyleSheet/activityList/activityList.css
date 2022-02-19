@@ -1,60 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Microsoft JhengHei, sans-serif;
+  letter-spacing: 0.02em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 body {
-  width: 100%;
+  background-color: #f8f8f8;
+  width: 100vw;
+  min-height: 100vh;
 }
 
 body .wrap {
   width: 70%;
   margin: 0 auto;
-  /* HTML5 display-role reset for older browsers */
-}
-
-body .wrap html, body .wrap body, body .wrap div, body .wrap span, body .wrap applet, body .wrap object, body .wrap iframe,
-body .wrap h1, body .wrap h2, body .wrap h3, body .wrap h4, body .wrap h5, body .wrap h6, body .wrap p, body .wrap blockquote, body .wrap pre,
-body .wrap a, body .wrap abbr, body .wrap acronym, body .wrap address, body .wrap big, body .wrap cite, body .wrap code,
-body .wrap del, body .wrap dfn, body .wrap em, body .wrap img, body .wrap ins, body .wrap kbd, body .wrap q, body .wrap s, body .wrap samp,
-body .wrap small, body .wrap strike, body .wrap strong, body .wrap sub, body .wrap sup, body .wrap tt, body .wrap var,
-body .wrap b, body .wrap u, body .wrap i, body .wrap center,
-body .wrap dl, body .wrap dt, body .wrap dd, body .wrap ol, body .wrap ul, body .wrap li,
-body .wrap fieldset, body .wrap form, body .wrap label, body .wrap legend,
-body .wrap table, body .wrap caption, body .wrap tbody, body .wrap tfoot, body .wrap thead, body .wrap tr, body .wrap th, body .wrap td,
-body .wrap article, body .wrap aside, body .wrap canvas, body .wrap details, body .wrap embed,
-body .wrap figure, body .wrap figcaption, body .wrap footer, body .wrap header, body .wrap hgroup,
-body .wrap menu, body .wrap nav, body .wrap output, body .wrap ruby, body .wrap section, body .wrap summary,
-body .wrap time, body .wrap mark, body .wrap audio, body .wrap video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-
-body .wrap article, body .wrap aside, body .wrap details, body .wrap figcaption, body .wrap figure,
-body .wrap footer, body .wrap header, body .wrap hgroup, body .wrap menu, body .wrap nav, body .wrap section {
-  display: block;
-}
-
-body .wrap body {
-  line-height: 1;
-}
-
-body .wrap ol, body .wrap ul {
-  list-style: none;
-}
-
-body .wrap blockquote, body .wrap q {
-  quotes: none;
-}
-
-body .wrap blockquote:before, body .wrap blockquote:after,
-body .wrap q:before, body .wrap q:after {
-  content: '';
-  content: none;
-}
-
-body .wrap table {
-  border-collapse: collapse;
-  border-spacing: 0;
 }
 
 body .wrap .banner {

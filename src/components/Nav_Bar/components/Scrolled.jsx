@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../images/Journeylogo.png";
+import logo from "../../../images/Journeylogo.png";
 import { NavLink } from "react-router-dom";
 import { IoMdMenu } from "react-icons/io";
 
