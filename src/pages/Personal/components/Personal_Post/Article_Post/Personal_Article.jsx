@@ -1,15 +1,18 @@
 import { FaRegHeart, FaRegCommentAlt, FaRegPaperPlane, FaHeart } from 'react-icons/fa'
 import { BsThreeDots } from 'react-icons/bs';
+import { FaCaretDown } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
 
 import Edit_Article from './Edit_Article';
+import Show_Article from './Show_Article';
 
-const Personal_Article = () => {
 
+const Personal_Article = ({ article }) => {
 
     const [commentToggle, setCommentToggle] = useState(false);
     const [likeToggle, setLikeToggle] = useState(false);
     const [editPageToggle, setEditPageToggle] = useState(false);
+    const [articleToggle, setArticleToggle] = useState(false);
 
     let commentPost = (evt) => {
         setCommentToggle(!commentToggle);
@@ -18,36 +21,45 @@ const Personal_Article = () => {
     let likeCheck = () => {
         setLikeToggle(!likeToggle)
     }
+    
+    let showEditPage = () => {
+        setEditPageToggle(!editPageToggle);
+    }
+
+    let showArticlePage = () => {
+        setArticleToggle(!articleToggle)
+    }
 
     // 偵測 edit page 是否開啟
     useEffect(() => {
-        if (editPageToggle) {
+        if (editPageToggle || articleToggle) {
             document.body.style.overflow = 'hidden';
         } else {
             document.body.style.overflow = 'scroll';
         }
-    }, [editPageToggle])
+    }, [editPageToggle, articleToggle])
 
-    let editPage = () => {
-        setEditPageToggle(!editPageToggle);
-    }
 
-    return (
+    return ( 
         <>
-            {editPageToggle && <Edit_Article editPageToggle={editPageToggle} setEditPageToggle={setEditPageToggle} />}
+            {editPageToggle && <Edit_Article article={article} editPageToggle={editPageToggle} setEditPageToggle={setEditPageToggle} />}
+            {articleToggle && <Show_Article article={article} articleToggle={articleToggle} setArticleToggle={setArticleToggle} /> }
             <div className='article-container'>
                 <div className='article-title'>
-                    <img src="https://picsum.photos/id/1005/300/300" alt=""></img>
+                    <img src={ article.authorImg } alt=""></img>
                     <div className='title-content'>
-                        <h1>如何在星巴克只點一杯水</h1>
-                        <h6>2022/01/17</h6>
+                        <h1>{ article.authorName }</h1>
+                        <h6>{ article.postDate }</h6>
                     </div>
-                    <div className='title-edit' onClick={editPage}><BsThreeDots /></div>
+                    <div className='title-edit' onClick={showEditPage}><BsThreeDots /></div>
                 </div>
                 <div className="article-body">
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae perferendis molestiae
-                        obcaecati saepe ducimus pariatur officiis fugit magni ipsam neque deleniti, illo aliquam
-                        ut natus? Totam pariatur tempora eum officiis?</p>
+                    <h5>{ article.articleTitle }</h5>
+                    <p>{ article.articleContent }</p>
+                    {/* <div style={{width: '500px', height: '200px', marginBottom: '5px'}}>
+                        <img src="https://picsum.photos/id/1020/400/200" alt="" />
+                    </div> */}
+                    <div onClick={showArticlePage} className='article-see-more'><span>More<FaCaretDown /></span></div>
                 </div>
                 <div className='article-message'>
                     <div className='message-icon'>

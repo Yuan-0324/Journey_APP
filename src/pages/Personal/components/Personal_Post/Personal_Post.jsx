@@ -42,7 +42,7 @@ const Personal_Post = () => {
     return (
         <div className='personal-post'>
 
-            {/* 內容顯示，文章、辦過的活動、收藏等等的顯示，共 5 類 [ 在父元素裡 ]*/}
+            {/* 內容顯示，文章、辦過的活動、收藏等等的顯示，共 5 類 [ 在父元素裡 ] */}
 
             {currentPage}
 

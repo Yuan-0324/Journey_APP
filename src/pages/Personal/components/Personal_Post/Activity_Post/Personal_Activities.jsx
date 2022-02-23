@@ -1,17 +1,17 @@
 import { IoChatbubblesOutline, IoLocationSharp } from 'react-icons/io5';
 
-const Personal_Activity = () => {
+const Personal_Activity = ({ activity }) => {
     return (
         <div className='my-activities'>
             <div className='activities-pic'>
-                <img src="https://picsum.photos/id/145/300/230" alt=""></img>
+                <img src={ activity.evtImg } alt=""></img>
             </div>
             <div className='activities-content'>
-                <h6 className="evt-time">2022/01/11 禮拜二 晚上6:30 </h6>
-                <h4>台中錢櫃夜唱</h4>
-                <p>開超大包廂，爆點水餃跟熱炒</p>
-                <h6 className='evt-location'><IoLocationSharp /><span>台東市</span></h6>
-                <div className='evt-state'><span>活動已結束</span></div>
+                <h6 className="evt-time">{ activity.evtDate } { activity.evtDay } { activity.evtTime }</h6>
+                <h4 className='evt-name'>{ activity.evtName }</h4>
+                <p className='evt-content'>{ activity.evtContent }</p>
+                <h6 className='evt-location'><IoLocationSharp /><span>{ activity.evtLocation }</span></h6>
+                <div className='evt-state'><span>{ activity.evtState }</span></div>
             </div>
         </div>
     )

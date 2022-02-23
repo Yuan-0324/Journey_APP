@@ -1,34 +1,49 @@
-import emptyStar from '../../../../../images/empty.png';
-import shineStar from '../../../../../images/star.png';
+import { useState } from 'react';
+import { v4 } from 'uuid';
+
+import Personal_Guide from './Personal_Guide';
 
 const Guide_List = () => {
+
+    const guideData = [{
+        guideId: v4(),
+        guideName: '徐千翔',
+        guideImg: 'https://picsum.photos/id/300/300/300',
+        guideDate: '2021/10/09',
+        guideRated: false,
+    
+    }, {
+        guideId: v4(),
+        guideName: '林與諶',
+        guideImg: 'https://picsum.photos/id/123/300/300',
+        guideDate: '2021/07/30',
+        guideRated: true,
+    }, {
+        guideId: v4(),
+        guideName: '徐千翔',
+        guideImg: 'https://picsum.photos/id/400/300/300',
+        guideDate: '2021/04/01',
+        guideRated: true,
+    },{
+        guideId: v4(),
+        guideName: '羅志祥',
+        guideImg: 'https://picsum.photos/id/500/300/300',
+        guideDate: '2019/03/03',
+        guideRated: true,
+    }]
+
+    const [ guideList, setGuideList ] = useState(guideData);
+
+
+
     return (
         <div className="review">
-                    <h2>嚮導評價</h2>
-                    <div className="my-review">
-                        <div className="review-guide">
-                            <img src="https://picsum.photos/id/1074/300/300" alt=""></img>
-                            <h1>Amber</h1>
-                            <h5>2020/11/09</h5>
-                        </div>
-                        <form method="post" className='review-form'>
-                            <div className='star-rate'>
-                                <h5>嚮導評分</h5>
-                                <div id="stars0" className="review-stars">
-                                    <img src={emptyStar} alt="" />
-                                    <img src={emptyStar} alt="" />
-                                    <img src={emptyStar} alt="" />
-                                    <img src={emptyStar} alt="" />
-                                    <img src={emptyStar} alt="" />  
-                                </div>
-                                <div id="comment0" className="review-stars-score"></div>
-                            </div>
-                            <input style={{display:'none'}} id="reviewStar0" name='reviewStar' type="number"></input>
-                            <textarea name="reviewContent" maxLength="50" id=""></textarea>
-                            <input className="review-form-send" type="submit" value='送出'></input>
-                        </form>
-                    </div>
-                </div>
+            <h2>嚮導評價</h2>
+            {
+                guideList.map( guide => <Personal_Guide setGuideList={setGuideList} guideList={guideList} guide={guide} /> )
+                
+            }
+        </div>
     )
 }
 

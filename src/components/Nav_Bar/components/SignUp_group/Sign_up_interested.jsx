@@ -6,14 +6,7 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
 import logo from '../../../../images/logo.png';
 
-function Sign_up_interested({
-    interestedModal,
-    positionModal,
-    finishModal,
-    userInterested,
-    setUserInterested,
-    totalData
-}) {
+function Sign_up_interested({ interestedModal, positionModal, finishModal, totalData }) {
 
     const arrayInterested = [
         { interestedId: "myCheckbox1", interestedName: '爬山', imgURL: 'https://cdn.pixabay.com/photo/2013/10/02/23/03/dog-190056_1280.jpg' },

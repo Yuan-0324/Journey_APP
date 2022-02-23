@@ -1,11 +1,42 @@
 import React from 'react';
-// import logo from '../../images/logo.png';
+import { useHistory } from 'react-router-dom';
+import Axios from 'axios';
+//firebase
+import { GoogleAuthProvider, signInWithPopup, FacebookAuthProvider } from 'firebase/auth';
+import { auth } from '../firebase';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes, faEnvelope } from '@fortawesome/free-solid-svg-icons'
-
 import logo from '../../../../images/logo.png';
 
 function Sign_up_index({ signUpModal, nameModal, loginModal, totalData }) {
+
+    let history = useHistory();
+    //Google API註冊
+    const provider = new GoogleAuthProvider();
+    const SignInWithGoogle = () => {
+        signInWithPopup(auth, provider)
+            .then(async (result) => {
+                let myData = result._tokenResponse;
+                console.log(myData);
+                let mySignUpData = {
+                    email: myData.email,
+                    lastName: myData.lastName,
+                    firstName: myData.firstName
+                }
+                console.log(mySignUpData);
+                let myResult = await Axios.post("http://localhost:8000/api/signup", mySignUpData);
+                console.log(myResult);
+
+
+
+                // loginModal(false);
+                // history.push('/');
+
+            }).catch((error) => {
+                console.log(error);
+            })
+    }
 
     return (
 
@@ -31,7 +62,7 @@ function Sign_up_index({ signUpModal, nameModal, loginModal, totalData }) {
                     </div>
 
                     <div className='signUpModalBody'>
-                        <button>
+                        <button onClick={SignInWithGoogle}>
                             <img className='googleIcon' src="https://secure.meetupstatic.com/next/images/login/google.svg?w=48" alt="" />
                             使用Google帳號註冊
                         </button>

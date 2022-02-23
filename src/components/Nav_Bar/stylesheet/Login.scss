@@ -1,4 +1,4 @@
-@import "./var";
+@import "../../../styles/var";
 $modalColor: #f8f8f8;
 
 @mixin input {
@@ -42,6 +42,12 @@ $modalColor: #f8f8f8;
     top: 20px;
     border: none;
     background-color: $modalColor;
+}
+
+@mixin Input_Placeholder {
+    font-size: 14px;
+    font-weight: 300;
+    padding-left: 5px;
 }
 * {
     box-sizing: border-box;
@@ -114,9 +120,7 @@ $modalColor: #f8f8f8;
                 input {
                     @include input();
                     &::placeholder {
-                        font-size: 14px;
-                        font-weight: 300;
-                        padding-left: 5px;
+                        @include Input_Placeholder();
                     }
                 }
             }
@@ -313,18 +317,14 @@ $modalColor: #f8f8f8;
             .lastName {
                 @include input();
                 &::placeholder {
-                    font-size: 14px;
-                    font-weight: 300;
-                    padding-left: 5px;
+                    @include Input_Placeholder();
                 }
             }
             .userName {
                 @include input();
                 margin: 30px auto;
                 &::placeholder {
-                    font-size: 14px;
-                    font-weight: 300;
-                    padding-left: 5px;
+                    @include Input_Placeholder();
                 }
             }
             .submitBtn {
@@ -428,18 +428,14 @@ $modalColor: #f8f8f8;
             .userPassword {
                 @include input();
                 &::placeholder {
-                    font-size: 14px;
-                    font-weight: 300;
-                    padding-left: 5px;
+                    @include Input_Placeholder();
                 }
             }
             .userCheckPsw {
                 @include input();
                 margin: 30px auto;
                 &::placeholder {
-                    font-size: 14px;
-                    font-weight: 300;
-                    padding-left: 5px;
+                    @include Input_Placeholder();
                 }
             }
             .submitBtn {
@@ -490,9 +486,7 @@ $modalColor: #f8f8f8;
             .email {
                 @include input();
                 &::placeholder {
-                    font-size: 14px;
-                    font-weight: 300;
-                    padding-left: 5px;
+                    @include Input_Placeholder();
                 }
             }
             .submitBtn {
@@ -544,9 +538,7 @@ $modalColor: #f8f8f8;
             .phone {
                 @include input();
                 &::placeholder {
-                    font-size: 14px;
-                    font-weight: 300;
-                    padding-left: 5px;
+                    @include Input_Placeholder();
                 }
             }
             .submitBtn {

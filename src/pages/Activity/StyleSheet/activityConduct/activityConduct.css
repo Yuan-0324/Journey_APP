@@ -1,75 +1,21 @@
-* {
-  margin: 0;
-  padding: 0;
-  font-family: Microsoft JhengHei, sans-serif;
-  letter-spacing: 0.02em;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-body .pageHr {
-  width: 3px;
-  height: 2600px;
-  left: 251px;
-  bottom: 0;
-  position: absolute;
-  border: 1px #264148 solid;
-  background-color: #264148;
-  border-radius: 2px;
-  top: 175px;
-}
-
-body .pageTitlePoint {
-  font-size: 23px;
-}
-
-body p {
-  font-weight: bold;
-  font-size: 20px;
-}
-
-html,
-body,
-form {
-  height: 100%;
-}
-
-html section::after,
-body section::after,
-form section::after {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  font-family: Microsoft JhengHei, sans-serif;
-  letter-spacing: 0.02em;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-.activityConductBody {
-  color: #264148;
-}
-
 .activityConductBody .pageHr {
   width: 5px;
-  height: 3200px;
-  left: 300px;
+  height: 1844px;
+  left: 305.5px;
   bottom: 0;
   position: absolute;
   border: 1px #264148 solid;
   border-radius: 2px;
-  top: 230px;
+  color: #000;
+  background-color: #264148;
+  top: 170px;
+  z-index: 5;
 }
 
-.activityConductBody .pageTitlePoint {
-  font-size: 27px;
-  color: #d6d6d6;
+.activityConductBody .newPageTitlePoint {
+  font-size: 40px;
+  display: inline;
+  color: #264148;
 }
 
 .activityConductBody p {
@@ -78,8 +24,7 @@ form section::after {
 }
 
 .activityConductBody {
-  height: 721px;
-  border: solid 1px #000;
+  height: 100vh;
 }
 
 .activityConductBody section::after {
@@ -87,6 +32,11 @@ form section::after {
   bottom: 0;
   left: 0;
   width: 100%;
+}
+
+.activityConductBody {
+  background-image: url("../../../../images/main/background.png");
+  background-attachment: fixed;
 }
 
 .activityConductBody .nextPage {
@@ -98,11 +48,11 @@ form section::after {
   -webkit-transform: translate(0, -50%);
           transform: translate(0, -50%);
   color: black;
-  font: normal 600 20px/1 'Josefin Sans', sans-serif;
-  letter-spacing: .1em;
+  font: normal 600 20px/1 "Josefin Sans", sans-serif;
+  letter-spacing: 0.1em;
   text-decoration: none;
-  -webkit-transition: opacity .3s;
-  transition: opacity .3s;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
   padding-top: 70px;
   font-size: 15px;
 }
@@ -163,7 +113,8 @@ form section::after {
 .activityConductBody #section0 {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  background-color: #000;
 }
 
 .activityConductBody #section0 .section0Area .leftTitle .joinUs {
@@ -181,17 +132,6 @@ form section::after {
   left: 289px;
   top: 200px;
   color: #264148;
-}
-
-.activityConductBody #section0 .section0Area .leftTitle .page0hr {
-  width: 3px;
-  height: 330px;
-  left: 0px;
-  bottom: 0;
-  border: 1px #264148 solid;
-  background-color: #264148;
-  border-radius: 2px;
-  top: 0;
 }
 
 .activityConductBody #section0 .section0Area .section0Content {
@@ -223,16 +163,7 @@ form section::after {
 .activityConductBody #section01 {
   position: relative;
   width: 100%;
-  height: 100%;
-}
-
-.activityConductBody #section01 .section01Area .leftTitle .joinUs {
-  position: absolute;
-  font-size: 30px;
-  left: 240px;
-  top: 140px;
-  color: #264148;
-  font-weight: 600;
+  height: 100vh;
 }
 
 .activityConductBody #section01 .section01Area .leftTitle .pageTitle {
@@ -243,148 +174,107 @@ form section::after {
   color: #264148;
 }
 
-.activityConductBody #section01 .section01Area .leftTitle .page1hr {
-  display: none;
-  width: 3px;
-  top: 0;
-  bottom: 0;
-  left: 300px;
-  position: absolute;
-  border: 1px #264148 solid;
-  background-color: #264148;
-  border-radius: 2px;
-}
-
 .activityConductBody #section01 .section01Area .section01Content {
   width: 650px;
-  height: 400px;
   position: absolute;
-  top: 160px;
-  left: 430px;
+  top: 200px;
+  left: 445px;
 }
 
 .activityConductBody #section01 .section01Area .section01Content .setName {
   position: relative;
-  height: 85px;
+  height: 65px;
 }
 
 .activityConductBody #section01 .section01Area .section01Content .setName p {
   font-size: 20px;
   display: inline;
   position: absolute;
-  top: 30px;
 }
 
 .activityConductBody #section01 .section01Area .section01Content .setName input {
   font-size: 16px;
   width: 500px;
-  padding: 8px;
-  height: 40px;
   resize: none;
-  border-radius: 20px;
+  border-radius: 10px;
   border: 1px #f8f8f8 solid;
-  -webkit-box-shadow: 3px 3px 5px #858585;
-          box-shadow: 3px 3px 5px #858585;
+  -webkit-box-shadow: 1px 1px 3px #858585;
+          box-shadow: 1px 1px 3px #858585;
   position: absolute;
-  left: 120px;
-  top: 18px;
+  left: 80px;
 }
 
 .activityConductBody #section01 .section01Area .section01Content .setIntroduction {
   position: relative;
-  height: 85px;
+  height: 65px;
 }
 
 .activityConductBody #section01 .section01Area .section01Content .setIntroduction p {
   font-size: 20px;
   display: inline;
   position: absolute;
-  top: 30px;
 }
 
-.activityConductBody #section01 .section01Area .section01Content .setIntroduction textarea {
+.activityConductBody #section01 .section01Area .section01Content .setIntroduction input {
   font-size: 16px;
   width: 500px;
-  padding: 8px;
-  height: 85px;
   resize: none;
-  border-radius: 20px;
+  border-radius: 10px;
   border: 1px #f8f8f8 solid;
-  -webkit-box-shadow: 3px 3px 5px #858585;
-          box-shadow: 3px 3px 5px #858585;
+  -webkit-box-shadow: 1px 1px 3px #858585;
+          box-shadow: 1px 1px 3px #858585;
   position: absolute;
-  left: 120px;
+  left: 80px;
 }
 
 .activityConductBody #section01 .section01Area .section01Content .date {
   position: relative;
-  margin: 30px 0px;
+  margin: 0px 0px 30px 0px;
 }
 
 .activityConductBody #section01 .section01Area .section01Content .date p {
   font-size: 20px;
   display: inline;
   position: absolute;
-  top: 10px;
-}
-
-.activityConductBody #section01 .section01Area .section01Content .date .timeText {
-  margin-left: 80px;
-}
-
-.activityConductBody #section01 .section01Area .section01Content .date .timeInput {
-  display: inline;
-  margin-left: 150px;
-}
-
-.activityConductBody #section01 .section01Area .section01Content .date .timeInput input {
-  width: 150px;
 }
 
 .activityConductBody #section01 .section01Area .section01Content .date .dateInput {
-  margin-left: 115px;
+  margin-left: 80px;
 }
 
-.activityConductBody #section01 .section01Area .section01Content .date .dateInput input {
-  font-size: 16px;
-  width: 165px;
-  padding: 8px;
-  height: 40px;
-  resize: none;
-  border-radius: 20px;
-  border: 1px #f8f8f8 solid;
-  -webkit-box-shadow: 3px 3px 5px #858585;
-          box-shadow: 3px 3px 5px #858585;
-  margin-left: 5px;
+.activityConductBody #section01 .section01Area .section01Content .date .dateInput .ant-input-group {
+  width: 50%;
 }
 
-.activityConductBody #section01 .section01Area .section01Content .time {
-  position: relative;
-  margin: 30px 0px;
+.activityConductBody #section01 .section01Area .section01Content .date .dateInput .ant-input-group .ant-picker {
+  border-radius: 10px;
+  -webkit-box-shadow: 1px 1px 3px #858585;
+          box-shadow: 1px 1px 3px #858585;
 }
 
-.activityConductBody #section01 .section01Area .section01Content .time p {
-  font-size: 20px;
-  display: inline;
+.activityConductBody #section01 .section01Area .section01Content .timeText {
+  left: 300px;
   position: absolute;
-  top: 10px;
+  top: 0;
 }
 
-.activityConductBody #section01 .section01Area .section01Content .time .timeInput {
-  margin-left: 115px;
+.activityConductBody #section01 .section01Area .section01Content .timeInput {
+  display: inline;
+  margin-left: 90px;
+  position: absolute;
+  left: 290px;
+  top: 0px;
 }
 
-.activityConductBody #section01 .section01Area .section01Content .time .timeInput input {
-  font-size: 16px;
-  width: 120px;
-  padding: 8px;
-  height: 40px;
-  resize: none;
-  border-radius: 20px;
-  border: 1px #f8f8f8 solid;
-  -webkit-box-shadow: 3px 3px 5px #858585;
-          box-shadow: 3px 3px 5px #858585;
-  margin-left: 5px;
+.activityConductBody #section01 .section01Area .section01Content .timeInput input {
+  width: 192px;
+}
+
+.activityConductBody #section01 .section01Area .section01Content .timeInput .ant-input {
+  border-radius: 10px;
+  -webkit-box-shadow: 1px 1px 3px #858585;
+          box-shadow: 1px 1px 3px #858585;
+  width: 200px;
 }
 
 .activityConductBody #section01 .section01Area .section01Content .location {
@@ -396,24 +286,20 @@ form section::after {
   font-size: 20px;
   display: inline;
   position: absolute;
-  top: 10px;
 }
 
 .activityConductBody #section01 .section01Area .section01Content .location .locationInput {
-  margin-left: 115px;
+  margin-left: 80px;
 }
 
 .activityConductBody #section01 .section01Area .section01Content .location .locationInput input {
   font-size: 16px;
   width: 500px;
-  padding: 8px;
-  height: 40px;
   resize: none;
-  border-radius: 20px;
+  border-radius: 10px;
   border: 1px #f8f8f8 solid;
-  -webkit-box-shadow: 3px 3px 5px #858585;
-          box-shadow: 3px 3px 5px #858585;
-  margin-left: 5px;
+  -webkit-box-shadow: 1px 1px 3px #858585;
+          box-shadow: 1px 1px 3px #858585;
 }
 
 .activityConductBody #section01 .section01Area .section01Content .acceptNum {
@@ -424,42 +310,41 @@ form section::after {
 .activityConductBody #section01 .section01Area .section01Content .acceptNum p {
   font-size: 20px;
   display: inline;
-  top: 10px;
 }
 
 .activityConductBody #section01 .section01Area .section01Content .acceptNum span {
   position: absolute;
-  left: 120px;
+  left: 80px;
 }
 
-.activityConductBody #section01 .section01Area .section01Content .acceptNum span #quantity {
+.activityConductBody #section01 .section01Area .section01Content .acceptNum span #people {
   width: 50px;
   border: none;
   text-align: center;
   height: 30px;
-  font-size: 16px;
-  -webkit-box-shadow: 3px 3px 5px #858585;
-          box-shadow: 3px 3px 5px #858585;
-  border-radius: 20px;
-  margin-right: 25px;
+  font-size: 18px;
+  margin-right: 20px;
+  background: none;
+  border-bottom: 1px #264148 solid;
 }
 
 .activityConductBody #section01 .section01Area .section01Content .acceptNum span .numBtn {
-  font-size: 16px;
+  background-color: #fff;
+  font-size: 17px;
   border-radius: 10px;
   padding: 2px 5px;
   width: 25px;
   text-align: center;
   border: 1px #f8f8f8 solid;
-  -webkit-box-shadow: 1px 1px 3px #858585;
-          box-shadow: 1px 1px 3px #858585;
+  -webkit-box-shadow: 1px 1px 3px #c7c7c7;
+          box-shadow: 1px 1px 3px #c7c7c7;
   margin-right: 20px;
   cursor: pointer;
 }
 
 .activityConductBody #section01 .section01Area .section01Content .acceptNum span .numBtn:hover {
-  -webkit-box-shadow: 3px 3px 5px #858585;
-          box-shadow: 3px 3px 5px #858585;
+  -webkit-box-shadow: 3px 3px 5px #c7c7c7;
+          box-shadow: 3px 3px 5px #c7c7c7;
 }
 
 .activityConductBody #section01 .section01Area .section01Content .place {
@@ -475,7 +360,7 @@ form section::after {
 
 .activityConductBody #section01 .section01Area .section01Content .place span {
   position: absolute;
-  left: 120px;
+  left: 80px;
   font-size: 20px;
 }
 
@@ -495,7 +380,7 @@ form section::after {
 
 .activityConductBody #section01 .section01Area .section01Content .transportation span {
   position: absolute;
-  left: 120px;
+  left: 80px;
   font-size: 20px;
 }
 
@@ -503,124 +388,29 @@ form section::after {
   margin-right: 20px;
 }
 
-.activityConductBody #section01 .section01Area .section01Content .uploadImg {
-  margin-top: 30px;
-  position: relative;
-}
-
-.activityConductBody #section01 .section01Area .section01Content .uploadImg p {
-  font-size: 20px;
-  display: inline;
-}
-
-.activityConductBody #section01 .section01Area .section01Content .uploadImg div {
-  position: absolute;
-  display: inline;
-}
-
-.activityConductBody #section01 .section01Area .section01Content .uploadImg div #select {
-  background-color: #1697d5;
-  color: #fff;
-  border: 1px solid #1697d5;
-  border-radius: 5px;
-  font-weight: 400;
-  padding: 3px;
-  cursor: pointer;
-  margin-left: 40px;
-  font-size: 16px;
-}
-
-.activityConductBody #section01 .section01Area .section01Content .uploadImg div p {
-  font-size: 16px;
-  margin-left: 20px;
-  line-height: 20px;
-}
-
-.activityConductBody #section01 .section01Area .section01Content .uploadImg div #file_input {
-  display: none;
-}
-
-.activityConductBody #section01 .section01Area .section01Content .uploadImg div #append {
-  width: 533px;
-  height: 150px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 20px 0 0 37px;
-  overflow: hidden;
-}
-
-.activityConductBody #section01 .section01Area .section01Content .uploadImg div #append .float {
-  position: relative;
-  width: 112px;
-  height: 112px;
-  overflow: hidden;
-  border: 1px solid #a7a7a7;
-  border-radius: 10px;
-  padding: 5px;
-  margin-right: 18px;
-}
-
-.activityConductBody #section01 .section01Area .section01Content .uploadImg div #append .float .delete {
-  width: 100px;
-  height: 112px;
-  position: absolute;
-  text-align: center;
-  line-height: 100px;
-  z-index: 10;
-  font-size: 16px;
-  background-color: rgba(255, 255, 255, 0.8);
-  color: #575757;
-  opacity: 0;
-  -webkit-transition-duration: 0.7s;
-          transition-duration: 0.7s;
-}
-
-.activityConductBody #section01 .section01Area .section01Content .uploadImg div #append .float .delete:hover {
-  cursor: pointer;
-  opacity: 1;
-}
-
-.activityConductBody #section01 .section01Area .section01Content .uploadImg div #append .float .result {
-  width: 100px;
-  height: 100px;
-  text-align: center;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
 .activityConductBody #section02 {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  background-image: url("../../../../images/main/background.png");
+  background-attachment: fixed;
 }
 
 .activityConductBody #section02 .section02Area .leftTitle .pageTitle {
   position: absolute;
   font-size: 25px;
   left: 289px;
-  top: 140px;
+  top: 20px;
   color: #264148;
 }
 
-.activityConductBody #section02 .section02Area .leftTitle .page2hr {
-  display: none;
-  width: 3px;
-  top: 0;
-  bottom: 0;
-  left: 300px;
-  position: absolute;
-  border: 1px #264148 solid;
-  background-color: #264148;
-  border-radius: 2px;
-}
-
 .activityConductBody #section02 .section02Area .section02Content {
+  border-radius: 20px;
   width: 650px;
   height: 400px;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.5);
   position: absolute;
-  top: 200px;
+  top: 180px;
   left: 450px;
 }
 
@@ -630,16 +420,18 @@ form section::after {
 }
 
 .activityConductBody #section02 .section02Area .section02Content .uploadImg p {
-  font-size: 20px;
+  font-size: 24px;
   display: inline;
+  font-weight: bold;
 }
 
-.activityConductBody #section02 .section02Area .section02Content .uploadImg div {
+.activityConductBody #section02 .section02Area .section02Content .uploadImg .uploadImgButton {
   position: absolute;
+  top: -90px;
   display: inline;
 }
 
-.activityConductBody #section02 .section02Area .section02Content .uploadImg div #select {
+.activityConductBody #section02 .section02Area .section02Content .uploadImg .uploadImgButton #select {
   background-color: #1697d5;
   color: #fff;
   border: 1px solid #1697d5;
@@ -651,10 +443,8 @@ form section::after {
   font-size: 16px;
 }
 
-.activityConductBody #section02 .section02Area .section02Content .uploadImg div p {
-  font-size: 16px;
-  margin-left: 20px;
-  line-height: 20px;
+.activityConductBody #section02 .section02Area .section02Content .uploadImg .uploadImgButton p {
+  font-size: 20px;
 }
 
 .activityConductBody #section02 .section02Area .section02Content .uploadImg div #file_input {
@@ -714,51 +504,87 @@ form section::after {
   position: relative;
   width: 100%;
   height: 100%;
+  background-image: url("../../../../images/main/background.png");
+  background-attachment: fixed;
 }
 
 .activityConductBody #section03 .section03Area .leftTitle .pageTitle {
   position: absolute;
   font-size: 25px;
   left: 289px;
-  top: 140px;
+  top: 20px;
   color: #264148;
 }
 
-.activityConductBody #section03 .section03Area .leftTitle .page3hr {
-  display: none;
-  width: 3px;
-  top: 0;
-  height: 650px;
-  left: 300px;
+.activityConductBody #section03 .section03Area .activitySetContent p {
   position: absolute;
-  border: 1px #264148 solid;
-  background-color: #264148;
-  border-radius: 2px;
+  top: 80px;
+  left: 450px;
+  font-size: 20px;
 }
 
-.activityConductBody #section03 .section03Area .section03Content {
-  width: 700px;
-  height: 380px;
-  background-color: blanchedalmond;
+.activityConductBody #section03 .section03Area .activitySetContent .activitySetContentTextarea {
+  width: 650px;
+  height: 200px;
+  font-size: 18px;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
   position: absolute;
-  top: 210px;
-  left: 400px;
+  top: 125px;
+  left: 450px;
   border: none;
 }
 
-.activityConductBody #section03 .section03Area .section03Content textarea::-webkit-input-placeholder {
+.activityConductBody #section03 .section03Area .activitySetContent .activitySetContentTextarea textarea::-webkit-input-placeholder {
   font-size: 3em;
 }
 
-.activityConductBody #section03 .section03Area .section03Content textarea:-ms-input-placeholder {
+.activityConductBody #section03 .section03Area .activitySetContent .activitySetContentTextarea textarea:-ms-input-placeholder {
   font-size: 3em;
 }
 
-.activityConductBody #section03 .section03Area .section03Content textarea::-ms-input-placeholder {
+.activityConductBody #section03 .section03Area .activitySetContent .activitySetContentTextarea textarea::-ms-input-placeholder {
   font-size: 3em;
 }
 
-.activityConductBody #section03 .section03Area .section03Content textarea::placeholder {
+.activityConductBody #section03 .section03Area .activitySetContent .activitySetContentTextarea textarea::placeholder {
+  font-size: 3em;
+}
+
+.activityConductBody #section03 .section03Area .activitySetNotice p {
+  position: absolute;
+  top: 340px;
+  left: 450px;
+  font-size: 20px;
+}
+
+.activityConductBody #section03 .section03Area .activitySetNotice .activitySetNoticeTextarea {
+  width: 650px;
+  height: 200px;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 15px;
+  position: absolute;
+  border-radius: 20px;
+  font-size: 18px;
+  top: 385px;
+  left: 450px;
+  border: none;
+}
+
+.activityConductBody #section03 .section03Area .activitySetNotice .activitySetNoticeTextarea textarea::-webkit-input-placeholder {
+  font-size: 3em;
+}
+
+.activityConductBody #section03 .section03Area .activitySetNotice .activitySetNoticeTextarea textarea:-ms-input-placeholder {
+  font-size: 3em;
+}
+
+.activityConductBody #section03 .section03Area .activitySetNotice .activitySetNoticeTextarea textarea::-ms-input-placeholder {
+  font-size: 3em;
+}
+
+.activityConductBody #section03 .section03Area .activitySetNotice .activitySetNoticeTextarea textarea::placeholder {
   font-size: 3em;
 }
 
@@ -771,38 +597,28 @@ form section::after {
   -webkit-box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
   position: absolute;
-  bottom: 40px;
-  left: 75%;
+  left: 80%;
+  bottom: 180px;
 }
 
 .activityConductBody #section04 {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  background-image: url("../../../../images/main/background.png");
+  background-attachment: fixed;
 }
 
 .activityConductBody #section04 .section04Area .leftTitle .pageTitle {
   position: absolute;
   font-size: 24px;
   left: 289px;
-  top: 140px;
+  top: 80px;
   color: #264148;
 }
 
-.activityConductBody #section04 .section04Area .leftTitle .pageTitle .pageTitlePoint {
-  font-size: 27px;
-}
-
-.activityConductBody #section04 .section04Area .leftTitle .page4hr {
-  display: none;
-  width: 3px;
-  top: -100px;
-  height: 700px;
-  left: 300px;
-  position: absolute;
-  border: 1px #264148 solid;
-  background-color: #264148;
-  border-radius: 2px;
+.activityConductBody #section04 .section04Area .leftTitle .pageTitle .newPageTitlePoint {
+  font-size: 40px;
 }
 
 .activityConductBody #section04 .section04Area .section04Content {
@@ -812,6 +628,11 @@ form section::after {
   position: absolute;
   top: 210px;
   left: 400px;
+  border: none;
+  border-radius: 10px;
+  -webkit-box-shadow: 3px 3px 5px #85858593;
+          box-shadow: 3px 3px 5px #85858593;
+  padding: 20px;
 }
 
 .activityConductBody #section04 .submitBtn {
@@ -823,524 +644,7 @@ form section::after {
   -webkit-box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
   position: absolute;
-  bottom: 40px;
+  margin-bottom: 50px;
   left: 75%;
-}
-
-@media (max-width: 1281px) {
-  .activityConductBody body .activityConductBody .pageHr {
-    width: 3px;
-    height: 100px;
-    left: 251px;
-    bottom: 0;
-    position: absolute;
-    border: 1px #264148 solid;
-    background-color: #264148;
-    border-radius: 2px;
-    top: 205px;
-  }
-  .activityConductBody body .activityConductBody .pageTitlePoint {
-    font-size: 40px;
-  }
-  .activityConductBody body .activityConductBody p {
-    font-weight: bold;
-    font-size: 20px;
-  }
-  .activityConductBody body .activityConductBody .nextPage {
-    position: absolute;
-    bottom: -20px;
-    left: 50%;
-    z-index: 2;
-    display: inline-block;
-    -webkit-transform: translate(0, -50%);
-            transform: translate(0, -50%);
-    color: black;
-    font: normal 600 20px/1 "Josefin Sans", sans-serif;
-    letter-spacing: 0.1em;
-    text-decoration: none;
-    -webkit-transition: opacity 0.3s;
-    transition: opacity 0.3s;
-    padding-top: 70px;
-    font-size: 13px;
-  }
-  .activityConductBody body .activityConductBody .nextPage:hover {
-    opacity: 0.5;
-  }
-  .activityConductBody body .activityConductBody .nextPage span {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 15px;
-    height: 15px;
-    margin-left: -8px;
-    border-left: 2px solid black;
-    border-bottom: 2px solid black;
-    -webkit-transform: rotate(-45deg);
-            transform: rotate(-45deg);
-    -webkit-animation: sdb 1.5s infinite;
-            animation: sdb 1.5s infinite;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-  }
-  @-webkit-keyframes sdb {
-    0% {
-      -webkit-transform: rotate(-45deg) translate(-10px, 10px);
-              transform: rotate(-45deg) translate(-10px, 10px);
-      opacity: 0;
-    }
-    50% {
-      opacity: 1;
-    }
-    100% {
-      -webkit-transform: rotate(-45deg) translate(-30px, 30px);
-              transform: rotate(-45deg) translate(-30px, 30px);
-      opacity: 0;
-    }
-  }
-  @keyframes sdb {
-    0% {
-      -webkit-transform: rotate(-45deg) translate(-10px, 10px);
-              transform: rotate(-45deg) translate(-10px, 10px);
-      opacity: 0;
-    }
-    50% {
-      opacity: 1;
-    }
-    100% {
-      -webkit-transform: rotate(-45deg) translate(-30px, 30px);
-              transform: rotate(-45deg) translate(-30px, 30px);
-      opacity: 0;
-    }
-  }
-  .activityConductBody body .activityConductBody #section0 {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-  .activityConductBody body .activityConductBody #section0 .section0Area .leftTitle .joinUs {
-    position: absolute;
-    font-size: 27px;
-    left: 200px;
-    top: 120px;
-    color: #264148;
-    font-weight: bold;
-  }
-  .activityConductBody body .activityConductBody #section0 .section0Area .leftTitle .pageTitle {
-    position: absolute;
-    font-size: 22px;
-    left: 242px;
-    top: 170px;
-    color: #264148;
-  }
-  .activityConductBody body .activityConductBody #section0 .section0Area .section0Content {
-    width: 500px;
-    height: 375px;
-    position: absolute;
-    top: 160px;
-    left: 370px;
-  }
-  .activityConductBody body .activityConductBody #section0 .section0Area .section0Content .guideNarrative {
-    position: absolute;
-    font-size: 18px;
-    color: #264148;
-    top: 5px;
-    left: 25px;
-  }
-  .activityConductBody body .activityConductBody #section0 .section0Area .section0Content .guideNarrative p {
-    margin-bottom: 5px;
-  }
-  .activityConductBody body .activityConductBody #section0 .section0Area .section0Content .guideLvChartArea {
-    width: 80px;
-    height: 80px;
-    background-color: #d6d6d6;
-  }
-  .activityConductBody body .activityConductBody #section01 {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-  .activityConductBody body .activityConductBody #section01 .section01Area .leftTitle .pageTitle {
-    position: absolute;
-    font-size: 22px;
-    left: 242px;
-    top: 105px;
-    color: #264148;
-  }
-  .activityConductBody body .activityConductBody #section01 .section01Area .section01Content {
-    width: 700px;
-    height: 375px;
-    position: absolute;
-    top: 130px;
-    left: 370px;
-  }
-  .activityConductBody body .activityConductBody #section01 .section01Area .section01Content .setName {
-    position: relative;
-    height: 72px;
-  }
-  .activityConductBody body .activityConductBody #section01 .section01Area .section01Content .setName p {
-    font-size: 18px;
-    display: inline;
-    position: absolute;
-    top: 24px;
-  }
-  .activityConductBody body .activityConductBody #section01 .section01Area .section01Content .setName input {
-    font-size: 14px;
-    width: 500px;
-    padding: 6px;
-    height: 35x;
-    resize: none;
-    border-radius: 20px;
-    border: 1px #f8f8f8 solid;
-    -webkit-box-shadow: 3px 3px 5px #858585;
-            box-shadow: 3px 3px 5px #858585;
-    position: absolute;
-    left: 120px;
-    top: 18px;
-  }
-  .activityConductBody body .activityConductBody #section01 .section01Area .section01Content .setIntroduction {
-    position: relative;
-    height: 85px;
-  }
-  .activityConductBody body .activityConductBody #section01 .section01Area .section01Content .setIntroduction p {
-    font-size: 18px;
-    display: inline;
-    position: absolute;
-    top: 24px;
-  }
-  .activityConductBody body .activityConductBody #section01 .section01Area .section01Content .setIntroduction textarea {
-    font-size: 16px;
-    width: 500px;
-    padding: 8px;
-    height: 72px;
-    resize: none;
-    border-radius: 20px;
-    border: 1px #f8f8f8 solid;
-    -webkit-box-shadow: 3px 3px 5px #858585;
-            box-shadow: 3px 3px 5px #858585;
-    position: absolute;
-    left: 120px;
-  }
-  .activityConductBody body .activityConductBody #section01 .section01Area .section01Content .date {
-    position: relative;
-    margin: 5px 0px;
-  }
-  .activityConductBody body .activityConductBody #section01 .section01Area .section01Content .date p {
-    font-size: 18px;
-    display: inline;
-    position: absolute;
-    top: 1px;
-  }
-  .activityConductBody body .activityConductBody #section01 .section01Area .section01Content .date .timeText {
-    margin-left: 80px;
-  }
-  .activityConductBody body .activityConductBody #section01 .section01Area .section01Content .date .timeInput {
-    display: inline;
-    margin-left: 150px;
-  }
-  .activityConductBody body .activityConductBody #section01 .section01Area .section01Content .date .timeInput input {
-    width: 150px;
-  }
-  .activityConductBody body .activityConductBody #section01 .section01Area .section01Content .date .dateInput {
-    margin-left: 115px;
-  }
-  .activityConductBody body .activityConductBody #section01 .section01Area .section01Content .date .dateInput input {
-    font-size: 16px;
-    width: 165px;
-    padding: 8px;
-    height: 25px;
-    resize: none;
-    border-radius: 20px;
-    border: 1px #f8f8f8 solid;
-    -webkit-box-shadow: 3px 3px 5px #858585;
-            box-shadow: 3px 3px 5px #858585;
-    margin-left: 5px;
-  }
-  .activityConductBody body .activityConductBody #section01 .section01Area .section01Content .time {
-    position: relative;
-    margin: 30px 0px;
-  }
-  .activityConductBody body .activityConductBody #section01 .section01Area .section01Content .time p {
-    font-size: 18px;
-    display: inline;
-    position: absolute;
-    top: 10px;
-  }
-  .activityConductBody body .activityConductBody #section01 .section01Area .section01Content .time .timeInput {
-    margin-left: 115px;
-  }
-  .activityConductBody body .activityConductBody #section01 .section01Area .section01Content .time .timeInput input {
-    font-size: 16px;
-    width: 120px;
-    padding: 8px;
-    height: 40px;
-    resize: none;
-    border-radius: 20px;
-    border: 1px #f8f8f8 solid;
-    -webkit-box-shadow: 3px 3px 5px #858585;
-            box-shadow: 3px 3px 5px #858585;
-    margin-left: 5px;
-  }
-  .activityConductBody body .activityConductBody #section01 .section01Area .section01Content .location {
-    position: relative;
-    margin: 20px 0px;
-  }
-  .activityConductBody body .activityConductBody #section01 .section01Area .section01Content .location p {
-    font-size: 18px;
-    display: inline;
-    position: absolute;
-    top: 10px;
-  }
-  .activityConductBody body .activityConductBody #section01 .section01Area .section01Content .location .locationInput {
-    margin-left: 115px;
-  }
-  .activityConductBody body .activityConductBody #section01 .section01Area .section01Content .location .locationInput input {
-    font-size: 16px;
-    width: 500px;
-    padding: 8px;
-    height: 40px;
-    resize: none;
-    border-radius: 20px;
-    border: 1px #f8f8f8 solid;
-    -webkit-box-shadow: 3px 3px 5px #858585;
-            box-shadow: 3px 3px 5px #858585;
-    margin-left: 5px;
-  }
-  .activityConductBody body .activityConductBody #section01 .section01Area .section01Content .acceptNum {
-    margin: 20px 0px;
-    position: relative;
-  }
-  .activityConductBody body .activityConductBody #section01 .section01Area .section01Content .acceptNum p {
-    font-size: 18px;
-    display: inline;
-    top: 3px;
-  }
-  .activityConductBody body .activityConductBody #section01 .section01Area .section01Content .acceptNum span {
-    position: absolute;
-    left: 120px;
-  }
-  .activityConductBody body .activityConductBody #section01 .section01Area .section01Content .acceptNum span #quantity {
-    width: 50px;
-    border: none;
-    text-align: center;
-    height: 30px;
-    font-size: 16px;
-    -webkit-box-shadow: 3px 3px 5px #858585;
-            box-shadow: 3px 3px 5px #858585;
-    border-radius: 20px;
-    margin-right: 25px;
-  }
-  .activityConductBody body .activityConductBody #section01 .section01Area .section01Content .acceptNum span .numBtn {
-    font-size: 16px;
-    border-radius: 10px;
-    padding: 2px 5px;
-    width: 25px;
-    text-align: center;
-    border: 1px #f8f8f8 solid;
-    -webkit-box-shadow: 1px 1px 3px #858585;
-            box-shadow: 1px 1px 3px #858585;
-    margin-right: 20px;
-    cursor: pointer;
-  }
-  .activityConductBody body .activityConductBody #section01 .section01Area .section01Content .acceptNum span .numBtn:hover {
-    -webkit-box-shadow: 3px 3px 5px #858585;
-            box-shadow: 3px 3px 5px #858585;
-  }
-  .activityConductBody body .activityConductBody #section01 .section01Area .section01Content .place {
-    margin-top: 70px;
-    position: relative;
-  }
-  .activityConductBody body .activityConductBody #section01 .section01Area .section01Content .place p {
-    position: absolute;
-    font-size: 18px;
-    display: inline;
-  }
-  .activityConductBody body .activityConductBody #section01 .section01Area .section01Content .place span {
-    position: absolute;
-    left: 120px;
-    font-size: 18px;
-  }
-  .activityConductBody body .activityConductBody #section01 .section01Area .section01Content .place span label {
-    margin-right: 40px;
-  }
-  .activityConductBody body .activityConductBody #section01 .section01Area .section01Content .transportation {
-    margin-top: 30px;
-    position: relative;
-  }
-  .activityConductBody body .activityConductBody #section01 .section01Area .section01Content .transportation p {
-    font-size: 18px;
-    display: inline;
-  }
-  .activityConductBody body .activityConductBody #section01 .section01Area .section01Content .transportation span {
-    position: absolute;
-    left: 120px;
-    font-size: 20px;
-  }
-  .activityConductBody body .activityConductBody #section01 .section01Area .section01Content .transportation span label {
-    margin-right: 20px;
-  }
-  .activityConductBody body .activityConductBody #section02 {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-  .activityConductBody body .activityConductBody #section02 .section02Area .leftTitle .pageTitle {
-    position: absolute;
-    font-size: 22px;
-    left: 242px;
-    top: 120px;
-    color: #264148;
-  }
-  .activityConductBody body .activityConductBody #section02 .section02Area .section02Content {
-    width: 650px;
-    height: 400px;
-    background-color: #fff;
-    position: absolute;
-    top: 130px;
-    left: 370px;
-  }
-  .activityConductBody body .activityConductBody #section02 .section02Area .section02Content .uploadImg {
-    margin-top: 70px;
-    position: relative;
-  }
-  .activityConductBody body .activityConductBody #section02 .section02Area .section02Content .uploadImg p {
-    font-size: 18px;
-    display: inline;
-  }
-  .activityConductBody body .activityConductBody #section02 .section02Area .section02Content .uploadImg div {
-    position: absolute;
-    display: inline;
-  }
-  .activityConductBody body .activityConductBody #section02 .section02Area .section02Content .uploadImg div #select {
-    background-color: #1697d5;
-    color: #fff;
-    border: 1px solid #1697d5;
-    border-radius: 5px;
-    font-weight: 400;
-    padding: 3px;
-    cursor: pointer;
-    margin-left: 40px;
-    font-size: 16px;
-  }
-  .activityConductBody body .activityConductBody #section02 .section02Area .section02Content .uploadImg div p {
-    font-size: 16px;
-    margin-left: 20px;
-    line-height: 20px;
-  }
-  .activityConductBody body .activityConductBody #section02 .section02Area .section02Content .uploadImg div #file_input {
-    display: none;
-  }
-  .activityConductBody body .activityConductBody #section02 .section02Area .section02Content .uploadImg div #append {
-    width: 533px;
-    height: 150px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin: 20px 0 0 37px;
-    overflow: hidden;
-  }
-  .activityConductBody body .activityConductBody #section02 .section02Area .section02Content .uploadImg div #append .float {
-    position: relative;
-    width: 112px;
-    height: 112px;
-    overflow: hidden;
-    border: 1px solid #a7a7a7;
-    border-radius: 10px;
-    padding: 5px;
-    margin-right: 18px;
-  }
-  .activityConductBody body .activityConductBody #section02 .section02Area .section02Content .uploadImg div #append .float .delete {
-    width: 100px;
-    height: 112px;
-    position: absolute;
-    text-align: center;
-    line-height: 100px;
-    z-index: 10;
-    font-size: 16px;
-    background-color: rgba(255, 255, 255, 0.8);
-    color: #575757;
-    opacity: 0;
-    -webkit-transition-duration: 0.7s;
-            transition-duration: 0.7s;
-  }
-  .activityConductBody body .activityConductBody #section02 .section02Area .section02Content .uploadImg div #append .float .delete:hover {
-    cursor: pointer;
-    opacity: 1;
-  }
-  .activityConductBody body .activityConductBody #section02 .section02Area .section02Content .uploadImg div #append .float .result {
-    width: 100px;
-    height: 100px;
-    text-align: center;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-  }
-  .activityConductBody body .activityConductBody #section03 {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-  .activityConductBody body .activityConductBody #section03 .section03Area .leftTitle .pageTitle {
-    position: absolute;
-    font-size: 22px;
-    left: 242px;
-    top: 80px;
-    color: #264148;
-  }
-  .activityConductBody body .activityConductBody #section03 .section03Area .section03Content {
-    width: 570px;
-    height: 330px;
-    background-color: blanchedalmond;
-    position: absolute;
-    top: 140px;
-    left: 340px;
-    border: none;
-  }
-  .activityConductBody body .activityConductBody #section03 .section03Area .section03Content textarea::-webkit-input-placeholder {
-    font-size: 3em;
-  }
-  .activityConductBody body .activityConductBody #section03 .section03Area .section03Content textarea:-ms-input-placeholder {
-    font-size: 3em;
-  }
-  .activityConductBody body .activityConductBody #section03 .section03Area .section03Content textarea::-ms-input-placeholder {
-    font-size: 3em;
-  }
-  .activityConductBody body .activityConductBody #section03 .section03Area .section03Content textarea::placeholder {
-    font-size: 3em;
-  }
-  .activityConductBody body .activityConductBody #section04 {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-  .activityConductBody body .activityConductBody #section04 .section04Area .leftTitle .pageTitle {
-    position: absolute;
-    font-size: 24px;
-    left: 242px;
-    top: 70px;
-    color: #264148;
-  }
-  .activityConductBody body .activityConductBody #section04 .section04Area .leftTitle .pageTitle .pageTitlePoint {
-    font-size: 42px;
-  }
-  .activityConductBody body .activityConductBody #section04 .section04Area .section04Content {
-    width: 570px;
-    height: 330px;
-    background-color: blanchedalmond;
-    position: absolute;
-    top: 135px;
-    left: 350px;
-  }
-  .activityConductBody body .activityConductBody #section04 .submitBtn {
-    font-size: 20px;
-    border-radius: 10px;
-    background-color: #1697d5;
-    padding: 8px 20px;
-    border: 2px white solid;
-    color: white;
-    -webkit-box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
-            box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
-    position: absolute;
-    bottom: 40px;
-    left: 75%;
-  }
 }
 /*# sourceMappingURL=activityConduct.css.map */

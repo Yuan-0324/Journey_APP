@@ -1,25 +1,9 @@
-* {
-  margin: 0;
-  padding: 0;
-  font-family: Microsoft JhengHei, sans-serif;
-  letter-spacing: 0.02em;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-body {
-  background-color: #f8f8f8;
-  width: 100vw;
-  min-height: 100vh;
-}
-
-/*-------------header------------- */
-/*-------------headerEnd---------- */
 /*-------------Main--------------- */
 #mainSection {
   width: 100%;
   height: 100vh;
-  background-image: url("../../../images/main/background.png");
+  background-image: url("../../../images/Home/main/background.png");
+  background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   display: -webkit-box;
@@ -32,59 +16,62 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  position: relative;
 }
 
 #mainSection .women {
   position: absolute;
   left: 13%;
-  top: 22%;
+  bottom: 0px;
+  height: 580px;
 }
 
 #mainSection .women .compass {
   position: absolute;
-  left: -60px;
-  top: 400px;
+  left: -80px;
+  top: 420px;
 }
 
 #mainSection .women .camera {
   position: absolute;
-  left: 330px;
-  top: 10px;
+  left: 320px;
+  top: -20px;
 }
 
 #mainSection .women .plane1 {
   position: absolute;
-  left: -5px;
+  left: -30px;
   top: 360px;
 }
 
 #mainSection .women .plane2 {
   position: absolute;
-  left: 550px;
+  left: 590px;
   top: 210px;
+  z-index: 1;
 }
 
 #mainSection .women .star1 {
   position: absolute;
   left: 200px;
-  top: 40px;
+  top: -10px;
 }
 
 #mainSection .women .star2 {
   position: absolute;
   left: 180px;
-  top: 50px;
+  top: 0px;
 }
 
 #mainSection .women .track1 {
   position: absolute;
-  left: -15px;
+  left: -35px;
   top: 150px;
 }
 
 #mainSection .women .track2 {
   position: absolute;
-  left: 500px;
+  left: 540px;
   top: 130px;
   z-index: 10;
 }
@@ -104,8 +91,20 @@ body {
       -ms-flex-align: center;
           align-items: center;
   position: absolute;
-  bottom: 150px;
-  right: 250px;
+  bottom: 250px;
+  right: 300px;
+}
+
+#mainSection .mainSection .splash1 {
+  position: absolute;
+  left: 280px;
+  top: 45px;
+}
+
+#mainSection .mainSection .splash2 {
+  position: absolute;
+  left: 0px;
+  top: -30px;
 }
 
 #mainSection .mainSection .explore {
@@ -125,16 +124,18 @@ body {
 #mainSection .mainSection button {
   display: inline-block;
   padding: 12px 24px;
-  border: 1px solid #1697d5;
-  border-radius: 4px;
+  border: 0px solid #1697d5;
+  border-radius: 20px;
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
   position: relative;
   overflow: hidden;
   font-size: 19px;
-  color: #1697d5;
+  background-color: #6bc1e9;
+  background-image: linear-gradient(315deg, #6bc1e9 0%, #80ced7 74%);
+  color: white;
+  text-shadow: 1px 1px #1697d5;
   z-index: 1;
-  background-color: white;
   margin-top: 20px;
 }
 
@@ -147,7 +148,6 @@ body {
   top: 100%;
   width: 140%;
   height: 180%;
-  background-color: rgba(0, 0, 0, 0.05);
   border-radius: 50%;
   display: block;
   -webkit-transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
@@ -173,22 +173,20 @@ body {
 }
 
 #mainSection .mainSection button:hover {
-  color: #ffffff;
-  border: 1px solid #1697d5;
+  color: #1697d5;
+  text-shadow: none;
+  font-weight: 500;
 }
 
 #mainSection .mainSection button:hover::before {
   top: -35%;
-  background-color: #1697d5;
-  -webkit-transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
-          transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+  background-color: white;
 }
 
 #mainSection .mainSection button:hover::after {
   top: -45%;
-  background-color: #1697d5;
-  -webkit-transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
-          transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+  background-color: #fde7f9;
+  background-image: linear-gradient(315deg, #fde7f9 0%, #aacaef 74%);
 }
 
 #searchBar {
@@ -211,7 +209,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   height: 400px;
-  background-image: url("../../../images/mainpagebgv4.png");
+  background-image: url("../../../images/Home/mainpagebgv4.png");
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -232,7 +230,6 @@ body {
   margin-top: 30px;
   background: #fff;
   border-radius: 10px;
-  padding: 0 0 0 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -248,12 +245,17 @@ body {
   border: none;
 }
 
-#searchBar .searchBar .search-container .ant-select {
+#searchBar .searchBar .search-container .selector {
+  margin: 5px;
+  border-right: 1px solid #bebdbd;
+}
+
+#searchBar .searchBar .search-container .selector .ant-select {
   border: none;
   font-size: 20px;
 }
 
-#searchBar .searchBar .search-container .ant-select .ant-select-selector {
+#searchBar .searchBar .search-container .selector .ant-select .ant-select-selector {
   height: 39px;
   border: none;
   display: -webkit-box;
@@ -264,7 +266,19 @@ body {
           align-items: center;
 }
 
-#searchBar .searchBar .search-container .ant-picker .ant-picker-input input {
+#searchBar .searchBar .search-container .selector .ant-select .ant-select-selector .ant-select-selection-placeholder {
+  color: #b4b4b4;
+}
+
+#searchBar .searchBar .search-container .datepicker {
+  margin: 5px;
+}
+
+#searchBar .searchBar .search-container .datepicker .ant-picker {
+  border-left: 5px solid black;
+}
+
+#searchBar .searchBar .search-container .datepicker .ant-picker .ant-picker-input input {
   font-size: 20px;
 }
 
@@ -380,7 +394,6 @@ body {
 #trendingEvent .test,
 .weatherCard .test {
   width: 1110px;
-  margin: auto;
 }
 
 #Recommandation .test .slick-slider .slick-list,
@@ -428,10 +441,10 @@ body {
 #trendingEvent .test .slick-slider .eventCard,
 .weatherCard .test .slick-slider .eventCard {
   overflow-x: hidden;
-  white-space: nowrap;
   border-radius: 10px;
   padding: 20px;
-  min-width: 16.3em;
+  width: 0;
+  max-width: 18.5em;
   margin-right: 20px;
   background-color: #fff;
   cursor: pointer;
@@ -457,10 +470,10 @@ body {
 #Recommandation .test .slick-slider .eventCard .eventCard__header .eventCard__icon,
 #trendingEvent .test .slick-slider .eventCard .eventCard__header .eventCard__icon,
 .weatherCard .test .slick-slider .eventCard .eventCard__header .eventCard__icon {
-  border-radius: 10px;
+  border-radius: 10px 0 0 0;
   position: absolute;
   display: block;
-  min-width: 16.3em;
+  max-width: 18.5em;
   height: 160px;
 }
 
@@ -583,6 +596,7 @@ body {
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
           box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   cursor: pointer;
+  border-radius: 25px;
 }
 
 #trendingGuide .GuideCardGroup .GuideCard .snip1336 .imgBG {
@@ -719,16 +733,25 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 1110px;
 }
 
-#weather .weatherAPI .APIweather .weatherCity {
+#weather .weatherAPI .APIweather .weatherDetails {
+  width: 1100px;
+  border-radius: 20px;
+  background-image: url("../../../images/Home/main/weather.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 20px 0;
+  padding-bottom: 20px;
+}
+
+#weather .weatherAPI .APIweather .weatherDetails .weatherCity {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -736,21 +759,31 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 0 25px 0;
 }
 
-#weather .weatherAPI .APIweather .weatherCity .chip {
-  font-size: 20px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 20px;
+#weather .weatherAPI .APIweather .weatherDetails .weatherCity .chip {
+  font-size: 16px;
+  padding: 5px 0;
+  width: 250px;
+  border: 1px solid #ffffff;
+  background-color: white;
+  color: #6bc1e9;
 }
 
-#weather .weatherAPI .APIweather .weatherDetails {
-  width: 1100px;
-  border-radius: 20px;
-  background-color: #aecad6;
-  background-image: linear-gradient(315deg, #aecad6 0%, #b8d3fe 74%);
-  padding-bottom: 30px;
+#weather .weatherAPI .APIweather .weatherDetails .weatherCity .chip:hover {
+  color: white;
+  border: 0.1px solid white;
+  background-color: #6bc1e9;
+  background-image: linear-gradient(315deg, #6bc1e9 0%, #80ced7 74%);
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
 }
 
 #weather .weatherAPI .APIweather .weatherDetails .location-box {
@@ -806,6 +839,7 @@ body {
 
 #weather .weatherAPI .APIweather .weatherDetails .location-box .currentWeather .currentDegree .currentDegreeBox p {
   margin: 10px 0;
+  font-size: 1em;
 }
 
 #weather .weatherAPI .APIweather .weatherDetails .location-box .currentWeather .currentDegree .currentDegreeBox .max,
@@ -1074,7 +1108,7 @@ body {
           flex-direction: column;
   width: 1100px;
   height: 60vh;
-  background-image: url("../../../images/gatherv3.png");
+  background-image: url("../../../images/Home/gatherv3.png");
   background-position: right;
   background-repeat: no-repeat;
 }
@@ -1150,11 +1184,13 @@ body {
   background-color: gray;
   border-radius: 30px;
   position: relative;
+  cursor: pointer;
 }
 
 #community .communityGroup .biggroup .group1 .box1 .texthide {
   display: none;
   color: white;
+  text-align: center;
   text-shadow: 2px 2px 2px 2px #000000;
 }
 
@@ -1192,6 +1228,7 @@ body {
   width: 270px;
   height: 50vh;
   position: relative;
+  cursor: pointer;
 }
 
 #community .communityGroup .biggroup .box2 .texthide {
@@ -1220,7 +1257,7 @@ body {
 
 #community .communityGroup .biggroup .box2 img:hover + .texthide {
   display: block;
-  font-size: 24px;
+  font-size: 20px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1261,6 +1298,7 @@ body {
   background-color: gray;
   border-radius: 30px;
   position: relative;
+  cursor: pointer;
 }
 
 #community .communityGroup .biggroup .group2 .group3 .box3 .texthide {
@@ -1288,7 +1326,7 @@ body {
 
 #community .communityGroup .biggroup .group2 .group3 .box3 img:hover + .texthide {
   display: block;
-  font-size: 24px;
+  font-size: 20px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1315,6 +1353,7 @@ body {
   background-color: gray;
   border-radius: 30px;
   position: relative;
+  cursor: pointer;
 }
 
 #community .communityGroup .biggroup .group2 .group4 .box4 .texthide {
@@ -1343,7 +1382,7 @@ body {
 
 #community .communityGroup .biggroup .group2 .group4 .box4 img:hover + .texthide {
   display: block;
-  font-size: 24px;
+  font-size: 20px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1367,6 +1406,7 @@ body {
           justify-content: center;
   width: 1110px;
   gap: 2rem;
+  margin-top: 10px;
 }
 
 #community .communityPost .container .card {
@@ -1479,10 +1519,116 @@ body {
 
 /*-------------MainEnd------------ */
 /*-------------Footer------------- */
-footer {
-  height: 30vh;
+#footer {
+  height: 40vh;
   width: 100%;
-  background-color: #264148;
+  background-color: #444;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#footer .footer {
+  width: 80%;
+  margin: 30px auto 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#footer .footer .followingUs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 300px;
+}
+
+#footer .footer .followingUs p {
+  font-size: 16px;
+  color: #f8f8f8;
+  margin: 0;
+  font-weight: 400;
+}
+
+#footer .footer .followingUs .followingIcon {
+  float: left;
+  font-size: 30px;
+  color: #d3cfcf;
+}
+
+#footer .footer .followingUs .followingIcon svg {
+  margin: 10px 20px 10px 0;
+}
+
+#footer .footer .AboutJourney {
+  margin: 10px 30px;
+}
+
+#footer .footer .AboutJourney p {
+  margin: 0;
+  font-size: 16px;
+  color: #d3cfcf;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 2px;
+}
+
+#footer .footer .AboutJourney .title {
+  color: #a8a8a8;
+}
+
+#footer .footer .PersonalSupport {
+  margin: 10px 30px;
+}
+
+#footer .footer .PersonalSupport .title {
+  color: #a8a8a8;
+}
+
+#footer .footer .PersonalSupport p {
+  margin: 0;
+  font-size: 16px;
+  color: #d3cfcf;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+#footer hr {
+  border-top: 5px solid white;
+}
+
+#footer .copyright {
+  text-align: center;
+  color: #f8f8f8;
+  font-weight: 300;
+  font-size: 16px;
 }
 
 /*-------------FooterEnd---------- */

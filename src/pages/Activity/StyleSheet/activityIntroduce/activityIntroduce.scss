@@ -1,88 +1,20 @@
 // ----- 匯入設定樣式檔 -----
 @import '../../../../styles/var';
 // ------------------------
-
+$border:#000 solid 1px ;
 
 @import '../importStyle/Initialization.scss';
 
-body{
+.activityIntroduceBody{
+    background-image: url("../../../../images/main/background.png" );
+    background-attachment: fixed;
     .wrap{
         width: 70%;
         margin: 0 auto;
         // header
         @include Initialization;
-        header{
-            .logo {
-                max-width: 190px;
-              }
-            nav{
-
-                margin: auto;
-                margin-top: 20px;
-                border-radius: 28px;
-                padding: 10px 20px;
-                width: 80%;
-                box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                z-index: 1000;
-                background-color: white;
-                height: 80px;
-                
-                ul {
-                  display: flex;
-                  flex-direction: row;
-                  list-style: none;
-                  align-items: center;
-                  justify-content: space-between;
-                  padding: 0 20px;
-                  margin-top: 10px;
-                  
-                  .navbar {
-                    display: flex;
-                    flex-direction: row;
-                    li {
-                      padding: 0 20px;
-                      font-size: 20px;
-                      &:nth-child(4) a {
-                        color: $primarycolor;
-                      }
-                      .navLink {
-                        text-decoration: none;
-                        color: $fontcolor;
-                        display: inline-block;
-                        position: relative;
-                        &:hover {
-                          color: $primarycolor;
-                          &::after {
-                            transform: scaleX(1);
-                            transform-origin: bottom left;
-                          }
-                        }                
-                        &::after {
-                          content: "";
-                          position: absolute;
-                          width: 100%;
-                          transform: scaleX(0);
-                          height: 1.5px;
-                          bottom: -8px;
-                          left: 0;
-                          background-color: $primarycolor;
-                          transform-origin: bottom right;
-                          transition: transform 0.4s ease-out;
-                        }
-                      }
-                    }
-                  }
-                 
-                }
-            }               
-        }
-        // header底
         h1{
-            margin-top: 150px;
+            margin-top: 120px;
             font-size: 24px;
             font-weight: bolder;
         }
@@ -91,26 +23,19 @@ body{
         }
         // 照片
         $optionDefaultColours: #ED5565,#FC6E51,#FFCE54,#2ECC71,#5D9CEC,#AC92EC;
-
         .activeImage {
            display:flex;
            flex-direction:row;
            justify-content:center;
            align-items:center;
            overflow:hidden;
-           height:100vh;
-           
+           height:70vh;
            font-family: 'Roboto', sans-serif;
            transition:.25s;
-        //    @include dark {
-        //       background: #232223;
-        //       color:white;
-        //    }
            .credit {
               position: absolute;
               bottom:20px;
               left:20px;
-              
               color:inherit;
            }
            .options {
@@ -118,21 +43,18 @@ body{
               flex-direction:row;
               align-items:stretch;
               overflow:hidden;
-        
               min-width:600px;
-              max-width:900px;
+              max-width:1200px;
               width:calc(100% - 100px);
-              
               height:400px;
-              
-            //   @for $i from 1 through 4 {
-            //      @media screen and (max-width:(798px - $i*80)) {
-            //         min-width:600px - $i*80;
-            //         .option:nth-child(#{6-$i}) {
-            //            display:none;
-            //         }
-            //      }
-            //   }
+              @for $i from 1 through 4 {
+                 @media screen and (max-width:(798px - $i*80)) {
+                    min-width:600px - $i*80;
+                    .option:nth-child(#{6-$i}) {
+                       display:none;
+                    }
+                 }
+              }
               .imgHiking{
                   background-image: url('../../../../images/background/hiking.jpg');
               }
@@ -215,20 +137,20 @@ body{
         
                     height:40px;
                     transition:.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
-                    .icon {
-                       display:flex;
-                       flex-direction:row;
-                       justify-content:center;
-                       align-items:center;
+                    // .icon {
+                    //    display:flex;
+                    //    flex-direction:row;
+                    //    justify-content:center;
+                    //    align-items:center;
                        
-                       min-width:40px;
-                       max-width:40px;
-                       height:40px;
-                       border-radius:100%;
+                    //    min-width:40px;
+                    //    max-width:40px;
+                    //    height:40px;
+                    //    border-radius:100%;
         
-                       background-color:white;
-                       color:var(--defaultBackground);
-                    }
+                    //    background-color:white;
+                    //    color:var(--defaultBackground);
+                    // }
                     .info {
                        display:flex;
                        flex-direction:column;

@@ -1,0 +1,665 @@
+// ----- 匯入設定樣式檔 -----
+@import "../../../styles/var";
+// ------------------------
+
+.guideJoin {
+  color: $fontcolor;
+  .bgImg {
+    position: fixed;
+    z-index: -1000;
+    height: 100vh;
+    width: 100%;
+  }
+
+  .nextPage {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    z-index: 2;
+    display: inline-block;
+    transform: translate(0, -50%);
+    color: $fontcolor;
+    font: normal 600 20px/1 "Josefin Sans", sans-serif;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    transition: opacity 0.3s;
+    padding-top: 70px;
+    font-size: 15px;
+    &:hover {
+      opacity: 0.6;
+      color: $fontcolor;
+      text-decoration: none;
+    }
+    span {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 15px;
+      height: 15px;
+      margin-left: -8px;
+      border-left: 2px solid $fontcolor;
+      border-bottom: 2px solid $fontcolor;
+      transform: rotate(-45deg);
+      animation: sdb 1.5s infinite;
+      @keyframes sdb {
+        0% {
+          transform: rotate(-45deg) translate(-20px, 20px);
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          transform: rotate(-45deg) translate(-30px, 30px);
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  .guidePagehr {
+    position: absolute;
+    width: 2px;
+    height: 363vh;
+    border: 1px $fontcolor solid;
+    background-color: $fontcolor;
+    border-radius: 2px;
+    left: 295px;
+    top: 190px;
+  }
+
+  #section0 {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    .section0Area {
+      .leftTitle {
+        .joinUs {
+          position: absolute;
+          font-size: 30px;
+          left: 240px;
+          top: 130px;
+          color: $fontcolor;
+          font-weight: 600;
+        }
+        .pageTitle {
+          position: absolute;
+          font-size: 25px;
+          left: 285px;
+          top: 185px;
+          color: $fontcolor;
+        }
+      }
+      .section0Content {
+        width: 650px;
+        height: 450px;
+        position: absolute;
+        top: 190px;
+        left: 450px;
+        .guideNarrative {
+          position: absolute;
+          font-size: 22px;
+          color: $fontcolor;
+          top: 5px;
+          left: 25px;
+          p {
+            margin-bottom: 5px;
+            font-weight: bold;
+          }
+        }
+        .guideLvChartArea {
+          position: relative;
+          margin-top: 90px;
+          .guideLevelImg {
+            position: absolute;
+            width: 700px;
+            left: -20px;
+          }
+        }
+      }
+    }
+  }
+
+  #section01 {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    .section01Area {
+      .leftTitle {
+        .pageTitle {
+          position: absolute;
+          font-size: 25px;
+          left: 285px;
+          top: 90px;
+          color: $fontcolor;
+        }
+      }
+      .section01Content {
+        width: 650px;
+        height: 400px;
+        position: absolute;
+        top: 170px;
+        left: 430px;
+        .setIntroduction {
+          position: relative;
+          height: 65px;
+          p {
+            left: -1px;
+            font-size: 20px;
+            display: inline;
+            position: absolute;
+            font-weight: bold;
+          }
+          textarea {
+            font-size: 16px;
+            width: 525px;
+            padding: 8px;
+            height: 68px;
+            resize: none;
+            border-radius: 10px;
+            border: 1px $bgcolor solid;
+            box-shadow: 1px 1px 3px #d8d8d8;
+            position: absolute;
+            left: 120px;
+            background-color: rgba(255, 255, 255, 0.5);
+          }
+        }
+        .acceptNum {
+          margin-top: 30px;
+          position: relative;
+          p {
+            font-size: 20px;
+            display: inline;
+            font-weight: bold;
+          }
+          span {
+            position: absolute;
+            left: 120px;
+            #quantity {
+              width: 50px;
+              border: none;
+              text-align: center;
+              height: 30px;
+              font-size: 18px;
+              margin-right: 25px;
+              background: none;
+              border-bottom: 1px $fontcolor solid;
+            }
+            .numBtn {
+              font-size: 17px;
+              border-radius: 10px;
+              padding: 2px 5px;
+              width: 25px;
+              text-align: center;
+              border: 1px $bgcolor solid;
+              box-shadow: 1px 1px 3px #c7c7c7;
+              margin-right: 20px;
+              background-color: #ffffff;
+              font-weight: 600;
+              cursor: pointer;
+              &:hover {
+                box-shadow: 3px 3px 5px #c7c7c7;
+              }
+            }
+          }
+        }
+        .acceptGender {
+          margin-top: 20px;
+          position: relative;
+          p {
+            font-size: 20px;
+            display: inline;
+            font-weight: bold;
+          }
+          span {
+            position: absolute;
+            left: 120px;
+            font-size: 20px;
+            label {
+              margin-right: 40px;
+            }
+          }
+        }
+        .transportation {
+          margin-top: 20px;
+          position: relative;
+          p {
+            font-size: 20px;
+            display: inline;
+            font-weight: bold;
+          }
+          span {
+            position: absolute;
+            left: 120px;
+            font-size: 20px;
+            label {
+              margin-right: 20px;
+            }
+          }
+        }
+        .uploadImg {
+          margin-top: 20px;
+          position: relative;
+          p {
+            font-size: 20px;
+            display: inline;
+            font-weight: bold;
+          }
+          div {
+            position: absolute;
+            display: inline;
+            #select {
+              background-color: $primarycolor;
+              color: #fff;
+              border: 1px solid $primarycolor;
+              border-radius: 5px;
+              font-weight: 400;
+              padding: 3px;
+              cursor: pointer;
+              margin-left: 40px;
+              font-size: 16px;
+              box-shadow: 1px 1px 3px #858585;
+              &:hover {
+                box-shadow: 2px 2px 3px #858585;
+              }
+            }
+
+            p {
+              font-size: 16px;
+              margin-left: 20px;
+              font-weight: normal;
+            }
+
+            #file_input {
+              display: none;
+            }
+
+            #append {
+              border-radius: 10px;
+              width: 525px;
+              height: 140px;
+              display: flex;
+              margin: 20px 0 0 38px;
+              border: 1px #858585 dashed;
+              .float {
+                position: relative;
+                width: 112px;
+                height: 112px;
+                overflow: hidden;
+                border: 1px solid #a7a7a7;
+                border-radius: 10px;
+                padding: 5px;
+                margin: 10px 9px;
+                box-shadow: 2px 2px 3px #85858593;
+                .delete {
+                  width: 100px;
+                  height: 112px;
+                  position: absolute;
+                  text-align: center;
+                  line-height: 100px;
+                  z-index: 10;
+                  font-size: 16px;
+                  background-color: rgba(255, 255, 255, 0.8);
+                  color: rgb(87, 87, 87);
+                  opacity: 0;
+                  transition-duration: 0.7s;
+                  &:hover {
+                    cursor: pointer;
+                    opacity: 1;
+                  }
+                }
+
+                .result {
+                  width: 100px;
+                  height: 100px;
+                  text-align: center;
+                  box-sizing: border-box;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #section02 {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    .section02Area {
+      .leftTitle {
+        .pageTitle {
+          position: absolute;
+          font-size: 25px;
+          left: 285px;
+          top: 90px;
+          color: $fontcolor;
+        }
+      }
+      .section02Content {
+        width: 650px;
+        height: 400px;
+        position: absolute;
+        top: 170px;
+        left: 430px;
+        .setCity {
+          position: relative;
+          p {
+            font-size: 20px;
+            display: inline-flex;
+            font-weight: bold;
+          }
+          .guideCityInput {
+            position: absolute;
+            left: 115px;
+            top: -5px;
+            font-size: 20px;
+          }
+          .ant-select-selector {
+            border-radius: 5px;
+            .ant-select-selection-placeholder {
+              font-size: 20px;
+              color: rgb(116, 116, 116);
+              margin-left: -5px;
+            }
+          }
+          .anticon-down {
+            svg {
+              width: 15px;
+              height: 15px;
+              color: rgb(110, 110, 110);
+            }
+          }
+        }
+        .recommendPlace {
+          margin-top: 20px;
+          position: relative;
+          p {
+            font-size: 20px;
+            display: inline;
+            font-weight: bold;
+          }
+          #placeInput {
+            position: absolute;
+            left: 115px;
+            font-size: 20px;
+            border: none;
+            box-shadow: 1px 1px 3px #8585858f;
+            border-radius: 5px;
+            padding: 3px 0 3px 8px;
+            margin-top: -2px;
+            width: 220px;
+          }
+          .placeBtn {
+            position: absolute;
+            left: 360px;
+            background-color: $primarycolor;
+            color: #fff;
+            border: 1px solid $primarycolor;
+            border-radius: 5px;
+            font-weight: 400;
+            padding: 3px;
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 1px 1px 3px #858585;
+            &:hover {
+              box-shadow: 2px 2px 3px #858585;
+            }
+          }
+          span {
+            font-size: 16px;
+            margin-left: 335px;
+            font-weight: normal;
+          }
+          #placeInputContainer {
+            position: absolute;
+            left: 77px;
+            border-radius: 10px;
+            width: 525px;
+            height: 110px;
+            margin: 25px 0 0 37px;
+            border: 1px #858585 dashed;
+            padding: 10px;
+            span {
+              margin: 0px 20px 10px 0;
+              padding: 0 10px 0 13px;
+              border-radius: 12px;
+              display: inline-block;
+              background-color: rgba(255, 255, 255, 0.7);
+              box-shadow: 1px 1px 3px #858585;
+              .placeContent {
+                border: none;
+                cursor: default;
+                color: $fontcolor;
+                font-size: 20px;
+                text-align: center;
+                overflow: visible;
+                background: none;
+                font-weight: 550;
+              }
+              .placeDelete {
+                font-size: 22px;
+                cursor: pointer;
+                margin-left: 10px;
+                margin-bottom: 5px;
+                border: none;
+                background-color: transparent;
+                color: $fontcolor;
+              }
+            }
+          }
+        }
+        .recommendRestaurant {
+          margin-top: 170px;
+          position: relative;
+          p {
+            font-size: 20px;
+            display: inline;
+            font-weight: bold;
+          }
+          #restaurantInput {
+            position: absolute;
+            left: 115px;
+            font-size: 20px;
+            border: none;
+            box-shadow: 1px 1px 3px #8585858f;
+            border-radius: 5px;
+            padding: 3px 0 3px 8px;
+            margin-top: -2px;
+            width: 220px;
+          }
+          .restaurantBtn {
+            position: absolute;
+            left: 360px;
+            background-color: $primarycolor;
+            color: #fff;
+            border: 1px solid $primarycolor;
+            border-radius: 5px;
+            font-weight: 400;
+            padding: 3px;
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 1px 1px 3px #858585;
+            &:hover {
+              box-shadow: 2px 2px 3px #858585;
+            }
+          }
+          span {
+            font-size: 16px;
+            margin-left: 335px;
+            font-weight: normal;
+          }
+          #restaurantInputContainer {
+            position: absolute;
+            left: 77px;
+            border-radius: 10px;
+            width: 525px;
+            height: 110px;
+            margin: 25px 0 0 37px;
+            border: 1px #858585 dashed;
+            padding: 10px;
+            span {
+              margin: 0px 20px 10px 0;
+              padding: 0 10px 0 13px;
+              border-radius: 12px;
+              display: inline-block;
+              background-color: rgba(255, 255, 255, 0.7);
+              .restaurantContent {
+                border: none;
+                cursor: default;
+                color: $fontcolor;
+                font-size: 20px;
+                text-align: center;
+                overflow: visible;
+                background: none;
+                font-weight: 550;
+              }
+              .restaurantDelete {
+                font-size: 22px;
+                cursor: pointer;
+                margin-left: 10px;
+                margin-bottom: 5px;
+                border: none;
+                background-color: transparent;
+                color: $fontcolor;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #section03 {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    .section03Area {
+      .leftTitle {
+        .pageTitle {
+          position: absolute;
+          font-size: 25px;
+          left: 285px;
+          top: 100px;
+          color: $fontcolor;
+          .choiceDate {
+            font-size: 20px;
+            margin-left: 10px;
+          }
+        }
+      }
+      .section03Content {
+        width: 700px;
+        height: 440px;
+        position: absolute;
+        top: 190px;
+        left: 400px;
+        border-radius: 10px;
+        box-shadow: 2px 2px 5px #c0c0c093;
+        padding: 20px;
+        background-color: #ffffff7a;
+        #calendarBig {
+          div > div.fc-view-harness.fc-view-harness-active > div > table {
+            border: none;
+            td {
+              border: none;
+            }
+            thead > tr > th {
+              border: none;
+              th {
+                border: none;
+              }
+              td {
+                border: none;
+              }
+            }
+          }
+          .fc-daygrid-day-bg > div > div {
+            border-radius: 50%;
+          }
+          #fc-dom-2 {
+            font-size: 26px;
+            font-weight: 600;
+            color: $fontcolor;
+          }
+          .fc-daygrid-day-events {
+            display: none;
+          }
+          .fc-header-toolbar.fc-toolbar.fc-toolbar-ltr {
+            width: 93%;
+            margin: 5px auto 20px;
+            div:nth-child(1) > button {
+              font-size: 17px;
+              height: 30px;
+              padding: 3px 8px;
+              border: none;
+              font-weight: 600;
+              background-color: #6bc1e9;
+              background-image: linear-gradient(315deg, #6bc1e9 0%, #80ced7 74%);
+              &:hover {
+                box-shadow: 2px 2px 3px #85858593;
+              }
+            }
+          }
+          .fc-daygrid-day-bg > div > div {
+            margin: 5% 20%;
+          }
+          .fc-daygrid-day-top {
+            margin-top: 5px;
+            .fc-daygrid-day-number {
+              color: $fontcolor;
+              font-size: 18px;
+              font-weight: 600;
+              margin: 8px auto;
+            }
+          }
+          .fc-col-header-cell-cushion {
+            color: $fontcolor;
+            cursor: default;
+            font-size: 18px;
+            &:hover {
+              text-decoration: none;
+            }
+          }
+          .fc-next-button,
+          .fc-prev-button {
+            height: 35px;
+            width: 35px;
+          }
+
+          .fc-prev-button.fc-button.fc-button-primary {
+            margin-right: 15px;
+            position: relative;
+            border-radius: 10px 0 0 10px;
+            width: 35px;
+            span {
+              position: absolute;
+              top: 3px;
+              left: 4px;
+              color: white;
+            }
+          }
+          .fc-next-button.fc-button.fc-button-primary {
+            position: relative;
+            border-radius: 0 10px 10px 0;
+            width: 35px;
+            span {
+              position: absolute;
+              top: 3px;
+              left: 4px;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+
+    .submitBtn {
+      @include mainBtn;
+      position: absolute;
+      bottom: 80px;
+      left: 75%;
+    }
+  }
+}

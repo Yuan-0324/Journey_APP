@@ -1,22 +1,22 @@
 import React from 'react';
-// import Axios from 'axios';
-// import logo from '../../images/logo.png';
+import Axios from 'axios';
+import logo from '../../../../images/logo.png';
 import arrowRight from '../../../../images/arrow-right.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import { TreeSelect } from 'antd';
 import 'antd/dist/antd.css';
 
-import logo from '../../../../images/logo.png';
 const { TreeNode } = TreeSelect;
 
 function Sign_up_position({ positionModal, phoneModal, interestedModal, setTotalData, totalData }) {
 
     async function signUpFunc() {
-        // let result = await Axios.post("http://localhost:8000/member/signup", totalData);
+        let result = await Axios.post("http://localhost:8000/member/signup", totalData);
         positionModal(false)
         interestedModal(true)
-        console.log(totalData);
+        // console.log(totalData);
+        console.log(result);
     }
 
     return (
@@ -45,7 +45,8 @@ function Sign_up_position({ positionModal, phoneModal, interestedModal, setTotal
                             showSearch
                             style={{ width: '340px', height: '50px', lineHeight: '37px' }}
                             dropdownStyle={{ maxHeight: 400, overflow: 'auto', zIndex: 1300 }}
-                            placeholder="Please select"
+                            placeholder="請選擇居住地"
+                            defaultValue='台北'
                             allowClear
                             treeDefaultExpandAll
                             onChange={function (value, label, extra) {

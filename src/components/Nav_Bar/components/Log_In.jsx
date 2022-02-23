@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-// import logo from '../images/sslogo.png';
+import logo from '../../../images/logo.png';
 import Login from './Login';
+
 
 // Component
 import Sign_up_index from './SignUp_group/Sign_up_index';
@@ -16,10 +17,6 @@ import Sign_up_finish from './SignUp_group/Sign_up_finish';
 
 // ---- 更新 ---- 
 
-import logo from '../../../images/sslogo.png';
-
-
-
 function Navigation() {
   //{/* Modal Hook */}
   const [openLoginModal, setOpenLoginModal] = useState(false);
@@ -33,6 +30,7 @@ function Navigation() {
   const [interested, setInterested] = useState(false);
   const [finish, setFinish] = useState(false)
 
+
   //{/* Data Hook */}
   const [userConfirmPassword, setUserConfirmPassword] = useState('');
   const [totalData, setTotalData] = useState({
@@ -40,10 +38,91 @@ function Navigation() {
     password: '',
     lastName: '',
     firstName: '',
-    place: '',
-    birthday: '',
-    phone: ''
+    place: ''
+    // birthday: '',
+    // phone: ''
   });
+
+  useEffect(() => {
+    if (openLoginModal) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'scroll';
+    }
+  }, [openLoginModal])
+
+  useEffect(() => {
+    if (signIndex) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'scroll';
+    }
+  }, [signIndex])
+
+  useEffect(() => {
+    if (name) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'scroll';
+    }
+  }, [name])
+
+  useEffect(() => {
+    if (email) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'scroll';
+    }
+  }, [email])
+
+  useEffect(() => {
+    if (password) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'scroll';
+    }
+  }, [password])
+
+  useEffect(() => {
+    if (birthday) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'scroll';
+    }
+  }, [birthday])
+
+  useEffect(() => {
+    if (phone) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'scroll';
+    }
+  }, [phone])
+
+  useEffect(() => {
+    if (position) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'scroll';
+    }
+  }, [position])
+
+  useEffect(() => {
+    if (interested) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'scroll';
+    }
+  }, [interested])
+
+  useEffect(() => {
+    if (finish) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'scroll';
+    }
+  }, [finish])
+
 
   return (
     <>
@@ -55,19 +134,19 @@ function Navigation() {
             <div className="navbar">
 
               <li>
-                <NavLink className="navLink" to="/Event">
+                <a className="navLink" href="/Event">
                   活動
-                </NavLink>
+                </a>
               </li>
               <li>
-                <NavLink className="navLink" to="/Guide">
+                <a className="navLink" href="/Guide">
                   嚮導
-                </NavLink>
+                </a>
               </li>
               <li>
-                <NavLink className="navLink" to="/Society">
+                <a className="navLink" href="/Society">
                   社群
-                </NavLink>
+                </a>
               </li>
               <li className="navLink"> <span onClick={() => { setOpenLoginModal(true) }}>登入</span></li>
             </div>
@@ -81,6 +160,7 @@ function Navigation() {
 
         {/* signUp */}
         {signIndex && < Sign_up_index
+          openLoginModal={openLoginModal}
           loginModal={setOpenLoginModal}
           signUpModal={setSignIndex}
           nameModal={setName}

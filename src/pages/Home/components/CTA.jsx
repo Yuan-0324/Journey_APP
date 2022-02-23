@@ -5,8 +5,8 @@ import React from "react";
 
 // ---- 更新 ----
 
-import CTAevent from '../../../images/challenge.png';
-import CTAguide from '../../../images/mental-health.png';
+import CTAevent from "../../../images/Home/CTA/challenge.png";
+import CTAguide from "../../../images/Home/CTA/mental-health.png";
 
 const CTA = () => {
   return (

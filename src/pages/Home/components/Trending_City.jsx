@@ -9,12 +9,12 @@ import React from "react";
 
 // ---- 更新 ----
 
-import Taipei from "../../../images/citypics/taipei.png";
-import Chiayi from "../../../images/citypics/chiayi.jpg";
-import Tainan from "../../../images/citypics/tainan.jpg";
-import Yilan from "../../../images/citypics/yilan.jpg";
-import Pingtung from "../../../images/citypics/pingtung.jpg";
-import Taitung from "../../../images/citypics/taitung.jpg";
+import Taipei from "../../../images/Home/citypics/taipei.png";
+import Chiayi from "../../../images/Home/citypics/chiayi.jpg";
+import Tainan from "../../../images/Home/citypics/tainan.jpg";
+import Yilan from "../../../images/Home/citypics/yilan.jpg";
+import Pingtung from "../../../images/Home/citypics/pingtung.jpg";
+import Taitung from "../../../images/Home/citypics/taitung.jpg";
 
 const Trending_City = () => {
   return (

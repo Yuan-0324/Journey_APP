@@ -1,151 +1,315 @@
-* {
-  margin: 0;
-  padding: 0;
-  font-family: Microsoft JhengHei, sans-serif;
-  letter-spacing: 0.02em;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+.ActivityListBody {
+  background-image: url("../../../../images/main/background.png");
+  background-attachment: fixed;
+  margin-top: 120px;
 }
 
-body {
-  background-color: #f8f8f8;
-  width: 100vw;
-  min-height: 100vh;
-}
-
-body .wrap {
-  width: 70%;
+.ActivityListBody .wrap {
+  width: 1075px;
   margin: 0 auto;
+  /* HTML5 display-role reset for older browsers */
 }
 
-body .wrap .banner {
-  text-align: center;
-  margin-top: 50px;
-  width: 100%;
-  height: 100px;
-  /* position: fixed; */
-  border: 1px solid #000;
+.ActivityListBody .wrap .event-banner .slick-slider {
+  position: relative;
 }
 
-body .wrap .event-banner {
-  margin-top: 150px;
-  background-color: #ddd;
-  width: 100%;
-  height: 400px;
-}
-
-body .wrap .container .search {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-body .wrap .container .search .searchInput {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-body .wrap .container .search .searchInput .searchInputItem {
-  width: 150px;
-  height: 32px;
-  margin-right: 30px;
-  margin-top: 20px;
-}
-
-body .wrap .container .search button {
-  margin-right: 30px;
-  margin-top: 20px;
-  background-color: #dddddd;
-  padding: 8px 20px;
-  border: #d0d0d0;
-  border-radius: 20px;
-}
-
-body .wrap .container .search button a {
-  text-decoration: none;
-  color: #000;
-}
-
-body .wrap .container .search button :hover {
-  color: blue;
-}
-
-body .wrap .container .search ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-body .wrap .container .search ul li ul li button {
-  margin-right: 30px;
-  margin-top: 20px;
-  background-color: #dddddd;
-  padding: 8px 20px;
-  border: #d0d0d0;
-  border-radius: 20px;
-}
-
-body .wrap .container .search ul li ul li .advancedSearchForm {
-  position: absolute;
-  margin-top: 10px;
-}
-
-body .wrap .container .search ul li ul li .advancedSearchForm .advancedSearchFormItem {
-  margin-bottom: 5px;
-}
-
-body .wrap .container .search ul li ul li .advancedSearchForm .advancedSearchFormItem span {
-  font-weight: bold;
-}
-
-body .wrap .container #FirstList {
-  margin-top: 30px;
-}
-
-body .wrap .container .list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-top: 20px;
-}
-
-body .wrap .container .list .img {
-  width: 250px;
-}
-
-body .wrap .container .list .img img {
-  width: 250px;
+.ActivityListBody .wrap .event-banner .slick-slider .slick-list {
   border-radius: 10px;
 }
 
-body .wrap .container .list .listIntroduction {
-  padding: 10px 20px;
+.ActivityListBody .wrap .event-banner .slick-slider .slick-dots {
+  position: absolute;
+  bottom: 10px;
 }
 
-body .wrap .container .list .listIntroduction .information h1 {
-  font-size: 36px;
-  margin-bottom: 10px;
+.ActivityListBody .wrap html, .ActivityListBody .wrap body, .ActivityListBody .wrap div, .ActivityListBody .wrap span, .ActivityListBody .wrap applet, .ActivityListBody .wrap object, .ActivityListBody .wrap iframe,
+.ActivityListBody .wrap h1, .ActivityListBody .wrap h2, .ActivityListBody .wrap h3, .ActivityListBody .wrap h4, .ActivityListBody .wrap h5, .ActivityListBody .wrap h6, .ActivityListBody .wrap p, .ActivityListBody .wrap blockquote, .ActivityListBody .wrap pre,
+.ActivityListBody .wrap a, .ActivityListBody .wrap abbr, .ActivityListBody .wrap acronym, .ActivityListBody .wrap address, .ActivityListBody .wrap big, .ActivityListBody .wrap cite, .ActivityListBody .wrap code,
+.ActivityListBody .wrap del, .ActivityListBody .wrap dfn, .ActivityListBody .wrap em, .ActivityListBody .wrap img, .ActivityListBody .wrap ins, .ActivityListBody .wrap kbd, .ActivityListBody .wrap q, .ActivityListBody .wrap s, .ActivityListBody .wrap samp,
+.ActivityListBody .wrap small, .ActivityListBody .wrap strike, .ActivityListBody .wrap strong, .ActivityListBody .wrap sub, .ActivityListBody .wrap sup, .ActivityListBody .wrap tt, .ActivityListBody .wrap var,
+.ActivityListBody .wrap b, .ActivityListBody .wrap u, .ActivityListBody .wrap i, .ActivityListBody .wrap center,
+.ActivityListBody .wrap dl, .ActivityListBody .wrap dt, .ActivityListBody .wrap dd, .ActivityListBody .wrap ol, .ActivityListBody .wrap ul, .ActivityListBody .wrap li,
+.ActivityListBody .wrap fieldset, .ActivityListBody .wrap form, .ActivityListBody .wrap label, .ActivityListBody .wrap legend,
+.ActivityListBody .wrap table, .ActivityListBody .wrap caption, .ActivityListBody .wrap tbody, .ActivityListBody .wrap tfoot, .ActivityListBody .wrap thead, .ActivityListBody .wrap tr, .ActivityListBody .wrap th, .ActivityListBody .wrap td,
+.ActivityListBody .wrap article, .ActivityListBody .wrap aside, .ActivityListBody .wrap canvas, .ActivityListBody .wrap details, .ActivityListBody .wrap embed,
+.ActivityListBody .wrap figure, .ActivityListBody .wrap figcaption, .ActivityListBody .wrap footer, .ActivityListBody .wrap header, .ActivityListBody .wrap hgroup,
+.ActivityListBody .wrap menu, .ActivityListBody .wrap nav, .ActivityListBody .wrap output, .ActivityListBody .wrap ruby, .ActivityListBody .wrap section, .ActivityListBody .wrap summary,
+.ActivityListBody .wrap time, .ActivityListBody .wrap mark, .ActivityListBody .wrap audio, .ActivityListBody .wrap video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
-body .wrap .container .list .listIntroduction .information .time {
-  margin-bottom: 10px;
+.ActivityListBody .wrap article, .ActivityListBody .wrap aside, .ActivityListBody .wrap details, .ActivityListBody .wrap figcaption, .ActivityListBody .wrap figure,
+.ActivityListBody .wrap footer, .ActivityListBody .wrap header, .ActivityListBody .wrap hgroup, .ActivityListBody .wrap menu, .ActivityListBody .wrap nav, .ActivityListBody .wrap section {
+  display: block;
+}
+
+.ActivityListBody .wrap body {
+  line-height: 1;
+}
+
+.ActivityListBody .wrap ol, .ActivityListBody .wrap ul {
+  list-style: none;
+}
+
+.ActivityListBody .wrap blockquote, .ActivityListBody .wrap q {
+  quotes: none;
+}
+
+.ActivityListBody .wrap blockquote:before, .ActivityListBody .wrap blockquote:after,
+.ActivityListBody .wrap q:before, .ActivityListBody .wrap q:after {
+  content: '';
+  content: none;
+}
+
+.ActivityListBody .wrap table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.ActivityListBody .wrap .container {
+  margin-top: 30px;
+}
+
+.ActivityListBody .wrap .container .activitySearchBar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-body .wrap .container .list .listIntroduction .information .time li {
+.ActivityListBody .wrap .container .activitySearchBar .search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  width: 840px;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 15px;
+}
+
+.ActivityListBody .wrap .container .activitySearchBar .search .searchLine {
+  margin-top: 5px;
+  width: 1.5px;
+  height: 40px;
+  background: lightgrey;
+}
+
+.ActivityListBody .wrap .container .activitySearchBar .search .searchInput {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 660px;
+  height: 50px;
+}
+
+.ActivityListBody .wrap .container .activitySearchBar .search .searchInput .searchLine {
+  margin-top: 5px;
+  width: 1.5px;
+  height: 40px;
+  background: #d6d6d6;
+}
+
+.ActivityListBody .wrap .container .activitySearchBar .search .searchInput .searchInputItemRight {
+  margin-left: 10px;
+}
+
+.ActivityListBody .wrap .container .activitySearchBar .search .searchInput .searchInputItem {
+  width: 150px;
+  height: 50px;
+  border: none;
+}
+
+.ActivityListBody .wrap .container .activitySearchBar .search .searchInput .searchInputItem .ant-select-selector {
+  height: 25px;
+  line-height: 50px;
+  margin-top: 10px;
+  border: none;
+}
+
+.ActivityListBody .wrap .container .activitySearchBar .search .searchInput .searchInputItemDate {
+  width: 330px;
+  height: 50px;
+  border: none;
+  padding-right: 10px;
+}
+
+.ActivityListBody .wrap .container .activitySearchBar .search .searchInput .searchInputItemDate .ant-input {
+  border: none;
+}
+
+.ActivityListBody .wrap .container .activitySearchBar .search .searchInput .searchInputItemDate .ant-input-group {
+  border: none;
+}
+
+.ActivityListBody .wrap .container .activitySearchBar .search .searchInput .searchInputItemDate .ant-input-group .ant-picker-input {
+  border: none;
+}
+
+.ActivityListBody .wrap .container .activitySearchBar .search .searchInput .searchInputItemDate .ant-input-group .ant-picker-input input {
+  border: none;
+  line-height: 50px;
+  margin-left: 20px;
+}
+
+.ActivityListBody .wrap .container .activitySearchBar .search .searchInput .searchInputItemDate .ant-input-group .ant-input {
+  width: 60px;
+  line-height: 40px;
+}
+
+.ActivityListBody .wrap .container .activitySearchBar .search .advancedSearchOut {
+  position: absolute;
+  top: 65px;
+  display: none;
+}
+
+.ActivityListBody .wrap .container .activitySearchBar .search .advancedSearch {
+  position: relative;
+}
+
+.ActivityListBody .wrap .container .activitySearchBar .search .advancedSearch button {
+  margin-top: 5px;
+  background-color: #fff;
+  padding: 8px 20px;
+  border: none;
+  font-weight: bold;
+  color: #1890ff;
+}
+
+.ActivityListBody .wrap .container .activitySearchBar .search .advancedSearch .advancedSearchForm {
+  background-color: #fff;
+  position: absolute;
+  border: #d6d6d6;
+  z-index: 2;
+  width: 200px;
+  margin-top: 10px;
+}
+
+.ActivityListBody .wrap .container .activitySearchBar .search .advancedSearch .advancedSearchForm .advancedSearchFormItem {
+  margin-bottom: 50px;
+  margin-bottom: 5px;
+}
+
+.ActivityListBody .wrap .container .activitySearchBar .search .advancedSearch .advancedSearchForm .advancedSearchFormItem span {
+  font-weight: bold;
+  font-weight: bold;
+}
+
+.ActivityListBody .wrap .container .activitySearchBar .search .advancedSearch .advancedSearchForm .advancedSearchFormItemButton .displaySearchOut {
+  display: inline;
+}
+
+.ActivityListBody .wrap .container .activitySearchBar .search .advancedSearch .advancedSearchForm .advancedSearchFormItemButton .close {
+  display: inline;
+}
+
+.ActivityListBody .wrap .container .activitySearchBar .search .activitySearchAction {
+  margin: 5px 15px;
+  width: 50px;
+  height: 40px;
+  background-color: #1697d5;
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 10px;
+}
+
+.ActivityListBody .wrap .container .activitySearchBar .search .activitySearchAction svg {
+  width: 30px;
+  height: 30px;
+}
+
+.ActivityListBody .wrap .container .activitySearchBar .creatActivity {
+  padding-top: 10px;
+}
+
+.ActivityListBody .wrap .container .activitySearchBar .creatActivity a {
+  color: #1697d5;
+  padding-top: 30px;
+  margin: 10px 20px 0px 75px;
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+.ActivityListBody .wrap .container #FirstList {
+  margin-top: 50px;
+}
+
+.ActivityListBody .wrap .container .list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 20px;
+  width: 880px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.ActivityListBody .wrap .container .list .img img {
+  z-index: 10;
+  width: 360px;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.ActivityListBody .wrap .container .list .listIntroduction {
+  position: absolute;
+  left: 360px;
+  padding: 10px 28px 12px 28px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.ActivityListBody .wrap .container .list .listIntroduction .information .activityTime {
+  margin-bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.ActivityListBody .wrap .container .list .listIntroduction .information .activityTime .activityTimeDate {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   margin-right: 30px;
+  color: #1697d5;
+  font-weight: 400;
+}
+
+.ActivityListBody .wrap .container .list .listIntroduction .information .activityTime .activityTimeDatePlace {
+  position: relative;
   color: #1697d5;
   font-weight: bold;
 }
 
-body .wrap .container .list .listIntroduction .information p {
+.ActivityListBody .wrap .container .list .listIntroduction .information .activityTime .activityTimeDatePlace .activityTimeDatePlaceIcon {
+  display: inline;
+  position: absolute;
+  top: -2px;
+  left: -18px;
+}
+
+.ActivityListBody .wrap .container .list .listIntroduction .information h1 {
+  font-size: 24px;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.ActivityListBody .wrap .container .list .listIntroduction .information p {
+  margin-top: 10px;
   line-height: 22px;
 }
 
-body .wrap .container .list .listIntroduction .listButton {
+.ActivityListBody .wrap .container .list .listIntroduction .listButton {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -155,25 +319,33 @@ body .wrap .container .list .listIntroduction .listButton {
           flex-direction: row-reverse;
 }
 
-body .wrap .container .list .listIntroduction .listButton button {
-  margin-right: 30px;
-  margin-top: 20px;
-  background-color: #dddddd;
+.ActivityListBody .wrap .container .list .listIntroduction .listButton button {
+  margin-top: 29px;
+  background-color: #6bc1e9;
+  background-image: linear-gradient(315deg, #6bc1e9 0%, #80ced7 74%);
   padding: 8px 20px;
   border: #d0d0d0;
   border-radius: 20px;
 }
 
-body .wrap .container .list .listIntroduction .listButton button a {
-  color: #000;
+.ActivityListBody .wrap .container .list .listIntroduction .listButton button a {
+  color: #fff;
   text-decoration: none;
 }
 
-body .wrap .container .list .listIntroduction .listButton button :hover {
-  color: blue;
+.ActivityListBody .wrap .container .list .listIntroduction .listButton :hover {
+  background-color: #fff;
+  border: 1px solid #1697d5;
+  background-image: none;
 }
 
-body .wrap .container .message {
+.ActivityListBody .wrap .container .list .listIntroduction .listButton :hover a {
+  color: #1697d5;
+  text-decoration: none;
+  border: none;
+}
+
+.ActivityListBody .wrap .container .message {
   margin-top: 1000px;
 }
 /*# sourceMappingURL=activityList.css.map */

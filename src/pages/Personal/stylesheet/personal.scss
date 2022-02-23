@@ -1,32 +1,23 @@
 // ----- 匯入設定樣式檔 -----
-@import '../../../styles/var';
+@import "../../../styles/var";
 // ------------------------
 
-@import './personal_var';
+@import "./personal_var";
 
 .off {
     display: none;
 }
 
-// body {
-//     // overflow: hidden;
-//     margin: 0;
-//     padding: 0;
-//     background-color: $bgcolor;
-//     min-width: 100%;
-//     min-height: 100vh;
-//     overflow: scroll;
-// }
-
 // ----------------------- modal Design Start -----------------------------
 
+// ------ Article Edit ------
 .personal-article-edit {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0, 0, 0, 0.2);
     z-index: 1000;
     display: flex;
     justify-content: center;
@@ -38,16 +29,16 @@
         border: 1px solid $primarycolor;
         border-radius: 10px;
         overflow: hidden;
-        &>* {
+        & > * {
             width: 80px;
             height: 55px;
             background-color: #fff;
             display: flex;
             justify-content: center;
             align-items: center;
-            transition: all .4s ease-in-out ;
+            transition: all 0.4s ease-in-out;
             cursor: pointer;
-            &>h1 {
+            & > h1 {
                 letter-spacing: 1px;
                 font-weight: normal;
                 margin: 0;
@@ -66,12 +57,12 @@
         }
     }
     .edit-main-container {
-        width: 550px;
-        height: 550px;
+        width: 800px;
+        height: 575px;
         background-color: #fff;
-        border-radius: 10px; 
-        overflow: hidden;
-        &>h1 {
+        border-radius: 10px;
+        overflow: scroll;
+        & > h1 {
             position: relative;
             text-align: center;
             font-weight: normal;
@@ -100,7 +91,7 @@
             margin-bottom: 20px;
             border-bottom: 1px solid $primarycolor;
             padding-bottom: 12px;
-            &>img {
+            & > img {
                 width: 50px;
                 height: 50px;
                 border-radius: 50%;
@@ -118,11 +109,10 @@
                     margin: 0;
                     margin-top: 5px;
                     font-size: 14px;
-                    color: rgba(0,0,0,0.5);
+                    color: rgba(0, 0, 0, 0.5);
                     letter-spacing: 1px;
                 }
             }
-
         }
         button {
             position: static;
@@ -134,7 +124,7 @@
             border-radius: 10px;
             color: $primarycolor;
             letter-spacing: 1px;
-            transition: all .4s ease-in-out;
+            transition: all 0.4s ease-in-out;
             &:hover {
                 background-color: $primarycolor;
                 color: #fff;
@@ -142,8 +132,187 @@
         }
     }
 }
+// ------ Article Show ------
+.personal-article-show {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.2);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .show-main-container {
+        width: 800px;
+        height: 575px;
+        background-color: #fff;
+        border-radius: 10px;
+        overflow: scroll;
+        & > h1 {
+            position: relative;
+            text-align: center;
+            font-weight: normal;
+            font-size: 20px;
+            padding: 10px 0px;
+            letter-spacing: 1px;
+            background-color: $primarycolor;
+            color: #fff;
+            span {
+                padding: 0;
+                height: 25px;
+                display: block;
+                position: absolute;
+                right: 20px;
+                top: 5px;
+                font-size: 25px;
+                cursor: pointer;
+            }
+        }
+        .show-title-container {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            margin-left: 15px;
+            margin-right: 15px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid $primarycolor;
+            padding-bottom: 12px;
+            & > img {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                border: 1px solid $secondarycolor;
+            }
+            .show-title-name {
+                margin-left: 10px;
+                h1 {
+                    font-size: 20px;
+                    font-weight: normal;
+                    margin: 0;
+                    letter-spacing: 1px;
+                }
+                h6 {
+                    margin: 0;
+                    margin-top: 5px;
+                    font-size: 14px;
+                    color: rgba(0, 0, 0, 0.5);
+                    letter-spacing: 1px;
+                }
+            }
+        }
+        .show-article-content {
+            padding: 0px 40px;
+            & > p {
+                font-size: 18px;
+                font-weight: normal;
+            }
+        }
+        
+    }
+    .show-article-message {
+        height: 575px;
+        width: 330px;
+        background-color: #fff;
+        margin-left: 10px;
+        border-radius: 10px;
+        overflow: scroll;
+        // padding: 0px 15px;
+        & > h1 {
+            position: relative;
+            text-align: center;
+            font-weight: normal;
+            font-size: 20px;
+            padding: 10px 0px;
+            letter-spacing: 1px;
+            background-color: $primarycolor;
+            color: #fff;
+        }
+        .comment-post {
+            display: flex;
+            padding: 0px 5px;
+            border-bottom: 1px solid $primarycolor;
+            margin: 0px 15px;
+            // margin-top: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            textarea {
+                height: 24px;
+                border-radius: 5px;
+                width: 100%;
+                border: none;
+                column-count: auto;
+                white-space: pre-wrap;
+                text-rendering: auto;
+                overflow-wrap: break-word;
+                resize: none;
+            }
+            button {
+                width: 65px;
+                margin-left: 5px;
+                border: 1px solid $primarycolor;
+                border-radius: 5px;
+                background-color: #fff;
+                color: $primarycolor;
+                letter-spacing: 1px;
+            }
+        }
+        .comment-container {
+            margin-top: 15px;
+            padding: 0px 20px;
+            .article-comment-content {
+                // border: 1px solid #000;
+                @include bdrs;
+                margin-bottom: 10px;
+                padding: 10px 15px;
+                .comment-detail {
+                    display: flex;
+                    align-items: center;
+                    
+                    & > img {
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        border: 1px solid $primarycolor;
+                    }
+                    .detail-text {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        width: 100%;
+                        * {
+                            margin: 0;
+                            margin-left: 10px;
+                        }
+                        h1 {
+                            font-size: 18px;
+                            font-weight: normal;
+                        }
+                        h6 {
+                            font-size: 14px;
+                            font-weight: normal;
+                            color: rgba(0, 0, 0, 0.5);
+                        }
+                        
+                    }
+                }
+                .comment-main-text {
+                    & > p {
+                        font-size: 14px;
+                        font-weight: normal;
+                        padding: 7px 17px;
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}
 
-// ------------------------ modal Design End ------------------------------
+// ------------------------ Modal Design End ------------------------------
+
+// -------------------------- Personal Page -------------------------------
 
 .personal-header {
     width: 100%;
@@ -152,7 +321,6 @@
     align-items: center;
     flex-direction: column;
     .header-banner {
-        background-color: #ccc;
         background-position: center;
         background-size: cover;
         height: 350px;
@@ -246,27 +414,20 @@
 .personal-section {
     width: 100%;
     position: relative;
-    .bgc-logo {
-        position: absolute;
-        z-index: -1000;
-        width: 100px;
-        top: 2%;
-        left: 8%;
-        transform: scaleX(-1);
-    }
+    background: url('../../../images/main/background.png');
+    background-attachment: fixed;
+    padding-bottom: 15px;
+    // padding-top: 15px;
     .presonal-container {
-        // width: 73%;
         width: 1075px;
         // testing
         @include bdrs;
         border-bottom: none;
         padding-top: 20px;
         border-radius: 10px;
-        background-color: rgb(238, 238, 238);
+        background-color: rgba(238, 238, 238, 0.5);
         margin: auto;
         margin-top: 50px;
-        margin-bottom: 30px;
-        padding-bottom: 25px;
         display: flex;
         .personal-categroy {
             width: 30%;
@@ -323,9 +484,10 @@
                 @include bdrs;
                 .club-container {
                     width: 100%;
-                    height: 250px;
+                    max-height: 300px;
                     overflow: hidden;
                     background-color: #fff;
+                    min-height: 250px;
                     h3 {
                         font-size: 16px;
                         letter-spacing: 1px;
@@ -338,13 +500,35 @@
                         font-weight: 400;
                         background-color: $primarycolor;
                     }
+                    .club-list {
+                        display: flex;
+                        padding: 0px 15px;
+                        justify-content: flex-start;
+                        flex-wrap: wrap;
+                        padding-bottom: 10px;
+                        overflow: scroll;
+                        .club-attended {
+                            width: 25%;
+                            height: 60px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            margin-top: 10px;
+                            & > img {
+                                cursor: pointer;
+                                border: 1px solid $secondarycolor;
+                                width: 55px;
+                                height: 55px;
+                                border-radius: 15px;
+                            }
+                        }
+                    }
                 }
             }
         }
         .personal-post {
             width: 70%;
             height: 100%;
-            // border: 1px solid blue;
             // ---------------------------- article ------------------------------------
 
             .article {
@@ -387,6 +571,7 @@
                             left: 2%;
                             letter-spacing: 1px;
                             font-size: 16px;
+                            color:rgba(0, 0, 0, 0.5);
                         }
                     }
                 }
@@ -422,11 +607,12 @@
                                 letter-spacing: 1px;
                             }
                             h1 {
+                                font-weight: 500;
                                 font-size: 20px;
                             }
                             h6 {
-                                font-size: 14px;
-                                margin-top: 5px;
+                                font-size: 12px;
+                                margin-top: 4px;
                             }
                         }
                         .title-edit {
@@ -442,35 +628,72 @@
                     }
                     .article-body {
                         width: 90%;
-                        // margin: 15px 0px;
                         margin-top: 15px;
-                        margin-bottom: 10px;
+                        margin-bottom: 5px;
+                        padding-left: 30px;
                         p {
+                            font-weight: normal;
+                            font-size: 16px;
+                            margin-bottom: 5px;
+                            // -- 只顯示兩行 --
+                            overflow: hidden;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 2;
+                            -webkit-box-orient: vertical;
+                            white-space: normal;
+                        }
+                        h5 {
+                            font-size: 20px;
+                        }
+                        .article-see-more {
+                            text-align: center;
+                            cursor: pointer;
                             position: relative;
-                            left: 5%;
-                            font-size: 18px;
-                            padding-bottom: 15px;
-                            border-bottom: 1px solid $primarycolor;
+                            // border: 1px solid #000;
+                            span {
+                                color: $primarycolor;
+                                letter-spacing: 1px;
+                            }
+                            svg {
+                                position: absolute;
+                                font-size: 18px;
+                                top: 2px;
+                                margin-left: 3px;
+                            }
+                            &:hover {
+                                svg {
+                                    animation: pointer .7s alternate infinite linear;
+                                    @keyframes pointer {
+                                        0% {
+                                            top: 2px
+                                        }
+                                        50% {
+                                            top: 0px
+                                        }
+                                        100% {
+                                            top: 2px;
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                     .article-message {
                         position: relative;
-                        // left: 5%;
                         width: 100%;
-                        // margin-bottom: 17px;
+                        padding-right: 5%;
+                        padding-left: 30px;
                         .message-icon {
-                            position: relative;
-                            left: 5%;
                             margin-left: -5px;
+                            border-top: 1px solid $primarycolor;
                             button {
-                                // @include bdrs;
+                                margin-top: 10px;
                                 font-size: 23px;
                                 border: none;
                                 margin-right: 8px;
                                 background-color: #fff;
-                                // background-color: $secondarycolor;
-                                // border: 2px solid $primarycolor;
-                                // color: $primarycolor;
                                 color: $primarycolor;
                                 border-radius: 10px;
                                 padding: 5px 7px;
@@ -485,13 +708,10 @@
                                 height: 28px;
                                 width: 76%;
                                 border-radius: 10px;
-                                // @include bdrs;
-                                // border: none;
                                 padding-left: 10px;
                                 border: 1px solid $secondarycolor;
                             }
                             .submit-btn {
-                                // @include bdrs;
                                 border-radius: 10px;
                                 padding: 3px 17px;
                                 margin-left: 10px;
@@ -520,6 +740,14 @@
                     margin-bottom: 15px;
                     background-color: #fff;
                     overflow: hidden;
+                    position: relative;
+                    bottom: 0;
+                    transition: all .3s ease-in-out;
+                    cursor: pointer;
+                    &:hover {
+                        bottom: 1px;
+                        box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+                    }
                     .activities-pic {
                         width: 40%;
                         overflow: hidden;
@@ -535,8 +763,11 @@
                             margin: 0;
                             margin-left: 20px;
                             margin-top: 15px;
-                            font-weight: 400;
-                            letter-spacing: 1px;
+                            // font-weight: 400;
+                            // letter-spacing: 1px;
+                        }
+                        .evt-name {
+                            font-size: 20px;
                         }
                         .evt-time {
                             color: rgba(0, 0, 0, 0.5);
@@ -545,10 +776,11 @@
                             position: absolute;
                             right: 22px;
                             top: 15px;
-                            font-weight: 600;
+                            // font-weight: 600;
                             color: $primarycolor;
                             margin: 0;
                             font-size: 16px;
+                            font-weight: normal;
                             svg {
                                 margin: 0;
                             }
@@ -557,6 +789,19 @@
                                 margin: 0;
                                 margin-left: 3px;
                             }
+                        }
+                        .evt-content {
+                            font-weight: normal;
+                            font-size: 16px;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 2;
+                            -webkit-box-orient: vertical;
+                            white-space: normal;
+                            // padding-right: 15px;
+                            margin-right: 15px;
                         }
                         .evt-state {
                             margin: 0;
@@ -586,6 +831,14 @@
                     padding: 17px 20px;
                     margin-bottom: 15px;
                     @include bdrs;
+                    transition: all .3s ease-in-out;
+                    cursor: pointer;
+                    position: relative;
+                    bottom: 0;
+                    &:hover {
+                        bottom: 1px;
+                        box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+                    }
                     .collection-title {
                         display: flex;
                         img {
@@ -608,28 +861,39 @@
                                 font-size: 20px;
                             }
                             h5 {
-                                color: rgba(0,0,0,0.5);
+                                color: rgba(0, 0, 0, 0.5);
                                 margin-top: 3px;
-                                font-size: 16px;
+                                font-size: 12px;
+                                font-weight: normal;
                             }
                         }
                     }
                     .collection-body {
                         position: relative;
-                        margin-top: 15px;
+                        margin-top: 10px;
                         width: 90%;
-                        * {
+                        &> * {
                             position: relative;
                             left: 5%;
                         }
-                        h1 {
+                        h6 {
+                            color: $primarycolor;
                             margin: 0;
                             font-weight: normal;
-                            font-size: 18px;
+                            font-size: 14px;
                         }
                         p {
+                            font-weight: normal;
+                            font-size: 16px;
                             margin: 0;
-                            margin-top: 10px;
+                            margin-top: 5px;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 3;
+                            -webkit-box-orient: vertical;
+                            white-space: normal;
                         }
                     }
                 }
@@ -668,7 +932,7 @@
                         color: $secondarycolor;
                         width: 50%;
                         text-align: center;
-                        transition: all .5s ease-in-out;
+                        transition: all 0.5s ease-in-out;
                         &:hover {
                             color: #fff;
                             background-color: $secondarycolor;
@@ -680,7 +944,7 @@
                         color: $primarycolor;
                         width: 50%;
                         text-align: center;
-                        transition: all .5s ease-in-out;
+                        transition: all 0.5s ease-in-out;
                         &:hover {
                             color: #fff;
                             background-color: $primarycolor;
@@ -861,7 +1125,7 @@
                             span {
                                 margin-left: 8px;
                             }
-                         
+
                             &:hover {
                                 color: #fff;
                                 background-color: $secondarycolor;
@@ -924,36 +1188,39 @@
                     margin-left: 15px;
                     margin-right: 15px;
                     display: flex;
-                    height: 200px;
-                    padding: 15px 25px;
+                    height: 140px;
+                    padding: 15px 0px;
+                    padding-right: 15px;
                     margin-bottom: 15px;
                     @include bdrs;
                     .review-guide {
-                        width: 25%;
+                        width: 20%;
                         display: flex;
                         flex-direction: column;
                         align-items: center;
                         justify-content: center;
-                        img {
+                        & > img {
                             border: 2px solid $secondarycolor;
-                            width: 80px;
-                            height: 80px;
+                            width: 60px;
+                            height: 60px;
                             border-radius: 50%;
                         }
-                        h1 {
+                        & > h1 {
                             margin: 0;
-                            letter-spacing: 1px;
-                            margin-top: 2px;
+                            margin-top: 4px;
+                            font-size: 20px;
                         }
-                        h5 {
+                        & > h5 {
                             margin: 0;
-                            letter-spacing: 1px;
-                            margin-top: 2px;
+                            margin-top: 4x;
+                            font-size: 12px;
+                            color: rgba(0,0,0,0.5);
                         }
                     }
                     .review-form {
-                        width: 75%;
+                        width: 80%;
                         position: relative;
+                        // height: 150px;
                         .star-rate {
                             display: flex;
                             height: 30px;
@@ -970,31 +1237,52 @@
                                 margin-left: 10px;
                                 img {
                                     width: 23px;
-                                    // height: 20px;
+                                    height: 23px;
                                     margin-right: 5px;
                                 }
                             }
                             .review-stars-score {
-                                margin-left: 10px;
-                                letter-spacing: 1px;
+                                span {
+                                    margin-left: 10px;
+                                    letter-spacing: 1px;
+                                } 
                             }
                         }
-                        textarea {
-                            height: 80px;
-                            font-size: 16px;
-                            padding: 8px 10px;
-                            margin-top: 8px;
-                            width: 100%;
-                            border-radius: 10px;
-                        }
                         .review-form-send {
-                            cursor: pointer;
-                            @include mainBtn;
-                            padding: 5px 20px;
-                            font-size: 16px;
-                            position: absolute;
-                            right: 0;
-                            bottom: 0;
+                            position: relative;
+                            height: 66px;
+                            margin-top: 8px;
+                            overflow: hidden;
+                            padding-right: 20px;
+                            & > textarea {
+                                height: 100%;
+                                font-size: 16px;
+                                padding: 7px 10px;
+                                padding-right: 58px;
+                                width: 100%;
+                                border-radius: 10px;
+                                resize: none;
+                            }
+                            & > button {
+                                overflow: hidden;
+                                transition: all .3s ease-in-out;
+                                cursor: pointer;
+                                user-select: none;
+                                padding: 0;
+                                height: auto;
+                                border: none;
+                                background-color: transparent;
+                                position: absolute;
+                                right: 35px;
+                                bottom: 50%;
+                                transform: translateY(50%);
+                                color: $primarycolor;
+                                svg {
+                                    overflow: hidden;
+                                    height: 30px;
+                                    width: 30px;
+                                }
+                            }
                         }
                     }
                 }

@@ -2,201 +2,288 @@
 @import "../../../styles/var";
 // ------------------------
 
-@import './guide_var';
-
-.guideContainer {
-    width: 900px;
-    padding: 0;
-    margin: 120px auto 0;
-    .imgarea {
-        height: 300px;
+.guideMainPage {
+    .bgImg {
+        position: fixed;
+        z-index: -1000;
+        height: 100vh;
         width: 100%;
-        padding: 0;
     }
-
-    .searchArea {
-        position: relative;
-        display: flex;
-        margin-top: 20px;
-
-        .searchInput {
-            margin-right: 20px;
-        }
-        .mainbtn {
-            margin-left: 20px;
-            font-size: 15px;
-            border-radius: 20px;
-            background-color: $primarycolor;
-            padding: 4px 15px;
-            border: 2px $primarycolor solid;
-            color: #ffffff;
-            box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
-        }
-        .joinGuide {
-            right: 0;
-            z-index: 1000;
-            position: absolute;
-            bottom: 10px;
-        }
-    }
-
-    .advancedSearch {
-        position: relative;
-        .advancedSearchBtn {
-            font-size: 15px;
-            border: 2px $primarycolor solid;
-            border-radius: 20px;
-            color: $primarycolor;
-            padding: 4px 15px;
-            
-        }
-        .advancedSearchContent {
-            position: absolute;
-            background-color: #ffffff;
-            width: 300px;
+    .guideBanner {
+        height: 320px;
+        width: 70%;
+        margin: 120px auto 0px;
+        display: block;
+        img{
+            height: 320px;
+            width: 100%;
+            display: block;
             border-radius: 10px;
-            top: 40px;
-            z-index: 1000;
-            box-shadow: 3px 3px 5px rgb(197, 197, 197);
-            padding: 13px;
-            .acceptNum {
-                height: 35px;
-                #quantity {
-                    width: 30px;
-                    border: none;
-                    text-align: center;
-                }
-                .numBtn {
-                    font-size: 15px;
-                    border-radius: 10px;
-                    padding: 2px 5px;
-                    border: 1px $primarycolor solid;
-                    width: 25px;
-                    text-align: center;
-                }
-            }
-            .transportation {
-                margin-bottom: -20px;
-                border-bottom: 1px $fontcolor solid;
-            }
-            .btnArea{
-                margin-top: 30px;
-                float: right;
-                .cancelBtn{
-                    font-size: 13px;
-                    border: none;
-                    color: $primarycolor;
-                    background-color: white;
-                    margin-right: 15px;
-                }
-                .guideAdvancedSearchBtn{
-                    margin-right: 20px;
-                    font-size: 13px;
-                    border-radius: 20px;
-                    background-color: $primarycolor;
-                    padding: 4px 10px;
-                    border: 2px $primarycolor solid;
-                    color: #ffffff;
-                    box-shadow: 0 4px 30px 0 rgba(0, 0, 0, .1);
-                }
-            }
+
         }
+                    .slick-dots{
+                margin-bottom: 40px;
+                z-index: 200;
+            }
     }
-
-    .guideSearchResults {
-        width: 60%;
-
-        .guideResults {
+    .guideContainer {
+        width: 70%;
+        padding: 0;
+        margin: 30px auto;
+        .searchArea {
             position: relative;
             display: flex;
-            align-items: center;
-            margin-top: 20px;
-            width: 800px;
-            height: 130px;
-            a {
-                display: inline-flex;
-                text-decoration: none;
+            .guideSearchBar {
+                box-shadow: 2px 2px 3px rgb(207, 207, 207);
+                display: flex;
+                border-radius: 15px;
+                border: none;
+                background-color: rgb(255, 255, 255);
+                padding: 8px 20px;
+                cursor: pointer;
+                .searchCity {
+                    border-right: 2px #e2e2e2 solid;
+                    .guideCityInput {
+                        margin-right: 10px;
+                    }
+                    .ant-select-selector {
+                        border: none;
+                        background-color: white;
+                        .ant-select-selection-item{
+                            font-size: 18px;
+                            font-weight: 600; 
+                            color: $fontcolor;
+                        }
+                        
+                        .ant-select-selection-placeholder {
+                            font-size: 18px;
+                            font-weight: 600;
+                            color: rgb(141, 141, 141);
+                        }
+                    }
+                    .anticon-down {
+                        svg {
+                            width: 12px;
+                            height: 12px;
+                        }
+                    }
+                }
+                .searchDate {
+                    margin-right: 20px;
+                    padding-right: 10px;
+                    margin-left: 10px;
+                    border-right: 2px #e2e2e2 solid;
+                    .ant-picker {
+                        height: 40px;
+                        border: none;
+                        background-color: white;
+                        .ant-picker-input {
+                            input {
+                                font-size: 18px;
+                                font-weight: 600;
+                                color: $fontcolor;
+                                &::placeholder {
+                                    font-size: 18px;
+                                    font-weight: 600;
+                                    color: rgb(141, 141, 141);
+                                }
+                            }
+                        }
+                    }
+                }
+                .advancedSearch {
+                    position: relative;
+                    .advancedSearchBtn {
+                        font-size: 18px;
+                        border: none;
+                        color: $primarycolor;
+                        background-color: white;
+                        padding-top: 5px;
+                        margin-left: 55px;
+                        font-weight: 600;
+                    }
+                    .advancedSearchContent {
+                        position: absolute;
+                        background-color: #ffffff;
+                        width: 195px;
+                        left: -5px;
+                        top: 43px;
+                        z-index: 1000;
+                        box-shadow: 3px 3px 5px rgb(216, 216, 216);
+                        padding: 10px;
+                        font-size: 15px;
+                        .acceptNum {
+                            height: 35px;
+                            #quantity {
+                                width: 25px;
+                                border: none;
+                                text-align: center;
+                                background-color: #ffffff;
+                                margin: 0 10px;
+                                border-bottom: 1px black solid;
+                            }
+                            .numBtn {
+                                border-radius: 10px;
+                                padding: 2px 5px;
+                                border: none;
+                                width: 25px;
+                                text-align: center;
+                                &:hover {
+                                    box-shadow: 1px 1px 3px rgb(192, 192, 192);
+                                }
+                            }
+                        }
+                        .acceptGender {
+                            margin: 2px -10px 0 0;
+                        }
+                        .transportation {
+                            margin-bottom: -22px;
+                            border-bottom: 1px $fontcolor solid;
+                            padding-bottom: 8px;
+                            .transportationContent {
+                                line-height: 13px;
+                                #publicTransport {
+                                    margin-left: 56px;
+                                }
+                            }
+                        }
+                        .btnArea {
+                            margin-top: 25px;
+                            float: right;
+                            margin-right: -10px;
+                            .cancelBtn {
+                                border: none;
+                                color: $primarycolor;
+                                background-color: white;
+                                margin-right: 15px;
+                                padding-top: 10px;
+                                font-size: 14px;
+                            }
+                            .guideAdvancedSearchBtn {
+                                font-size: 14px;
+                                margin-right: 10px;
+                                border-radius: 10px;
+                                background-color: $primarycolor;
+                                padding: 2px 8px;
+                                border: none;
+                                color: #f8f8f8;
+                                box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
+                                &:hover {
+                                    box-shadow: 2px 2px 3px #85858593;
+                                }
+                            }
+                        }
+                    }
+                }
+                .guidesearchBg {
+                    margin-left: 65px;
+                    border-radius: 15px;
+                    background-color: $primarycolor;
+                    padding: 5px 10px;
+                    margin-right: -5px;
+                    .guidesearchBtn {
+                        margin-top: 3px;
+                        font-size: 20px;
+                        color: #f8f8f8;
+                    }
+                    &:hover {
+                        box-shadow: 2px 2px 3px #85858593;
+                    }
+                }
+            }
+            .joinGuide {
+                top: 15px;
+                right: 0;
+                z-index: 100;
+                position: absolute;
+                font-size: 16px;
+                font-weight: 550;
+            }
+        }
+        .advancedSearchContent {
+            position: relative;
+            font-size: 17px;
+            left: 5px;
+            top: 15px;
+            color: $fontcolor;
+            margin-bottom: 5px;
+        }
+
+        .guideSearchResults {
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            padding: 0 0 50px 0;
+            margin-top: 10px;
+            .guideResult {
+                margin-top: 25px;
+                width: 25%;
+                height: 250px;
+                padding-left: 10px;
                 .putMemberImg {
-                    padding: 0;
-                    margin-top: -5px;
+                    width: 246px;
                     #memberImg {
+                        cursor: pointer;
+                        margin: 0 auto;
                         height: 120px;
                         width: 120px;
                         border-radius: 50%;
-                        box-shadow: 3px 3px 5px rgba(77, 77, 77, 0.856);
+                        box-shadow: 2px 2px 3px rgb(207, 207, 207);
+                        display: block;
                     }
                 }
                 .guideContent {
+                    cursor: pointer;
+                    width: 95%;
+                    background-color: #ffffff;
+                    box-shadow: 2px 2px 3px rgb(207, 207, 207);
+                    border-radius: 10px;
                     color: $fontcolor;
-                    padding: 0 0 0 100px;
-                    box-shadow: 3px 3px 7px rgba(77, 77, 77, 0.541);
-                    height: 110px;
-                    margin-left: -80px;
                     z-index: -1;
-                    width: 600px;
+                    height: 180px;
+                    padding: 50px 0 0 20px;
+                    margin-top: -50px;
                     .guideInformationArea {
                         padding-top: 8px;
+                        width: 100%;
                         .guideName {
-                            font-size: 24px;
+                            font-size: 22px;
                             font-weight: bold;
                         }
                         .star {
+                            margin: 6px 10px 0 0;
                             font-size: 14px;
                             color: #ffb11b;
-                            margin-left: 20px;
+                            float: right;
                             text-shadow: 2px 2px 3px rgba(59, 59, 59, 0.63);
                         }
                         .guideStarNum {
+                            margin: 7px 5px 0 0;
                             font-size: 14px;
+                            float: right;
                         }
                         .guideTitle {
-                            color: rebeccapurple;
+                            color: rgb(126, 126, 126);
                             font-size: 14px;
-                            margin-left: 8px;
+                            line-height: 25px;
                         }
                     }
                     .guideRecommend {
-                        margin-top: 7px;
                         font-size: 14px;
-                        i {
-                            color: $primarycolor;
-                        }
+                        line-height: 30px;
                     }
-                    .guideIntroduction {
-                        margin-top: 5px;
-                        font-size: 14px;
-                        .guideIntroduction30 {
-                            width: 450px;
-                            height: 20px;
-                            overflow: hidden;
+                    .guideLocation {
+                        float: right;
+                        font-size: 15px;
+                        color: #1697d5;
+                        margin-right: 10px;
+                        .locationIcon{
+                            margin-right: 5px;
+                            vertical-align: baseline;
                         }
-                        .spot {
-                            left: 400px;
-                            height: -100px;
-                        }
+
                     }
-                }
-            }
-            .chatIcon {
-                position: absolute;
-                right: 175px;
-                top: 15px;
-                font-size: 20px;
-            }
-            .guideLocation {
-                .locationIcon {
-                    position: absolute;
-                    right: 208px;
-                    top: 88px;
-                    font-size: 15px;
-                    color: #e83015;
-                }
-                .locationContent {
-                    position: absolute;
-                    right: 175px;
-                    top: 90px;
-                    font-size: 15px;
-                    color: #e83015;
                 }
             }
         }

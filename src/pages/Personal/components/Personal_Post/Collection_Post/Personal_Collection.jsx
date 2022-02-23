@@ -1,18 +1,20 @@
-const Personal_Collection = () => {
+import { BsBookmarkStarFill } from 'react-icons/bs';
+
+const Personal_Collection = ({ collection }) => {
     return (
         <div className='my-collection'>
             <div className="collection-title">
-                <img src="https://picsum.photos/id/1066/300/300" alt=""></img>
+                <img src={ collection.collectionImg } alt=""></img>
                 <div className='title-content'>
-                    <h1>露營討論社</h1>
-                    <h5>Post By Jack</h5>
+                    <h1>{collection.collectionTitle}</h1>
+                    <h5>Post By { collection.collectionPostBy }</h5>
                 </div>
             </div>
             <div className="collection-body">
-                <h1>帳篷購買攻略</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius exercitationem obcaecati,
-                    nostrum maxime enim omnis molestiae alias voluptas quam porro delectus necessitatibus,
-                    nisi voluptatum et magni! Itaque amet veniam consectetur.</p>
+                { collection.collectionType === '文章'? <h6 style={{color: '#f08a12'}}><BsBookmarkStarFill /> 文章。收藏</h6>:<h6><BsBookmarkStarFill /> 活動。收藏</h6>  }
+
+                
+                <p>{ collection.collectionContent }</p>
             </div>
         </div>
     )

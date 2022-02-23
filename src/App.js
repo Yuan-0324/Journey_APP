@@ -1,10 +1,11 @@
 // ----- 基本套件導入 ----
 
-import React, { Component } from 'react';
+import React, { useState, useContext } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'jquery/dist/jquery';
-
+// import { CookiesProvider } from 'react-cookie'
+import Context from './context';
 
 // ------- 路由 -------
 
@@ -21,25 +22,30 @@ import Setting from './pages/Settings/Settings';
 import Personal from './pages/Personal';
 
 // 社群頁面 「與諶」
-import Society from './pages/Society/Society';
-import Society_Group from './pages/Society/Society_Group';
-import Society_Group_Discussion from './pages/Society/Society_Group_Discussion';
+import Society_Container from './pages/Society/Society_Container';
 
 // 嚮導頁面 「JUJU」
 import Guide from './pages/Guide/Guide';
-import Guide_Personal from './pages/Guide/GuidePersonal';
-import Guide_Join from './pages/Guide/GuideJoin';
+import Guide_Personal from './pages/Guide/Guide_Personal';
+import Guide_Join from './pages/Guide/Guide_Join';
 
 // 活動頁面 「翔翔」
 import Activity_Conduct from './pages/Activity/Activity_Conduct';
 import Activity_List from './pages/Activity/Activity_List';
 import Activity_Introduce from './pages/Activity/Activity_Introduce'
 
+
 // ----------------------
 
-class App extends Component {
-  render() {
-    return (
+const App = () => {
+  const [token, setToken] = useState(localStorage.getItem("token"));
+  return (
+    <Context.Provider
+      value={{
+        token,
+        setToken,
+      }}
+    >
       <BrowserRouter>
         <div>
           <Navigation />
@@ -48,9 +54,9 @@ class App extends Component {
             <Route path="/" component={Home} exact />
 
             {/* 活動頁面 */}
-            <Route path="/Event" component={Activity_List} exact/>
-            <Route path="/ActivityIntroduce" component={Activity_Introduce} exact/>
-            <Route path="/ActivityConduct" component={Activity_Conduct} exact/>
+            <Route path="/Event" component={Activity_List} exact />
+            <Route path="/ActivityIntroduce" component={Activity_Introduce} exact />
+            <Route path="/ActivityConduct" component={Activity_Conduct} exact />
 
             {/* 嚮導頁面 */}
             <Route path="/Guide" component={Guide} exact />
@@ -58,26 +64,24 @@ class App extends Component {
             <Route path="/GuideJoin" component={Guide_Join}/>
 
             {/* 社群頁面 */}
-            <Route path="/Society" component={Society} exact />
-            <Route path="/Society/Home" component={Society} exact />
-            <Route path="/Society/Group" component={Society_Group} exact />
-            <Route path="/Scoiety/Group/Disscussion" component={Society_Group_Discussion} exact />
+            <Route path="/Society" component={Society_Container} exact />
+            <Route path="/Society/Home" component={Society_Container} exact />
+            <Route path="/Society/group/:id" component={Society_Container} exact />
 
             {/* 個人頁面 */}
             <Route path="/Personal/:id" component={Personal} exact />
             <Route path="/Personal/:id/:cate" component={Personal} excat />
-            
+
             {/* 設定頁面 */}
-            <Route path='/Setting' component={Setting} exact/>
+            <Route path='/Setting' component={Setting} exact />
             {/* 錯誤處理頁面 [ 未完成 ] */}
             {/* <Route component={Error} />  */}
           </Switch>
         </div>
       </BrowserRouter>
-    );
-  }
+
+    </Context.Provider>
+  );
 }
-
-
 
 export default App;

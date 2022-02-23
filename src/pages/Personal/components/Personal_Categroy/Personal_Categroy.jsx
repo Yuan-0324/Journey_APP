@@ -1,20 +1,20 @@
 import { useState } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
 
+import Club_List from './Club_List';
+
 // 左側功能列表
 
 const Personal_Categroy = () => {
-    let history = useHistory();
 
+    let history = useHistory();
+    
     let btnClick = (evt) => {
         let clicktarget = evt.target.dataset.categroy;
         let currentCate = { backgroundColor: '#58a8bd', color: '#fff' }
         // 12345 要放 id 名稱
         history.push('/personal/'+ 12345 + '/' + clicktarget);
-
-        // switch(clicktarget){
-
-        // }
+        // window.location = '/personal/'+ 12345 + '/' + clicktarget;
     }
 
     return (
@@ -34,11 +34,7 @@ const Personal_Categroy = () => {
                 <div>個人設定</div>
             </div>
 
-            <div className='personal-club'>
-                <div className='club-container'>
-                    <h3>我參加的社團</h3>
-                </div>
-            </div>
+            <Club_List />
 
         </div>
     )

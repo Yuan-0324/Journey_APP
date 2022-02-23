@@ -13,25 +13,30 @@ body {
   min-height: 100vh;
 }
 
-body .wrap {
+.activityIntroduceBody {
+  background-image: url("../../../../images/main/background.png");
+  background-attachment: fixed;
+}
+
+.activityIntroduceBody .wrap {
   width: 70%;
   margin: 0 auto;
   /* HTML5 display-role reset for older browsers */
 }
 
-body .wrap html, body .wrap body, body .wrap div, body .wrap span, body .wrap applet, body .wrap object, body .wrap iframe,
-body .wrap h1, body .wrap h2, body .wrap h3, body .wrap h4, body .wrap h5, body .wrap h6, body .wrap p, body .wrap blockquote, body .wrap pre,
-body .wrap a, body .wrap abbr, body .wrap acronym, body .wrap address, body .wrap big, body .wrap cite, body .wrap code,
-body .wrap del, body .wrap dfn, body .wrap em, body .wrap img, body .wrap ins, body .wrap kbd, body .wrap q, body .wrap s, body .wrap samp,
-body .wrap small, body .wrap strike, body .wrap strong, body .wrap sub, body .wrap sup, body .wrap tt, body .wrap var,
-body .wrap b, body .wrap u, body .wrap i, body .wrap center,
-body .wrap dl, body .wrap dt, body .wrap dd, body .wrap ol, body .wrap ul, body .wrap li,
-body .wrap fieldset, body .wrap form, body .wrap label, body .wrap legend,
-body .wrap table, body .wrap caption, body .wrap tbody, body .wrap tfoot, body .wrap thead, body .wrap tr, body .wrap th, body .wrap td,
-body .wrap article, body .wrap aside, body .wrap canvas, body .wrap details, body .wrap embed,
-body .wrap figure, body .wrap figcaption, body .wrap footer, body .wrap header, body .wrap hgroup,
-body .wrap menu, body .wrap nav, body .wrap output, body .wrap ruby, body .wrap section, body .wrap summary,
-body .wrap time, body .wrap mark, body .wrap audio, body .wrap video {
+.activityIntroduceBody .wrap html, .activityIntroduceBody .wrap body, .activityIntroduceBody .wrap div, .activityIntroduceBody .wrap span, .activityIntroduceBody .wrap applet, .activityIntroduceBody .wrap object, .activityIntroduceBody .wrap iframe,
+.activityIntroduceBody .wrap h1, .activityIntroduceBody .wrap h2, .activityIntroduceBody .wrap h3, .activityIntroduceBody .wrap h4, .activityIntroduceBody .wrap h5, .activityIntroduceBody .wrap h6, .activityIntroduceBody .wrap p, .activityIntroduceBody .wrap blockquote, .activityIntroduceBody .wrap pre,
+.activityIntroduceBody .wrap a, .activityIntroduceBody .wrap abbr, .activityIntroduceBody .wrap acronym, .activityIntroduceBody .wrap address, .activityIntroduceBody .wrap big, .activityIntroduceBody .wrap cite, .activityIntroduceBody .wrap code,
+.activityIntroduceBody .wrap del, .activityIntroduceBody .wrap dfn, .activityIntroduceBody .wrap em, .activityIntroduceBody .wrap img, .activityIntroduceBody .wrap ins, .activityIntroduceBody .wrap kbd, .activityIntroduceBody .wrap q, .activityIntroduceBody .wrap s, .activityIntroduceBody .wrap samp,
+.activityIntroduceBody .wrap small, .activityIntroduceBody .wrap strike, .activityIntroduceBody .wrap strong, .activityIntroduceBody .wrap sub, .activityIntroduceBody .wrap sup, .activityIntroduceBody .wrap tt, .activityIntroduceBody .wrap var,
+.activityIntroduceBody .wrap b, .activityIntroduceBody .wrap u, .activityIntroduceBody .wrap i, .activityIntroduceBody .wrap center,
+.activityIntroduceBody .wrap dl, .activityIntroduceBody .wrap dt, .activityIntroduceBody .wrap dd, .activityIntroduceBody .wrap ol, .activityIntroduceBody .wrap ul, .activityIntroduceBody .wrap li,
+.activityIntroduceBody .wrap fieldset, .activityIntroduceBody .wrap form, .activityIntroduceBody .wrap label, .activityIntroduceBody .wrap legend,
+.activityIntroduceBody .wrap table, .activityIntroduceBody .wrap caption, .activityIntroduceBody .wrap tbody, .activityIntroduceBody .wrap tfoot, .activityIntroduceBody .wrap thead, .activityIntroduceBody .wrap tr, .activityIntroduceBody .wrap th, .activityIntroduceBody .wrap td,
+.activityIntroduceBody .wrap article, .activityIntroduceBody .wrap aside, .activityIntroduceBody .wrap canvas, .activityIntroduceBody .wrap details, .activityIntroduceBody .wrap embed,
+.activityIntroduceBody .wrap figure, .activityIntroduceBody .wrap figcaption, .activityIntroduceBody .wrap footer, .activityIntroduceBody .wrap header, .activityIntroduceBody .wrap hgroup,
+.activityIntroduceBody .wrap menu, .activityIntroduceBody .wrap nav, .activityIntroduceBody .wrap output, .activityIntroduceBody .wrap ruby, .activityIntroduceBody .wrap section, .activityIntroduceBody .wrap summary,
+.activityIntroduceBody .wrap time, .activityIntroduceBody .wrap mark, .activityIntroduceBody .wrap audio, .activityIntroduceBody .wrap video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -40,140 +45,45 @@ body .wrap time, body .wrap mark, body .wrap audio, body .wrap video {
   vertical-align: baseline;
 }
 
-body .wrap article, body .wrap aside, body .wrap details, body .wrap figcaption, body .wrap figure,
-body .wrap footer, body .wrap header, body .wrap hgroup, body .wrap menu, body .wrap nav, body .wrap section {
+.activityIntroduceBody .wrap article, .activityIntroduceBody .wrap aside, .activityIntroduceBody .wrap details, .activityIntroduceBody .wrap figcaption, .activityIntroduceBody .wrap figure,
+.activityIntroduceBody .wrap footer, .activityIntroduceBody .wrap header, .activityIntroduceBody .wrap hgroup, .activityIntroduceBody .wrap menu, .activityIntroduceBody .wrap nav, .activityIntroduceBody .wrap section {
   display: block;
 }
 
-body .wrap body {
+.activityIntroduceBody .wrap body {
   line-height: 1;
 }
 
-body .wrap ol, body .wrap ul {
+.activityIntroduceBody .wrap ol, .activityIntroduceBody .wrap ul {
   list-style: none;
 }
 
-body .wrap blockquote, body .wrap q {
+.activityIntroduceBody .wrap blockquote, .activityIntroduceBody .wrap q {
   quotes: none;
 }
 
-body .wrap blockquote:before, body .wrap blockquote:after,
-body .wrap q:before, body .wrap q:after {
+.activityIntroduceBody .wrap blockquote:before, .activityIntroduceBody .wrap blockquote:after,
+.activityIntroduceBody .wrap q:before, .activityIntroduceBody .wrap q:after {
   content: '';
   content: none;
 }
 
-body .wrap table {
+.activityIntroduceBody .wrap table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-body .wrap header .logo {
-  max-width: 190px;
-}
-
-body .wrap header nav {
-  margin: auto;
-  margin-top: 20px;
-  border-radius: 28px;
-  padding: 10px 20px;
-  width: 80%;
-  -webkit-box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
-          box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  background-color: white;
-  height: 80px;
-}
-
-body .wrap header nav ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  list-style: none;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 0 20px;
-  margin-top: 10px;
-}
-
-body .wrap header nav ul .navbar {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-body .wrap header nav ul .navbar li {
-  padding: 0 20px;
-  font-size: 20px;
-}
-
-body .wrap header nav ul .navbar li:nth-child(4) a {
-  color: #1697d5;
-}
-
-body .wrap header nav ul .navbar li .navLink {
-  text-decoration: none;
-  color: #264148;
-  display: inline-block;
-  position: relative;
-}
-
-body .wrap header nav ul .navbar li .navLink:hover {
-  color: #1697d5;
-}
-
-body .wrap header nav ul .navbar li .navLink:hover::after {
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
-  -webkit-transform-origin: bottom left;
-          transform-origin: bottom left;
-}
-
-body .wrap header nav ul .navbar li .navLink::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
-  height: 1.5px;
-  bottom: -8px;
-  left: 0;
-  background-color: #1697d5;
-  -webkit-transform-origin: bottom right;
-          transform-origin: bottom right;
-  -webkit-transition: -webkit-transform 0.4s ease-out;
-  transition: -webkit-transform 0.4s ease-out;
-  transition: transform 0.4s ease-out;
-  transition: transform 0.4s ease-out, -webkit-transform 0.4s ease-out;
-}
-
-body .wrap h1 {
-  margin-top: 150px;
+.activityIntroduceBody .wrap h1 {
+  margin-top: 120px;
   font-size: 24px;
   font-weight: bolder;
 }
 
-body .wrap pre {
+.activityIntroduceBody .wrap pre {
   margin-top: 10px;
 }
 
-body .wrap .activeImage {
+.activityIntroduceBody .wrap .activeImage {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -188,20 +98,20 @@ body .wrap .activeImage {
       -ms-flex-align: center;
           align-items: center;
   overflow: hidden;
-  height: 100vh;
+  height: 70vh;
   font-family: 'Roboto', sans-serif;
   -webkit-transition: .25s;
   transition: .25s;
 }
 
-body .wrap .activeImage .credit {
+.activityIntroduceBody .wrap .activeImage .credit {
   position: absolute;
   bottom: 20px;
   left: 20px;
   color: inherit;
 }
 
-body .wrap .activeImage .options {
+.activityIntroduceBody .wrap .activeImage .options {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -214,16 +124,52 @@ body .wrap .activeImage .options {
           align-items: stretch;
   overflow: hidden;
   min-width: 600px;
-  max-width: 900px;
+  max-width: 1200px;
   width: calc(100% - 100px);
   height: 400px;
 }
 
-body .wrap .activeImage .options .imgHiking {
+@media screen and (max-width: 718px) {
+  .activityIntroduceBody .wrap .activeImage .options {
+    min-width: 520px;
+  }
+  .activityIntroduceBody .wrap .activeImage .options .option:nth-child(5) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 638px) {
+  .activityIntroduceBody .wrap .activeImage .options {
+    min-width: 440px;
+  }
+  .activityIntroduceBody .wrap .activeImage .options .option:nth-child(4) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 558px) {
+  .activityIntroduceBody .wrap .activeImage .options {
+    min-width: 360px;
+  }
+  .activityIntroduceBody .wrap .activeImage .options .option:nth-child(3) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 478px) {
+  .activityIntroduceBody .wrap .activeImage .options {
+    min-width: 280px;
+  }
+  .activityIntroduceBody .wrap .activeImage .options .option:nth-child(2) {
+    display: none;
+  }
+}
+
+.activityIntroduceBody .wrap .activeImage .options .imgHiking {
   background-image: url("../../../../images/background/hiking.jpg");
 }
 
-body .wrap .activeImage .options .option {
+.activityIntroduceBody .wrap .activeImage .options .option {
   position: relative;
   overflow: hidden;
   min-width: 60px;
@@ -236,7 +182,7 @@ body .wrap .activeImage .options .option {
   transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
 
-body .wrap .activeImage .options .option.active {
+.activityIntroduceBody .wrap .activeImage .options .option.active {
   -webkit-box-flex: 10000;
       -ms-flex-positive: 10000;
           flex-grow: 10000;
@@ -248,50 +194,50 @@ body .wrap .activeImage .options .option.active {
   background-size: auto 100%;
 }
 
-body .wrap .activeImage .options .option.active .shadow {
+.activityIntroduceBody .wrap .activeImage .options .option.active .shadow {
   -webkit-box-shadow: inset 0 -120px 120px -120px black, inset 0 -120px 120px -100px black;
           box-shadow: inset 0 -120px 120px -120px black, inset 0 -120px 120px -100px black;
 }
 
-body .wrap .activeImage .options .option.active .label {
+.activityIntroduceBody .wrap .activeImage .options .option.active .label {
   bottom: 20px;
   left: 20px;
 }
 
-body .wrap .activeImage .options .option.active .label .info > div {
+.activityIntroduceBody .wrap .activeImage .options .option.active .label .info > div {
   left: 0px;
   opacity: 1;
 }
 
-body .wrap .activeImage .options .option.active:active {
+.activityIntroduceBody .wrap .activeImage .options .option.active:active {
   -webkit-transform: scale(0.9);
           transform: scale(0.9);
 }
 
-body .wrap .activeImage .options .option:not(.active) {
+.activityIntroduceBody .wrap .activeImage .options .option:not(.active) {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
   border-radius: 30px;
 }
 
-body .wrap .activeImage .options .option:not(.active) .shadow {
+.activityIntroduceBody .wrap .activeImage .options .option:not(.active) .shadow {
   bottom: -40px;
   -webkit-box-shadow: inset 0 -120px 0px -120px black, inset 0 -120px 0px -100px black;
           box-shadow: inset 0 -120px 0px -120px black, inset 0 -120px 0px -100px black;
 }
 
-body .wrap .activeImage .options .option:not(.active) .label {
+.activityIntroduceBody .wrap .activeImage .options .option:not(.active) .label {
   bottom: 10px;
   left: 10px;
 }
 
-body .wrap .activeImage .options .option:not(.active) .label .info > div {
+.activityIntroduceBody .wrap .activeImage .options .option:not(.active) .label .info > div {
   left: 20px;
   opacity: 0;
 }
 
-body .wrap .activeImage .options .option .shadow {
+.activityIntroduceBody .wrap .activeImage .options .option .shadow {
   position: absolute;
   bottom: 0px;
   left: 0px;
@@ -301,7 +247,7 @@ body .wrap .activeImage .options .option .shadow {
   transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
 
-body .wrap .activeImage .options .option .label {
+.activityIntroduceBody .wrap .activeImage .options .option .label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -312,29 +258,7 @@ body .wrap .activeImage .options .option .label {
   transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
 
-body .wrap .activeImage .options .option .label .icon {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  min-width: 40px;
-  max-width: 40px;
-  height: 40px;
-  border-radius: 100%;
-  background-color: white;
-  color: var(--defaultBackground);
-}
-
-body .wrap .activeImage .options .option .label .info {
+.activityIntroduceBody .wrap .activeImage .options .option .label .info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -350,23 +274,23 @@ body .wrap .activeImage .options .option .label .info {
   white-space: pre;
 }
 
-body .wrap .activeImage .options .option .label .info > div {
+.activityIntroduceBody .wrap .activeImage .options .option .label .info > div {
   position: relative;
   -webkit-transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95), opacity 0.5s ease-out;
   transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95), opacity 0.5s ease-out;
 }
 
-body .wrap .activeImage .options .option .label .info .main {
+.activityIntroduceBody .wrap .activeImage .options .option .label .info .main {
   font-weight: bold;
   font-size: 1.2rem;
 }
 
-body .wrap .activeImage .options .option .label .info .sub {
+.activityIntroduceBody .wrap .activeImage .options .option .label .info .sub {
   -webkit-transition-delay: .1s;
           transition-delay: .1s;
 }
 
-body .wrap .main {
+.activityIntroduceBody .wrap .main {
   margin-top: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -375,43 +299,43 @@ body .wrap .main {
       justify-content: space-around;
 }
 
-body .wrap .main .container {
+.activityIntroduceBody .wrap .main .container {
   width: 550px;
 }
 
-body .wrap .main .container .introduce h2 {
+.activityIntroduceBody .wrap .main .container .introduce h2 {
   margin-top: 20px;
   font-size: 20px;
   font-weight: bolder;
 }
 
-body .wrap .main .container .introduce p {
+.activityIntroduceBody .wrap .main .container .introduce p {
   line-height: 24px;
   padding: 30px;
   margin-top: 20px;
 }
 
-body .wrap .main .container .introduce li {
+.activityIntroduceBody .wrap .main .container .introduce li {
   line-height: 24px;
   padding-left: 30px;
   margin-top: 20px;
 }
 
-body .wrap .main .container .message {
+.activityIntroduceBody .wrap .main .container .message {
   margin-top: 30px;
 }
 
-body .wrap .main .container .message h2 {
+.activityIntroduceBody .wrap .main .container .message h2 {
   margin-top: 20px;
   font-size: 20px;
   font-weight: bolder;
 }
 
-body .wrap .main .container .message .messageBoard {
+.activityIntroduceBody .wrap .main .container .message .messageBoard {
   margin-top: 30px;
 }
 
-body .wrap .main .container .message .messageBoard .messageList {
+.activityIntroduceBody .wrap .main .container .message .messageBoard .messageList {
   margin-top: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -420,16 +344,16 @@ body .wrap .main .container .message .messageBoard .messageList {
   border-bottom: solid 1px  #d6d6d6;
 }
 
-body .wrap .main .container .message .messageBoard .messageList .messageListImg img {
+.activityIntroduceBody .wrap .main .container .message .messageBoard .messageList .messageListImg img {
   width: 72px;
   border-radius: 36px;
 }
 
-body .wrap .main .container .message .messageBoard .messageList .messageContainer {
+.activityIntroduceBody .wrap .main .container .message .messageBoard .messageList .messageContainer {
   margin-left: 30px;
 }
 
-body .wrap .main .container .message .messageBoard .messageList .messageContainer .messageContainerInformation {
+.activityIntroduceBody .wrap .main .container .message .messageBoard .messageList .messageContainer .messageContainerInformation {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -438,25 +362,25 @@ body .wrap .main .container .message .messageBoard .messageList .messageContaine
           justify-content: space-between;
 }
 
-body .wrap .main .container .message .messageBoard .messageList .messageContainer .messageContainerText {
+.activityIntroduceBody .wrap .main .container .message .messageBoard .messageList .messageContainer .messageContainerText {
   margin-top: 30px;
 }
 
-body .wrap .main .container .message .messageFrom {
+.activityIntroduceBody .wrap .main .container .message .messageFrom {
   margin-top: 30px;
 }
 
-body .wrap .main .container .message .messageFrom .from {
+.activityIntroduceBody .wrap .main .container .message .messageFrom .from {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-body .wrap .main .container .message .messageFrom .from textarea {
+.activityIntroduceBody .wrap .main .container .message .messageFrom .from textarea {
   margin: auto;
 }
 
-body .wrap .main .container .message .messageFrom .send {
+.activityIntroduceBody .wrap .main .container .message .messageFrom .send {
   margin-top: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -468,14 +392,14 @@ body .wrap .main .container .message .messageFrom .send {
   width: 85%;
 }
 
-body .wrap .main .container .message .messageFrom .send button {
+.activityIntroduceBody .wrap .main .container .message .messageFrom .send button {
   font-size: 16px;
   padding: 8px 20px;
   border: #000;
   border-radius: 10px;
 }
 
-body .wrap .main .navbarItem {
+.activityIntroduceBody .wrap .main .navbarItem {
   margin-left: 10px;
   padding: 20px;
   width: 250px;
@@ -484,29 +408,29 @@ body .wrap .main .navbarItem {
   border-radius: 5px;
 }
 
-body .wrap .main .navbarItem h3 {
+.activityIntroduceBody .wrap .main .navbarItem h3 {
   line-height: 36px;
   font-size: 16px;
   padding-bottom: 25px;
 }
 
-body .wrap .main .navbarItem h3 a {
+.activityIntroduceBody .wrap .main .navbarItem h3 a {
   text-decoration: none;
   color: #000;
 }
 
-body .wrap .main .navbarItem h3 a img {
+.activityIntroduceBody .wrap .main .navbarItem h3 a img {
   width: 36px;
   height: 36px;
   border-radius: 18px;
 }
 
-body .wrap .main .navbarItem table tr td {
+.activityIntroduceBody .wrap .main .navbarItem table tr td {
   padding-right: 25px;
   padding-bottom: 25px;
 }
 
-body .wrap .main .navbarItem .apply {
+.activityIntroduceBody .wrap .main .navbarItem .apply {
   float: right;
   margin-top: 30px;
 }

@@ -1,0 +1,521 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Microsoft JhengHei, sans-serif;
+  letter-spacing: 0.02em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #f8f8f8;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+svg {
+  cursor: pointer;
+}
+
+.Setting_Frame {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-image: url(../../../images/main//background.png);
+  color: #264148;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-style: "Noto Sans HK", 微软雅黑, "Microsoft YaHei", sans-serif;
+  height: 100vh;
+}
+
+.Setting_Frame .Sidebar {
+  margin-top: 191px;
+  margin-left: 144px;
+  font-size: 18px;
+  width: 400px;
+  height: 400px;
+  border-right: 1px black solid;
+  padding-right: 20px;
+}
+
+.Setting_Frame .Sidebar ul {
+  list-style: none;
+}
+
+.Setting_Frame .Sidebar ul li {
+  text-align: right;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.Setting_Frame .Sidebar ul li:first-child {
+  margin-top: 0;
+}
+
+.Setting_Frame .Normal_Content {
+  font-size: 20px;
+  margin: 130px 0px 0px 50px;
+  width: 750px;
+  height: 500px;
+  padding: 20px;
+}
+
+.Setting_Frame .Normal_Content p {
+  color: #264148;
+  font-size: 22px;
+}
+
+.Setting_Frame .Normal_Content .Content_Shadow {
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 600px;
+  padding: 1px;
+}
+
+.Setting_Frame .Normal_Content .Content_Shadow .Normal_item_name {
+  margin: 30px;
+}
+
+.Setting_Frame .Normal_Content .Content_Shadow .Normal_item_name label {
+  padding-right: 80px;
+}
+
+.Setting_Frame .Normal_Content .Content_Shadow .Normal_item_name:nth-child(6) label {
+  padding-right: 60px;
+}
+
+.Setting_Frame .Normal_Content .Content_Shadow .Normal_item_name span {
+  padding-right: 10px;
+}
+
+.Setting_Frame .Normal_Content .Content_Shadow .Normal_item_name input {
+  border-radius: 5px;
+  border: 1px #bfbfbf solid;
+  background-color: #f8f8f8;
+  width: 150px;
+  height: 40px;
+  font-weight: 300;
+  padding-left: 5px;
+}
+
+.Setting_Frame .Normal_Content .Content_Shadow .Normal_item_name input:nth-child(4) {
+  margin: 10px 30px 0px 121px;
+}
+
+.Setting_Frame .Normal_Content .Content_Shadow .Normal_item_name button {
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #1697d5;
+  color: white;
+  font-size: 16px;
+  width: 50px;
+  height: 30px;
+}
+
+.Setting_Frame .Normal_Content .Content_Shadow .Normal_item_name button:nth-child(6) {
+  background-color: #a0a0a0;
+}
+
+.Setting_Frame .Normal_Content .Content_Shadow .Normal_item_birthday {
+  margin: 30px;
+}
+
+.Setting_Frame .Normal_Content .Content_Shadow .Normal_item_birthday label {
+  padding-right: 80px;
+}
+
+.Setting_Frame .Normal_Content .Content_Shadow .Normal_item_birthday span {
+  padding-right: 10px;
+}
+
+.Setting_Frame .Normal_Content .Content_Shadow .Normal_item_userID {
+  margin: 30px;
+}
+
+.Setting_Frame .Normal_Content .Content_Shadow .Normal_item_userID label {
+  padding-right: 60px;
+}
+
+.Setting_Frame .Normal_Content .Content_Shadow .Normal_item_userID span {
+  padding-right: 10px;
+}
+
+.Setting_Frame .Normal_Content .Content_Shadow .Normal_item_email {
+  margin: 30px;
+}
+
+.Setting_Frame .Normal_Content .Content_Shadow .Normal_item_email label {
+  padding-right: 40px;
+}
+
+.Setting_Frame .Normal_Content .Content_Shadow .Normal_item_email span {
+  padding-right: 10px;
+}
+
+.Setting_Frame .Normal_Content .Content_Shadow .Normal_item_email input {
+  border-radius: 5px;
+  border: 1px #bfbfbf solid;
+  background-color: #f8f8f8;
+  width: 150px;
+  height: 40px;
+  line-height: 40px;
+  font-weight: 300;
+  margin-right: 30px;
+  padding-left: 5px;
+}
+
+.Setting_Frame .Normal_Content .Content_Shadow .Normal_item_email button {
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #1697d5;
+  color: white;
+  font-size: 16px;
+  width: 50px;
+  height: 30px;
+}
+
+.Setting_Frame .Normal_Content .Content_Shadow .Normal_item_email button:nth-child(4) {
+  background-color: #a0a0a0;
+}
+
+.Setting_Frame .Normal_Content .Content_Shadow .Normal_item_place {
+  margin: 30px;
+}
+
+.Setting_Frame .Normal_Content .Content_Shadow .Normal_item_place label {
+  padding-right: 60px;
+}
+
+.Setting_Frame .Normal_Content .Content_Shadow .Normal_item_place span {
+  padding-right: 10px;
+}
+
+.Setting_Frame .Normal_Content .Content_Shadow .Normal_item_place input {
+  border-radius: 5px;
+  border: 1px #bfbfbf solid;
+  background-color: #f8f8f8;
+  width: 150px;
+  height: 40px;
+  line-height: 40px;
+  font-weight: 300;
+  margin-right: 30px;
+  padding-left: 5px;
+  display: none;
+}
+
+.Setting_Frame .Normal_Content .Content_Shadow .Normal_item_place button {
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #1697d5;
+  color: white;
+  font-size: 16px;
+  width: 50px;
+  height: 30px;
+  display: none;
+}
+
+.Setting_Frame .Normal_Content .Content_Shadow .Normal_item_place button:nth-child(4) {
+  background-color: #a0a0a0;
+}
+
+.Setting_Frame .Safety_Content {
+  font-size: 20px;
+  margin: 130px 0px 0px 50px;
+  width: 750px;
+  height: 500px;
+  padding: 20px;
+}
+
+.Setting_Frame .Safety_Content p {
+  color: #264148;
+  font-size: 22px;
+}
+
+.Setting_Frame .Safety_Content .Content_Shadow {
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 600px;
+  padding: 1px;
+}
+
+.Setting_Frame .Safety_Content .Content_Shadow .Safety_item_password {
+  margin: 30px;
+}
+
+.Setting_Frame .Safety_Content .Content_Shadow .Safety_item_password label {
+  padding-right: 80px;
+}
+
+.Setting_Frame .Safety_Content .Content_Shadow .Safety_item_password span {
+  padding-right: 10px;
+}
+
+.Setting_Frame .Safety_Content .Content_Shadow .Safety_item_password input {
+  border-radius: 5px;
+  border: 1px #bfbfbf solid;
+  background-color: #f8f8f8;
+  width: 150px;
+  height: 40px;
+  line-height: 40px;
+  font-weight: 300;
+  display: none;
+}
+
+.Setting_Frame .Safety_Content .Content_Shadow .Safety_item_password input:nth-child(4) {
+  margin: 10px 30px 0px 92px;
+}
+
+.Setting_Frame .Safety_Content .Content_Shadow .Safety_item_password input::-webkit-input-placeholder {
+  font-size: 14px;
+  font-weight: 300;
+  padding-left: 5px;
+  height: 40px;
+  line-height: 40px;
+}
+
+.Setting_Frame .Safety_Content .Content_Shadow .Safety_item_password input:-ms-input-placeholder {
+  font-size: 14px;
+  font-weight: 300;
+  padding-left: 5px;
+  height: 40px;
+  line-height: 40px;
+}
+
+.Setting_Frame .Safety_Content .Content_Shadow .Safety_item_password input::-ms-input-placeholder {
+  font-size: 14px;
+  font-weight: 300;
+  padding-left: 5px;
+  height: 40px;
+  line-height: 40px;
+}
+
+.Setting_Frame .Safety_Content .Content_Shadow .Safety_item_password input::placeholder {
+  font-size: 14px;
+  font-weight: 300;
+  padding-left: 5px;
+  height: 40px;
+  line-height: 40px;
+}
+
+.Setting_Frame .Safety_Content .Content_Shadow .Safety_item_password button {
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #1697d5;
+  color: white;
+  font-size: 16px;
+  width: 50px;
+  height: 30px;
+  display: none;
+}
+
+.Setting_Frame .Safety_Content .Content_Shadow .Safety_item_password button:nth-child(6) {
+  background-color: #a0a0a0;
+}
+
+.Setting_Frame .Privacy_Content {
+  font-size: 20px;
+  margin: 130px 0px 0px 50px;
+  width: 750px;
+  height: 500px;
+  padding: 20px;
+}
+
+.Setting_Frame .Privacy_Content p {
+  color: #264148;
+  font-size: 22px;
+}
+
+.Setting_Frame .Privacy_Content .Content_Shadow {
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 600px;
+  padding: 1px;
+}
+
+.Setting_Frame .Privacy_Content .Content_Shadow .Privacy_item {
+  position: relative;
+  margin: 30px;
+}
+
+.Setting_Frame .Privacy_Content .Content_Shadow .Privacy_item label {
+  padding-right: 80px;
+}
+
+.Setting_Frame .Privacy_Content .Content_Shadow .Privacy_item svg {
+  cursor: pointer;
+  font-size: 21px;
+}
+
+.Setting_Frame .Privacy_Content .Content_Shadow .Privacy_item span:first-child {
+  padding-right: 40px;
+}
+
+.Setting_Frame .Privacy_Content .Content_Shadow .Privacy_item span:nth-child(3) {
+  font-size: 18px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.Setting_Frame .Privacy_Content .Content_Shadow .Privacy_item input {
+  border-radius: 5px;
+  border: 1px #bfbfbf solid;
+  background-color: #f8f8f8;
+  width: 150px;
+  height: 40px;
+  line-height: 40px;
+  font-weight: 300;
+  margin-right: 30px;
+  padding-left: 5px;
+  margin-top: 10px;
+  margin-left: 120px;
+  display: none;
+}
+
+.Setting_Frame .Privacy_Content .Content_Shadow .Privacy_item input::-webkit-input-placeholder {
+  font-size: 14px;
+  font-weight: 300;
+  padding-left: 5px;
+  height: 40px;
+  line-height: 40px;
+}
+
+.Setting_Frame .Privacy_Content .Content_Shadow .Privacy_item input:-ms-input-placeholder {
+  font-size: 14px;
+  font-weight: 300;
+  padding-left: 5px;
+  height: 40px;
+  line-height: 40px;
+}
+
+.Setting_Frame .Privacy_Content .Content_Shadow .Privacy_item input::-ms-input-placeholder {
+  font-size: 14px;
+  font-weight: 300;
+  padding-left: 5px;
+  height: 40px;
+  line-height: 40px;
+}
+
+.Setting_Frame .Privacy_Content .Content_Shadow .Privacy_item input::placeholder {
+  font-size: 14px;
+  font-weight: 300;
+  padding-left: 5px;
+  height: 40px;
+  line-height: 40px;
+}
+
+.Setting_Frame .Privacy_Content .Content_Shadow .Privacy_item button {
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #1697d5;
+  color: white;
+  font-size: 16px;
+  width: 50px;
+  height: 30px;
+  display: none;
+}
+
+.Setting_Frame .Privacy_Content .Content_Shadow .Privacy_item button:nth-child(6) {
+  background-color: #a0a0a0;
+}
+
+.Setting_Frame .Privacy_Content .Content_Shadow .Privacy_item_list {
+  position: relative;
+  width: 330px;
+  padding-left: 152px;
+}
+
+.Setting_Frame .Privacy_Content .Content_Shadow .Privacy_item_list .Privacy_item_list_flexbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 20px;
+}
+
+.Setting_Frame .Privacy_Content .Content_Shadow .Privacy_item_list .Privacy_item_list_flexbox:first-child {
+  margin-top: 0px;
+}
+
+.Setting_Frame .Privacy_Content .Content_Shadow .Privacy_item_list .Privacy_item_list_flexbox span {
+  margin-right: 15px;
+}
+
+.Setting_Frame .Privacy_Content .Content_Shadow .Privacy_item_list .Privacy_item_list_flexbox button {
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #1697d5;
+  color: white;
+  font-size: 16px;
+  width: 50px;
+  height: 30px;
+  width: 75px;
+  background-color: #a0a0a0;
+}
+
+.Setting_Frame .Guide_Content {
+  font-size: 20px;
+  margin: 130px 0px 0px 50px;
+  width: 750px;
+  height: 500px;
+  padding: 20px;
+}
+
+.Setting_Frame .Guide_Content p {
+  color: #264148;
+  font-size: 22px;
+}
+
+.Setting_Frame .Guide_Content .Content_Shadow {
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 600px;
+  padding: 1px;
+}
+
+.Setting_Frame .Guide_Content .Content_Shadow .Guide_item {
+  position: relative;
+  margin: 30px;
+}
+
+.Setting_Frame .Guide_Content .Content_Shadow .Guide_item .Guide_Photo span {
+  padding-right: 5px;
+}
+
+.Setting_Frame .Guide_Content .Content_Shadow .Guide_item .Guide_NumOfPeople {
+  margin-top: 10px;
+}
+
+.Setting_Frame .Guide_Content .Content_Shadow .Guide_item .Guide_Gender {
+  margin-top: 10px;
+}
+
+.Setting_Frame .Guide_Content .Content_Shadow .Guide_item .Guide_Transportation {
+  margin-top: 10px;
+}
+
+.Setting_Frame .Guide_Content .Content_Shadow .Guide_item .Guide_Interested {
+  margin-top: 10px;
+}
+
+.Setting_Frame .Guide_Content .Content_Shadow .Guide_item .Guide_Recommandation {
+  margin-top: 10px;
+}
+
+.Setting_Frame .Guide_Content .Content_Shadow .Guide_item .Guide_Introdution {
+  margin-top: 10px;
+}
+
+.Setting_Frame .Guide_Content .Content_Shadow .Guide_item .Guide_Available {
+  margin-top: 10px;
+}
+/*# sourceMappingURL=Settings.css.map */

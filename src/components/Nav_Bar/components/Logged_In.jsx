@@ -1,10 +1,23 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import logo from "../../../images/Journeylogo.png";
+import logo from "../../../images/logo.png";
 import { Avatar } from "antd";
 import { UserOutlined } from "@ant-design/icons";
+import { useHistory } from "react-router-dom";
 
 const Logged_In = () => {
+
+  let history = useHistory();
+
+  const LogOutBtn = () => {
+    localStorage.setItem('token', '');
+    history.go(0);
+  }
+
+  let toPersonal = () => {
+    history.push('/personal/' + 'eric840324@gmail.com' )
+  }
+
   return (
     <nav id="loggedIn">
       <ul>
@@ -13,29 +26,36 @@ const Logged_In = () => {
         </a>
         <div class="navbar">
           <li>
-            <NavLink className="navLink" to="/Event">
+            <a className="navLink" href="/Event">
               活動
-            </NavLink>
+            </a>
           </li>
           <li>
-            <NavLink className="navLink" to="/Guide">
+            <a className="navLink" href="/Guide">
               嚮導
-            </NavLink>
+            </a>
           </li>
           <li>
-            <NavLink className="navLink" to="/Society">
+            <a className="navLink" href="/Society">
               社群
-            </NavLink>
+            </a>
           </li>
           <li>
-            <NavLink className="navLink" to="/Login">
-              <Avatar
-                style={{
-                  backgroundColor: "#1697d5",
-                }}
-                icon={<UserOutlined />}
-              />
-            </NavLink>
+            <div className="dropdown">
+              <span className="navLink">
+                <Avatar
+                  style={{
+                    backgroundColor: "#1697d5",
+                  }}
+                  icon={<UserOutlined />}
+                />
+                <div className="dropdownContent">
+                  <a onClick={toPersonal}>個人頁面</a>
+                  <a href="/setting">設定</a>
+                  <a onClick={LogOutBtn} >登出</a>
+                </div>
+              </span>
+            </div>
           </li>
         </div>
       </ul>

@@ -1,18 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  font-family: Microsoft JhengHei, sans-serif;
-  letter-spacing: 0.02em;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-body {
-  background-color: #f8f8f8;
-  width: 100vw;
-  min-height: 100vh;
-}
-
 #logIn {
   margin: auto;
   margin-top: 20px;
@@ -67,33 +52,39 @@ body {
   font-size: 20px;
 }
 
-#logIn ul .navbar li:nth-child(4) a {
+#logIn ul .navbar li:nth-child(4) span {
   color: #1697d5;
+  cursor: pointer;
 }
 
-#logIn ul .navbar li .navLink {
+#logIn ul .navbar li .navLink,
+#logIn ul .navbar li span {
   text-decoration: none;
   color: #264148;
   display: inline-block;
   position: relative;
 }
 
-#logIn ul .navbar li .navLink svg {
+#logIn ul .navbar li .navLink svg,
+#logIn ul .navbar li span svg {
   vertical-align: baseline;
 }
 
-#logIn ul .navbar li .navLink:hover {
+#logIn ul .navbar li .navLink:hover,
+#logIn ul .navbar li span:hover {
   color: #1697d5;
 }
 
-#logIn ul .navbar li .navLink:hover::after {
+#logIn ul .navbar li .navLink:hover::after,
+#logIn ul .navbar li span:hover::after {
   -webkit-transform: scaleX(1);
           transform: scaleX(1);
   -webkit-transform-origin: bottom left;
           transform-origin: bottom left;
 }
 
-#logIn ul .navbar li .navLink::after {
+#logIn ul .navbar li .navLink::after,
+#logIn ul .navbar li span::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -167,6 +158,67 @@ body {
 #loggedIn ul .navbar li {
   padding: 0 20px;
   font-size: 20px;
+}
+
+#loggedIn ul .navbar li .dropdown {
+  position: relative;
+  height: 35px;
+}
+
+#loggedIn ul .navbar li .dropdown:hover .dropdownContent {
+  display: block;
+}
+
+#loggedIn ul .navbar li .dropdown .dropdownContent {
+  display: none;
+  width: 150px;
+  margin: 0 -60px;
+  padding: 10px 20px;
+  background-color: white;
+  border-radius: 0 0 20px 20px;
+  -webkit-box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
+  position: absolute;
+}
+
+#loggedIn ul .navbar li .dropdown .dropdownContent a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #264148;
+  padding: 5px 0;
+}
+
+#loggedIn ul .navbar li .dropdown .dropdownContent a:hover {
+  color: #1697d5;
+}
+
+#loggedIn ul .navbar li .dropdown .dropdownContent a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  height: 1.5px;
+  bottom: -8px;
+  left: 0;
+  background-color: #1697d5;
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+  -webkit-transition: -webkit-transform 0.4s ease-out;
+  transition: -webkit-transform 0.4s ease-out;
+  transition: transform 0.4s ease-out;
+  transition: transform 0.4s ease-out, -webkit-transform 0.4s ease-out;
 }
 
 #loggedIn ul .navbar li:nth-child(4) a {
@@ -265,14 +317,14 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  padding: 0 20px;
 }
 
 #scrolled ul .navbar li {
-  padding: 0 20px;
   font-size: 20px;
 }
 
-#scrolled ul .navbar li:nth-child(4) a {
+#scrolled ul .navbar li:nth-child(4) span {
   color: #1697d5;
 }
 

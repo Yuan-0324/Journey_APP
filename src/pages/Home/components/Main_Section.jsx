@@ -1,35 +1,20 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { Power3 } from "gsap/gsap-core";
 import { gsap } from "gsap";
 
-
-// import { ReactComponent as Camera } from "../../images/mainSvg/camera.svg";
-// import { ReactComponent as Compass } from "../../images/mainSvg/compass.svg";
-// import { ReactComponent as Plane1 } from "../../images/mainSvg/plane1.svg";
-// import { ReactComponent as Plane2 } from "../../images/mainSvg/plane2.svg";
-// import { ReactComponent as Splash1 } from "../../images/mainSvg/splash1.svg";
-// import { ReactComponent as Splash2 } from "../../images/mainSvg/splash2.svg";
-// import { ReactComponent as Star1 } from "../../images/mainSvg/star1.svg";
-// import { ReactComponent as Star2 } from "../../images/mainSvg/star2.svg";
-// import { ReactComponent as Track1 } from "../../images/mainSvg/track1.svg";
-// import { ReactComponent as Track2 } from "../../images/mainSvg/track2.svg";
-// import Women from "../../images/happywomen.png";
-
-
 // ---- 更新 ----
 
-import { ReactComponent as Camera } from "../../../images/mainSvg/camera.svg";
-import { ReactComponent as Compass } from "../../../images/mainSvg/compass.svg";
-import { ReactComponent as Plane1 } from "../../../images/mainSvg/plane1.svg";
-import { ReactComponent as Plane2 } from "../../../images/mainSvg/plane2.svg";
-import { ReactComponent as Splash1 } from "../../../images/mainSvg/splash1.svg";
-import { ReactComponent as Splash2 } from "../../../images/mainSvg/splash2.svg";
-import { ReactComponent as Star1 } from "../../../images/mainSvg/star1.svg";
-import { ReactComponent as Star2 } from "../../../images/mainSvg/star2.svg";
-import { ReactComponent as Track1 } from "../../../images/mainSvg/track1.svg";
-import { ReactComponent as Track2 } from "../../../images/mainSvg/track2.svg";
-import Women from "../../../images/happywomen.png";
-
+import { ReactComponent as Camera } from "../../../images/Home/mainSvg/camera.svg";
+import { ReactComponent as Compass } from "../../../images/Home/mainSvg/compass.svg";
+import { ReactComponent as Plane1 } from "../../../images/Home/mainSvg/plane1.svg";
+import { ReactComponent as Plane2 } from "../../../images/Home/mainSvg/plane2.svg";
+import { ReactComponent as Splash1 } from "../../../images/Home/mainSvg/splash1.svg";
+import { ReactComponent as Splash2 } from "../../../images/Home/mainSvg/splash2.svg";
+import { ReactComponent as Star1 } from "../../../images/Home/mainSvg/star1.svg";
+import { ReactComponent as Star2 } from "../../../images/Home/mainSvg/star2.svg";
+import { ReactComponent as Track1 } from "../../../images/Home/mainSvg/track1.svg";
+import { ReactComponent as Track2 } from "../../../images/Home/mainSvg/track2.svg";
+import Women from "../../../images/Home/happywomen.png";
 
 const Main_Section = () => {
   const cameraRef = useRef();
@@ -43,14 +28,40 @@ const Main_Section = () => {
   const track1Ref = useRef();
   const track2Ref = useRef();
 
+  // const [scrollPosition, setScrollPosition] = useState(0);
+
+  // const handleScroll = () => {
+  //   const position = window.pageYOffset;
+  //   setScrollPosition(position);
+  //   console.log(position);
+  //   if (position >= 3700) {
+  //     // alert("hello");
+  //   } else if (position < 500) {
+  //     // console.log("again");
+  //   }
+  // };
+
+  var tl = gsap.timeline({ repeat: -1 });
   useEffect(() => {
-    const tl = gsap.timeline({ defaults: { duration: 0.75 } });
-    tl.to(star1Ref.current, { rotate: 360 });
-  });
+    tl.from(
+      star1Ref.current,
+      { opacity: 0, ease: Power3.easeOut, delay: 3 },
+      "Start"
+    )
+      .to(star1Ref.current, { rotate: 180 })
+      .to(star1Ref.current, { opacity: 0, delay: 0.5 })
+
+      .from(
+        star2Ref.current,
+        { opacity: 0, ease: Power3.easeOut, delay: 3 },
+        "Start"
+      )
+      .to(star2Ref.current, { rotate: 180 })
+      .to(star2Ref.current, { opacity: 0, delay: 0.5 });
+  }, []);
 
   return (
     <section id="mainSection">
-      {/* <Camera ref={cameraRef} /> */}
       <div className="women">
         <Camera ref={cameraRef} />
         <Compass ref={compassRef} />

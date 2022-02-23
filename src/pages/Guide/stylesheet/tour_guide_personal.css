@@ -1,37 +1,35 @@
-* {
-  margin: 0;
-  padding: 0;
-  font-family: Microsoft JhengHei, sans-serif;
-  letter-spacing: 0.02em;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+.guidePersonalPage {
+  padding-bottom: 50px;
 }
 
-body {
-  background-color: #f8f8f8;
-  width: 100vw;
-  min-height: 100vh;
+.guidePersonalPage .bgImg {
+  position: fixed;
+  z-index: -1000;
+  height: 100vh;
+  width: 100%;
 }
 
-.guidePersonalContent {
+.guidePersonalPage .guidePersonalContent {
   width: 1000px;
   margin: auto;
   position: relative;
   margin-top: 130px;
 }
 
-.guidePersonalContent .joinBtn {
+.guidePersonalPage .guidePersonalContent .joinBtn {
   position: absolute;
-  right: -100px;
+  right: -50px;
   top: -15px;
   z-index: 100;
+  font-size: 16px;
 }
 
-.guidePersonalContent .joinBtn a {
+.guidePersonalPage .guidePersonalContent .joinBtn a {
   margin-left: 20px;
+  font-weight: 600;
 }
 
-.guidePersonalContent .guideHeader {
+.guidePersonalPage .guidePersonalContent .guideHeader {
   width: 1000px;
   position: relative;
   display: -webkit-box;
@@ -44,12 +42,12 @@ body {
   color: #264148;
 }
 
-.guidePersonalContent .guideHeader .memberImgArea {
+.guidePersonalPage .guidePersonalContent .guideHeader .memberImgArea {
   width: 150px;
   height: 150px;
 }
 
-.guidePersonalContent .guideHeader .memberImgArea .memberImg {
+.guidePersonalPage .guidePersonalContent .guideHeader .memberImgArea .memberImg {
   width: 150px;
   height: 150px;
   border-radius: 50%;
@@ -57,44 +55,48 @@ body {
           box-shadow: 3px 3px 5px rgba(77, 77, 77, 0.856);
 }
 
-.guidePersonalContent .guideHeader .memberInformation {
+.guidePersonalPage .guidePersonalContent .guideHeader .memberInformation {
   margin-left: 100px;
   width: 470px;
   position: relative;
 }
 
-.guidePersonalContent .guideHeader .memberInformation .memberName {
+.guidePersonalPage .guidePersonalContent .guideHeader .memberInformation .memberName {
   padding-bottom: 10px;
   font-size: 25px;
   font-weight: 600;
 }
 
-.guidePersonalContent .guideHeader .memberInformation .guideLevel {
+.guidePersonalPage .guidePersonalContent .guideHeader .memberInformation .guideLevel {
   padding-bottom: 10px;
+  position: relative;
 }
 
-.guidePersonalContent .guideHeader .memberInformation .guideLevel .star {
-  font-size: 14px;
+.guidePersonalPage .guidePersonalContent .guideHeader .memberInformation .guideLevel .star {
+  font-size: 16px;
   color: #ffb11b;
   text-shadow: 2px 2px 3px rgba(59, 59, 59, 0.63);
+  bottom: 12px;
+  position: absolute;
 }
 
-.guidePersonalContent .guideHeader .memberInformation .guideLevel .guideStarNum {
-  font-size: 14px;
+.guidePersonalPage .guidePersonalContent .guideHeader .memberInformation .guideLevel .guideStarNum {
+  font-size: 16px;
+  margin-left: 20px;
 }
 
-.guidePersonalContent .guideHeader .memberInformation .guideLevel .guideTitle {
+.guidePersonalPage .guidePersonalContent .guideHeader .memberInformation .guideLevel .guideTitle {
   color: rebeccapurple;
-  font-size: 14px;
-  margin-left: 8px;
+  font-size: 16px;
+  margin-left: 20px;
 }
 
-.guidePersonalContent .guideHeader .memberInformation .memberIntroduction {
+.guidePersonalPage .guidePersonalContent .guideHeader .memberInformation .memberIntroduction {
   font-size: 16px;
   width: 400px;
 }
 
-.guidePersonalContent .guideHeader .memberInformation .Icon {
+.guidePersonalPage .guidePersonalContent .guideHeader .memberInformation .Icon {
   position: absolute;
   font-size: 20px;
   right: 0;
@@ -102,7 +104,7 @@ body {
   letter-spacing: 15px;
 }
 
-.guidePersonalContent .guideHeader .memberInformation .guideLocation .locationIcon {
+.guidePersonalPage .guidePersonalContent .guideHeader .memberInformation .guideLocation .locationIcon {
   position: absolute;
   right: 35px;
   bottom: 1px;
@@ -110,7 +112,7 @@ body {
   color: #e83015;
 }
 
-.guidePersonalContent .guideHeader .memberInformation .guideLocation .locationContent {
+.guidePersonalPage .guidePersonalContent .guideHeader .memberInformation .guideLocation .locationContent {
   position: absolute;
   right: 0;
   bottom: -1px;
@@ -118,7 +120,7 @@ body {
   color: #e83015;
 }
 
-.guidePersonalContent .aboutArea {
+.guidePersonalPage .guidePersonalContent .aboutArea {
   padding-top: 50px;
   width: 900px;
   margin: auto;
@@ -128,16 +130,15 @@ body {
   position: relative;
 }
 
-.guidePersonalContent .aboutArea .aboutMe .Title {
+.guidePersonalPage .guidePersonalContent .aboutArea .aboutMe .Title {
   font-size: 20px;
   color: #264148;
   font-weight: 600;
 }
 
-.guidePersonalContent .aboutArea .aboutMe .aboutMeContent {
-  border: 2px cadetblue solid;
-  padding: 6px 10px;
-  border-radius: 10px;
+.guidePersonalPage .guidePersonalContent .aboutArea .aboutMe .aboutMeContent {
+  border-bottom: 2px #bebebe solid;
+  padding: 7px 10px;
   width: 400px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -147,76 +148,193 @@ body {
           justify-content: space-between;
   margin-top: 16px;
   color: #264148;
+  font-weight: 500;
+  font-size: 16px;
 }
 
-.guidePersonalContent .aboutArea .reservation {
+.guidePersonalPage .guidePersonalContent .aboutArea .aboutMe .aboutMeContent .title {
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.guidePersonalPage .guidePersonalContent .aboutArea .reservation {
   position: absolute;
   right: -50px;
   width: 470px;
   height: 300px;
 }
 
-.guidePersonalContent .aboutArea .reservation .Title {
+.guidePersonalPage .guidePersonalContent .aboutArea .reservation .Title {
   font-size: 20px;
   color: #264148;
   font-weight: 600;
 }
 
-.guidePersonalContent .aboutArea .reservation .reservationCalendar {
+.guidePersonalPage .guidePersonalContent .aboutArea .reservation .reservationCalendar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.guidePersonalContent .aboutArea .reservation .reservationCalendar .calendarArea {
+.guidePersonalPage .guidePersonalContent .aboutArea .reservation .reservationCalendar .calendarArea {
   margin-top: 15px;
-  height: 320px;
-  width: 460px;
+  height: 330px;
   border-radius: 10px;
-  -webkit-box-shadow: 2px 2px 2px #85858593;
-          box-shadow: 2px 2px 2px #85858593;
+  -webkit-box-shadow: 2px 2px 5px #dfdfdf;
+          box-shadow: 2px 2px 5px #dfdfdf;
   padding: 10px;
-  background-color: #dfdfdf73;
+  background-color: #ffffff9c;
 }
 
-.guidePersonalContent .aboutArea .reservation .reservationCalendar .calendarArea #calendar {
+.guidePersonalPage .guidePersonalContent .aboutArea .reservation .reservationCalendar .calendarArea div > div.fc-view-harness.fc-view-harness-active > div > table {
+  border: none;
+}
+
+.guidePersonalPage .guidePersonalContent .aboutArea .reservation .reservationCalendar .calendarArea div > div.fc-view-harness.fc-view-harness-active > div > table td {
+  border: none;
+}
+
+.guidePersonalPage .guidePersonalContent .aboutArea .reservation .reservationCalendar .calendarArea div > div.fc-view-harness.fc-view-harness-active > div > table thead > tr > th {
+  border: none;
+}
+
+.guidePersonalPage .guidePersonalContent .aboutArea .reservation .reservationCalendar .calendarArea div > div.fc-view-harness.fc-view-harness-active > div > table thead > tr > th th {
+  border: none;
+}
+
+.guidePersonalPage .guidePersonalContent .aboutArea .reservation .reservationCalendar .calendarArea div > div.fc-view-harness.fc-view-harness-active > div > table thead > tr > th td {
+  border: none;
+}
+
+.guidePersonalPage .guidePersonalContent .aboutArea .reservation .reservationCalendar .calendarArea .fc-daygrid-day-bg > div > div {
+  border-radius: 50%;
+}
+
+.guidePersonalPage .guidePersonalContent .aboutArea .reservation .reservationCalendar .calendarArea #fc-dom-2 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.guidePersonalPage .guidePersonalContent .aboutArea .reservation .reservationCalendar .calendarArea .fc-header-toolbar.fc-toolbar.fc-toolbar-ltr {
+  margin-bottom: 15px;
+}
+
+.guidePersonalPage .guidePersonalContent .aboutArea .reservation .reservationCalendar .calendarArea .fc-header-toolbar.fc-toolbar.fc-toolbar-ltr div:nth-child(1) > button {
+  font-size: 15px;
+  height: 30px;
+  padding: 3px 8px;
+  border: none;
+  font-weight: 600;
+  background-color: #6bc1e9;
+  background-image: linear-gradient(315deg, #6bc1e9 0%, #80ced7 74%);
+}
+
+.guidePersonalPage .guidePersonalContent .aboutArea .reservation .reservationCalendar .calendarArea .fc-header-toolbar.fc-toolbar.fc-toolbar-ltr div:nth-child(1) > button:hover {
+  -webkit-box-shadow: 2px 2px 3px #85858593;
+          box-shadow: 2px 2px 3px #85858593;
+}
+
+.guidePersonalPage .guidePersonalContent .aboutArea .reservation .reservationCalendar .calendarArea .fc-daygrid-day-events {
+  display: none;
+}
+
+.guidePersonalPage .guidePersonalContent .aboutArea .reservation .reservationCalendar .calendarArea .fc-daygrid-day-top {
+  margin-top: 3px;
+}
+
+.guidePersonalPage .guidePersonalContent .aboutArea .reservation .reservationCalendar .calendarArea .fc-daygrid-day-top .fc-daygrid-day-number {
   color: #264148;
+  font-size: 15px;
+  font-weight: 500;
+  margin: 4px auto;
 }
 
-.guidePersonalContent .aboutArea .reservation .reservationCalendar .reservationArea {
+.guidePersonalPage .guidePersonalContent .aboutArea .reservation .reservationCalendar .calendarArea .fc-col-header-cell-cushion {
+  color: #264148;
+  cursor: default;
+}
+
+.guidePersonalPage .guidePersonalContent .aboutArea .reservation .reservationCalendar .calendarArea .fc-col-header-cell-cushion:hover {
+  text-decoration: none;
+}
+
+.guidePersonalPage .guidePersonalContent .aboutArea .reservation .reservationCalendar .calendarArea .fc-next-button,
+.guidePersonalPage .guidePersonalContent .aboutArea .reservation .reservationCalendar .calendarArea .fc-prev-button {
+  height: 30px;
+  width: 30px;
+}
+
+.guidePersonalPage .guidePersonalContent .aboutArea .reservation .reservationCalendar .calendarArea .fc-prev-button.fc-button.fc-button-primary {
+  margin-right: 10px;
+  position: relative;
+}
+
+.guidePersonalPage .guidePersonalContent .aboutArea .reservation .reservationCalendar .calendarArea .fc-prev-button.fc-button.fc-button-primary span {
+  position: absolute;
+  top: 5px;
+  left: 1px;
+}
+
+.guidePersonalPage .guidePersonalContent .aboutArea .reservation .reservationCalendar .calendarArea .fc-next-button.fc-button.fc-button-primary {
+  position: relative;
+}
+
+.guidePersonalPage .guidePersonalContent .aboutArea .reservation .reservationCalendar .calendarArea .fc-next-button.fc-button.fc-button-primary span {
+  position: absolute;
+  top: 5px;
+  left: 4px;
+}
+
+.guidePersonalPage .guidePersonalContent .aboutArea .reservation .reservationCalendar .calendarArea .fc-daygrid-day-frame .fc-scrollgrid-sync-inner {
+  border-radius: 30px;
+}
+
+.guidePersonalPage .guidePersonalContent .aboutArea .reservation .reservationCalendar .calendarArea .fc-daygrid-day-bg > div > div {
+  margin: 5% 7%;
+}
+
+.guidePersonalPage .guidePersonalContent .aboutArea .reservation .reservationCalendar .reservationArea {
   margin-top: 15px;
-  width: 100px;
+  width: 110px;
   height: 80px;
   border-radius: 10px;
-  -webkit-box-shadow: 2px 2px 2px #85858593;
-          box-shadow: 2px 2px 2px #85858593;
+  -webkit-box-shadow: 2px 2px 2px #dadada9c;
+          box-shadow: 2px 2px 2px #dadada9c;
   padding: 5px;
-  background-color: #dfdfdf73;
   margin: 15px 0 0 5px;
+  background-color: #ffffffaf;
 }
 
-.guidePersonalContent .aboutArea .reservation .reservationCalendar .reservationArea .reservationDate {
+.guidePersonalPage .guidePersonalContent .aboutArea .reservation .reservationCalendar .reservationArea .reservationDate {
   padding-bottom: 5px;
   font-size: 15px;
   font-weight: 600;
   text-align: center;
   border: none;
-  background-color: #dfdfdf73;
-  width: 90px;
+  width: 100px;
+  background: none;
   border-radius: 10px 10px 0 0;
   border-bottom: 2px #264148 solid;
 }
 
-.guidePersonalContent .aboutArea .reservation .reservationCalendar .reservationArea .reservationBtn {
-  margin: 8px 23px;
+.guidePersonalPage .guidePersonalContent .aboutArea .reservation .reservationCalendar .reservationArea .reservationBtn {
+  margin: 10px 30px;
   -webkit-box-shadow: 1px 1px 1px #85858593;
           box-shadow: 1px 1px 1px #85858593;
   color: #264148;
   font-weight: 600;
   padding: 0 4px;
+  border-radius: 5px;
+  border: 1px #264148 solid;
+  background-color: white;
 }
 
-.guidePersonalContent .imgArea {
+.guidePersonalPage .guidePersonalContent .aboutArea .reservation .reservationCalendar .reservationArea .reservationBtn:hover {
+  -webkit-box-shadow: 2px 2px 3px #85858593;
+          box-shadow: 2px 2px 3px #85858593;
+}
+
+.guidePersonalPage .guidePersonalContent .imgArea {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -239,14 +357,14 @@ body {
   width: 1000px;
 }
 
-.guidePersonalContent .imgArea .credit {
+.guidePersonalPage .guidePersonalContent .imgArea .credit {
   position: absolute;
   bottom: 20px;
   left: 20px;
   color: inherit;
 }
 
-.guidePersonalContent .imgArea .options {
+.guidePersonalPage .guidePersonalContent .imgArea .options {
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -264,7 +382,7 @@ body {
   margin: auto;
 }
 
-.guidePersonalContent .imgArea .options .option {
+.guidePersonalPage .guidePersonalContent .imgArea .options .option {
   position: relative;
   overflow: hidden;
   min-width: 90px;
@@ -278,7 +396,7 @@ body {
   background-color: #cacaca;
 }
 
-.guidePersonalContent .imgArea .options .option.active {
+.guidePersonalPage .guidePersonalContent .imgArea .options .option.active {
   -webkit-box-flex: 10000;
       -ms-flex-positive: 10000;
           flex-grow: 10000;
@@ -286,49 +404,50 @@ body {
           transform: scale(1);
   max-width: 600px;
   margin: 0 10px;
-  border-radius: 40px;
+  border-radius: 30px;
   background-size: auto 100%;
 }
 
-.guidePersonalContent .imgArea .options .option.active .shadow {
-  -webkit-box-shadow: inset 0 -120px 120px -120px black, inset 0 -120px 120px -100px black;
-          box-shadow: inset 0 -120px 120px -120px black, inset 0 -120px 120px -100px black;
+.guidePersonalPage .guidePersonalContent .imgArea .options .option.active .shadow {
+  -webkit-box-shadow: inset 0px -80px 100px rgba(87, 87, 87, 0.575) !important;
+          box-shadow: inset 0px -80px 100px rgba(87, 87, 87, 0.575) !important;
+  height: 70px;
 }
 
-.guidePersonalContent .imgArea .options .option.active .label {
-  bottom: 20px;
-  left: 20px;
+.guidePersonalPage .guidePersonalContent .imgArea .options .option.active .label {
+  bottom: 15px;
+  left: 30px;
 }
 
-.guidePersonalContent .imgArea .options .option.active .label .info > div {
+.guidePersonalPage .guidePersonalContent .imgArea .options .option.active .label .info > div {
   left: 0px;
   opacity: 1;
 }
 
-.guidePersonalContent .imgArea .options .option:not(.active) {
+.guidePersonalPage .guidePersonalContent .imgArea .options .option:not(.active) {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
   border-radius: 30px;
 }
 
-.guidePersonalContent .imgArea .options .option:not(.active) .shadow {
+.guidePersonalPage .guidePersonalContent .imgArea .options .option:not(.active) .shadow {
   bottom: -40px;
   -webkit-box-shadow: inset 0 -120px 0px -120px black, inset 0 -120px 0px -100px black;
           box-shadow: inset 0 -120px 0px -120px black, inset 0 -120px 0px -100px black;
 }
 
-.guidePersonalContent .imgArea .options .option:not(.active) .label {
+.guidePersonalPage .guidePersonalContent .imgArea .options .option:not(.active) .label {
   bottom: 10px;
   left: 10px;
 }
 
-.guidePersonalContent .imgArea .options .option:not(.active) .label .info > div {
+.guidePersonalPage .guidePersonalContent .imgArea .options .option:not(.active) .label .info > div {
   left: 20px;
   opacity: 0;
 }
 
-.guidePersonalContent .imgArea .options .option .shadow {
+.guidePersonalPage .guidePersonalContent .imgArea .options .option .shadow {
   position: absolute;
   bottom: 0px;
   left: 0px;
@@ -338,7 +457,7 @@ body {
   transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
 
-.guidePersonalContent .imgArea .options .option .label {
+.guidePersonalPage .guidePersonalContent .imgArea .options .option .label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -349,30 +468,7 @@ body {
   transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
 
-.guidePersonalContent .imgArea .options .option .label .icon {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  min-width: 40px;
-  max-width: 40px;
-  height: 40px;
-  border-radius: 100%;
-  margin-left: 15px;
-  background-color: white;
-  color: var(--defaultBackground);
-}
-
-.guidePersonalContent .imgArea .options .option .label .info {
+.guidePersonalPage .guidePersonalContent .imgArea .options .option .label .info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -388,34 +484,39 @@ body {
   white-space: pre;
 }
 
-.guidePersonalContent .imgArea .options .option .label .info > div {
+.guidePersonalPage .guidePersonalContent .imgArea .options .option .label .info > div {
   position: relative;
   -webkit-transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95), opacity 0.5s ease-out;
   transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95), opacity 0.5s ease-out;
 }
 
-.guidePersonalContent .imgArea .options .option .label .info .main {
+.guidePersonalPage .guidePersonalContent .imgArea .options .option .label .info .main {
   font-weight: bold;
   font-size: 1.2rem;
 }
 
-.guidePersonalContent .imgArea .options .option .label .info .sub {
+.guidePersonalPage .guidePersonalContent .imgArea .options .option .label .info .sub {
   -webkit-transition-delay: 0.1s;
           transition-delay: 0.1s;
 }
 
-.guidePersonalContent .evaluationArea {
+.guidePersonalPage .guidePersonalContent .evaluationArea {
   width: 900px;
   margin: auto;
+  border: 3px rgba(175, 175, 175, 0.315) solid;
+  border-radius: 30px;
+  padding: 20px 20px 10px 20px;
+  height: auto;
 }
 
-.guidePersonalContent .evaluationArea .Title {
+.guidePersonalPage .guidePersonalContent .evaluationArea .Title {
+  margin-left: 18px;
   font-size: 20px;
   color: #264148;
   font-weight: 600;
 }
 
-.guidePersonalContent .evaluationArea .evaluations {
+.guidePersonalPage .guidePersonalContent .evaluationArea .evaluations {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -426,55 +527,64 @@ body {
   margin-top: 20px;
 }
 
-.guidePersonalContent .evaluationArea .evaluations .evaluation {
-  width: 410px;
-  height: 100px;
-  margin-bottom: 40px;
+.guidePersonalPage .guidePersonalContent .evaluationArea .evaluations .evaluation {
+  width: 400px;
+  margin-bottom: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 15px;
+  padding: 13px 15px;
+  height: auto;
+  -webkit-box-shadow: 1px 1px 5px #e4e3e35d;
+          box-shadow: 1px 1px 5px #e4e3e35d;
 }
 
-.guidePersonalContent .evaluationArea .evaluations .evaluation .evaluationImg img {
-  width: 100px;
-  height: 100px;
+.guidePersonalPage .guidePersonalContent .evaluationArea .evaluations .evaluation .evaluationImg img {
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
+  -webkit-box-shadow: 2px 2px 3px #cfcfcf;
+          box-shadow: 2px 2px 3px #cfcfcf;
 }
 
-.guidePersonalContent .evaluationArea .evaluations .evaluation .evaluationBody {
+.guidePersonalPage .guidePersonalContent .evaluationArea .evaluations .evaluation .evaluationBody {
   position: relative;
   width: 410px;
+  height: auto;
 }
 
-.guidePersonalContent .evaluationArea .evaluations .evaluation .evaluationBody .evaluationName {
+.guidePersonalPage .guidePersonalContent .evaluationArea .evaluations .evaluation .evaluationBody .evaluationName {
   font-size: 16px;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  padding-left: 10px;
+  padding-left: 15px;
+  font-weight: 600;
 }
 
-.guidePersonalContent .evaluationArea .evaluations .evaluation .evaluationBody .evaluationstar {
+.guidePersonalPage .guidePersonalContent .evaluationArea .evaluations .evaluation .evaluationBody .evaluationstar {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 14px;
   position: absolute;
-  margin-left: 10px;
+  margin-left: 15px;
 }
 
-.guidePersonalContent .evaluationArea .evaluations .evaluation .evaluationBody .evaluationstar .star {
+.guidePersonalPage .guidePersonalContent .evaluationArea .evaluations .evaluation .evaluationBody .evaluationstar .star {
   color: #ffb11b;
   text-shadow: 2px 2px 3px rgba(59, 59, 59, 0.63);
 }
 
-.guidePersonalContent .evaluationArea .evaluations .evaluation .evaluationBody .evaluationstar .starNum {
+.guidePersonalPage .guidePersonalContent .evaluationArea .evaluations .evaluation .evaluationBody .evaluationstar .starNum {
   left: 50px;
   margin-left: 5px;
   margin-top: 2px;
 }
 
-.guidePersonalContent .evaluationArea .evaluations .evaluation .evaluationBody .evaluationDate {
+.guidePersonalPage .guidePersonalContent .evaluationArea .evaluations .evaluation .evaluationBody .evaluationDate {
   display: inline;
   position: absolute;
   right: 7px;
@@ -482,78 +592,20 @@ body {
   padding-top: 5px;
 }
 
-.guidePersonalContent .evaluationArea .evaluations .evaluation .evaluationBody .evaluationContent {
-  padding: 3px 0 0 10px;
-  height: 70px;
+.guidePersonalPage .guidePersonalContent .evaluationArea .evaluations .evaluation .evaluationBody .evaluationContent {
+  padding: 3px 0 0 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: top;
+      -ms-flex-align: top;
+          align-items: top;
 }
 
-.fc-daygrid-day-events {
-  display: none;
-}
-
-.fc-daygrid-day-number {
-  font-weight: 400;
-  margin: 3px auto;
-  color: #264148;
-  cursor: pointer;
-}
-
-.fc-daygrid-day-number:hover {
-  text-decoration: none;
-}
-
-.fc-col-header-cell-cushion {
-  color: #264148;
-  cursor: default;
-}
-
-.fc-col-header-cell-cushion:hover {
-  text-decoration: none;
-}
-
-.fc-next-button, .fc-prev-button {
-  height: 30px;
-  width: 30px;
-}
-
-.fc-prev-button.fc-button.fc-button-primary {
-  margin-right: 10px;
-  position: relative;
-}
-
-.fc-prev-button.fc-button.fc-button-primary span {
-  position: absolute;
-  top: 2px;
-  left: 1px;
-}
-
-.fc-next-button.fc-button.fc-button-primary {
-  position: relative;
-}
-
-.fc-next-button.fc-button.fc-button-primary span {
-  position: absolute;
-  top: 2px;
-  left: 3px;
-}
-
-#fc-dom-2 {
-  font-size: 24px;
-}
-
-#root > div > div > div.aboutArea > div.reservation > div.reservationCalendar > div.calendarArea > div > div.fc-header-toolbar.fc-toolbar.fc-toolbar-ltr > div:nth-child(1) > button {
-  font-size: 16px;
-  height: 30px;
-  padding: 3px 10px;
-}
-
-#root > div > div > div.aboutArea > div.reservation > div.reservationCalendar > div.calendarArea > div > div.fc-header-toolbar.fc-toolbar.fc-toolbar-ltr {
-  margin-bottom: 15px;
+.guidePersonalPage .guidePersonalContent .evaluationArea .evaluationMore {
+  text-align: center;
+  width: 100%;
+  display: block;
+  font-weight: 600;
 }
 /*# sourceMappingURL=tour_guide_personal.css.map */

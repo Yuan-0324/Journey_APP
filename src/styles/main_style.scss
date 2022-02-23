@@ -1,0 +1,19 @@
+@import './var';
+
+// ------- 個頁面初始值 --------
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Microsoft JhengHei, sans-serif;
+    letter-spacing: 1px;
+    box-sizing: border-box;
+    *:focus {
+        outline: none;
+    }
+  }
+  
+  body {
+    background-color: $bgcolor;
+    width: 100vw;
+    min-height: 100vh;
+  }

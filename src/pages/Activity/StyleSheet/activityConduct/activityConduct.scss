@@ -1,18 +1,16 @@
 // ----- 匯入設定樣式檔 -----
-@import '../../../../styles/var';
+@import "../../../../styles/_var.scss";
 // ------------------------
+@import "../importStyle/Initialization.scss";
 
-
-
-
-@import "./activityConductRwd.scss";
+// @import "./activityConductRwd.scss";
 
 //TODO
 
 // 預設值
-
+$fontcolor: #264148;
 $d6: #d6d6d6;
-
+$border: solid #000 1px;
 // ----- 這段可能會把別人的樣式蓋過去喔 -----
 // * {
 //   margin: 0;
@@ -23,30 +21,34 @@ $d6: #d6d6d6;
 // }
 
 .activityConductBody {
-  color: $fontcolor;
-  .pageHr{
+  // color: $fontcolor;
+  .pageHr {
     width: 5px;
-    height: 3200px;
-    left: 300px;
+    height: 1844px;
+    left: 305.5px;
     bottom: 0;
     position: absolute;
-    border: 1px $fontcolor solid;
-      border-radius: 2px;
-    top: 230px;
+    border: 1px #264148 solid;
+    border-radius: 2px;
+    color: #000;
+    background-color: #264148;
+    top: 170px;
+    z-index: 5;
   }
-  .pageTitlePoint{
-    font-size: 27px;
-    color: $d6;
+  .newPageTitlePoint {
+    font-size: 40px;
+    display: inline;
+    color: $fontcolor;
   }
-  p{
+  p {
     font-weight: bold;
     font-size: 24px;
   }
 }
 .activityConductBody {
-  height: 721px;
+  height: 100vh;
 
-  border: $border;
+  // border: $border;
   section {
     &::after {
       position: absolute;
@@ -56,710 +58,617 @@ $d6: #d6d6d6;
     }
   }
 }
-.activityConductBody{
-.nextPage{
-  position: absolute;
-  bottom: -20px;
-  left: 50%;
-  z-index: 2;
-  display: inline-block;
-  transform: translate(0, -50%);
-  color: rgb(0, 0, 0);
-  font : normal 600 20px/1 'Josefin Sans', sans-serif;
-  letter-spacing: .1em;
-  text-decoration: none;
-  transition: opacity .3s;
-  padding-top: 70px;
-  font-size: 15px;
-  &:hover {
-    opacity:0.5;
-  }
-  span{
+.activityConductBody {
+  background-image: url("../../../../images/main/background.png");
+  background-attachment: fixed;
+
+  .nextPage {
     position: absolute;
-    top: 0;
+    bottom: -20px;
     left: 50%;
-    width: 15px;
-    height: 15px;
-    margin-left: -8px;
-    border-left: 2px solid rgb(0, 0, 0);
-    border-bottom: 2px solid rgb(0, 0, 0);
-    transform: rotate(-45deg);
-    animation: sdb 1.5s infinite;
-    box-sizing: border-box;
-    @keyframes sdb {
-      0% {
-        transform: rotate(-45deg) translate(-20px, 20px);
-        opacity: 0;
-      }
-      50% {
-        opacity: 1;
-      }
-      100% {
-        transform: rotate(-45deg) translate(-30px, 30px);
-        opacity: 0;
+    z-index: 2;
+    display: inline-block;
+    transform: translate(0, -50%);
+    color: rgb(0, 0, 0);
+    font: normal 600 20px/1 "Josefin Sans", sans-serif;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    transition: opacity 0.3s;
+    padding-top: 70px;
+    font-size: 15px;
+    &:hover {
+      opacity: 0.5;
+    }
+    span {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 15px;
+      height: 15px;
+      margin-left: -8px;
+      border-left: 2px solid rgb(0, 0, 0);
+      border-bottom: 2px solid rgb(0, 0, 0);
+      transform: rotate(-45deg);
+      animation: sdb 1.5s infinite;
+      box-sizing: border-box;
+      @keyframes sdb {
+        0% {
+          transform: rotate(-45deg) translate(-20px, 20px);
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          transform: rotate(-45deg) translate(-30px, 30px);
+          opacity: 0;
+        }
       }
     }
   }
-}
-#section0{
-  position: relative;
-  width: 100%;
-  height: 100%;
-  .section0Area{
-    .leftTitle{
-      .joinUs{
-        position: absolute;
-        font-size: 30px;
-        left: 240px;
-        top: 140px;
-        color: $fontcolor;
-        font-weight: 600;
+  #section0 {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    // background-image: url("../../../../images/main/background.png" );
+    // background-attachment: fixed;
+    .section0Area {
+      .leftTitle {
+        .joinUs {
+          position: absolute;
+          font-size: 30px;
+          left: 240px;
+          top: 140px;
+          color: $fontcolor;
+          font-weight: 600;
+        }
+        .pageTitle {
+          position: absolute;
+          font-size: 25px;
+          left: 289px;
+          top: 200px;
+          color: $fontcolor;
+        }
       }
-      .pageTitle{
+      .section0Content {
+        width: 650px;
+        height: 450px;
         position: absolute;
-        font-size: 25px;
-        left: 289px;
         top: 200px;
-        color: $fontcolor;
-      }
-      .page0hr{
-        width: 3px;
-        height: 330px;
-        left: 0px;
-        bottom: 0;
-        // position: absolute;
-        border: 1px $fontcolor solid;
-        background-color: $fontcolor;
-        border-radius: 2px;
-        top: 0;
-      }
-    }
-    .section0Content{
-      width: 650px;
-      height: 450px;
-      position: absolute;
-      top: 200px;
-      left: 450px;
-      .guideNarrative{
-        position: absolute;
-        font-size: 22px;
-        color: $fontcolor;
-        top: 5px;
-        left: 25px;
-        p{
-          margin-bottom: 5px;
+        left: 450px;
+        .guideNarrative {
+          position: absolute;
+          font-size: 22px;
+          color: $fontcolor;
+          top: 5px;
+          left: 25px;
+          p {
+            margin-bottom: 5px;
+          }
+        }
+        .guideLvChartArea {
+          width: 200px;
+          height: 200px;
+          background-color: blue;
         }
       }
-      .guideLvChartArea{
-       width: 200px;
-       height: 200px;
-       background-color: blue;
-      }
-    }  
+    }
   }
-}
 
-#section01{
-
-  position: relative;
-  width: 100%;
-  height: 100%;
-  .section01Area{
-    .leftTitle{
-      .joinUs{
-        position: absolute;
-        font-size: 30px;
-        left: 240px;
-        top: 140px;
-        color: $fontcolor;
-        font-weight: 600;
-      }
-      .pageTitle{
-        position: absolute;
-        font-size: 25px;
-        left: 289px;
-        top: 140px;
-        color: $fontcolor;
-      }
-      .page1hr{
-        display: none;
-        width: 3px;
-        top: 0;
-        bottom: 0;
-        left: 300px;
-        position: absolute;
-        border: 1px $fontcolor solid;
-        background-color: $fontcolor;
-        border-radius: 2px;
-      }
-    }
-    .section01Content{
-      width: 650px;
-      height: 400px;
-      //background-color: blanchedalmond;
-      position: absolute;
-      top: 160px;
-      left: 430px;
-      //名稱
-      .setName{
-        position: relative;
-        height: 85px;
-        p{
-          font-size: 20px;
-          display: inline;
+  #section01 {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    // background-image: url("../../../../images/main/background.png" );
+    // background-attachment: fixed;
+    .section01Area {
+      .leftTitle {
+        .pageTitle {
           position: absolute;
-          top: 30px;
-        }
-        input{
-          font-size: 16px;
-          width: 500px;
-          padding: 8px;
-          height: 40px;
-          resize: none;
-          border-radius: 20px;
-          border: 1px $bgcolor solid;
-          box-shadow: 3px 3px 5px #858585;
-          position: absolute;
-          left: 120px;
-          top: 18px;
-
+          font-size: 25px;
+          left: 289px;
+          top: 140px;
+          color: $fontcolor;
         }
       }
-      // 簡介
-      .setIntroduction{
-        position: relative;
-        height: 85px;
+      .section01Content {
         // border: $border;
-        p{
-          font-size: 20px;
-          display: inline;
-          position: absolute;
-          top: 30px;
-          // border: $border;
-
-        }
-        textarea{
-          font-size: 16px;
-          width: 500px;
-          padding: 8px;
-          height: 85px;
-          resize: none;
-          border-radius: 20px;
-          border: 1px $bgcolor solid;
-          box-shadow: 3px 3px 5px #858585;
-          position: absolute;
-          left: 120px;
-
-        }
-      }
-      //日期
-      
-      .date{
-        position: relative;
-        margin: 30px 0px;
-        // border: $border;
-        p{
-          font-size: 20px;
-          display: inline;
-          position: absolute;
-          top: 10px;
-          // border: $border;
-        }
-        .timeText{
-          // border: $border;
-          margin-left: 80px;
-        }
-        .timeInput{
-          display: inline;
-          // border: $border;
-          margin-left: 150px;
-          input{
-            width: 150px;
+        width: 650px;
+        // height: 400px;
+        //background-color: blanchedalmond;
+        position: absolute;
+        top: 200px;
+        left: 445px;
+        //名稱
+        .setName {
+          position: relative;
+          height: 65px;
+          p {
+            font-size: 20px;
+            display: inline;
+            position: absolute;
+            // top: 30px;
           }
-        } 
-        .dateInput{
-          // margin-top: 10px;
-          margin-left: 115px;  
-        input{
-          font-size: 16px;
-          width: 165px;
-          padding: 8px;
-          height: 40px;
-          resize: none;
-          border-radius: 20px;
-          border: 1px $bgcolor solid;
-          box-shadow: 3px 3px 5px #858585;
-          // position: absolute;
-          // left: 120px;
-          // top: 18px;
-          // margin: 18px 0px 0px 5px;
-          margin-left: 5px;
-        }
-      }
-      }
-      //時間
-      .time{
-        position: relative;
-        margin: 30px 0px;
-        // border: $border;
-        p{
-          font-size: 20px;
-          display: inline;
-          position: absolute;
-          top: 10px;
-        }
-        .timeInput{
-          margin-left: 115px;        
-        input{
-          font-size: 16px;
-          width: 120px;
-          padding: 8px;
-          height: 40px;
-          resize: none;
-          border-radius: 20px;
-          border: 1px $bgcolor solid;
-          box-shadow: 3px 3px 5px #858585;
-          // position: absolute;
-          // left: 120px;
-          // top: 18px;
-         margin-left: 5px;          
-        }
-      }
-      }
-      //地點
-      .location{
-        position: relative;
-        margin: 30px 0px;
-        // border: $border;
-        p{
-          font-size: 20px;
-          display: inline;
-          position: absolute;
-          top: 10px;
-        }
-        .locationInput{
-          
-          margin-left: 115px;        
-        input{
-          font-size: 16px;
-          width: 500px;
-          padding: 8px;
-          height: 40px;
-          resize: none;
-          border-radius: 20px;
-          border: 1px $bgcolor solid;
-          box-shadow: 3px 3px 5px #858585;
-          // position: absolute;
-          // left: 120px;
-          // top: 18px;
-         margin-left: 5px;
-          
-        }
-      }
-      }
-      // 人數
-      .acceptNum{
-        margin: 30px 0px;
-        position: relative;
-        // border: $border;
-        p{
-          font-size: 20px;
-          display: inline;
-          // position: absolute;
-          top: 10px;
-          // border: $border;
-          
-        }
-        span{
-          position: absolute;
-          left: 120px;
-          #quantity{
-            width: 50px;
-            border: none;
-            text-align: center;
-            height: 30px;
+          input {
             font-size: 16px;
-            box-shadow: 3px 3px 5px #858585;
-            border-radius: 20px;
-            margin-right: 25px;
-          }
-          .numBtn{
-            font-size: 16px;
+            width: 500px;
+            // padding: 8px;
+
+            resize: none;
             border-radius: 10px;
-            padding: 2px 5px;
-            width: 25px;
-            text-align: center;
             border: 1px $bgcolor solid;
             box-shadow: 1px 1px 3px #858585;
-            margin-right: 20px;
-            cursor: pointer;
-            &:hover{
-              box-shadow: 3px 3px 5px #858585;
-            }
+            position: absolute;
+            left: 80px;
+            // top: 18px;
           }
         }
-
-      }
-      .place{
-        // margin: 30px 0px;
-        margin-top: 100px;
-        // margin: 40px 0px 0px 0px;
-        position: relative;
-        // border: $border;
-        p{
-          position: absolute;
-
-          font-size: 20px;
-          display: inline;
-        }
-        span{
-          position: absolute;
-          left: 120px;
-          font-size: 20px;
-          label{
-            margin-right: 40px;
+        // 簡介
+        .setIntroduction {
+          position: relative;
+          height: 65px;
+          // border: $border;
+          p {
+            font-size: 20px;
+            display: inline;
+            position: absolute;
+            // top: 30px;
+            // border: $border;
           }
-        }
-      }
-      .transportation{
-        margin-top: 30px;
-        position: relative;
-        p{
-          font-size: 20px;
-          display: inline;
-        }
-        span{
-          position: absolute;
-          left: 120px;
-          font-size: 20px;
-          label{
-            margin-right: 20px;
-          }
-        }
-      }
-      //照片
-      .uploadImg{
-        margin-top: 30px;
-        position: relative;
-        p{
-          font-size: 20px;
-          display: inline;
-        }
-        div{
-          position: absolute;
-          display: inline;
-          #select {
-            background-color: $primarycolor;
-            color: #fff;
-            border: 1px solid $primarycolor;
-            border-radius: 5px;
-            font-weight: 400;
-            padding: 3px;
-            cursor: pointer;
-            margin-left: 40px;
+          input {
             font-size: 16px;
+            width: 500px;
+            // padding: 8px;
+            // height: 85px;
+            resize: none;
+            border-radius: 10px;
+            border: 1px $bgcolor solid;
+            box-shadow: 1px 1px 3px #858585;
+            position: absolute;
+            left: 80px;
+          }
+        }
+        //日期
+        .date {
+          position: relative;
+          margin: 0px 0px 30px 0px;
+          // border: $border;
+          p {
+            font-size: 20px;
+            display: inline;
+            position: absolute;
+            // top: 10px;
+            // border: $border;
           }
 
-          p{
-            font-size: 16px;
-            margin-left: 20px;
-            line-height: 20px;
-          }
+          .dateInput {
+            // position: absolute;
+            // left: 80px;
+            // margin-top: 10px;
+            margin-left: 80px;
+            // border: 1px $bgcolor solid;
+            // box-shadow: 1px 1px 3px #858585;
+            // background-color: #264148;
 
-          #file_input {
-            display: none;
-          }
-
-          #append{
-            width: 533px;
-            height: 150px;
-            display: flex;
-            margin: 20px 0 0 37px;
-            overflow: hidden;
-            .float {
-              position: relative;
-              width: 112px;
-              height: 112px;
-              overflow: hidden;
-              border: 1px solid #a7a7a7;
-              border-radius: 10px;
-              padding: 5px;
-              margin-right: 18px;
-              .delete {
-                width: 100px;
-                height: 112px;
-                position: absolute;
-                text-align: center;
-                line-height: 100px;
-                z-index: 10;
-                font-size: 16px;
-                background-color: rgba(255, 255, 255, 0.8);
-                color: rgb(87, 87, 87);
-                opacity: 0;
-                transition-duration: 0.7s;
-                &:hover{
-                  cursor: pointer;
-                  opacity: 1;
-                }
-              }           
-              .result {
-                width: 100px;
-                height: 100px;
-                text-align: center;
-                box-sizing: border-box;
+            .ant-input-group {
+              width: 50%;
+              // border: 1px $bgcolor solid;
+              .ant-picker {
+                border-radius: 10px;
+                box-shadow: 1px 1px 3px #858585;
+                // height: 50px;
               }
             }
           }
         }
-      }
-    }  
-  }
-}
+        //時間
+        .timeText {
+          // border: $border;
+          // margin-left: 80px;
+          left: 300px;
+          position: absolute;
+          top: 0;
+        }
+        .timeInput {
+          display: inline;
+          // border: $border;
+          margin-left: 90px;
+          position: absolute;
+          left: 290px;
+          top: 0px;
+          input {
+            width: 192px;
+          }
+          .ant-input {
+            // height: 50px;
 
-#section02{
-  position: relative;
-  width: 100%;
-  height: 100%;
-  .section02Area{
-    .leftTitle{
-      .pageTitle{
-        position: absolute;
-        font-size: 25px;
-        left: 289px;
-        top: 140px;
-        color: $fontcolor;
-      }
-      .page2hr{
-        display: none;
-        width: 3px;
-        top: 0;
-        bottom: 0;
-        left: 300px;
-        position: absolute;
-        border: 1px $fontcolor solid;
-        background-color: $fontcolor;
-        border-radius: 2px;
+            border-radius: 10px;
+            box-shadow: 1px 1px 3px #858585;
+            width: 200px;
+          }
+        }
+        //地點
+        .location {
+          position: relative;
+          margin: 30px 0px;
+          // border: $border;
+          p {
+            font-size: 20px;
+            display: inline;
+            position: absolute;
+            // top: 10px;
+          }
+          .locationInput {
+            margin-left: 80px;
+            input {
+              font-size: 16px;
+              width: 500px;
+              // padding: 8px;
+              // height: 50px;
+              resize: none;
+              border-radius: 10px;
+              border: 1px $bgcolor solid;
+              box-shadow: 1px 1px 3px #858585;
+              // position: absolute;
+              // left: 120px;
+              // top: 18px;
+              // margin-left: 5px;
+            }
+          }
+        }
+        // 人數
+        .acceptNum {
+          margin: 30px 0px;
+          position: relative;
+          // border: $border;
+          p {
+            font-size: 20px;
+            display: inline;
+            // position: absolute;
+            // top: 10px;
+            // border: $border;
+          }
+          span {
+            position: absolute;
+            left: 80px;
+            // .people {
+            //   display: inline;
+            //   font-size: 16px;
+            //   width: 40px;
+            //   padding-left: 13px;
+            //   padding-right: 15px;
+            //   height: 40px;
+            //   resize: none;
+            //   border-radius: 10px;
+            //   border: 1px $bgcolor solid;
+            //   box-shadow: 1px 1px 3px #858585;
+            //   // position: absolute;
+            //   // left: 120px;
+            //   // top: 18px;
+            //   margin-left: 5px;
+            //   margin-right: 25px;
+            // }
+
+            #people {
+              width: 50px;
+              border: none;
+              text-align: center;
+              height: 30px;
+              font-size: 18px;
+              margin-right: 20px;
+              // margin-left: 25px;
+              background: none;
+              border-bottom: 1px $fontcolor solid;
+            }
+            .numBtn {
+              background-color: #fff;
+              font-size: 17px;
+              border-radius: 10px;
+              padding: 2px 5px;
+              width: 25px;
+              text-align: center;
+              border: 1px $bgcolor solid;
+              box-shadow: 1px 1px 3px #c7c7c7;
+              margin-right: 20px;
+              cursor: pointer;
+              &:hover {
+                box-shadow: 3px 3px 5px #c7c7c7;
+              }
+            }
+          }
+        }
+        .place {
+          // margin: 30px 0px;
+          margin-top: 100px;
+          // margin: 40px 0px 0px 0px;
+          position: relative;
+          // border: $border;
+          p {
+            position: absolute;
+
+            font-size: 20px;
+            display: inline;
+          }
+          span {
+            position: absolute;
+            left: 80px;
+            font-size: 20px;
+            label {
+              margin-right: 40px;
+            }
+          }
+        }
+        .transportation {
+          margin-top: 30px;
+          position: relative;
+          p {
+            font-size: 20px;
+            display: inline;
+          }
+          span {
+            position: absolute;
+            left: 80px;
+            font-size: 20px;
+            label {
+              margin-right: 20px;
+            }
+          }
+        }
       }
     }
-    .section02Content{
-      width: 650px;
-      height: 400px;
-      background-color: #fff;
-      position: absolute;
-      top: 200px;
-      left: 450px;
-      .uploadImg{
-        margin-top: 30px;
-        position: relative;
-        p{
-          font-size: 20px;
-          display: inline;
-        }
-        div{
+  }
+  #section02 {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url("../../../../images/main/background.png");
+    background-attachment: fixed;
+    .section02Area {
+      .leftTitle {
+        .pageTitle {
           position: absolute;
-          display: inline;
-          #select {
-            background-color: $primarycolor;
-            color: #fff;
-            border: 1px solid $primarycolor;
-            border-radius: 5px;
-            font-weight: 400;
-            padding: 3px;
-            cursor: pointer;
-            margin-left: 40px;
-            font-size: 16px;
-          }
+          font-size: 25px;
+          left: 289px;
+          top: 20px;
+          color: $fontcolor;
+        }
+      }
+      .uploadImgButton {
+      }
+      .section02Content {
+        border-radius: 20px;
 
-          p{
-            font-size: 16px;
-            margin-left: 20px;
-            line-height: 20px;
-          }
+        width: 650px;
+        height: 400px;
+        background-color: rgba(255, 255, 255, 0.5);
+        position: absolute;
+        top: 180px;
+        left: 450px;
+        .uploadImg {
+          margin-top: 30px;
+          position: relative;
 
-          #file_input {
-            display: none;
+          p {
+            font-size: 24px;
+            display: inline;
+            font-weight: bold;
           }
-
-          #append{
-            width: 533px;
-            height: 150px;
-            display: flex;
-            margin: 20px 0 0 37px;
-            overflow: hidden;
-            .float {
-              position: relative;
-              width: 112px;
-              height: 112px;
-              overflow: hidden;
-              border: 1px solid #a7a7a7;
-              border-radius: 10px;
-              padding: 5px;
-              margin-right: 18px;
-              .delete {
-                width: 100px;
-                height: 112px;
-                position: absolute;
-                text-align: center;
-                line-height: 100px;
-                z-index: 10;
-                font-size: 16px;
-                background-color: rgba(255, 255, 255, 0.8);
-                color: rgb(87, 87, 87);
-                opacity: 0;
-                transition-duration: 0.7s;
-                &:hover{
-                  cursor: pointer;
-                  opacity: 1;
-                }
-              }
+          .uploadImgButton {
+            position: absolute;
+            top: -90px;
+            display: inline;
+            #select {
+              background-color: $primarycolor;
+              color: #fff;
+              border: 1px solid $primarycolor;
+              border-radius: 5px;
+              font-weight: 400;
+              padding: 3px;
+              cursor: pointer;
+              margin-left: 40px;
+              font-size: 16px;
+            }
+            p {
+              font-size: 20px;
               
-              .result {
-                width: 100px;
-                height: 100px;
-                text-align: center;
-                box-sizing: border-box;
+              
+            }
+          }
+          div {
+            #file_input {
+              display: none;
+            }
 
+            #append {
+              width: 533px;
+              height: 150px;
+              display: flex;
+              margin: 20px 0 0 37px;
+              overflow: hidden;
+              .float {
+                position: relative;
+                width: 112px;
+                height: 112px;
+                overflow: hidden;
+                border: 1px solid #a7a7a7;
+                border-radius: 10px;
+                padding: 5px;
+                margin-right: 18px;
+                .delete {
+                  width: 100px;
+                  height: 112px;
+                  position: absolute;
+                  text-align: center;
+                  line-height: 100px;
+                  z-index: 10;
+                  font-size: 16px;
+                  background-color: rgba(255, 255, 255, 0.8);
+                  color: rgb(87, 87, 87);
+                  opacity: 0;
+                  transition-duration: 0.7s;
+                  &:hover {
+                    cursor: pointer;
+                    opacity: 1;
+                  }
+                }
+                .result {
+                  width: 100px;
+                  height: 100px;
+                  text-align: center;
+                  box-sizing: border-box;
+                }
               }
             }
           }
+        }
+      }
+      //上傳照片底
+      
+    }
+  }
 
+  #section03 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url("../../../../images/main/background.png");
+    background-attachment: fixed;
+    .section03Area {
+      .leftTitle {
+        .pageTitle {
+          position: absolute;
+          font-size: 25px;
+          left: 289px;
+          top: 20px;
+          color: $fontcolor;
+        }
+      }
+      //活動內容
+      .activitySetContent {
+        p{
+          position: absolute;
+          top: 80px;
+          left: 450px;
+          font-size: 20px;
 
+        }
+        .activitySetContentTextarea {
+          width: 650px;
+          height: 200px;
+          font-size: 18px;
+          padding: 15px;
+          background-color: rgba(255, 255, 255, 0.5);
+          border-radius: 20px;
+          position: absolute;
+          top: 125px;
+          left: 450px;
+          border: none;
+          textarea {
+            &::placeholder {
+              font-size: 3em;
+            }
+          }
+        }
+      }
+      //注意事項
+      .activitySetNotice {
+        p{
+          position: absolute;
+          top: 340px;
+          left: 450px;
+          font-size: 20px;
 
-
-
-
-
-
-
-
-
+        }
+        .activitySetNoticeTextarea {
+          width: 650px;
+          height: 200px;
+          background-color: rgba(255, 255, 255, 0.5);
+          padding: 15px;
+          position: absolute;
+          border-radius: 20px;
+          font-size: 18px;
+          top: 385px;
+          left: 450px;
+          border: none;
+          textarea {
+            &::placeholder {
+              font-size: 3em;
+            }
+          }
         }
       }
     }
-  }
-}
-
-#section03{
-  position: relative;
-  width: 100%;
-  height: 100%;
-  .section03Area{
-    .leftTitle{
-      .pageTitle{
-        position: absolute;
-        font-size: 25px;
-        left: 289px;
-        top: 140px;
-        color: $fontcolor;
-      }
-      .page3hr{
-        display: none;
-        width: 3px;
-        top: 0;
-        height: 650px;
-        left: 300px;
-        position: absolute;
-        border: 1px $fontcolor solid;
-        background-color: $fontcolor;
-        border-radius: 2px;
-      }
-    }
-    .section03Content{
-      width: 700px;
-      height: 380px;
-      background-color: blanchedalmond;
+    .submitBtn {
+      @include mainBtn;
       position: absolute;
-      top: 210px;
-      left: 400px;
-      border: none;
-      textarea{
-       
-        &::placeholder{
-        font-size: 3em;
-        }
-      }
+      
+      left: 80%;
+      // top :0px;
+      bottom:180px
     }
   }
-  .submitBtn{
-    @include mainBtn;
-    position: absolute;
-    bottom: 40px;
-    left: 75%;
-  }
-}
-#section04{
-  
-  position: relative;
-  
-  width: 100%;
-  height: 100%;
-  .section04Area{
-    .leftTitle{
-      .pageTitle{
-        position: absolute;
-        font-size: 24px;
-        left: 289px;
-        top: 140px;
-        color: $fontcolor;
-        .pageTitlePoint{
-          font-size: 27px
+  #section04 {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+    background-image: url("../../../../images/main/background.png");
+    background-attachment: fixed;
+    .section04Area {
+      .leftTitle {
+        .pageTitle {
+          position: absolute;
+          font-size: 24px;
+          left: 289px;
+          top: 80px;
+          color: $fontcolor;
+          .newPageTitlePoint {
+            font-size: 40px;
+          }
         }
       }
-      .page4hr{
-        display: none;
-        width: 3px;
-        top: -100px;
-        height: 700px;
-        left: 300px;
+      .section04Content {
+        width: 700px;
+        height: 380px;
+        background-color: blanchedalmond;
         position: absolute;
-        border: 1px $fontcolor solid;
-        background-color: $fontcolor;
-        border-radius: 2px;
+        top: 210px;
+        left: 400px;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 3px 3px 5px #85858593;
+        padding: 20px;
       }
     }
-    .section04Content{
-      width: 700px;
-      height: 380px;
-      background-color: blanchedalmond;
+    .submitBtn {
+      @include mainBtn;
       position: absolute;
-      top: 210px;
-      left: 400px;
+      // bottom: 300px;
+      margin-bottom: 50px;
+      left: 75%;
     }
-
-  }
-  .submitBtn{
-    @include mainBtn;
-    position: absolute;
-    bottom: 40px;
-    left: 75%;
   }
 
-  
-}
+  //  1280*577
 
+  //  1536*721
+  // .pageHr{
+  //   height: 2000px;
+  // }
+  // .pageHr{
+  //   height: 100px;
+  // }
+  // @media (max-width:1280px) {
 
-//  1280*577
+  //   @include joinGuideRwd
 
-//  1536*721
-// .pageHr{
-//   height: 2000px;
-// }
-// .pageHr{
-//   height: 100px;
-// }
-// @media (max-width:1280px) {
-  
-//   @include joinGuideRwd
+  // }
 
-  
- 
+  // @media (max-width:1281px) {
+  //   body{
+  //     @include activityConductRwd
+  //   }
 
-// }
-
-@media (max-width:1281px) {
-  body{
-    @include activityConductRwd
-  }
-  
-}
+  // }
 }

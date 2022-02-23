@@ -1,31 +1,18 @@
 import React from "react";
 
-// import "../styles/HomeCSS/mainPage.css";
-
-// import Main_Section from "./Home/Main_Section";
-// import Search_Bar from "./Home/Search_Bar";
-// import Trending_City from "./Home/Trending_City";
-// import Recommandation from "./Home/Recommandation";
-// import Trending_Event from "./Home/Trending_Event";
-// import Trending_Guide from "./Home/Trending_Guide";
-// import Weather_Section from "./Home/Weather_Section";
-// import CTA from "./Home/CTA";
-// import Community from "./Home/Community";
-// import Footer from "./Home/Footer";
-
 // ---- 更新 ----
-import './stylesheet/mainPage.css';
+import "./stylesheet/mainPage.css";
 
 import Main_Section from "./components/Main_Section";
-import Search_Bar from './components/Search_Bar';
-import Trending_City from './components/Trending_City';
-import Recommandation from './components/Recommandation';
-import Trending_Event from './components/Trending_Event';
-import Trending_Guide from './components/Trending_Guide';
-import Weather_Section from './components/Weather_Section';
-import CTA from './components/CTA';
-import Community from './components/Community';
-import Footer from './components/Footer';
+import Search_Bar from "./components/Search_Bar";
+import Trending_City from "./components/Trending_City";
+import Recommandation from "./components/Recommandation/Recommandation";
+import Trending_Event from "./components/Trending_Event/Trending_Event";
+import Trending_Guide from "./components/Trending_Guide/Trending_Guide";
+import Weather_Section from "./components/Weather/Weather_Section";
+import CTA from "./components/CTA";
+import Community from "./components/Community/Community";
+import Footer from "./components/Footer";
 
 const home = () => {
   return (

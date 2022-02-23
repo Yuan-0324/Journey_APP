@@ -2,69 +2,68 @@
 @import "../../../styles/var";
 // ------------------------
 
-
-/*-------------header------------- */
-
-/*-------------headerEnd---------- */
-
 /*-------------Main--------------- */
 #mainSection {
   width: 100%;
   height: 100vh;
-  background-image: url("../../../images/main/background.png");
+  background-image: url("../../../images/Home/main/background.png");
+  background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
   // align-items: flex-end;
-
+  position: relative;
   .women {
+    // display: block;
     position: absolute;
     left: 13%;
-    top: 22%;
+    bottom: 0px;
+    height: 580px;
     .compass {
       position: absolute;
-      left: -60px;
-      top: 400px;
+      left: -80px;
+      top: 420px;
     }
     .camera {
       position: absolute;
-      left: 330px;
-      top: 10px;
+      left: 320px;
+      top: -20px;
     }
 
     .plane1 {
       position: absolute;
-      left: -5px;
+      left: -30px;
       top: 360px;
     }
     .plane2 {
       position: absolute;
-      left: 550px;
+      left: 590px;
       top: 210px;
+      z-index: 1;
     }
 
     .star1 {
       position: absolute;
       left: 200px;
-      top: 40px;
+      top: -10px;
     }
 
     .star2 {
       position: absolute;
       left: 180px;
-      top: 50px;
+      top: 0px;
     }
 
     .track1 {
       position: absolute;
-      left: -15px;
+      left: -35px;
       top: 150px;
     }
     .track2 {
       position: absolute;
-      left: 500px;
+      left: 540px;
       top: 130px;
       z-index: 10;
     }
@@ -76,10 +75,20 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    bottom: 150px;
-    right: 250px;
+    bottom: 250px;
+    right: 300px;
     // margin-top: 20px;
     // z-index: -1;
+    .splash1 {
+      position: absolute;
+      left: 280px;
+      top: 45px;
+    }
+    .splash2 {
+      position: absolute;
+      left: 0px;
+      top: -30px;
+    }
     .explore {
       margin: 0;
       padding: 0;
@@ -95,15 +104,18 @@
     button {
       display: inline-block;
       padding: 12px 24px;
-      border: 1px solid $primarycolor;
-      border-radius: 4px;
+      border: 0px solid $primarycolor;
+      border-radius: 20px;
       transition: all 0.2s ease-in;
       position: relative;
       overflow: hidden;
       font-size: 19px;
-      color: $primarycolor;
+      // color: $primarycolor;
+      background-color: #6bc1e9;
+      background-image: linear-gradient(315deg, #6bc1e9 0%, #80ced7 74%);
+      color: white;
+      text-shadow: 1px 1px $primarycolor;
       z-index: 1;
-      background-color: white;
       margin-top: 20px;
       &::before {
         content: "";
@@ -113,7 +125,7 @@
         top: 100%;
         width: 140%;
         height: 180%;
-        background-color: rgba(0, 0, 0, 0.05);
+        // background-color: rgba(0, 0, 0, 0.05);
         border-radius: 50%;
         display: block;
         transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
@@ -136,19 +148,23 @@
       }
 
       &:hover {
-        color: #ffffff;
-        border: 1px solid $primarycolor;
+        color: $primarycolor;
+        text-shadow: none;
+        font-weight: 500;
 
         &::before {
           top: -35%;
-          background-color: $primarycolor;
-          transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+          background-color: white;
+          // transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
         }
 
         &::after {
           top: -45%;
-          background-color: $primarycolor;
-          transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+          background-color: #fde7f9;
+          background-image: linear-gradient(315deg, #fde7f9 0%, #aacaef 74%);
+
+          // background-color: white;
+          // transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
         }
       }
     }
@@ -164,7 +180,7 @@
     flex-direction: column;
     align-items: center;
     height: 400px;
-    background-image: url("../../../images/mainpagebgv4.png");
+    background-image: url("../../../images/Home/mainpagebgv4.png");
     background-position: center;
     background-repeat: no-repeat;
     h3 {
@@ -181,27 +197,38 @@
       margin-top: 30px;
       background: #fff;
       border-radius: 10px;
-      padding: 0 0 0 20px;
+      // padding: 0 0 0 20px;
       display: flex;
       justify-content: center;
       align-items: center;
       cursor: pointer;
       transition: 0.8s;
       border: none;
-      .ant-select {
-        border: none;
-        font-size: 20px;
-        .ant-select-selector {
-          height: 39px;
+      .selector {
+        margin: 5px;
+        border-right: 1px solid rgb(190, 189, 189);
+        .ant-select {
           border: none;
-          display: flex;
-          align-items: center;
+          font-size: 20px;
+          .ant-select-selector {
+            height: 39px;
+            border: none;
+            display: flex;
+            align-items: center;
+            .ant-select-selection-placeholder {
+              color: rgb(180, 180, 180);
+            }
+          }
         }
       }
-      .ant-picker {
-        .ant-picker-input {
-          input {
-            font-size: 20px;
+      .datepicker {
+        margin: 5px;
+        .ant-picker {
+          border-left: 5px solid black;
+          .ant-picker-input {
+            input {
+              font-size: 20px;
+            }
           }
         }
       }
@@ -283,7 +310,7 @@
   }
   .test {
     width: 1110px;
-    margin: auto;
+    // margin: auto;
     .slick-slider {
       .slick-list {
         padding: 20px 0;
@@ -311,12 +338,14 @@
           opacity: 1;
         }
       }
+
       .eventCard {
         overflow-x: hidden;
-        white-space: nowrap;
+        // white-space: nowrap;
         border-radius: 10px;
         padding: 20px;
-        min-width: 16.3em;
+        width: 0;
+        max-width: 18.5em;
         margin-right: 20px;
         background-color: #fff;
         // box-shadow: $cardShadow;
@@ -334,10 +363,10 @@
           overflow: hidden;
 
           .eventCard__icon {
-            border-radius: 10px;
+            border-radius: 10px 0 0 0;
             position: absolute;
             display: block;
-            min-width: 16.3em;
+            max-width: 18.5em;
             height: 160px;
           }
         }
@@ -417,6 +446,7 @@
         background-color: white;
         box-shadow: $cardShadow;
         cursor: pointer;
+        border-radius: 25px;
 
         .imgBG {
           height: 150px;
@@ -532,25 +562,50 @@
 
     .APIweather {
       display: flex;
-      flex-direction: row;
-      justify-content: space-evenly;
-      .weatherCity {
-        display: flex;
-        flex-direction: row;
-        .chip {
-          font-size: 20px;
-          padding: 10px;
-          border: 1px solid #ccc;
-          border-radius: 20px;
-        }
-      }
+      flex-direction: column;
+      // justify-content: space-around;
+      max-width: 1110px;
 
       .weatherDetails {
         width: 1100px;
         border-radius: 20px;
-        background-color: #aecad6;
-        background-image: linear-gradient(315deg, #aecad6 0%, #b8d3fe 74%);
-        padding-bottom: 30px;
+        // background-color: #aecad6;
+        // background-image: "../../../images/main/weather.jpg";
+        background-image: url("../../../images/Home/main/weather.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        padding: 20px 0;
+        padding-bottom: 20px;
+        .weatherCity {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          margin: 0 0 25px 0;
+          .chip {
+            font-size: 16px;
+            padding: 5px 0;
+            width: 250px;
+            border: 1px solid #ffffff;
+            background-color: white;
+            color: #6bc1e9;
+            &:hover {
+              color: white;
+              // background-color: #6bc1e9;
+              border: 0.1px solid white;
+              background-color: #6bc1e9;
+              background-image: linear-gradient(
+                315deg,
+                #6bc1e9 0%,
+                #80ced7 74%
+              );
+
+              transition: 0.6s;
+            }
+          }
+        }
+
         .location-box {
           display: flex;
           flex-direction: row;
@@ -576,6 +631,7 @@
                 padding: 20px;
                 p {
                   margin: 10px 0;
+                  font-size: 1em;
                 }
                 .max,
                 .min {
@@ -742,7 +798,7 @@
       flex-direction: column;
       width: 1100px;
       height: 60vh;
-      background-image: url("../../../images/gatherv3.png");
+      background-image: url("../../../images/Home/gatherv3.png");
       background-position: right;
       background-repeat: no-repeat;
       h1 {
@@ -798,9 +854,11 @@
           background-color: gray;
           border-radius: 30px;
           position: relative;
+          cursor: pointer;
           .texthide {
             display: none;
             color: white;
+            text-align: center;
             text-shadow: 2px 2px 2px 2px #000000;
           }
           img {
@@ -835,6 +893,7 @@
         width: 270px;
         height: 50vh;
         position: relative;
+        cursor: pointer;
         .texthide {
           display: none;
           color: white;
@@ -855,7 +914,7 @@
 
           &:hover + .texthide {
             display: block;
-            font-size: 24px;
+            font-size: 20px;
             position: absolute;
             top: 50%;
             left: 50%;
@@ -879,6 +938,7 @@
             background-color: gray;
             border-radius: 30px;
             position: relative;
+            cursor: pointer;
             .texthide {
               display: none;
               color: white;
@@ -897,7 +957,7 @@
               }
               &:hover + .texthide {
                 display: block;
-                font-size: 24px;
+                font-size: 20px;
                 position: absolute;
                 top: 50%;
                 left: 50%;
@@ -917,6 +977,7 @@
             background-color: gray;
             border-radius: 30px;
             position: relative;
+            cursor: pointer;
             .texthide {
               display: none;
               color: white;
@@ -936,7 +997,7 @@
               }
               &:hover + .texthide {
                 display: block;
-                font-size: 24px;
+                font-size: 20px;
                 position: absolute;
                 top: 50%;
                 left: 50%;
@@ -959,7 +1020,7 @@
       justify-content: center;
       width: 1110px;
       gap: 2rem;
-
+      margin-top: 10px;
       .card {
         cursor: pointer;
         display: flex;
@@ -1056,9 +1117,80 @@
 /*-------------MainEnd------------ */
 
 /*-------------Footer------------- */
-footer {
-  height: 30vh;
+#footer {
+  height: 40vh;
   width: 100%;
-  background-color: $fontcolor;
+  background-color: #444;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .footer {
+    width: 80%;
+    margin: 30px auto 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    // align-items: flex-start;
+    .followingUs {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+      width: 300px;
+      // margin: 50px 20px 20px;
+      p {
+        font-size: 16px;
+        color: $bgcolor;
+        margin: 0;
+        font-weight: 400;
+      }
+      .followingIcon {
+        float: left;
+        font-size: 30px;
+        color: #d3cfcf;
+        svg {
+          margin: 10px 20px 10px 0;
+        }
+      }
+    }
+    .AboutJourney {
+      margin: 10px 30px;
+      p {
+        margin: 0;
+        font-size: 16px;
+        color: #d3cfcf;
+        font-weight: 400;
+        line-height: 30px;
+        letter-spacing: 2px;
+      }
+      .title {
+        color: rgb(168, 168, 168);
+      }
+    }
+    .PersonalSupport {
+      margin: 10px 30px;
+      .title {
+        color: rgb(168, 168, 168);
+      }
+      p {
+        margin: 0;
+        font-size: 16px;
+        color: #d3cfcf;
+        font-weight: 400;
+        line-height: 30px;
+      }
+    }
+  }
+  hr {
+    border-top: 5px solid white;
+  }
+  .copyright {
+    text-align: center;
+    color: #f8f8f8;
+    font-weight: 300;
+    font-size: 16px;
+  }
 }
 /*-------------FooterEnd---------- */

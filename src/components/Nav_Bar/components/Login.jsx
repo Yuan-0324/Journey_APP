@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-// import Axios from 'axios';
+import Axios from 'axios';
 
 //firebase
 import { GoogleAuthProvider, signInWithPopup, FacebookAuthProvider } from 'firebase/auth';
@@ -15,40 +15,89 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons'
 // ---- 更新 ----
 
 import logo from '../../../images/logo.png';
+import context from '../../../context';
 
 
-function Login({ loginModal, signUpModal }) {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+function Login({ openLoginModal, loginModal, signUpModal }) {
+    // const [email, setEmail] = useState('');
+    // const [password, setPassword] = useState('');
+    const [loginData, setLoginData] = useState({
+        email: '',
+        password: ''
+    })
+
+    const LoginEmailFunc = (e) => {
+        loginData.email = e.target.value
+        setLoginData(loginData)
+    }
+
+    const LoginPasswordFunc = (e) => {
+        loginData.password = e.target.value
+        setLoginData(loginData)
+    }
+    const { setToken } = useContext(context);
 
     let history = useHistory();
 
+
     //一般登入
     const onSubmit = async () => {
-        // try {
-        //     const result = await signInWithEmailAndPassword(
-        //         auth,
-        //         email,
-        //         password
-        //     );
-        //     alert('登入成功!')
-        //     loginModal(false);
-        //     history.push('/');
-
-        // } catch (error) {
-        //     alert('帳號密碼有誤！');
-        // }
+        if (loginData.email !== "" && loginData.password !== "") {
+            await Axios.post("http://localhost:8000/member/login", loginData)
+                .then((res) => {
+                    Axios.defaults.headers.common["authorization"] = res.data.token; // axios 請求頭帶上 token
+                    setToken(res.data.token); // 保存至 context
+                    localStorage.setItem('token', res.data.token)// 保存到本地
+                    console.log(res.data);
+                    if (res.data.token == undefined) {
+                        localStorage.removeItem('token');
+                        alert('帳號或密碼錯誤')
+                    }
+                    if (res.data.token !== undefined) {
+                        history.go(0);
+                    }
+                })
+                .catch((err) => {
+                    console.log(err);
+                })
+        } else if (loginData.email == "") {
+            alert('請輸入帳號');
+        } else if (loginData.password == "") {
+            alert('請輸入密碼');
+        }
     }
 
     //Google API登入
     const provider = new GoogleAuthProvider();
     const SignInWithGoogle = () => {
         signInWithPopup(auth, provider)
-            .then((result) => {
-                console.log(result);
-                alert('登入成功!')
-                loginModal(false);
-                history.push('/');
+            .then(async (result) => {
+                let myData = result._tokenResponse;
+                let myLoginData = {
+                    email: myData.email
+                }
+                await Axios.post("http://localhost:8000/api/login", myLoginData)
+                    .then((res) => {
+                        Axios.defaults.headers.common["authorization"] = res.data.token; // axios 請求頭帶上 token
+                        setToken(res.data.token); // 保存至 context
+                        localStorage.setItem('token', res.data.token)// 保存到本地
+                        console.log(res.data);
+                        if (res.data.token == undefined) {
+                            localStorage.removeItem('token');
+                            alert('尚未使用Google註冊');
+                        }
+                        if (res.data.token !== undefined) {
+                            history.go(0);
+                        }
+                    })
+                    .catch((err) => {
+                        console.log(err);
+                    })
+
+
+                // console.log(myData);
+                // loginModal(false);
+                // history.push('/');
 
             }).catch((error) => {
                 console.log(error);
@@ -68,6 +117,8 @@ function Login({ loginModal, signUpModal }) {
                 console.log(error);
             })
     }
+
+
 
     return (
         <>
@@ -97,14 +148,12 @@ function Login({ loginModal, signUpModal }) {
                         <div className='userInput'>
                             <p>帳號</p>
                             <input type="email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
+                                onChange={LoginEmailFunc}
                                 required placeholder="帳號" />
                             <p className='pswText'>密碼</p>
                             <input
                                 type="password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
+                                onChange={LoginPasswordFunc}
                                 required placeholder="密碼" />
                         </div>
 

@@ -1,19 +1,15 @@
-* {
-  margin: 0;
-  padding: 0;
-  font-family: Microsoft JhengHei, sans-serif;
-  letter-spacing: 0.02em;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+.guideJoin {
+  color: #264148;
 }
 
-body {
-  background-color: #f8f8f8;
-  width: 100vw;
-  min-height: 100vh;
+.guideJoin .bgImg {
+  position: fixed;
+  z-index: -1000;
+  height: 100vh;
+  width: 100%;
 }
 
-.nextPage {
+.guideJoin .nextPage {
   position: absolute;
   bottom: -20px;
   left: 50%;
@@ -31,13 +27,13 @@ body {
   font-size: 15px;
 }
 
-.nextPage:hover {
+.guideJoin .nextPage:hover {
   opacity: 0.6;
   color: #264148;
   text-decoration: none;
 }
 
-.nextPage span {
+.guideJoin .nextPage span {
   position: absolute;
   top: 0;
   left: 50%;
@@ -84,10 +80,10 @@ body {
   }
 }
 
-.pagehr {
+.guideJoin .guidePagehr {
   position: absolute;
   width: 2px;
-  height: 2620px;
+  height: 363vh;
   border: 1px #264148 solid;
   background-color: #264148;
   border-radius: 2px;
@@ -95,34 +91,30 @@ body {
   top: 190px;
 }
 
-#section0 {
+.guideJoin #section0 {
   position: relative;
   width: 100%;
   height: 100vh;
 }
 
-#section0 .section0Area .leftTitle .joinUs {
+.guideJoin #section0 .section0Area .leftTitle .joinUs {
   position: absolute;
   font-size: 30px;
   left: 240px;
-  top: 140px;
+  top: 130px;
   color: #264148;
   font-weight: 600;
 }
 
-#section0 .section0Area .leftTitle .pageTitle {
+.guideJoin #section0 .section0Area .leftTitle .pageTitle {
   position: absolute;
   font-size: 25px;
   left: 285px;
-  top: 175px;
+  top: 185px;
   color: #264148;
 }
 
-#section0 .section0Area .leftTitle .pageTitle span {
-  font-size: 40px;
-}
-
-#section0 .section0Area .section0Content {
+.guideJoin #section0 .section0Area .section0Content {
   width: 650px;
   height: 450px;
   position: absolute;
@@ -130,7 +122,7 @@ body {
   left: 450px;
 }
 
-#section0 .section0Area .section0Content .guideNarrative {
+.guideJoin #section0 .section0Area .section0Content .guideNarrative {
   position: absolute;
   font-size: 22px;
   color: #264148;
@@ -138,54 +130,51 @@ body {
   left: 25px;
 }
 
-#section0 .section0Area .section0Content .guideNarrative p {
+.guideJoin #section0 .section0Area .section0Content .guideNarrative p {
   margin-bottom: 5px;
   font-weight: bold;
 }
 
-#section0 .section0Area .section0Content .guideLvChartArea {
+.guideJoin #section0 .section0Area .section0Content .guideLvChartArea {
   position: relative;
-  margin-top: 100px;
+  margin-top: 90px;
 }
 
-#section0 .section0Area .section0Content .guideLvChartArea .guideLevelImg {
+.guideJoin #section0 .section0Area .section0Content .guideLvChartArea .guideLevelImg {
   position: absolute;
-  width: 700px;
-  left: -20px;
+  width: 750px;
+  top: 20px;
+  left: -40px;
 }
 
-#section01 {
+.guideJoin #section01 {
   position: relative;
   width: 100%;
   height: 100vh;
 }
 
-#section01 .section01Area .leftTitle .pageTitle {
+.guideJoin #section01 .section01Area .leftTitle .pageTitle {
   position: absolute;
   font-size: 25px;
   left: 285px;
-  top: 125px;
+  top: 120px;
   color: #264148;
 }
 
-#section01 .section01Area .leftTitle .pageTitle span {
-  font-size: 40px;
-}
-
-#section01 .section01Area .section01Content {
+.guideJoin #section01 .section01Area .section01Content {
   width: 650px;
   height: 400px;
   position: absolute;
-  top: 190px;
+  top: 200px;
   left: 430px;
 }
 
-#section01 .section01Area .section01Content .setIntroduction {
+.guideJoin #section01 .section01Area .section01Content .setIntroduction {
   position: relative;
   height: 65px;
 }
 
-#section01 .section01Area .section01Content .setIntroduction p {
+.guideJoin #section01 .section01Area .section01Content .setIntroduction p {
   left: -1px;
   font-size: 20px;
   display: inline;
@@ -193,125 +182,127 @@ body {
   font-weight: bold;
 }
 
-#section01 .section01Area .section01Content .setIntroduction textarea {
+.guideJoin #section01 .section01Area .section01Content .setIntroduction textarea {
   font-size: 16px;
   width: 525px;
   padding: 8px;
-  height: 65px;
+  height: 68px;
   resize: none;
   border-radius: 10px;
   border: 1px #f8f8f8 solid;
-  -webkit-box-shadow: 1px 1px 3px #858585;
-          box-shadow: 1px 1px 3px #858585;
+  -webkit-box-shadow: 1px 1px 3px #d8d8d8;
+          box-shadow: 1px 1px 3px #d8d8d8;
   position: absolute;
   left: 120px;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
-#section01 .section01Area .section01Content .acceptNum {
-  margin-top: 30px;
+.guideJoin #section01 .section01Area .section01Content .acceptNum {
+  margin-top: 35px;
   position: relative;
 }
 
-#section01 .section01Area .section01Content .acceptNum p {
+.guideJoin #section01 .section01Area .section01Content .acceptNum p {
   font-size: 20px;
   display: inline;
   font-weight: bold;
 }
 
-#section01 .section01Area .section01Content .acceptNum span {
+.guideJoin #section01 .section01Area .section01Content .acceptNum span {
   position: absolute;
   left: 120px;
 }
 
-#section01 .section01Area .section01Content .acceptNum span #quantity {
+.guideJoin #section01 .section01Area .section01Content .acceptNum span #quantity {
   width: 50px;
   border: none;
   text-align: center;
   height: 30px;
-  font-size: 16px;
-  -webkit-box-shadow: 1px 1px 3px #858585;
-          box-shadow: 1px 1px 3px #858585;
-  border-radius: 20px;
+  font-size: 18px;
   margin-right: 25px;
+  background: none;
+  border-bottom: 1px #264148 solid;
 }
 
-#section01 .section01Area .section01Content .acceptNum span .numBtn {
-  font-size: 16px;
+.guideJoin #section01 .section01Area .section01Content .acceptNum span .numBtn {
+  font-size: 17px;
   border-radius: 10px;
   padding: 2px 5px;
   width: 25px;
   text-align: center;
   border: 1px #f8f8f8 solid;
-  -webkit-box-shadow: 1px 1px 3px #858585;
-          box-shadow: 1px 1px 3px #858585;
+  -webkit-box-shadow: 1px 1px 3px #c7c7c7;
+          box-shadow: 1px 1px 3px #c7c7c7;
   margin-right: 20px;
+  background-color: #ffffff;
+  font-weight: 600;
   cursor: pointer;
 }
 
-#section01 .section01Area .section01Content .acceptNum span .numBtn:hover {
-  -webkit-box-shadow: 3px 3px 5px #858585;
-          box-shadow: 3px 3px 5px #858585;
+.guideJoin #section01 .section01Area .section01Content .acceptNum span .numBtn:hover {
+  -webkit-box-shadow: 3px 3px 5px #c7c7c7;
+          box-shadow: 3px 3px 5px #c7c7c7;
 }
 
-#section01 .section01Area .section01Content .acceptGender {
-  margin-top: 20px;
+.guideJoin #section01 .section01Area .section01Content .acceptGender {
+  margin-top: 25px;
   position: relative;
 }
 
-#section01 .section01Area .section01Content .acceptGender p {
+.guideJoin #section01 .section01Area .section01Content .acceptGender p {
   font-size: 20px;
   display: inline;
   font-weight: bold;
 }
 
-#section01 .section01Area .section01Content .acceptGender span {
+.guideJoin #section01 .section01Area .section01Content .acceptGender span {
   position: absolute;
   left: 120px;
   font-size: 20px;
 }
 
-#section01 .section01Area .section01Content .acceptGender span label {
+.guideJoin #section01 .section01Area .section01Content .acceptGender span label {
   margin-right: 40px;
 }
 
-#section01 .section01Area .section01Content .transportation {
-  margin-top: 20px;
+.guideJoin #section01 .section01Area .section01Content .transportation {
+  margin-top: 25px;
   position: relative;
 }
 
-#section01 .section01Area .section01Content .transportation p {
+.guideJoin #section01 .section01Area .section01Content .transportation p {
   font-size: 20px;
   display: inline;
   font-weight: bold;
 }
 
-#section01 .section01Area .section01Content .transportation span {
+.guideJoin #section01 .section01Area .section01Content .transportation span {
   position: absolute;
   left: 120px;
   font-size: 20px;
 }
 
-#section01 .section01Area .section01Content .transportation span label {
+.guideJoin #section01 .section01Area .section01Content .transportation span label {
   margin-right: 20px;
 }
 
-#section01 .section01Area .section01Content .uploadImg {
-  margin-top: 20px;
+.guideJoin #section01 .section01Area .section01Content .uploadImg {
+  margin-top: 25px;
   position: relative;
 }
 
-#section01 .section01Area .section01Content .uploadImg p {
+.guideJoin #section01 .section01Area .section01Content .uploadImg p {
   font-size: 20px;
   display: inline;
   font-weight: bold;
 }
 
-#section01 .section01Area .section01Content .uploadImg div {
+.guideJoin #section01 .section01Area .section01Content .uploadImg div {
   position: absolute;
   display: inline;
 }
 
-#section01 .section01Area .section01Content .uploadImg div #select {
+.guideJoin #section01 .section01Area .section01Content .uploadImg div #select {
   background-color: #1697d5;
   color: #fff;
   border: 1px solid #1697d5;
@@ -325,22 +316,22 @@ body {
           box-shadow: 1px 1px 3px #858585;
 }
 
-#section01 .section01Area .section01Content .uploadImg div #select:hover {
+.guideJoin #section01 .section01Area .section01Content .uploadImg div #select:hover {
   -webkit-box-shadow: 2px 2px 3px #858585;
           box-shadow: 2px 2px 3px #858585;
 }
 
-#section01 .section01Area .section01Content .uploadImg div p {
+.guideJoin #section01 .section01Area .section01Content .uploadImg div p {
   font-size: 16px;
   margin-left: 20px;
   font-weight: normal;
 }
 
-#section01 .section01Area .section01Content .uploadImg div #file_input {
+.guideJoin #section01 .section01Area .section01Content .uploadImg div #file_input {
   display: none;
 }
 
-#section01 .section01Area .section01Content .uploadImg div #append {
+.guideJoin #section01 .section01Area .section01Content .uploadImg div #append {
   border-radius: 10px;
   width: 525px;
   height: 140px;
@@ -351,7 +342,7 @@ body {
   border: 1px #858585 dashed;
 }
 
-#section01 .section01Area .section01Content .uploadImg div #append .float {
+.guideJoin #section01 .section01Area .section01Content .uploadImg div #append .float {
   position: relative;
   width: 112px;
   height: 112px;
@@ -364,7 +355,7 @@ body {
           box-shadow: 2px 2px 3px #85858593;
 }
 
-#section01 .section01Area .section01Content .uploadImg div #append .float .delete {
+.guideJoin #section01 .section01Area .section01Content .uploadImg div #append .float .delete {
   width: 100px;
   height: 112px;
   position: absolute;
@@ -379,12 +370,12 @@ body {
           transition-duration: 0.7s;
 }
 
-#section01 .section01Area .section01Content .uploadImg div #append .float .delete:hover {
+.guideJoin #section01 .section01Area .section01Content .uploadImg div #append .float .delete:hover {
   cursor: pointer;
   opacity: 1;
 }
 
-#section01 .section01Area .section01Content .uploadImg div #append .float .result {
+.guideJoin #section01 .section01Area .section01Content .uploadImg div #append .float .result {
   width: 100px;
   height: 100px;
   text-align: center;
@@ -392,25 +383,21 @@ body {
           box-sizing: border-box;
 }
 
-#section02 {
+.guideJoin #section02 {
   position: relative;
   width: 100%;
   height: 100vh;
 }
 
-#section02 .section02Area .leftTitle .pageTitle {
+.guideJoin #section02 .section02Area .leftTitle .pageTitle {
   position: absolute;
   font-size: 25px;
   left: 285px;
-  top: 125px;
+  top: 120px;
   color: #264148;
 }
 
-#section02 .section02Area .leftTitle .pageTitle span {
-  font-size: 40px;
-}
-
-#section02 .section02Area .section02Content {
+.guideJoin #section02 .section02Area .section02Content {
   width: 650px;
   height: 400px;
   position: absolute;
@@ -418,11 +405,11 @@ body {
   left: 430px;
 }
 
-#section02 .section02Area .section02Content .setCity {
+.guideJoin #section02 .section02Area .section02Content .setCity {
   position: relative;
 }
 
-#section02 .section02Area .section02Content .setCity p {
+.guideJoin #section02 .section02Area .section02Content .setCity p {
   font-size: 20px;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -430,41 +417,41 @@ body {
   font-weight: bold;
 }
 
-#section02 .section02Area .section02Content .setCity .guideCityInput {
+.guideJoin #section02 .section02Area .section02Content .setCity .guideCityInput {
   position: absolute;
   left: 115px;
   top: -5px;
   font-size: 20px;
 }
 
-#section02 .section02Area .section02Content .setCity .ant-select-selector {
+.guideJoin #section02 .section02Area .section02Content .setCity .ant-select-selector {
   border-radius: 5px;
 }
 
-#section02 .section02Area .section02Content .setCity .ant-select-selector .ant-select-selection-placeholder {
+.guideJoin #section02 .section02Area .section02Content .setCity .ant-select-selector .ant-select-selection-placeholder {
   font-size: 20px;
   color: #747474;
   margin-left: -5px;
 }
 
-#section02 .section02Area .section02Content .setCity .anticon-down svg {
+.guideJoin #section02 .section02Area .section02Content .setCity .anticon-down svg {
   width: 15px;
   height: 15px;
   color: #6e6e6e;
 }
 
-#section02 .section02Area .section02Content .recommendPlace {
-  margin-top: 15px;
+.guideJoin #section02 .section02Area .section02Content .recommendPlace {
+  margin-top: 25px;
   position: relative;
 }
 
-#section02 .section02Area .section02Content .recommendPlace p {
+.guideJoin #section02 .section02Area .section02Content .recommendPlace p {
   font-size: 20px;
   display: inline;
   font-weight: bold;
 }
 
-#section02 .section02Area .section02Content .recommendPlace #placeInput {
+.guideJoin #section02 .section02Area .section02Content .recommendPlace #placeInput {
   position: absolute;
   left: 115px;
   font-size: 20px;
@@ -477,7 +464,7 @@ body {
   width: 220px;
 }
 
-#section02 .section02Area .section02Content .recommendPlace .placeBtn {
+.guideJoin #section02 .section02Area .section02Content .recommendPlace .placeBtn {
   position: absolute;
   left: 360px;
   background-color: #1697d5;
@@ -492,68 +479,71 @@ body {
           box-shadow: 1px 1px 3px #858585;
 }
 
-#section02 .section02Area .section02Content .recommendPlace .placeBtn:hover {
+.guideJoin #section02 .section02Area .section02Content .recommendPlace .placeBtn:hover {
   -webkit-box-shadow: 2px 2px 3px #858585;
           box-shadow: 2px 2px 3px #858585;
 }
 
-#section02 .section02Area .section02Content .recommendPlace span {
+.guideJoin #section02 .section02Area .section02Content .recommendPlace span {
   font-size: 16px;
   margin-left: 335px;
   font-weight: normal;
 }
 
-#section02 .section02Area .section02Content .recommendPlace #placeInputContainer {
+.guideJoin #section02 .section02Area .section02Content .recommendPlace #placeInputContainer {
   position: absolute;
-  left: 79px;
+  left: 77px;
   border-radius: 10px;
   width: 525px;
   height: 110px;
-  margin: 25px 0 0 37px;
+  margin: 30px 0 0 37px;
   border: 1px #858585 dashed;
   padding: 10px;
 }
 
-#section02 .section02Area .section02Content .recommendPlace #placeInputContainer span {
-  border: 1px #264148 solid;
-  margin: 0px 20px 12px 0;
-  padding: 2px 8px 2px 3px;
-  border-radius: 10px;
+.guideJoin #section02 .section02Area .section02Content .recommendPlace #placeInputContainer span {
+  margin: 0px 20px 10px 0;
+  padding: 0 10px 0 13px;
+  border-radius: 12px;
   display: inline-block;
+  background-color: rgba(255, 255, 255, 0.7);
+  -webkit-box-shadow: 1px 1px 3px #858585;
+          box-shadow: 1px 1px 3px #858585;
 }
 
-#section02 .section02Area .section02Content .recommendPlace #placeInputContainer span .placeContent {
+.guideJoin #section02 .section02Area .section02Content .recommendPlace #placeInputContainer span .placeContent {
   border: none;
   cursor: default;
   color: #264148;
-  background-color: #f8f8f8;
   font-size: 20px;
   text-align: center;
   overflow: visible;
+  background: none;
+  font-weight: 550;
 }
 
-#section02 .section02Area .section02Content .recommendPlace #placeInputContainer span .placeDelete {
-  border: none;
-  font-size: 25px;
-  background-color: #f8f8f8;
+.guideJoin #section02 .section02Area .section02Content .recommendPlace #placeInputContainer span .placeDelete {
+  font-size: 22px;
   cursor: pointer;
   margin-left: 10px;
-  margin-top: -3px;
-  color: #f08a12;
+  margin-bottom: 5px;
+  border: none;
+  background-color: transparent;
+  color: #264148;
 }
 
-#section02 .section02Area .section02Content .recommendRestaurant {
-  margin-top: 165px;
+.guideJoin #section02 .section02Area .section02Content .recommendRestaurant {
+  margin-top: 180px;
   position: relative;
 }
 
-#section02 .section02Area .section02Content .recommendRestaurant p {
+.guideJoin #section02 .section02Area .section02Content .recommendRestaurant p {
   font-size: 20px;
   display: inline;
   font-weight: bold;
 }
 
-#section02 .section02Area .section02Content .recommendRestaurant #restaurantInput {
+.guideJoin #section02 .section02Area .section02Content .recommendRestaurant #restaurantInput {
   position: absolute;
   left: 115px;
   font-size: 20px;
@@ -566,7 +556,7 @@ body {
   width: 220px;
 }
 
-#section02 .section02Area .section02Content .recommendRestaurant .restaurantBtn {
+.guideJoin #section02 .section02Area .section02Content .recommendRestaurant .restaurantBtn {
   position: absolute;
   left: 360px;
   background-color: #1697d5;
@@ -581,104 +571,202 @@ body {
           box-shadow: 1px 1px 3px #858585;
 }
 
-#section02 .section02Area .section02Content .recommendRestaurant .restaurantBtn:hover {
+.guideJoin #section02 .section02Area .section02Content .recommendRestaurant .restaurantBtn:hover {
   -webkit-box-shadow: 2px 2px 3px #858585;
           box-shadow: 2px 2px 3px #858585;
 }
 
-#section02 .section02Area .section02Content .recommendRestaurant span {
+.guideJoin #section02 .section02Area .section02Content .recommendRestaurant span {
   font-size: 16px;
   margin-left: 335px;
   font-weight: normal;
 }
 
-#section02 .section02Area .section02Content .recommendRestaurant #restaurantInputContainer {
+.guideJoin #section02 .section02Area .section02Content .recommendRestaurant #restaurantInputContainer {
   position: absolute;
-  left: 79px;
+  left: 77px;
   border-radius: 10px;
   width: 525px;
   height: 110px;
-  margin: 25px 0 0 37px;
+  margin: 30px 0 0 37px;
   border: 1px #858585 dashed;
-  padding: 12px;
+  padding: 10px;
 }
 
-#section02 .section02Area .section02Content .recommendRestaurant #restaurantInputContainer span {
-  border: 1px #264148 solid;
-  height: 35px;
-  margin: 0px 20px 12px 0;
-  padding: 3px 10px 3px 5px;
-  border-radius: 10px;
+.guideJoin #section02 .section02Area .section02Content .recommendRestaurant #restaurantInputContainer span {
+  margin: 0px 20px 10px 0;
+  padding: 0 10px 0 13px;
+  border-radius: 12px;
   display: inline-block;
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
-#section02 .section02Area .section02Content .recommendRestaurant #restaurantInputContainer span .restaurantContent {
+.guideJoin #section02 .section02Area .section02Content .recommendRestaurant #restaurantInputContainer span .restaurantContent {
   border: none;
   cursor: default;
   color: #264148;
-  background-color: #f8f8f8;
   font-size: 20px;
   text-align: center;
   overflow: visible;
+  background: none;
+  font-weight: 550;
 }
 
-#section02 .section02Area .section02Content .recommendRestaurant #restaurantInputContainer span .restaurantDelete {
-  border: none;
-  font-size: 20px;
-  background-color: #f8f8f8;
+.guideJoin #section02 .section02Area .section02Content .recommendRestaurant #restaurantInputContainer span .restaurantDelete {
+  font-size: 22px;
   cursor: pointer;
   margin-left: 10px;
-  color: #f08a12;
+  margin-bottom: 5px;
+  border: none;
+  background-color: transparent;
+  color: #264148;
 }
 
-#section03 {
+.guideJoin #section03 {
   position: relative;
   width: 100%;
   height: 100vh;
 }
 
-#section03 .section03Area .leftTitle .pageTitle {
+.guideJoin #section03 .section03Area .leftTitle .pageTitle {
   position: absolute;
   font-size: 25px;
   left: 285px;
-  top: 125px;
+  top: 120px;
   color: #264148;
 }
 
-#section03 .section03Area .leftTitle .pageTitle .guideSpot {
-  font-size: 40px;
-}
-
-#section03 .section03Area .leftTitle .pageTitle .choiceDate {
+.guideJoin #section03 .section03Area .leftTitle .pageTitle .choiceDate {
   font-size: 20px;
   margin-left: 10px;
 }
 
-#section03 .section03Area .leftTitle .page3hr {
-  width: 3px;
-  top: 0;
-  height: 650px;
-  left: 300px;
-  position: absolute;
-  border: 1px #264148 solid;
-  background-color: #264148;
-  border-radius: 2px;
-}
-
-#section03 .section03Area .section03Content {
+.guideJoin #section03 .section03Area .section03Content {
   width: 700px;
-  height: 390px;
+  height: 440px;
   position: absolute;
   top: 210px;
   left: 400px;
   border-radius: 10px;
-  -webkit-box-shadow: 3px 3px 5px #85858593;
-          box-shadow: 3px 3px 5px #85858593;
+  -webkit-box-shadow: 2px 2px 5px #c0c0c093;
+          box-shadow: 2px 2px 5px #c0c0c093;
   padding: 20px;
-  background-color: #dfdfdf38;
+  background-color: #ffffff7a;
 }
 
-#section03 .submitBtn {
+.guideJoin #section03 .section03Area .section03Content #calendarBig div > div.fc-view-harness.fc-view-harness-active > div > table {
+  border: none;
+}
+
+.guideJoin #section03 .section03Area .section03Content #calendarBig div > div.fc-view-harness.fc-view-harness-active > div > table td {
+  border: none;
+}
+
+.guideJoin #section03 .section03Area .section03Content #calendarBig div > div.fc-view-harness.fc-view-harness-active > div > table thead > tr > th {
+  border: none;
+}
+
+.guideJoin #section03 .section03Area .section03Content #calendarBig div > div.fc-view-harness.fc-view-harness-active > div > table thead > tr > th th {
+  border: none;
+}
+
+.guideJoin #section03 .section03Area .section03Content #calendarBig div > div.fc-view-harness.fc-view-harness-active > div > table thead > tr > th td {
+  border: none;
+}
+
+.guideJoin #section03 .section03Area .section03Content #calendarBig .fc-daygrid-day-bg > div > div {
+  border-radius: 50%;
+}
+
+.guideJoin #section03 .section03Area .section03Content #calendarBig #fc-dom-2 {
+  font-size: 26px;
+  font-weight: 600;
+  color: #264148;
+}
+
+.guideJoin #section03 .section03Area .section03Content #calendarBig .fc-daygrid-day-events {
+  display: none;
+}
+
+.guideJoin #section03 .section03Area .section03Content #calendarBig .fc-header-toolbar.fc-toolbar.fc-toolbar-ltr {
+  width: 93%;
+  margin: 5px auto 20px;
+}
+
+.guideJoin #section03 .section03Area .section03Content #calendarBig .fc-header-toolbar.fc-toolbar.fc-toolbar-ltr div:nth-child(1) > button {
+  font-size: 17px;
+  height: 30px;
+  padding: 3px 8px;
+  border: none;
+  font-weight: 600;
+  background-color: #6bc1e9;
+  background-image: linear-gradient(315deg, #6bc1e9 0%, #80ced7 74%);
+}
+
+.guideJoin #section03 .section03Area .section03Content #calendarBig .fc-header-toolbar.fc-toolbar.fc-toolbar-ltr div:nth-child(1) > button:hover {
+  -webkit-box-shadow: 2px 2px 3px #85858593;
+          box-shadow: 2px 2px 3px #85858593;
+}
+
+.guideJoin #section03 .section03Area .section03Content #calendarBig .fc-daygrid-day-bg > div > div {
+  margin: 5% 20%;
+}
+
+.guideJoin #section03 .section03Area .section03Content #calendarBig .fc-daygrid-day-top {
+  margin-top: 5px;
+}
+
+.guideJoin #section03 .section03Area .section03Content #calendarBig .fc-daygrid-day-top .fc-daygrid-day-number {
+  color: #264148;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 8px auto;
+}
+
+.guideJoin #section03 .section03Area .section03Content #calendarBig .fc-col-header-cell-cushion {
+  color: #264148;
+  cursor: default;
+  font-size: 18px;
+}
+
+.guideJoin #section03 .section03Area .section03Content #calendarBig .fc-col-header-cell-cushion:hover {
+  text-decoration: none;
+}
+
+.guideJoin #section03 .section03Area .section03Content #calendarBig .fc-next-button,
+.guideJoin #section03 .section03Area .section03Content #calendarBig .fc-prev-button {
+  height: 35px;
+  width: 35px;
+}
+
+.guideJoin #section03 .section03Area .section03Content #calendarBig .fc-prev-button.fc-button.fc-button-primary {
+  margin-right: 15px;
+  position: relative;
+  border-radius: 10px 0 0 10px;
+  width: 35px;
+}
+
+.guideJoin #section03 .section03Area .section03Content #calendarBig .fc-prev-button.fc-button.fc-button-primary span {
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  color: white;
+}
+
+.guideJoin #section03 .section03Area .section03Content #calendarBig .fc-next-button.fc-button.fc-button-primary {
+  position: relative;
+  border-radius: 0 10px 10px 0;
+  width: 35px;
+}
+
+.guideJoin #section03 .section03Area .section03Content #calendarBig .fc-next-button.fc-button.fc-button-primary span {
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  color: white;
+}
+
+.guideJoin #section03 .submitBtn {
   font-size: 20px;
   background-color: #1697d5;
   padding: 8px 20px;
@@ -687,59 +775,7 @@ body {
   -webkit-box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
   position: absolute;
-  bottom: 40px;
-  left: 75%;
-}
-
-#calendarBig > div.fc-header-toolbar.fc-toolbar.fc-toolbar-ltr {
-  margin-bottom: 20px;
-}
-
-#calendarBig > div.fc-header-toolbar.fc-toolbar.fc-toolbar-ltr > div:nth-child(1) > button {
-  font-size: 16px;
-  padding: 5px;
-}
-
-#calendarBig
-> div.fc-header-toolbar.fc-toolbar.fc-toolbar-ltr
-> div:nth-child(3)
-> div
-> button.fc-prev-button.fc-button.fc-button-primary {
-  padding: 5px;
-}
-
-#calendarBig
-> div.fc-header-toolbar.fc-toolbar.fc-toolbar-ltr
-> div:nth-child(3)
-> div
-> button.fc-prev-button.fc-button.fc-button-primary span {
-  font-size: 20px;
-}
-
-#calendarBig
-> div.fc-header-toolbar.fc-toolbar.fc-toolbar-ltr
-> div:nth-child(3)
-> div
-> button.fc-next-button.fc-button.fc-button-primary {
-  padding: 5px;
-  margin-left: 10px;
-}
-
-#calendarBig
-> div.fc-header-toolbar.fc-toolbar.fc-toolbar-ltr
-> div:nth-child(3)
-> div
-> button.fc-next-button.fc-button.fc-button-primary span {
-  font-size: 20px;
-}
-
-.changeColor {
-  background-color: #ca9bbb;
-}
-
-#calendarBig > .fc-daygrid-day-number {
-  font-weight: 600;
-  margin: 10px auto;
-  cursor: pointer;
+  top: 83%;
+  left: 80%;
 }
 /*# sourceMappingURL=joinGuide.css.map */

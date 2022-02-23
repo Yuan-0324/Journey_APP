@@ -8,16 +8,20 @@ import personalBgImage from '../../../images/personal_bgi.jpg';
 
 // 個人資料顯示，包含個人 Banner
 const Personal_Header = () => {
+
     const [personalBanner, setBanner] = useState('')
+    
     useEffect(()=>{
         setBanner(personalBgImage)
     },[personalBanner]);
+
     return(
         <header className='personal-header'>
+            
             <div id='personalBanner'  className='header-banner' style={{backgroundImage: `url('${personalBanner}')`}} ></div>
             <div className='header-content'>
                 <div className='profile-pic'>
-                    <img src='https://picsum.photos/id/1004/300/300' alt="" />
+                    <img src='https://picsum.photos/id/1020/300/300' alt="" />
                 </div>
                 <div className='profile-content'>
                     <h1 className='profile-name'>Show Lo</h1>
