@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import $ from 'jquery'
 
 // 照片
-import people from "../../images/people.png"
+import people from "../../images/activity/teaActivity/people.png"
 import hiking from '../../images/background/hiking.jpg'
 import outside from '../../images/background/outside.png'
 import photo from '../../images/background/photo.jpg'
@@ -34,13 +34,19 @@ const Activity_Introduce = () => {
     return (
         <>
             <div className='activityIntroduceBody'>
+
+
                 <div className="wrap">
-                    <h1 >台中錢櫃夜唱</h1>
-                    <pre>2022 / 01 / 11  禮拜二  PM 6:30  台東市</pre>
+                    <h1 >品茗午茶手作日
+</h1>
+                    <pre>2022 / 02 / 22  禮拜二  PM 6:30  台東市</pre>
+                    <div className="creatActivity">
+                        <a href='http://localhost:3000/ActivityConduct'>來辦個活動吧→</a>
+                    </div>
                     {/* <!--活動照片  --> */}
                     <div className="activeImage">
                         <div className="options" >
-                            <div className="option active" style={{ backgroundImage: `url(${hiking})` }} id='d1'
+                            <div className="option active" style={{ backgroundImage: `url(${tea})` }} id='d1'
                                 onClick={(e) => {
                                     $('.option').removeClass("active")
                                     $(`#${e.target.id}`).addClass("active")
@@ -55,7 +61,7 @@ const Activity_Introduce = () => {
                                 </div>
                             </div>
                             <div className="option" id="d2"
-                                style={{ backgroundImage: `url(${outside})` }}
+                                style={{ backgroundImage: `url(${Piece})` }}
 
                                 onClick={(e) => {
                                     $('.option').removeClass("active")
@@ -93,7 +99,7 @@ const Activity_Introduce = () => {
                                 </div>
                             </div>
                             <div className="option o4" id='d4'
-                                style={{ backgroundImage: `url(${Piece})` }}
+                                style={{ backgroundImage: `url(${outside})` }}
                                 onClick={(e) => {
                                     $('.option').removeClass("active")
                                     $(`#${e.target.id}`).addClass("active")

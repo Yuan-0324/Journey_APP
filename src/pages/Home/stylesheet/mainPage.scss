@@ -232,6 +232,29 @@
           }
         }
       }
+      .radioswitch {
+        // margin: 5px 10px 5px 5px;
+        padding: 5px 10px 5px 5px;
+        .ant-radio-group {
+          .ant-radio-button-wrapper-checked {
+            &:not(.ant-radio-button-wrapper-disabled) {
+              &::before {
+                background-color: white;
+              }
+            }
+          }
+        }
+        .ant-radio-button-wrapper {
+          border: none;
+          border-radius: 10px;
+          .ant-radio-button {
+            border: none;
+          }
+          span {
+            font-size: 20px;
+          }
+        }
+      }
       button {
         display: flex;
         align-items: center;

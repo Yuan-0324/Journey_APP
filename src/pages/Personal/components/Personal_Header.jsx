@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { BsFillStarFill } from 'react-icons/bs';
 import { AiOutlineEdit, AiFillStar } from 'react-icons/ai';
 import { IoChatbubblesOutline, IoLocationSharp } from 'react-icons/io5';
-import personalBgImage from '../../../images/personal_bgi.jpg';
+import personalBgImage from '../../../images/personal_page_img/personal_page/personal_banner.JPEG';
 
 
 // 個人資料顯示，包含個人 Banner

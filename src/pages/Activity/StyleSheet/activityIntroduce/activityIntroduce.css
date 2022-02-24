@@ -1,21 +1,7 @@
-* {
-  margin: 0;
-  padding: 0;
-  font-family: Microsoft JhengHei, sans-serif;
-  letter-spacing: 0.02em;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-body {
-  background-color: #f8f8f8;
-  width: 100vw;
-  min-height: 100vh;
-}
-
 .activityIntroduceBody {
   background-image: url("../../../../images/main/background.png");
   background-attachment: fixed;
+  position: relative;
 }
 
 .activityIntroduceBody .wrap {
@@ -81,6 +67,21 @@ body {
 
 .activityIntroduceBody .wrap pre {
   margin-top: 10px;
+}
+
+.activityIntroduceBody .wrap .creatActivity {
+  position: absolute;
+  top: 0px;
+  right: 270px;
+  padding-top: 10px;
+}
+
+.activityIntroduceBody .wrap .creatActivity a {
+  color: #1697d5;
+  padding-top: 30px;
+  margin: 10px 20px 0px 75px;
+  font-size: 18px;
+  font-weight: bolder;
 }
 
 .activityIntroduceBody .wrap .activeImage {

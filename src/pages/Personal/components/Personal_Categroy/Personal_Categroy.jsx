@@ -33,9 +33,7 @@ const Personal_Categroy = () => {
                 <div onClick={btnClick} data-id='4' data-categroy='guide' >嚮導評價</div>
                 <div>個人設定</div>
             </div>
-
             <Club_List />
-
         </div>
     )
 }

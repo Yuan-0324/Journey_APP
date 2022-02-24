@@ -24,7 +24,7 @@ const Logged_In = () => {
         <a href="/">
           <img className="logo" src={logo} alt="logo" />
         </a>
-        <div class="navbar">
+        <div className="navbar">
           <li>
             <a className="navLink" href="/Event">
               活動

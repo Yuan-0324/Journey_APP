@@ -12,8 +12,10 @@
 }
 
 body {
+  background-image: url("../images/main/background.png");
   background-color: #f8f8f8;
   width: 100vw;
   min-height: 100vh;
+  background-attachment: fixed;
 }
 /*# sourceMappingURL=main_style.css.map */

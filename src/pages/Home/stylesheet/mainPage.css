@@ -282,6 +282,27 @@
   font-size: 20px;
 }
 
+#searchBar .searchBar .search-container .radioswitch {
+  padding: 5px 10px 5px 5px;
+}
+
+#searchBar .searchBar .search-container .radioswitch .ant-radio-group .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled)::before {
+  background-color: white;
+}
+
+#searchBar .searchBar .search-container .radioswitch .ant-radio-button-wrapper {
+  border: none;
+  border-radius: 10px;
+}
+
+#searchBar .searchBar .search-container .radioswitch .ant-radio-button-wrapper .ant-radio-button {
+  border: none;
+}
+
+#searchBar .searchBar .search-container .radioswitch .ant-radio-button-wrapper span {
+  font-size: 20px;
+}
+
 #searchBar .searchBar .search-container button {
   display: -webkit-box;
   display: -ms-flexbox;

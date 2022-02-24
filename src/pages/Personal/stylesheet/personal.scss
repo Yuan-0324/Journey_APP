@@ -213,14 +213,16 @@
     }
     .show-article-message {
         height: 575px;
-        width: 330px;
+        width: 430px;
         background-color: #fff;
         margin-left: 10px;
         border-radius: 10px;
         overflow: scroll;
         // padding: 0px 15px;
+        position: relative;
         & > h1 {
-            position: relative;
+            width: 100%;
+            // position: absolute;
             text-align: center;
             font-weight: normal;
             font-size: 20px;
@@ -261,6 +263,7 @@
         .comment-container {
             margin-top: 15px;
             padding: 0px 20px;
+            // overflow: hidden;
             .article-comment-content {
                 // border: 1px solid #000;
                 @include bdrs;
@@ -305,6 +308,11 @@
                         margin-bottom: 0;
                     }
                 }
+            }
+            .article-son-comment {
+                margin-left: 10px;
+                padding-left: 15px;
+                border-left: 1px solid $primarycolor;
             }
         }
     }

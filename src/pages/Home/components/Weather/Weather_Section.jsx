@@ -4,11 +4,11 @@ import Responsive from "./Card_Chip_Weather";
 
 const Weather_Section = () => {
   const currentHour = new Date().getHours();
-  // const currentHour = 16;
+  // const currentHour = 11;
   const [greeting] =
     currentHour < 12
       ? ["🔆 早安"]
-      : currentHour > 12 && currentHour < 18
+      : currentHour >= 12 && currentHour < 18
       ? ["🍵 午安"]
       : ["🌙 晚安"];
 

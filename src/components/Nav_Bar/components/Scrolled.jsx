@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../../images/Journeylogo.png";
+import logo from "../../../images/logo.png";
 import { NavLink } from "react-router-dom";
 import { IoMdMenu } from "react-icons/io";
 
@@ -10,7 +10,7 @@ const Scrolled = ({ setlogIn, setscrolled }) => {
         <a href="/">
           <img className="logo" src={logo} alt="logo" />
         </a>
-        <div class="navbar">
+        <div className="navbar">
           <li>
             <NavLink className="navLink" to="#">
               <IoMdMenu

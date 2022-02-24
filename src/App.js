@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'jquery/dist/jquery';
 // import { CookiesProvider } from 'react-cookie'
 import Context from './context';
+import './styles/main_style.css';
 
 // ------- 路由 -------
 
@@ -39,11 +40,13 @@ import Activity_Introduce from './pages/Activity/Activity_Introduce'
 
 const App = () => {
   const [token, setToken] = useState(localStorage.getItem("token"));
+  const [ userInfo, setUserInfo ] = useState({})
   return (
     <Context.Provider
       value={{
         token,
         setToken,
+        userInfo
       }}
     >
       <BrowserRouter>

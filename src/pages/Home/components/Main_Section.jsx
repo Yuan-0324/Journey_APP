@@ -41,23 +41,27 @@ const Main_Section = () => {
   //   }
   // };
 
-  var tl = gsap.timeline({ repeat: -1 });
+  var tl = gsap.timeline({ duration: 1 });
   useEffect(() => {
-    tl.from(
-      star1Ref.current,
-      { opacity: 0, ease: Power3.easeOut, delay: 3 },
-      "Start"
-    )
-      .to(star1Ref.current, { rotate: 180 })
-      .to(star1Ref.current, { opacity: 0, delay: 0.5 })
-
-      .from(
-        star2Ref.current,
-        { opacity: 0, ease: Power3.easeOut, delay: 3 },
-        "Start"
-      )
-      .to(star2Ref.current, { rotate: 180 })
-      .to(star2Ref.current, { opacity: 0, delay: 0.5 });
+    tl.from(".mainSection", { y: 40, opacity: 0, delay: 1 })
+      .to(".mainSection", {
+        opacity: 1,
+        ease: Power3.easeOut,
+      })
+      .to(splash2Ref.current, {
+        autoAlpha: 0,
+        repeat: 3,
+        yoyo: true,
+        ease: "linear".easeNone,
+        duration: 0.2,
+      })
+      .to(splash1Ref.current, {
+        autoAlpha: 0,
+        repeat: 3,
+        yoyo: true,
+        ease: "linear".easeNone,
+        duration: 0.2,
+      });
   }, []);
 
   return (

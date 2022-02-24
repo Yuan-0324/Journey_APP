@@ -8,11 +8,14 @@ $border:#000 solid 1px ;
 .activityIntroduceBody{
     background-image: url("../../../../images/main/background.png" );
     background-attachment: fixed;
+    position: relative;
     .wrap{
+
         width: 70%;
         margin: 0 auto;
         // header
         @include Initialization;
+      
         h1{
             margin-top: 120px;
             font-size: 24px;
@@ -20,6 +23,19 @@ $border:#000 solid 1px ;
         }
         pre{
             margin-top: 10px;
+        }
+        .creatActivity{  
+            position: absolute;
+            top: 0px;
+            right: 270px;                  
+            padding-top: 10px;
+            a{
+                color: #1697d5;                        
+                padding-top: 30px;
+                margin: 10px 20px 0px 75px;
+                font-size: 18px;
+                font-weight: bolder;
+            }
         }
         // 照片
         $optionDefaultColours: #ED5565,#FC6E51,#FFCE54,#2ECC71,#5D9CEC,#AC92EC;

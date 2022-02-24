@@ -34,29 +34,19 @@ const Navigation = () => {
     };
   }, []);
 
-  // let token = localStorage.getItem('token') || null;
-  const [ token, setToke ] = useState(localStorage.getItem('token'))
+  const [token, setToke] = useState(localStorage.getItem('token'))
   let LoginType = '';
-  // if (token == '') {
-  //   LoginType = <Log_In />;
-  // }else if(token == undefined){
-  //   LoginType = <Log_In />;
-  // }
-  //  else {
-  //   LoginType = <Logged_In />;
-  // }
-  // let myCookie = document.cookie
-  // console.log(myCookie);
-  
-  if ( token ) {
+
+
+  if (token) {
     LoginType = <Logged_In />;
-    // setType(<Logged_In />)
+
   } else {
     LoginType = <Log_In />;
-    // setType(<Log_In />)
+
   }
 
-  console.log(token)
+  // console.log(token)
   return (
     <header>
       {logIn && LoginType}

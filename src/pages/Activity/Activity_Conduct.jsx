@@ -17,7 +17,7 @@ import {
 } from "react-bootstrap"
 
 // ---- 更改 ----
-import check from '../../images/check.gif';
+import check from '../../images/Success-unscreen.gif';
 import './StyleSheet/activityConduct/activityConduct.css';
 
 const Activity_Conduct = () => {

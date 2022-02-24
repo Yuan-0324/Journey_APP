@@ -263,15 +263,16 @@
 
 .personal-article-show .show-article-message {
   height: 575px;
-  width: 330px;
+  width: 430px;
   background-color: #fff;
   margin-left: 10px;
   border-radius: 10px;
   overflow: scroll;
+  position: relative;
 }
 
 .personal-article-show .show-article-message > h1 {
-  position: relative;
+  width: 100%;
   text-align: center;
   font-weight: normal;
   font-size: 20px;
@@ -378,6 +379,12 @@
   font-weight: normal;
   padding: 7px 17px;
   margin-bottom: 0;
+}
+
+.personal-article-show .show-article-message .comment-container .article-son-comment {
+  margin-left: 10px;
+  padding-left: 15px;
+  border-left: 1px solid #1697d5;
 }
 
 .personal-header {

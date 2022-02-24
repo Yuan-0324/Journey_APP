@@ -1,16 +1,23 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import "antd/dist/antd.css";
-import { Button, DatePicker, TreeSelect } from "antd";
+import { Button, DatePicker, TreeSelect, Radio } from "antd";
 import { BiSearchAlt } from "react-icons/bi";
 import locale from "antd/es/date-picker/locale/zh_TW";
 import "moment/locale/zh-tw";
 const { TreeNode } = TreeSelect;
 
 const Search_Bar = () => {
+  const history = useHistory();
   const [value, setValue] = useState(undefined);
   const onChange = () => {
     setValue(value);
   };
+
+  const optionsWithDisabled = [
+    { label: "活動", value: "Activity" },
+    { label: "嚮導", value: "Guide" },
+  ];
   return (
     <section id="searchBar">
       <div className="searchBar">
@@ -97,7 +104,20 @@ const Search_Bar = () => {
               placeholder="輸入日期"
             />
           </div>
-          <Button>
+          <div className="radioswitch">
+            <Radio.Group
+              options={optionsWithDisabled}
+              defaultValue="Activity"
+              // onChange={this.onChange4}
+              optionType="button"
+              buttonStyle="solid"
+            />
+          </div>
+          <Button
+            onClick={() => {
+              history.push("/Guide");
+            }}
+          >
             <BiSearchAlt />
           </Button>
         </div>
