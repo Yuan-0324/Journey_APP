@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { BsArrowRightSquareFill, BsArrowRightSquare } from 'react-icons/bs';
+import Axios from 'axios';
 
 import emptyStar from '../../../../../images/personal_page_img/rate_stars/empty.png';
 import shineStar from '../../../../../images/personal_page_img/rate_stars/star.png';
@@ -15,9 +16,10 @@ const Personal_Guide = ({ guide, guideList, setGuideList }) => {
     // ---- 按鈕效果 ----
     const btnDefault = {
         color: 'rgba(0,0,0,0.3)',
-        pointerEvents: 'none',
+        pointerEvents: 'none'
         // right: '-30px'
     }
+
     const [btnStyle, setBtnStyle] = useState(btnDefault);
 
     useEffect(() => {
@@ -68,7 +70,6 @@ const Personal_Guide = ({ guide, guideList, setGuideList }) => {
     }
 
     let starMoveOut = (evt) => {
-        // console.log(evt.target.parentElement.children.length);
         const stars = evt.target.parentElement.children;
         if (starScore !== 0) {
             for (let i = 1; i <= stars.length; i++) {

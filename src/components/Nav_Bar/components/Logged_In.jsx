@@ -4,10 +4,15 @@ import logo from "../../../images/logo.png";
 import { Avatar } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 import { useHistory } from "react-router-dom";
+import { useContext } from "react";
+import context from '../../../context';
 
 const Logged_In = () => {
 
   let history = useHistory();
+
+  const { userInfo } = useContext(context);
+  // console.log(userInfo);
 
   const LogOutBtn = () => {
     localStorage.setItem('token', '');
@@ -15,7 +20,8 @@ const Logged_In = () => {
   }
 
   let toPersonal = () => {
-    history.push('/personal/' + 'eric840324@gmail.com' )
+    // history.push('/personal/' +  userInfo.id);
+    window.location = '/personal/' + userInfo.id;
   }
 
   return (

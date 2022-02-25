@@ -291,6 +291,9 @@
   margin: 0px 15px;
   padding-top: 10px;
   padding-bottom: 10px;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
 .personal-article-show .show-article-message .comment-post textarea {
@@ -304,9 +307,28 @@
   text-rendering: auto;
   overflow-wrap: break-word;
   resize: none;
+  background-color: #fff;
+  font-size: 18px;
+}
+
+.personal-article-show .show-article-message .comment-post textarea::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.personal-article-show .show-article-message .comment-post textarea:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.personal-article-show .show-article-message .comment-post textarea::-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.personal-article-show .show-article-message .comment-post textarea::placeholder {
+  color: rgba(0, 0, 0, 0.4);
 }
 
 .personal-article-show .show-article-message .comment-post button {
+  height: 30px;
   width: 65px;
   margin-left: 5px;
   border: 1px solid #1697d5;
@@ -326,7 +348,8 @@
           box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   margin-bottom: 10px;
-  padding: 10px 15px;
+  padding: 6px 8px;
+  position: relative;
 }
 
 .personal-article-show .show-article-message .comment-container .article-comment-content .comment-detail {
@@ -336,9 +359,13 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
 }
 
 .personal-article-show .show-article-message .comment-container .article-comment-content .comment-detail > img {
+  position: absolute;
+  top: 5px;
+  left: 2px;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -356,35 +383,111 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
-}
-
-.personal-article-show .show-article-message .comment-container .article-comment-content .comment-detail .detail-text * {
-  margin: 0;
-  margin-left: 10px;
+  margin-left: 50px;
 }
 
 .personal-article-show .show-article-message .comment-container .article-comment-content .comment-detail .detail-text h1 {
+  margin: 0;
+  margin-top: 7px;
+  margin-bottom: 3px;
+  margin-left: 3px;
   font-size: 18px;
-  font-weight: normal;
+  font-weight: 600;
 }
 
 .personal-article-show .show-article-message .comment-container .article-comment-content .comment-detail .detail-text h6 {
+  margin-top: 7px;
+  margin-bottom: 3px;
   font-size: 14px;
   font-weight: normal;
   color: rgba(0, 0, 0, 0.5);
 }
 
 .personal-article-show .show-article-message .comment-container .article-comment-content .comment-main-text > p {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: normal;
-  padding: 7px 17px;
+  padding: 0;
+  margin-left: 53px;
   margin-bottom: 0;
 }
 
-.personal-article-show .show-article-message .comment-container .article-son-comment {
+.personal-article-show .show-article-message .comment-container .article-comment-content .comment-see-more {
+  color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  left: 13%;
+  bottom: 5px;
+  background-color: #fff;
+  border: none;
+}
+
+.personal-article-show .show-article-message .comment-container .article-son-comment .article-leave-msg {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.personal-article-show .show-article-message .comment-container .article-son-comment .article-leave-msg > img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
   margin-left: 10px;
-  padding-left: 15px;
-  border-left: 1px solid #1697d5;
+}
+
+.personal-article-show .show-article-message .comment-container .article-son-comment .article-leave-msg > textarea {
+  margin: 0;
+  padding: 2px 8px;
+  margin-left: 10px;
+  width: 65%;
+  font-size: 18px;
+  background-color: #fff;
+  border: 1px solid #1697d5;
+  border-radius: 15px;
+  height: 30px;
+}
+
+.personal-article-show .show-article-message .comment-container .article-son-comment .article-leave-msg > textarea::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.personal-article-show .show-article-message .comment-container .article-son-comment .article-leave-msg > textarea:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.personal-article-show .show-article-message .comment-container .article-son-comment .article-leave-msg > textarea::-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.personal-article-show .show-article-message .comment-container .article-son-comment .article-leave-msg > textarea::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.personal-article-show .show-article-message .comment-container .article-son-comment .article-leave-msg > button {
+  background-color: transparent;
+  border: none;
+  height: 30px;
+  margin: 0px 10px;
+  color: #1697d5;
+}
+
+.personal-article-show .show-article-message .comment-container .article-son-comment .article-leave-msg > button > * {
+  height: 30px;
+  width: 30px;
+}
+
+.personal-article-show .show-article-message .comment-container .article-son-comment .article-leave-msg > span {
+  margin-top: 3px;
+}
+
+.personal-article-show .show-article-message .comment-container .article-son-comment .article-leave-msg > span > * {
+  font-size: 20px;
 }
 
 .personal-header {
@@ -856,8 +959,8 @@
 }
 
 .personal-section .presonal-container .personal-post .article .article-container .article-body .article-see-more:hover svg {
-  -webkit-animation: pointer .7s alternate infinite linear;
-          animation: pointer .7s alternate infinite linear;
+  -webkit-animation: pointer 0.7s alternate infinite linear;
+          animation: pointer 0.7s alternate infinite linear;
 }
 
 @-webkit-keyframes pointer {
@@ -966,8 +1069,8 @@
   overflow: hidden;
   position: relative;
   bottom: 0;
-  -webkit-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   cursor: pointer;
 }
 
@@ -1078,8 +1181,8 @@
   -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
           box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
-  -webkit-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   cursor: pointer;
   position: relative;
   bottom: 0;
@@ -2254,8 +2357,8 @@
 
 .personal-section .presonal-container .personal-post .review .my-review .review-form .review-form-send > button {
   overflow: hidden;
-  -webkit-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;

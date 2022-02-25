@@ -1,7 +1,7 @@
 const Recieve_Invitation = () => {
+
     return (
         <div className="notice-recieve">
-
             {/* <!-- 收到的 嚮導邀約 --> */}
             <div className="notice-recieve-guide">
                 <h1 className="notice-recieve-topic">收到的嚮導請求</h1>

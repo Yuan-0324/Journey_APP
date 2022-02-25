@@ -5,7 +5,7 @@ import Personal_Article from './Personal_Article';
 const Article_List = () => {
 
     let articleData = [{
-        articleId: 1342591832,
+        articleID: 1342591832,
         authorImg: 'https://picsum.photos/id/1020/300/300',
         authorName: 'Show Lo',
         postDate: '2022/02/15',
@@ -26,7 +26,7 @@ const Article_List = () => {
             commentContent: '會在別人咖啡裡下藥嗎？'
         }]
     }, {
-        articleId: 1342591833,
+        articleID: 1342591833,
         authorImg: 'https://picsum.photos/id/1020/300/300',
         authorName: 'Show Lo',
         postDate: '2022/01/18',
@@ -34,7 +34,7 @@ const Article_List = () => {
         articleContent: '我以為我了解愛情，但我真的了解愛情嗎？仔細想想，我對愛情的理解只是皮毛而已。',
         likesNum: 777
     }, {
-        articleId: 1342591834,
+        articleID: 1342591834,
         authorImg: 'https://picsum.photos/id/1020/300/300',
         authorName: 'Show Lo',
         postDate: '2021/12/20',
@@ -44,7 +44,6 @@ const Article_List = () => {
     }]
 
     const [articleList, setArticleList] = useState(articleData);
-
 
 
     return (

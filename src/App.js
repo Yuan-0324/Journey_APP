@@ -15,6 +15,7 @@ import Navigation from './components/Nav_Bar/Navigation';
 
 // 首頁 「Amber」
 import Home from './pages/Home/Home';
+import Error_Page from './pages/Error';
 
 // 設定頁面 「侑庭」
 import Setting from './pages/Settings/Settings';
@@ -40,7 +41,14 @@ import Activity_Introduce from './pages/Activity/Activity_Introduce'
 
 const App = () => {
   const [token, setToken] = useState(localStorage.getItem("token"));
-  const [ userInfo, setUserInfo ] = useState({})
+
+  const [ userInfo, setUserInfo ] = useState({
+    firstName: '美秀',
+    lastName: '林',
+    email: 'maggie520@gmail.com',
+    id: 1
+  })
+  
   return (
     <Context.Provider
       value={{
@@ -70,15 +78,22 @@ const App = () => {
             <Route path="/Society" component={Society_Container} exact />
             <Route path="/Society/Home" component={Society_Container} exact />
             <Route path="/Society/group/:id" component={Society_Container} exact />
+            
+            {
+              userInfo.id? <Route path="/Personal/:id" component={Personal} exact />:<Route path="/Personal/:id" component={Home} exact />
+            }
+            {
+              userInfo.id?  <Route path="/Personal/:id/:cate" component={Personal} excat />:''
+            }
 
             {/* 個人頁面 */}
-            <Route path="/Personal/:id" component={Personal} exact />
-            <Route path="/Personal/:id/:cate" component={Personal} excat />
+            {/* <Route path="/Personal/:id" component={Personal} exact />
+            <Route path="/Personal/:id/:cate" component={Personal} excat /> */}
 
             {/* 設定頁面 */}
             <Route path='/Setting' component={Setting} exact />
             {/* 錯誤處理頁面 [ 未完成 ] */}
-            {/* <Route component={Error} />  */}
+            <Route path='/:error' component={Error_Page} /> 
           </Switch>
         </div>
       </BrowserRouter>
