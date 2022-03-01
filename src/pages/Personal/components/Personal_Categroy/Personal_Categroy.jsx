@@ -1,7 +1,7 @@
 import { param } from 'jquery';
 import { useState, useContext } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
-import context from '../../../../context';
+import Context from '../../../../context';
 import Axios from 'axios';
 
 
@@ -13,9 +13,8 @@ const Personal_Categroy = () => {
 
     let history = useHistory();
 
-    const currentUser = useContext(context).userInfo;
-    const defaultCate = { backgroundColor: '#fff', color: '#1697d5' };
-    const [btnStyle, setBtnStyle] = useState(defaultCate);
+    const currentUser = useContext(Context).userInfo;
+    const viewUserInfo = useContext(Context).viewUserInfo;
 
     const currentParams = useParams();
 
@@ -26,7 +25,7 @@ const Personal_Categroy = () => {
     }
 
     // console.log(currentParams.id)
-    // console.log(currentUser.id);
+    // console.log(viewUserInfo);
     return (
         <div className="personal-categroy">
 
@@ -36,8 +35,8 @@ const Personal_Categroy = () => {
             </div>
 
             <div className='personal-btn'>
-                <div onClick={btnClick} data-id='0' data-categroy='article' >我的文章</div>
-                <div onClick={btnClick} data-id='1' data-categroy='activities' >我辦的活動</div>
+                <div onClick={btnClick} data-id='0' data-categroy='article' >{+currentParams.id === currentUser.id? '我的文章':`${viewUserInfo.firstName}的文章`}</div>
+                <div onClick={btnClick} data-id='1' data-categroy='activities' >{+currentParams.id === currentUser.id? '我辦的活動':`${viewUserInfo.firstName}辦的活動`}</div>
                 { +currentParams.id === currentUser.id ? <div onClick={btnClick} data-id='2' data-categroy='collection' >我的收藏</div>:''}
                 { +currentParams.id === currentUser.id ? <div onClick={btnClick} data-id='3' data-categroy='invitation' >邀約通知</div>:''}
                 { +currentParams.id === currentUser.id ? <div onClick={btnClick} data-id='4' data-categroy='guide' >嚮導評價</div>:''}

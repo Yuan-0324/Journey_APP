@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import Axios from 'axios';
 //firebase
 import { GoogleAuthProvider, signInWithPopup, FacebookAuthProvider } from 'firebase/auth';
-import { auth } from '../firebase';
+import { auth } from '../../../../firebase';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes, faEnvelope } from '@fortawesome/free-solid-svg-icons'

@@ -1,11 +1,24 @@
-import { useState } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { useParams } from 'react-router-dom';
 import { v4 } from 'uuid'
-
 import { IoChatbubblesOutline, IoLocationSharp } from 'react-icons/io5';
-import Personal_Activity from './Personal_Activities';
+import Axios from 'axios';
 
+import Personal_Activity from './Personal_Activities';
+import Context from '../../../../../context';
 
 const Activities_List = () => {
+    const { userInfo } = useContext(Context);
+    const [ activityInfo, setActivityInfo ] = useState([]);
+    const currentPath = useParams();
+
+    useEffect(()=>{
+        let fetchData = async () =>{
+            let result = await Axios.get('http://localhost:8000/personal/activity/' + currentPath.id );
+            setActivityInfo(result.data);
+        }
+        fetchData();
+    },[])
 
     let activitiesData = [{
         evtId: v4(),
@@ -49,17 +62,14 @@ const Activities_List = () => {
         evtContent: '星期五想好好放鬆的你 卻遇到會被閃瞎的情人節？ 我們單身錯了嗎！！這是單身狗的聚會！拿出大家的單身真實力。'
     }]
 
-    const [ activitiesList, setArticleList ] = useState(activitiesData)
-
     return (
         <div className='activities'>
             <h2 className="head-topic">我辦的活動</h2>
             {/* -----------------Container------------------- */}
 
             {
-                activitiesList.map(activity => <Personal_Activity activity={activity} key={activity.evtId} />)
+                activityInfo.map(activity => <Personal_Activity activity={activity} key={activity.eventID} />)
             }
-
 
             {/* --------------------------------------------- */}
         </div>

@@ -1,4 +1,4 @@
-import { FaRegHeart, FaRegCommentAlt, FaRegPaperPlane, FaHeart } from 'react-icons/fa'
+import { FaRegHeart, FaRegCommentAlt, FaRegPaperPlane, FaHeart } from 'react-icons/fa';
 import { BsThreeDots } from 'react-icons/bs';
 import { FaCaretDown } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
@@ -44,6 +44,7 @@ const Personal_Article = ({ article }) => {
         <>
             {editPageToggle && <Edit_Article article={article} editPageToggle={editPageToggle} setEditPageToggle={setEditPageToggle} />}
             {articleToggle && <Show_Article article={article} articleToggle={articleToggle} setArticleToggle={setArticleToggle} /> }
+            
             <div className='article-container'>
                 <div className='article-title'>
                     <img src={ article.authorImg } alt=""></img>
@@ -65,7 +66,7 @@ const Personal_Article = ({ article }) => {
                     <div className='message-icon'>
                         {/* React Icons Start */}
                         <button onClick={likeCheck}>{likeToggle ? <FaHeart style={{ color: 'red' }} /> : <FaRegHeart />}</button>
-                        <button onClick={commentPost}><FaRegCommentAlt /></button>
+                        <button onClick={showArticlePage}><FaRegCommentAlt /></button>
                         <button><FaRegPaperPlane /></button>
                         {/* React Icons End */}
                     </div>

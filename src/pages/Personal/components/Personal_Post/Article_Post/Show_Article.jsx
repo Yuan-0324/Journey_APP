@@ -43,11 +43,11 @@ const Show_Article = ({ article, articleToggle, setArticleToggle }) => {
 
     let currentTime = () => {
         const nowTime = new Date();
-        const date = `${nowTime.getFullYear()}-${nowTime.getMonth()}-${nowTime.getDate()}`;
+        const date = `${nowTime.getFullYear()}-${nowTime.getMonth().toString()<2?nowTime.getMonth()+'2':nowTime.getMonth()}-${nowTime.getDate()}`;
         const time = `${nowTime.getHours()}:${nowTime.getMinutes()}:${nowTime.getSeconds()}`;
         return `${date} ${time}`;
     }
-
+    console.log(new Date().getMonth().toString().length);
     let fatherCommentSend = (evt) => {
         // ---- post Data ----
         const insertComment = {
@@ -85,6 +85,7 @@ const Show_Article = ({ article, articleToggle, setArticleToggle }) => {
                         <h1>{article.authorName}</h1>
                         <h6>{article.postDate}</h6>
                     </div>
+                    <div className='likeBtn'><FaRegHeart /><span>{ article.likesNum }</span></div>
                 </div>
                 <div className='show-article-content'>
                     <p>

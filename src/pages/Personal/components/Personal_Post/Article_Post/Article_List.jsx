@@ -1,8 +1,26 @@
-import { useState, createContext } from 'react'
+import { useState, useContext } from 'react'
 import Personal_Article from './Personal_Article';
+import Axios from 'axios';
+import Context from '../../../../../context';
+import { useParams } from 'react-router-dom';
+
+
 
 // 文章的 JSX
 const Article_List = () => {
+
+    // --- 現在的使用者 ---
+
+    const currentUser = useContext(Context).userInfo
+    const currentPath = useParams();
+    const [state, setState] = useState({
+        articleList: []
+    })
+
+    let fetchData = async () => {
+        let articleList = await Axios.get('http://localhost:8000/personal/article_list/' + currentPath.id);
+        // setState()
+    }
 
     let articleData = [{
         articleID: 1342591832,
@@ -18,7 +36,7 @@ const Article_List = () => {
             netizenImg: 'https://picsum.photos/id/1020/300/300',
             netizen: '黃綠紅',
             commentContent: '我也很喜歡喝咖啡耶'
-        },{
+        }, {
             commentId: 423126,
             commentDate: '2022/02/9',
             netizenImg: 'https://picsum.photos/id/1010/300/300',
@@ -49,17 +67,22 @@ const Article_List = () => {
     return (
         <div className='article'>
             <h2 className="head-topic">個人文章</h2>
-            <div className='article-post'>
-                <img src="https://picsum.photos/id/1020/300/300" alt=""></img>
-                <div className='post-send'>
-                    <h4>想說些什麼？</h4>
-                </div>
-            </div>
-            
+            {
+                currentUser.id == currentPath.id ?
+                    <div className='article-post'>
+                        <img src="https://picsum.photos/id/1020/300/300" alt=""></img>
+                        <div className='post-send'>
+                            <h4>想說些什麼？</h4>
+                        </div>
+                    </div>
+                    : ""
+            }
+
+
             {/* ----------------- Container ------------------- */}
 
             {
-                articleList.map(article => <Personal_Article article={article} key={article.articleId} />)
+                articleList.map(article => <Personal_Article article={article} key={article.articleID} />)
             }
 
             {/* ----------------------------------------------- */}

@@ -7,17 +7,19 @@ import shineStar from '../../../../../images/personal_page_img/rate_stars/star.p
 
 const Personal_Guide = ({ guide, guideList, setGuideList }) => {
 
-    const [reviewContent, setReviewContent] = useState('');
     // ---- 雙向綁定 ----
+
+    const [reviewContent, setReviewContent] = useState('');
+
     let reviewChange = (evt) => {
         setReviewContent(evt.target.value);
     }
 
     // ---- 按鈕效果 ----
+
     const btnDefault = {
         color: 'rgba(0,0,0,0.3)',
         pointerEvents: 'none'
-        // right: '-30px'
     }
 
     const [btnStyle, setBtnStyle] = useState(btnDefault);
@@ -28,7 +30,7 @@ const Personal_Guide = ({ guide, guideList, setGuideList }) => {
                 color: '#1697d5',
                 pointerEvents: 'all',
                 boxShadow: '3px 3px 5px rgba(0,0,0,0.2)',
-                right: '35px',
+                // right: '35px',
             });
         } else {
             setBtnStyle(btnDefault);
@@ -37,7 +39,6 @@ const Personal_Guide = ({ guide, guideList, setGuideList }) => {
 
 
     // ---- 星星效果 ----
-    // const [ starArr, setStarArr ] = useState([])
 
     const [starScore, setStarScore] = useState(0);
     const [showScore, setShowScore] = useState('');
@@ -86,38 +87,78 @@ const Personal_Guide = ({ guide, guideList, setGuideList }) => {
         }
     }
 
-    let testing = (evt) => {
-        let newList = guideList.filter(item => item.guideId !== guide.guideId );
+    // ---- 送出 ----
+
+    const [sendAlertToggle, setSendAlertToggle] = useState(false);
+
+
+    let sendReview = (evt) => {
+        const reviewData = {
+            stars: starScore,
+            reviewContent
+        }
+        let newList = guideList.filter(item => item.guideId !== guide.guideId);
         setGuideList(newList);
-        setReviewContent('');
-        setStarScore(0);
     }
 
-    console.log(starScore);
+    // ---- 關閉通知 ----
+
+    let closeAlert = () => {
+        setSendAlertToggle(!sendAlertToggle);
+    }
+
+    // ---- 放在 return 後面是防止第一次渲染時執行 -----
+
+    // useEffect(() => {
+    //     return ()=>{
+    //         setSendAlertToggle(!sendAlertToggle);
+    //     }
+    // }, [sendStatus.current])
+
+    // ---- 防止 Modal 畫面滑動 ---- 
+
+    useEffect(() => {
+        console.log('Guide Page')
+        if (sendAlertToggle) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'scroll';
+        }
+    }, [sendAlertToggle])
 
     return (
-        <div className="my-review">
-            <div className="review-guide">
-                <img src={ guide.guideImg } alt=""></img>
-                <h1>{ guide.guideName }</h1>
-                <h5>{ guide.guideDate }</h5>
-            </div>
-            <div className='review-form'>
-                <div className='star-rate'>
-                    <h5>嚮導評分</h5>
-
-                    <div className="review-stars">
-                        {
-                            starArr.current.map((star, idx) => <img data-score={star.star} data-show={star.show} src={star.pic} key={idx} onMouseOut={starMoveOut} onClick={starClick} onMouseMove={starMoveIn} ></img>)
-                        }
+        <div className='review-card'>
+            {
+                sendAlertToggle && <div className='send-alert'>
+                    <div className='send-alert-content'>
+                        <h3>JOURNEY 收到囉！</h3>
+                        <button onClick={closeAlert}>ok</button>
                     </div>
-
-                    <div className="review-stars-score"><span>{showScore}</span></div>
                 </div>
-                {/* <input style={{ display: 'none' }} id="reviewStar0" name='reviewStar' type="number"></input> */}
-                <div className='review-form-send'>
-                    <textarea onChange={reviewChange} placeholder='請輸入您的評價' maxLength="50" value={reviewContent}></textarea>
-                    <button onClick={testing} style={btnStyle}><BsArrowRightSquare /></button>
+            }
+            <div className="my-review">
+                <div className="review-guide">
+                    <img src={guide.guideImg} alt=""></img>
+                    <div>
+                        <h1>{guide.guideName}</h1>
+                        <h5>{guide.guideDate}</h5>
+                    </div>
+                </div>
+                <div className='review-form'>
+                    <div className='star-rate'>
+                        <h5>嚮導評分</h5>
+                        <div className="review-stars">
+                            {
+                                starArr.current.map((star, idx) => <img data-score={star.star} data-show={star.show} src={star.pic} key={idx} onMouseOut={starMoveOut} onClick={starClick} onMouseMove={starMoveIn} ></img>)
+                            }
+                        </div>
+                        <div className="review-stars-score"><span>{showScore}</span></div>
+                    </div>
+                    {/* <input style={{ display: 'none' }} id="reviewStar0" name='reviewStar' type="number"></input> */}
+                    <div className='review-form-send'>
+                        <textarea onChange={reviewChange} placeholder='請輸入您的評價' maxLength="50" value={reviewContent}></textarea>
+                        <button onClick={sendReview} style={btnStyle}><BsArrowRightSquare /></button>
+                    </div>
                 </div>
             </div>
         </div>

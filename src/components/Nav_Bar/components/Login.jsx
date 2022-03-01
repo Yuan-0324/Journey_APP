@@ -4,7 +4,7 @@ import Axios from 'axios';
 
 //firebase
 import { GoogleAuthProvider, signInWithPopup, FacebookAuthProvider } from 'firebase/auth';
-import { auth } from './firebase';
+import { auth } from '../../../firebase';
 
 //icon
 // import logo from '../images/logo.png';

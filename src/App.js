@@ -42,11 +42,12 @@ import Activity_Introduce from './pages/Activity/Activity_Introduce'
 const App = () => {
   const [token, setToken] = useState(localStorage.getItem("token"));
 
+
   const [ userInfo, setUserInfo ] = useState({
-    firstName: '美秀',
-    lastName: '林',
-    email: 'maggie520@gmail.com',
-    id: 1
+    firstName: '千翔',
+    lastName: '徐',
+    email: 'consumer2@gmail.com',
+    id: 2
   })
   
   return (
@@ -79,16 +80,18 @@ const App = () => {
             <Route path="/Society/Home" component={Society_Container} exact />
             <Route path="/Society/group/:id" component={Society_Container} exact />
             
+
+            {/* 個人頁面 */}  
+            {/* ------- 嘉原 變動 ------ */}
+            {/* <Route path="/Personal/:id" component={Personal} exact />
+            <Route path="/Personal/:id/:cate" component={Personal} excat /> */}
             {
               userInfo.id? <Route path="/Personal/:id" component={Personal} exact />:<Route path="/Personal/:id" component={Home} exact />
             }
             {
               userInfo.id?  <Route path="/Personal/:id/:cate" component={Personal} excat />:''
             }
-
-            {/* 個人頁面 */}
-            {/* <Route path="/Personal/:id" component={Personal} exact />
-            <Route path="/Personal/:id/:cate" component={Personal} excat /> */}
+            {/* ------- 嘉原 變動 ------ */}
 
             {/* 設定頁面 */}
             <Route path='/Setting' component={Setting} exact />

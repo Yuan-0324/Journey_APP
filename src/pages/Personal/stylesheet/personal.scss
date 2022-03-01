@@ -171,6 +171,7 @@
             }
         }
         .show-title-container {
+            position: relative;
             display: flex;
             align-items: center;
             margin-top: 20px;
@@ -199,6 +200,25 @@
                     font-size: 14px;
                     color: rgba(0, 0, 0, 0.5);
                     letter-spacing: 1px;
+                }
+            }
+            .likeBtn {
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                padding-bottom: 12px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                & > svg {
+                    height: 20px;
+                    width: 20px;
+                }
+                span {
+                    margin-left: 10px;
+                    margin-right: 50px;
+                    font-size: 18px;
                 }
             }
         }
@@ -380,6 +400,255 @@
         }
     }
 }
+// ------ Send Alert ------
+.send-alert {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.2);
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .send-alert-content {
+        width: 350px;
+        height: 200px;
+        background-color: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        & > h3 {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            font-size: 20px;
+            color: #fff;
+            background-color: $primarycolor;
+            text-align: center;
+            padding: 10px 0px;
+        }
+    }
+}
+// ------- Show Followers -------
+.show-follow-detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.4);
+    .follow-container {
+        width: 450px;
+        height: 450px;
+        background-color: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+        & > h2 {
+            text-align: center;
+            font-size: 18px;
+            padding: 13px;
+            border-bottom: 1px solid $primarycolor;
+            // background-color: $primarycolor;
+            color: $primarycolor;
+        }
+        .close-btn {
+            position: absolute;
+            right: 7px;
+            top: 6px;
+            color: $primarycolor;
+            & > * {
+                width: 30px;
+                height: 30px;
+            }
+        }
+        .follow-list {
+            width: 100%;
+            height: 100%;
+            overflow: scroll;
+            .follower-detail {
+                display: flex;
+                align-items: center;
+                padding: 8px;
+                padding-left: 15px;
+                justify-content: flex-start;
+                position: relative;
+                & > img {
+                    cursor: pointer;
+                    width: 45px;
+                    height: 45px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    border: 1px solid $primarycolor;
+                }
+                .user-info {
+                    // display: flex;
+                    // flex-direction: column;
+                    & > h1 {
+                        // height: 20px;
+                        font-size: 18px;
+                        font-weight: normal;
+                        margin-left: 17px;
+                        margin-bottom: 0;
+                    }
+                    & > h2 {
+                        color: rgba(0, 0, 0, 0.5);
+                        // height: 20px;
+                        font-size: 16px;
+                        font-weight: normal;
+                        margin-left: 17px;
+                        margin-bottom: 0;
+                    }
+                }
+                & > button {
+                    @include bdrs;
+                    border: 1px solid $primarycolor;
+                    color: $primarycolor;
+                    background-color: #fff;
+                    padding: 1px 10px;
+                    position: absolute;
+                    right: 15px;
+                }
+            }
+        }
+    }
+}
+// -------- Change Banner Modal --------
+.change-modal {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.9);
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .change-container {
+        min-width: 300px;
+        min-height: 300px;
+        max-height: 700px;
+        max-width: 1300px;
+        background-color: #fff;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // border: 1px solid #fff;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+        & > h3 {
+            margin-top: 10px;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: $fontcolor;
+        }
+        .temp-img-show {
+            max-width: 1300px;
+        }
+        .close-btn {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            // font-size: 26px;
+            color: #fff;
+            background-color: $primarycolor;
+            padding: 2px 2px;
+            @include bdrs;
+            // height: 30px;
+            * {
+                width: 30px;
+                height: 30px;
+            }
+        }
+        .confirm-banner {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 2px 18px;
+            @include bdrs;
+            border: none;
+            background-color: $primarycolor;
+            color: #fff;
+            font-size: 18px;
+            &.change-btn {
+                left: auto;
+                right: -15px;
+                bottom: 30px;
+                transition: all 0.3s ease-in-out;
+                &:hover {
+                    bottom: 33px;
+                }
+            }
+        }
+        .show-status {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            width: 200px;
+            background-color: #fff;
+            // height: 100px;
+            flex-direction: column;
+            padding: 15px 0px;
+            @include bdrs;
+            & > img {
+                margin-bottom: 15px;
+                width: 60px;
+            }
+            .progress-bar-show {
+                position: relative;
+                border: 2px solid $primarycolor;
+                height: 15px;
+                width: 150px;
+                border-radius: 5px;
+                overflow: hidden;
+                & > div {
+                    background-color: $primarycolor;
+                    width: 0%;
+                    height: 100%;
+                }
+            }
+        }
+        .upload-wrap {
+            height: 130px;
+            width: 130px;
+            border-radius: 65px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            // border: 1px solid #000;
+            overflow: hidden;
+            background-image: linear-gradient(to bottom, $primarycolor 50%, #ffffff 50%);
+            background-size: 100% 200%;
+            transition: all 1s;
+            color: #ffffff;
+            font-size: 70px;
+            input[type="file"] {
+                height: 200px;
+                width: 200px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                cursor: pointer;
+            }
+            &:hover {
+                background-position: 0 100%;
+                color: $primarycolor;
+            }
+        }
+    }
+}
 
 // ------------------------ Modal Design End ------------------------------
 
@@ -391,13 +660,27 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-
     .header-banner {
         background-position: center;
         background-size: cover;
-        height: 350px;
+        height: 450px;
         width: 100%;
         border-bottom: 2px solid $secondarycolor;
+        cursor: pointer;
+        &::after {
+            opacity: 0;
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 448px;
+            border: 8px double #fff;
+            transition: opacity 0.2s ease-in-out;
+        }
+        &:hover {
+            &::after {
+                opacity: 1;
+            }
+        }
     }
     .header-content {
         width: 1000px;
@@ -408,6 +691,8 @@
             width: 20%;
             position: relative;
             img {
+                cursor: pointer;
+                overflow: hidden;
                 border: 2px solid $secondarycolor;
                 position: absolute;
                 left: 40px;
@@ -415,26 +700,40 @@
                 width: 140px;
                 height: 140px;
                 border-radius: 50%;
+                background-color: $bgcolor;
             }
         }
         .profile-content {
             width: 80%;
             display: flex;
             position: relative;
-            margin-top: 7px;
-            * {
+            margin-top: 9px;
+            align-items: flex-start;
+            & > * {
                 margin: 0;
                 line-height: 30px;
             }
             .edit-icon {
-                height: 24px;
-                font-size: 24px;
-                margin-left: 2%;
-                color: $fontcolor;
-                padding: 0;
+                position: relative;
+                @include bdrs;
+                border: 1px solid $primarycolor;
+                margin-left: 5%;
+                color: $primarycolor;
+                padding: 1px 10px;
                 cursor: pointer;
-                svg {
-                    height: 24px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                top: -3px;
+                & > svg {
+                    height: 20px;
+                    width: 20px;
+                }
+                & > span {
+                    font-size: 15px;
+                    margin: 0;
+                    margin-left: 7px;
+                    padding: 0;
                 }
             }
             .profile-name {
@@ -458,7 +757,7 @@
             }
             .profile-location {
                 position: absolute;
-                right: 50px;
+                right: 35px;
                 color: #e83015;
                 font-size: 16px;
                 span {
@@ -466,18 +765,24 @@
                     margin-left: 7px;
                 }
             }
-            .profile-friends {
-                cursor: pointer;
+            .profile-friends {           
+                width: 100%;
                 letter-spacing: 1px;
                 font-size: 16px;
                 position: absolute;
-                bottom: 0;
+                bottom: -5px;
                 color: $fontcolor;
                 border-radius: 10px;
                 font-weight: 400;
                 height: 30px;
-                margin-left: 8px;
+                margin-left: 6px;
                 font-weight: 500;
+                .followed {
+                    cursor: pointer;
+                    margin-left: 15px;
+                    position: absolute;
+                    left: 12%;
+                }
             }
         }
     }
@@ -489,17 +794,16 @@
     background: url("../../../images/main/background.png");
     background-attachment: fixed;
     padding-bottom: 15px;
-    // padding-top: 15px;
     .presonal-container {
+        padding-bottom: 15px;
         width: 1075px;
-        // testing
         @include bdrs;
         border-bottom: none;
         padding-top: 20px;
         border-radius: 10px;
         background-color: rgba(238, 238, 238, 0.5);
         margin: auto;
-        margin-top: 50px;
+        margin-top: 40px;
         display: flex;
         .personal-categroy {
             width: 30%;
@@ -536,7 +840,7 @@
                     text-align: center;
                     color: $primarycolor;
                     background-color: #fff;
-                    font-size: 16px;
+                    font-size: 18px;
                     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
                     border-color: $primarycolor;
                     width: 100%;
@@ -822,10 +1126,9 @@
                     .activities-pic {
                         width: 40%;
                         overflow: hidden;
-                        img {
-                            width: 300px;
-                            border-right: 2px solid $primarycolor;
-                        }
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        background-position: center;
                     }
                     .activities-content {
                         position: relative;
@@ -834,8 +1137,6 @@
                             margin: 0;
                             margin-left: 20px;
                             margin-top: 15px;
-                            // font-weight: 400;
-                            // letter-spacing: 1px;
                         }
                         .evt-name {
                             font-size: 20px;
@@ -991,6 +1292,7 @@
                         border-radius: 10px;
                         padding: 15px 10px;
                         h1 {
+                            // color: $primarycolor;
                             font-size: 18px;
                             letter-spacing: 1px;
                             font-weight: normal;
@@ -1000,24 +1302,32 @@
                     .recieve-notice {
                         @include bdrs;
                         border: 1px solid $secondarycolor;
-                        color: $secondarycolor;
                         width: 50%;
                         text-align: center;
                         transition: all 0.5s ease-in-out;
+                        h1 {
+                            color: $secondarycolor;
+                        }
                         &:hover {
-                            color: #fff;
                             background-color: $secondarycolor;
+                            h1 {
+                                color: #fff;
+                            }
                         }
                     }
                     .send-notice {
                         @include bdrs;
                         border: 1px solid $primarycolor;
-                        color: $primarycolor;
                         width: 50%;
                         text-align: center;
                         transition: all 0.5s ease-in-out;
+                        h1 {
+                            color: $primarycolor;
+                        }
                         &:hover {
-                            color: #fff;
+                            h1 {
+                                color: #fff;
+                            }
                             background-color: $primarycolor;
                         }
                     }
@@ -1137,7 +1447,7 @@
                                 margin-left: 15px;
                                 .activities-container {
                                     @include notice-content-set($secondarycolor);
-                                    padding: 0px 10px;
+                                    padding: 10px 10px;
                                     margin-left: 25px;
                                     img {
                                         width: 45px;
@@ -1254,104 +1564,139 @@
                 h2 {
                     @include personal-topic;
                 }
-                .my-review {
+                .review-container {
+                    @include bdrs;
+                    padding: 20px 15px;
                     background-color: #fff;
                     margin-left: 15px;
                     margin-right: 15px;
-                    display: flex;
-                    height: 140px;
-                    padding: 15px 0px;
-                    padding-right: 15px;
-                    margin-bottom: 15px;
-                    @include bdrs;
-                    .review-guide {
-                        width: 20%;
+                    min-height: 723px;
+                    padding-top: 60px;
+                    position: relative;
+                    .review-head {
+                        position: absolute;
+                        top: 20px;
+                        left: 37px;
                         display: flex;
-                        flex-direction: column;
                         align-items: center;
-                        justify-content: center;
-                        & > img {
-                            border: 2px solid $secondarycolor;
-                            width: 60px;
-                            height: 60px;
-                            border-radius: 50%;
-                        }
-                        & > h1 {
+                        & > h6 {
                             margin: 0;
-                            margin-top: 4px;
-                            font-size: 20px;
+                            font-size: 18px;
+                            margin-left: 10px;
+                            font-weight: 400;
+                            letter-spacing: 1px;
                         }
-                        & > h5 {
-                            margin: 0;
-                            margin-top: 4x;
-                            font-size: 12px;
-                            color: rgba(0, 0, 0, 0.5);
+                        & > span {
+                            * {
+                                color: $secondarycolor;
+                                width: 22px;
+                                height: 22px;
+                            }
                         }
                     }
-                    .review-form {
-                        width: 80%;
-                        position: relative;
-                        // height: 150px;
-                        .star-rate {
-                            display: flex;
-                            height: 30px;
-                            align-items: center;
-                            h5 {
-                                margin: 0;
-                                margin-top: 2px;
-                                letter-spacing: 1px;
-                                font-weight: normal;
-                                font-size: 18px;
-                            }
-                            .review-stars {
-                                display: flex;
-                                margin-left: 10px;
-                                img {
-                                    width: 23px;
-                                    height: 23px;
-                                    margin-right: 5px;
-                                }
-                            }
-                            .review-stars-score {
-                                span {
-                                    margin-left: 10px;
-                                    letter-spacing: 1px;
-                                }
-                            }
-                        }
-                        .review-form-send {
-                            position: relative;
-                            height: 66px;
-                            margin-top: 8px;
-                            overflow: hidden;
-                            padding-right: 20px;
-                            & > textarea {
-                                height: 100%;
-                                font-size: 16px;
-                                padding: 7px 10px;
-                                padding-right: 58px;
+                    .review-card {
+                        float: left;
+                        width: 50%;
+                        padding: auto;
+                        padding: 0px 7.5px;
+                        .my-review {
+                            background-color: #fff;
+                            padding: 15px 15px;
+                            margin-bottom: 15px;
+                            @include bdrs;
+                            .review-guide {
                                 width: 100%;
-                                border-radius: 10px;
-                                resize: none;
+                                display: flex;
+                                align-items: center;
+                                justify-content: flex-start;
+                                & > img {
+                                    border: 2px solid $secondarycolor;
+                                    width: 45px;
+                                    height: 45px;
+                                    border-radius: 50%;
+                                    margin-right: 10px;
+                                }
+                                & > div {
+                                    & > h1 {
+                                        margin: 0;
+                                        margin-top: 4px;
+                                        font-size: 18px;
+                                    }
+                                    & > h5 {
+                                        margin: 0;
+                                        margin-top: 4px;
+                                        font-size: 14px;
+                                        color: rgba(0, 0, 0, 0.5);
+                                    }
+                                }
                             }
-                            & > button {
-                                overflow: hidden;
-                                transition: all 0.3s ease-in-out;
-                                cursor: pointer;
-                                user-select: none;
-                                padding: 0;
-                                height: auto;
-                                border: none;
-                                background-color: transparent;
-                                position: absolute;
-                                right: 35px;
-                                bottom: 50%;
-                                transform: translateY(50%);
-                                color: $primarycolor;
-                                svg {
-                                    overflow: hidden;
+                            .review-form {
+                                width: 100%;
+                                position: relative;
+                                margin-top: 6px;
+                                .star-rate {
+                                    display: flex;
                                     height: 30px;
-                                    width: 30px;
+                                    align-items: center;
+                                    margin-left: 3px;
+                                    h5 {
+                                        margin: 0;
+                                        margin-top: 2px;
+                                        letter-spacing: 1px;
+                                        font-weight: normal;
+                                        font-size: 18px;
+                                    }
+                                    .review-stars {
+                                        display: flex;
+                                        margin-left: 10px;
+                                        img {
+                                            width: 23px;
+                                            height: 23px;
+                                            margin-right: 5px;
+                                        }
+                                    }
+                                    .review-stars-score {
+                                        span {
+                                            margin-left: 10px;
+                                            letter-spacing: 1px;
+                                        }
+                                    }
+                                }
+                                .review-form-send {
+                                    position: relative;
+                                    height: 66px;
+                                    margin-top: 8px;
+                                    overflow: hidden;
+                                    // padding-right: 10px;
+                                    & > textarea {
+                                        height: 100%;
+                                        font-size: 16px;
+                                        padding: 7px 10px;
+                                        padding-right: 58px;
+                                        width: 100%;
+                                        border-radius: 10px;
+                                        resize: none;
+                                    }
+                                    & > button {
+                                        overflow: hidden;
+                                        transition: all 0.3s ease-in-out;
+                                        cursor: pointer;
+                                        user-select: none;
+                                        padding: 0;
+                                        height: auto;
+                                        border: none;
+                                        background-color: transparent;
+                                        position: absolute;
+                                        right: 15px;
+                                        bottom: 50%;
+                                        transform: translateY(50%);
+                                        color: $primarycolor;
+                                        svg {
+                                            overflow: hidden;
+                                            height: 30px;
+                                            width: 30px;
+                                        }
+                                    }
                                 }
                             }
                         }
