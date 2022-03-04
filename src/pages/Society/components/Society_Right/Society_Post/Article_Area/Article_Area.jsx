@@ -1,13 +1,16 @@
 import React from 'react';
+import axios from 'axios';
 import { FaRegHeart, FaRegCommentAlt, FaRegPaperPlane, FaHeart } from 'react-icons/fa'
 import { BsThreeDots } from 'react-icons/bs';
 import { FaCaretDown } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
 import Show_Article from './Show_Article';
 import Edit_Post_Article from './Edit_Post_Article';
 
-const Article_Area = ({data, articleListIdx, articleList, setArticleList}) => {
+const Article_Area = ({data, articleListIdx, articleList, setArticleList,userImg,societyID ,userId}) => {
+    // console.log(data.id,userId);
 
     // 展開底部留言區
     const [commentToggle, setCommentToggle] = useState(false);
@@ -55,7 +58,7 @@ const Article_Area = ({data, articleListIdx, articleList, setArticleList}) => {
         data.content = cont;   
         
         // !!!!!Axios.put!!!!!修改文章
-        //   axios.put('localhost:8000/newarticle', newArrayData)
+        axios.put('http://127.0.0.1:8000/editpost/article', {articleID:articleList[0].articleID, content:cont})
 
         let newArr = [...articleList];
         newArr[articleListIdx].content = cont;
@@ -69,16 +72,17 @@ const Article_Area = ({data, articleListIdx, articleList, setArticleList}) => {
 
         <>
         {articleToggle && <Show_Article article={data} articleToggle={articleToggle} setArticleToggle={setArticleToggle} /> }
-        {editPostArticle && <Edit_Post_Article editArticleList={data} setEditPostArticle={setEditPostArticle} setEditPost={setEditPost}/>}
+        {editPostArticle && <Edit_Post_Article editArticleList={data} setEditPostArticle={setEditPostArticle} setEditPost={setEditPost} userImg={userImg}/>}
 
         <div className='article-container'>
             <div className='article-title'>
-                <img src={ data.authorImg } alt=""></img>
+                <img src={data.selfie} alt=""></img>
                 <div className='title-content'>
-                    <h1>{ data.authorName }</h1>
-                    <h6>{ data.postDate }</h6>
-                </div>
-                <div className='title-edit' onClick={editArticlePage}><BsThreeDots /></div>
+                    <h1>{data.lastName} {data.firstName}</h1>
+                    <h6>{data.datetime.substr(0,10)}</h6>
+                    <div className='h5'>{societyID == undefined ? data.society_name: ''}</div>
+                </div>    
+                {data.id==userId && <div className='title-edit' onClick={editArticlePage}><BsThreeDots /></div>}
             </div>
             <div className="article-body">
             <div dangerouslySetInnerHTML={{__html: data.content}}/>

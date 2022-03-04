@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 import Article_Addition from '../Article_Addition';
 
-const Edit_Post_Article = ({editArticleList, setEditPostArticle, setEditPost}) => {
+const Edit_Post_Article = ({editArticleList, setEditPostArticle, setEditPost, userImg, userName}) => {
 
     // 文章字串轉html
     const [personalArticle, setPersonalArticle] = React.useState([]) 
@@ -79,7 +79,6 @@ const Edit_Post_Article = ({editArticleList, setEditPostArticle, setEditPost}) =
     const deleteBrick = (place) => {
         let newAddArticle = personalArticle.filter(elm => elm.place !== place); 
         setPersonalArticle(newAddArticle);
-        console.log(personalArticle);
     }
 
     //-----修改文章暫存到陣列中-----
@@ -143,15 +142,9 @@ const Edit_Post_Article = ({editArticleList, setEditPostArticle, setEditPost}) =
     }  
 
     //確定編輯完成
-
     const okEditArticle = (e) => {
         setEditPost(e)
-        console.log(personalArticle); 
     }
-
-    // useEffect(() => {
-    //     setEditPostArticle(false)
-    // }, [okEditArticle]);
 
     //取消編輯，直接關閉即可
     
@@ -167,10 +160,8 @@ const Edit_Post_Article = ({editArticleList, setEditPostArticle, setEditPost}) =
                 <div onClick={(evt) => { evt.stopPropagation() }} className='edit-main-container'>
                     <h1>編輯文章<span onClick={()=>setEditPostArticle(false)}><AiOutlineCloseCircle /></span></h1>
                     <div className='edit-title-container'>
-                        <img src={editArticleList.authorImg}></img>
-                        <div className='edit-title-name'>
-                            
-                        </div>
+                        <img className='img-fluid' src={userImg}/>
+                        <div className='edit-title-name h3'>{userName}</div>
                     </div>
                     <div>
                     {personalArticle.map((elm,idx)=>

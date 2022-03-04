@@ -1,4 +1,5 @@
 import { IoChatbubblesOutline, IoLocationSharp } from 'react-icons/io5';
+import Axios from 'axios';
 
 const Personal_Activity = ({ activity }) => {
 

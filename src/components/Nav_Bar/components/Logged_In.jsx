@@ -1,22 +1,26 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../../../images/logo.png";
 import { Avatar } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 import { useHistory } from "react-router-dom";
-import { useContext } from "react";
 import context from '../../../context';
 
 const Logged_In = () => {
 
   let history = useHistory();
-
   const { userInfo } = useContext(context);
-  // console.log(userInfo);
 
   const LogOutBtn = () => {
-    localStorage.setItem('token', '');
-    history.go(0);
+    localStorage.removeItem('token');
+    localStorage.removeItem('id')
+    localStorage.removeItem('email')
+    localStorage.removeItem('lastName')
+    localStorage.removeItem('firstName')
+    setTimeout(() => {
+      history.go(0);
+    }, 500);
+
   }
 
   let toPersonal = () => {

@@ -4,28 +4,27 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from "@fullcalendar/interaction";
 
 
-const Set_Calendar = () => {
+const Set_Calendar = ({ guideForm, setGuideForm }) => {
 
 	//日曆
 	let Toolbar = { left: "today", center: "title", right: "prev,next" };
 	let [evts, setEvts] = useState([]);
-	let [dateArray, setDateArray] = useState([]);
 	let handleDateClick = (info) => {
 		let newDate = info.dateStr;
-		let dateArrayNum = dateArray.indexOf(newDate);
+		let dateArrayNum = guideForm.dateArray.indexOf(newDate);
 		if (dateArrayNum == -1) {
-			dateArray.push(newDate);
+			guideForm.dateArray.push(newDate);
 			setEvts([...evts, {
 				date: newDate,
 				display: 'background',
 				color: '#1697d5'
 			}]);
 		} else {
-			dateArray.splice(dateArrayNum, 1);
+			guideForm.dateArray.splice(dateArrayNum, 1);
 			let newEvts = evts.filter(item => item.date !== newDate);
 			setEvts(newEvts);
 		};
-		setDateArray(dateArray);
+		setGuideForm({ ...guideForm, ['dateArray']: guideForm.dateArray });
 	}
 
 

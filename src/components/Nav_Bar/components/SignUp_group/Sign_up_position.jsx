@@ -2,8 +2,7 @@ import React from 'react';
 import Axios from 'axios';
 import logo from '../../../../images/logo.png';
 import arrowRight from '../../../../images/login_setting/login/arrow-right.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { AiOutlineArrowLeft } from "react-icons/ai";
 import { TreeSelect } from 'antd';
 import 'antd/dist/antd.css';
 
@@ -11,12 +10,23 @@ const { TreeNode } = TreeSelect;
 
 function Sign_up_position({ positionModal, phoneModal, interestedModal, setTotalData, totalData }) {
 
-    async function signUpFunc() {
-        let result = await Axios.post("http://localhost:8000/member/signup", totalData);
-        positionModal(false)
-        interestedModal(true)
-        // console.log(totalData);
-        console.log(result);
+    let positionBeforeValue = totalData.place
+
+    const placeFunc = (value) => {
+        positionBeforeValue = value
+    }
+
+    const placeOnClick = () => {
+        if (positionBeforeValue.length !== 0) {
+            totalData.place = positionBeforeValue
+            setTotalData(totalData);
+            positionModal(false)
+            interestedModal(true)
+            console.log(totalData);
+        }
+        else {
+            alert('請選擇居住地');
+        }
     }
 
     return (
@@ -24,13 +34,12 @@ function Sign_up_position({ positionModal, phoneModal, interestedModal, setTotal
         <>
             <div className='signUpModalBackground_Position'>
                 <div className='signUpModalContainer_Position'>
-                    <button className='signUpModalLastBtn_Position'
+                    <AiOutlineArrowLeft
+                        className='signUpModalLastBtn_Position'
                         onClick={() => {
                             positionModal(false)
                             phoneModal(true)
-                        }}>
-                        <FontAwesomeIcon icon={faArrowLeft} />
-                    </button>
+                        }} />
                     <div className='signUpModaltitle_Position'>
                         <img src={logo} alt="logo" />
                         <hr />
@@ -46,13 +55,10 @@ function Sign_up_position({ positionModal, phoneModal, interestedModal, setTotal
                             style={{ width: '340px', height: '50px', lineHeight: '37px' }}
                             dropdownStyle={{ maxHeight: 400, overflow: 'auto', zIndex: 1300 }}
                             placeholder="請選擇居住地"
-                            defaultValue='台北'
+                            defaultValue={positionBeforeValue}
                             allowClear
                             treeDefaultExpandAll
-                            onChange={function (value, label, extra) {
-                                totalData.place = value
-                                setTotalData(totalData)
-                            }}
+                            onChange={placeFunc}
                         >
 
                             <TreeNode value="parent 1-0" title={<b style={{ color: "gray" }}>北部</b>} disabled>
@@ -99,7 +105,7 @@ function Sign_up_position({ positionModal, phoneModal, interestedModal, setTotal
                         </div>
 
                         <button
-                            onClick={signUpFunc}
+                            onClick={placeOnClick}
                             className='submitBtn'>
                             <img src={arrowRight} alt="arrowRight" />
                         </button>

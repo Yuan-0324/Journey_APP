@@ -1,27 +1,25 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-// import logo from '../../images/logo.png';
-import finishImg from '../../../../images/Success-unscreen.gif'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTimes } from '@fortawesome/free-solid-svg-icons'
-
-
 import logo from '../../../../images/logo.png';
+import finishImg from '../../../../images/Success-unscreen.gif'
+import { AiOutlineClose } from "react-icons/ai";
+
+
+
 function Sign_up_finish({ finishModal }) {
     let history = useHistory();
 
     return (
-
         <>
             <div className='signUpModalBackground_Finish'>
                 <div className='signUpModalContainer_Finish'>
-                    <button onClick={() => {
-                        finishModal(false);
-                        history.push('/');
-                    }}
-                        className='signUpModalCloseBtn_Finish'>
-                        <FontAwesomeIcon icon={faTimes} />
-                    </button>
+                    <AiOutlineClose
+                        className='signUpModalCloseBtn_Finish'
+                        onClick={() => {
+                            finishModal(false);
+                            history.push('/');
+                        }} />
+
                     <div className='signUpModaltitle_Finish'>
                         <img src={logo} alt="logo" />
                         <hr />

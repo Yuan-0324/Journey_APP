@@ -1,14 +1,5 @@
-import React from "react";
-
-// import Taipei from "../../images/citypics/taipei.png";
-// import Chiayi from "../../images/citypics/chiayi.jpg";
-// import Tainan from "../../images/citypics/tainan.jpg";
-// import Yilan from "../../images/citypics/yilan.jpg";
-// import Pingtung from "../../images/citypics/pingtung.jpg";
-// import Taitung from "../../images/citypics/taitung.jpg";
-
-// ---- 更新 ----
-
+import React, { useEffect } from "react";
+import Axios from "axios";
 import Taipei from "../../../images/Home/citypics/taipei.png";
 import Chiayi from "../../../images/Home/citypics/chiayi.jpg";
 import Tainan from "../../../images/Home/citypics/tainan.jpg";
@@ -17,33 +8,44 @@ import Pingtung from "../../../images/Home/citypics/pingtung.jpg";
 import Taitung from "../../../images/Home/citypics/taitung.jpg";
 
 const Trending_City = () => {
+  const trendingOnClick = async (e) => {
+    let city = e.target.name;
+    await Axios.post("http://localhost:8000/home/TrendingCity/city", city)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <section id="trendingCity">
       <div className="cityShortcut">
         <h3 className="CardHeader">熱門目的地</h3>
         <div className="cityboxGroup">
-          <div className="citybox">
-            <img className="citypic" src={Taipei} alt="" />
-            <p>台北</p>
+          <div className="citybox" onClick={trendingOnClick}>
+            <img className="citypic" src={Taipei} name="北港" alt="" />
+            <p>北港</p>
           </div>
-          <div className="citybox">
-            <img className="citypic" src={Chiayi} alt="" />
+          <div className="citybox" onClick={trendingOnClick}>
+            <img className="citypic" src={Chiayi} name="嘉義" alt="" />
             <p>嘉義</p>
           </div>
-          <div className="citybox">
-            <img className="citypic" src={Tainan} alt="" />
+          <div className="citybox" onClick={trendingOnClick}>
+            <img className="citypic" src={Tainan} name="台南" alt="" />
             <p>台南</p>
           </div>
-          <div className="citybox">
-            <img className="citypic" src={Yilan} alt="" />
+          <div className="citybox" onClick={trendingOnClick}>
+            <img className="citypic" src={Yilan} name="宜蘭" alt="" />
             <p>宜蘭</p>
           </div>
-          <div className="citybox">
-            <img className="citypic" src={Pingtung} alt="" />
+          <div className="citybox" onClick={trendingOnClick}>
+            <img className="citypic" src={Pingtung} name="屏東" alt="" />
             <p>屏東</p>
           </div>
-          <div className="citybox">
-            <img className="citypic" src={Taitung} alt="" />
+          <div className="citybox" onClick={trendingOnClick}>
+            <img className="citypic" src={Taitung} name="台東" alt="" />
             <p>台東</p>
           </div>
         </div>

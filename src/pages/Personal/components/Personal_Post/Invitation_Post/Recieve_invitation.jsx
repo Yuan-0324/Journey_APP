@@ -2,6 +2,9 @@ const Recieve_Invitation = () => {
 
     return (
         <div className="notice-recieve">
+            <div className="notice-intro">
+                <h6>這裡可以看到自己寄出的待回覆通知喔！</h6>
+            </div>
             {/* <!-- 收到的 嚮導邀約 --> */}
             <div className="notice-recieve-guide">
                 <h1 className="notice-recieve-topic">收到的嚮導請求</h1>

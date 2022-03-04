@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { BsArrowRightSquareFill, BsArrowRightSquare } from 'react-icons/bs';
 import Axios from 'axios';
-
+import moment from 'moment'
 import emptyStar from '../../../../../images/personal_page_img/rate_stars/empty.png';
 import shineStar from '../../../../../images/personal_page_img/rate_stars/star.png';
 
@@ -29,8 +29,7 @@ const Personal_Guide = ({ guide, guideList, setGuideList }) => {
             setBtnStyle({
                 color: '#1697d5',
                 pointerEvents: 'all',
-                boxShadow: '3px 3px 5px rgba(0,0,0,0.2)',
-                // right: '35px',
+                boxShadow: '3px 3px 5px rgba(0,0,0,0.2)'
             });
         } else {
             setBtnStyle(btnDefault);
@@ -87,18 +86,31 @@ const Personal_Guide = ({ guide, guideList, setGuideList }) => {
         }
     }
 
-    // ---- 送出 ----
+    // ---- 送出星星 ----
 
     const [sendAlertToggle, setSendAlertToggle] = useState(false);
 
-
     let sendReview = (evt) => {
-        const reviewData = {
-            stars: starScore,
-            reviewContent
+        if (reviewContent && (starScore !== 0)) {
+            let newList = guideList.filter(item => item.reservation_number !== guide.reservation_number);
+            setGuideList(newList);
+            let postStar = async () => {
+                const data = {
+                    star: starScore,
+                    content: reviewContent,
+                    reservation_number: guide.reservation_number
+                }
+                await Axios.post('http://localhost:8000/personal/reviews/stars/', data)
+            }
+            postStar();
         }
-        let newList = guideList.filter(item => item.guideId !== guide.guideId);
-        setGuideList(newList);
+    }
+
+    // ---- Date Change ----
+
+    let dateTransfer = () => {
+        let format = moment(guide.reservation_date).format('YYYY-MM-DD')
+        return format;
     }
 
     // ---- 關閉通知 ----
@@ -107,24 +119,22 @@ const Personal_Guide = ({ guide, guideList, setGuideList }) => {
         setSendAlertToggle(!sendAlertToggle);
     }
 
-    // ---- 放在 return 後面是防止第一次渲染時執行 -----
-
-    // useEffect(() => {
-    //     return ()=>{
-    //         setSendAlertToggle(!sendAlertToggle);
-    //     }
-    // }, [sendStatus.current])
-
     // ---- 防止 Modal 畫面滑動 ---- 
 
     useEffect(() => {
-        console.log('Guide Page')
+        // console.log('Guide Page')
         if (sendAlertToggle) {
             document.body.style.overflow = 'hidden';
         } else {
             document.body.style.overflow = 'scroll';
         }
     }, [sendAlertToggle])
+
+    // --- 畫面初次渲染 ---
+
+    useEffect(()=>{
+        // postStatus.current = false;
+    },[])
 
     return (
         <div className='review-card'>
@@ -138,10 +148,10 @@ const Personal_Guide = ({ guide, guideList, setGuideList }) => {
             }
             <div className="my-review">
                 <div className="review-guide">
-                    <img src={guide.guideImg} alt=""></img>
+                    <img src={guide.api_selfie} alt=""></img>
                     <div>
-                        <h1>{guide.guideName}</h1>
-                        <h5>{guide.guideDate}</h5>
+                        <h1>{guide.lastName} {guide.firstName}</h1>
+                        <h5>{dateTransfer()}</h5>
                     </div>
                 </div>
                 <div className='review-form'>

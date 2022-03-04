@@ -1,10 +1,11 @@
 import React from 'react';
 import { FiEdit } from "react-icons/fi"
 
-const Setting_Normal_Email = ({ setEmailSwitch }) => {
+const Setting_Normal_Email = ({ setEmailSwitch, userInfo }) => {
+
     return (
         <>
-            <span>money1978@gmail.com</span>
+            <span>{userInfo.email}</span>
             <FiEdit onClick={() => {
                 setEmailSwitch(1);
             }} />

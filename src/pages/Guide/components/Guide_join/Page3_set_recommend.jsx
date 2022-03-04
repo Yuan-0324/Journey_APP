@@ -1,54 +1,56 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { TreeSelect } from 'antd';
 import { TiDeleteOutline } from "react-icons/ti";
 
-const Set_Recommend = () => {
+
+const Set_Recommend = ({ guideForm, setGuideForm }) => {
 
 	//城市選擇
     const { TreeNode } = TreeSelect;
-    const [cityValue, setCity] = useState();
-    const changeCity = () => {
-        setCity(cityValue);
-    };
 
     //推薦景點
     const [recommendPlace, setPlace] = useState('');
-    const [placeArr, setPlaceArr] = useState([]);
-    const recommendPlaceChange = (evts) => {
+	const [placeArr, setplaceArr] = useState([]);
+	const recommendPlaceChange = (evts) => {
         setPlace(evts.target.value);
     }
     const setPlaceBtnClick = () => {
         if (recommendPlace && placeArr.length < 3) {
             placeArr.push(recommendPlace);
-            setPlaceArr(placeArr);
+			setplaceArr(placeArr);
+			const viewpoint = placeArr.join('/');
+			setGuideForm({ ...guideForm, ['viewpoint']: viewpoint });
             setPlace('');
         }
-    }
+	}
     const placeDeleteBtnClick = (evt) => {
         const deleteItem = evt.target.parentNode.dataset.place;
-        const newPlaceArr = placeArr.filter(evts => evts !== deleteItem);
-        setPlaceArr(newPlaceArr);
+        setplaceArr(placeArr.filter(evts => evts !== deleteItem));
+		const viewpoint = placeArr.join('/')
+        setGuideForm({ ...guideForm, ['viewpoint']: viewpoint });
     }
 
     //推薦餐廳
     const [recommendRestaurant, setRestaurant] = useState('');
-    const [restaurantArr, setRestaurantArr] = useState([]);
-    const recommendRestaurantChange = (evts) => {
+	const [restaurantArr, setRestaurantArr] = useState([]);
+	const recommendRestaurantChange = (evts) => {
         setRestaurant(evts.target.value);
     }
     const setRestaurantBtnClick = () => {
         if (recommendRestaurant && restaurantArr.length < 3) {
-            restaurantArr.push(recommendRestaurant)
-            setRestaurantArr(restaurantArr);
+            restaurantArr.push(recommendRestaurant);
+			setRestaurantArr(restaurantArr);
+			const restaurant = restaurantArr.join('/');
+            setGuideForm({ ...guideForm, ['restaurant']: restaurant});
             setRestaurant('');
         }
     }
     const restaurantDeleteBtnClick = (evt) => {
         const deleteItem = evt.target.parentNode.dataset.restaurant;
-        const newRestaurantArr = restaurantArr.filter(evts => evts !== deleteItem);
-        setRestaurantArr(newRestaurantArr);
+        setRestaurantArr(restaurantArr.filter(evts => evts !== deleteItem));
+        const restaurant = restaurantArr.join('/')
+		setGuideForm({ ...guideForm, ['restaurant']: restaurant });
     }
-
 
 	return (
 		<div className="section02Area">
@@ -61,10 +63,10 @@ const Set_Recommend = () => {
 					<TreeSelect className="guideCityInput"
 						showSearch
 						style={{ width: "220px" }}
-						value={cityValue}
+						value={guideForm.cityValue}
 						dropdownStyle={{ overflow: "auto" }}
 						placeholder="擔任嚮導的城市"
-						onChange={changeCity}
+						onChange={ e =>setGuideForm({ ...guideForm, ['cityValue']: e })}
 						size='large'
 						notFoundContent='無搜尋結果'
 					>

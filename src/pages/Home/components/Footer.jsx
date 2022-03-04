@@ -15,7 +15,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="AboutJourney">
-          <p className="title">關於Journey</p>
+          <p className="title">認識Journey</p>
           <p>活動</p>
           <p>嚮導</p>
           <p>社群</p>
@@ -24,16 +24,16 @@ const Footer = () => {
         <div className="PersonalSupport">
           <p className="title">用戶支援</p>
           <p>個人頁面</p>
-          <p>設定</p>
-          <p>還有瞎咪</p>
-          <p>我也不知道</p>
+          <p>個人設定</p>
+          <p>用戶安全</p>
+          <p>嚮導設定</p>
         </div>
         <div className="PersonalSupport">
-          <p className="title">用戶支援</p>
-          <p>個人頁面</p>
-          <p>設定</p>
-          <p>還有瞎咪</p>
-          <p>我也不知道</p>
+          <p className="title">聯絡我們</p>
+          <p>成為供應商</p>
+          <p>意見回饋</p>
+          <p>同業合作</p>
+          <p>人才招募</p>
         </div>
       </div>
       <hr />

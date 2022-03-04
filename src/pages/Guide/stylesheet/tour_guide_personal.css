@@ -2,13 +2,6 @@
   padding-bottom: 50px;
 }
 
-.guidePersonalPage .bgImg {
-  position: fixed;
-  z-index: -1000;
-  height: 100vh;
-  width: 100%;
-}
-
 .guidePersonalPage .guidePersonalContent {
   width: 1000px;
   margin: auto;
@@ -16,11 +9,90 @@
   margin-top: 130px;
 }
 
+.guidePersonalPage .guidePersonalContent .guideSelf {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: #74747480;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.guidePersonalPage .guidePersonalContent .guideSelf .guideLevelUpgrade {
+  margin-top: 100px;
+  width: 670px;
+  height: 450px;
+  background-color: #ffffff;
+  -webkit-box-shadow: 2px 2px 5px #8a8a8ae0;
+          box-shadow: 2px 2px 5px #8a8a8ae0;
+  z-index: 2;
+  position: fixed;
+  border-radius: 15px;
+  padding: 8px;
+}
+
+.guidePersonalPage .guidePersonalContent .guideSelf .guideLevelUpgrade .guideLevelUpgradeContent {
+  width: 654px;
+  height: 434px;
+  background-color: #f5f5f5;
+  border-radius: 15px;
+  text-align: center;
+  padding-top: 30px;
+  padding: 10px;
+  text-align: center;
+}
+
+.guidePersonalPage .guidePersonalContent .guideSelf .guideLevelUpgrade .guideLevelUpgradeContent .tittle {
+  margin: 0 auto 5px;
+  font-weight: 600;
+}
+
+.guidePersonalPage .guidePersonalContent .guideSelf .guideLevelUpgrade .guideLevelUpgradeContent .guideLevelImg {
+  width: 634px;
+  margin-left: -10px;
+  margin-top: 5px;
+}
+
+.guidePersonalPage .guidePersonalContent .guideSelf .guideLevelUpgrade .guideLevelUpgradeContent span {
+  font-size: 18px;
+}
+
+.guidePersonalPage .guidePersonalContent .guideSelf .guideLevelUpgrade .guideLevelUpgradeContent .changeColor {
+  color: #1697d5;
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.guidePersonalPage .guidePersonalContent .guideSelf .guideLevelUpgrade .guideLevelUpgradeContent .changeRed {
+  color: #e83015;
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.guidePersonalPage .guidePersonalContent .guideSelf .guideLevelUpgrade .guideLevelUpgradeContent button {
+  background: none;
+  font-size: 18px;
+  border: none;
+  color: #1697d5;
+  margin-top: 8px;
+  font-weight: 600;
+}
+
 .guidePersonalPage .guidePersonalContent .joinBtn {
   position: absolute;
-  right: -50px;
+  right: -100px;
   top: -15px;
-  z-index: 100;
+  z-index: 1;
   font-size: 16px;
 }
 
@@ -45,11 +117,13 @@
 .guidePersonalPage .guidePersonalContent .guideHeader .memberImgArea {
   width: 150px;
   height: 150px;
+  overflow: hidden;
 }
 
 .guidePersonalPage .guidePersonalContent .guideHeader .memberImgArea .memberImg {
-  width: 150px;
-  height: 150px;
+  overflow: hidden;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   -webkit-box-shadow: 3px 3px 5px rgba(77, 77, 77, 0.856);
           box-shadow: 3px 3px 5px rgba(77, 77, 77, 0.856);
@@ -357,13 +431,6 @@
   width: 1000px;
 }
 
-.guidePersonalPage .guidePersonalContent .imgArea .credit {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  color: inherit;
-}
-
 .guidePersonalPage .guidePersonalContent .imgArea .options {
   position: absolute;
   display: -webkit-box;
@@ -408,43 +475,11 @@
   background-size: auto 100%;
 }
 
-.guidePersonalPage .guidePersonalContent .imgArea .options .option.active .shadow {
-  -webkit-box-shadow: inset 0px -80px 100px rgba(87, 87, 87, 0.575) !important;
-          box-shadow: inset 0px -80px 100px rgba(87, 87, 87, 0.575) !important;
-  height: 70px;
-}
-
-.guidePersonalPage .guidePersonalContent .imgArea .options .option.active .label {
-  bottom: 15px;
-  left: 30px;
-}
-
-.guidePersonalPage .guidePersonalContent .imgArea .options .option.active .label .info > div {
-  left: 0px;
-  opacity: 1;
-}
-
 .guidePersonalPage .guidePersonalContent .imgArea .options .option:not(.active) {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
   border-radius: 30px;
-}
-
-.guidePersonalPage .guidePersonalContent .imgArea .options .option:not(.active) .shadow {
-  bottom: -40px;
-  -webkit-box-shadow: inset 0 -120px 0px -120px black, inset 0 -120px 0px -100px black;
-          box-shadow: inset 0 -120px 0px -120px black, inset 0 -120px 0px -100px black;
-}
-
-.guidePersonalPage .guidePersonalContent .imgArea .options .option:not(.active) .label {
-  bottom: 10px;
-  left: 10px;
-}
-
-.guidePersonalPage .guidePersonalContent .imgArea .options .option:not(.active) .label .info > div {
-  left: 20px;
-  opacity: 0;
 }
 
 .guidePersonalPage .guidePersonalContent .imgArea .options .option .shadow {
@@ -457,55 +492,12 @@
   transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
 
-.guidePersonalPage .guidePersonalContent .imgArea .options .option .label {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: absolute;
-  right: 0px;
-  height: 40px;
-  -webkit-transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
-  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
-}
-
-.guidePersonalPage .guidePersonalContent .imgArea .options .option .label .info {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-left: 10px;
-  color: white;
-  white-space: pre;
-}
-
-.guidePersonalPage .guidePersonalContent .imgArea .options .option .label .info > div {
-  position: relative;
-  -webkit-transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95), opacity 0.5s ease-out;
-  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95), opacity 0.5s ease-out;
-}
-
-.guidePersonalPage .guidePersonalContent .imgArea .options .option .label .info .main {
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
-.guidePersonalPage .guidePersonalContent .imgArea .options .option .label .info .sub {
-  -webkit-transition-delay: 0.1s;
-          transition-delay: 0.1s;
-}
-
 .guidePersonalPage .guidePersonalContent .evaluationArea {
   width: 900px;
   margin: auto;
   border: 3px rgba(175, 175, 175, 0.315) solid;
   border-radius: 30px;
-  padding: 20px 20px 10px 20px;
+  padding: 20px 30px 10px 30px;
   height: auto;
 }
 
@@ -522,8 +514,9 @@
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-top: 20px;
 }
 

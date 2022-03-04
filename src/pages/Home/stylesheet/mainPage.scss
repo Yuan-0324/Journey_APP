@@ -16,7 +16,6 @@
   // align-items: flex-end;
   position: relative;
   .women {
-    // display: block;
     position: absolute;
     left: 13%;
     bottom: 0px;
@@ -34,13 +33,14 @@
 
     .plane1 {
       position: absolute;
-      left: -30px;
-      top: 360px;
+      left: -55px;
+      top: 135px;
+      z-index: 50;
     }
     .plane2 {
       position: absolute;
-      left: 590px;
-      top: 210px;
+      left: 500px;
+      top: 95px;
       z-index: 1;
     }
 
@@ -58,14 +58,16 @@
 
     .track1 {
       position: absolute;
-      left: -35px;
-      top: 150px;
+      left: -50px;
+      top: 170px;
+      opacity: 0.4;
     }
     .track2 {
       position: absolute;
       left: 540px;
       top: 130px;
       z-index: 10;
+      opacity: 0.4;
     }
   }
 
@@ -93,6 +95,11 @@
       margin: 0;
       padding: 0;
       font-size: 4em;
+      text-shadow: 2px 2px #fff, -2px 2px #fff, 2px -2px #fff, -2px -2px #fff,
+        1px 1px 5px #555;
+      // border: 10px solid white;
+      // -webkit-text-stroke: 5px white; /* width and color */
+      // text-shadow: -5px 0 white, 0 5px white, 5px 0 white, 0 -5px white;
       color: #116f9c;
     }
     .meet {
@@ -100,6 +107,8 @@
       padding: 0;
       font-size: 4em;
       color: $primarycolor;
+      text-shadow: 2px 2px #fff, -2px 2px #fff, 2px -2px #fff, -2px -2px #fff,
+        1px 1px 5px #555;
     }
     button {
       display: inline-block;
@@ -117,6 +126,12 @@
       text-shadow: 1px 1px $primarycolor;
       z-index: 1;
       margin-top: 20px;
+      a {
+        color: #fff;
+        &:hover {
+          color: #158ac0;
+        }
+      }
       &::before {
         content: "";
         position: absolute;
@@ -327,7 +342,7 @@
 .weatherCard {
   width: 1100px;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 80px;
   .CardHeader {
     margin: 50px 0 0px 0;
   }
@@ -363,6 +378,7 @@
       }
 
       .eventCard {
+        // cursor: grab;
         overflow-x: hidden;
         // white-space: nowrap;
         border-radius: 10px;
@@ -586,18 +602,11 @@
     .APIweather {
       display: flex;
       flex-direction: column;
-      // justify-content: space-around;
       max-width: 1110px;
 
       .weatherDetails {
         width: 1100px;
         border-radius: 20px;
-        // background-color: #aecad6;
-        // background-image: "../../../images/main/weather.jpg";
-        background-image: url("../../../images/Home/main/weather.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
         padding: 20px 0;
         padding-bottom: 20px;
         .weatherCity {
@@ -612,16 +621,17 @@
             width: 250px;
             border: 1px solid #ffffff;
             background-color: white;
-            color: #6bc1e9;
+            // color: #6bc1e9;
+            color: #444;
             &:hover {
               color: white;
               // background-color: #6bc1e9;
               border: 0.1px solid white;
-              background-color: #6bc1e9;
+              background-color: #c2b6b6;
               background-image: linear-gradient(
                 315deg,
-                #6bc1e9 0%,
-                #80ced7 74%
+                #c2b6b6 0%,
+                #576574 74%
               );
 
               transition: 0.6s;
@@ -643,7 +653,11 @@
             .currentDegree {
               font-size: 36px;
               font-weight: 600;
-              color: #1283b8;
+              // color: #1283b8;
+              color: rgb(107, 106, 106);
+              text-shadow: 1px 1px rgb(231, 231, 231),
+                -1px 1px rgb(231, 231, 231), 1px -1px rgb(231, 231, 231),
+                -1px -1px rgb(231, 231, 231), 1px 1px 5px #555;
               line-height: 20px;
               position: relative;
               right: -50px;
@@ -660,7 +674,8 @@
                 .min {
                   margin: 0 0 15px 0;
                   font-size: 16px;
-                  color: $primarycolor;
+                  // color: $primarycolor;
+                  color: rgb(124, 124, 124);
                 }
               }
             }
@@ -669,14 +684,22 @@
           .DateNLocation {
             .location {
               margin: 10px 0;
-              color: rgba(22, 151, 213, 0.8);
+              color: rgb(107, 106, 106);
+              text-shadow: 1px 1px rgb(231, 231, 231),
+                -1px 1px rgb(231, 231, 231), 1px -1px rgb(231, 231, 231),
+                -1px -1px rgb(231, 231, 231), 1px 1px 5px #555;
+              // color: rgba(22, 151, 213, 0.8);
               font-size: 24px;
               font-weight: 600;
               // text-shadow: 3px 3px rgba(30, 30, 70, 0.5);
             }
 
             .date {
-              color: rgba(22, 151, 213, 0.8);
+              color: rgb(107, 106, 106);
+              text-shadow: 1px 1px rgb(231, 231, 231),
+                -1px 1px rgb(231, 231, 231), 1px -1px rgb(231, 231, 231),
+                -1px -1px rgb(231, 231, 231), 1px 1px 5px #555;
+              // color: rgba(22, 151, 213, 0.8);
               font-size: 20px;
               font-weight: 600;
               // text-shadow: 2px 2px rgba(30, 30, 70, 0.5);
@@ -695,11 +718,13 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background-color: rgba(22, 151, 213, 0.5);
+            // background-color: rgba(22, 151, 213, 0.5);
+            background-color: rgba(255, 248, 236, 0.5);
             border-radius: 20px;
             width: 140px;
             padding: 10px;
-            color: white;
+            // color: white;
+            color: #444;
             .sevenDaysDate {
               font-size: 16px;
             }
@@ -720,6 +745,23 @@
   justify-content: center;
   align-items: center;
 
+  .brDot {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    .dot {
+      margin: 20px;
+      width: 100px;
+      height: 100px;
+      border-radius: 50px;
+      background-color: $primarycolor;
+      background-image: url("../../../images/Home/oldieV5.png");
+      object-fit: cover;
+    }
+  }
+
   .CTA {
     display: flex;
     flex-direction: column;
@@ -733,9 +775,9 @@
     align-items: center;
     margin-top: 10px;
     .CTAevent {
-      .h3 {
-        font-size: 2em;
-      }
+      // .h3 {
+      //   font-size: 10px;
+      // }
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -809,53 +851,39 @@
   .communityDesc {
     width: 100%;
     height: 70vh;
-    background-color: #a6cee0;
+    margin: 0;
+    // background-color: black;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    background-image: url("../../../images/Home/oldieV5.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
     .communityHeader {
+      height: 55vh;
       display: flex;
-      justify-content: center;
-      align-items: flex-start;
       flex-direction: column;
-      width: 1100px;
-      height: 60vh;
-      background-image: url("../../../images/Home/gatherv3.png");
-      background-position: right;
-      background-repeat: no-repeat;
-      h1 {
-        font-size: 4rem;
-        text-shadow: 6px 6px $primarycolor;
-        color: transparent;
-        -webkit-text-stroke-width: 1px;
-        -moz-text-stroke-width: 1px;
-        -webkit-text-stroke-color: $fontcolor;
-        -moz-text-stroke-color: $fontcolor;
-      }
+      justify-content: flex-start;
+      align-items: center;
 
       h3 {
-        color: mix(#fff, $primarycolor, 85%);
-        font-size: 3rem;
-        font-weight: 900;
-        text-shadow: -0.0075em 0.0075em 0 mix(#fff, $primarycolor, 94%),
-          0.005em 0.005em 0 mix(#fff, $primarycolor, 60%),
-          0.01em 0.01em 0 mix(#fff, $primarycolor, 62%),
-          0.015em 0.015em mix(#fff, $primarycolor, 64%),
-          0.02em 0.02em 0 mix(#fff, $primarycolor, 66%),
-          0.025em 0.025em 0 mix(#fff, $primarycolor, 68%),
-          0.03em 0.03em 0 mix(#fff, $primarycolor, 70%),
-          0.035em 0.035em 0 mix(#fff, $primarycolor, 72%);
+        color: $fontcolor;
+      }
+
+      p {
+        color: $fontcolor;
+        font-size: 18px;
       }
 
       button {
-        margin-top: 30px;
         @include mainBtn;
       }
     }
   }
   .communityGroup {
-    margin: 30px 0;
+    margin: 0px 0;
     .CardHeader {
       font-size: 1.75rem;
       margin: 50px 0 10px;
@@ -865,6 +893,7 @@
       flex-direction: row;
       justify-content: space-between;
       width: 1110px;
+      // width: 75%;
       height: 50vh;
 
       .group1 {
@@ -873,7 +902,9 @@
         justify-content: space-between;
         .box1 {
           width: 270px;
-          height: 170px;
+          // height: 170px;
+          // width: 18%;
+          height: 24vh;
           background-color: gray;
           border-radius: 30px;
           position: relative;
@@ -886,7 +917,9 @@
           }
           img {
             display: block;
-            height: 170px;
+            // height: 170px;
+            height: 24vh;
+            // width: 18%;
             width: 270px;
             overflow: hidden;
             border-radius: 30px;
@@ -957,7 +990,8 @@
           width: 550px;
           .box3 {
             width: 177px;
-            height: 170px;
+            // height: 170px;
+            height: 24vh;
             background-color: gray;
             border-radius: 30px;
             position: relative;
@@ -969,7 +1003,8 @@
             }
             img {
               display: block;
-              height: 170px;
+              // height: 170px;
+              height: 24vh;
               width: 177px;
               border-radius: 30px;
               object-fit: cover;
@@ -996,7 +1031,8 @@
           justify-content: space-between;
           .box4 {
             width: 270px;
-            height: 170px;
+            // height: 170px;
+            height: 24vh;
             background-color: gray;
             border-radius: 30px;
             position: relative;
@@ -1008,7 +1044,8 @@
             }
             img {
               display: block;
-              height: 170px;
+              height: 24vh;
+              // height: 170px;
               width: 270px;
               overflow: hidden;
               border-radius: 30px;

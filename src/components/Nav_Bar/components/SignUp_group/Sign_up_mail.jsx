@@ -1,16 +1,24 @@
 import React from 'react';
-// import logo from '../../images/logo.png';
-import arrowRight from '../../../../images/login_setting/login/arrow-right.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-
 import logo from '../../../../images/logo.png';
+import arrowRight from '../../../../images/login_setting/login/arrow-right.png';
+import { AiOutlineArrowLeft } from "react-icons/ai";
+
 
 function Sign_up_mail({ nameModal, emailModal, passwordModal, setTotalData, totalData }) {
 
+    //定義暫存值，使用此值暫存欲修改的值
+    let emailBeforeValue = totalData.email
+
     const emailFunc = (e) => {
-        totalData.email = e.target.value
+        emailBeforeValue = e.target.value
+    }
+
+    const EmailOnClick = () => {
+        totalData.email = emailBeforeValue;
         setTotalData(totalData)
+        emailModal(false);
+        passwordModal(true);
+        console.log(totalData);
     }
 
     return (
@@ -18,14 +26,13 @@ function Sign_up_mail({ nameModal, emailModal, passwordModal, setTotalData, tota
         <>
             <div className='signUpModalBackground_Mail'>
                 <div className='signUpModalContainer_Mail'>
-                    <button
+                    <AiOutlineArrowLeft
+                        className='signUpModalLastBtn_Mail'
                         onClick={() => {
                             emailModal(false);
                             nameModal(true);
                         }}
-                        className='signUpModalLastBtn_Mail'>
-                        <FontAwesomeIcon icon={faArrowLeft} />
-                    </button>
+                    />
 
                     <div className='signUpModaltitle_Mail'>
                         <img src={logo} alt="logo" />
@@ -37,19 +44,11 @@ function Sign_up_mail({ nameModal, emailModal, passwordModal, setTotalData, tota
                     <div className='signUpModalBody_Mail'>
                         <label htmlFor="userMail">您的電子郵件</label>
                         <br />
-                        <input onChange={emailFunc}
+                        <input onChange={emailFunc} defaultValue={emailBeforeValue}
                             className='email' type="text" placeholder="電子郵件" />
                         <br />
                         <button
-                            onClick={() => {
-                                // if (userEmail == '') {
-                                //     alert('請輸入e-mail！')
-                                // } else {
-                                emailModal(false);
-                                passwordModal(true);
-                                console.log(totalData);
-                                // }
-                            }}
+                            onClick={EmailOnClick}
                             className='submitBtn'>
                             <img src={arrowRight} alt="" />
                         </button>

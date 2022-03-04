@@ -4,7 +4,7 @@ import $ from 'jquery/dist/jquery';
 import Article_Addition from './Article_Addition';
 
 let place = 3;//預設段落有三個
-const Edit_Article = ({articleList, toSetPost}) => {
+const Edit_Article = ({articleList, toSetPost, userImg, userName, setEditArticle}) => {
 
     //----- 初始文章預設，抓localstorage -----  
 
@@ -132,8 +132,7 @@ const Edit_Article = ({articleList, toSetPost}) => {
     //-----關閉Po文彈跳視窗，儲存localstorage-----
     
     const setClose = ()=>{
-        $("#test").hide()
-        $("html").css({'overflow': 'scroll'});
+        setEditArticle(false)
         let textLen = "";
         addArticle.forEach(elm => {
             textLen += elm.content;
@@ -170,10 +169,8 @@ const Edit_Article = ({articleList, toSetPost}) => {
             <div onClick={(evt) => { evt.stopPropagation() }} className='edit-main-container'>
                 <h1>編輯文章<span onClick={setClose} ><AiOutlineCloseCircle /></span></h1>
                 <div className='edit-title-container'>
-                    <img src={articleList.authorImg}></img>
-                    <div className='edit-title-name'>
-                        
-                    </div>
+                    <img className='img-fluid' src={userImg}/>
+                    <div className='edit-title-name h3'>{userName}</div>
                 </div>
                 <div>
                 {addArticle.map((elm,idx)=>

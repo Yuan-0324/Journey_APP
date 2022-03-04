@@ -32,15 +32,15 @@ function Navigation() {
 
 
   //{/* Data Hook */}
-  const [userConfirmPassword, setUserConfirmPassword] = useState('');
   const [totalData, setTotalData] = useState({
     email: '',
     password: '',
     lastName: '',
     firstName: '',
-    place: ''
-    // birthday: '',
-    // phone: ''
+    place: '',
+    birthday: '',
+    phone: '',
+    interested: ''
   });
 
   useEffect(() => {
@@ -190,8 +190,6 @@ function Navigation() {
           emailModal={setEmail}
           passwordModal={setPassword}
           birthdayModal={setBirthday}
-          userConfirmPassword={userConfirmPassword}
-          setUserConfirmPassword={setUserConfirmPassword}
           totalData={totalData}
           setTotalData={setTotalData}
         />}

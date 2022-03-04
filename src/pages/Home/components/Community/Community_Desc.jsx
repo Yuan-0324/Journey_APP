@@ -1,12 +1,20 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 
 const Community_Desc = () => {
+  const history = useHistory();
   return (
     <div className="communityDesc">
       <div className="communityHeader">
-        <h3>為什麼選擇揪你？</h3>
-        <h1>好玩的都在揪你社群！</h1>
-        <button>瞭解更多</button>
+        <h2>他們都在揪你社群！</h2>
+        <p>體驗您意想不到的旅遊可能 開啟一趟前所未有的旅程</p>
+        <button
+          onClick={() => {
+            history.push("/Society");
+          }}
+        >
+          瞭解更多
+        </button>
       </div>
     </div>
   );

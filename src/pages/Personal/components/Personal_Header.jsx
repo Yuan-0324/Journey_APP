@@ -1,37 +1,41 @@
 import { useState, useEffect, useContext, createRef, useRef, useLayoutEffect } from 'react'
-import { ref, uploadBytesResumable, uploadBytes, getDownloadURL } from 'firebase/storage';
+import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
 import { useHistory } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Axios from 'axios';
 
 import { BsFillStarFill } from 'react-icons/bs';
 import { AiOutlineUser, AiOutlineUserAdd, AiOutlineCloseCircle } from 'react-icons/ai';
 import { IoLocationSharp } from 'react-icons/io5';
 import { FiUpload } from 'react-icons/fi';
-import { MdCancel, MdOutlineCancel } from 'react-icons/md';
+import { MdCancel } from 'react-icons/md';
 
 import Context from '../../../context';
 import { storage } from '../../../firebase';
-import { useParams } from 'react-router-dom';
 import logo from '../../../images/JourneyIcon.png';
 import Personal_Followed from './Personal_Header_Components/Personal_Followed';
 
 // 個人資料顯示，包含個人 Banner
-const Personal_Header = () => {
+const Personal_Header = ({ personalBanner, setPersonalBanner}) => {
 
     // --- History ---
     const history = useHistory();
 
     // ---- 使用者資訊 ----
 
-    const userInfo = useContext(Context).userInfo;
+
     const userImg = useContext(Context).viewUserImg;
     const currentUserFollowed = useContext(Context).currentUserFollowed;
     const setCurrentUserFollowed = useContext(Context).setCurrentUserFollowed;
 
-    // ---- 觀看頁面資訊 ----
-
+    // --- 觀看瀏覽資訊 ---
     const viewUserInfo = useContext(Context).viewUserInfo;
+    const viewUserImg = useContext(Context).viewUserImg;
     const currentPath = useParams()
+
+    // --- 使用者資訊 --- 
+    const currentUser = useContext(Context).userInfo;
+    const currentUserImg = useContext(Context).currentUserImg;
 
     // ---- 狀態管理 ----
 
@@ -39,7 +43,6 @@ const Personal_Header = () => {
 
     const [state, setState] = useState({
         changeModal: false,
-        personalBanner: '',
         tempImgUrl: '',
         uploadImg: '',
         showBanner: false,
@@ -51,8 +54,6 @@ const Personal_Header = () => {
         showFollow: false
     })
 
-    // ---- 畫面初次取得資料 ----
-
     // ---- 瀏覽對象 追蹤清單 ----
 
     let fetchFollower = async () => {
@@ -63,24 +64,21 @@ const Personal_Header = () => {
     // ---- 初次渲染 Banner ----
 
     let fetchData = async () => {
-        const forsetRef = ref(storage, `/member/${currentPath.id}/headBanner${currentPath.id}.png`);
-        let url = await getDownloadURL(forsetRef);
         let result = await fetchFollower();
         let followStatus = currentUserFollowed.find(follow => (follow.member_email === viewUserInfo.email)) ? true : false;
         setState({
             ...state,
-            ['personalBanner']: url,
             ['followNum']: result.data ? result.data.length : 0,
             ['followBtn']: followStatus ? { backgroundColor: '#1697d5', color: '#fff' } : { color: '#1697d5', backgroundColor: '#fff' },
         })
     }
 
     useEffect(() => {
-        fetchData();
         window.scroll(0, 270)
         submitStatue.current = false;
+        setPersonalBanner(viewUserInfo.personal_banner)
+        fetchData();
     }, []);
-
 
     // ---- Follow 功能按鈕 ----
 
@@ -109,7 +107,7 @@ const Personal_Header = () => {
             let isFollowed = currentUserFollowed.find(follow => (follow.member_email === viewUserInfo.email)) ? true : false;
             let followerAdd = async () => {
                 let data = {
-                    currentUserEmail: userInfo.email,
+                    currentUserEmail: currentUser.email,
                     followEamil: viewUserInfo.email
                 }
                 // ---- 如果本來未追蹤 則會加入追蹤 ----
@@ -162,7 +160,7 @@ const Personal_Header = () => {
     let bannerShowBtn = () => {
         setState({ ...state, ['showBanner']: !state.showBanner })
     }
-    
+
     // ---- 防止頁面滑動 ----
 
     useEffect(() => {
@@ -184,27 +182,32 @@ const Personal_Header = () => {
         })
     }
 
-    console.log(currentUserFollowed.length)
+    // console.log(currentUserFollowed.length)
 
     // ---- 送出上傳照片 ----
 
     let bannerSend = (evt) => {
-        const storageRef = ref(storage, `member/${currentPath.id}/headBanner${currentPath.id}.png`);
+        const storageRef = ref(storage, `member/${currentUser.id}/headBanner${currentUser.id}.png`);
         const metadata = {
             contentType: state.uploadImg.type
         };
-        const upadateTask = uploadBytesResumable(storageRef, state.uploadImg, metadata)
-        // console.log(upadateTask);
+        const upadateTask = uploadBytesResumable(storageRef, state.uploadImg, metadata);
+
         upadateTask.on('state_changed', snapshot => {
+            // 上傳中
             const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
             // console.log('Upload is ' + progress + '% done');
             setState({ ...state, ['processBar']: progress + '%', ['statusBar']: { display: 'flex' } })
         }, (err) => {
-            // 錯誤顯示
+            // 上傳錯誤
             console.log(err);
         }, async () => {
+            // 成功
             let url = await getDownloadURL(upadateTask.snapshot.ref);
-            setState({ ...state, ['personalBanner']: url, ['changeModal']: !state.changeModal, ['tempImgUrl']: '', ['statusBar']: { display: 'none' } })
+            console.log(url);
+            let result = await Axios.post('http://localhost:8000/personal/personal/bannner/change', { id: currentUser.id, url });
+            setPersonalBanner(url)
+            setState({ ...state, ['changeModal']: !state.changeModal, ['tempImgUrl']: '', ['statusBar']: { display: 'none' } })
         })
     }
 
@@ -220,13 +223,17 @@ const Personal_Header = () => {
         setState({ ...state, ['showFollow']: !state.showFollow });
     }
 
+    // console.log(`PERSONAL_HEADER`)
+
     return (
         <header className='personal-header'>
             {/* 自己頁面的更換 */}
             {
-                state.changeModal && <div className='change-modal'>
+                state.changeModal && <div className='personal-change-modal'>
                     <div className='change-container'>
                         <div onClick={closeBanner} className='close-btn'><MdCancel /></div>
+
+                        {/* 是否有暫存照片 有的話顯示照片 沒有的話顯示上傳 */}
                         {
                             state.tempImgUrl ? <>
                                 <img className='temp-img-show' src={state.tempImgUrl} alt="" />
@@ -246,21 +253,24 @@ const Personal_Header = () => {
 
                             </>
                         }
+                        
                     </div>
                 </div>
             }
+
             {/* 顯示瀏覽照片 */}
             {
                 state.showBanner && <div className='change-modal'>
                     <div className='change-container'>
                         <div onClick={bannerShowBtn} className='close-btn'><MdCancel /></div>
-                        <img className='temp-img-show' src={state.personalBanner} alt="" />
+                        <img className='temp-img-show' src={personalBanner} alt="" />
                         {/* --------- 如果是本人顯示更換按鈕 ------- */}
-                        {userInfo.id == currentPath.id ? <button onClick={changeBanner} className='confirm-banner change-btn'>更換照片</button> : ''}
+                        {currentUser.id == currentPath.id ? <button onClick={changeBanner} className='confirm-banner change-btn'>更換照片</button> : ''}
                     </div>
                 </div>
             }
-            <div onClick={bannerShowBtn} className='header-banner' style={{ backgroundImage: `url('${state.personalBanner}')` }} ></div>
+
+            <div onClick={bannerShowBtn} className='header-banner' style={{ backgroundImage: `url('${personalBanner}')` }} ></div>
             <div className='header-content'>
                 <div className='profile-pic'>
                     <img src={userImg} onClick={showHeadshot} />
@@ -268,8 +278,10 @@ const Personal_Header = () => {
                 <div className='profile-content'>
                     <h1 className='profile-name'>{viewUserInfo.lastName} {viewUserInfo.firstName}</h1>
                     <h4 className='profile-stars'>< BsFillStarFill /><span>4.6</span></h4>
+
+                    {/* 追蹤按鈕 */}
                     {
-                        +currentPath.id !== userInfo.id ?
+                        +currentPath.id !== currentUser.id ?
                             <div
                                 style={currentUserFollowed.find(follow =>
                                     (follow.member_email === viewUserInfo.email)) ?
@@ -281,6 +293,8 @@ const Personal_Header = () => {
                                     <><AiOutlineUser /><span>已追蹤</span></> : <>< AiOutlineUserAdd /><span>追蹤</span></>}
                             </div> : ''
                     }
+
+                    {/* 追蹤清單 */}
                     {
                         state.showFollow ? <div className='show-follow-detail'>
                             <div className='follow-container'>
@@ -295,7 +309,7 @@ const Personal_Header = () => {
                         </div> : ''
                     }
 
-                    <h4 className='profile-friends'><span className='follower'>粉絲： {state.followNum}</span> {userInfo.id == currentPath.id ? <span onClick={followShow} className='followed'>追蹤： {currentUserFollowed.length}</span> : ''}</h4>
+                    <h4 className='profile-friends'><span className='follower'>粉絲： {state.followNum}</span> {currentUser.id == currentPath.id ? <span onClick={followShow} className='followed'>追蹤： {currentUserFollowed.length}</span> : ''}</h4>
                     <h4 className='profile-location'>< IoLocationSharp /><span>{viewUserInfo.place}</span></h4>
                 </div>
             </div>

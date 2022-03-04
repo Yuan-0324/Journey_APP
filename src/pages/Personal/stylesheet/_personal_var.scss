@@ -31,12 +31,21 @@
     font-weight: normal;
     // border: 1px solid #000;
     border-radius: 10px;
-    width: 200px;
+    width: 205px;
     text-align: center;
     padding: 5px 15px;
     background-color: $color;
     color: #fff;
+    justify-content: space-between;
     @include bdrs;
+    display: flex;
+    align-items: center;
+    span {
+        margin-right: 5px;
+    }
+    &> svg {
+        font-size: 23px;
+    }
 }
 
 @mixin notice-content-set($color: $primarycolor) {
@@ -56,8 +65,8 @@
     }
     .content-date {
         font-size: 14px;
-        width: 80px;
-        padding: 0px 10px;
+        width: 85px;
+        padding: 0px 0px;
         letter-spacing: 1px;
         text-align: center;
         color: rgba(0, 0, 0, 0.5);
@@ -90,6 +99,7 @@
         font-weight: normal;
         letter-spacing: 1px;
         font-size: 16px;
+        line-height: 25px;
         span {
             font-weight: 600;
         }
@@ -97,7 +107,7 @@
     .content-detail {
         position: relative;
         margin: 0;
-        margin-top: 15px;
+        margin-top: 12px;
         font-weight: normal;
         display: flex;
         justify-content: space-between;
@@ -105,11 +115,11 @@
         font-size: 14px;
         .notice-location {
             position: absolute;
-            left:55%;
+            left:60%;
         }
         .notice-separate {
             position: absolute;
-            left: 44.5%;
+            left: 53%;
         }
     }
 }

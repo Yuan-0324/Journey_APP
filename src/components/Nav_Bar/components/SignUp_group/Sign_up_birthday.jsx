@@ -1,28 +1,40 @@
 import React from 'react';
-// import logo from '../../images/logo.png';
-import arrowRight from '../../../../images/login_setting/login/arrow-right.png'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
-
 import logo from '../../../../images/logo.png';
+import arrowRight from '../../../../images/login_setting/login/arrow-right.png';
+import { AiOutlineArrowLeft } from "react-icons/ai";
+
+
 function Sign_up_birthday({ passwordModal, birthdayModal, phoneModal, setTotalData, totalData }) {
 
+    let birthdayBeforeValue = totalData.birthday;
+
     const birthdayFunc = (e) => {
-        totalData.birthday = e.target.value
-        setTotalData(totalData)
+        birthdayBeforeValue = e.target.value;
+    }
+
+    const BirthdayOnClick = () => {
+        if (birthdayBeforeValue.length !== 0) {
+            totalData.birthday = birthdayBeforeValue;
+            setTotalData(totalData);
+            birthdayModal(false);
+            phoneModal(true);
+            console.log(totalData);
+        }
+        else {
+            alert('請選擇日期');
+        }
     }
 
     return (
         <>
             <div className='signUpModalBackground_Birthday'>
                 <div className='signUpModalContainer_Birthday'>
-                    <button className='signUpModalLastBtn_Birthday'
+                    <AiOutlineArrowLeft
+                        className='signUpModalLastBtn_Birthday'
                         onClick={() => {
                             birthdayModal(false);
                             passwordModal(true);
-                        }}>
-                        <FontAwesomeIcon icon={faArrowLeft} />
-                    </button>
+                        }} />
                     <div className='signUpModaltitle_Birthday'>
                         <img src={logo} alt="logo" />
                         <hr />
@@ -33,15 +45,11 @@ function Sign_up_birthday({ passwordModal, birthdayModal, phoneModal, setTotalDa
                     <div className='signUpModalBody_Birthday'>
                         <label htmlFor="userBirthday">您的生日</label>
                         <br />
-                        <input onChange={birthdayFunc}
+                        <input onChange={birthdayFunc} defaultValue={birthdayBeforeValue}
                             className='email' type="date" placeholder="您的生日" />
                         <br />
                         <button
-                            onClick={() => {
-                                birthdayModal(false);
-                                phoneModal(true);
-                                console.log(totalData);
-                            }}
+                            onClick={BirthdayOnClick}
                             className='submitBtn'>
                             <img src={arrowRight} alt="arrowRight" />
                         </button>

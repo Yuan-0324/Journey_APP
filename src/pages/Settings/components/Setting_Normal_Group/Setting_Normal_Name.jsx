@@ -1,10 +1,11 @@
 import React from 'react';
 import { FiEdit } from "react-icons/fi"
 
-const Setting_Normal_Name = ({ setNameSwitch }) => {
+const Setting_Normal_Name = ({ setNameSwitch, userInfo }) => {
+
     return (
         <>
-            <span>祖克柏</span>
+            <span>{userInfo.name}</span>
             <FiEdit onClick={() => {
                 setNameSwitch(1);
             }} />

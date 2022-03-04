@@ -1,9 +1,24 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import Media_Img from './Media_Display/Media_Img';
 import Media_Video from './Media_Display/Media-Video';
 import Media_Album from './Media_Display/Media_Album';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 
 const Group_Media = () => {
+
+    const [groupRight, setGroupRight] = React.useState({right:""})
+  let societyID = useParams();
+
+  useEffect(() => {
+    
+    let id = societyID.id;
+      axios.post('http://localhost:8000/soceity/right',{societyID: id})
+          .then(res=>{
+          setGroupRight(res.data[0])
+        }) 
+          
+  }, []);
 
     const [mediaWhichShow, setMediaWhichShow]=React.useState('media-img');
 
@@ -22,7 +37,7 @@ const Group_Media = () => {
     }
 
     return ( 
-        <div>
+        <div className='group-media'>
             <div className='d-flex justify-content-between'>
                 <div className='d-flex justify-content-around'>
                     <div className='media-img btn btn-media' onClick={swicher}>照片</div>

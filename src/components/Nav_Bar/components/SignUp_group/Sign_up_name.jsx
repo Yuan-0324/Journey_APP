@@ -1,20 +1,33 @@
 import React from 'react';
-// import logo from '../../images/logo.png';
-import arrowRight from '../../../../images/login_setting/login/arrow-right.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-
 import logo from '../../../../images/logo.png';
+import arrowRight from '../../../../images/login_setting/login/arrow-right.png';
+import { AiOutlineArrowLeft } from "react-icons/ai";
+
 
 function Sign_up_name({ signUpModal, nameModal, emailModal, setTotalData, totalData }) {
+    //定義暫存值，使用此值暫存欲修改的值
+    let lastNameBeforeValue = totalData.lastName;
+    let firstNameBeforeValue = totalData.firstName;
 
     const lastNameFunc = (e) => {
-        totalData.lastName = e.target.value
-        setTotalData(totalData)
+        lastNameBeforeValue = e.target.value
     }
     const firstNameFunc = (e) => {
-        totalData.firstName = e.target.value
-        setTotalData(totalData)
+        firstNameBeforeValue = e.target.value
+    }
+
+    const NameOnClick = () => {
+        if (lastNameBeforeValue.length !== 0 && firstNameBeforeValue.length !== 0) {
+            totalData.lastName = lastNameBeforeValue;
+            totalData.firstName = firstNameBeforeValue;
+            setTotalData(totalData);
+            nameModal(false);
+            emailModal(true);
+            console.log(totalData);
+        }
+        else {
+            alert('請輸入姓名');
+        }
     }
 
     return (
@@ -22,14 +35,14 @@ function Sign_up_name({ signUpModal, nameModal, emailModal, setTotalData, totalD
         <>
             <div className='signUpModalBackground_Name'>
                 <div className='signUpModalContainer_Name'>
-                    <button
+
+                    <AiOutlineArrowLeft
+                        className='signUpModalLastBtn_Name'
                         onClick={() => {
                             nameModal(false);
                             signUpModal(true);
-                        }}
-                        className='signUpModalLastBtn_Name'>
-                        <FontAwesomeIcon icon={faArrowLeft} />
-                    </button>
+                        }} />
+
 
                     <div className='signUpModaltitle_Name'>
                         <img src={logo} alt="logo" />
@@ -41,25 +54,14 @@ function Sign_up_name({ signUpModal, nameModal, emailModal, setTotalData, totalD
                     <div className='signUpModalBody_Name'>
                         <label htmlFor="userLastName">您的姓名</label>
                         <br />
-                        <input onChange={lastNameFunc}
+                        <input onChange={lastNameFunc} defaultValue={lastNameBeforeValue}
                             className='lastName' type="text" placeholder="姓" />
                         <br />
-                        <input onChange={firstNameFunc}
+                        <input onChange={firstNameFunc} defaultValue={firstNameBeforeValue}
                             className='userName' type="text" placeholder="名" />
                         <br />
                         <button
-                            onClick={() => {
-                                // if (lastName == '') {
-                                //     alert('請填入姓氏')
-                                // } else if ((firstName == '')) {
-                                //     alert('請填入名字')
-                                // } else {
-                                nameModal(false);
-                                emailModal(true);
-                                console.log(totalData);
-                                // }
-
-                            }}
+                            onClick={NameOnClick}
                             className='submitBtn'>
                             <img src={arrowRight} alt="" />
                         </button>
@@ -68,9 +70,7 @@ function Sign_up_name({ signUpModal, nameModal, emailModal, setTotalData, totalD
                 </div>
             </div>
 
-            <div className='modalShadow'
-            // onClick={() => { loginModal(false) }}
-            >
+            <div className='modalShadow'>
             </div>
 
         </>

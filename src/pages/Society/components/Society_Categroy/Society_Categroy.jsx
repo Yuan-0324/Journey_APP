@@ -9,7 +9,7 @@ import Create_Group from "./Searching/Create_Group";
 import Create_Group_Area from "./Searching/Create_Group_Area";
 
 // 左側功能列表
-const Society_Categroy = ({showGroup, GroupSwicher}) => {
+const Society_Categroy = ({showGroup, GroupSwicher,setjustForGroup,groupPicsave,groupPicSit}) => {
 
     let history = useHistory();
     const swichRoute = (e) =>{
@@ -28,20 +28,18 @@ const Society_Categroy = ({showGroup, GroupSwicher}) => {
     return (
         <div className="col-left">
 
-            {creatGroupArea ? "" : <div className='society-toggle d-flex'>
+            {creatGroupArea || currentParams.id == 0 ? null : <div className='society-toggle d-flex'>
                 <a className="no society-toggle-btn" onClick={swichRoute}>社群</a>
                 <a className="yes society-toggle-btn" onClick={swichRoute}>社團</a>        
             </div>}
 
-            {creatGroupArea ? "" : <Searching/>}
+            {creatGroupArea || currentParams.id == 0 ? null : <Searching/>}
 
-            {creatGroupArea ? <Create_Group_Area setCreatGroupaArea={setCreatGroupArea}/> : ""}
+            {(creatGroupArea || currentParams.id == 0) ? <Create_Group_Area setCreatGroupaArea={setCreatGroupArea} setjustForGroup={setjustForGroup} groupPicsave={groupPicsave} groupPicSit={groupPicSit}/> : null}
 
-            {showGroup && (currentParams.id == undefined) ? <Create_Group setCreatGroupaArea={setCreatGroupArea}/> : ""}
+            {showGroup && (currentParams.id == undefined) ? <Create_Group setCreatGroupaArea={setCreatGroupArea}/> : null}
 
-            <h5 className='mt-5'>我的社團</h5>
-
-            <Attend_Society/>
+            {/* {creatGroupArea || currentParams.id == 0 ? null : <div><h5 className='mt-5'>我的社團</h5><Attend_Society/></div>} */}
 
         </div>
     )

@@ -1,21 +1,33 @@
-@import './var';
+@import "./var";
 
 // ------- 個頁面初始值 --------
 * {
-    margin: 0;
-    padding: 0;
-    font-family: Microsoft JhengHei, sans-serif;
-    letter-spacing: 1px;
-    box-sizing: border-box;
-    *:focus {
-        outline: none;
-    }
+  margin: 0;
+  padding: 0;
+  font-family: Microsoft JhengHei, sans-serif;
+  letter-spacing: 1px;
+  box-sizing: border-box;
+  *:focus {
+    outline: none;
   }
-  
-  body {
-    background-image: url('../images/main/background.png');
-    background-color: $bgcolor;
-    width: 100vw;
-    min-height: 100vh;
-    background-attachment: fixed;
+}
+
+body {
+  background-image: url("../images/main/background.png");
+  background-color: $bgcolor;
+  width: 100vw;
+  min-height: 100vh;
+  background-attachment: fixed;
+}
+
+* {
+  cursor: url('../images/orangeV2.ico'), auto;
+  margin: 0;
+  padding: 0;
+  font-family: Microsoft JhengHei, sans-serif;
+  letter-spacing: 1px;
+  box-sizing: border-box;
+  *:focus {
+    outline: none;
   }
+}

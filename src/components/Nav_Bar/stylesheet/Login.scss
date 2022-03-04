@@ -7,8 +7,10 @@ $modalColor: #f8f8f8;
     border-radius: 5px;
     border: 1px #bfbfbf solid;
     background: $modalColor;
-    font-weight: 300;
+    font-size: 20px;
+    font-weight: 400;
     margin-top: 5px;
+    padding-left: 5px;
 }
 
 @mixin Background {
@@ -31,28 +33,25 @@ $modalColor: #f8f8f8;
 }
 @mixin closeBtn {
     position: absolute;
-    right: 10px;
+    right: 20px;
     top: 20px;
-    border: none;
-    background-color: $modalColor;
+    z-index: 1300;
 }
 @mixin lastBtn {
     position: absolute;
     left: 10px;
     top: 20px;
-    border: none;
-    background-color: $modalColor;
+    z-index: 1300;
 }
 
 @mixin Input_Placeholder {
-    font-size: 14px;
-    font-weight: 300;
-    padding-left: 5px;
+    font-size: 18px;
+    font-weight: 400;
 }
 * {
     box-sizing: border-box;
 }
-// <------lgoinModal Background------> //
+// <------loginModal Background------> //
 
 .loginModalBackground {
     position: fixed;
@@ -63,7 +62,7 @@ $modalColor: #f8f8f8;
     right: 0;
     z-index: 1200;
     width: 480px;
-    height: 710px;
+    height: 730px;
     border: none;
     border-radius: 10px;
     box-shadow: 3px 3px 5px rgb(75, 74, 74);
@@ -81,6 +80,7 @@ $modalColor: #f8f8f8;
             position: relative;
             margin-top: 30px;
             hr {
+                margin: 15px auto;
                 width: 220px;
             }
             img {
@@ -92,7 +92,7 @@ $modalColor: #f8f8f8;
                 margin-bottom: 10px;
             }
             span {
-                font-size: 14px;
+                font-size: 16px;
                 a {
                     color: #0a7cb1;
                     cursor: pointer;
@@ -108,11 +108,11 @@ $modalColor: #f8f8f8;
             .userInput {
                 p {
                     text-align: left;
-                    padding-left: 75px;
-                    font-size: 16px;
+                    padding-left: 70px;
+                    font-size: 20px;
                     margin-top: 15px;
                     margin-bottom: 5px;
-                    font-weight: 600;
+                    font-weight: 500;
                 }
                 .pswText {
                     margin-top: 35px;
@@ -129,12 +129,12 @@ $modalColor: #f8f8f8;
                 margin-top: 20px;
                 label {
                     margin-left: 5px;
-                    margin-right: 100px;
-                    font-size: 14px;
+                    margin-right: 60px;
+                    font-size: 18px;
                 }
                 a {
-                    margin-left: 100px;
-                    font-size: 14px;
+                    margin-left: 90px;
+                    font-size: 18px;
                     color: red;
                 }
             }
@@ -156,7 +156,8 @@ $modalColor: #f8f8f8;
                 }
             }
             hr {
-                width: 140px;
+                margin: 15px auto;
+                width: 220px;
             }
         }
 
@@ -167,31 +168,35 @@ $modalColor: #f8f8f8;
         .loginModalfooter {
             p {
                 font-weight: 500;
+                font-size: 18px;
             }
             button {
                 display: flex;
                 height: 40px;
-                line-height: 35px;
+                line-height: 40px;
                 width: 340px;
                 border-radius: 5px;
                 background-color: white;
                 color: black;
                 border: none;
                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-                // margin-top: 5px;
                 margin: 20px auto 15px;
-                // margin-bottom: 15px;
                 &:hover {
                     background-color: darkgrey;
+                    color: #f8f8f8;
                 }
+
+                // &:last-child {
+                //     margin-bottom: 100px;
+                // }
                 .googleIcon {
-                    margin-top: 5px;
-                    margin: 5px 70px 0 0;
+                    // margin-top: px;
+                    margin: 7px 55px 0 15px;
                     justify-content: left;
                 }
                 .facebookIcon {
-                    margin-top: 5px;
-                    margin: 5px 60px 0 0;
+                    // margin-top: 5px;
+                    margin: 7px 45px 0 15px;
                     justify-content: left;
                 }
             }
@@ -208,6 +213,7 @@ $modalColor: #f8f8f8;
     .signUpModalContainer {
         .signUpModalCloseBtn {
             @include closeBtn();
+            z-index: 1300;
         }
 
         // <------signUpModal Title------> //
@@ -215,7 +221,9 @@ $modalColor: #f8f8f8;
         .signUpModaltitle {
             position: relative;
             margin-top: 30px;
+
             hr {
+                margin: 15px auto;
                 width: 220px;
             }
             img {
@@ -227,7 +235,7 @@ $modalColor: #f8f8f8;
                 margin-bottom: 10px;
             }
             span {
-                font-size: 14px;
+                font-size: 16px;
                 a {
                     color: #0a7cb1;
                     cursor: pointer;
@@ -240,37 +248,20 @@ $modalColor: #f8f8f8;
             button {
                 display: flex;
                 height: 40px;
-                line-height: 35px;
+                line-height: 40px;
                 width: 340px;
                 border-radius: 5px;
                 background-color: white;
                 color: black;
                 border: none;
                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-                margin: 20px auto 15px;
-                &:nth-child(1) {
-                    margin-top: 40px;
-                }
+                margin: 80px auto;
                 &:hover {
                     background-color: darkgrey;
                 }
-                .googleIcon {
-                    margin: 5px 70px 0 0;
-                    justify-content: left;
-                }
-                .facebookIcon {
-                    margin: 5px 60px 0 0;
-                    justify-content: left;
-                }
                 .emailIcon {
-                    margin: 10px 65px 0 5px;
+                    margin: 12px 60px 0 10px;
                     justify-content: left;
-                }
-                a {
-                    color: black;
-                    &:hover {
-                        text-decoration: none;
-                    }
                 }
             }
         }
@@ -288,6 +279,7 @@ $modalColor: #f8f8f8;
             position: relative;
             margin-top: 30px;
             hr {
+                margin: 15px auto;
                 width: 220px;
             }
             img {
@@ -296,23 +288,16 @@ $modalColor: #f8f8f8;
             p {
                 font-size: 22px;
                 font-weight: 600;
-                margin-bottom: 10px;
-            }
-            span {
-                font-size: 14px;
-                a {
-                    color: #0a7cb1;
-                    cursor: pointer;
-                    margin-bottom: 20px;
-                }
+                margin-bottom: 15px;
             }
         }
         .signUpModalBody_Name {
             label {
                 position: relative;
-                font-weight: 500;
-                margin-right: 270px;
+                font-weight: 400;
+                margin-right: 255px;
                 margin-bottom: 5px;
+                font-size: 20px;
             }
             .lastName {
                 @include input();
@@ -345,6 +330,7 @@ $modalColor: #f8f8f8;
             position: relative;
             margin-top: 30px;
             hr {
+                margin: 15px auto;
                 width: 220px;
             }
             img {
@@ -353,30 +339,21 @@ $modalColor: #f8f8f8;
             p {
                 font-size: 22px;
                 font-weight: 600;
-                margin-bottom: 10px;
-            }
-            span {
-                font-size: 14px;
-                a {
-                    color: #0a7cb1;
-                    cursor: pointer;
-                    margin-bottom: 20px;
-                }
+                margin-bottom: 15px;
             }
         }
         .signUpModalBody_Mail {
             label {
                 position: relative;
-                font-weight: 500;
-                margin-right: 240px;
+                font-weight: 400;
+                margin-right: 215px;
                 margin-bottom: 5px;
+                font-size: 20px;
             }
             .email {
                 @include input();
                 &::placeholder {
-                    font-size: 14px;
-                    font-weight: 300;
-                    padding-left: 5px;
+                    @include Input_Placeholder();
                 }
             }
             .submitBtn {
@@ -399,6 +376,7 @@ $modalColor: #f8f8f8;
             position: relative;
             margin-top: 30px;
             hr {
+                margin: 15px auto;
                 width: 220px;
             }
             img {
@@ -407,23 +385,16 @@ $modalColor: #f8f8f8;
             p {
                 font-size: 22px;
                 font-weight: 600;
-                margin-bottom: 10px;
-            }
-            span {
-                font-size: 14px;
-                a {
-                    color: #0a7cb1;
-                    cursor: pointer;
-                    margin-bottom: 20px;
-                }
+                margin-bottom: 15px;
             }
         }
         .signUpModalBody_Password {
             label {
                 position: relative;
-                font-weight: 500;
-                margin-right: 270px;
+                font-weight: 400;
+                margin-right: 255px;
                 margin-bottom: 5px;
+                font-size: 20px;
             }
             .userPassword {
                 @include input();
@@ -457,6 +428,7 @@ $modalColor: #f8f8f8;
             position: relative;
             margin-top: 30px;
             hr {
+                margin: 15px auto;
                 width: 220px;
             }
             img {
@@ -465,23 +437,16 @@ $modalColor: #f8f8f8;
             p {
                 font-size: 22px;
                 font-weight: 600;
-                margin-bottom: 10px;
-            }
-            span {
-                font-size: 14px;
-                a {
-                    color: #0a7cb1;
-                    cursor: pointer;
-                    margin-bottom: 20px;
-                }
+                margin-bottom: 15px;
             }
         }
         .signUpModalBody_Birthday {
             label {
                 position: relative;
-                font-weight: 500;
-                margin-right: 270px;
+                font-weight: 400;
+                margin-right: 255px;
                 margin-bottom: 5px;
+                font-size: 20px;
             }
             .email {
                 @include input();
@@ -509,6 +474,7 @@ $modalColor: #f8f8f8;
             position: relative;
             margin-top: 30px;
             hr {
+                margin: 15px auto;
                 width: 220px;
             }
             img {
@@ -517,23 +483,16 @@ $modalColor: #f8f8f8;
             p {
                 font-size: 22px;
                 font-weight: 600;
-                margin-bottom: 10px;
-            }
-            span {
-                font-size: 14px;
-                a {
-                    color: #0a7cb1;
-                    cursor: pointer;
-                    margin-bottom: 20px;
-                }
+                margin-bottom: 15px;
             }
         }
         .signUpModalBody_Phone {
             label {
                 position: relative;
-                font-weight: 500;
-                margin-right: 270px;
+                font-weight: 400;
+                margin-right: 255px;
                 margin-bottom: 5px;
+                font-size: 20px;
             }
             .phone {
                 @include input();
@@ -561,6 +520,7 @@ $modalColor: #f8f8f8;
             position: relative;
             margin-top: 30px;
             hr {
+                margin: 15px auto;
                 width: 220px;
             }
             img {
@@ -569,32 +529,17 @@ $modalColor: #f8f8f8;
             p {
                 font-size: 22px;
                 font-weight: 600;
-                margin-bottom: 10px;
-            }
-            span {
-                font-size: 14px;
-                a {
-                    color: #0a7cb1;
-                    cursor: pointer;
-                    margin-bottom: 20px;
-                }
+                margin-bottom: 15px;
             }
         }
         .signUpModalBody_Position {
             label {
                 position: relative;
-                font-weight: 500;
-                margin-right: 270px;
+                font-weight: 400;
+                margin-right: 255px;
                 margin-bottom: 5px;
+                font-size: 20px;
             }
-            // .position {
-            //     @include input();
-            //     &::placeholder {
-            //         font-size: 14px;
-            //         font-weight: 300;
-            //         padding-left: 5px;
-            //     }
-            // }
             .ant-select {
                 .ant-select-selector {
                     display: flex;
@@ -606,7 +551,7 @@ $modalColor: #f8f8f8;
                 margin-top: 30px;
             }
             .submitBtn {
-                margin-top: 41px;
+                margin-top: 40px;
                 border: none;
                 background-color: rgba(255, 255, 255, 0);
             }
@@ -641,6 +586,7 @@ $modalColor: #f8f8f8;
             position: relative;
             margin-top: 30px;
             hr {
+                margin: 15px auto;
                 width: 220px;
             }
             img {
@@ -649,22 +595,15 @@ $modalColor: #f8f8f8;
             p {
                 font-size: 22px;
                 font-weight: 600;
-                margin-bottom: 10px;
-            }
-            span {
-                font-size: 14px;
-                a {
-                    color: #0a7cb1;
-                    cursor: pointer;
-                    margin-bottom: 20px;
-                }
+                margin-bottom: 15px;
             }
         }
         .signUpModalBody_Interested {
             label {
                 position: relative;
-                font-weight: 500;
+                font-weight: 400;
                 margin-bottom: 5px;
+                font-size: 20px;
             }
             .bigpic {
                 position: relative;
@@ -756,12 +695,12 @@ $modalColor: #f8f8f8;
                     transform: scale(1);
                 }
 
-                :checked + label {
-                    transform: scale(1);
-                    background-color: rgba(0, 0, 0, 0.5);
-                    width: 152px;
-                    height: 152px;
-                }
+                // :checked + label {
+                //     transform: scale(1);
+                //     background-color: rgba(0, 0, 0, 0.5);
+                //     width: 152px;
+                //     height: 152px;
+                // }
             }
             #lastone {
                 margin-bottom: 30px;
@@ -814,6 +753,7 @@ $modalColor: #f8f8f8;
             position: relative;
             margin-top: 30px;
             hr {
+                margin: 15px auto;
                 width: 220px;
             }
             img {
@@ -823,14 +763,6 @@ $modalColor: #f8f8f8;
                 font-size: 22px;
                 font-weight: 600;
                 margin-bottom: 10px;
-            }
-            span {
-                font-size: 14px;
-                a {
-                    color: #0a7cb1;
-                    cursor: pointer;
-                    margin-bottom: 20px;
-                }
             }
         }
         .signUpModalBody_Finish {

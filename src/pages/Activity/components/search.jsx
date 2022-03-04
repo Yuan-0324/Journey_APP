@@ -124,7 +124,7 @@ const ActivitySearch = () => {
                         {/* 關鍵字 */}
                         <div className="searchInputItem searchInputItemRight">
 
-                            <Input className="searchInputItem" name="keyWord" placeholder="請輸入關鍵字" />
+                            <Input  className="searchInputItem" name="keyWord" placeholder="請輸入關鍵字" />
                         </div>
                         <div className='searchLine'> </div>
                         {/* 搜尋地區 */}

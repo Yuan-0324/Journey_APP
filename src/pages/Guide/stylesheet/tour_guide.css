@@ -1,10 +1,3 @@
-.guideMainPage .bgImg {
-  position: fixed;
-  z-index: -1000;
-  height: 100vh;
-  width: 100%;
-}
-
 .guideMainPage .guideBanner {
   height: 320px;
   width: 70%;
@@ -289,6 +282,7 @@
 }
 
 .guideMainPage .guideContainer .guideSearchResults .guideResult .putMemberImg #memberImg {
+  overflow: hidden;
   cursor: pointer;
   margin: 0 auto;
   height: 120px;
@@ -346,6 +340,19 @@
 .guideMainPage .guideContainer .guideSearchResults .guideResult .guideContent .guideRecommend {
   font-size: 14px;
   line-height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.guideMainPage .guideContainer .guideSearchResults .guideResult .guideContent .guideRecommend .guideRecommendContent {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+  padding-right: 20px;
 }
 
 .guideMainPage .guideContainer .guideSearchResults .guideResult .guideContent .guideLocation {

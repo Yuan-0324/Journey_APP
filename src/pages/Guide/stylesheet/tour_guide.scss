@@ -3,29 +3,27 @@
 // ------------------------
 
 .guideMainPage {
-    // max-width: 1075px;
-    .bgImg {
-        position: fixed;
-        z-index: -1000;
-        height: 100vh;
-        width: 100%;
-    }
+    // .bgImg {
+    //     position: fixed;
+    //     z-index: -1000;
+    //     height: 100vh;
+    //     width: 100%;
+    // }
     .guideBanner {
         height: 320px;
         width: 70%;
         margin: 120px auto 0px;
         display: block;
-        img{
+        img {
             height: 320px;
             width: 100%;
             display: block;
             border-radius: 10px;
-
         }
-                    .slick-dots{
-                margin-bottom: 40px;
-                z-index: 200;
-            }
+        .slick-dots {
+            margin-bottom: 40px;
+            z-index: 200;
+        }
     }
     .guideContainer {
         width: 70%;
@@ -50,12 +48,12 @@
                     .ant-select-selector {
                         border: none;
                         background-color: white;
-                        .ant-select-selection-item{
+                        .ant-select-selection-item {
                             font-size: 18px;
-                            font-weight: 600; 
+                            font-weight: 600;
                             color: $fontcolor;
                         }
-                        
+
                         .ant-select-selection-placeholder {
                             font-size: 18px;
                             font-weight: 600;
@@ -225,6 +223,7 @@
                 .putMemberImg {
                     width: 246px;
                     #memberImg {
+                        overflow: hidden;
                         cursor: pointer;
                         margin: 0 auto;
                         height: 120px;
@@ -273,17 +272,26 @@
                     .guideRecommend {
                         font-size: 14px;
                         line-height: 30px;
+                        display: flex;
+                        .guideRecommendContent{
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 1;
+                            -webkit-box-orient: vertical;
+                            white-space: normal;
+                            padding-right: 20px;
+                        }
                     }
                     .guideLocation {
                         float: right;
                         font-size: 15px;
                         color: #1697d5;
                         margin-right: 10px;
-                        .locationIcon{
+                        .locationIcon {
                             margin-right: 5px;
                             vertical-align: baseline;
                         }
-
                     }
                 }
             }

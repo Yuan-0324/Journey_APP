@@ -13,17 +13,17 @@ const Setting_Sidebar = ({ setSidebarSwitch }) => {
                     setSidebarSwitch(1);
                 }}>用戶安全</li>
 
-                <li onClick={() => {
+                {/* <li onClick={() => {
                     setSidebarSwitch(2);
-                }}>隱私設定</li>
+                }}>隱私設定</li> */}
 
                 <li onClick={() => {
                     setSidebarSwitch(3);
                 }}>嚮導設定</li>
 
-                <li onClick={() => {
+                {/* <li onClick={() => {
                     setSidebarSwitch(4);
-                }}>通知設定</li>
+                }}>通知設定</li> */}
             </ul>
         </div>
     )

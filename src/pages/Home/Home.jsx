@@ -1,8 +1,5 @@
 import React from "react";
-
-// ---- 更新 ----
 import "./stylesheet/mainPage.css";
-
 import Main_Section from "./components/Main_Section";
 import Search_Bar from "./components/Search_Bar";
 import Trending_City from "./components/Trending_City";

@@ -2,13 +2,6 @@
   color: #264148;
 }
 
-.guideJoin .bgImg {
-  position: fixed;
-  z-index: -1000;
-  height: 100vh;
-  width: 100%;
-}
-
 .guideJoin .nextPage {
   position: absolute;
   bottom: -20px;
@@ -198,7 +191,7 @@
 }
 
 .guideJoin #section01 .section01Area .section01Content .acceptNum {
-  margin-top: 35px;
+  margin-top: 40px;
   position: relative;
 }
 
@@ -208,23 +201,22 @@
   font-weight: bold;
 }
 
-.guideJoin #section01 .section01Area .section01Content .acceptNum span {
+.guideJoin #section01 .section01Area .section01Content .acceptNum div {
   position: absolute;
+  display: inline;
   left: 120px;
 }
 
-.guideJoin #section01 .section01Area .section01Content .acceptNum span #quantity {
-  width: 50px;
-  border: none;
-  text-align: center;
-  height: 30px;
+.guideJoin #section01 .section01Area .section01Content .acceptNum div .quantity {
+  display: inline;
+  width: 40px;
   font-size: 18px;
-  margin-right: 25px;
-  background: none;
+  margin-left: -80px;
   border-bottom: 1px #264148 solid;
+  text-align: center;
 }
 
-.guideJoin #section01 .section01Area .section01Content .acceptNum span .numBtn {
+.guideJoin #section01 .section01Area .section01Content .acceptNum div .numBtn {
   font-size: 17px;
   border-radius: 10px;
   padding: 2px 5px;
@@ -233,19 +225,19 @@
   border: 1px #f8f8f8 solid;
   -webkit-box-shadow: 1px 1px 3px #c7c7c7;
           box-shadow: 1px 1px 3px #c7c7c7;
-  margin-right: 20px;
+  margin-right: 70px;
   background-color: #ffffff;
   font-weight: 600;
   cursor: pointer;
 }
 
-.guideJoin #section01 .section01Area .section01Content .acceptNum span .numBtn:hover {
+.guideJoin #section01 .section01Area .section01Content .acceptNum div .numBtn:hover {
   -webkit-box-shadow: 3px 3px 5px #c7c7c7;
           box-shadow: 3px 3px 5px #c7c7c7;
 }
 
 .guideJoin #section01 .section01Area .section01Content .acceptGender {
-  margin-top: 25px;
+  margin-top: 35px;
   position: relative;
 }
 
@@ -266,7 +258,7 @@
 }
 
 .guideJoin #section01 .section01Area .section01Content .transportation {
-  margin-top: 25px;
+  margin-top: 35px;
   position: relative;
 }
 
@@ -287,7 +279,7 @@
 }
 
 .guideJoin #section01 .section01Area .section01Content .uploadImg {
-  margin-top: 25px;
+  margin-top: 35px;
   position: relative;
 }
 
@@ -297,12 +289,17 @@
   font-weight: bold;
 }
 
-.guideJoin #section01 .section01Area .section01Content .uploadImg div {
+.guideJoin #section01 .section01Area .section01Content .uploadImg span {
   position: absolute;
-  display: inline;
+  font-size: 18px;
+  font-weight: normal;
+  left: 120px;
+  top: 3px;
 }
 
-.guideJoin #section01 .section01Area .section01Content .uploadImg div #select {
+.guideJoin #section01 .section01Area .section01Content .uploadImg button {
+  position: absolute;
+  left: 410px;
   background-color: #1697d5;
   color: #fff;
   border: 1px solid #1697d5;
@@ -310,77 +307,63 @@
   font-weight: 400;
   padding: 3px;
   cursor: pointer;
-  margin-left: 40px;
   font-size: 16px;
   -webkit-box-shadow: 1px 1px 3px #858585;
           box-shadow: 1px 1px 3px #858585;
 }
 
-.guideJoin #section01 .section01Area .section01Content .uploadImg div #select:hover {
+.guideJoin #section01 .section01Area .section01Content .uploadImg button:hover {
   -webkit-box-shadow: 2px 2px 3px #858585;
           box-shadow: 2px 2px 3px #858585;
 }
 
-.guideJoin #section01 .section01Area .section01Content .uploadImg div p {
-  font-size: 16px;
-  margin-left: 20px;
-  font-weight: normal;
-}
-
-.guideJoin #section01 .section01Area .section01Content .uploadImg div #file_input {
-  display: none;
-}
-
 .guideJoin #section01 .section01Area .section01Content .uploadImg div #append {
   border-radius: 10px;
-  width: 525px;
-  height: 140px;
+  width: 600px;
+  height: 150px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 20px 0 0 38px;
-  border: 1px #858585 dashed;
+  margin-top: 15px;
 }
 
-.guideJoin #section01 .section01Area .section01Content .uploadImg div #append .float {
+.guideJoin #section01 .section01Area .section01Content .uploadImg div #append .uploadCover {
   position: relative;
-  width: 112px;
-  height: 112px;
-  overflow: hidden;
-  border: 1px solid #a7a7a7;
-  border-radius: 10px;
-  padding: 5px;
-  margin: 10px 9px;
-  -webkit-box-shadow: 2px 2px 3px #85858593;
-          box-shadow: 2px 2px 3px #85858593;
-}
-
-.guideJoin #section01 .section01Area .section01Content .uploadImg div #append .float .delete {
-  width: 100px;
-  height: 112px;
-  position: absolute;
+  width: 150px;
+  height: 110px;
   text-align: center;
-  line-height: 100px;
-  z-index: 10;
-  font-size: 16px;
-  background-color: rgba(255, 255, 255, 0.8);
-  color: #575757;
-  opacity: 0;
-  -webkit-transition-duration: 0.7s;
-          transition-duration: 0.7s;
-}
-
-.guideJoin #section01 .section01Area .section01Content .uploadImg div #append .float .delete:hover {
   cursor: pointer;
-  opacity: 1;
+  background: #eeeeee8e;
+  border: 5px #c0c0c08e solid;
+  border-radius: 10px;
+  margin-right: 20px;
 }
 
-.guideJoin #section01 .section01Area .section01Content .uploadImg div #append .float .result {
-  width: 100px;
+.guideJoin #section01 .section01Area .section01Content .uploadImg div #append .uploadCover .uploadInput {
+  display: none;
+  width: 140px;
   height: 100px;
-  text-align: center;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+}
+
+.guideJoin #section01 .section01Area .section01Content .uploadImg div #append .uploadCover .uploadIcon {
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: #1697d5;
+  border-radius: 50%;
+  background-color: #eeeeeeb6;
+  font-size: 30px;
+  width: 50px;
+  height: 50px;
+}
+
+.guideJoin #section01 .section01Area .section01Content .uploadImg div #append .uploadCover img {
+  width: 140px;
+  height: 100px;
+  border-radius: 5px;
 }
 
 .guideJoin #section02 {
@@ -598,6 +581,8 @@
   padding: 0 10px 0 13px;
   border-radius: 12px;
   display: inline-block;
+  -webkit-box-shadow: 1px 1px 3px #858585;
+          box-shadow: 1px 1px 3px #858585;
   background-color: rgba(255, 255, 255, 0.7);
 }
 
@@ -777,5 +762,79 @@
   position: absolute;
   top: 83%;
   left: 80%;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.guideJoin #finishSection {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: #74747480;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.guideJoin #finishSection .finishWindows {
+  width: 350px;
+  height: 450px;
+  background-color: #ffffff;
+  -webkit-box-shadow: 2px 2px 5px #8a8a8ae0;
+          box-shadow: 2px 2px 5px #8a8a8ae0;
+  z-index: 2;
+  position: fixed;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.guideJoin #finishSection .finishWindows .finishContent {
+  width: 330px;
+  height: 430px;
+  background-color: #f5f5f5;
+  border-radius: 15px;
+  text-align: center;
+  padding-top: 35px;
+}
+
+.guideJoin #finishSection .finishWindows .finishContent .gp1 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.guideJoin #finishSection .finishWindows .finishContent .gp2 {
+  font-size: 30px;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+.guideJoin #finishSection .finishWindows .finishContent img {
+  width: 150px;
+  display: block;
+  margin: -15px auto;
+}
+
+.guideJoin #finishSection .finishWindows .finishContent .gp3 {
+  margin-top: 15px;
+  margin-bottom: 25px;
+  padding: 0 30px;
+  font-size: 16px;
+}
+
+.guideJoin #finishSection .finishWindows .finishContent button {
+  font-size: 22px;
+  font-weight: 900;
+  background: none;
+  border: none;
+  color: #1697d5;
 }
 /*# sourceMappingURL=joinGuide.css.map */

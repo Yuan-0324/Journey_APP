@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
+import daylight from "../../../../images/Home/main/pexels-scott-webb-1029618.jpg";
+import sunset from "../../../../images/Home/main/beautiful-dusk-light-colorful-beauty.jpg";
+import nightsky from "../../../../images/Home/main/amazing-shot-beautiful-seascape-orange-sunset.jpg";
 
-function Weather_API() {
+function Weather_API({ setIndoorornot }) {
   const [lat, setLat] = useState(0);
   const [long, setLong] = useState(0);
   const [data, setData] = useState([]);
@@ -10,19 +13,19 @@ function Weather_API() {
 
   useEffect(() => {
     const fetchData = async () => {
-      navigator.geolocation.getCurrentPosition(function (position) {
+      await navigator.geolocation.getCurrentPosition(function (position) {
         currentLat.current = position.coords.latitude;
         currentLong.current = position.coords.longitude;
         setLat(position.coords.latitude);
         setLong(position.coords.longitude);
       });
-      // await fetchData();
       await fetch(
         `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=current,hourly,minutely,alerts&units=metric&appid=438653e1e5de54b035f71c6915e87dd2`
       )
         .then((res) => res.json())
         .then((data) => {
           setData(data.daily);
+          setIndoorornot(data.daily[0].weather[0].id);
         })
         .catch(function (erro) {
           console.log(erro);
@@ -53,8 +56,8 @@ function Weather_API() {
   let btnClickNow = () => {
     setLat(currentLat.current);
     setLong(currentLong.current);
-    console.log(currentLat.current);
-    console.log(currentLong.current);
+    // console.log(currentLat.current);
+    // console.log(currentLong.current);
   };
 
   const dateBuilder = (d) => {
@@ -90,9 +93,25 @@ function Weather_API() {
     return `${year}年 ${month} ${date}日 ${day}`;
   };
 
+  const currentWeatherHour = new Date().getHours();
+
+  const [WeatherImage] =
+    currentWeatherHour <= 15
+      ? [daylight]
+      : currentWeatherHour > 15 && currentWeatherHour < 18
+      ? [sunset]
+      : [nightsky];
+
+  const SectionStyle = {
+    backgroundImage: "url(" + WeatherImage + ")",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+  };
+
   return (
     <div className="APIweather">
-      <div className="weatherDetails">
+      <div className="weatherDetails" style={SectionStyle}>
         <div className="location-box">
           {Array.isArray(data) &&
             data.slice(0, 1).map((elm, idx) => (

@@ -1,23 +1,62 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import Axios from "axios";
 import { useHistory } from "react-router-dom";
+import "moment/locale/zh-tw";
 import "antd/dist/antd.css";
 import { Button, DatePicker, TreeSelect, Radio } from "antd";
-import { BiSearchAlt } from "react-icons/bi";
 import locale from "antd/es/date-picker/locale/zh_TW";
-import "moment/locale/zh-tw";
+import { BiSearchAlt } from "react-icons/bi";
+import context from "../../../context";
 const { TreeNode } = TreeSelect;
 
 const Search_Bar = () => {
+  const { guideData } = useContext(context);
+  const { setGuideData } = useContext(context);
+  console.log(guideData);
+
   const history = useHistory();
-  const [value, setValue] = useState(undefined);
-  const onChange = () => {
-    setValue(value);
+  const [res, setRes] = useState([]);
+  const [area, setArea] = useState("");
+  const [date, setDate] = useState("");
+  const [radio, setRadio] = useState("");
+
+  // const textContext = createContext();
+  // const { Provider, Consumer }= textContext;
+
+  let totalSearch = {
+    areaResult: area,
+    dateResult: date,
+    radioResult: radio,
   };
 
+  function AreaOnChange(value, label, extra) {
+    setArea(value);
+  }
+
+  function DateOnChange(moment, date) {
+    setDate(date);
+  }
+
+  function RadioOnChange(e) {
+    setRadio(e.target.value);
+  }
+
   const optionsWithDisabled = [
-    { label: "活動", value: "Activity" },
-    { label: "嚮導", value: "Guide" },
+    { label: "活動", value: "event" },
+    { label: "嚮導", value: "guide" },
   ];
+
+  async function getResult() {
+    await Axios.post("http://localhost:8000/home/search_result", totalSearch)
+      .then((res) => {
+        setGuideData(res.data);
+        console.log(guideData);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
   return (
     <section id="searchBar">
       <div className="searchBar">
@@ -28,12 +67,12 @@ const Search_Bar = () => {
             <TreeSelect
               showSearch
               style={{ width: "300px" }}
-              value={value}
               dropdownStyle={{ overflow: "auto" }}
+              // defaultValue={area}
               placeholder="探索目的地"
               allowClear
               treeDefaultExpandAll
-              onChange={onChange}
+              onChange={AreaOnChange}
             >
               <TreeNode
                 value="北部"
@@ -42,28 +81,42 @@ const Search_Bar = () => {
               >
                 <TreeNode
                   value="台北"
-                  title={<span style={{ fontSize: 20 + "px" }}>台北</span>}
+                  title={<span style={{ fontSize: 16 + "px" }}>台北</span>}
                 />
-                <TreeNode value="新北" title="新北" />
-                <TreeNode value="基隆" title="基隆" />
-                <TreeNode value="新竹" title="新竹" />
-                <TreeNode value="桃園" title="桃園" />
-                <TreeNode value="宜蘭" title="宜蘭" />
+                <TreeNode
+                  value="新北"
+                  title={<span style={{ fontSize: 16 + "px" }}>新北</span>}
+                />
+                <TreeNode
+                  value="基隆"
+                  title={<span style={{ fontSize: 16 + "px" }}>基隆</span>}
+                />
+                <TreeNode
+                  value="新竹"
+                  title={<span style={{ fontSize: 16 + "px" }}>新竹</span>}
+                />
+                <TreeNode
+                  value="桃園"
+                  title={<span style={{ fontSize: 16 + "px" }}>桃園</span>}
+                />
+                <TreeNode
+                  value="宜蘭"
+                  title={<span style={{ fontSize: 16 + "px" }}>宜蘭</span>}
+                />
               </TreeNode>
               <TreeNode
                 value="中部"
                 title={<b style={{ color: "gray" }}>中部</b>}
                 disabled
               >
-                <TreeNode value="台中" title="台中" />
+                <TreeNode
+                  value="台中"
+                  title={<span style={{ fontSize: 16 + "px" }}>台中</span>}
+                />
                 <TreeNode value="苗栗" title="苗栗" />
                 <TreeNode value="彰化" title="彰化" />
                 <TreeNode value="南投" title="南投" />
                 <TreeNode value="雲林" title="雲林" />
-                <TreeNode
-                  value="leaf3"
-                  // title={<b style={{ color: "#08c" }}>leaf3</b>}
-                />
               </TreeNode>
               <TreeNode
                 value="南部"
@@ -102,22 +155,19 @@ const Search_Bar = () => {
               locale={locale}
               style={{ width: "280px", border: "none" }}
               placeholder="輸入日期"
+              onChange={DateOnChange}
             />
           </div>
           <div className="radioswitch">
             <Radio.Group
               options={optionsWithDisabled}
-              defaultValue="Activity"
-              // onChange={this.onChange4}
+              defaultValue="event"
+              onChange={RadioOnChange}
               optionType="button"
               buttonStyle="solid"
             />
           </div>
-          <Button
-            onClick={() => {
-              history.push("/Guide");
-            }}
-          >
+          <Button onClick={getResult}>
             <BiSearchAlt />
           </Button>
         </div>

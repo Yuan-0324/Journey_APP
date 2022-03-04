@@ -4,12 +4,6 @@
 
 .guideJoin {
   color: $fontcolor;
-  .bgImg {
-    position: fixed;
-    z-index: -1000;
-    height: 100vh;
-    width: 100%;
-  }
 
   .nextPage {
     position: absolute;
@@ -131,7 +125,7 @@
           position: absolute;
           font-size: 25px;
           left: 285px;
-          top:120px;
+          top: 120px;
           color: $fontcolor;
         }
       }
@@ -166,25 +160,24 @@
           }
         }
         .acceptNum {
-          margin-top: 35px;
+          margin-top: 40px;
           position: relative;
           p {
             font-size: 20px;
             display: inline;
             font-weight: bold;
           }
-          span {
+          div {
             position: absolute;
+            display: inline;
             left: 120px;
-            #quantity {
-              width: 50px;
-              border: none;
-              text-align: center;
-              height: 30px;
+            .quantity {
+              display: inline;
+              width: 40px;
               font-size: 18px;
-              margin-right: 25px;
-              background: none;
+              margin-left: -80px;
               border-bottom: 1px $fontcolor solid;
+              text-align: center;
             }
             .numBtn {
               font-size: 17px;
@@ -194,7 +187,7 @@
               text-align: center;
               border: 1px $bgcolor solid;
               box-shadow: 1px 1px 3px #c7c7c7;
-              margin-right: 20px;
+              margin-right: 70px;
               background-color: #ffffff;
               font-weight: 600;
               cursor: pointer;
@@ -205,7 +198,7 @@
           }
         }
         .acceptGender {
-          margin-top: 25px;
+          margin-top: 35px;
           position: relative;
           p {
             font-size: 20px;
@@ -222,7 +215,7 @@
           }
         }
         .transportation {
-          margin-top: 25px;
+          margin-top: 35px;
           position: relative;
           p {
             font-size: 20px;
@@ -239,82 +232,75 @@
           }
         }
         .uploadImg {
-          margin-top: 25px;
+          margin-top: 35px;
           position: relative;
           p {
             font-size: 20px;
             display: inline;
             font-weight: bold;
           }
-          div {
+          span {
             position: absolute;
-            display: inline;
-            #select {
-              background-color: $primarycolor;
-              color: #fff;
-              border: 1px solid $primarycolor;
-              border-radius: 5px;
-              font-weight: 400;
-              padding: 3px;
-              cursor: pointer;
-              margin-left: 40px;
-              font-size: 16px;
-              box-shadow: 1px 1px 3px #858585;
-              &:hover {
-                box-shadow: 2px 2px 3px #858585;
-              }
+            font-size: 18px;
+            font-weight: normal;
+            left: 120px;
+            top: 3px;
+          }
+          button{
+            position: absolute;
+            left: 410px;
+            background-color: $primarycolor;
+            color: #fff;
+            border: 1px solid $primarycolor;
+            border-radius: 5px;
+            font-weight: 400;
+            padding: 3px;
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 1px 1px 3px #858585;
+            &:hover {
+              box-shadow: 2px 2px 3px #858585;
             }
-
-            p {
-              font-size: 16px;
-              margin-left: 20px;
-              font-weight: normal;
-            }
-
-            #file_input {
-              display: none;
-            }
-
+          }
+          div {
             #append {
               border-radius: 10px;
-              width: 525px;
-              height: 140px;
+              width: 600px;
+              height: 150px;
               display: flex;
-              margin: 20px 0 0 38px;
-              border: 1px #858585 dashed;
-              .float {
+              margin-top: 15px;
+              .uploadCover {
                 position: relative;
-                width: 112px;
-                height: 112px;
-                overflow: hidden;
-                border: 1px solid #a7a7a7;
+                width: 150px;
+                height: 110px;
+                text-align: center;
+                cursor: pointer;
+                background: #eeeeee8e;
+                border: 5px #c0c0c08e solid;
                 border-radius: 10px;
-                padding: 5px;
-                margin: 10px 9px;
-                box-shadow: 2px 2px 3px #85858593;
-                .delete {
-                  width: 100px;
-                  height: 112px;
-                  position: absolute;
-                  text-align: center;
-                  line-height: 100px;
-                  z-index: 10;
-                  font-size: 16px;
-                  background-color: rgba(255, 255, 255, 0.8);
-                  color: rgb(87, 87, 87);
-                  opacity: 0;
-                  transition-duration: 0.7s;
-                  &:hover {
-                    cursor: pointer;
-                    opacity: 1;
-                  }
-                }
-
-                .result {
-                  width: 100px;
+                margin-right: 20px;
+                .uploadInput {
+                  display: none;
+                  width: 140px;
                   height: 100px;
-                  text-align: center;
-                  box-sizing: border-box;
+                }
+                .uploadIcon {
+                  font-weight: bold;
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%,-50%);
+                  color: $primarycolor;
+                  border-radius: 50%;
+                  background-color: #eeeeeeb6;
+                  font-size: 30px;
+                  width: 50px;
+                  height: 50px;
+                }
+                img {
+                  width: 140px;
+                  height: 100px;
+                  border-radius: 5px;
                 }
               }
             }
@@ -505,6 +491,7 @@
               padding: 0 10px 0 13px;
               border-radius: 12px;
               display: inline-block;
+              box-shadow: 1px 1px 3px #858585;
               background-color: rgba(255, 255, 255, 0.7);
               .restaurantContent {
                 border: none;
@@ -661,6 +648,66 @@
       position: absolute;
       top: 83%;
       left: 80%;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+  }
+
+  #finishSection {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: #74747480;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .finishWindows {
+      width: 350px;
+      height: 450px;
+      background-color: #ffffff;
+      box-shadow: 2px 2px 5px #8a8a8ae0;
+      z-index: 2;
+      position: fixed;
+      border-radius: 15px;
+      padding: 10px;
+      .finishContent {
+        width: 330px;
+        height: 430px;
+        background-color: #f5f5f5;
+        border-radius: 15px;
+        text-align: center;
+        padding-top: 35px;
+        .gp1 {
+          font-size: 22px;
+          font-weight: 600;
+        }
+        .gp2 {
+          font-size: 30px;
+          font-weight: 900;
+          margin-bottom: 20px;
+        }
+        img {
+          width: 150px;
+          display: block;
+          margin: -15px auto;
+        }
+        .gp3 {
+          margin-top: 15px;
+          margin-bottom: 25px;
+          padding: 0 30px;
+          font-size: 16px;
+        }
+        button {
+          font-size: 22px;
+          font-weight: 900;
+          background: none;
+          border: none;
+          color: $primarycolor;
+        }
+      }
     }
   }
 }

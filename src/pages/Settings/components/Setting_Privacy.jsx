@@ -1,38 +1,35 @@
-import React from "react";
-import { AiOutlinePlusCircle } from "react-icons/ai"
+import React, { useState } from "react";
+import Setting_Privacy_Item from "./Setting_Privacy_Group/Setting_Privacy_Item";
+import Setting_Privacy_ItemInput from "./Setting_Privacy_Group/Setting_Privacy_ItemInput";
+import Setting_Privacy_Item_list from "./Setting_Privacy_Group/Setting_Privacy_Item_list";
+
 
 const Setting_Privacy = () => {
+
+    const [privacySwitch, setPrivacySwitch] = useState(0);
+    //showPrivacy
+    let showPrivacy = '';
+    switch (privacySwitch) {
+        case 0:
+            showPrivacy = <Setting_Privacy_Item setPrivacySwitch={setPrivacySwitch} />;
+            break;
+        case 1:
+            showPrivacy = <Setting_Privacy_ItemInput setPrivacySwitch={setPrivacySwitch} />;
+            break;
+    }
+
     return (
         <div className="Privacy_Content">
             <p>隱私設定</p>
             <div className="Content_Shadow">
                 <div className="Privacy_item">
                     <span>封鎖名單</span>
-                    <AiOutlinePlusCircle />
-                    <span>新增用戶到封鎖名單</span>
-                    <br />
-                    <input type="text" placeholder="用戶名稱" />
-                    <button>確認</button>
-                    <button>取消</button>
+
+                    {showPrivacy}
                     <hr />
                 </div>
-                <div className="Privacy_item_list">
-                    <div className="Privacy_item_list_flexbox">
-                        <span>吉娃娃</span>
-                        <button>取消封鎖</button>
-                    </div>
+                <Setting_Privacy_Item_list />
 
-                    <div className="Privacy_item_list_flexbox">
-                        <span>博美</span>
-                        <button>取消封鎖</button>
-                    </div>
-
-                    <div className="Privacy_item_list_flexbox">
-                        <span>冠緯Cat</span>
-                        <button>取消封鎖</button>
-                    </div>
-
-                </div>
             </div>
         </div>
 

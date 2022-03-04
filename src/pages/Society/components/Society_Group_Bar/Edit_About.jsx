@@ -1,14 +1,20 @@
 import React, {useEffect} from 'react';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 import Article_Addition from '../Society_Right/Society_Post/Article_Addition';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 
-const Edit_About = ({editArticleList, setEditPostArticle, setEditPost}) => {
-
+const Edit_About = ({groupAboutData, setGroupPageData , closeEdit, setEditPost}) => {
+    if(groupAboutData.about_society==null){
+        groupAboutData.about_society = '<pre class="h3"> <pre>'
+        setGroupPageData(groupAboutData);
+    }
     // 文章字串轉html
     const [personalArticle, setPersonalArticle] = React.useState([]) 
     useEffect(() => {
+        console.log(groupAboutData);
         let result = [];
-        let perArticle = editArticleList.content.split('><')  
+        let perArticle = groupAboutData.about_society.split('><')  
         perArticle.forEach((elm, idx) => {
             if(perArticle.length == 1){
                 elm = elm;
@@ -79,7 +85,6 @@ const Edit_About = ({editArticleList, setEditPostArticle, setEditPost}) => {
     const deleteBrick = (place) => {
         let newAddArticle = personalArticle.filter(elm => elm.place !== place); 
         setPersonalArticle(newAddArticle);
-        console.log(personalArticle);
     }
 
     //-----修改文章暫存到陣列中-----
@@ -143,15 +148,9 @@ const Edit_About = ({editArticleList, setEditPostArticle, setEditPost}) => {
     }  
 
     //確定編輯完成
-
     const okEditArticle = (e) => {
         setEditPost(e)
-        console.log(personalArticle); 
     }
-
-    // useEffect(() => {
-    //     setEditPostArticle(false)
-    // }, [okEditArticle]);
 
     //取消編輯，直接關閉即可
     
@@ -165,13 +164,8 @@ const Edit_About = ({editArticleList, setEditPostArticle, setEditPost}) => {
                     <div className='pic' onClick={addBrick}><h1>照片</h1></div>
                 </div>
                 <div onClick={(evt) => { evt.stopPropagation() }} className='edit-main-container'>
-                    <h1>編輯文章<span onClick={()=>setEditPostArticle(false)}><AiOutlineCloseCircle /></span></h1>
-                    <div className='edit-title-container'>
-                        <img src={editArticleList.authorImg}></img>
-                        <div className='edit-title-name'>
-                            
-                        </div>
-                    </div>
+                    <h1>編輯文章<span onClick={closeEdit}><AiOutlineCloseCircle /></span></h1>
+                    
                     <div>
                     {personalArticle.map((elm,idx)=>
                         <Article_Addition key={idx}

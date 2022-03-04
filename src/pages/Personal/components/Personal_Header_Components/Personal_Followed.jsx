@@ -52,16 +52,6 @@ const Personal_Followed = ({ followed }) => {
     }
 
     useEffect(() => {
-        console.log(statue.current)
-        if (!statue.current) {
-            return;
-        } else {
-
-            console.log('inside')
-        }
-    }, [currentUserFollowed])
-
-    useEffect(() => {
         getHeadshot();
         statue.current = false;
     }, [])

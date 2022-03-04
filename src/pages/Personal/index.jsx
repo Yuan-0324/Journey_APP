@@ -19,15 +19,18 @@ const Personal_Main = () => {
     // --- 登入中的使用者 ---
 
     const currentUser = useContext(Context).userInfo;
-    const currentPath = useParams();
     const [currentUserFollowed, setCurrentUserFollowed] = useState([])
+    const [currentUserImg, setCurrentUserImg] = useState('')
+    
 
     // --- 瀏覽中頁面資訊 ---
 
+    const currentPath = useParams();
     const [viewUserState, setViewUserState] = useState({
         viewUserInfo: {},
         viewUserImg: ''
     })
+    const [personalBanner, setPersonalBanner] = useState('')
 
     // ---- 畫面一開始先儲存 Data ----
 
@@ -38,33 +41,43 @@ const Personal_Main = () => {
     // ---- 先取得正在瀏覽中頁面資訊  ----
 
     let fetchData = async () => {
+
         // --- View info ---
+
         let data = await Axios.get('http://localhost:8000/personal/' + currentPath.id);
+        let user = await Axios.get('http://localhost:8000/personal/' + currentUser.id)
+        // console.log(user)
         // --- View img ---
         if (data.data !== 'error') {
-            const forsetRef = ref(storage, `/member/${currentPath.id}/headShot${currentPath.id}.png`);
-            let url = await getDownloadURL(forsetRef);
             // --- Current User Info ---
-            let currentUserFollowed = await Axios.get('http://localhost:8000/personal/current_user/' + currentUser.id);
-            setViewUserState({ ...viewUserState, ['viewUserInfo']: data.data, ['viewUserImg']: url });
-            setCurrentUserFollowed(currentUserFollowed.data);
+            setPersonalBanner(data.data.personal_banner);
+            setViewUserState({ ...viewUserState, ['viewUserInfo']: data.data, ['viewUserImg']: data.data.api_selfie });
+            if (currentUser.id !== 0) {
+                let currentUserFollowed = await Axios.get('http://localhost:8000/personal/current_user/' + currentUser.id);
+                setCurrentUserFollowed(currentUserFollowed.data);
+                setCurrentUserImg(user.data.api_selfie);
+            }
+        } else if (data.data == 'User Not Found') {
+            window.location = '/error';
         } else {
-            window.location = '/';
+            window.location = '/'
         }
     }
 
-    // console.log(currentUserFollowed);
+    // console.log(personalBanner)
+    // console.log(currentUser);
 
     return (
         <Context.Provider value={{
             userInfo: currentUser,
             currentUserFollowed: currentUserFollowed,
+            currentUserImg: currentUserImg,
             setCurrentUserFollowed: setCurrentUserFollowed,
             viewUserInfo: viewUserState.viewUserInfo,
-            viewUserImg: viewUserState.viewUserImg,
+            viewUserImg: viewUserState.viewUserImg
         }}>
             {/* 個人頁面上方，個人資訊 */}
-            <Personal_Header />
+            <Personal_Header personalBanner={personalBanner} setPersonalBanner={setPersonalBanner} />
             {/* 個人頁面下方，Po文等等內容 */}
             <Personal_Container />
         </Context.Provider>

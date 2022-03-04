@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import Axios from 'axios';
 
@@ -8,8 +8,7 @@ import { auth } from '../../../firebase';
 
 //icon
 // import logo from '../images/logo.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTimes } from '@fortawesome/free-solid-svg-icons'
+import { AiOutlineClose } from "react-icons/ai";
 
 
 // ---- 更新 ----
@@ -36,6 +35,7 @@ function Login({ openLoginModal, loginModal, signUpModal }) {
         setLoginData(loginData)
     }
     const { setToken } = useContext(context);
+    const { setUserInfo } = useContext(context);
 
     let history = useHistory();
 
@@ -44,17 +44,36 @@ function Login({ openLoginModal, loginModal, signUpModal }) {
     const onSubmit = async () => {
         if (loginData.email !== "" && loginData.password !== "") {
             await Axios.post("http://localhost:8000/member/login", loginData)
-                .then((res) => {
+                .then(async (res) => {
+                    console.log(res);
                     Axios.defaults.headers.common["authorization"] = res.data.token; // axios 請求頭帶上 token
                     setToken(res.data.token); // 保存至 context
-                    localStorage.setItem('token', res.data.token)// 保存到本地
-                    console.log(res.data);
-                    if (res.data.token == undefined) {
+                    setUserInfo({
+                        id: res.data.id,
+                        email: res.data.email,
+                        lastName: res.data.lastName,
+                        firstName: res.data.firstName
+                    })
+                    // 保存到本地
+                    localStorage.setItem('token', res.data.token)
+                    localStorage.setItem('id', res.data.id)
+                    localStorage.setItem('email', res.data.email)
+                    localStorage.setItem('lastName', res.data.lastName)
+                    localStorage.setItem('firstName', res.data.firstName)
+
+                    //帳號密碼判斷
+                    if (loginData.email !== res.data.email) {
                         localStorage.removeItem('token');
-                        alert('帳號或密碼錯誤')
+                        alert('帳號未註冊');
                     }
-                    if (res.data.token !== undefined) {
-                        history.go(0);
+                    // if (loginData.password !== res.data.password) {
+                    //     localStorage.removeItem('token');
+                    //     alert('密碼錯誤');
+                    // }
+                    if (localStorage.getItem('token') !== undefined) {
+                        setTimeout(() => {
+                            history.go(0);
+                        }, 500);
                     }
                 })
                 .catch((err) => {
@@ -73,34 +92,80 @@ function Login({ openLoginModal, loginModal, signUpModal }) {
         signInWithPopup(auth, provider)
             .then(async (result) => {
                 let myData = result._tokenResponse;
+                console.log(myData);
                 let myLoginData = {
-                    email: myData.email
+                    email: myData.email,
+                    lastName: myData.lastName,
+                    firstName: myData.firstName
                 }
-                await Axios.post("http://localhost:8000/api/login", myLoginData)
-                    .then((res) => {
-                        Axios.defaults.headers.common["authorization"] = res.data.token; // axios 請求頭帶上 token
-                        setToken(res.data.token); // 保存至 context
-                        localStorage.setItem('token', res.data.token)// 保存到本地
-                        console.log(res.data);
-                        if (res.data.token == undefined) {
-                            localStorage.removeItem('token');
-                            alert('尚未使用Google註冊');
+                //驗證是否有註冊
+                await Axios.post('http://localhost:8000/api/login', myLoginData)
+                    .then(async (res) => {
+                        console.log(res);
+                        let notYetSignUp = '信箱尚未被註冊'
+                        if (res.data == notYetSignUp) {
+                            //註冊
+                            await Axios.post('http://localhost:8000/api/signup', myLoginData)
+                                .then(async (res) => {
+                                    console.log(res);
+                                    await Axios.post('http://localhost:8000/api/login', myLoginData)
+                                        .then((res) => {
+                                            Axios.defaults.headers.common["authorization"] = res.data.token; // axios 請求頭帶上 token
+                                            setToken(res.data.token); // 保存至 context
+                                            setUserInfo({
+                                                id: res.data.id,
+                                                email: res.data.email,
+                                                lastName: res.data.lastName,
+                                                firstName: res.data.firstName
+                                            })
+                                            // 保存到本地
+                                            localStorage.setItem('token', res.data.token)
+                                            localStorage.setItem('id', res.data.id)
+                                            localStorage.setItem('email', res.data.email)
+                                            localStorage.setItem('lastName', res.data.lastName)
+                                            localStorage.setItem('firstName', res.data.firstName)
+                                            if (localStorage.getItem('token') !== undefined) {
+                                                setTimeout(() => {
+                                                    history.go(0);
+                                                }, 500);
+                                            }
+                                        })
+                                        .catch((err) => {
+                                            console.log(err);
+                                        })
+                                })
+                                .catch((err) => {
+                                    console.log(err);
+                                })
                         }
-                        if (res.data.token !== undefined) {
-                            history.go(0);
+                        else {
+                            Axios.defaults.headers.common["authorization"] = res.data.token; // axios 請求頭帶上 token
+                            setToken(res.data.token); // 保存至 context
+                            setUserInfo({
+                                id: res.data.id,
+                                email: res.data.email,
+                                lastName: res.data.lastName,
+                                firstName: res.data.firstName
+                            })
+                            //保存到本地
+                            localStorage.setItem('token', res.data.token)
+                            localStorage.setItem('id', res.data.id)
+                            localStorage.setItem('email', res.data.email)
+                            localStorage.setItem('lastName', res.data.lastName)
+                            localStorage.setItem('firstName', res.data.firstName)
+                            if (localStorage.getItem('token') !== undefined) {
+                                setTimeout(() => {
+                                    history.go(0);
+                                }, 500);
+                            }
                         }
                     })
                     .catch((err) => {
                         console.log(err);
                     })
-
-
-                // console.log(myData);
-                // loginModal(false);
-                // history.push('/');
-
-            }).catch((error) => {
-                console.log(error);
+            })
+            .catch((err) => {
+                console.log(err);
             })
     }
 
@@ -124,11 +189,10 @@ function Login({ openLoginModal, loginModal, signUpModal }) {
         <>
             <div className='loginModalBackground'>
                 <div className='loginModalContainer'>
-                    <button className='loginModalcloseBtn'
-                        onClick={() => { loginModal(false) }}>
-                        <FontAwesomeIcon icon={faTimes} />
-
-                    </button>
+                    <AiOutlineClose
+                        className='loginModalcloseBtn'
+                        onClick={() => { loginModal(false) }}
+                    />
                     <div className='loginModaltitle'>
                         <img src={logo} alt="logo" />
                         <hr />

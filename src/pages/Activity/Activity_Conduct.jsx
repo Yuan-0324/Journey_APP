@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import axios from 'axios';
+import context from '../../context';
 // import check from '../../../images/check.gif'
 
 //載入Components
 import Section01ContentInformation from "./components/activityConductSection01ContentInformation";
-
+import ActivityConductImages from './components/activityConductImages/activityConductImages';
 
 import $ from 'jquery'
 import {
@@ -21,12 +23,43 @@ import check from '../../images/Success-unscreen.gif';
 import './StyleSheet/activityConduct/activityConduct.css';
 
 const Activity_Conduct = () => {
+
+    //導入使用者ID
+    const currentUser = useContext(context);
+    let userID = currentUser.userInfo.id;
+    
+    //寫入後端
+    const [postNewEvent, setPostNewEvent] = React.useState(
+        {
+            post_email: userID, title: '', introduce: "", date: '', time: '', address: "", kind: '', Num: '', indoor: '',content:'',precaution:'',post_datetime:''
+        }
+    )
+    // console.log(postNewEvent.post_email);
+    const [postNowEventNum, setNowEventNum]=React.useState()
+    
+   
+        
+    const doPostAndPop = () => {
+
+        axios.post('http://localhost:8000/event/conduct', { postNewEvent })
+            .then(res => {let num=res.data;setNowEventNum(num)})
+        // setShow(true)
+    }
+   console.log();
+     //送出活動邀請
+     const [postActivityInvite,setPostActivityInvite ]=React.useState({
+        eventID:'',apply_member_email:userID
+    })
+    // console.log( postNowEventNum);
+    // let postEventNum=postNowEventNum;
+    // console.log(postEventNum);
+    // console.log(typeof postEventNum);
+    // console.log(postActivityInvite.apply_member_email);
+    //後端路徑
+    // console.log(postNowEventNum+100);
+    //顯示成功畫面
     const [show, setShow] = useState(false);
-
-
-
     $(function () {
-
         // 下一頁移動
         $('a[href*="#"]').on('click', function (e) {
             e.preventDefault();
@@ -34,13 +67,33 @@ const Activity_Conduct = () => {
         });
     })
 
+    //上傳內容
+    const inputContent = (e) => {
+        postNewEvent.content = e.target.value
+        setPostNewEvent(postNewEvent);
+        // console.log(typeof e.target.value);
+    }
+    //上傳注意事項
+    const inputPrecaution =(e)=>{
+        postNewEvent.precaution=e.target.value;
+        setPostNewEvent(postNewEvent);
+        // console.log(typeof e.target.value);
+    }
+    //寫入創辦活動時間
+    const inputPostTime = (e)=>{
+        var today=new Date()
+        postNewEvent.post_datetime=today;
+        setPostNewEvent(postNewEvent);
+        // console.log(today);
+    }
+    
+    //上傳照片
 
     // console.log(useState(this));
     return (
         <>
 
             <div className="activityConductBody">
-
                 <div>
                     <hr className="pageHr" />
                 </div>
@@ -58,7 +111,7 @@ const Activity_Conduct = () => {
                                 <div className="newPageTitlePoint">●</div> 基本資料
                             </div>
                         </div>
-                        <Section01ContentInformation />
+                        <Section01ContentInformation postNewEvent={postNewEvent} setPostNewEvent={setPostNewEvent} />
                         <a href="#section02" className="nextPage"><span></span>下一頁</a>
                     </div>
                 </section>
@@ -67,53 +120,37 @@ const Activity_Conduct = () => {
                 <section id="section02">
                     <div className="section02Area">
                         <div className="leftTitle">
-                            <div className="pageTitle"><div className="newPageTitlePoint">●</div> 活動內容及照片</div>
-
-                        </div>
-                        {/* 照片 */}
-                        <div className="section02Content">
-                            {/* <!-- 照片  --> */}
-
-                            <div className="uploadImg">
-                                <div className='uploadImgButton'>
-                                    <p>上傳照片</p>
-                                    <input type="button" onClick="" id="select" value="選擇照片"></input>
-                                    <span>(請上傳四張相片)</span>
-                                </div>
-                                <div>
-
-                                    <input type="file" id="file_input" name="filePath" multiple="multiple" />
-                                    <br /><div id="append"></div>
-                                </div>
-                            </div>
-                        </div>
-                       
-
-                    </div>
-                    <a href="#section03" className="nextPage"><span></span>下一頁</a>
-                </section>
-                {/* 活動內容 */}
-                <section id="section03">
-                    <div className="section03Area">
-                        <div className="leftTitle">
                             <div className="pageTitle"><div className="newPageTitlePoint">●</div> 活動內容</div>
 
                         </div>
+                         {/* 活動內容 */}
+                        <div className="activitySetContent">
                          {/* 內容 */}
-                         <div className="activitySetContent">
-                        <p>活動內容</p>
-                            <textarea className="activitySetContentTextarea" name="" id="" cols="30" placeholder="介紹你的活動吧" rows="10"></textarea>
-                        </div>
-                        
-                         {/* 注意事項 */}
-                         <div className="activitySetNotice">
-                        <p>注意事項</p>
-                            <textarea className="activitySetNoticeTextarea" name="" id="" cols="30" placeholder="請輸入注意事項..." rows="10"></textarea>
+                            <p>活動內容</p>
+                            <textarea  onChange={inputContent} className="activitySetContentTextarea" name="" id="" cols="30" placeholder="介紹你的活動吧" rows="10"></textarea>
                         </div>
 
+                        {/* 注意事項 */}
+                        <div className="activitySetNotice">
+                            <p>注意事項</p>
+                            <textarea  onChange={inputPrecaution} className="activitySetNoticeTextarea" name="" id="" cols="30" placeholder="請輸入注意事項..." rows="10"></textarea>
+                        </div>
+                    </div>
+                    <a href="#section03" onClick={doPostAndPop} className="nextPage"><span></span>下一頁</a>
+                </section>
+               
+                <section id="section03">
+                    <div className="section03Area">
+                        <div className="leftTitle">
+                            <div className="pageTitle"><div className="newPageTitlePoint">●</div> 活動照片</div>
+                        </div>             
+                         {/* 照片 */}
+                        <div className="ActivityConductImagesContent">
+                            <ActivityConductImages data={postNowEventNum} />
+                        </div>
                     </div>
                     {/* <a href="#section04" className="nextPage"><span></span></a> */}
-                     <Button variant="primary" className="submitBtn" onClick={() => { setShow(true) }}>
+                    <Button variant="primary" className="submitBtn" onClick={() => { setShow(true) }}>
                         創立活動
                     </Button>
                     <Modal show={show} onHide={() => { setShow(true) }}>
@@ -129,13 +166,13 @@ const Activity_Conduct = () => {
                             </Button>
                         </Modal.Footer>
                     </Modal>
-                
+
                 </section>
             </div>
-                {/* 注意事項 */}
+            {/* 注意事項 */}
 
-                
-                    {/* <Button variant="primary" className="submitBtn" onClick={() => { setShow(true) }}>
+
+            {/* <Button variant="primary" className="submitBtn" onClick={() => { setShow(true) }}>
                         創立活動
                     </Button>
                     <Modal show={show} onHide={() => { setShow(true) }}>
@@ -151,10 +188,10 @@ const Activity_Conduct = () => {
                             </Button>
                         </Modal.Footer>
                     </Modal> */}
-                {/* </section> */}
-                {/* </div> */}
-                {/* </form> */}
-            
+            {/* </section> */}
+            {/* </div> */}
+            {/* </form> */}
+
 
 
         </>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import guideLevelImg from '../../../../images/guideImgs/guideJoinPage/guideLevelImg.png';
 
 const Guide_Level = () => {

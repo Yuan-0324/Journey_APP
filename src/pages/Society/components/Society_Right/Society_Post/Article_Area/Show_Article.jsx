@@ -32,14 +32,14 @@ const Show_Article = ({ article, articleToggle, setArticleToggle }) => {
             <div onClick={(evt) => { evt.stopPropagation() }} className='show-main-container'>
                 <h1>文章內容<span onClick={showPageClose} ><AiOutlineCloseCircle /></span></h1>
                 <div className='show-title-container'>
-                    <img src={article.authorImg}></img>
+                    <img src='/img/1.jpg'></img>
                     <div className='show-title-name'>
-                        <h1>{article.authorName}</h1>
-                        <h6>{article.postDate}</h6>
+                        <h1>{article.lastName}{article.firstName}</h1>
+                        <h6>{article.datetime.substr(0, 10)}</h6>
                     </div>
                 </div>
                 <div className='show-article-content'>
-                    <div dangerouslySetInnerHTML={{__html: article.articleContent}}/>
+                    <div dangerouslySetInnerHTML={{__html: article.content}}/>
                 </div>
             </div>
             <div onClick={evt => { evt.stopPropagation() }} className='show-article-message' >
