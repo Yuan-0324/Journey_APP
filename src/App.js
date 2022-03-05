@@ -44,16 +44,12 @@ const App = () => {
 
   const [token, setToken] = useState(localStorage.getItem("token"));
   const [searchResult, setSearchResult] = useState('JUJU');
+  const [guide_id, setGuideId] = useState('')
+
 
   let email = localStorage.getItem('email');
-  // console.log(email)
-  // const [userInfo, setUserInfo] = useState({
-  //   firstName: '千翔',
-  //   lastName: '徐',
-  //   email: 'consumer1@gmail.com',
-  //   id: 1,
-  //   guide_id: 6
-  // })
+
+
   const [userInfo, setUserInfo] = useState({
     name: '',
     lastName: '',
@@ -63,7 +59,7 @@ const App = () => {
     email: '',
     place: '',
     interested: '',
-    guideId: ''
+    guide_id: ''
   })
 
   // let getData = async () => {
@@ -96,6 +92,10 @@ const App = () => {
           interested: res.data[0].interested,
           // guide_id: res.data[0].guide_id
         })
+
+        window.addEventListener('storage', function (e) {
+          localStorage.setItem(e.key, e.oldValue)
+        })
       })
       .catch((err) => {
         console.log(err);
@@ -114,6 +114,8 @@ const App = () => {
         setUserInfo,
         searchResult,
         setSearchResult,
+        guide_id,
+        setGuideId
       }}
     >
       <BrowserRouter>

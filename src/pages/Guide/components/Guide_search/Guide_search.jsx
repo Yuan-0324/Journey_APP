@@ -17,18 +17,21 @@ const Search = () => {
 
     const homeSearch = useContext(context).searchResult;
     console.log(homeSearch)
-
-
+    
     // -------------------------
-
+    
     const currentUser = useContext(context).userInfo;
+    const guide_id = useContext(context).guide_id;
     const [guideArr, setGuideArr] = useState([]);
+    
+    console.log(guide_id);
 
     //判斷登入者是否已為嚮導(加入嚮導行列消失)
     const [isGuide, setIsGuide] = useState(false);
     const joinShowOrHide = isGuide ? { visibility: "hidden" } : { visibility: "visible" };
+    
     useEffect(async () => {
-        if (!isNaN(currentUser.guide_id) && currentUser.guide_id !==0 ) {
+        if (guide_id) {
             setIsGuide(true);
         }
     }, []);

@@ -10,6 +10,7 @@ import guideLevelImg from '../../../../images/guideImgs/guideJoinPage/guideLevel
 const Top_Introduction = () => {
     const [guide, setGuide] = useState({});
     const currentUser = useContext(context).userInfo;
+    const guide_id = useContext(context).guide_id;
     const [guideSelf, setGuideSelf] = useState(false);
     const guidePagePath = useParams();
     const [guideLevel, setGuideLevel] = useState('');
@@ -18,7 +19,7 @@ const Top_Introduction = () => {
     const [toggled, setToggled] = useState(false);
     const showOrHide = toggled ? { visibility: "visible" } : { visibility: "hidden" };
     useEffect(() => {
-        if (guidePagePath.gId == currentUser.guide_id) {
+        if (guidePagePath.gId == guide_id) {
             setGuideSelf(true);
             setToggled(true);
         }
@@ -26,12 +27,14 @@ const Top_Introduction = () => {
     const closeGuideSelf = () => {
         setToggled(false);
     }
+    
+    console.log(guide_id);
 
     //判斷登入者是否已為嚮導(加入嚮導行列消失)
     const [isGuide, setIsGuide] = useState(false);
     const joinShowOrHide = isGuide ? { visibility: "hidden" } : { visibility: "visible" };
     useEffect(async () => {
-        if (!isNaN(currentUser.guide_id)) {
+        if (guide_id) {
             setIsGuide(true);
         }
     }, []);

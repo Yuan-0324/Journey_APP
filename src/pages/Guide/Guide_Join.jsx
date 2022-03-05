@@ -10,10 +10,13 @@ import axios from 'axios';
 import context from '../../context';
 
 const Guide_Join = () => {
-    
+
     const currentUser = useContext(context).userInfo;
+    const setGuideId = useContext(context).setGuideId;
+    console.log(currentUser.email);
+
     const [guideForm, setGuideForm] = useState({
-        guideEmail: currentUser.email,
+        guideEmail: '',
         introduction: '',
         countNum: 1,
         acceptGender: '男',
@@ -24,12 +27,14 @@ const Guide_Join = () => {
         dateArray: [],
         guideImg: []
     });
-    // console.log(currentUser);
+
+    console.log(guideForm.guideEmail);
     //完成送出
     const [Toggled, setToggled] = useState(false);
     const HideOrShow = Toggled ? { visibility: "visible" } : { visibility: "hidden" };
 
     const finishBtnClick = async () => {
+        setGuideForm({ ...guideForm, ['guideEmail']: currentUser.email });
         //判斷資料都有填寫
         if (guideForm.introduction !== '' && guideForm.cityValue !== null && guideForm.viewpoint !== '' && guideForm.restaurant !== '') {
             //判斷照片有先上傳
@@ -37,6 +42,8 @@ const Guide_Join = () => {
                 //資料post後端
                 let result = await axios.post('http://localhost:8000/guideJoin', guideForm);
                 if (result.status == 200) {
+                    let guide_id = await axios.get('http://localhost:8000/guide/guide_id/' + currentUser.email);
+                    setGuideId(guide_id.data[0].guide_id);
                     setToggled(true);
                 } else {
                     alert('註冊失敗，請重新註冊！');
@@ -47,6 +54,8 @@ const Guide_Join = () => {
         } else {
             alert('請確實填寫所有欄位~');
         }
+
+
     };
     console.log(guideForm);
 
@@ -56,6 +65,7 @@ const Guide_Join = () => {
             e.preventDefault();
             $('html').animate({ scrollTop: $($(this).attr('href')).offset().top }, 500, 'linear');
         });
+       
     }, []);
 
     return (
