@@ -90,7 +90,6 @@ const Main_Section = () => {
 
     gsap.to(plane2Ref.current, {
       duration: 5,
-      delay: 3,
       motionPath: {
         path: "M1 0.5C35.5 12.8333 88.5 52.4 24.5 112C-55.5 186.5 166 287 123 122",
         autoRotate: true,
@@ -99,7 +98,6 @@ const Main_Section = () => {
 
     gsap.to(plane1Ref.current, {
       duration: 5,
-      delay: 3,
       motionPath: {
         path: "M77.4997 201.5C43.1663 201 -15.2003 184 25.9997 120C30.4997 110 32.5754 100.572 11.5 75.5C-17.5 41 19.4997 13 44.4997 0.5",
         autoRotate: true,

@@ -4,7 +4,7 @@ import $ from 'jquery/dist/jquery';
 import Article_Addition from './Article_Addition';
 
 let place = 3;//預設段落有三個
-const Edit_Article = ({articleList, toSetPost, userImg, userName, setEditArticle}) => {
+const Edit_Article = ({articleList, toSetPost, userImg, userLastName, userFirstName, setEditArticle}) => {
 
     //----- 初始文章預設，抓localstorage -----  
 
@@ -34,7 +34,7 @@ const Edit_Article = ({articleList, toSetPost, userImg, userName, setEditArticle
             case 'title':
                 newArrayData={
                     "place": place.toString(), "content":"","type":"h3",
-                    "html": `<textarea class='num${place.toString()} h3 in-bg border-0' rows='1' placeholder='Story Title...'></textarea>`
+                    "html": `<textarea class='num${place.toString()} h3 in-bg border-0 w-100' rows='1' placeholder='Story Title...'></textarea>`
                 }
                 break;
             case 'pic':
@@ -46,7 +46,7 @@ const Edit_Article = ({articleList, toSetPost, userImg, userName, setEditArticle
             case 'paragragh':
                 newArrayData={
                     "place": place.toString(),"content":"","type":"p",
-                    "html":`<textarea class='num${place.toString()} in-bg border-0 mt-2' rows='1' placeholder='What Happen...'></textarea>`
+                    "html":`<textarea class='num${place.toString()} in-bg border-0 mt-2 w-100' rows='1' placeholder='What Happen...'></textarea>`
                 }
                 break;
             }
@@ -116,7 +116,7 @@ const Edit_Article = ({articleList, toSetPost, userImg, userName, setEditArticle
                 case "p":
                     addArticle.map((elm,idx)=>{
                         if(elm.place == num){
-                            elm.content = `<pre class="mt-3">${e.target.value}</pre>`;
+                            elm.content = `<pre class="mt-3 p">${e.target.value}</pre>`;
                         }
                     })
                     break;
@@ -139,7 +139,7 @@ const Edit_Article = ({articleList, toSetPost, userImg, userName, setEditArticle
         })
         if(textLen.trim() == ""){
             $('#postBtn').text('建立文章...');//(有改:加上jquery)
-            localStorage.clear('oldArtice');
+            localStorage.removeItem('oldArtice');
             // console.log(addArticle);
             setAddArticle(orignArticle);  
         }else{
@@ -170,9 +170,9 @@ const Edit_Article = ({articleList, toSetPost, userImg, userName, setEditArticle
                 <h1>編輯文章<span onClick={setClose} ><AiOutlineCloseCircle /></span></h1>
                 <div className='edit-title-container'>
                     <img className='img-fluid' src={userImg}/>
-                    <div className='edit-title-name h3'>{userName}</div>
+                    <div className='edit-title-name h3'>{userLastName} {userFirstName}</div>
                 </div>
-                <div>
+                <div className='edit-article-content'>
                 {addArticle.map((elm,idx)=>
                     <Article_Addition key={idx}
                         data={elm}

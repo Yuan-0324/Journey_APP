@@ -129,6 +129,23 @@ svg {
                 span {
                     padding-right: 10px;
                 }
+                .bbtn {
+                    display: none;
+                }
+                input {
+                    @include Setting_Input();
+                    width: 250px;
+                    // //---display在這裡----//
+                    // display: none;
+                }
+                button {
+                    @include Setting_Button();
+                    // //---display在這裡----//
+                    // display: none;
+                    &:nth-child(5) {
+                        background-color: rgb(160, 160, 160);
+                    }
+                }
             }
 
             //-----------Normal Setting UserID----------- //
@@ -340,6 +357,7 @@ svg {
         }
         .Content_Shadow {
             @include Content_Shadow();
+            padding-bottom: 30px;
 
             //-----------Guide Setting item----------- //
             .Guide_item {
@@ -730,10 +748,20 @@ svg {
                                 }
                             }
                         }
+                        // .myButton {
+                        //     @include Setting_Button();
+                        //     margin-top: 10px;
+                        //     &:last-child {
+                        //         background-color: rgb(160, 160, 160);
+                        //     }
+                        // }
+                        
                         .myButton {
                             @include Setting_Button();
-                            margin-top: 10px;
+                            position: absolute;
+                            margin: -30px 20px 0 420px;
                             &:last-child {
+                                margin-left: 480px;
                                 background-color: rgb(160, 160, 160);
                             }
                         }
@@ -743,3 +771,5 @@ svg {
         }
     }
 }
+
+

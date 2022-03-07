@@ -1,5 +1,5 @@
 import React from 'react';
-import { FiEdit } from "react-icons/fi"
+import { FiEdit } from "react-icons/fi";
 
 const Setting_Normal_Email = ({ setPlaceSwitch, userInfo }) => {
 

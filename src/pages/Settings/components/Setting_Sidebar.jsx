@@ -1,6 +1,21 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
+import Axios from "axios";
+import context from '../../../context'
 
 const Setting_Sidebar = ({ setSidebarSwitch }) => {
+
+    const { userInfo } = useContext(context);
+    let guideOrNot = userInfo.member_is_guide;
+
+    switch (guideOrNot) {
+        case 0:
+            document.getElementsByClassName('guideButton')[0].style.display = 'none';
+            break;
+
+        case 1:
+            document.getElementsByClassName('guideButton')[0].style.display = 'block';
+            break;
+    }
 
     return (
         <div className="Sidebar">
@@ -17,7 +32,7 @@ const Setting_Sidebar = ({ setSidebarSwitch }) => {
                     setSidebarSwitch(2);
                 }}>隱私設定</li> */}
 
-                <li onClick={() => {
+                <li className="guideButton" onClick={() => {
                     setSidebarSwitch(3);
                 }}>嚮導設定</li>
 

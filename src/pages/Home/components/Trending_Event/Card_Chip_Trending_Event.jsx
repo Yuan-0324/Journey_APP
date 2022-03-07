@@ -140,8 +140,8 @@ function Responsive() {
               <div className="eventCard__header">
                 <img
                   className="eventCard__icon"
-                  src="https://source.unsplash.com/258x160/?taiwan,event"
-                  alt="chess"
+                  src={elm.api_pic}
+                  alt="eventpic"
                   data-id={elm.eventID}
                   onClick={clickEvent}
                 />
@@ -156,7 +156,7 @@ function Responsive() {
                   data-id={elm.eventID}
                   onClick={clickEvent}
                 >
-                  {elm.datetime.slice(0, 10)}
+                  {elm.date.slice(0, 10)}
                 </p>
                 <h2
                   className="eventCard__title"

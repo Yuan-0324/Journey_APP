@@ -39,22 +39,22 @@ const Community_Post = () => {
             Res.map((elm, idx) => (
               <div className="card" key={idx}>
                 <div className="card__header">
-                  <img
+                  {/* <img
                     src="https://source.unsplash.com/600x400/?taiwan,mountain"
                     alt="card__image"
                     className="card__image"
                     width="600"
-                  />
+                  /> */}
                 </div>
                 <div className="card__body">
                   <span className="tag tag-blue">{elm.society_name}</span>
-                  <h4>{elm.posttitle}</h4>
-                  <p>{elm.content}</p>
+                  {/* <h4>{elm.posttitle}</h4> */}
+                  <div dangerouslySetInnerHTML={{__html:elm.content}}/>
                 </div>
                 <div className="card__footer">
                   <div className="user">
                     <img
-                      src="https://i.pravatar.cc/40?img=1"
+                      src={elm.api_selfie}
                       alt="user__image"
                       className="user__image"
                     />
@@ -63,12 +63,12 @@ const Community_Post = () => {
                         {elm.lastName}
                         {elm.firstName}
                       </h5>
-                      <small>{elm.post_datetime}</small>
+                      <small>{elm.datetime.slice(0, 10)}</small>
                     </div>
                   </div>
                 </div>
               </div>
-            ))}
+            ))} 
         </div>
       </div>
     </div>

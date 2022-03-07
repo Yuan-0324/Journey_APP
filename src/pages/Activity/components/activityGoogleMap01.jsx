@@ -6,6 +6,7 @@ import GoogleMapReact from 'google-map-react';
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
+
 // Map
 class SimpleMap extends Component {
   static defaultProps = {

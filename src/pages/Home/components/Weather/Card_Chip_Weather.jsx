@@ -26,30 +26,29 @@ function Responsive({ indoorornot }) {
   };
 
   let checkindoor = parseInt(indoorornot);
+  async function getIndoor() {
+    await Axios.get("http://localhost:8000/home/event/indoor", indoorornot)
+      .then((res) => {
+        setRes(res.data);
+        // console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  async function getOutdoor() {
+    await Axios.get("http://localhost:8000/home/event/outdoor", indoorornot)
+      .then((result) => {
+        setRes(result.data);
+        // console.log(result.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
 
   useEffect(() => {
-    async function getIndoor() {
-      await Axios.get("http://localhost:8000/home/event/indoor", indoorornot)
-        .then((res) => {
-          setRes(res.data);
-          // console.log(res.data);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }
-
-    async function getOutdoor() {
-      await Axios.get("http://localhost:8000/home/event/outdoor", indoorornot)
-        .then((result) => {
-          setRes(result.data);
-          // console.log(result.data);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }
-
     if (checkindoor < 531) {
       getIndoor();
     } else {
@@ -108,7 +107,7 @@ function Responsive({ indoorornot }) {
               <div className="eventCard__header">
                 <img
                   className="eventCard__icon"
-                  src="https://source.unsplash.com/258x160/?taiwan"
+                  src={elm.api_pic}
                   alt="weather"
                   data-id={elm.eventID}
                   onClick={clickEvent}
@@ -124,7 +123,7 @@ function Responsive({ indoorornot }) {
                   data-id={elm.eventID}
                   onClick={clickEvent}
                 >
-                  {elm.datetime.slice(0, 10)}
+                  {elm.date.slice(0, 10)}
                 </p>
                 <h2
                   className="eventCard__title"

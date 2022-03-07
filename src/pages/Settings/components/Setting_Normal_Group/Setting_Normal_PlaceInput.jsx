@@ -5,7 +5,7 @@ import 'antd/dist/antd.css';
 
 const { TreeNode } = TreeSelect;
 
-const Setting_Normal_PlaceInput = ({ setPlaceSwitch, userInfo, setUserInfo, id }) => {
+const Setting_Normal_PlaceInput = ({ setPlaceSwitch, userInfo, setUserInfo, email }) => {
 
     let placeBeforeValue = userInfo.place;
     function placeOnChange(value, label, extra) {
@@ -18,7 +18,7 @@ const Setting_Normal_PlaceInput = ({ setPlaceSwitch, userInfo, setUserInfo, id }
         //存進物件 準備丟進put
         let totolPlace = {
             place: userInfo.place,
-            userId: id
+            email: email
         }
         setUserInfo(userInfo);
         await Axios.put('http://localhost:8000/general/setPlace', totolPlace)

@@ -24,9 +24,12 @@ const Personal_Article = ({ article }) => {
 
     const [editPageToggle, setEditPageToggle] = useState(false);
     const [articleToggle, setArticleToggle] = useState(false);
+    const [likeToggle, setLikeToggle] = useState(false);
     const [liked, setLiked] = useState(false);
     const [likeList, setLikeList] = useState([]);
     const likeState = useRef(false);
+    // -- 按讚詳情 --
+
 
     let likeArticleCheck = () => {
         const likedOrNot = article.member_email.find(email => email == currentUser.email);
@@ -44,6 +47,11 @@ const Personal_Article = ({ article }) => {
             // -- 加入按讚 --
             setLikeList([currentUser.email, ...likeList])
         }
+    }
+    // console.log(likeList)
+
+    let showLikeList = () => {
+        setLikeToggle(!likeToggle);
     }
 
     useEffect(() => {
@@ -91,6 +99,8 @@ const Personal_Article = ({ article }) => {
         time = time.join(':')
         return { day, timeWsec, time };
     }
+    console.log(viewUserInfo)
+
 
     // --- 偵測 edit page 是否開啟 ---
 
@@ -102,15 +112,15 @@ const Personal_Article = ({ article }) => {
         }
     }, [editPageToggle, articleToggle])
 
-    // console.log(`PERSONAL_ARTICLE`);
-
     useEffect(() => {
+        window.onclick = () => {
+            setLikeToggle(false);
+        }
         setLikeList(article.member_email);
         likeArticleCheck();
         likeState.current = false;
     }, [])
 
-    // console.log(article.articleID, likeList, likeNums)
     return (
         <>
             {editPageToggle &&
@@ -149,7 +159,14 @@ const Personal_Article = ({ article }) => {
                 <div className='article-message'>
                     <div className='message-icon'>
                         {/* React Icons Start */}
-                        <span className='like-nums'>{likeList.length}<span>個讚</span></span>
+                        <span onClick={showLikeList} className='like-nums'>{likeList.length}<span>個讚</span></span>
+                        {/* <div className='show-like-list'>
+                            {
+                                article.member_email.map(like => <div className='like-ppl' key={like}>
+                                    <h1>{like}</h1>
+                                </div>)
+                            }
+                        </div> */}
                         <div>
                             <button onClick={likeCheck}>{liked ? <FaHeart style={{ color: 'red' }} /> : <FaRegHeart />}</button>
                             <button onClick={showArticlePage}><FaRegCommentAlt /></button>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import $ from 'jquery/dist/jquery';
+import moment from 'moment';
 
 //css
 import 'antd/dist/antd.css';
@@ -17,7 +18,8 @@ import {
     DatePicker,
     AutoComplete,
     Cascader,
-    Tooltip
+    Tooltip,
+    TreeSelect
 } from 'antd';
 
 
@@ -26,8 +28,9 @@ import {
 const Section01ContentInformation = ({ postNewEvent, setPostNewEvent }) => {
     // $('.ant-picker-input').childElement().value(fun{
     // })
+    const { TreeNode } = TreeSelect;
 
-
+    
 
 
 
@@ -68,29 +71,23 @@ const Section01ContentInformation = ({ postNewEvent, setPostNewEvent }) => {
     }
     //日期
     const inputDate = (e) => {
-        //取得年份
-        var outputYear = e._d.getFullYear();
-        //取得月份
-        var outputMonth = (e._d.getMonth() + 1);
-        //取得日期
-        var outputDate = e._d.getDate();
-        //取得星期
-        var outputDay = e._d.getDay();
-        //組合
-        var outputFull = `${outputYear}/${outputMonth}/${outputDate}/星期${outputDay}`
-        // let full=JSON.stringify(outputValue)
-        // console.log(full);
-        // console.log(outputFull);
-        // console.log(e._d);
-        // console.log(typeof full);
-        postNewEvent.date = outputFull
+        let activityTime = moment(e).format('YYYY-MM-DD');
+        postNewEvent.date = activityTime;
         setPostNewEvent(postNewEvent);
+        console.log(postNewEvent.date);
+        console.log(activityTime);
     }
     //時間
     const inputTime = (e) => {
         postNewEvent.time = e.target.value
         setPostNewEvent(postNewEvent);
         // console.log(e.target.value);
+    }
+     //活動縣市
+     const inputLocation = (e) => {
+        postNewEvent.location = e
+        setPostNewEvent(postNewEvent);
+        console.log(postNewEvent.location);
     }
     //活動地點
     const inputAddress = (e) => {
@@ -112,7 +109,8 @@ const Section01ContentInformation = ({ postNewEvent, setPostNewEvent }) => {
     const inputAcceptNum = (e) => {
         postNewEvent.Num = people
         setPostNewEvent(postNewEvent);
-        // console.log(people);
+        console.log(postNewEvent.Num);
+        console.log(typeof postNewEvent.Num);
     }
     //活動場所
     const inputPlace = (e) => {
@@ -154,30 +152,77 @@ const Section01ContentInformation = ({ postNewEvent, setPostNewEvent }) => {
                         </Input.Group> */}
                         <p className="timeText">時間</p>
                         <div className="timeInput" >
-
-                            {/* <DatePicker
-                                    selected={props.date}
-                                    // onChange={handleDateChange}
-                                    maxDate={new Date()}
-                                    dateFormat="MMM dd, yyyy"
-                                    className="picker"
-                                /> */}
-
                             <Input onChange={inputTime} placeholder="請輸入時間" type='time' />
-
                         </div>
                     </div>
-                    {/* <!-- 地點 --> */}
-                    <div className="location">
-                        <p>地點</p>
+
+                     {/* 活動縣市 */}   
+                     <div className="location">
+                        <p>縣市</p>
                         <div className="locationInput">
+
+                            <div className="searchCity">
+                                <TreeSelect className="guideCityInput"
+                                    showSearch
+                                    allowClear
+                                    style={{ width: "185px" }}
+                                    // value=
+                                    dropdownStyle={{ overflow: "auto" }}
+                                    placeholder="請選取縣市"
+                                    onChange={inputLocation}
+                                    size='large'
+                                    notFoundContent='無搜尋結果'
+                                >
+                                    <TreeNode value="北部" title={<b style={{ fontSize: '16px' }}>北部</b>} selectable={false} >
+                                        <TreeNode value="台北" title="台北" style={{ fontSize: '16px' }} />
+                                        <TreeNode value="新北" title="新北" style={{ fontSize: '16px' }} />
+                                        <TreeNode value="基隆" title="基隆" style={{ fontSize: '16px' }} />
+                                        <TreeNode value="新竹" title="新竹" style={{ fontSize: '16px' }} />
+                                        <TreeNode value="桃園" title="桃園" style={{ fontSize: '16px' }} />
+                                        <TreeNode value="宜蘭" title="宜蘭" style={{ fontSize: '16px' }} />
+                                    </TreeNode>
+                                    <TreeNode value="中部" title={<b style={{ fontSize: '16px' }}>中部</b>} selectable={false} >
+                                        <TreeNode value="台中" title="台中" style={{ fontSize: '16px' }} />
+                                        <TreeNode value="苗栗" title="苗栗" style={{ fontSize: '16px' }} />
+                                        <TreeNode value="彰化" title="彰化" style={{ fontSize: '16px' }} />
+                                        <TreeNode value="南投" title="南投" style={{ fontSize: '16px' }} />
+                                        <TreeNode value="雲林" title="雲林" style={{ fontSize: '16px' }} />
+                                    </TreeNode>
+                                    <TreeNode value="南部" title={<b style={{ fontSize: '16px' }}>南部</b>} selectable={false} >
+                                        <TreeNode value="高雄" title="高雄" style={{ fontSize: '16px' }} />
+                                        <TreeNode value="台南" title="台南" style={{ fontSize: '16px' }} />
+                                        <TreeNode value="嘉義" title="嘉義" style={{ fontSize: '16px' }} />
+                                        <TreeNode value="屏東" title="屏東" style={{ fontSize: '16px' }} />
+                                    </TreeNode>
+                                    <TreeNode value="東部" title={<b style={{ fontSize: '16px' }}>東部</b>} selectable={false} >
+                                        <TreeNode value="花蓮" title="花蓮" style={{ fontSize: '16px' }} />
+                                        <TreeNode value="台東" title="台東" style={{ fontSize: '16px' }} />
+                                    </TreeNode>
+                                    <TreeNode value="離島" title={<b style={{ fontSize: '16px' }}>離島</b>} selectable={false} isLeaf={false} >
+                                        <TreeNode value="澎湖" title="澎湖" style={{ fontSize: '16px' }} />
+                                        <TreeNode value="金門" title="金門" style={{ fontSize: '16px' }} />
+                                        <TreeNode value="馬祖" title="馬祖" style={{ fontSize: '16px' }} />
+                                        <TreeNode value="綠島" title="綠島" style={{ fontSize: '16px' }} />
+                                        <TreeNode value="蘭嶼" title="蘭嶼" style={{ fontSize: '16px' }} />
+                                        <TreeNode value="小琉球" title="小琉球" style={{ fontSize: '16px' }} />
+                                    </TreeNode>
+                                </TreeSelect>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* 活動縣市底 */}
+                    {/* <!-- 地點 --> */}
+                    <div className="address">
+                        <p>地點</p>
+                        <div className="addressInput">
                             <Input onChange={inputAddress} type="text" placeholder="地址" />
                         </div>
                     </div>
 
-                    <div className="location">
+                    <div className="activityType">
                         <p>類型</p>
-                        <div className="locationInput">
+                        <div className="activityTypeInput">
                             <select value={AdvancedSearchType} onChange={inputKind}>
                                 <option value='不限'>不限</option>
                                 <option value='戶外踏青'>戶外踏青</option>

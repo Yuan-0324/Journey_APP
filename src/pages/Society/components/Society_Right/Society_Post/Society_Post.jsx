@@ -3,73 +3,80 @@ import React, {useEffect, useContext, useLayoutEffect, useRef} from 'react';
 import { useParams } from "react-router-dom";
 import $ from 'jquery/dist/jquery';
 import axios from 'axios';
-import context from '../../../../../context';
+
 //引入component
 import Article_Area from './Article_Area/Article_Area';
 import Edit_Article from './Edit_Article';
+import context from '../../../../../context';
+
 
 // 整合 Po文內容
 
-const Society_Post = () => {
+const Society_Post =() => {
 
-  const currentUser = useContext(context);
-  let userId = currentUser.userInfo.id;
-  let userImg = currentUser.userInfo.img;
-  let userName = currentUser.userInfo.lastName+currentUser.userInfo.firstName;
-  let userEmail = currentUser.userInfo.email;
-
+  const currentUser = useContext(context).userInfo;
+    let userImg = localStorage.getItem('selfie');
+    let userLastName = currentUser.lastName;
+    let userFirstName = currentUser.firstName;
+    let userEmail = currentUser.email;
+    let userName = currentUser.name;  
+    let userId = localStorage.getItem('id');
+  
+  
   let societyID = useParams();
 
   //-----Edit_Article隱藏-----
   let  [editArticle, setEditArticle ]= React.useState(false);
 
-  const callTime = useRef(0);//呼叫get文章次數
+  
   let allArr = [];
-  useEffect(() => {
-    
-    if(societyID.id){
-      // !!!!!Axios.get!!!!!取得社團的文章
-      
-      axios.post('http://127.0.0.1:8000/eachgroup/article',{id : societyID.id, callTime: callTime.current})
-      .then(res => {
-        allArr = res.data;
-        // console.log(allArr);
-        allArr.sort(function(a, b) {
-          if(a.like_num < b.like_num){
-            return 1; // 正數時，後面的數放在前面
-          } else {
-            return -1 // 負數時，前面的數放在前面
-          }
-        })
-        callTime.current = callTime.current+1;
-        setArticleList(allArr);
-        }) 
+  const [articleList, setArticleList] = React.useState([]);
+  const callTime = useRef(0);//呼叫get文章次數
 
-    }else{
-      // !!!!!Axios.get!!!!!取得follow個人及attend社團的文章
-      
-      
-      axios.post('http://127.0.0.1:8000/followed/article',{id : `${userId}`, callTime: callTime.current})
-      .then(res => {
-        allArr = res.data;
-        axios.post('http://127.0.0.1:8000/society/article',{id : `${userId}`, callTime: callTime.current})
+    const getArticle = () =>{
+
+      if(societyID.id){
+        // !!!!!Axios.get!!!!!取得社團的文章      
+        axios.post('http://127.0.0.1:8000/eachgroup/article',{id : societyID.id, callTime: callTime.current})
         .then(res => {
-          allArr = allArr.concat(res.data)
+          allArr = res.data;
           allArr.sort(function(a, b) {
             if(a.like_num < b.like_num){
               return 1; // 正數時，後面的數放在前面
             } else {
               return -1 // 負數時，前面的數放在前面
             }
-          });
+          })
           callTime.current = callTime.current+1;
           setArticleList(allArr);
-          })
-        })  
-    }  
+          }) 
+  
+      }else{
+        // !!!!!Axios.get!!!!!取得follow個人及attend社團的文章
+        
+        axios.post('http://127.0.0.1:8000/followed/article',{id : `${userId}`, callTime: callTime.current})
+        .then(res => {
+          allArr = res.data;
+           axios.post('http://127.0.0.1:8000/society/article',{id : `${userId}`, callTime: callTime.current})
+          .then(res => {
+            allArr = allArr.concat(res.data)
+            allArr.sort(function(a, b) {
+              if(a.like_num < b.like_num){
+                return 1; // 正數時，後面的數放在前面
+              } else {
+                return -1 // 負數時，前面的數放在前面
+              }
+            });
+            callTime.current = callTime.current+1;
+            setArticleList(allArr);
+            })
+          })  
+      }  
+    }
+  useEffect(() => {
+    getArticle();
      
   }, []);
-  const [articleList, setArticleList] = React.useState([]);
 
   //-----Post新文章關閉彈跳視窗，觸發呈現新文章到畫面上-----
   const setPost = async(data) =>{
@@ -81,7 +88,7 @@ const Society_Post = () => {
       alert('未輸入任何值');
       return;
     }else{
-      localStorage.clear('oldArticle');
+      localStorage.removeItem('oldArticle');
       let today = new Date();
       let yy = today.getFullYear();
       let month = today.getMonth()+1;
@@ -92,9 +99,9 @@ const Society_Post = () => {
       
       let newArrayData = {
         articleID: '',
-        selfie: '/img/1.jpg',
-        lastName: 'Lo',
-        firstName:'Justin',
+        selfie: userImg,
+        lastName: userLastName,
+        firstName: userFirstName,
         datetime: todayDate,
         content: `${cont}`,
         like_num: 0
@@ -108,8 +115,6 @@ const Society_Post = () => {
     } 
     setEditArticle(false) 
   }
-
-  console.log(currentUser.userInfo)
 
   //-----文章編輯彈跳視窗-----
   const [editPageToggle, setEditPageToggle] = React.useState(false);
@@ -146,7 +151,6 @@ const Society_Post = () => {
         axios.post('http://127.0.0.1:8000/eachgroup/article',{id : societyID.id, callTime: callTime.current})
         .then(res => {
           allArr = res.data;
-          // console.log(allArr);
           allArr.sort(function(a, b) {
             if(a.like_num < b.like_num){
               return 1; // 正數時，後面的數放在前面
@@ -197,24 +201,21 @@ const Society_Post = () => {
     return (
 
       <>
-        {editArticle && <Edit_Article articleList={articleList} toSetPost={setPost} userImg={userImg} userName={userName} setEditArticle={setEditArticle}/>}
+        {editArticle && <Edit_Article articleList={articleList} toSetPost={setPost} userImg={userImg} userLastName={userLastName} userFirstName={userFirstName} setEditArticle={setEditArticle}/>}
         <div>
 
-            <div className='post-area d-flex p-4'>
 
-                <div className='selfie rounded-circle overflow-hidden mr-3 d-flex justify-content-center'>
-                  <img className='img-fluid' src={userImg}/>
-                </div>
-
-                <div className='post-btn' onClick={showEditPage} >
+          <div className='post-area'>
+              <img src={userImg} alt=""></img>
+              <div className='post-btn' onClick={showEditPage}>
                   <h4>想說些什麼？</h4>
-                </div> 
+              </div>
+          </div>
             
-            </div>
-
  
           <div>
             <div id="content" >
+            
               {articleList.map((elm,idx)=>
               <Article_Area
                 key={idx}
@@ -226,7 +227,9 @@ const Society_Post = () => {
                 articleList={articleList}
                 userImg={userImg}
                 userId = {userId}
-              />)}
+              />
+              )}
+            
             </div>
             <div className='loading-img mx-auto' >
               <img src="/img/loading.gif" className='img-fluid' alt="" />

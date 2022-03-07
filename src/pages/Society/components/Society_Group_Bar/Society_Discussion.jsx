@@ -8,11 +8,18 @@ import context from '../../../../context';
 //引入component
 import Article_Area from '../Society_Right/Society_Post/Article_Area/Article_Area';
 import Edit_Article from '../Society_Right/Society_Post/Edit_Article';
-
 // 整合 Po文內容
 
 const Society_Discussion = () => {
   // 個人在此社團身分
+  const currentUser = useContext(context).userInfo;
+    let userId = currentUser.id;
+    let userImg = currentUser.selfie;
+    let userLastName = currentUser.lastName;
+    let userFirstName = currentUser.firstName;
+    let userEmail = currentUser.email;
+    let userName = currentUser.name;
+
   const [groupRight, setGroupRight] = React.useState({right:""})
   let societyID = useParams();
 
@@ -25,12 +32,6 @@ const Society_Discussion = () => {
         }) 
           
   }, []);
-
-  const currentUser = useContext(context)
-  let userId = currentUser.userInfo.id;
-  let userImg = currentUser.userInfo.img;
-  let userName = currentUser.userInfo.lastName+currentUser.userInfo.firstName;
-  let userEmail = currentUser.userInfo.email;
 
 
   //-----Edit_Article隱藏-----
@@ -46,7 +47,6 @@ const Society_Discussion = () => {
       axios.post('http://127.0.0.1:8000/eachgroup/article',{id : societyID.id, callTime: callTime.current})
       .then(res => {
         allArr = res.data;
-        // console.log(allArr);
         allArr.sort(function(a, b) {
           if(a.like_num < b.like_num){
             return 1; // 正數時，後面的數放在前面
@@ -105,9 +105,9 @@ const Society_Discussion = () => {
       
       let newArrayData = {
         articleID: '',
-        selfie: '/img/1.jpg',
-        lastName: 'Lo',
-        firstName:'Justin',
+        selfie: userImg,
+        lastName: userLastName,
+        firstName: userFirstName,
         datetime: todayDate,
         content: `${cont}`,
         like_num: 0
@@ -157,7 +157,6 @@ const Society_Discussion = () => {
         axios.post('http://127.0.0.1:8000/eachgroup/article',{id : societyID.id, callTime: callTime.current})
         .then(res => {
           allArr = res.data;
-          // console.log(allArr);
           allArr.sort(function(a, b) {
             if(a.like_num < b.like_num){
               return 1; // 正數時，後面的數放在前面
@@ -211,18 +210,12 @@ const Society_Discussion = () => {
         {editArticle && <Edit_Article articleList={articleList} toSetPost={setPost} userImg={userImg} userName={userName} setEditArticle={setEditArticle}/>}
         <div>
         {groupRight.right!=0  &&
-            <div className='post-area d-flex p-4'>
-            
-            
-                <div className='selfie rounded-circle overflow-hidden mr-3 d-flex justify-content-center'>
-                  <img className='img-fluid' src={userImg}/>
-                </div>
-
-                <div className='post-btn' onClick={showEditPage} >
-                  <h4>想說些什麼？</h4>
-                </div> 
-             
+          <div className='post-area'>
+            <img src='' alt=""></img>
+            <div className='post-btn' onClick={showEditPage}>
+                <h4>想說些什麼？</h4>
             </div>
+          </div>
           }
         
  

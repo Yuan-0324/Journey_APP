@@ -19,6 +19,11 @@ $fontcolor: #264148;
         margin: 0 auto;
         // 初始化
         .event-banner {
+            img {
+                width: 1100px;
+                height: 250px;
+                background-color: #d6d6d6;
+            }
             .slick-slider {
                 .slick-list {
                     border-radius: 10px;
@@ -51,7 +56,7 @@ $fontcolor: #264148;
                     display: flex;
                     // border: $border;
                     position: relative;
-                    width: 400px;
+                    width: 550px;
                     height: 50px;
                     background-color: #fff;
                     // border: none;
@@ -62,10 +67,11 @@ $fontcolor: #264148;
                         width: 1.5px;
                         height: 40px;
                         background: lightgrey;
+                        margin-right: 20px;
                     }
                     .searchInput {
                         display: flex;
-                        width: 300px;
+                        width: 600px;
                         height: 50px;
                         // background-color: #fff;
                         // border: none;
@@ -81,9 +87,10 @@ $fontcolor: #264148;
                             margin-left: 10px;
                         }
                         .searchInputItem {
-                            width: 300px;
+                            width: 400px;
                             height: 50px;
                             border: none;
+                            display: flex;
                             //
                             // border-left: #d6d6d6 2px solid ;
                             // height: 32px;
@@ -95,7 +102,16 @@ $fontcolor: #264148;
                             // .searchInputItemPlace{
                             //     // margin-top: 10px;
                             //     // border-right: #d6d6d6 2px solid ;
-
+                            .searchInputItemKeyword {
+                                margin-left: 15px;
+                                height: 50px;
+                                width: 200px;
+                                border: none;
+                            }
+                            .searchInputItemLocation {
+                                height: 50px;
+                                border: none;
+                            }
                             // }
                             .ant-select-selector {
                                 height: 25px;
@@ -204,7 +220,7 @@ $fontcolor: #264148;
                         // }
                     } //advancedSearch底
                     .activitySearchAction {
-                        margin: 5px 15px;
+                        margin: 5px 5px;
                         // padding: 5px ;
                         // margin-left: 20px;
                         // //
@@ -248,7 +264,7 @@ $fontcolor: #264148;
                     margin-right: 20px;
                     height: 213px;
                     width: 360px;
-                    .header-banner{
+                    .header-banner {
                         // background-image: url(https://firebasestorage.googleapis.com/v0/b/genuine-wall-311416.appspot.com/o/event%2F1%2F105%2Factivity1.png?alt=media&token=26bd326a-1817-4a8d-9ae0-b920443e6d32);
                         // border: $border;
                         background-color: #d6d6d6;
@@ -273,7 +289,7 @@ $fontcolor: #264148;
                     // opacity:0.6;
                     // z-index: 1;
                     height: 213px;
-                    width: 716px;
+                    width: 520px;
                     border-bottom-right-radius: 10px;
                     border-top-right-radius: 10px;
                     .information {
@@ -284,15 +300,22 @@ $fontcolor: #264148;
                             // flex-direction: row-reverse;
                             // margin-right: 30px;
                             .activityTimeDate {
+                                
                                 display: flex;
                                 margin-right: 30px;
                                 color: #1697d5;
-                                font-weight: 400;
+                                font-weight: 600;
+                                font-size: 18px;
+                                .activityTimeDateLeft{
+                                 margin-right: 10px;   
+                                }
                             }
                             .activityTimeDatePlace {
                                 position: relative;
                                 // margin-right: 30px;
                                 color: #1697d5;
+                                font-weight: 600;
+                                font-size: 18px;
                                 font-weight: bold;
                                 .activityTimeDatePlaceIcon {
                                     display: inline;
@@ -303,11 +326,13 @@ $fontcolor: #264148;
                             }
                         }
                         h1 {
-                            font-size: 24px;
+                            font-size: 28px;
                             margin-top: 10px;
                             font-weight: 600;
                         }
                         p {
+                            font-size: 20px;
+                            font-weight: 600;
                             margin-top: 10px;
                             line-height: 22px;
                             // font-weight: 300;

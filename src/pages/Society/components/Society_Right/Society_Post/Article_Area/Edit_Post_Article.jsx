@@ -31,7 +31,7 @@ const Edit_Post_Article = ({editArticleList, setEditPostArticle, setEditPost, us
                 newResult.push({
                     "place": `${idx}`,"content":`${elm}`,"type":"h3",
                     "html":`<textarea class='num${idx} h3 in-bg border-0' rows='1' placeholder='Story Title...'>${newElm}</textarea>`})
-            }else if(elm.substring(0, 18) == `<pre class="mt-3">` || elm.substring(0, 18) == `<pre class='mt-3'>` || elm.substring(0, 18) == '<pre class=`mt-3`>'){
+            }else if(elm.substring(0, 20) == `<pre class="mt-3 p">` || elm.substring(0,20) == `<pre class='mt-3 p'>` || elm.substring(0, 20) == '<pre class=`mt-3 p`>'){
                 newElm = elm.substring(18, elm.length-6)
                 newResult.push({
                     "place": `${idx}`,"content":`${elm}`,"type":"p",

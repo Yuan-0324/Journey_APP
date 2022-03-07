@@ -38,14 +38,9 @@ const ActivityListItem = ({ data }) => {
    
     // console.log(state.eventID);
     let getImg = async () => {
-        
-        console.log(eventIDdata);
-        console.log(user_ID);
         const forsetRef = ref(storage, `/event/${user_ID}/${eventIDdata}/activity${user_ID}.png`);
         let url = await getDownloadURL(forsetRef);
         setImg(url)
-        
-    
     }
     useEffect(() => {
 
@@ -84,11 +79,11 @@ const ActivityListItem = ({ data }) => {
                     <div className="information">
                         <div className="activityTime">
                             <div className='activityTimeDate'>
-                                <div>{data.date}</div>
+                                <div className='activityTimeDateLeft'>{data.date}</div>
                                 <div>{data.time}</div>
                                 <div></div>
                             </div>
-                            <div className='activityTimeDatePlace'> <div className='activityTimeDatePlaceIcon'><IoLocationSharp /></div>{data.address}</div>
+                            <div className='activityTimeDatePlace'> <div className='activityTimeDatePlaceIcon'><IoLocationSharp /></div>{data.location}</div>
                         </div>
                         <h1>{data.title}</h1>
                         <p>{data.introduction}</p>

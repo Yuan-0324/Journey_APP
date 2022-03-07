@@ -1,6 +1,9 @@
+import React,{useContext,useEffect} from "react";
 import Society_Post from "./Society_Post/Society_Post";
 import Society_Group from './Society_Group';
 import Society_Group_Bar from "../Society_Group_Bar/society_Group_Bar";
+import Context from '../../../../context';
+
 
 const Society_Right = ({showGroup, currentParams,justForGroup,setGroupPicsave,setGroupPicSit}) => {
 

@@ -240,6 +240,13 @@
   color: #1697d5;
 }
 
+#loggedIn ul .navbar li .navLink:hover::after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+}
+
 #loggedIn ul .navbar li .navLink::after {
   content: "";
   position: absolute;

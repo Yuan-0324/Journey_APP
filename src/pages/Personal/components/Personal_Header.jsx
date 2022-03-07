@@ -16,13 +16,12 @@ import logo from '../../../images/JourneyIcon.png';
 import Personal_Followed from './Personal_Header_Components/Personal_Followed';
 
 // 個人資料顯示，包含個人 Banner
-const Personal_Header = ({ personalBanner, setPersonalBanner}) => {
+const Personal_Header = ({ personalBanner, setPersonalBanner }) => {
 
     // --- History ---
     const history = useHistory();
 
     // ---- 使用者資訊 ----
-
 
     const userImg = useContext(Context).viewUserImg;
     const currentUserFollowed = useContext(Context).currentUserFollowed;
@@ -33,11 +32,24 @@ const Personal_Header = ({ personalBanner, setPersonalBanner}) => {
     const viewUserImg = useContext(Context).viewUserImg;
     const currentPath = useParams()
 
+
+    // 取得及 set
+    const viewUserState = useContext(Context).viewUserState;
+    const setViewUserState = useContext(Context).setViewUserState;
+
+
     // --- 使用者資訊 --- 
     const currentUser = useContext(Context).userInfo;
     const currentUserImg = useContext(Context).currentUserImg;
 
     // ---- 狀態管理 ----
+
+    // ---- 個人大頭貼上傳 ----
+    const [profileModal, setProfileModal] = useState(false);
+    const [profileState, setProfileState] = useState({
+        updateFile: '',
+        url: userImg
+    });
 
     const submitStatue = useRef(false);
 
@@ -52,7 +64,7 @@ const Personal_Header = ({ personalBanner, setPersonalBanner}) => {
         followBtn: { color: '#1697d5', backgroundColor: '#fff' },
         followNum: 0,
         showFollow: false
-    })
+    });
 
     // ---- 瀏覽對象 追蹤清單 ----
 
@@ -78,6 +90,7 @@ const Personal_Header = ({ personalBanner, setPersonalBanner}) => {
         submitStatue.current = false;
         setPersonalBanner(viewUserInfo.personal_banner)
         fetchData();
+        setProfileState({...profileState, ['url']: userImg});
     }, []);
 
     // ---- Follow 功能按鈕 ----
@@ -182,8 +195,6 @@ const Personal_Header = ({ personalBanner, setPersonalBanner}) => {
         })
     }
 
-    // console.log(currentUserFollowed.length)
-
     // ---- 送出上傳照片 ----
 
     let bannerSend = (evt) => {
@@ -214,7 +225,47 @@ const Personal_Header = ({ personalBanner, setPersonalBanner}) => {
     // ---- 顯示 大頭貼 ---
 
     let showHeadshot = () => {
-        window.open(userImg);
+        // window.open(userImg);
+
+        // ---- 0306 ----
+        setProfileModal(!profileModal);
+    }
+
+    let personalProfileToggle = () => {
+        setProfileModal(!profileModal);
+        setProfileState({...profileState, ['tempImg']:''})
+    }
+
+    let personalSend = () => {
+        const storageRef = ref(storage, `member/${currentUser.id}/headShot${currentUser.id}.png`);
+        const metadata = {
+            contentType: profileState.updateFile.type
+        };
+        const upadateTask = uploadBytesResumable(storageRef, profileState.updateFile, metadata);
+
+        upadateTask.on('state_changed', snapshot => {
+            // 上傳中
+            const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            console.log('Upload is ' + progress + '% done');
+        }, (err) => {
+            // 上傳錯誤
+            console.log(err);
+        }, async () => {
+            // 成功
+            let url = await getDownloadURL(upadateTask.snapshot.ref);
+            console.log(url);
+            let result = await Axios.post('http://localhost:8000/personal/personal/profile/change', { id: currentUser.id, url });
+            // setPersonalBanner(url)
+            // setState({ ...state, ['changeModal']: !state.changeModal, ['tempImgUrl']: '', ['statusBar']: { display: 'none' } })
+            setProfileState({...profileState, ['tempImg']:''})
+            setViewUserState({...viewUserState, ['viewUserImg']: url});
+            setProfileModal(false);
+        })
+    }
+
+    let personalRevceive = (evt) => {
+        let img = URL.createObjectURL(evt.target.files[0]);
+        setProfileState({...profileState, ['updateFile']:evt.target.files[0], ['tempImg']: img});
     }
 
     // ---- 顯示 追蹤清單 ----
@@ -223,7 +274,10 @@ const Personal_Header = ({ personalBanner, setPersonalBanner}) => {
         setState({ ...state, ['showFollow']: !state.showFollow });
     }
 
-    // console.log(`PERSONAL_HEADER`)
+
+
+
+
 
     return (
         <header className='personal-header'>
@@ -253,10 +307,39 @@ const Personal_Header = ({ personalBanner, setPersonalBanner}) => {
 
                             </>
                         }
-                        
+
                     </div>
                 </div>
             }
+
+            {/* 大頭貼的位置 */}
+            {
+                profileModal && <div className='profile-pic-change'>
+                    <div className='change-container'>
+                        <div onClick={personalProfileToggle} className='close-btn'><MdCancel /></div>
+                        {
+                            profileState.tempImg ? <>
+                                <img className='temp-img-show' src={profileState.tempImg} alt="" />
+                                <button onClick={personalSend} className='confirm-profile'>確認送出</button>
+                                <div style={state.statusBar} className='show-status'>
+                                    <img src={logo} alt="" />
+                                    <div className='progress-bar-show'>
+                                        <div style={{ width: state.processBar }}></div>
+                                    </div>
+                                </div>
+                            </> : <>
+                                <h3>請上傳您的頭像照片</h3>
+                                <div className='upload-wrap'>
+                                    <input onChange={personalRevceive} type="file" accept='image/png, image/jpeg' />
+                                    <FiUpload />
+                                </div>
+
+                            </>
+                        }
+                    </div>
+                </div>
+            }
+
 
             {/* 顯示瀏覽照片 */}
             {
@@ -273,7 +356,8 @@ const Personal_Header = ({ personalBanner, setPersonalBanner}) => {
             <div onClick={bannerShowBtn} className='header-banner' style={{ backgroundImage: `url('${personalBanner}')` }} ></div>
             <div className='header-content'>
                 <div className='profile-pic'>
-                    <img src={userImg} onClick={showHeadshot} />
+                    {/* 大頭貼 */}
+                    <div className='headShot' style={{backgroundImage: `url("${viewUserState.viewUserImg}")`}} onClick={showHeadshot} ></div>
                 </div>
                 <div className='profile-content'>
                     <h1 className='profile-name'>{viewUserInfo.lastName} {viewUserInfo.firstName}</h1>

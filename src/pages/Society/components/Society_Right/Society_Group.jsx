@@ -2,6 +2,7 @@ import React, {useEffect, useContext} from 'react';
 import axios from 'axios';
 import context from '../../../../context';
 import { useHistory } from "react-router-dom";
+import My_Group from './My_Group';
 
 const Society_Group = (props) =>{
 
@@ -48,43 +49,29 @@ const Society_Group = (props) =>{
         history.push(`Society/group/${groupId}`);
     }
 
+    // 區分社團Button
+    let gb = 1;
+    
     return (
         <div className='society-group'>
             <div className='h3 mt-3 ml-3'>我的社團</div>
             <div className='clearfix'>
                 <div className='common-use-group '>
                     {myGroup.map((elm,idx)=>
-                        <div key={idx} className='group-swich mt-3 float-left ml-3 cursor-pointer'  onClick={swichGroup}>
-                        <div>
-                            <img src={`data:image/png;base64,${elm.bg_pic}`}
-                             alt="" data-club={elm.societyID} /> 
-                        </div>
-                         <div className='text-align-left' data-club={elm.societyID}> 
-                             <p className='m-1 ml-2' data-club={elm.societyID}>{elm.society_name}</p>
-                             <span className='leef' data-club={elm.societyID}>{elm.society_num}成員</span>
-                         </div>
-                    </div>
+                        <My_Group key={idx} elm={elm} swichGroup={swichGroup}/>
                     )}
                 </div>
             </div>
 
             <hr />
 
-            <div className='h3 mt-3 ml-3'>推薦社團</div>   
+            <div className='h3 mt-3 ml-3'>推薦社團</div> 
+
             <div className='clearfix'>
                 <div>
 
                     {recommendGroup.map((elm,idx)=>
-                       <div key={idx} className='group-swich mt-3 float-left ml-3 cursor-pointer' data-club={elm.societyID}  onClick={swichGroup}>
-                       <div data-club={elm.societyID}>
-                           <img src={`data:image/png;base64,${elm.bg_pic}`} alt="" data-club={elm.societyID} /> 
-                       </div>
-                        <div className='text-align-left' data-club={elm.societyID}> 
-                            <p className='m-1 groupy-name ml-2' data-club={elm.societyID}>{elm.society_name}</p>
-                            <span className='leef' data-club={elm.societyID}>{elm.member_num}成員</span>
-                        </div>
-                       <button className='btn btn-outline-success text-align-rigth' data-club={elm.societyID}>加入社團</button>
-                   </div>
+                       <My_Group key={idx} elm={elm} swichGroup={swichGroup} gb={gb}/>
                     )}
 
                 </div>

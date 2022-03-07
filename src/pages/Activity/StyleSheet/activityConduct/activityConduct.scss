@@ -289,7 +289,8 @@ $border: solid #000 1px;
             width: 200px;
           }
         }
-        //地點
+        //縣市
+        
         .location {
           position: relative;
           margin: 30px 0px;
@@ -301,6 +302,77 @@ $border: solid #000 1px;
             // top: 10px;
           }
           .locationInput {
+            margin-left: 80px;
+            input {
+              font-size: 16px;
+              // width: 500px;
+              // padding: 8px;
+              // height: 50px;
+              resize: none;
+              border-radius: 10px;
+              border: 1px $bgcolor solid;
+              .ant-select{
+                box-shadow: 1px 1px 3px #858585;
+                border-radius: 10px;
+
+              .ant-select-selector{
+                height: 35px;
+                box-shadow: 1px 1px 3px #858585;
+                border-radius: 10px;
+              }
+            }
+              // box-shadow: 1px 1px 3px #858585;
+              // position: absolute;
+              // left: 120px;
+              // top: 18px;
+              // margin-left: 5px;
+            }
+          }
+        }
+
+        //地址
+        .address {
+          position: relative;
+          margin: 30px 0px;
+          // border: $border;
+          p {
+            font-size: 20px;
+            display: inline;
+            position: absolute;
+            // top: 10px;
+          }
+          .addressInput {
+            margin-left: 80px;
+            input {
+              font-size: 16px;
+              width: 500px;
+              // padding: 8px;
+              // height: 50px;
+              resize: none;
+              border-radius: 10px;
+              border: 1px $bgcolor solid;
+              box-shadow: 1px 1px 3px #858585;
+              // position: absolute;
+              // left: 120px;
+              // top: 18px;
+              // margin-left: 5px;
+            }
+          }
+        }
+
+        //類型
+        
+        .activityType {
+          position: relative;
+          margin: 30px 0px;
+          // border: $border;
+          p {
+            font-size: 20px;
+            display: inline;
+            position: absolute;
+            // top: 10px;
+          }
+          .activityTypeInput {
             margin-left: 80px;
             input {
               font-size: 16px;

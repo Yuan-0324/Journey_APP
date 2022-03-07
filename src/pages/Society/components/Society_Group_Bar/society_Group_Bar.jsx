@@ -6,7 +6,7 @@ import axios from 'axios';
 //引入componemts
 import About_Group from './About_Group';
 import Society_Discussion from './Society_Discussion';
-import Group_Event from './Group_Event';
+import Society_Activity from './Society_Activity/Activities_List';
 import Group_Member from './Group_Member';
 import Group_Media from './Group_Media';
 import Society_Pic from './Society_Pic';
@@ -99,7 +99,7 @@ const Society_Group_Bar = ({justForGroup,setGroupPicsave,setGroupPicSit}) =>{
             
         <div className='society_group_bar overflow-hidden'>
             <div>
-                <Society_Pic groupPic={groupPageData.bg_pic} groupPageData={groupPageData.societyID} allData={groupPageData} setGroupPicsave={setGroupPicsave} setGroupPicSit={setGroupPicSit}/>
+                <Society_Pic groupPic={groupPageData.bg_pic} groupPageData={groupPageData.societyID} allData={groupPageData} setGroupPicsave={setGroupPicsave} setGroupPicSit={setGroupPicSit} groupRight={groupRight}/>
 
                 <div className='d-flex justify-content-between mr-5'>
                     <div className='group_name d-flex align-item-center'>
@@ -127,7 +127,7 @@ const Society_Group_Bar = ({justForGroup,setGroupPicsave,setGroupPicSit}) =>{
 
             {whichShow=="g-about" ? <About_Group groupRight={groupRight}/> :null}
             {whichShow=="g-discussion" ? <Society_Discussion/> :null}
-            {whichShow=="g-event" ? <Group_Event /> :null}
+            {whichShow=="g-event" ? <Society_Activity /> :null}
             {whichShow=="g-member" ? <Group_Member /> :null}
             {whichShow=="g-media" ? <Group_Media /> :null}
 

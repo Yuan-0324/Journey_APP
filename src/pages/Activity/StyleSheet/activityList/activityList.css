@@ -10,6 +10,12 @@
   /* HTML5 display-role reset for older browsers */
 }
 
+.ActivityListBody .wrap .event-banner img {
+  width: 1100px;
+  height: 250px;
+  background-color: #d6d6d6;
+}
+
 .ActivityListBody .wrap .event-banner .slick-slider {
   position: relative;
 }
@@ -41,7 +47,6 @@
   border: 0;
   font-size: 100%;
   font: inherit;
-  vertical-align: baseline;
 }
 
 .ActivityListBody .wrap article, .ActivityListBody .wrap aside, .ActivityListBody .wrap details, .ActivityListBody .wrap figcaption, .ActivityListBody .wrap figure,
@@ -90,7 +95,7 @@
   display: -ms-flexbox;
   display: flex;
   position: relative;
-  width: 400px;
+  width: 550px;
   height: 50px;
   background-color: #fff;
   border-radius: 15px;
@@ -101,13 +106,14 @@
   width: 1.5px;
   height: 40px;
   background: lightgrey;
+  margin-right: 20px;
 }
 
 .ActivityListBody .wrap .container .activitySearchBar .search .searchInput {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 300px;
+  width: 600px;
   height: 50px;
 }
 
@@ -123,7 +129,22 @@
 }
 
 .ActivityListBody .wrap .container .activitySearchBar .search .searchInput .searchInputItem {
-  width: 300px;
+  width: 400px;
+  height: 50px;
+  border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.ActivityListBody .wrap .container .activitySearchBar .search .searchInput .searchInputItem .searchInputItemKeyword {
+  margin-left: 15px;
+  height: 50px;
+  width: 200px;
+  border: none;
+}
+
+.ActivityListBody .wrap .container .activitySearchBar .search .searchInput .searchInputItem .searchInputItemLocation {
   height: 50px;
   border: none;
 }
@@ -212,7 +233,7 @@
 }
 
 .ActivityListBody .wrap .container .activitySearchBar .search .activitySearchAction {
-  margin: 5px 15px;
+  margin: 5px 5px;
   width: 50px;
   height: 40px;
   background-color: #1697d5;
@@ -274,7 +295,7 @@
   padding: 10px 28px 12px 28px;
   background-color: rgba(255, 255, 255, 0.6);
   height: 213px;
-  width: 716px;
+  width: 520px;
   border-bottom-right-radius: 10px;
   border-top-right-radius: 10px;
 }
@@ -295,12 +316,19 @@
   display: flex;
   margin-right: 30px;
   color: #1697d5;
-  font-weight: 400;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.ActivityListBody .wrap .container .list .listIntroduction .information .activityTime .activityTimeDate .activityTimeDateLeft {
+  margin-right: 10px;
 }
 
 .ActivityListBody .wrap .container .list .listIntroduction .information .activityTime .activityTimeDatePlace {
   position: relative;
   color: #1697d5;
+  font-weight: 600;
+  font-size: 18px;
   font-weight: bold;
 }
 
@@ -312,12 +340,14 @@
 }
 
 .ActivityListBody .wrap .container .list .listIntroduction .information h1 {
-  font-size: 24px;
+  font-size: 28px;
   margin-top: 10px;
   font-weight: 600;
 }
 
 .ActivityListBody .wrap .container .list .listIntroduction .information p {
+  font-size: 20px;
+  font-weight: 600;
   margin-top: 10px;
   line-height: 22px;
 }

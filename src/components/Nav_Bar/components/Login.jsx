@@ -17,7 +17,7 @@ import logo from '../../../images/logo.png';
 import context from '../../../context';
 
 
-function Login({ openLoginModal, loginModal, signUpModal }) {
+function Login({ loginModal, signUpModal }) {
     // const [email, setEmail] = useState('');
     // const [password, setPassword] = useState('');
     const [loginData, setLoginData] = useState({
@@ -45,45 +45,73 @@ function Login({ openLoginModal, loginModal, signUpModal }) {
         if (loginData.email !== "" && loginData.password !== "") {
             await Axios.post("http://localhost:8000/member/login", loginData)
                 .then(async (res) => {
-                    console.log(res);
-                    Axios.defaults.headers.common["authorization"] = res.data.token; // axios 請求頭帶上 token
-                    setToken(res.data.token); // 保存至 context
-                    setUserInfo({
-                        id: res.data.id,
-                        email: res.data.email,
-                        lastName: res.data.lastName,
-                        firstName: res.data.firstName
-                    })
-                    // 保存到本地
-                    localStorage.setItem('token', res.data.token)
-                    localStorage.setItem('id', res.data.id)
-                    localStorage.setItem('email', res.data.email)
-                    localStorage.setItem('lastName', res.data.lastName)
-                    localStorage.setItem('firstName', res.data.firstName)
-
-                    //帳號密碼判斷
-                    if (loginData.email !== res.data.email) {
+                    if (res.data == "信箱尚未被註冊") {
                         localStorage.removeItem('token');
                         alert('帳號未註冊');
                     }
-                    // if (loginData.password !== res.data.password) {
-                    //     localStorage.removeItem('token');
-                    //     alert('密碼錯誤');
-                    // }
-                    if (localStorage.getItem('token') !== undefined) {
-                        setTimeout(() => {
-                            history.go(0);
-                        }, 500);
+                    else if (res.data == "密碼錯誤") {
+                        localStorage.removeItem('token');
+                        alert('密碼錯誤');
+                    }
+                    else {
+                        console.log(res);
+                        Axios.defaults.headers.common["authorization"] = res.data.token; // axios 請求頭帶上 token
+                        setToken(res.data.token); // 保存至 context
+                        setUserInfo({
+                            id: res.data.id,
+                            email: res.data.email,
+                            lastName: res.data.lastName,
+                            firstName: res.data.firstName,
+                            name: res.data.lastName + res.data.firstName,
+                            api_selfie: res.data.api_selfie,
+                            place: res.data.place,
+                            interested: res.data.interested,
+                            member_is_guide: res.data.member_is_guide
+                        })
+                        // 保存到本地
+                        localStorage.setItem('token', res.data.token)
+                        localStorage.setItem('id', res.data.id)
+                        localStorage.setItem('email', res.data.email)
+                        localStorage.setItem('lastName', res.data.lastName)
+                        localStorage.setItem('firstName', res.data.firstName)
+                        localStorage.setItem('name', res.data.lastName + res.data.firstName)
+                        localStorage.setItem('selfie', res.data.api_selfie)
+                        localStorage.setItem('place', res.data.place)
+                        localStorage.setItem('interested', res.data.interested)
+                        localStorage.setItem('member_is_guide', res.data.member_is_guide)
+
+                        let member_is_guide = localStorage.getItem('member_is_guide')
+                        let email = localStorage.getItem('email')
+
+                        //抓guide_id
+                        if (member_is_guide == 1) {
+                            await Axios.post('http://localhost:8000/login/guideID', { email })
+                                .then((res) => {
+                                    console.log(res.data[0].guide_id);
+                                    localStorage.setItem('guide_id', res.data[0].guide_id)
+                                    setTimeout(() => {
+                                        history.go(0);
+                                    }, 500);
+                                })
+                                .catch((err) => {
+                                    console.log(err);
+                                })
+                        }
+                        else {
+                            setTimeout(() => {
+                                history.go(0);
+                            }, 500);
+                        }
                     }
                 })
                 .catch((err) => {
                     console.log(err);
                 })
-        } else if (loginData.email == "") {
-            alert('請輸入帳號');
-        } else if (loginData.password == "") {
-            alert('請輸入密碼');
         }
+        else {
+            alert('請輸入帳號密碼');
+        }
+
     }
 
     //Google API登入
@@ -109,21 +137,48 @@ function Login({ openLoginModal, loginModal, signUpModal }) {
                                 .then(async (res) => {
                                     console.log(res);
                                     await Axios.post('http://localhost:8000/api/login', myLoginData)
-                                        .then((res) => {
+                                        .then(async (res) => {
+                                            console.log(res);
                                             Axios.defaults.headers.common["authorization"] = res.data.token; // axios 請求頭帶上 token
                                             setToken(res.data.token); // 保存至 context
                                             setUserInfo({
                                                 id: res.data.id,
                                                 email: res.data.email,
                                                 lastName: res.data.lastName,
-                                                firstName: res.data.firstName
+                                                firstName: res.data.firstName,
+                                                name: res.data.lastName + res.data.firstName,
+                                                api_selfie: res.data.api_selfie,
+                                                place: res.data.place,
+                                                interested: res.data.interested,
+                                                member_is_guide: res.data.member_is_guide
                                             })
-                                            // 保存到本地
+                                            //保存到本地
                                             localStorage.setItem('token', res.data.token)
                                             localStorage.setItem('id', res.data.id)
                                             localStorage.setItem('email', res.data.email)
                                             localStorage.setItem('lastName', res.data.lastName)
                                             localStorage.setItem('firstName', res.data.firstName)
+                                            localStorage.setItem('name', res.data.lastName + res.data.firstName)
+                                            localStorage.setItem('selfie', res.data.api_selfie)
+                                            localStorage.setItem('place', res.data.place)
+                                            localStorage.setItem('interested', res.data.interested)
+                                            localStorage.setItem('member_is_guide', res.data.member_is_guide)
+
+                                            let member_is_guide = localStorage.getItem('member_is_guide')
+                                            let email = localStorage.getItem('email')
+
+                                            //抓guide_id
+                                            if (member_is_guide == 1) {
+                                                await Axios.post('http://localhost:8000/login/guideID', { email })
+                                                    .then((res) => {
+                                                        console.log(res.data[0].guide_id);
+                                                        localStorage.setItem('guide_id', res.data[0].guide_id)
+                                                    })
+                                                    .catch((err) => {
+                                                        console.log(err);
+                                                    })
+                                            }
+
                                             if (localStorage.getItem('token') !== undefined) {
                                                 setTimeout(() => {
                                                     history.go(0);
@@ -145,7 +200,12 @@ function Login({ openLoginModal, loginModal, signUpModal }) {
                                 id: res.data.id,
                                 email: res.data.email,
                                 lastName: res.data.lastName,
-                                firstName: res.data.firstName
+                                firstName: res.data.firstName,
+                                name: res.data.lastName + res.data.firstName,
+                                api_selfie: res.data.api_selfie,
+                                place: res.data.place,
+                                interested: res.data.interested,
+                                member_is_guide: res.data.member_is_guide
                             })
                             //保存到本地
                             localStorage.setItem('token', res.data.token)
@@ -153,6 +213,28 @@ function Login({ openLoginModal, loginModal, signUpModal }) {
                             localStorage.setItem('email', res.data.email)
                             localStorage.setItem('lastName', res.data.lastName)
                             localStorage.setItem('firstName', res.data.firstName)
+                            localStorage.setItem('name', res.data.lastName + res.data.firstName)
+                            localStorage.setItem('selfie', res.data.api_selfie)
+                            localStorage.setItem('place', res.data.place)
+                            localStorage.setItem('interested', res.data.interested)
+                            localStorage.setItem('member_is_guide', res.data.member_is_guide)
+
+                            let member_is_guide = localStorage.getItem('member_is_guide')
+                            let email = localStorage.getItem('email')
+
+                            //抓guide_id
+                            if (member_is_guide == 1) {
+                                await Axios.post('http://localhost:8000/login/guideID', { email })
+                                    .then((res) => {
+                                        console.log(res.data[0].guide_id);
+                                        localStorage.setItem('guide_id', res.data[0].guide_id)
+                                    })
+                                    .catch((err) => {
+                                        console.log(err);
+                                    })
+                            }
+
+
                             if (localStorage.getItem('token') !== undefined) {
                                 setTimeout(() => {
                                     history.go(0);
@@ -173,17 +255,138 @@ function Login({ openLoginModal, loginModal, signUpModal }) {
     const fbProvider = new FacebookAuthProvider();
     const SignInWithFacebook = () => {
         signInWithPopup(auth, fbProvider)
-            .then((result) => {
-                console.log(result);
-                alert('登入成功!')
-                loginModal(false);
-                history.push('/');
-            }).catch((error) => {
-                console.log(error);
+            .then(async (result) => {
+                let myData = result._tokenResponse;
+                console.log(myData);
+                let myLoginData = {
+                    email: myData.email,
+                    lastName: myData.lastName,
+                    firstName: myData.firstName
+                }
+                //驗證是否有註冊
+                await Axios.post('http://localhost:8000/api/login', myLoginData)
+                    .then(async (res) => {
+                        console.log(res);
+                        let notYetSignUp = '信箱尚未被註冊'
+                        if (res.data == notYetSignUp) {
+                            //註冊
+                            await Axios.post('http://localhost:8000/api/signup', myLoginData)
+                                .then(async (res) => {
+                                    console.log(res);
+                                    await Axios.post('http://localhost:8000/api/login', myLoginData)
+                                        .then(async (res) => {
+                                            console.log(res);
+                                            Axios.defaults.headers.common["authorization"] = res.data.token; // axios 請求頭帶上 token
+                                            setToken(res.data.token); // 保存至 context
+                                            setUserInfo({
+                                                id: res.data.id,
+                                                email: res.data.email,
+                                                lastName: res.data.lastName,
+                                                firstName: res.data.firstName,
+                                                name: res.data.lastName + res.data.firstName,
+                                                api_selfie: res.data.api_selfie,
+                                                place: res.data.place,
+                                                interested: res.data.interested,
+                                                member_is_guide: res.data.member_is_guide
+                                            })
+                                            // 保存到本地
+                                            localStorage.setItem('token', res.data.token)
+                                            localStorage.setItem('id', res.data.id)
+                                            localStorage.setItem('email', res.data.email)
+                                            localStorage.setItem('lastName', res.data.lastName)
+                                            localStorage.setItem('firstName', res.data.firstName)
+                                            localStorage.setItem('name', res.data.lastName + res.data.firstName)
+                                            localStorage.setItem('selfie', res.data.api_selfie)
+                                            localStorage.setItem('place', res.data.place)
+                                            localStorage.setItem('interested', res.data.interested)
+                                            localStorage.setItem('member_is_guide', res.data.member_is_guide)
+
+                                            let member_is_guide = localStorage.getItem('member_is_guide')
+                                            let email = localStorage.getItem('email')
+
+
+                                            //抓guide_id
+                                            if (member_is_guide == 1) {
+                                                await Axios.post('http://localhost:8000/login/guideID', { email })
+                                                    .then((res) => {
+                                                        console.log(res.data[0].guide_id);
+                                                        localStorage.setItem('guide_id', res.data[0].guide_id)
+                                                    })
+                                                    .catch((err) => {
+                                                        console.log(err);
+                                                    })
+                                            }
+
+                                            if (localStorage.getItem('token') !== undefined) {
+                                                setTimeout(() => {
+                                                    history.go(0);
+                                                }, 500);
+                                            }
+                                        })
+                                        .catch((err) => {
+                                            console.log(err);
+                                        })
+                                })
+                                .catch((err) => {
+                                    console.log(err);
+                                })
+                        }
+                        else {
+                            Axios.defaults.headers.common["authorization"] = res.data.token; // axios 請求頭帶上 token
+                            setToken(res.data.token); // 保存至 context
+                            setUserInfo({
+                                id: res.data.id,
+                                email: res.data.email,
+                                lastName: res.data.lastName,
+                                firstName: res.data.firstName,
+                                name: res.data.lastName + res.data.firstName,
+                                api_selfie: res.data.api_selfie,
+                                place: res.data.place,
+                                interested: res.data.interested,
+                                member_is_guide: res.data.member_is_guide
+                            })
+                            //保存到本地
+                            localStorage.setItem('token', res.data.token)
+                            localStorage.setItem('id', res.data.id)
+                            localStorage.setItem('email', res.data.email)
+                            localStorage.setItem('lastName', res.data.lastName)
+                            localStorage.setItem('firstName', res.data.firstName)
+                            localStorage.setItem('name', res.data.lastName + res.data.firstName)
+                            localStorage.setItem('selfie', res.data.api_selfie)
+                            localStorage.setItem('place', res.data.place)
+                            localStorage.setItem('interested', res.data.interested)
+                            localStorage.setItem('member_is_guide', res.data.member_is_guide)
+
+                            let member_is_guide = localStorage.getItem('member_is_guide')
+                            let email = localStorage.getItem('email')
+
+                            //抓guide_id
+                            if (member_is_guide == 1) {
+                                await Axios.post('http://localhost:8000/login/guideID', { email })
+                                    .then((res) => {
+                                        console.log(res.data[0].guide_id);
+                                        localStorage.setItem('guide_id', res.data[0].guide_id)
+                                    })
+                                    .catch((err) => {
+                                        console.log(err);
+                                    })
+                            }
+
+                            if (localStorage.getItem('token') !== undefined) {
+                                setTimeout(() => {
+                                    history.go(0);
+                                }, 500);
+                            }
+                        }
+                    })
+                    .catch((err) => {
+                        console.log(err);
+                    })
+            })
+            .catch((err) => {
+                console.log(err);
             })
     }
-
-
 
     return (
         <>

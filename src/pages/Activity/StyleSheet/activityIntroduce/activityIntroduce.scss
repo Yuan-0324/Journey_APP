@@ -20,13 +20,13 @@ $border: #000 solid 1px;
             .wrapTitleItem{
                 h1 {
          
-                    font-size: 36px;
+                    font-size: 40px;
                     font-weight: bolder;
                     
                 }
                 pre {
         
-                    font-size: 18px;
+                    font-size: 20px;
                 }
                 
                 }
@@ -221,15 +221,24 @@ $border: #000 solid 1px;
                         //   border: $border;
                         //   margin-right: 50px;
                         .introduce {
+                            // width: 800px;
+                            // height: 800px;
+                            // word-wrap: break-all;
                             h2 {
-                                margin-top: 20px;
+                                margin-top: 34px;
                                 font-size: 30px;
-                                font-weight: bolder;
+                                font-weight: 600;
 
                             }
+                            p{
+                                line-height: 36px;
+                                font-size: 22px;
+                                font-weight: 500;
+                                margin-top: 20px;
+                            }
                             pre{
-                                line-height: 24px;
-                                font-size: 18px;
+                                line-height: 30px;
+                                font-size: 22px;
                                 font-weight: 500;
                                 margin-top: 20px;
                                 // color: #1697d5;
@@ -322,7 +331,7 @@ $border: #000 solid 1px;
                 position: sticky;
                 top: 0;
                 
-                height: 780px;
+                height: 850px;
                 .navbarBox {
                     width: 10px;
                     height: 10px;
@@ -340,12 +349,13 @@ $border: #000 solid 1px;
                     border-radius: 5px;
                     // background-color: #d6d6d6;
                     h2{
-                        font-size: 30px;
+                        font-size: 36px;
+                        font-weight: 600;
                         margin-bottom: 20px;
                     }
                     h3 {
                         line-height: 36px;
-                        font-size: 16px;
+                        font-size: 20px;
                         padding-bottom: 25px;
                         a {
                             // padding-left: 25px;
@@ -362,6 +372,8 @@ $border: #000 solid 1px;
                     table {
                         tr {
                             td {
+                                font-size: 20px;
+
                                 padding-right: 25px;
                                 padding-bottom: 25px;
                             }

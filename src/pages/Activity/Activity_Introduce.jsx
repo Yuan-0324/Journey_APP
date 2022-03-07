@@ -1,7 +1,9 @@
 // import React, { useState } from 'react';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState ,useContext } from 'react';
 import axios from 'axios';
 import { useParams } from "react-router-dom"
+import context from '../../context'
+import { useHistory } from "react-router-dom"
 
 // ---- 更新樣式----
 
@@ -27,9 +29,11 @@ import { IoChatbubblesOutline, IoLocationSharp } from 'react-icons/io5';
 
 const Activity_Introduce = () => {
     let { id } = useParams();
-    // console.log(id);
+    console.log(id);
 
-    let apple = [1, 2, 3, 4, 5];
+    const currentUser = useContext(context);
+    let userID = currentUser.userInfo.id;
+    console.log(userID);
     const [activityIntroduceItem, setEve] = React.useState(
         [{
             eventID: '',
@@ -45,26 +49,36 @@ const Activity_Introduce = () => {
             title: '唱軍歌'
         }]
     );
+
+    const history = useHistory()
+    const  moveActivityConduce=(e)=>{
+        
+        setEve(activityIntroduceItem);
+        history.push(`${userID}`)  
+        console.log(userID);
+    } 
     useEffect(() => {
         axios.get('http://localhost:8000/event/activityIntroduceContent/' + id)
             .then(res => { console.log(res.data); setEve(res.data) })
             console.log(activityIntroduceItem[0].eventID);
-
-       
+            
     }, []);
-    
+
     return (
         <div className='activityIntroduceBody'>
+            
             {activityIntroduceItem.map((elm, idx) =>
                 <>
                     <div className="wrap">
                         <div className='wrapTitle'>
                             <div className="wrapTitleItem">
                                 <h1>{elm.title}</h1>
-                                <pre style={{ color: '#1697d5', fontWeight: '550' }}>{elm.date} &emsp; {elm.time}   <IoLocationSharp style={{ color: '#1697d5' }} /> <span >{elm.address}</span></pre>
+                                <pre style={{ color: '#1697d5', fontWeight: '550' }}>{elm.date} &emsp; {elm.time}   <IoLocationSharp style={{ color: '#1697d5' }} /> <span >{elm.location}</span></pre>
                             </div>
                             <div className="creatActivity">
-                                <a href='http://localhost:3000/ActivityConduct'>來辦個活動吧→</a>
+                                {/* href='http://localhost:3000/ActivityConduc/' */}
+                                {/* onClick={moveActivityConduce} */}
+                                <a href={`http://localhost:3000/ActivityConduct/${userID}`}>來辦個活動吧→</a>
                             </div>
                         </div>
                         <div className='wrapBody'>

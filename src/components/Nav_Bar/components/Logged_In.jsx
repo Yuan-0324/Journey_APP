@@ -17,6 +17,17 @@ const Logged_In = () => {
     localStorage.removeItem('email')
     localStorage.removeItem('lastName')
     localStorage.removeItem('firstName')
+    localStorage.removeItem('token')
+    localStorage.removeItem('id')
+    localStorage.removeItem('email')
+    localStorage.removeItem('lastName')
+    localStorage.removeItem('firstName')
+    localStorage.removeItem('name')
+    localStorage.removeItem('selfie')
+    localStorage.removeItem('place')
+    localStorage.removeItem('interested')
+    localStorage.removeItem('guide_id')
+    localStorage.removeItem('member_is_guide')
     setTimeout(() => {
       history.go(0);
     }, 500);

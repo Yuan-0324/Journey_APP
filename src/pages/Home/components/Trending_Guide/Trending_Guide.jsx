@@ -61,14 +61,10 @@ const Trending_Guide = () => {
           {Array.isArray(Res) &&
             Res.slice(0, 3).map((elm, idx) => (
               <figure className="snip1336" key={idx}>
-                <img
-                  className="imgBG"
-                  src="https://source.unsplash.com/600x400/?taiwan,mountain"
-                  alt="sample87"
-                />
+                <img className="imgBG" src={elm.Img1} alt="sample87" />
                 <figcaption>
                   <img
-                    src="https://source.unsplash.com/400x400/?asian"
+                    src={elm.api_selfie}
                     alt="profile-sample4"
                     className="profile"
                   />

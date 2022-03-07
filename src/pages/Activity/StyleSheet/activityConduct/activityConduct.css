@@ -295,6 +295,66 @@
 
 .activityConductBody #section01 .section01Area .section01Content .location .locationInput input {
   font-size: 16px;
+  resize: none;
+  border-radius: 10px;
+  border: 1px #f8f8f8 solid;
+}
+
+.activityConductBody #section01 .section01Area .section01Content .location .locationInput input .ant-select {
+  -webkit-box-shadow: 1px 1px 3px #858585;
+          box-shadow: 1px 1px 3px #858585;
+  border-radius: 10px;
+}
+
+.activityConductBody #section01 .section01Area .section01Content .location .locationInput input .ant-select .ant-select-selector {
+  height: 35px;
+  -webkit-box-shadow: 1px 1px 3px #858585;
+          box-shadow: 1px 1px 3px #858585;
+  border-radius: 10px;
+}
+
+.activityConductBody #section01 .section01Area .section01Content .address {
+  position: relative;
+  margin: 30px 0px;
+}
+
+.activityConductBody #section01 .section01Area .section01Content .address p {
+  font-size: 20px;
+  display: inline;
+  position: absolute;
+}
+
+.activityConductBody #section01 .section01Area .section01Content .address .addressInput {
+  margin-left: 80px;
+}
+
+.activityConductBody #section01 .section01Area .section01Content .address .addressInput input {
+  font-size: 16px;
+  width: 500px;
+  resize: none;
+  border-radius: 10px;
+  border: 1px #f8f8f8 solid;
+  -webkit-box-shadow: 1px 1px 3px #858585;
+          box-shadow: 1px 1px 3px #858585;
+}
+
+.activityConductBody #section01 .section01Area .section01Content .activityType {
+  position: relative;
+  margin: 30px 0px;
+}
+
+.activityConductBody #section01 .section01Area .section01Content .activityType p {
+  font-size: 20px;
+  display: inline;
+  position: absolute;
+}
+
+.activityConductBody #section01 .section01Area .section01Content .activityType .activityTypeInput {
+  margin-left: 80px;
+}
+
+.activityConductBody #section01 .section01Area .section01Content .activityType .activityTypeInput input {
+  font-size: 16px;
   width: 500px;
   resize: none;
   border-radius: 10px;

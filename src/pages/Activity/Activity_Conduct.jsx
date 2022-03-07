@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import axios from 'axios';
+// import context from '../../context';
 import context from '../../context';
 // import check from '../../../images/check.gif'
 
@@ -27,17 +28,28 @@ const Activity_Conduct = () => {
     //導入使用者ID
     const currentUser = useContext(context);
     let userID = currentUser.userInfo.id;
-    
+   console.log(userID);             //9
+//    console.log(typeof userID);      //num
+
     //寫入後端
     const [postNewEvent, setPostNewEvent] = React.useState(
         {
-            post_email: userID, title: '', introduce: "", date: '', time: '', address: "", kind: '', Num: '', indoor: '',content:'',precaution:'',post_datetime:''
+            post_email:'' , title: '', introduce: "", date: '', time: '',location:'', address: "", kind: '', Num: '', indoor: '',content:'',precaution:'',post_datetime:''
         }
     )
-    // console.log(postNewEvent.post_email);
+    
+    // console.log(typeof postNewEvent.post_email);  //str
+    // console.log(postNewEvent.post_email);         // null
+    // console.log(postNewEvent.Num);                //4
+    // console.log(typeof postNewEvent.Num);         //num
     const [postNowEventNum, setNowEventNum]=React.useState()
     
-   
+    // 寫入email
+    const setPostUserID=()=>{
+        postNewEvent.post_email=userID;
+        setPostNewEvent(postNewEvent);
+        console.log(postNewEvent.post_email);
+    }
         
     const doPostAndPop = () => {
 
@@ -45,7 +57,7 @@ const Activity_Conduct = () => {
             .then(res => {let num=res.data;setNowEventNum(num)})
         // setShow(true)
     }
-   console.log();
+ 
      //送出活動邀請
      const [postActivityInvite,setPostActivityInvite ]=React.useState({
         eventID:'',apply_member_email:userID
@@ -69,9 +81,11 @@ const Activity_Conduct = () => {
 
     //上傳內容
     const inputContent = (e) => {
+        postNewEvent.post_email=userID
         postNewEvent.content = e.target.value
         setPostNewEvent(postNewEvent);
         // console.log(typeof e.target.value);
+        console.log(postNewEvent.post_email);
     }
     //上傳注意事項
     const inputPrecaution =(e)=>{
@@ -86,6 +100,11 @@ const Activity_Conduct = () => {
         setPostNewEvent(postNewEvent);
         // console.log(today);
     }
+    //創辦成功後轉跳
+    const Conduct=()=>{
+        setShow(false)
+
+    }  
     
     //上傳照片
 
@@ -112,7 +131,7 @@ const Activity_Conduct = () => {
                             </div>
                         </div>
                         <Section01ContentInformation postNewEvent={postNewEvent} setPostNewEvent={setPostNewEvent} />
-                        <a href="#section02" className="nextPage"><span></span>下一頁</a>
+                        <a onClick={setPostUserID} href="#section02" className="nextPage"><span></span>下一頁</a>
                     </div>
                 </section>
                 {/* 照片 */}
@@ -161,9 +180,12 @@ const Activity_Conduct = () => {
                             <img src={check} alt="" width="482px" className='imgCheck' />
                         </Modal.Body>
                         <Modal.Footer>
-                            <Button variant="primary" onClick={() => { setShow(false) }}>
+                        {/* onClick={() => {setShow(false) }} */}
+                        <a href="http://localhost:3000/Event">
+                            <Button variant="primary" >
                                 確定
                             </Button>
+                            </a>
                         </Modal.Footer>
                     </Modal>
 

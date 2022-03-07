@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { useHistory } from "react-router-dom";
 // import Axios from 'axios'
 
-const Searching_Member = ({followedMember}) =>{
+const Searching_Member = ({seachResult}) =>{
 
     let history = useHistory();
     const gotoTheRoute = (e) =>{
@@ -13,20 +13,20 @@ const Searching_Member = ({followedMember}) =>{
 
     return (
         <div className='searching-list'>
-            {followedMember.map((elm,idx)=>
+            {seachResult.map((elm,idx)=>
             
-            <div className='d-flex align-items-center m-2 cursor-pointer' key={idx}  data-person={elm.id} onClick={gotoTheRoute}>
+            <div className='search-inside d-flex align-items-center cursor-pointer' key={idx}  data-person={elm.id} onClick={gotoTheRoute}>
             {/* 要放上個人頁面路徑 */}
-                <div className='selfie rounded-circle overflow-hidden mr-3 d-flex justify-content-center'>
-                    <img className='img-fluid' src={elm.selfie} alt=""/>
+                <div className='selfie rounded-circle overflow-hidden mr-3 d-flex justify-content-center' data-person={elm.id}>
+                    <img className='img-fluid' src={elm.api_selfie} alt="" data-person={elm.id}/>
                 </div>
 
-                <div className='d-flex flex-column'>
+                <div className='d-flex flex-column' data-person={elm.id}>
 
-                    <div className='a-black' >{elm.lastName} {elm.firstName} {elm.followed? '已追蹤': ""}</div>
+                    <div className='a-black'data-person={elm.id} >{elm.lastName} {elm.firstName} {elm.followed? '已追蹤': ""}</div>
 
                     <div data-person={elm.id}>
-                        <a className='text-decoration-none' >訊息</a>
+                        <a className='text-decoration-none' data-person={elm.id}>訊息</a>
                         {/* a herf要開啟聊天功能 */}
                     </div>
 

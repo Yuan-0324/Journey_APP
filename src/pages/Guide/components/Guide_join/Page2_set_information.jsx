@@ -58,7 +58,7 @@ const Set_Information = ({ guideForm, setGuideForm}) => {
 		const urlArr = [];
 		for (let i = 1; i <= 4; i++) {
 			//用memberID創Firebase/guide/資料夾號碼
-			console.log('STEP', i)
+			// console.log('STEP', i)
             const storageRef = ref(storage, `guide/${currentUser.id}/GuideImg${i}.png`);
             const metadata = {
                 contentType: `imgFirebase.uploadImg${i}.type`

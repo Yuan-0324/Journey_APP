@@ -288,7 +288,12 @@
   height: 400px;
 }
 
+.personal-article-show .show-main-container .show-article-content > div .h3 {
+  font-size: 24px;
+}
+
 .personal-article-show .show-main-container .show-article-content > div pre {
+  font-size: 18px;
   white-space: pre-wrap;
   /* css-3 */
   white-space: -moz-pre-wrap;
@@ -299,14 +304,6 @@
   /* Opera 7 */
   word-wrap: break-word;
   /* Internet Explorer 5.5+ */
-}
-
-.personal-article-show .show-main-container .show-article-content > div pre h3 {
-  font-size: 24px;
-}
-
-.personal-article-show .show-main-container .show-article-content > div pre p {
-  font-size: 18px;
 }
 
 .personal-article-show .show-article-message {
@@ -654,6 +651,7 @@
   padding: 13px;
   border-bottom: 1px solid #1697d5;
   color: #1697d5;
+  margin-bottom: 0;
 }
 
 .show-follow-detail .follow-container .close-btn {
@@ -670,7 +668,7 @@
 
 .show-follow-detail .follow-container .follow-list {
   width: 100%;
-  height: 100%;
+  height: 400px;
   overflow: scroll;
 }
 
@@ -988,6 +986,180 @@
   color: #f08a12;
 }
 
+.profile-pic-change {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.9);
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.profile-pic-change .change-container {
+  min-width: 300px;
+  min-height: 300px;
+  max-height: 700px;
+  max-width: 1300px;
+  background-color: #fff;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-pic-change .change-container .temp-img-show {
+  max-width: 1300px;
+}
+
+.profile-pic-change .change-container .close-btn {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  color: #fff;
+  background-color: #1697d5;
+  padding: 2px 2px;
+  -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.profile-pic-change .change-container .close-btn * {
+  width: 30px;
+  height: 30px;
+}
+
+.profile-pic-change .change-container .confirm-profile {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  padding: 2px 18px;
+  -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  border: none;
+  background-color: #1697d5;
+  color: #fff;
+  font-size: 18px;
+}
+
+.profile-pic-change .change-container .confirm-profile.change-btn {
+  left: auto;
+  right: -15px;
+  bottom: 30px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.profile-pic-change .change-container .confirm-profile.change-btn:hover {
+  bottom: 33px;
+}
+
+.profile-pic-change .change-container .show-status {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  width: 200px;
+  background-color: #fff;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 15px 0px;
+  -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.profile-pic-change .change-container .show-status > img {
+  margin-bottom: 15px;
+  width: 60px;
+}
+
+.profile-pic-change .change-container .show-status .progress-bar-show {
+  position: relative;
+  border: 2px solid #1697d5;
+  height: 15px;
+  width: 150px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.profile-pic-change .change-container .show-status .progress-bar-show > div {
+  background-color: #1697d5;
+  width: 0%;
+  height: 100%;
+}
+
+.profile-pic-change .change-container .upload-wrap {
+  height: 130px;
+  width: 130px;
+  border-radius: 65px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #1697d5), color-stop(50%, #ffffff));
+  background-image: linear-gradient(to bottom, #1697d5 50%, #ffffff 50%);
+  background-size: 100% 200%;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  color: #ffffff;
+  font-size: 70px;
+}
+
+.profile-pic-change .change-container .upload-wrap input[type="file"] {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.profile-pic-change .change-container .upload-wrap:hover {
+  background-position: 0 100%;
+  color: #1697d5;
+}
+
 .personal-header {
   width: 100%;
   position: relative;
@@ -1043,7 +1215,7 @@
   position: relative;
 }
 
-.personal-header .header-content .profile-pic img {
+.personal-header .header-content .profile-pic .headShot {
   cursor: pointer;
   overflow: hidden;
   border: 2px solid #f08a12;
@@ -1054,6 +1226,8 @@
   height: 140px;
   border-radius: 50%;
   background-color: #f8f8f8;
+  background-size: cover;
+  background-position: center center;
 }
 
 .personal-header .header-content .profile-content {
@@ -1565,6 +1739,20 @@
       -ms-flex-align: center;
           align-items: center;
   height: 50px;
+  position: relative;
+}
+
+.personal-section .presonal-container .personal-post .article .article-container .article-message .message-icon .show-like-list {
+  z-index: 1000;
+  -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  top: 40px;
+  left: 0px;
+  position: absolute;
+  width: 250px;
+  height: 200px;
+  background-color: #ccc;
 }
 
 .personal-section .presonal-container .personal-post .article .article-container .article-message .message-icon .like-nums {

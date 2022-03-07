@@ -8,12 +8,23 @@ import { useParams } from 'react-router-dom';
 import guideLevelImg from '../../../../images/guideImgs/guideJoinPage/guideLevelImg.png';
 
 const Top_Introduction = () => {
-    const [guide, setGuide] = useState({});
+    // const [guide, setGuide] = useState({});
     const currentUser = useContext(context).userInfo;
-    const guide_id = useContext(context).guide_id;
+    // const guide_id = useContext(context).guide_id;
+    // const [guideSelf, setGuideSelf] = useState(false);
+    // const guidePagePath = useParams();
+    // const [guideLevel, setGuideLevel] = useState('');
+
+    // ---- 0306 -----
+
+    const [guide, setGuide] = useState({});
+    const guide_id = localStorage.getItem('guide_id');
     const [guideSelf, setGuideSelf] = useState(false);
     const guidePagePath = useParams();
     const [guideLevel, setGuideLevel] = useState('');
+
+
+
 
     //判斷是否為本人進入(icon:聊天室變修改、出現升級視窗)
     const [toggled, setToggled] = useState(false);
@@ -28,7 +39,7 @@ const Top_Introduction = () => {
         setToggled(false);
     }
     
-    console.log(guide_id);
+    // console.log(guide_id);
 
     //判斷登入者是否已為嚮導(加入嚮導行列消失)
     const [isGuide, setIsGuide] = useState(false);

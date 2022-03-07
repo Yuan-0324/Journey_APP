@@ -38,6 +38,7 @@ const Personal_Main = () => {
         fetchData();
     }, [])
 
+    
     // ---- 先取得正在瀏覽中頁面資訊  ----
 
     let fetchData = async () => {
@@ -68,19 +69,23 @@ const Personal_Main = () => {
     // console.log(currentUser);
 
     return (
+
         <Context.Provider value={{
             userInfo: currentUser,
             currentUserFollowed: currentUserFollowed,
             currentUserImg: currentUserImg,
             setCurrentUserFollowed: setCurrentUserFollowed,
             viewUserInfo: viewUserState.viewUserInfo,
-            viewUserImg: viewUserState.viewUserImg
+            viewUserImg: viewUserState.viewUserImg,
+            viewUserState,
+            setViewUserState
         }}>
             {/* 個人頁面上方，個人資訊 */}
             <Personal_Header personalBanner={personalBanner} setPersonalBanner={setPersonalBanner} />
             {/* 個人頁面下方，Po文等等內容 */}
             <Personal_Container />
         </Context.Provider>
+
     )
 }
 

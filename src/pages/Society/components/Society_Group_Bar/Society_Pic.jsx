@@ -4,20 +4,30 @@ import axios from 'axios';
 import { ref, uploadBytesResumable, uploadBytes, getDownloadURL } from 'firebase/storage';
 import {storage} from '../../../../firebase';
 import { useParams } from "react-router-dom";
+import s_pic from '../../../../images/Home/main/weather.jpg';
 
 
 import { FiUpload } from 'react-icons/fi';
 import { MdCancel} from 'react-icons/md';
 import Context from '../../../../context';
 
-const Society_Pic = ({groupPic,groupPageData,allData,setGroupPicsave,setGroupPicSit}) => {
+const Society_Pic = ({groupPic,groupPageData,allData,setGroupPicsave,setGroupPicSit,groupRight}) => {
     let societyID = useParams();
 
+    // 社團資料庫抓的圖
     const bgPicStyle = {
         width : allData.pic_w,
         height : allData.pic_h,
         marginTop : allData.mTop,
         marginLeft : allData.mLeft
+    }
+
+    // 預設社團圖
+    const orignPic ={
+        width : 720,
+        height : 200,
+        marginTop : -30,
+        marginLeft : 0
     }
 
 
@@ -124,7 +134,7 @@ const Society_Pic = ({groupPic,groupPageData,allData,setGroupPicsave,setGroupPic
 
     return ( 
 
-        <div className='personal-header'>
+        <div className='society-personal-header'>
             {state.changeModal && 
                 <div className='change-modal'>
                     <div className='change-container'>
@@ -157,12 +167,14 @@ const Society_Pic = ({groupPic,groupPageData,allData,setGroupPicsave,setGroupPic
             }
             {/* 顯示瀏覽照片 */}
 
-            <div className='header-banner overflow-hidden'>{state.yesPic ? <img src={state.yesPic} alt="" />: <img style={bgPicStyle} src={`data:image/png;base64,${groupPic}`} alt="" /> }</div>
+            <div className='society-header-banner overflow-hidden'>{state.yesPic ? <img src={state.yesPic} alt="" />:
+            (groupPic ?<img style={bgPicStyle} src={`data:image/png;base64,${groupPic}`}/> : <img style={orignPic} src={s_pic} />)}</div>
             
-            <button onClick={changeBanner} className='confirm-banner change-btn'>更換照片</button>
+            {groupRight.right!==0 && <button onClick={changeBanner} className='confirm-banner change-btn'>更換照片</button>}
 
         </div>
      );
 }
  
 export default Society_Pic;
+

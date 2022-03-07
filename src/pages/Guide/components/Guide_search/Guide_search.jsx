@@ -20,10 +20,14 @@ const Search = () => {
     
     // -------------------------
     
-    const currentUser = useContext(context).userInfo;
-    const guide_id = useContext(context).guide_id;
+    // ------ 0306 ------
+    const guide_id = localStorage.getItem('guide_id');
     const [guideArr, setGuideArr] = useState([]);
-    
+
+    const currentUser = useContext(context).userInfo;
+    // const guide_id = useContext(context).guide_id;
+    // const [guideArr, setGuideArr] = useState([]);
+    console.log(useContext(context));
     console.log(guide_id);
 
     //判斷登入者是否已為嚮導(加入嚮導行列消失)
@@ -33,6 +37,8 @@ const Search = () => {
     useEffect(async () => {
         if (guide_id) {
             setIsGuide(true);
+        } else {
+            setIsGuide(false);
         }
     }, []);
 
@@ -225,6 +231,10 @@ const Search = () => {
                     </div>
 
                 </div>
+
+                {
+
+                }
                 <div className="joinGuide" style={joinShowOrHide}>
                     <a href="/GuideJoin" >加入嚮導行列 → </a>
                 </div>

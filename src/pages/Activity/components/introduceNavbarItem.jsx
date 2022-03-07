@@ -1,11 +1,11 @@
-import React, {useContext, useState } from 'react';
-import context from'../../../context'
+import React, { useContext, useState } from 'react';
+import context from '../../../context'
 //map
 import ActivityGoogleMap from '../components/activityGoogleMap01';
 //img
 import people from '../../../images/activity/teaActivity/people.png'
 import axios from 'axios';
-
+// import xhr from ;
 import {
     Navbar,
     Nav,
@@ -16,19 +16,19 @@ import {
     Modal
 } from "react-bootstrap"
 
-const IntroduceNavbarItem = ({data}) => {
-    
+const IntroduceNavbarItem = ({ data }) => {
+
     //導入申請人ID
     const currentUser = useContext(context);
     let userID = currentUser.userInfo.id;
-    
-    const [sendID, setSendID]=React.useState({
-        eventID:'',user_gmail:userID
+
+    const [sendID, setSendID] = React.useState({
+        eventID: '', user_gmail: userID
     })
-   const setNum= () => { 
-       sendID.eventID=data.eventID
-       setSendID(sendID)
-       setShow(true) 
+    const setNum = () => {
+        sendID.eventID = data.eventID
+        setSendID(sendID)
+        setShow(true)
     }
     // console.log(eventIDNum);
     // console.log(typeof eventIDNum);
@@ -36,12 +36,21 @@ const IntroduceNavbarItem = ({data}) => {
     // console.log(typeof sendID.eventID);
     const [show, setShow] = useState(false);
 
-    const SendInvite=()=>{
+    const SendInvite = () => {
         axios.post('http://localhost:8000/event/activityIntroduce/invite', { sendID })
-        .then(res => {console.log(res)})
-        setShow(false) 
+            .then(res => { console.log(res) })
+        setShow(false)
     }
-
+    // var geolocation = 'https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyBwXTl-ZOVGooxvO0x-1kJNeiKQPCo0img';
+    // (function () {
+    //     xhr = new XMLHttpRequest();
+    //     xhr.open('POST', geolocation);
+    //     xhr.onload = function () {
+    //         var response = JSON.parse(this.responseText);
+    //         console.log(response);
+    //     }
+    //     xhr.send();
+    // })();
 
     return (
         <div className='activityIntroduceNavbar'>
@@ -49,7 +58,7 @@ const IntroduceNavbarItem = ({data}) => {
             <div className="navbarItem">
                 <h2>基本資訊</h2>
                 <h3>主辦人&emsp;&emsp;
-                    <a href=""><img src={people} alt="" /><span>{data.lastName}{data.firstName}</span></a>
+                    <a href={`http://localhost:3000/personal/${data.user_ID}`}><img src={`${data.api_selfie}`} alt="" /><span>{data.lastName}{data.firstName}</span></a>
                 </h3>
                 <table>
                     <tr>
@@ -65,8 +74,16 @@ const IntroduceNavbarItem = ({data}) => {
                         <td>{data.indoor}</td>
                     </tr>
                 </table>
-                <h3>活動地點 <br />{data.address}</h3>
+                <h3>活動地點 <br />{data.location}{data.address}</h3>
                 <div className="map">
+                    <iframe
+                        width="300"
+                        height="200"
+                        // frameborder="0"
+                        // style={border=0}
+                        src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyBwXTl-ZOVGooxvO0x-1kJNeiKQPCo0img&q=${data.address}`}
+                        allowfullscreen>
+                    </iframe>
                     {/* <ActivityGoogleMap className="map" /> */}
                 </div>
 
@@ -85,14 +102,14 @@ const IntroduceNavbarItem = ({data}) => {
                             <Button variant="secondary" onClick={() => { setShow(false) }}>
                                 關閉
                             </Button>
-                            <Button variant="primary" onClick={SendInvite }>
+                            <Button variant="primary" onClick={SendInvite}>
                                 送出
                             </Button>
                         </Modal.Footer>
                     </Modal>
                 </div>
             </div>
-         </div>
+        </div>
     )
 }
 export default IntroduceNavbarItem;

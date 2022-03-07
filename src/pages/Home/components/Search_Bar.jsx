@@ -10,9 +10,9 @@ import context from "../../../context";
 const { TreeNode } = TreeSelect;
 
 const Search_Bar = () => {
-  const { guideData } = useContext(context);
-  const { setGuideData } = useContext(context);
-  console.log(guideData);
+  // const { guideData } = useContext(context);
+  // const { setGuideData } = useContext(context);
+  // console.log(guideData);
 
   const history = useHistory();
   const [res, setRes] = useState([]);
@@ -49,12 +49,16 @@ const Search_Bar = () => {
   async function getResult() {
     await Axios.post("http://localhost:8000/home/search_result", totalSearch)
       .then((res) => {
-        setGuideData(res.data);
-        console.log(guideData);
+        setRes(res);
+        console.log(res);
+        // setGuideData(res.data);
+        // console.log(guideData);
       })
       .catch((err) => {
         console.log(err);
       });
+
+    console.log(totalSearch);
   }
 
   return (

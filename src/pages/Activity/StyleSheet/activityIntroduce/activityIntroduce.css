@@ -22,7 +22,6 @@
   border: 0;
   font-size: 100%;
   font: inherit;
-  vertical-align: baseline;
 }
 
 .activityIntroduceBody article, .activityIntroduceBody aside, .activityIntroduceBody details, .activityIntroduceBody figcaption, .activityIntroduceBody figure,
@@ -69,12 +68,12 @@
 }
 
 .activityIntroduceBody .wrap .wrapTitle .wrapTitleItem h1 {
-  font-size: 36px;
+  font-size: 40px;
   font-weight: bolder;
 }
 
 .activityIntroduceBody .wrap .wrapTitle .wrapTitleItem pre {
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .activityIntroduceBody .wrap .wrapTitle .creatActivity {
@@ -308,14 +307,21 @@
 }
 
 .activityIntroduceBody .wrap .wrapBody .wrapLeft .main .container .introduce h2 {
-  margin-top: 20px;
+  margin-top: 34px;
   font-size: 30px;
-  font-weight: bolder;
+  font-weight: 600;
+}
+
+.activityIntroduceBody .wrap .wrapBody .wrapLeft .main .container .introduce p {
+  line-height: 36px;
+  font-size: 22px;
+  font-weight: 500;
+  margin-top: 20px;
 }
 
 .activityIntroduceBody .wrap .wrapBody .wrapLeft .main .container .introduce pre {
-  line-height: 24px;
-  font-size: 18px;
+  line-height: 30px;
+  font-size: 22px;
   font-weight: 500;
   margin-top: 20px;
 }
@@ -418,7 +424,7 @@
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  height: 780px;
+  height: 850px;
 }
 
 .activityIntroduceBody .wrap .wrapBody .activityIntroduceNavbar .navbarBox {
@@ -438,13 +444,14 @@
 }
 
 .activityIntroduceBody .wrap .wrapBody .activityIntroduceNavbar .navbarItem h2 {
-  font-size: 30px;
+  font-size: 36px;
+  font-weight: 600;
   margin-bottom: 20px;
 }
 
 .activityIntroduceBody .wrap .wrapBody .activityIntroduceNavbar .navbarItem h3 {
   line-height: 36px;
-  font-size: 16px;
+  font-size: 20px;
   padding-bottom: 25px;
 }
 
@@ -460,6 +467,7 @@
 }
 
 .activityIntroduceBody .wrap .wrapBody .activityIntroduceNavbar .navbarItem table tr td {
+  font-size: 20px;
   padding-right: 25px;
   padding-bottom: 25px;
 }

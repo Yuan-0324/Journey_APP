@@ -1,7 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
 
-const Setting_Normal_NameInput = ({ setNameSwitch, userInfo, setUserInfo, id }) => {
+const Setting_Normal_NameInput = ({ setNameSwitch, userInfo, setUserInfo, email }) => {
     //定義暫存值，使用此值暫存欲修改的值
     let lastNameBeforeValue = userInfo.lastName;
     let firstNameBeforeValue = userInfo.firstName;
@@ -26,7 +26,7 @@ const Setting_Normal_NameInput = ({ setNameSwitch, userInfo, setUserInfo, id }) 
         let totolName = {
             lastName: userInfo.lastName,
             firstName: userInfo.firstName,
-            userId: id
+            email: email
         }
         userInfo.name = userInfo.lastName + userInfo.firstName;
         setUserInfo(userInfo);

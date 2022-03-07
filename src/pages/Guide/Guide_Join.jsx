@@ -11,12 +11,27 @@ import context from '../../context';
 
 const Guide_Join = () => {
 
-    const currentUser = useContext(context).userInfo;
-    const setGuideId = useContext(context).setGuideId;
-    console.log(currentUser.email);
+    // const currentUser = useContext(context).userInfo;
+    // const setGuideId = useContext(context).setGuideId;
+    
 
+    // const [guideForm, setGuideForm] = useState({
+    //     guideEmail: '',
+    //     introduction: '',
+    //     countNum: 1,
+    //     acceptGender: '男',
+    //     transportation: '汽車',
+    //     cityValue: null,
+    //     viewpoint: '',
+    //     restaurant: '',
+    //     dateArray: [],
+    //     guideImg: []
+    // });
+
+
+    const email = localStorage.getItem('email');
     const [guideForm, setGuideForm] = useState({
-        guideEmail: '',
+        guideEmail: email,
         introduction: '',
         countNum: 1,
         acceptGender: '男',
@@ -27,14 +42,13 @@ const Guide_Join = () => {
         dateArray: [],
         guideImg: []
     });
-
-    console.log(guideForm.guideEmail);
+    
     //完成送出
     const [Toggled, setToggled] = useState(false);
     const HideOrShow = Toggled ? { visibility: "visible" } : { visibility: "hidden" };
 
     const finishBtnClick = async () => {
-        setGuideForm({ ...guideForm, ['guideEmail']: currentUser.email });
+        // setGuideForm({ ...guideForm, ['guideEmail']: email });
         //判斷資料都有填寫
         if (guideForm.introduction !== '' && guideForm.cityValue !== null && guideForm.viewpoint !== '' && guideForm.restaurant !== '') {
             //判斷照片有先上傳
@@ -42,8 +56,9 @@ const Guide_Join = () => {
                 //資料post後端
                 let result = await axios.post('http://localhost:8000/guideJoin', guideForm);
                 if (result.status == 200) {
-                    let guide_id = await axios.get('http://localhost:8000/guide/guide_id/' + currentUser.email);
-                    setGuideId(guide_id.data[0].guide_id);
+                    let guide_id = await axios.get('http://localhost:8000/guide/guide_id/' + email);
+                    localStorage.setItem('guide_id',guide_id.data[0].guide_id);
+                    // setGuideId(guide_id.data[0].guide_id);
                     setToggled(true);
                 } else {
                     alert('註冊失敗，請重新註冊！');

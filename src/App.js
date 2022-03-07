@@ -37,6 +37,8 @@ import Activity_Conduct from './pages/Activity/Activity_Conduct';
 import Activity_List from './pages/Activity/Activity_List';
 import Activity_Introduce from './pages/Activity/Activity_Introduce'
 
+// 加號
+import Calendar from './components/Add_Button/Member_calendar';
 
 // ----------------------
 
@@ -44,11 +46,8 @@ const App = () => {
 
   const [token, setToken] = useState(localStorage.getItem("token"));
   const [searchResult, setSearchResult] = useState('JUJU');
-  const [guide_id, setGuideId] = useState('')
-
 
   let email = localStorage.getItem('email');
-
 
   const [userInfo, setUserInfo] = useState({
     name: '',
@@ -59,30 +58,16 @@ const App = () => {
     email: '',
     place: '',
     interested: '',
-    guide_id: ''
+    guideId: ''
   })
 
-  // let getData = async () => {
-  //   let result = await Axios.post('http://localhost:8000/context', { email });
-  //   setUserInfo({
-  //     name: result[0].lastName + result[0].firstName,
-  //     lastName: result[0].lastName,
-  //     firstName: result[0].firstName,
-  //     birthday: result[0].birthday,
-  //     id: result[0].id,
-  //     email: result[0].email,
-  //     place: result[0].place,
-  //     interested: result[0].interested,
-  //     // guide_id: result[0].guide_id
-  //   })
-  // }
-
-  useEffect(async () => {
+  async function myContext() {
     await Axios.post('http://localhost:8000/context', { email })
       .then((res) => {
         // console.log(res);
         setUserInfo({
           name: res.data[0].lastName + res.data[0].firstName,
+          selfie: res.data[0].api_selfie,
           lastName: res.data[0].lastName,
           firstName: res.data[0].firstName,
           birthday: res.data[0].birthday,
@@ -90,20 +75,26 @@ const App = () => {
           email: res.data[0].email,
           place: res.data[0].place,
           interested: res.data[0].interested,
+          member_is_guide: res.data[0].member_is_guide
           // guide_id: res.data[0].guide_id
-        })
-
-        window.addEventListener('storage', function (e) {
-          localStorage.setItem(e.key, e.oldValue)
         })
       })
       .catch((err) => {
         console.log(err);
       })
-    // getData();
+  }
+
+
+  useEffect(() => {
+    myContext();
+    window.addEventListener('storage', function (e) {
+      localStorage.setItem(e.key, e.oldValue)
+    })
   }, []);
 
-  // console.log(userInfo)
+
+
+  // console.log(userInfo);
 
   return (
     <Context.Provider
@@ -114,13 +105,12 @@ const App = () => {
         setUserInfo,
         searchResult,
         setSearchResult,
-        guide_id,
-        setGuideId
       }}
     >
       <BrowserRouter>
         <div>
           <Navigation />
+
           <Switch>
             {/* 首頁 */}
             <Route path="/" component={Home} exact />
@@ -158,6 +148,7 @@ const App = () => {
             {/* 錯誤處理頁面 [ 未完成 ] */}
             <Route path='/:error' component={Error_Page} />
           </Switch>
+          {userInfo.id ? <Calendar /> : ''}
         </div>
       </BrowserRouter>
 

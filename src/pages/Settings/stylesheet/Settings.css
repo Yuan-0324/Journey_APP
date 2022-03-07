@@ -118,6 +118,38 @@ svg {
   padding-right: 10px;
 }
 
+.Setting_Frame .Normal_Content .Content_Shadow .Normal_item_birthday .bbtn {
+  display: none;
+}
+
+.Setting_Frame .Normal_Content .Content_Shadow .Normal_item_birthday input {
+  border-radius: 5px;
+  border: 1px #bfbfbf solid;
+  background-color: #f8f8f8;
+  width: 150px;
+  height: 30px;
+  line-height: 40px;
+  font-weight: 300;
+  margin-right: 15px;
+  padding-left: 5px;
+  width: 250px;
+}
+
+.Setting_Frame .Normal_Content .Content_Shadow .Normal_item_birthday button {
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #1697d5;
+  color: white;
+  font-size: 16px;
+  width: 50px;
+  height: 30px;
+}
+
+.Setting_Frame .Normal_Content .Content_Shadow .Normal_item_birthday button:nth-child(5) {
+  background-color: #a0a0a0;
+}
+
 .Setting_Frame .Normal_Content .Content_Shadow .Normal_item_userID {
   margin: 30px;
 }
@@ -486,6 +518,7 @@ svg {
   max-height: 450px;
   padding: 1px;
   overflow-y: scroll;
+  padding-bottom: 30px;
 }
 
 .Setting_Frame .Guide_Content .Content_Shadow .Guide_item {
@@ -1080,10 +1113,12 @@ svg {
   font-size: 16px;
   width: 50px;
   height: 30px;
-  margin-top: 10px;
+  position: absolute;
+  margin: -30px 20px 0 420px;
 }
 
 .Setting_Frame .Guide_Content .Content_Shadow .Guide_item .Guide_Available .reservation .myButton:last-child {
+  margin-left: 480px;
   background-color: #a0a0a0;
 }
 /*# sourceMappingURL=Settings.css.map */

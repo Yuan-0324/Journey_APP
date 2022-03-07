@@ -7,9 +7,15 @@ import context from '../../../../context';
 
 const Calendar = ({ setAvailableSwitch }) => {
 
-    const currentUser = useContext(context).userInfo;
-    const gId = currentUser.guide_id;
-    const email = currentUser.email;
+
+    //---- 0306 註解 ----
+    // const currentUser = useContext(context).userInfo;
+    // const gId = currentUser.guide_id;
+    // const email = currentUser.email;
+
+    // ---- 0306 新增 ----
+    const gId = localStorage.getItem('guide_id');
+    const email = localStorage.getItem('email');
 
     //設定日曆
     let [evts, setEvts] = useState([]);

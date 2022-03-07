@@ -13,6 +13,7 @@ const Article_List = () => {
 
     const currentUser = useContext(Context).userInfo
     const currentUserImg = useContext(Context).currentUserImg;
+    const viewUserState = useContext(Context).viewUserState;
     const currentPath = useParams();
     const [state, setState] = useState({
         articleList: []
@@ -25,7 +26,8 @@ const Article_List = () => {
     }
 
     useEffect(() => {
-        fetchData();
+        let isisMounted = true
+        if (isisMounted) { fetchData() };
     }, [])
 
     // console.log(currentUserImg)
@@ -37,7 +39,7 @@ const Article_List = () => {
             {
                 currentUser.id == currentPath.id ?
                     <div className='article-post'>
-                        <img src={currentUserImg} alt=""></img>
+                        <img src={viewUserState.viewUserImg} alt=""></img>
                         <div className='post-send'>
                             <h4>想說些什麼？</h4>
                         </div>

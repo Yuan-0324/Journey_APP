@@ -7,6 +7,7 @@ const About_Me = () => {
 
     const guidePagePath = useParams();
     const [guide, setGuide] = useState({});
+
     useEffect(async () => {
         let result = await axios.get(`http://localhost:8000/guidePersonal/aboutMe/${guidePagePath.gId}`);
         setGuide(result.data[0]);
@@ -30,7 +31,7 @@ const About_Me = () => {
             </div>
             <div className="aboutMeContent">
                 <span className='title'>興趣</span>
-                <span>{guide.interest}</span>
+                <span>{guide.interested}</span>
             </div>
             <div className="aboutMeContent">
                 <span className='title'>推薦景點  <AiOutlineLike /></span>

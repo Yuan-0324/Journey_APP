@@ -11,41 +11,43 @@ function Weather_API({ setIndoorornot }) {
   const currentLong = useRef(0);
   const currentLat = useRef(0);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      await navigator.geolocation.getCurrentPosition(function (position) {
-        currentLat.current = position.coords.latitude;
-        currentLong.current = position.coords.longitude;
-        setLat(position.coords.latitude);
-        setLong(position.coords.longitude);
+  const fetchData = async () => {
+    navigator.geolocation.getCurrentPosition(function (position) {
+      currentLat.current = position.coords.latitude;
+      currentLong.current = position.coords.longitude;
+      setLat(position.coords.latitude);
+      setLong(position.coords.longitude);
+    });
+    await fetch(
+      `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=current,hourly,minutely,alerts&units=metric&appid=a9435e700abf9da33bc74e7c64dc6828`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data);
+        setData(data.daily);
+        setIndoorornot(data.daily[0].weather[0].id);
+      })
+      .catch(function (erro) {
+        console.log(erro);
       });
-      await fetch(
-        `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=current,hourly,minutely,alerts&units=metric&appid=438653e1e5de54b035f71c6915e87dd2`
-      )
-        .then((res) => res.json())
-        .then((data) => {
-          setData(data.daily);
-          setIndoorornot(data.daily[0].weather[0].id);
-        })
-        .catch(function (erro) {
-          console.log(erro);
-        });
 
-      await fetch(
-        `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${long}&language=zh-TW&key=AIzaSyCv_srcuqfOf2hAQoj588vHuco7WK9tN9U`
-      )
-        .then((res) => res.json())
-        .then((result) => {
-          setArea(result.plus_code.compound_code.slice(8));
-        })
-        .catch(function (erro) {
-          console.log(erro);
-        });
-    };
+    await fetch(
+      `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${long}&language=zh-TW&key=AIzaSyCv_srcuqfOf2hAQoj588vHuco7WK9tN9U`
+    )
+      .then((res) => res.json())
+      .then((result) => {
+        setArea(result.plus_code.compound_code.slice(8));
+      })
+      .catch(function (erro) {
+        console.log(erro);
+      });
+  };
 
+  useEffect(() => {
     fetchData();
   }, [lat, long]);
 
+  //更改經緯度到其他城市
   let btnClick = (evt) => {
     let lat = evt.target.dataset.lat;
     let long = evt.target.dataset.long;
@@ -53,6 +55,7 @@ function Weather_API({ setIndoorornot }) {
     setLong(long);
   };
 
+  //把經緯度改回現在位置
   let btnClickNow = () => {
     setLat(currentLat.current);
     setLong(currentLong.current);
@@ -94,7 +97,6 @@ function Weather_API({ setIndoorornot }) {
   };
 
   const currentWeatherHour = new Date().getHours();
-
   const [WeatherImage] =
     currentWeatherHour <= 15
       ? [daylight]

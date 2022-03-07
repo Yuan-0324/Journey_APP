@@ -6,12 +6,19 @@ import context from '../../../../context';
 
 const Finish_Section = () => {
 
-    const currentUser = useContext(context).userInfo;
-    const guide_id = useContext(context).guide_id
-    console.log(guide_id);
+    // const currentUser = useContext(context).userInfo;
+    // const guide_id = useContext(context).guide_id;
+    
+    // console.log(guide_id);
+
+    // let moveTo = () => {
+    //     // window.location = `/GuidePersonal/${currentUser.guide_id}`;
+    //     window.location = `/GuidePersonal/${guide_id}`;
+    // }
+
+    const guide_id = localStorage.getItem('guide_id');
 
     let moveTo = () => {
-        // window.location = `/GuidePersonal/${currentUser.guide_id}`;
         window.location = `/GuidePersonal/${guide_id}`;
     }
 

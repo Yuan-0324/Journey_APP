@@ -25,8 +25,8 @@ const Trending_City = () => {
         <h3 className="CardHeader">熱門目的地</h3>
         <div className="cityboxGroup">
           <div className="citybox" onClick={trendingOnClick}>
-            <img className="citypic" src={Taipei} name="北港" alt="" />
-            <p>北港</p>
+            <img className="citypic" src={Taipei} name="台北" alt="" />
+            <p>台北</p>
           </div>
           <div className="citybox" onClick={trendingOnClick}>
             <img className="citypic" src={Chiayi} name="嘉義" alt="" />

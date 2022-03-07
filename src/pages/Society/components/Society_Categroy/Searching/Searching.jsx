@@ -11,7 +11,7 @@ import axios from 'axios';
 const Searching = () => {
 
    const currentUser = useContext(context);
-   let userId = currentUser.userInfo.id;
+   let userId = localStorage.getItem('id');
 
    const [seachResult, setSeachResult] = React.useState([]);
    const [seachGroupResult, setSeachGroupResult] = React.useState([]);
@@ -47,11 +47,11 @@ const Searching = () => {
       <div className='searching-area d-flex flex-column align-items-center'>
 
          <div className="searching d-flex align-item-center">
-            <div className='search-icon pl-2 pt-1'><FontAwesomeIcon icon={faSearch} /></div>
+            <div className='search-icon pl-2 pt-1 pr-1'><FontAwesomeIcon icon={faSearch} /></div>
             <input className='search-input' type="text" placeholder='搜尋用戶/社團' onChange={doTheSearch} onInput={doTheSearch} onPaste={doTheSearch} onKeyDown={doTheSearch}/>
          </div>
 
-         {searchSwich ? <Searching_Group seachGroupResult={seachGroupResult}/> : <Searching_Member followedMember={seachResult}/> }
+         {searchSwich ? <Searching_Group seachGroupResult={seachGroupResult}/> : <Searching_Member seachResult={seachResult}/> }
 
          <div className="demo text-center cursor-pointer">
             <a onClick={()=>setSearchSwich(!searchSwich)}>{ searchSwich ? '用戶搜尋結果' : '社團搜尋結果' }<span></span></a>

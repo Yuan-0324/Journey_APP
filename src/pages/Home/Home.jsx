@@ -18,7 +18,7 @@ const home = () => {
       <Weather_Section />
       <Search_Bar />
       <Trending_City />
-      <Recommandation />
+      {/* <Recommandation /> */}
       <Trending_Event />
       <Trending_Guide />
       <CTA />

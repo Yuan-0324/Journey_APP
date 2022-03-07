@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import Setting_Sidebar from "./components/Setting_Sidebar";
 import Setting_Normal from "./components/Setting_Normal";
 import Setting_Safety from "./components/Setting_Safety";
-import Setting_Privacy from "./components/Setting_Privacy";
+// import Setting_Privacy from "./components/Setting_Privacy";
 import Setting_Guide from "./components/Setting_Guide";
 import './stylesheet/Settings.css'
 // import context from "../../context";
@@ -44,6 +44,8 @@ const Setting = () => {
             <Setting_Sidebar setSidebarSwitch={setSidebarSwitch} />
 
             {showCompotent}
+
+            {/* <button>幹你娘</button> */}
         </div>
     )
 }

@@ -23,6 +23,7 @@ const Setting_Guide = () => {
     //context海底撈
     const { userInfo } = useContext(context);
     let userEmail = userInfo.email
+    // console.log(userEmail);
 
     const [guideData, setGuideData] = useState({
         Intro: '',

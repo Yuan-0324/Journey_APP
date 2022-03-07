@@ -1,16 +1,18 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import axios from 'axios';
 import { FaRegHeart, FaRegCommentAlt, FaRegPaperPlane, FaHeart } from 'react-icons/fa'
 import { BsThreeDots } from 'react-icons/bs';
 import { FaCaretDown } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import Context from '../../../../../../context';
 
 import Show_Article from './Show_Article';
 import Edit_Post_Article from './Edit_Post_Article';
 
 const Article_Area = ({data, articleListIdx, articleList, setArticleList,userImg,societyID ,userId}) => {
-    // console.log(data.id,userId);
+    const viewUserImg = useContext(Context).viewUserImg;
+    // console.log(viewUserImg);
 
     // 展開底部留言區
     const [commentToggle, setCommentToggle] = useState(false);
@@ -57,7 +59,7 @@ const Article_Area = ({data, articleListIdx, articleList, setArticleList,userImg
 
         data.content = cont;   
         
-        // !!!!!Axios.put!!!!!修改文章
+        // !!!!!axios.put!!!!!修改文章
         axios.put('http://127.0.0.1:8000/editpost/article', {articleID:articleList[0].articleID, content:cont})
 
         let newArr = [...articleList];
@@ -68,6 +70,21 @@ const Article_Area = ({data, articleListIdx, articleList, setArticleList,userImg
         setEditPostArticle(false)
     }
 
+    let dataTransfer = () => {
+        let date = new Date(data.datetime)
+        let yy = date.getFullYear();
+        let month = date.getMonth() + 1;
+        let mm = (month.toString().length < 2) ? (month = '0' + month.toString()) : month.toString();
+        let day = date.getDate();
+        let dd = (day.toString().length < 2) ? (day = '0' + day.toString()) : day.toString();
+        day = `${yy}-${mm}-${dd}`;
+        let timeWsec = date.toLocaleTimeString();
+        let time = timeWsec.split(':')
+        time.pop();
+        time = time.join(':')
+        return { day, timeWsec, time };
+    }
+
     return (
 
         <>
@@ -76,11 +93,13 @@ const Article_Area = ({data, articleListIdx, articleList, setArticleList,userImg
 
         <div className='article-container'>
             <div className='article-title'>
-                <img src={data.selfie} alt=""></img>
+                <img src={data.api_selfie} alt=""></img>
                 <div className='title-content'>
+                    <div className='d-flex'>
                     <h1>{data.lastName} {data.firstName}</h1>
-                    <h6>{data.datetime.substr(0,10)}</h6>
-                    <div className='h5'>{societyID == undefined ? data.society_name: ''}</div>
+                    <h1 className='h5 ml-3'>{societyID == undefined ? data.society_name: ''}</h1>
+                    </div>
+                    <h6>{dataTransfer().day} {dataTransfer().time}</h6>
                 </div>    
                 {data.id==userId && <div className='title-edit' onClick={editArticlePage}><BsThreeDots /></div>}
             </div>
@@ -91,9 +110,12 @@ const Article_Area = ({data, articleListIdx, articleList, setArticleList,userImg
             <div className='article-message'>
                 <div className='message-icon'>
                     {/* React Icons Start */}
-                    <button onClick={likeCheck}>{likeToggle ? <FaHeart style={{ color: 'red' }} /> : <FaRegHeart />}</button>
-                    <button onClick={commentPost}><FaRegCommentAlt /></button>
-                    <button><FaRegPaperPlane /></button>
+                    <span className='like-nums'>{data.likeNum? data.likeNum : 0}<span>個讚</span></span>
+                    <div>
+                        <button onClick={likeCheck}>{likeToggle ? <FaHeart style={{ color: 'red' }} /> : <FaRegHeart />}</button>
+                        <button onClick={commentPost}><FaRegCommentAlt /></button>
+                        <button><FaRegPaperPlane /></button>
+                    </div>
                     {/* React Icons End */}
                 </div>
                 <form className={commentToggle ? '' : 'off'} action="">

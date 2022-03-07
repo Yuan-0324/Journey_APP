@@ -13,6 +13,9 @@ function Sign_up_interested({ interestedModal, positionModal, finishModal, total
     const [gymnastics, setGymnastics] = useState(false)
     const [dancing, setDancing] = useState(false)
     const [badminton, setBadminton] = useState(false)
+    const [delicacy, setDelicacy] = useState(false)
+    const [walking, setWalking] = useState(false)
+    const [photography, setPhotography] = useState(false)
 
     const [checkedArr, setCheckedArr] = useState([])
     function checkedOnClick(e) {
@@ -183,6 +186,54 @@ function Sign_up_interested({ interestedModal, positionModal, finishModal, total
                                             </div>
                                         </div>
                                         <span>羽球</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="checkbox"
+                                        name='美食'
+                                        checked={delicacy}
+                                        onChange={() => { setDelicacy(!delicacy); }}
+                                        onClick={checkedOnClick}
+                                        id="myCheckbox8" />
+                                    <label htmlFor="myCheckbox8">
+                                        <img src="https://cdn.pixabay.com/photo/2015/07/19/21/01/turkey-852044_1280.jpg" alt="" />
+                                        <div className='picShadow'>
+                                            <div className='picBorder'>
+                                            </div>
+                                        </div>
+                                        <span>美食</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="checkbox"
+                                        name='健走'
+                                        checked={walking}
+                                        onChange={() => { setWalking(!walking); }}
+                                        onClick={checkedOnClick}
+                                        id="myCheckbox9" />
+                                    <label htmlFor="myCheckbox9">
+                                        <img src="https://cdn.pixabay.com/photo/2016/11/29/06/05/adult-1867702_1280.jpg" alt="" />
+                                        <div className='picShadow'>
+                                            <div className='picBorder'>
+                                            </div>
+                                        </div>
+                                        <span>健走</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="checkbox"
+                                        name='攝影'
+                                        checked={photography}
+                                        onChange={() => { setPhotography(!photography); }}
+                                        onClick={checkedOnClick}
+                                        id="myCheckbox10" />
+                                    <label htmlFor="myCheckbox10">
+                                        <img src="https://cdn.pixabay.com/photo/2014/12/27/15/31/camera-581126_1280.jpg" alt="" />
+                                        <div className='picShadow'>
+                                            <div className='picBorder'>
+                                            </div>
+                                        </div>
+                                        <span>攝影</span>
                                     </label>
                                 </div>
 
