@@ -38,7 +38,10 @@ import Activity_List from './pages/Activity/Activity_List';
 import Activity_Introduce from './pages/Activity/Activity_Introduce'
 
 // 加號
-import Calendar from './components/Add_Button/Member_calendar';
+import Calendar from './components/My_Button/Calender/Member_calendar';
+
+// 聊天室
+import Chat_Room from './components/My_Button/Chat_Room/Chat_Room'
 
 // ----------------------
 
@@ -148,7 +151,9 @@ const App = () => {
             {/* 錯誤處理頁面 [ 未完成 ] */}
             <Route path='/:error' component={Error_Page} />
           </Switch>
-          {userInfo.id ? <Calendar /> : ''}
+          
+          {/* {userInfo.id ? <Calendar /> : ''}
+          <Chat_Room /> */}
         </div>
       </BrowserRouter>
 

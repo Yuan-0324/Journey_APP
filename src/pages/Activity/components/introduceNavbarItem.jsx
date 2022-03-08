@@ -19,28 +19,42 @@ import {
 const IntroduceNavbarItem = ({ data }) => {
 
     //導入申請人ID
+    let apple = 2;
     const currentUser = useContext(context);
     let userID = currentUser.userInfo.id;
-
+    // console.log(userID);
     const [sendID, setSendID] = React.useState({
         eventID: '', user_gmail: userID
     })
+    const [show, setShow] = useState(false);
+    const SendInvite = () => {
+        // let apple=2;
+        if (userID != '') {
+            // alert('OK');
+            console.log(userID);
+            axios.post('http://localhost:8000/event/activityIntroduce/invite', { sendID })
+                .then(res => { console.log(res) });
+                setShow(true);
+        } else {
+            alert('請先登入');
+            console.log(userID);
+        }
+    }
+    
     const setNum = () => {
         sendID.eventID = data.eventID
         setSendID(sendID)
-        setShow(true)
+       
+        SendInvite();
+       
+
     }
     // console.log(eventIDNum);
     // console.log(typeof eventIDNum);
     // console.log( sendID.eventID);
     // console.log(typeof sendID.eventID);
-    const [show, setShow] = useState(false);
 
-    const SendInvite = () => {
-        axios.post('http://localhost:8000/event/activityIntroduce/invite', { sendID })
-            .then(res => { console.log(res) })
-        setShow(false)
-    }
+    
     // var geolocation = 'https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyBwXTl-ZOVGooxvO0x-1kJNeiKQPCo0img';
     // (function () {
     //     xhr = new XMLHttpRequest();
@@ -97,13 +111,14 @@ const IntroduceNavbarItem = ({ data }) => {
                         <Modal.Header closeButton>
                             <Modal.Title>申請參加</Modal.Title>
                         </Modal.Header>
-                        <Modal.Body><p>歡迎參加</p></Modal.Body>
+                        <Modal.Body><p>您已詳讀基本資訊並確認參加</p></Modal.Body>
                         <Modal.Footer>
-                            <Button variant="secondary" onClick={() => { setShow(false) }}>
-                                關閉
+                            <Button variant="secondary"  onClick={() => { setShow(false) }} >
+                                取消關閉
                             </Button>
-                            <Button variant="primary" onClick={SendInvite}>
-                                送出
+                            <Button variant="primary"  onClick={() => { setShow(false) }} >
+                            {/* onClick={SendInvite} */}
+                                確認送出
                             </Button>
                         </Modal.Footer>
                     </Modal>

@@ -1,0 +1,146 @@
+@import "../../../styles/var";
+@import "./chat_var";
+
+.chat-btn {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    bottom: 140px;
+    right: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include bdrs;
+    & > * {
+        color: $primarycolor;
+        width: 30px;
+        height: 30px;
+    }
+}
+
+.chat-friend-list {
+    // border-right: 1px solid #000;
+    // padding-right: 10px;
+    // border: 1px solid #000;
+    // width: 60px;
+    padding: 10px 20px;
+    height: 60px;
+    flex-wrap: nowrap;
+    height: 315px;
+    position: fixed;
+    right: 30px;
+    bottom: 210px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    overflow: scroll;
+    padding-bottom: 0;
+    .search {
+        background-color: #fff;
+        // border: 1px solid #000;
+        width: 60px;
+        height: 60px;
+        @include bdrs;
+        flex-shrink: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 3px;
+        & > * {
+            color: $primarycolor;
+            width: 30px;
+            height: 30px;
+        }
+    }
+    .friends {
+        flex-shrink: 0;
+        // border: 1px solid #000;
+        width: 55px;
+        height: 55px;
+        // @include bdrs;
+        border-radius: 50%;
+        margin-top: 5px;
+        background-image: url("https://firebasestorage.googleapis.com/v0/b/genuine-wall-311416.appspot.com/o/member%2F1%2FheadShot1.png?alt=media&token=249d26bf-77cf-4c5d-9888-e9cc7bbdcf37");
+        background-size: cover;
+    }
+}
+
+.chat-room {
+    position: fixed;
+    bottom: 50px;
+    right: 150px;
+    width: 350px;
+    height: 420px;  
+    border: 1px solid #000;
+    background-color: #fff;
+    @include bdrs(10px);
+    .friend-name {
+        text-align: center;
+        padding: 10px 0px;
+        font-size: 20px;
+        border-bottom: 1px solid #000;
+        margin-bottom: 0;
+    }
+    .chat-container {
+        width: 100%;
+        height: 315px;
+        overflow: scroll;
+        .chat-content {
+            display: flex;
+            align-items: center;
+            padding: 8px 0px;
+            .chat {
+                border: 1px solid #000;
+                border-radius: 10px;
+                padding: 8px 5px;
+                max-width: 250px;
+                p {
+                    margin: 0;
+                    pre {
+                        font-size: 16px;
+                        margin: 0;
+                        white-space: pre-wrap; /* css-3 */
+                        white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+                        white-space: -pre-wrap; /* Opera 4-6 */
+                        white-space: -o-pre-wrap; /* Opera 7 */
+                        word-wrap: break-word; /* Internet Explorer 5.5+ */
+                    }
+                }
+               
+            }
+            &#right {
+                justify-content: end;
+                padding-right: 15px;
+                .chat {
+                    box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+                }
+            }
+            &#left {
+                justify-content: start;
+                padding-left: 15px;
+                .chat {
+                    box-shadow: -1px 1px 5px rgba(0,0,0,0.3);
+                }
+            }
+        }
+    }
+    .chat-input {
+        padding: 0px 10px;
+        height: 57px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top: 1px solid #000;
+        input {
+            font-size: 16px;
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid #000;
+            // padding-left: 7px;
+            padding: 3px 5px;
+        }
+    }
+}

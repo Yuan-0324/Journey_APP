@@ -24,11 +24,9 @@ const Activities_List = () => {
         <div className='activities'>
             <h2 className="head-topic">我辦的活動</h2>
             {/* -----------------Container------------------- */}
-
             {
                 activityInfo.map(activity => <Personal_Activity activity={activity} key={activity.eventID} />)
             }
-
             {/* --------------------------------------------- */}
         </div>
     )

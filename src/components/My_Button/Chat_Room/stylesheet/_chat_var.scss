@@ -1,0 +1,4 @@
+@mixin bdrs($bdrs: 50%) {
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+    border-radius: $bdrs;
+}

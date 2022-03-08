@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useParams } from "react-router-dom"
 import context from '../../context'
 import { useHistory } from "react-router-dom"
+import Activity_Application from "./components/activityApplicants";
 
 // ---- 更新樣式----
 
@@ -51,11 +52,18 @@ const Activity_Introduce = () => {
     );
 
     const history = useHistory()
-    const  moveActivityConduce=(e)=>{
-        
-        setEve(activityIntroduceItem);
-        history.push(`${userID}`)  
-        console.log(userID);
+    const  creatActivity=(e)=>{
+        if (userID != '') {
+            window.location.href=`http://localhost:3000/ActivityConduct/${userID}`;
+        }else {
+            alert('請先登入');
+            console.log(userID);
+        }
+        // setEve(activityIntroduceItem);
+        // history.push(`${userID}`)  
+        // console.log(userID);
+
+
     } 
     useEffect(() => {
         axios.get('http://localhost:8000/event/activityIntroduceContent/' + id)
@@ -78,7 +86,7 @@ const Activity_Introduce = () => {
                             <div className="creatActivity">
                                 {/* href='http://localhost:3000/ActivityConduc/' */}
                                 {/* onClick={moveActivityConduce} */}
-                                <a href={`http://localhost:3000/ActivityConduct/${userID}`}>來辦個活動吧→</a>
+                                <a onClick={creatActivity}>來辦個活動吧→</a>
                             </div>
                         </div>
                         <div className='wrapBody'>
@@ -95,6 +103,7 @@ const Activity_Introduce = () => {
                                         <hr />
                                         {/* <!-- 留言板 --> */}
                                         {/* <ActivityListMessage /> */}
+                                        <Activity_Application/>
                                     </div>
                                     {/* <!-- 活動內容 --> */}
                                 </div>

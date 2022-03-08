@@ -28,14 +28,12 @@ const ActivityListItem = ({ data }) => {
     // console.log(data.eventID);
     const submitStatue = useRef(false);
     // console .log(data);
-    
+    // 
+
     
     let eventIDdata=data.eventID;
     let user_ID=data.user_ID
-    
-    
-    
-   
+    // console.log(user_ID);   
     // console.log(state.eventID);
     let getImg = async () => {
         const forsetRef = ref(storage, `/event/${user_ID}/${eventIDdata}/activity${user_ID}.png`);
@@ -54,8 +52,6 @@ const ActivityListItem = ({ data }) => {
     const [img, setImg] = useState('')
    
 
-   
-   
     // console.log(img);
     //firebase底部
     //點擊後前往對應ID的分頁

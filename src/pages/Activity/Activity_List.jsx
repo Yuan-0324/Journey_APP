@@ -36,7 +36,7 @@ const Activity_List = () => {
     //取得userID
     const currentUser = useContext(context);
     let userID = currentUser.userInfo.id;
-    console.log(userID);
+    // console.log(typeof userID);
     const [activityTitle, setEve] = React.useState(
         [{
             eventID: 1,
@@ -87,6 +87,16 @@ const ActivitySearchLocation =(e)=>{
         axios.post('http://localhost:8000/event/activityList/Search',{ActivitySearchContent})
         .then(res=> { setEve(res.data) })
     }
+
+    //點擊後轉跳
+const creatActivity=()=>{
+    if (userID != '') {
+    window.location.href=`http://localhost:3000/ActivityConduct/${userID}`;
+}else {
+    alert('請先登入');
+    console.log(userID);
+}
+}
     return (
         <div className='ActivityListBody'>
             <div className="wrap">
@@ -116,7 +126,8 @@ const ActivitySearchLocation =(e)=>{
                         </div>
 
                         <div className="creatActivity">
-                            <a href={`http://localhost:3000/ActivityConduct/${userID}`}>來辦個活動吧→</a>
+                        {/* <a href={`http://localhost:3000/ActivityConduct/${userID}`}>來辦個活動吧→</a> */}
+                            <a id='creatActivityAHref' onClick={creatActivity}>來辦個活動吧→</a>
                         </div>
                     </div>
                     {/* <!-- 活動內容 --!> */}

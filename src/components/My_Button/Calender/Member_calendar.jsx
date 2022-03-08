@@ -2,7 +2,7 @@ import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from "@fullcalendar/interaction";
 import axios from 'axios';
-import context from '../../context';
+import context from '../../../context';
 import { useState, useContext, useEffect } from 'react';
 import './stylesheet/calendar.css'
 import moment from 'moment';
