@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
-import '../StyleSheet/activityApplicants.css';
+// import '../StyleSheet/activityApplicants.css';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
 const ActivityApplicants = () => {
     const activityPagePath = useParams();
     const eventID = activityPagePath.id;
-
+    console.log(eventID)
     const [toggled, setToggled] = useState(false);
     const selfOrNot = toggled ? { visibility: "visible" } : { visibility: "hidden" };
 
@@ -22,7 +22,11 @@ const ActivityApplicants = () => {
         if (userID == memberID) {
             setToggled(true);
         }
+            console.log(userID)
+            console.log(memberID)
     }, []);
+
+    
 
     const number = results.length;
 

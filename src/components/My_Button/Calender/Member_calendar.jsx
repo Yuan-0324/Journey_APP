@@ -6,6 +6,7 @@ import context from '../../../context';
 import { useState, useContext, useEffect } from 'react';
 import './stylesheet/calendar.css'
 import moment from 'moment';
+import{ BsCalendar3 } from 'react-icons/bs';
 
 const Calendar = () => {
 
@@ -67,7 +68,7 @@ const Calendar = () => {
         setEvts(arr);
     }
 
-    console.log(evts);
+    // console.log(evts);
 
 
     useEffect(() => {
@@ -94,7 +95,7 @@ const Calendar = () => {
 
     return (
         <div className='addButtonArea'>
-            <button onClick={clickOpen} className='addButton'>+</button>
+            <button onClick={clickOpen} className='addButton'><BsCalendar3/></button>
             <div style={showOrHide} >
                 <div className="personalCalendar">
                     <div className="personalCalendarArea" >

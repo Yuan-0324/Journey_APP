@@ -4,7 +4,6 @@ import axios from 'axios';
 import { useParams } from "react-router-dom"
 import context from '../../context'
 import { useHistory } from "react-router-dom"
-import Activity_Application from "./components/activityApplicants";
 
 // ---- 更新樣式----
 
@@ -20,10 +19,11 @@ import ActivityListIntroduce from './components/ActivityListIntroduce'
 import ActivityListMessage from './components/ActivityListMessage';
 //活動資訊側邊欄
 import IntroduceNavbarItem from './components/introduceNavbarItem';
-//
+    //載入活動人數
+import ActivityApplicants from './components/activityApplicants';
 
 // 照片
-import { IoChatbubblesOutline, IoLocationSharp } from 'react-icons/io5';
+import { IoChatbubblesOutline, IoLocationSharp,IoCreateSharp } from 'react-icons/io5';
 
 
 
@@ -36,7 +36,8 @@ const Activity_Introduce = () => {
     let userID = currentUser.userInfo.id;
     console.log(userID);
     const [activityIntroduceItem, setEve] = React.useState(
-        [{
+        [
+            {
             eventID: '',
             post_email: '',
             title: '教召'
@@ -48,7 +49,8 @@ const Activity_Introduce = () => {
             eventID: '',
             post_email: '',
             title: '唱軍歌'
-        }]
+        }
+    ]
     );
 
     const history = useHistory()
@@ -69,9 +71,7 @@ const Activity_Introduce = () => {
         axios.get('http://localhost:8000/event/activityIntroduceContent/' + id)
             .then(res => { console.log(res.data); setEve(res.data) })
             console.log(activityIntroduceItem[0].eventID);
-            
     }, []);
-
     return (
         <div className='activityIntroduceBody'>
             
@@ -101,15 +101,16 @@ const Activity_Introduce = () => {
                                         <ActivityListIntroduce data={elm} key={idx} />
                                         <br />
                                         <hr />
+                                        <ActivityApplicants/>
                                         {/* <!-- 留言板 --> */}
                                         {/* <ActivityListMessage /> */}
-                                        <Activity_Application/>
                                     </div>
                                     {/* <!-- 活動內容 --> */}
                                 </div>
                             </div>
                             {/* 活動資訊側邊欄 */}
                             <IntroduceNavbarItem data={elm} key={idx} />
+                           
                         </div>
                     </div>
                 </>

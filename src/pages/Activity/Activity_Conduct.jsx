@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import axios from 'axios';
 // import context from '../../context';
 import context from '../../context';
-// import check from '../../../images/check.gif'
+// import check from '../../../images/check.gif';
 
 //載入Components
 import Section01ContentInformation from "./components/activityConductSection01ContentInformation";
@@ -28,13 +28,13 @@ const Activity_Conduct = () => {
     //導入使用者ID
     const currentUser = useContext(context);
     let userID = currentUser.userInfo.id;
-   console.log(userID);             //9
+//    console.log(userID);             //9
 //    console.log(typeof userID);      //num
 
     //寫入後端
     const [postNewEvent, setPostNewEvent] = React.useState(
         {
-            post_email:'' , title: '', introduce: "", date: '', time: '',location:'', address: "", kind: '', Num: '', indoor: '',content:'',precaution:'',post_datetime:''
+            post_email:'' , title: '', introduce: "", date: '', time: '',location:'', address: "", kind: '', Num:1, indoor: '',content:'',precaution:'',post_datetime:''
         }
     )
     
@@ -54,14 +54,11 @@ const Activity_Conduct = () => {
     const doPostAndPop = () => {
 
         axios.post('http://localhost:8000/event/conduct', { postNewEvent })
-            .then(res => {let num=res.data;setNowEventNum(num)})
+            .then(res => {let num=res.data;console.log(res.data);setNowEventNum(num)})
         // setShow(true)
     }
  
-     //送出活動邀請
-     const [postActivityInvite,setPostActivityInvite ]=React.useState({
-        eventID:'',apply_member_email:userID
-    })
+    console.log(postNowEventNum);
     // console.log( postNowEventNum);
     // let postEventNum=postNowEventNum;
     // console.log(postEventNum);
@@ -134,7 +131,7 @@ const Activity_Conduct = () => {
                         <a onClick={setPostUserID} href="#section02" className="nextPage"><span></span>下一頁</a>
                     </div>
                 </section>
-                {/* 照片 */}
+             
 
                 <section id="section02">
                     <div className="section02Area">
@@ -193,23 +190,6 @@ const Activity_Conduct = () => {
             </div>
             {/* 注意事項 */}
 
-
-            {/* <Button variant="primary" className="submitBtn" onClick={() => { setShow(true) }}>
-                        創立活動
-                    </Button>
-                    <Modal show={show} onHide={() => { setShow(true) }}>
-                        <Modal.Header >
-                            <Modal.Title>創立成功</Modal.Title>
-                        </Modal.Header>
-                        <Modal.Body>
-                            <img src={check} alt="" width="482px" className='imgCheck' />
-                        </Modal.Body>
-                        <Modal.Footer>
-                            <Button variant="primary" onClick={() => { setShow(false) }}>
-                                確定
-                            </Button>
-                        </Modal.Footer>
-                    </Modal> */}
             {/* </section> */}
             {/* </div> */}
             {/* </form> */}

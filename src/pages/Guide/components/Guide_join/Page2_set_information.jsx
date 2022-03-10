@@ -58,7 +58,6 @@ const Set_Information = ({ guideForm, setGuideForm}) => {
 		const urlArr = [];
 		for (let i = 1; i <= 4; i++) {
 			//用memberID創Firebase/guide/資料夾號碼
-			// console.log('STEP', i)
             const storageRef = ref(storage, `guide/${currentUser.id}/GuideImg${i}.png`);
             const metadata = {
                 contentType: `imgFirebase.uploadImg${i}.type`
@@ -68,13 +67,9 @@ const Set_Information = ({ guideForm, setGuideForm}) => {
             }, (err) => { console.log(err); }, async () => {
                 //得到照片url
                 let url = await getDownloadURL(update.snapshot.ref);
-
                 urlArr.push(url);
             });
         };
-		if(urlArr.length == 4) {
-			alert('已成功上傳照片！');
-		}
 		setGuideForm({ ...guideForm, ['guideImg']: urlArr });
 	};
 	let uploadImg1 = (evt) => {

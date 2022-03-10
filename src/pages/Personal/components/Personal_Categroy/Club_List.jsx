@@ -1,34 +1,36 @@
 import { useState } from "react";
-
 import Personal_CLub from "./Personal_Club";
+import picA from '../../../../images/background/喝茶.jfif';
+import picB from '../../../../images/background/hiking.jpg';
+import picC from '../../../../images/background/outside.png';
+import picD from '../../../../images/background/photo.jpg';
+import picE from '../../../../images/background/tea.jpg';
+
+
 
 const Club_List = () => {
  
     const clubData = [{
         clubId: 3143214314,
         clubName: '桌遊社',
-        clubImg: 'https://picsum.photos/id/134/300/300'
+        clubImg: picA
     }, {
         clubId: 313314315,
         clubName: '廣場舞社',
-        clubImg: 'https://picsum.photos/id/135/300/300'
+        clubImg: picB
     }, {
         clubId: 314312324,
         clubName: '前端工程師討論社',
-        clubImg: 'https://picsum.photos/id/124/300/300'
+        clubImg: picC
     }, {
         clubId: 314314124,
         clubName: '前端工程師討論社',
-        clubImg: 'https://picsum.photos/id/122/300/300'
+        clubImg: picD
 
     },{
         clubId: 314354124,
         clubName: '前端工程師討論社',
-        clubImg: 'https://picsum.photos/id/322/300/300'   
-    },{
-        clubId: 312354124,
-        clubName: '前端工程師討論社',
-        clubImg: 'https://picsum.photos/id/522/300/300'
+        clubImg: picE   
     }]
     
     const [clubList, setClubList] = useState(clubData);

@@ -1,9 +1,14 @@
 
 import React, { Component } from "react";
 import Slider from "react-slick";
-
+// import BannerFirstImage from '../../../images/activity/banner/BannerFirstImage'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import BannerImageFirst from '../../../images/activity/banner/BannerImageFirst.png';
+import BannerImageSecond from '../../../images/activity/banner/BannerImageSecond.jpg';
+import BannerImageThird from '../../../images/activity/banner/BannerImageThird.jpg';
+import BannerImageFourth from '../../../images/activity/banner/BannerImageFourth.jpg';
+
 
 // 載入css
 // import '../StyleSheet/importStyle/banner.css'
@@ -23,22 +28,16 @@ export default class PauseOnHover extends Component {
             <div  className="event-banner">
                 <Slider   className="event-banner" {...settings}>
                     <div className="event-banner">
-                        <img className="event-banner" src='https://picsum.photos/id/395/1205/300' alt="" />
+                        <img className="event-banner" src={BannerImageThird} alt="" />
                     </div>
                     <div>
-                        <img  className="event-banner"  src='https://picsum.photos/id/396/1205/300' alt="" />
+                        <img  className="event-banner"  src={BannerImageSecond} alt="" />
                     </div>
                     <div>
-                        <img src='https://picsum.photos/id/397/1205/300' alt="" />
+                        <img src={BannerImageFourth} alt="" />
                     </div>
                     <div>
-                        <img src='https://picsum.photos/id/398/1205/300' alt="" />
-                    </div>
-                    <div>
-                        <img src='https://picsum.photos/id/399/1205/300' alt="" />
-                    </div>
-                    <div>
-                        <img src='https://picsum.photos/id/340/1205/300' alt="" />
+                        <img src={BannerImageFirst}  alt="" />
                     </div>
                 </Slider>
             </div>

@@ -18,7 +18,9 @@ const Search_results = ({ item }) => {
             </div>
             <div className="guideContent" data-id={item.guide_id}>
                 <div className="guideInformationArea" data-id={item.guide_id}>
-                    <span className="guideName" data-id={item.guide_id}>{item.guide_name}</span>
+                    
+                    <span className="guideName" data-id={item.guide_id}>{item.guide_name} </span>
+                    <img src={item.logo}/>
                     <span className="star" data-id={item.guide_id}><AiFillStar /></span>
                     <span className="guideStarNum" data-id={item.guide_id}>{item.avg_star}</span><br />
                     <span className="guideTitle" data-id={item.guide_id}> {item.level}</span>

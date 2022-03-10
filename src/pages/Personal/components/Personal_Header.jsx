@@ -274,11 +274,6 @@ const Personal_Header = ({ personalBanner, setPersonalBanner }) => {
         setState({ ...state, ['showFollow']: !state.showFollow });
     }
 
-
-
-
-
-
     return (
         <header className='personal-header'>
             {/* 自己頁面的更換 */}

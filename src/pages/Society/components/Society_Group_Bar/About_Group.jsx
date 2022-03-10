@@ -4,8 +4,18 @@ import Edit_About from './Edit_About';
 import { useParams } from 'react-router-dom';
 import { FiEdit } from "react-icons/fi";
 
-const About_Group = (groupRight) => {
-    let id = groupRight.groupRight.societyID;
+const About_Group = () => {
+    let userId = localStorage.getItem('id');
+    const [groupRight, setGroupRight] = React.useState({right:""})
+    let societyID = useParams();
+    let id = societyID.id;
+    useEffect(() => {
+        
+        axios.post('http://localhost:8000/soceity/right',{societyID: id , userId:userId})
+        .then(res=>{
+        setGroupRight(res.data[0])
+    })       
+    }, []);
 
     useEffect(() => {
         axios.post('http://localhost:8000/group/about', {id:id})
@@ -53,7 +63,7 @@ const About_Group = (groupRight) => {
                 <div>
                     <div dangerouslySetInnerHTML={{__html: groupAboutData.about_society}}/>
                 </div>
-                {groupRight.groupRight.right!=0 && <div className='about-group-set-btn btn m-4' onClick={closeEdit}><FiEdit /></div>}
+                {groupRight.right!=0 && <div className='about-group-set-btn btn m-4' onClick={closeEdit}><FiEdit /></div>}
             </div>
         </>
      );

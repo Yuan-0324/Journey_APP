@@ -1,6 +1,12 @@
 // @import "_var.scss";
 @import "../../../styles/var";
 
+@mixin mobile {
+  @media (max-width: 375px) {
+    @content;
+  }
+}
+
 #logIn {
   margin: auto;
   margin-top: 20px;
@@ -16,6 +22,7 @@
   height: 80px;
   transition: width 4s;
   transition-timing-function: ease-in-out;
+  overflow: visible;
   ul {
     display: flex;
     flex-direction: row;
@@ -24,12 +31,34 @@
     justify-content: space-between;
     margin: 15px 20px;
     padding: 0 0 0 20px;
+    @include mobile {
+      margin: 0px;
+      flex-direction: column;
+      &:hover {
+        .navbar {
+          display: block;
+          position: fixed;
+          top: 90px;
+          right: 50px;
+        }
+      }
+    }
+
     .navbar {
       display: flex;
       flex-direction: row;
+      @include mobile {
+        display: none;
+        background-color: white;
+        box-shadow: $shadow;
+        border-radius: 10px;
+      }
       li {
         padding: 0 20px;
         font-size: 20px;
+        @include mobile {
+          padding: 0px 5px;
+        }
         &:nth-child(4) span {
           color: $primarycolor;
           cursor: pointer;
@@ -66,9 +95,24 @@
         }
       }
     }
+
     .logo {
       max-width: 190px;
+      @include mobile {
+        width: 170px;
+        margin: 25px 10px;
+        &:hover {
+          .navLink {
+            display: block;
+          }
+        }
+      }
     }
+  }
+}
+
+#RWDlogIn {
+  @include mobile {
   }
 }
 
@@ -206,8 +250,17 @@
   background-color: white;
   height: 80px;
   display: flex;
-  transition: width 4s;
-  transition-timing-function: ease-in-out;
+  // transition: width 4s;
+  // transition-timing-function: ease-in-out;
+
+  // @include table{
+  //   width: ;
+  // }
+
+  // @include pad {
+  //   width: 37%;
+  // }
+
   ul {
     display: flex;
     flex-direction: row;
@@ -216,6 +269,7 @@
     justify-content: space-between;
     padding: 0 20px 0 25px;
     margin-top: 10px;
+
     .logo {
       max-width: 190px;
     }

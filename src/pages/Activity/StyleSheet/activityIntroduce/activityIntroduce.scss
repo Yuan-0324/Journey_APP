@@ -13,36 +13,31 @@ $border: #000 solid 1px;
     .wrap {
         width: 1100px;
         margin: 0 auto;
-        .wrapTitle{
+        .wrapTitle {
             display: flex;
             justify-content: space-between;
             margin-top: 120px;
-            .wrapTitleItem{
+            .wrapTitleItem {
+                padding-bottom: 10px;
                 h1 {
-         
                     font-size: 40px;
                     font-weight: bolder;
-                    
                 }
                 pre {
-        
                     font-size: 20px;
                 }
-                
-                }
-                .creatActivity {
-                    padding-top: 10px;
-                    a {
-                        color: #1697d5;
-                        padding-top: 30px;
-                        margin: 10px 20px 0px 75px;
-                        font-size: 24px;
-                        font-weight: bolder;
-                    }
             }
-            
+            .creatActivity {
+                padding-top: 10px;
+                a {
+                    color: #1697d5;
+                    padding-top: 30px;
+                    margin: 10px 20px 0px 75px;
+                    font-size: 24px;
+                    font-weight: bolder;
+                }
+            }
         }
-        
 
         .wrapBody {
             display: flex;
@@ -228,15 +223,14 @@ $border: #000 solid 1px;
                                 margin-top: 34px;
                                 font-size: 30px;
                                 font-weight: 600;
-
                             }
-                            p{
+                            p {
                                 line-height: 36px;
                                 font-size: 22px;
                                 font-weight: 500;
                                 margin-top: 20px;
                             }
-                            pre{
+                            pre {
                                 line-height: 30px;
                                 font-size: 22px;
                                 font-weight: 500;
@@ -315,13 +309,54 @@ $border: #000 solid 1px;
                                         background-color: #fff;
                                         border: 1px solid #1697d5;
                                         background-image: none;
-            
+
                                         color: #1697d5;
                                         text-decoration: none;
                                     }
                                 }
                             }
                         } //message底
+
+                        //查看申請參加人數
+                        .applicantsArea {
+                            width: 300px;
+                            min-height: 170px;
+                            border: 3px rgba(175,175,175,0.315) solid;
+                            border-radius: 30px;
+                            padding: 20px;
+                            margin-bottom: 30px;
+                            .applicantsNum {
+                                font-size: 20px;
+                            }
+                            .applicants {
+                                font-size: 20px;
+                                margin-top: 10px;
+                                .applicantsPeople {
+                                    margin-top: -40px;
+                                    margin-left: 110px;
+                                    .applicant {
+                                        line-height: 45px;
+                                        cursor: pointer;
+
+                                        .memberImg {
+                                            width: 30px;
+                                            height: 30px;
+                                            border-radius: 50%;
+                                            cursor: pointer;
+                                            &:hover {
+                                                box-shadow: 1px 1px 1px rgb(112, 112, 112);
+                                            }
+                                        }
+                                        .memberName {
+                                            cursor: pointer;
+                                            &:hover {
+                                                font-weight: 600;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     } //活動內容底
                     //  活動資訊
                     //活動資訊底
@@ -330,7 +365,6 @@ $border: #000 solid 1px;
             .activityIntroduceNavbar {
                 position: sticky;
                 top: 0;
-                
                 height: 850px;
                 .navbarBox {
                     width: 10px;
@@ -342,21 +376,50 @@ $border: #000 solid 1px;
                     width: 350px;
                     top: 0;
                     margin-left: 10px;
-                    padding: 20px 20px 20px;
+                    // background-color: rgba(0,0,0,0.04);
+                    // background-color: rgba(0,0,0,0.4);
+                    background-color: rgba(255, 255, 255, 0.578);
+                    padding: 20px 20px 100px 20px;
                     // width: 250px;
-                    height: 700px;
-                    border: #000 solid 1px;
+                    // height: 750px;
+                    // border: #000 solid 10px;
                     border-radius: 5px;
                     // background-color: #d6d6d6;
-                    h2{
-                        font-size: 36px;
+                    .navbarItemFirst {
+                        display: flex;
+                        justify-content: space-between;
+                        h2 {
+                            font-size: 30px;
+                            font-weight: 600;
+                            margin-bottom: 10px;
+                        }
+                        .activityIntroduceEdit {
+                            // margin-left: 50px;
+                            color: #1697d5;
+                            margin-left: 3px;
+                            line-height: 35px;
+                            font-size: 25px;
+                            font-weight: 800;
+                            display: block;
+                            span{
+                                color: #1697d5;
+                            // margin-left: 0px;
+                            // line-height: 38px;
+                            font-size: 20px;
+                            font-weight: 600;
+                            }
+                        }
+                        .activityIntroduceEditHide {
+                            display: none;
+                        }
+                    }
+                    .navbarItemText {
                         font-weight: 600;
-                        margin-bottom: 20px;
                     }
                     h3 {
                         line-height: 36px;
                         font-size: 20px;
-                        padding-bottom: 25px;
+                        padding-bottom: 10px;
                         a {
                             // padding-left: 25px;
                             text-decoration: none;
@@ -366,6 +429,7 @@ $border: #000 solid 1px;
                                 width: 36px;
                                 height: 36px;
                                 border-radius: 18px;
+                                margin-right: 10px;
                             }
                         }
                     }
@@ -375,7 +439,7 @@ $border: #000 solid 1px;
                                 font-size: 20px;
 
                                 padding-right: 25px;
-                                padding-bottom: 25px;
+                                padding-bottom: 10px;
                             }
                         }
                     }
@@ -387,6 +451,10 @@ $border: #000 solid 1px;
                         float: right;
                         margin-top: 30px;
                     }
+                    // .navbarItemTitle{
+
+                    // }
+                
                 } //navbarItem底
             } //navbar底
         } //wrapBody底

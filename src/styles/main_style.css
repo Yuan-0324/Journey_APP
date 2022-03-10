@@ -32,4 +32,10 @@ body {
 * *:focus {
   outline: none;
 }
+
+@media (max-width: 375px) {
+  * {
+    overflow-x: hidden;
+  }
+}
 /*# sourceMappingURL=main_style.css.map */

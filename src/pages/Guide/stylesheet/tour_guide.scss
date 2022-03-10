@@ -3,12 +3,6 @@
 // ------------------------
 
 .guideMainPage {
-    // .bgImg {
-    //     position: fixed;
-    //     z-index: -1000;
-    //     height: 100vh;
-    //     width: 100%;
-    // }
     .guideBanner {
         height: 320px;
         width: 70%;
@@ -247,6 +241,10 @@
                     .guideInformationArea {
                         padding-top: 8px;
                         width: 100%;
+                        img{
+                            width: 25px;
+                            margin-top: -10px;
+                        }
                         .guideName {
                             font-size: 22px;
                             font-weight: bold;

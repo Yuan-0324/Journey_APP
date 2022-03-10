@@ -12,7 +12,9 @@ $cardShadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 @mixin mainBtn {
   font-size: 20px;
   // border-radius: 10px;
-  background-color: $primarycolor;
+  // background-color: $primarycolor;
+  background-color: #738bdc;
+  background-image: linear-gradient(315deg, #738bdc 0%, #48c3eb 74%);
   padding: 8px 20px;
   border: 1px white solid;
   color: white;
@@ -26,4 +28,15 @@ $cardShadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   color: $secondarycolor;
   padding: 8px 20px;
   border: 2px $secondarycolor solid;
+}
+
+// @mixin pad {
+//   @media (max-width: 768px) {
+//     @content;
+//   }
+// }
+@mixin mobile {
+  @media (max-width: 375px) {
+    @content;
+  }
 }

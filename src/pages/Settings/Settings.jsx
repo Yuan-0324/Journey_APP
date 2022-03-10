@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { useHistory, useParams } from "react-router-dom";
 import Setting_Sidebar from "./components/Setting_Sidebar";
 import Setting_Normal from "./components/Setting_Normal";
 import Setting_Safety from "./components/Setting_Safety";
@@ -8,33 +9,30 @@ import './stylesheet/Settings.css'
 // import context from "../../context";
 
 const Setting = () => {
+    let history = useHistory();
 
-    // const { userInfo } = useContext(context);
-
+    //用路由去判斷渲染頁面
+    const currentPage = useParams().cate
     const [sidebarSwitch, setSidebarSwitch] = useState(0)
     let showCompotent = '';
 
-    switch (sidebarSwitch) {
+    switch (currentPage) {
         //一般設定 
-        case 0:
+        case 'general':
             showCompotent = <Setting_Normal />
             break;
         //用戶安全
-        case 1:
+        case "safety":
             showCompotent = <Setting_Safety />
             break;
-        // //隱私設定
-        // case 2:
-        //     showCompotent = <Setting_Privacy />
-        //     break;
+
         //嚮導設定
-        case 3:
+        case "guide":
             showCompotent = <Setting_Guide />
             break;
-        //通知設定
-        // case 4:
-        //     showCompotent = <Setting_Safety />
-        //     break;
+
+        default: showCompotent = <Setting_Normal />
+
     }
 
     return (
@@ -45,7 +43,6 @@ const Setting = () => {
 
             {showCompotent}
 
-            {/* <button>幹你娘</button> */}
         </div>
     )
 }

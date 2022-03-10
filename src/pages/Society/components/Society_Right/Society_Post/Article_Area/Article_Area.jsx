@@ -10,9 +10,7 @@ import Context from '../../../../../../context';
 import Show_Article from './Show_Article';
 import Edit_Post_Article from './Edit_Post_Article';
 
-const Article_Area = ({data, articleListIdx, articleList, setArticleList,userImg,societyID ,userId}) => {
-    const viewUserImg = useContext(Context).viewUserImg;
-    // console.log(viewUserImg);
+const Article_Area = ({data, articleListIdx, articleList, setArticleList,userImg,societyID ,userId, userLastName, userFirstName}) => {
 
     // 展開底部留言區
     const [commentToggle, setCommentToggle] = useState(false);
@@ -89,15 +87,15 @@ const Article_Area = ({data, articleListIdx, articleList, setArticleList,userImg
 
         <>
         {articleToggle && <Show_Article article={data} articleToggle={articleToggle} setArticleToggle={setArticleToggle} /> }
-        {editPostArticle && <Edit_Post_Article editArticleList={data} setEditPostArticle={setEditPostArticle} setEditPost={setEditPost} userImg={userImg}/>}
+        {editPostArticle && <Edit_Post_Article editArticleList={data} setEditPostArticle={setEditPostArticle} setEditPost={setEditPost} userImg={userImg} userLastName={userLastName} userFirstName={userFirstName}/>}
 
         <div className='article-container'>
             <div className='article-title'>
-                <img src={data.api_selfie} alt=""></img>
+                <img src={data.selfie} alt=""></img>
                 <div className='title-content'>
-                    <div className='d-flex'>
+                    <div className='d-flex align-items-center'>
                     <h1>{data.lastName} {data.firstName}</h1>
-                    <h1 className='h5 ml-3'>{societyID == undefined ? data.society_name: ''}</h1>
+                    {(societyID == undefined && data.society_name) ?<div className='group-article-name h5 ml-3 p-1 '>{data.society_name}</div> : null}
                     </div>
                     <h6>{dataTransfer().day} {dataTransfer().time}</h6>
                 </div>    

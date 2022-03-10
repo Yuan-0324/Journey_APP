@@ -4,8 +4,7 @@ import SecondImages from './SecondImages'
 import ThirdImage from './ThirdImage'
 import FourthImage from './FourthImage'
 const ActivityConductImages = ({data}) => {
-    // console.log(data);
-
+console.log(data);
     return (
         <div className='activityImage'>
         

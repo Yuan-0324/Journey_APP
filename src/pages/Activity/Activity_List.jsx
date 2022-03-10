@@ -12,6 +12,8 @@ import context from '../../context';
 // components
 // banner
 import Banner from './components/banner'
+
+
 // search
 import Search from './components/search';
 // activityListItem
@@ -39,17 +41,17 @@ const Activity_List = () => {
     // console.log(typeof userID);
     const [activityTitle, setEve] = React.useState(
         [{
-            eventID: 1,
+            eventID: '',
             post_email: '',
-            title: '教召'
+            title: ''
         }, {
-            eventID: 2,
+            eventID: '',
             post_email: '',
-            title: '掃地'
+            title: ''
         }, {
-            eventID: 3,
+            eventID: '',
             post_email: '',
-            title: '唱軍歌'
+            title: ''
         }]
     )
     // console.log(activityTitle.title);

@@ -7,6 +7,8 @@ import Searching from './Searching/Searching';
 import Attend_Society from './Attend_Society';
 import Create_Group from "./Searching/Create_Group";
 import Create_Group_Area from "./Searching/Create_Group_Area";
+import { RiGroup2Line } from 'react-icons/ri';
+import { RiGroupLine } from 'react-icons/ri';
 
 // 左側功能列表
 const Society_Categroy = ({showGroup, GroupSwicher,setjustForGroup,groupPicsave,groupPicSit}) => {
@@ -28,9 +30,9 @@ const Society_Categroy = ({showGroup, GroupSwicher,setjustForGroup,groupPicsave,
     return (
         <div className="col-left">
 
-            {creatGroupArea || currentParams.id == 0 ? null : <div className='society-toggle d-flex'>
-                <a className="no society-toggle-btn" onClick={swichRoute}>社群</a>
-                <a className="yes society-toggle-btn" onClick={swichRoute}>社團</a>        
+            {creatGroupArea || currentParams.id == 0 ? null : <div className='society-toggle d-flex align-items-center'>
+                <a className="no society-toggle-btn" onClick={swichRoute}>社群<span className='yesno' onClick={swichRoute}><RiGroupLine className='ml-2' onClick={swichRoute}/></span></a>
+                <a className="yes society-toggle-btn" onClick={swichRoute}>社團<span className='yesno' onClick={swichRoute}><RiGroup2Line className='ml-2' onClick={swichRoute}/></span></a>        
             </div>}
 
             {creatGroupArea || currentParams.id == 0 ? null : <Searching/>}

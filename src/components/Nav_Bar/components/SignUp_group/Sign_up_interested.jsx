@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
+import { createUserWithEmailAndPassword, sendEmailVerification } from 'firebase/auth';
+import { auth } from '../../../../firebase';
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import logo from '../../../../images/logo.png';
 
@@ -14,7 +16,7 @@ function Sign_up_interested({ interestedModal, positionModal, finishModal, total
     const [dancing, setDancing] = useState(false)
     const [badminton, setBadminton] = useState(false)
     const [delicacy, setDelicacy] = useState(false)
-    const [walking, setWalking] = useState(false)
+    const [tea, setTea] = useState(false)
     const [photography, setPhotography] = useState(false)
 
     const [checkedArr, setCheckedArr] = useState([])
@@ -39,16 +41,52 @@ function Sign_up_interested({ interestedModal, positionModal, finishModal, total
         await Axios.post("http://localhost:8000/member/signup", totalData)
             .then((res) => {
                 console.log(res);
-                interestedModal(false);
-                finishModal(true);
+
             })
             .catch((err) => {
                 console.log(err);
             })
+        await createUserWithEmailAndPassword(auth, totalData.email, totalData.password)
+            .then((res) => {
+                console.log(res);
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+        await sendEmailVerification(auth.currentUser)
+            .then((res) => {
+                console.log('already send verify email');
+                alert('請至email收取驗證信件！')
+                setTimeout(() => {
+                    interestedModal(false);
+                    finishModal(true);
+                }, 500);
 
-
-
+            })
+            .catch((err) => {
+                console.log(err);
+            })
     }
+
+    useEffect(() => {
+        let num = () => {
+            switch (checkedArr.length) {
+                case 0:
+                    document.getElementsByClassName('numm')[0].innerText = '再挑選三個';
+                    break;
+                case 1:
+                    document.getElementsByClassName('numm')[0].innerText = '再挑選兩個';
+                    break;
+                case 2:
+                    document.getElementsByClassName('numm')[0].innerText = '再挑選一個';
+                    break;
+                case 3:
+                    document.getElementsByClassName('numm')[0].innerText = '送出';
+                    break;
+            }
+        }
+        num();
+    }, [checkedArr.length]);
 
     console.log(hiking);
     console.log(checkedArr);
@@ -206,18 +244,18 @@ function Sign_up_interested({ interestedModal, positionModal, finishModal, total
                                 </div>
                                 <div>
                                     <input type="checkbox"
-                                        name='健走'
-                                        checked={walking}
-                                        onChange={() => { setWalking(!walking); }}
+                                        name='茶藝'
+                                        checked={tea}
+                                        onChange={() => { setTea(!tea); }}
                                         onClick={checkedOnClick}
                                         id="myCheckbox9" />
                                     <label htmlFor="myCheckbox9">
-                                        <img src="https://cdn.pixabay.com/photo/2016/11/29/06/05/adult-1867702_1280.jpg" alt="" />
+                                        <img src="https://cdn.pixabay.com/photo/2016/11/29/13/04/tea-1869716_1280.jpg" alt="" />
                                         <div className='picShadow'>
                                             <div className='picBorder'>
                                             </div>
                                         </div>
-                                        <span>健走</span>
+                                        <span>茶藝</span>
                                     </label>
                                 </div>
                                 <div>
@@ -248,7 +286,7 @@ function Sign_up_interested({ interestedModal, positionModal, finishModal, total
                 <button
                     onClick={btnOnClick}
                     className='intSubmitBtn'>
-                    再挑選三個
+                    <span className='numm'></span>
                 </button>
             </div>
 

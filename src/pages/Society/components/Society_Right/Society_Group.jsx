@@ -13,6 +13,7 @@ const Society_Group = (props) =>{
     const [recommendGroup, setRecommendGroup]=React.useState([])
 
     useEffect(() => {
+    
         axios.post('http://127.0.0.1:8000/society/allgroup',{userId:userId})
             .then( async(res)=>{
                 

@@ -22,7 +22,12 @@ const Setting_Guide = () => {
 
     //context海底撈
     const { userInfo } = useContext(context);
-    let userEmail = userInfo.email
+    let userEmail = userInfo.email;
+    let gid = localStorage.getItem('guide_id');    
+    //回到嚮導頁面
+    let gotoGuidePersonal = () => {
+        window.location = `/GuidePersonal/${gid}`;
+    }
     // console.log(userEmail);
 
     const [guideData, setGuideData] = useState({
@@ -170,9 +175,11 @@ const Setting_Guide = () => {
             break;
     }
 
+
+
     return (
         <div className="Guide_Content">
-            <p>嚮導設定</p>
+            <p>嚮導設定<span onClick={gotoGuidePersonal}>嚮導個人頁面 →</span></p> 
             <div className="Content_Shadow">
                 <div className="Guide_item">
 

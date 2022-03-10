@@ -1,8 +1,9 @@
 //引入套件
-import React, {useEffect, useContext, useLayoutEffect, useRef} from 'react';
+import React, { useEffect, useContext, useLayoutEffect, useRef } from 'react';
 import { useParams } from "react-router-dom";
 import $ from 'jquery/dist/jquery';
 import axios from 'axios';
+import BeatLoader from 'react-spinners/BeatLoader'
 
 //引入component
 import Article_Area from './Article_Area/Article_Area';
@@ -12,93 +13,94 @@ import context from '../../../../../context';
 
 // 整合 Po文內容
 
-const Society_Post =() => {
+const Society_Post = () => {
 
   const currentUser = useContext(context).userInfo;
-    let userImg = localStorage.getItem('selfie');
-    let userLastName = currentUser.lastName;
-    let userFirstName = currentUser.firstName;
-    let userEmail = currentUser.email;
-    let userName = currentUser.name;  
-    let userId = localStorage.getItem('id');
-  
-  
+  let userImg = localStorage.getItem('selfie');
+  let userLastName = currentUser.lastName;
+  let userFirstName = currentUser.firstName;
+  let userEmail = currentUser.email;
+  let userName = currentUser.name;
+  let userId = localStorage.getItem('id');
+
+
   let societyID = useParams();
 
   //-----Edit_Article隱藏-----
-  let  [editArticle, setEditArticle ]= React.useState(false);
+  let [editArticle, setEditArticle] = React.useState(false);
 
-  
+
   let allArr = [];
   const [articleList, setArticleList] = React.useState([]);
   const callTime = useRef(0);//呼叫get文章次數
 
-    const getArticle = () =>{
+  const getArticle = () => {
 
-      if(societyID.id){
-        // !!!!!Axios.get!!!!!取得社團的文章      
-        axios.post('http://127.0.0.1:8000/eachgroup/article',{id : societyID.id, callTime: callTime.current})
+    if (societyID.id) {
+      // !!!!!Axios.get!!!!!取得社團的文章      
+      axios.post('http://127.0.0.1:8000/eachgroup/article', { id: societyID.id, callTime: callTime.current })
         .then(res => {
           allArr = res.data;
-          allArr.sort(function(a, b) {
-            if(a.like_num < b.like_num){
+          allArr.sort(function (a, b) {
+            if (a.like_num < b.like_num) {
               return 1; // 正數時，後面的數放在前面
             } else {
               return -1 // 負數時，前面的數放在前面
             }
           })
-          callTime.current = callTime.current+1;
+          callTime.current = callTime.current + 1;
           setArticleList(allArr);
-          }) 
-  
-      }else{
-        // !!!!!Axios.get!!!!!取得follow個人及attend社團的文章
-        
-        axios.post('http://127.0.0.1:8000/followed/article',{id : `${userId}`, callTime: callTime.current})
+        })
+
+    } else {
+      // !!!!!Axios.get!!!!!取得follow個人及attend社團的文章
+
+      axios.post('http://127.0.0.1:8000/followed/article', { id: `${userId}`, callTime: callTime.current })
         .then(res => {
           allArr = res.data;
-           axios.post('http://127.0.0.1:8000/society/article',{id : `${userId}`, callTime: callTime.current})
-          .then(res => {
-            allArr = allArr.concat(res.data)
-            allArr.sort(function(a, b) {
-              if(a.like_num < b.like_num){
-                return 1; // 正數時，後面的數放在前面
-              } else {
-                return -1 // 負數時，前面的數放在前面
-              }
-            });
-            callTime.current = callTime.current+1;
-            setArticleList(allArr);
+          axios.post('http://127.0.0.1:8000/society/article', { id: `${userId}`, callTime: callTime.current })
+            .then(res => {
+              allArr = allArr.concat(res.data)
+              allArr.sort(function (a, b) {
+                if (a.like_num < b.like_num) {
+                  return 1; // 正數時，後面的數放在前面
+                } else {
+                  return -1 // 負數時，前面的數放在前面
+                }
+              });
+              callTime.current = callTime.current + 1;
+              setArticleList(allArr);
             })
-          })  
-      }  
+        })
     }
+  }
   useEffect(() => {
     getArticle();
-     
+
   }, []);
 
   //-----Post新文章關閉彈跳視窗，觸發呈現新文章到畫面上-----
-  const setPost = async(data) =>{
-    let cont = ""  
+  const setPost = async (data) => {
+    let cont = ""
     data.forEach(elm => {
-        cont += elm.content
-      });
-    if(cont == ""){
+      cont += elm.content
+    });
+    if (cont == "") {
       alert('未輸入任何值');
       return;
-    }else{
+    } else {
       localStorage.removeItem('oldArticle');
       let today = new Date();
       let yy = today.getFullYear();
-      let month = today.getMonth()+1;
+      let month = today.getMonth() + 1;
       let mm = (month.toString().length < 2) ? (month = '0' + month.toString()) : month.toString();
       let day = today.getDate();
-      let dd= (day.toString().length < 2) ? (day = '0' + day.toString()) : day.toString();
+      let dd = (day.toString().length < 2) ? (day = '0' + day.toString()) : day.toString();
       let todayDate = `${yy}-${mm}-${dd} ${today.getHours()}:${today.getMinutes()}:00`
-      
+
       let newArrayData = {
         articleID: '',
+        id: userId,
         selfie: userImg,
         lastName: userLastName,
         firstName: userFirstName,
@@ -108,12 +110,12 @@ const Society_Post =() => {
       }
 
       // !!!!!Axios.post!!!!! post新貼文
-      await axios.post('http://127.0.0.1:8000/newpost/article', 
-      {post_email:userEmail, datetime:todayDate, content:newArrayData.content})
-        .then(res => {newArrayData.articleID = res.data.insertId;})
-      setArticleList(articleList=>[newArrayData, ...articleList]);
-    } 
-    setEditArticle(false) 
+      await axios.post('http://127.0.0.1:8000/newpost/article',
+        { post_email: userEmail, datetime: todayDate, content: newArrayData.content })
+        .then(res => { newArrayData.articleID = res.data.insertId; })
+      setArticleList(articleList => [newArrayData, ...articleList]);
+    }
+    setEditArticle(false)
   }
 
   //-----文章編輯彈跳視窗-----
@@ -126,97 +128,97 @@ const Society_Post =() => {
 
   useEffect(() => {
     if (editPageToggle || editArticle) {
-        document.body.style.overflow = 'hidden';
+      document.body.style.overflow = 'hidden';
     } else {
-        document.body.style.overflow = 'scroll';
+      document.body.style.overflow = 'scroll';
     }
   }, [editPageToggle, editArticle])
 
   // 滾動叫出新文章
-  const [renew, setRenew]=React.useState(0)
+  const [renew, setRenew] = React.useState(0)
 
-  window.addEventListener('scroll', function(e) {
+  window.addEventListener('scroll', function (e) {
     var scrollTop = $(this).scrollTop();
     var scrollHeight = $(document).height();
     var windowHeight = $(this).height();
-    if (scrollTop + windowHeight == scrollHeight) {setRenew(renew+1)}
+    if (scrollTop + windowHeight == scrollHeight) { setRenew(renew + 1) }
   })
-  
+
   useEffect(() => {
 
-    if(societyID.id){
+    if (societyID.id) {
 
-      if(callTime.current>0){
-        
-        axios.post('http://127.0.0.1:8000/eachgroup/article',{id : societyID.id, callTime: callTime.current})
-        .then(res => {
-          allArr = res.data;
-          allArr.sort(function(a, b) {
-            if(a.like_num < b.like_num){
-              return 1; // 正數時，後面的數放在前面
-            } else {
-              return -1 // 負數時，前面的數放在前面
-            }
-          })
-            if(allArr.length==0){
-              console.log('noData');
-            }
-            let newArr = articleList.concat(allArr)
-            callTime.current = callTime.current+1;
-            setArticleList(newArr);
-          })   
-      }
+      if (callTime.current > 0) {
 
-    }else{
-
-      if(callTime.current>0){
-        
-        axios.post('http://127.0.0.1:8000/followed/article',{id : `${userId}`, callTime: callTime.current})
-        .then(res => {
-          allArr = res.data;
-          axios.post('http://127.0.0.1:8000/society/article',{id : `${userId}`, callTime: callTime.current})
+        axios.post('http://127.0.0.1:8000/eachgroup/article', { id: societyID.id, callTime: callTime.current })
           .then(res => {
-            allArr = allArr.concat(res.data)
-            allArr.sort(function(a, b) {
-              if(a.like_num < b.like_num){
+            allArr = res.data;
+            allArr.sort(function (a, b) {
+              if (a.like_num < b.like_num) {
                 return 1; // 正數時，後面的數放在前面
               } else {
                 return -1 // 負數時，前面的數放在前面
               }
-            });
-            if(allArr.length==0){
+            })
+            if (allArr.length == 0) {
               console.log('noData');
             }
             let newArr = articleList.concat(allArr)
-            callTime.current = callTime.current+1;
+            callTime.current = callTime.current + 1;
             setArticleList(newArr);
           })
-        })  
+      }
+
+    } else {
+
+      if (callTime.current > 0) {
+
+        axios.post('http://127.0.0.1:8000/followed/article', { id: `${userId}`, callTime: callTime.current })
+          .then(res => {
+            allArr = res.data;
+            axios.post('http://127.0.0.1:8000/society/article', { id: `${userId}`, callTime: callTime.current })
+              .then(res => {
+                allArr = allArr.concat(res.data)
+                allArr.sort(function (a, b) {
+                  if (a.like_num < b.like_num) {
+                    return 1; // 正數時，後面的數放在前面
+                  } else {
+                    return -1 // 負數時，前面的數放在前面
+                  }
+                });
+                if (allArr.length == 0) {
+                  console.log('noData');
+                }
+                let newArr = articleList.concat(allArr)
+                callTime.current = callTime.current + 1;
+                setArticleList(newArr);
+              })
+          })
       }
     }
   }, [renew]);
 
+  let whatToSay = localStorage.getItem('oldArticle');
 
-      
-    return (
+  return (
 
-      <>
-        {editArticle && <Edit_Article articleList={articleList} toSetPost={setPost} userImg={userImg} userLastName={userLastName} userFirstName={userFirstName} setEditArticle={setEditArticle}/>}
-        <div>
+    <>
+      {editArticle && <Edit_Article articleList={articleList} toSetPost={setPost} userImg={userImg} userLastName={userLastName} userFirstName={userFirstName} setEditArticle={setEditArticle} />}
+      <div>
 
 
-          <div className='post-area'>
-              <img src={userImg} alt=""></img>
-              <div className='post-btn' onClick={showEditPage}>
-                  <h4>想說些什麼？</h4>
-              </div>
+        <div className='post-area'>
+          <img src={userImg} alt=""></img>
+          <div className='post-btn' onClick={showEditPage}>
+            {whatToSay ? <h4>文章建立中......</h4> : <h4>想說些什麼？</h4>}
           </div>
-            
- 
-          <div>
-            <div id="content" >
-            
-              {articleList.map((elm,idx)=>
+        </div>
+
+
+        <div>
+          <div id="content" >
+
+            {articleList.map((elm, idx) =>
               <Article_Area
                 key={idx}
                 data={elm}
@@ -226,19 +228,25 @@ const Society_Post =() => {
                 setArticleList={setArticleList}
                 articleList={articleList}
                 userImg={userImg}
-                userId = {userId}
+                userId={userId}
+                userLastName={userLastName}
+                userFirstName={userFirstName}
               />
-              )}
-            
-            </div>
-            <div className='loading-img mx-auto' >
-              <img src="/img/loading.gif" className='img-fluid' alt="" />
-            </div>
-          </div>
+            )}
 
+          </div>
+          <div className='loading-img mx-auto' >
+            {/* {articleList.length !== 0 &&
+              <img src="/img/loading.gif" className='img-fluid' alt="" />} */}
+
+            {articleList.length !== 0 &&
+              <BeatLoader color='#1697d5'/>}
+          </div>
         </div>
-      </>
-    )
+
+      </div>
+    </>
+  )
 }
 
 export default Society_Post;

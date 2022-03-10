@@ -1,7 +1,7 @@
 import React,{ useState, useEffect, useContext, createRef, useRef, useLayoutEffect } from 'react'
 import Canvas from './Canvas';
 import axios from 'axios';
-import { ref, uploadBytesResumable, uploadBytes, getDownloadURL } from 'firebase/storage';
+import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
 import {storage} from '../../../../firebase';
 import { useParams } from "react-router-dom";
 import s_pic from '../../../../images/Home/main/weather.jpg';
@@ -70,10 +70,10 @@ const Society_Pic = ({groupPic,groupPageData,allData,setGroupPicsave,setGroupPic
     }, [state.changeModal, state.showBanner])
 
     // ---- 照片預覽，顯示準備上傳照片。 ----
-    let wantPostPic = '';
+    let wantPostPic = useRef();
     let bannerRevceive = (evt) => {
         
-        wantPostPic = evt.target.files[0];
+        wantPostPic.current = evt.target.files[0];
             // 新增 formData
             const formData = new FormData();
             formData.append('image', evt.target.files[0]);
@@ -112,8 +112,17 @@ const Society_Pic = ({groupPic,groupPageData,allData,setGroupPicsave,setGroupPic
     let bannerSend = (evt) => {
         let bgPic = bannerPic.current
         let postThing = bannerDiv.current
+        // 可存到fireBase
+        
 
+        //長寬存到mysql
         if(societyID.id!=0){
+            const storageRef = ref(storage, `societyGroup/${societyID.id}/${societyID.id}.jpg`);
+            const metadata = {
+                contentType:   'image/jpg'
+            };
+            const upadateTask = uploadBytesResumable(storageRef, wantPostPic.current , metadata);
+
             axios.post(`http://localhost:8000/group/bgpic/${groupPageData}`, postThing)
                 .then(res=>{
                     // console.log('ok')
@@ -169,8 +178,8 @@ const Society_Pic = ({groupPic,groupPageData,allData,setGroupPicsave,setGroupPic
 
             <div className='society-header-banner overflow-hidden'>{state.yesPic ? <img src={state.yesPic} alt="" />:
             (groupPic ?<img style={bgPicStyle} src={`data:image/png;base64,${groupPic}`}/> : <img style={orignPic} src={s_pic} />)}</div>
-            
-            {groupRight.right!==0 && <button onClick={changeBanner} className='confirm-banner change-btn'>更換照片</button>}
+            {groupPageData==0 && <div className='group-preview'>社團預覽</div>}
+            {groupRight.right!=="0" && <button onClick={changeBanner} className='confirm-banner change-btn'>更換照片</button>}
 
         </div>
      );

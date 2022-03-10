@@ -19,7 +19,6 @@ const Searching_Group = ({seachGroupResult}) =>{
       marginTop : 0,
       marginLeft : 0
   }
-  console.log(seachGroupResult);
 
   return (
     <div className='searching-list' id='searchingListSociety'>
@@ -31,13 +30,13 @@ const Searching_Group = ({seachGroupResult}) =>{
 
         <div data-group={elm.societyID} onClick={gotoTheRoute}>
           <div data-group={elm.societyID} onClick={gotoTheRoute}>{elm.society_name}</div>
-          <span data-group={elm.societyID} onClick={gotoTheRoute}>{elm.attended? '已加入':''}</span>
-          <a className='text-decoration-none' data-group={elm.societyID} onClick={gotoTheRoute}>{elm.attended? '': '申請加入社團'}</a>
+          <span className='group-name-size' data-group={elm.societyID} onClick={gotoTheRoute}>{elm.attended? '已加入':''}</span>
+          <a className='group-name-size text-decoration-none' data-group={elm.societyID} onClick={gotoTheRoute}>{elm.attended? '': '申請加入社團'}</a>
         </div>
       </a>
       )}
       <hr />
-      <div className='d-flex justify-content-center'><p>沒有其他結果</p></div>
+      <div className='search-result d-flex justify-content-center'><p>沒有其他結果</p></div>
     </div>
   );
 

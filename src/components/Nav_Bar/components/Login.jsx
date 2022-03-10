@@ -3,23 +3,22 @@ import { useHistory } from 'react-router-dom';
 import Axios from 'axios';
 
 //firebase
-import { GoogleAuthProvider, signInWithPopup, FacebookAuthProvider } from 'firebase/auth';
+import { GoogleAuthProvider, signInWithPopup, FacebookAuthProvider, sendPasswordResetEmail } from 'firebase/auth';
 import { auth } from '../../../firebase';
 
 //icon
 // import logo from '../images/logo.png';
 import { AiOutlineClose } from "react-icons/ai";
 
-
 // ---- 更新 ----
 
 import logo from '../../../images/logo.png';
 import context from '../../../context';
+import Lineicon from '../../../images/login_setting/login/LINE_Brand_icon.png'
 
 
-function Login({ loginModal, signUpModal }) {
-    // const [email, setEmail] = useState('');
-    // const [password, setPassword] = useState('');
+
+function Login({ loginModal, signUpModal, setForget }) {
     const [loginData, setLoginData] = useState({
         email: '',
         password: ''
@@ -38,7 +37,6 @@ function Login({ loginModal, signUpModal }) {
     const { setUserInfo } = useContext(context);
 
     let history = useHistory();
-
 
     //一般登入
     const onSubmit = async () => {
@@ -69,19 +67,19 @@ function Login({ loginModal, signUpModal }) {
                             member_is_guide: res.data.member_is_guide
                         })
                         // 保存到本地
-                        localStorage.setItem('token', res.data.token)
-                        localStorage.setItem('id', res.data.id)
-                        localStorage.setItem('email', res.data.email)
-                        localStorage.setItem('lastName', res.data.lastName)
-                        localStorage.setItem('firstName', res.data.firstName)
-                        localStorage.setItem('name', res.data.lastName + res.data.firstName)
-                        localStorage.setItem('selfie', res.data.api_selfie)
-                        localStorage.setItem('place', res.data.place)
-                        localStorage.setItem('interested', res.data.interested)
-                        localStorage.setItem('member_is_guide', res.data.member_is_guide)
+                        localStorage.setItem('token', res.data.token);
+                        localStorage.setItem('id', res.data.id);
+                        localStorage.setItem('email', res.data.email);
+                        localStorage.setItem('lastName', res.data.lastName);
+                        localStorage.setItem('firstName', res.data.firstName);
+                        localStorage.setItem('name', res.data.lastName + res.data.firstName);
+                        localStorage.setItem('selfie', res.data.api_selfie);
+                        localStorage.setItem('place', res.data.place);
+                        localStorage.setItem('interested', res.data.interested);
+                        localStorage.setItem('member_is_guide', res.data.member_is_guide);
 
-                        let member_is_guide = localStorage.getItem('member_is_guide')
-                        let email = localStorage.getItem('email')
+                        let member_is_guide = localStorage.getItem('member_is_guide');
+                        let email = localStorage.getItem('email');
 
                         //抓guide_id
                         if (member_is_guide == 1) {
@@ -130,8 +128,7 @@ function Login({ loginModal, signUpModal }) {
                 await Axios.post('http://localhost:8000/api/login', myLoginData)
                     .then(async (res) => {
                         console.log(res);
-                        let notYetSignUp = '信箱尚未被註冊'
-                        if (res.data == notYetSignUp) {
+                        if (res.data == '信箱尚未被註冊') {
                             //註冊
                             await Axios.post('http://localhost:8000/api/signup', myLoginData)
                                 .then(async (res) => {
@@ -319,7 +316,7 @@ function Login({ loginModal, signUpModal }) {
 
                                             if (localStorage.getItem('token') !== undefined) {
                                                 setTimeout(() => {
-                                                    history.go(0);
+                                                    window.location = "http://localhost:3000/setting/guide";
                                                 }, 500);
                                             }
                                         })
@@ -373,8 +370,9 @@ function Login({ loginModal, signUpModal }) {
                             }
 
                             if (localStorage.getItem('token') !== undefined) {
+                                alert('登入成功！,轉跳至設定頁面設定生日及居住地！');
                                 setTimeout(() => {
-                                    history.go(0);
+                                    window.location = "http://localhost:3000/setting/guide";
                                 }, 500);
                             }
                         }
@@ -388,6 +386,10 @@ function Login({ loginModal, signUpModal }) {
             })
     }
 
+    //Line API登入
+    const SignInWithLine = () => {
+        window.location = `https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=1656960165&redirect_uri=http://localhost:3000/&state=login&scope=profile%20openid%20email`;
+    }
     return (
         <>
             <div className='loginModalBackground'>
@@ -427,7 +429,10 @@ function Login({ loginModal, signUpModal }) {
                         <div className="userSelect">
                             <input type="checkbox" name="rememberMe" id="rememberChx" />
                             <label htmlFor="rememberChx" id="rememberMe">記住帳號</label>
-                            <a href="#" id="forgetPsw"><span>忘記密碼？</span></a>
+                            <a onClick={() => {
+                                loginModal(false);
+                                setForget(true);
+                            }} id="forgetPsw">忘記密碼？</a>
                         </div>
                         <button className="loginBtn" onClick={onSubmit}>
                             登入
@@ -447,6 +452,10 @@ function Login({ loginModal, signUpModal }) {
                             <img className='facebookIcon' src="https://secure.meetupstatic.com/next/images/login/facebook.svg?w=48" alt="" />
                             使用Facebook帳號登入
                         </button>
+                        <button onClick={SignInWithLine}>
+                            <img className='lineIcon' src={Lineicon} />
+                            使用Line帳號登入
+                        </button>
 
                     </div>
                 </div>
@@ -456,6 +465,8 @@ function Login({ loginModal, signUpModal }) {
             <div className='modalShadow'
                 onClick={() => { loginModal(false) }}>
             </div>
+
+
         </>
     )
 }

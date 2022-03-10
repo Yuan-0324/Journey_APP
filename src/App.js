@@ -20,6 +20,8 @@ import Error_Page from './pages/Error';
 
 // 設定頁面 「侑庭」
 import Setting from './pages/Settings/Settings';
+import Forget from './components/Nav_Bar/components/Forget';
+
 
 // 個人頁面 「嘉原」
 import Personal from './pages/Personal';
@@ -36,12 +38,13 @@ import Guide_Join from './pages/Guide/Guide_Join';
 import Activity_Conduct from './pages/Activity/Activity_Conduct';
 import Activity_List from './pages/Activity/Activity_List';
 import Activity_Introduce from './pages/Activity/Activity_Introduce'
+import Activity_Edit from './pages/Activity/Activity_Edit'
 
-// 加號
-import Calendar from './components/My_Button/Calender/Member_calendar';
+// 聊天室 / 加號
 
-// 聊天室
+import My_Button from './components/My_Button/My_Button';
 import Chat_Room from './components/My_Button/Chat_Room/Chat_Room'
+import Calendar from './components/My_Button/Calender/Member_calendar';
 
 // ----------------------
 
@@ -122,6 +125,7 @@ const App = () => {
             <Route path="/Event" component={Activity_List} exact />
             <Route path="/ActivityIntroduce/:id" component={Activity_Introduce} exact />
             <Route path="/ActivityConduct/:id" component={Activity_Conduct} exact />
+            <Route path="/ActivityEdit/:id" component={Activity_Edit} exact />
 
             {/* 嚮導頁面 */}
             <Route path="/Guide" component={Guide} exact />
@@ -135,25 +139,30 @@ const App = () => {
 
 
             {/* 個人頁面 */}
-            {/* ------- 嘉原 變動 ------ */}
-            {/* <Route path="/Personal/:id" component={Personal} exact />
-            <Route path="/Personal/:id/:cate" component={Personal} excat /> */}
+
             {
               userInfo.id ? <Route path="/Personal/:id" component={Personal} exact /> : <Route path="/Personal/:id" component={Home} exact />
             }
             {
               userInfo.id ? <Route path="/Personal/:id/:cate" component={Personal} excat /> : ''
             }
-            {/* ------- 嘉原 變動 ------ */}
 
             {/* 設定頁面 */}
-            <Route path='/Setting' component={Setting} exact />
-            {/* 錯誤處理頁面 [ 未完成 ] */}
+            {
+              userInfo.id ? <Route path='/Setting' component={Setting} exact /> : ''
+            }
+            {
+              userInfo.id ? <Route path='/Setting/:cate' component={Setting} exact /> : ''
+            }
+            
+            <Route patj='/forget' component={Forget} exact/>
             <Route path='/:error' component={Error_Page} />
           </Switch>
-          
+
           {/* {userInfo.id ? <Calendar /> : ''}
           <Chat_Room /> */}
+          <My_Button />
+
         </div>
       </BrowserRouter>
 

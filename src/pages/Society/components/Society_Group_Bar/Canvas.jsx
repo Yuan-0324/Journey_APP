@@ -5,9 +5,9 @@ const Canvas = ({tempImgUrl, width, height, bannerPic,bannerDiv}) => {
 
   const canvas = useRef(null);
 
-  let scale = 1.4;//照片比例
-  let sizeOfLongImg = 1440;  //圖片不大於最大邊長
-  let sizeOfshortImg = 400;  //圖片不小於最小邊長
+  let scale = 1.3;//照片比例
+  let sizeOfLongImg = 720;  //圖片不大於最大邊長
+  let sizeOfshortImg = 150;  //圖片不小於最小邊長
   let img;
   let ctx;
   let xSet = useRef(0);

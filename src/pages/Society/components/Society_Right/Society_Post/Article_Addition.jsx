@@ -1,5 +1,4 @@
 const Article_Addition = ({data, onDeleteBrick, onSetInput }) => {
-
     return ( 
         <div className='d-flex art-bg'>
 

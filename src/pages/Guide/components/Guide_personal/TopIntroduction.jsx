@@ -1,30 +1,19 @@
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { IoChatbubblesOutline, IoLocationSharp } from 'react-icons/io5';
 import { BsFillStarFill } from 'react-icons/bs';
 import { FiEdit } from "react-icons/fi";
-import context from '../../../../context';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import guideLevelImg from '../../../../images/guideImgs/guideJoinPage/guideLevelImg.png';
 
 const Top_Introduction = () => {
-    // const [guide, setGuide] = useState({});
-    const currentUser = useContext(context).userInfo;
-    // const guide_id = useContext(context).guide_id;
-    // const [guideSelf, setGuideSelf] = useState(false);
-    // const guidePagePath = useParams();
-    // const [guideLevel, setGuideLevel] = useState('');
-
-    // ---- 0306 -----
-
+    
     const [guide, setGuide] = useState({});
     const guide_id = localStorage.getItem('guide_id');
     const [guideSelf, setGuideSelf] = useState(false);
     const guidePagePath = useParams();
     const [guideLevel, setGuideLevel] = useState('');
-
-
-
 
     //判斷是否為本人進入(icon:聊天室變修改、出現升級視窗)
     const [toggled, setToggled] = useState(false);
@@ -38,8 +27,11 @@ const Top_Introduction = () => {
     const closeGuideSelf = () => {
         setToggled(false);
     }
-    
-    // console.log(guide_id);
+    //本人進入可按修改按鈕連到編輯頁面
+    let history = useHistory();
+    const clickEdit = () => {
+        history.push('/setting/guide');
+    }
 
     //判斷登入者是否已為嚮導(加入嚮導行列消失)
     const [isGuide, setIsGuide] = useState(false);
@@ -55,11 +47,11 @@ const Top_Introduction = () => {
         let result = await axios.get(`http://localhost:8000/guidePersonal/topIntroduction/${guidePagePath.gId}`);
         // 嚮導等級判斷
         switch (result.data.level) {
-            case 1: setGuideLevel(['Lv.1 菜鳥嚮導', 'Lv.2 在地嚮導', 5]); break;
-            case 2: setGuideLevel(['Lv.2 在地嚮導', 'Lv.3 進階嚮導', 10]); break;
-            case 3: setGuideLevel(['Lv.3 進階嚮導', 'Lv.4 高級嚮導', 15]); break;
-            case 4: setGuideLevel(['Lv.4 高級嚮導', 'Lv.5 資深嚮導', 20]); break;
-            case 5: setGuideLevel(['Lv.5 資深嚮導', 'Lv.6 頂尖嚮導', 30]); break;
+            case 1: setGuideLevel(['Lv.1 菜鳥嚮導', 'Lv.2 在地嚮導', '5']); break;
+            case 2: setGuideLevel(['Lv.2 在地嚮導', 'Lv.3 進階嚮導', '10']); break;
+            case 3: setGuideLevel(['Lv.3 進階嚮導', 'Lv.4 高級嚮導', '15']); break;
+            case 4: setGuideLevel(['Lv.4 高級嚮導', 'Lv.5 資深嚮導', '20']); break;
+            case 5: setGuideLevel(['Lv.5 資深嚮導', 'Lv.6 頂尖嚮導', '30']); break;
             case 6: setGuideLevel(['Lv.6 頂尖嚮導']); break;
         };
         setGuide(result.data);
@@ -67,9 +59,8 @@ const Top_Introduction = () => {
 
     let changeToPersonal = async () => {
         let result = await axios.get(`http://localhost:8000/guide/goto/personal/${guidePagePath.gId}`);
-        // console.log(result.data[0].id)
         window.location = `/personal/${result.data[0].id}`;
-    }
+    };
 
     return (
         <div>
@@ -95,6 +86,7 @@ const Top_Introduction = () => {
                 <div className="memberInformation">
                     <div className="memberName">
                         <span>{guide.guide_name} </span>
+                        <img src={guide.logo}/>
                     </div>
                     <div className="guideLevel">
                         <span className="star">< BsFillStarFill /></span>
@@ -105,7 +97,7 @@ const Top_Introduction = () => {
                         <span>{guide.introduction}</span>
                     </div>
                     <div className="Icon">
-                        {guideSelf ? <a href=""><FiEdit /></a> : <a href=""><IoChatbubblesOutline /></a>}
+                        {guideSelf ? <button className='editBtn' onClick={clickEdit}><FiEdit /></button> : <a href=""><IoChatbubblesOutline /></a>}
                     </div>
                     <div className="guideLocation">
                         <span className="locationIcon">

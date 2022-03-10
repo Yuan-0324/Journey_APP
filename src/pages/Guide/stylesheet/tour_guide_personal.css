@@ -141,6 +141,11 @@
   font-weight: 600;
 }
 
+.guidePersonalPage .guidePersonalContent .guideHeader .memberInformation .memberName img {
+  width: 30px;
+  margin-top: -5px;
+}
+
 .guidePersonalPage .guidePersonalContent .guideHeader .memberInformation .guideLevel {
   padding-bottom: 10px;
   position: relative;
@@ -176,6 +181,12 @@
   right: 0;
   top: 5px;
   letter-spacing: 15px;
+}
+
+.guidePersonalPage .guidePersonalContent .guideHeader .memberInformation .Icon .editBtn {
+  border: none;
+  background: none;
+  color: #1697d5;
 }
 
 .guidePersonalPage .guidePersonalContent .guideHeader .memberInformation .guideLocation .locationIcon {

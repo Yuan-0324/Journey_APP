@@ -17,7 +17,7 @@ function Sign_up_finish({ finishModal }) {
                         className='signUpModalCloseBtn_Finish'
                         onClick={() => {
                             finishModal(false);
-                            history.push('/');
+                            history.go(0);
                         }} />
 
                     <div className='signUpModaltitle_Finish'>

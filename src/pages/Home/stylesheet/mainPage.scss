@@ -1,6 +1,17 @@
 // ----- 匯入設定樣式檔 -----
 @import "../../../styles/var";
 // ------------------------
+@mixin mobile {
+  @media (max-width: 375px) {
+    @content;
+  }
+}
+// html,
+// body {
+//   @include mobile {
+//     overflow-x: hidden;
+//   }
+// }
 
 /*-------------Main--------------- */
 #mainSection {
@@ -20,15 +31,32 @@
     left: 13%;
     bottom: 0px;
     height: 580px;
+    @include mobile {
+      height: 280px;
+      // width: 300px;
+      object-fit: cover;
+      overflow: visible;
+    }
     .compass {
       position: absolute;
       left: -80px;
       top: 420px;
+      @include mobile {
+        left: -20px;
+        top: 200px;
+        width: 30px;
+        z-index: 10;
+      }
     }
     .camera {
       position: absolute;
       left: 320px;
       top: -20px;
+      @include mobile {
+        width: 50px;
+        left: 200px;
+        top: -50px;
+      }
     }
 
     .plane1 {
@@ -36,24 +64,39 @@
       left: -55px;
       top: 135px;
       z-index: 50;
+      @include mobile {
+        top: 90px;
+        width: 30px;
+      }
     }
     .plane2 {
       position: absolute;
       left: 500px;
       top: 95px;
       z-index: 1;
+      @include mobile {
+        top: -55px;
+        width: 30px;
+        left: 170px;
+      }
     }
 
     .star1 {
       position: absolute;
       left: 200px;
       top: -10px;
+      @include mobile {
+        left: 90px;
+      }
     }
 
     .star2 {
       position: absolute;
       left: 180px;
       top: 0px;
+      @include mobile {
+        left: 70px;
+      }
     }
 
     .track1 {
@@ -61,6 +104,11 @@
       left: -50px;
       top: 170px;
       opacity: 0.4;
+      @include mobile {
+        top: 60px;
+        width: 50px;
+        left: -30px;
+      }
     }
     .track2 {
       position: absolute;
@@ -68,6 +116,11 @@
       top: 130px;
       z-index: 10;
       opacity: 0.4;
+      @include mobile {
+        width: 50px;
+        left: 260px;
+        top: 0px;
+      }
     }
   }
 
@@ -79,12 +132,19 @@
     position: absolute;
     bottom: 250px;
     right: 300px;
-    // margin-top: 20px;
-    // z-index: -1;
+    @include mobile {
+      right: 80px;
+      bottom: 340px;
+      overflow: visible;
+    }
     .splash1 {
       position: absolute;
       left: 280px;
       top: 45px;
+      @include mobile {
+        left: 220px;
+        top: 40px;
+      }
     }
     .splash2 {
       position: absolute;
@@ -101,6 +161,9 @@
       // -webkit-text-stroke: 5px white; /* width and color */
       // text-shadow: -5px 0 white, 0 5px white, 5px 0 white, 0 -5px white;
       color: #116f9c;
+      @include mobile {
+        font-size: 3em;
+      }
     }
     .meet {
       margin: 0;
@@ -109,25 +172,28 @@
       color: $primarycolor;
       text-shadow: 2px 2px #fff, -2px 2px #fff, 2px -2px #fff, -2px -2px #fff,
         1px 1px 5px #555;
+
+      @include mobile {
+        font-size: 3em;
+      }
     }
     button {
       display: inline-block;
       padding: 12px 24px;
-      border: 0px solid $primarycolor;
+      border: 0px solid #f07c58;
       border-radius: 20px;
       transition: all 0.2s ease-in;
       position: relative;
       overflow: hidden;
       font-size: 19px;
-      // color: $primarycolor;
-      background-color: #6bc1e9;
+      background-color: #e79087;
       background-image: linear-gradient(315deg, #6bc1e9 0%, #80ced7 74%);
-      color: white;
-      text-shadow: 1px 1px $primarycolor;
+      text-shadow: 0.5px 0.5px #f3680c;
       z-index: 1;
       margin-top: 20px;
       a {
-        color: #fff;
+        color: white;
+        font-weight: 400;
         &:hover {
           color: #158ac0;
         }
@@ -189,6 +255,9 @@
 #searchBar {
   width: 100%;
   margin: 50px 0;
+  @include mobile {
+    // width: 300px;
+  }
   .searchBar {
     display: flex;
     justify-content: center;
@@ -202,11 +271,17 @@
       font-size: 24px;
       color: #f8f8f8;
       text-shadow: 2px 2px 2px $fontcolor;
+      @include mobile {
+        font-size: 18px;
+      }
     }
     h1 {
       font-size: 35px;
       color: #f8f8f8;
       text-shadow: 2px 2px 2px $fontcolor;
+      @include mobile {
+        font-size: 26px;
+      }
     }
     .search-container {
       margin-top: 30px;
@@ -219,12 +294,22 @@
       cursor: pointer;
       transition: 0.8s;
       border: none;
+      @include mobile {
+        width: 100%;
+        flex-direction: column;
+        padding: 5px;
+        margin: 0px;
+      }
       .selector {
         margin: 5px;
         border-right: 1px solid rgb(190, 189, 189);
+        @include mobile {
+          border: none;
+        }
         .ant-select {
           border: none;
           font-size: 20px;
+
           .ant-select-selector {
             height: 39px;
             border: none;
@@ -280,6 +365,18 @@
         height: 50px;
         border: 1px solid $primarycolor;
         border-radius: 0 10px 10px 0;
+        @include mobile {
+          width: 80%;
+          border-radius: 5px;
+          padding: 5px;
+          background-color: #40a3c4;
+          border: none;
+        }
+        svg {
+          @include mobile {
+            margin-left: 130px;
+          }
+        }
       }
     }
   }
@@ -291,6 +388,9 @@
   flex-direction: column;
   align-items: center;
   margin-top: -50px;
+  @include mobile {
+    // flex-direction: row;
+  }
   .cityShortcut {
     .CardHeader {
       font-size: 1.75rem;
@@ -302,6 +402,12 @@
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
+      @include mobile {
+        // flex-direction: column;
+        width: 360px;
+        flex-wrap: wrap;
+        flex: 50%;
+      }
       .citybox {
         width: 177px;
         height: 30vh;
@@ -309,6 +415,10 @@
         border-radius: 10px;
         position: relative;
         transition: 0.3s ease-in-out;
+        @include mobile {
+          // flex: 50%;
+          margin: 5px 0;
+        }
         &:hover {
           opacity: 0.6;
           filter: saturate(1.5);
@@ -323,6 +433,8 @@
           border-radius: 10px;
           object-fit: cover;
           overflow: hidden;
+          @include mobile {
+          }
         }
         p {
           position: absolute;
@@ -343,13 +455,32 @@
   width: 1100px;
   margin: auto;
   margin-top: 80px;
+  @include mobile {
+    // height: 400px;
+    overflow: visible;
+    margin-top: 0px;
+  }
+
   .CardHeader {
     margin: 50px 0 0px 0;
+    @include mobile {
+      margin-left: 50px;
+      // margin-top: 150px;
+    }
   }
   .test {
     width: 1110px;
     // margin: auto;
+    @include mobile {
+      height: 500px;
+    }
     .slick-slider {
+      @include mobile {
+        width: 260px;
+        margin: 0px 70px;
+        // height: 600px;
+        overflow: visible;
+      }
       .slick-list {
         padding: 20px 0;
       }
@@ -378,21 +509,21 @@
       }
 
       .eventCard {
-        // cursor: grab;
         overflow-x: hidden;
-        // white-space: nowrap;
         border-radius: 10px;
         padding: 20px;
         width: 0;
-        // max-width: 18.5em;
         max-width: 95%;
-
         margin-right: 20px;
         background-color: #fff;
         // box-shadow: $cardShadow;
         cursor: pointer;
         scroll-behavior: smooth;
-
+        @include mobile {
+          // overflow: visible;
+          height: 350px;
+          // overflow: visible;
+        }
         &:hover {
           box-shadow: $cardShadow;
         }
@@ -418,7 +549,10 @@
           height: 20px;
           // line-height: 25px;
           // margin: 10px 0;
-
+          @include mobile {
+            height: 130px;
+            overflow: visible;
+          }
           .eventTime {
             color: gray;
             font-size: 14px;
@@ -463,14 +597,25 @@
   flex-direction: column;
   align-items: center;
   margin: 25px 0;
+  @include mobile {
+    width: 370px;
+    margin: 0px;
+  }
   .GuideCardGroup {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    @include mobile {
+      width: 370px;
+      margin: 0px;
+    }
     .CardHeader {
       font-size: 1.75rem;
       padding: 50px 0 10px;
+      @include mobile {
+        padding: 50px 10px 0px;
+      }
     }
     .GuideCard {
       width: 1110px;
@@ -478,6 +623,12 @@
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
+      @include mobile {
+        flex-direction: column;
+        margin: 0px;
+        padding: 0px;
+        width: 370px;
+      }
       .snip1336 {
         position: relative;
         overflow: hidden;
@@ -593,6 +744,11 @@
   flex-direction: column;
   align-items: center;
   margin: 10px 0;
+  @include mobile {
+    // width: 20%;
+
+    // margin: 150px 0px;
+  }
 
   .weatherAPI {
     margin-top: 100px;
@@ -602,35 +758,64 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    @include mobile {
+      // max-width: 500px;
+      width: 300px;
+      height: 800px;
+      overflow: visible;
+      margin: 0px;
+      // padding: 0px;
+    }
 
     .APIweather {
       display: flex;
       flex-direction: column;
       max-width: 1110px;
+      @include mobile {
+        // max-width: 500px;
+        width: 440px;
+      }
 
       .weatherDetails {
         width: 1100px;
         border-radius: 20px;
         padding: 20px 0;
         padding-bottom: 20px;
+        @include mobile {
+          // max-width: 450px;
+          width: 310px;
+          padding: 5px;
+          // height: 900px;
+        }
+
         .weatherCity {
           display: flex;
           flex-direction: row;
           justify-content: space-between;
           align-items: center;
           margin: 0 0 25px 0;
+          @include mobile {
+            // flex-direction: column;
+            height: 60px;
+          }
           .chip {
             font-size: 16px;
             padding: 5px 0;
             width: 250px;
-            border: 1px solid #ffffff;
-            background-color: white;
+            border: none;
+            background-color: rgba($color: #fff, $alpha: 0.4);
             // color: #6bc1e9;
             color: #444;
+            @include mobile {
+              // width: 100%;
+              height: 100%;
+              padding: 5px;
+              background-color: rgba($color: #fff, $alpha: 0.4);
+            }
             &:hover {
               color: white;
               // background-color: #6bc1e9;
-              border: 0.1px solid white;
+              border: none;
               background-color: #c2b6b6;
               background-image: linear-gradient(
                 315deg,
@@ -649,11 +834,26 @@
           justify-content: space-evenly;
           align-items: center;
           // padding: 20px;
+          @include mobile {
+            flex-direction: column;
+            width: 300px;
+            justify-content: space-between;
+          }
           .currentWeather {
             display: flex;
             // flex-direction: column;
             justify-content: center;
             align-items: center;
+            @include mobile {
+              flex-direction: row;
+              width: 100%;
+            }
+            img {
+              @include mobile {
+                width: 100px;
+                // margin-left: 20px;
+              }
+            }
             .currentDegree {
               font-size: 36px;
               font-weight: 600;
@@ -668,8 +868,17 @@
               display: flex;
               flex-direction: row;
               align-items: center;
+              @include mobile {
+                font-size: 28px;
+                margin: 0px;
+                padding: 0px;
+                right: 0px;
+              }
               .currentDegreeBox {
                 padding: 20px;
+                @include mobile {
+                  padding: 5px;
+                }
                 p {
                   margin: 10px 0;
                   font-size: 1em;
@@ -680,6 +889,9 @@
                   font-size: 16px;
                   // color: $primarycolor;
                   color: rgb(124, 124, 124);
+                  @include mobile {
+                    font-size: 14px;
+                  }
                 }
               }
             }
@@ -696,6 +908,9 @@
               font-size: 24px;
               font-weight: 600;
               // text-shadow: 3px 3px rgba(30, 30, 70, 0.5);
+              @include mobile {
+                font-size: 18px;
+              }
             }
 
             .date {
@@ -707,6 +922,9 @@
               font-size: 20px;
               font-weight: 600;
               // text-shadow: 2px 2px rgba(30, 30, 70, 0.5);
+              @include mobile {
+                font-size: 18px;
+              }
             }
           }
         }
@@ -717,6 +935,9 @@
           justify-content: space-evenly;
           align-items: flex-start;
           margin: 0 20px;
+          @include mobile {
+            flex-direction: column;
+          }
           .sevenDaysData {
             display: flex;
             flex-direction: column;
@@ -729,6 +950,17 @@
             padding: 10px;
             // color: white;
             color: #444;
+            @include mobile {
+              flex-direction: row;
+              width: 100%;
+              padding: 0px;
+              margin: 5px;
+            }
+            img {
+              @include mobile {
+                width: 50px;
+              }
+            }
             .sevenDaysDate {
               font-size: 16px;
             }
@@ -749,23 +981,6 @@
   justify-content: center;
   align-items: center;
 
-  .brDot {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin: 10px;
-    .dot {
-      margin: 20px;
-      width: 100px;
-      height: 100px;
-      border-radius: 50px;
-      background-color: $primarycolor;
-      background-image: url("../../../images/Home/oldieV5.png");
-      object-fit: cover;
-    }
-  }
-
   .CTA {
     display: flex;
     flex-direction: column;
@@ -778,6 +993,9 @@
     justify-content: center;
     align-items: center;
     margin-top: 10px;
+    @include mobile {
+      flex-direction: column;
+    }
     .CTAevent {
       // .h3 {
       //   font-size: 10px;
@@ -792,6 +1010,7 @@
       height: 300px;
       border-radius: 20px;
       transition: 0.3s ease-in-out;
+
       p {
         font-size: 16px;
       }
@@ -852,6 +1071,9 @@
   justify-content: center;
   align-items: center;
   margin: 50px 0 100px 0;
+  @include mobile {
+    margin: 0;
+  }
   .communityDesc {
     width: 100%;
     height: 70vh;
@@ -865,6 +1087,10 @@
     background-position: center;
     background-repeat: no-repeat;
     object-fit: cover;
+    @include mobile {
+      margin: 0px;
+      background-size: 600px;
+    }
     .communityHeader {
       height: 55vh;
       display: flex;
@@ -879,10 +1105,19 @@
       p {
         color: $fontcolor;
         font-size: 18px;
+        @include mobile {
+          padding: 0px 70px;
+        }
       }
 
       button {
         @include mainBtn;
+        background-color: #738bdc;
+        background-image: linear-gradient(315deg, #738bdc 0%, #48c3eb 74%);
+        border-radius: 10px;
+        // @include mobile {
+        //   margin: 0px;
+        // }
       }
     }
   }
@@ -899,11 +1134,17 @@
       width: 1110px;
       // width: 75%;
       height: 50vh;
-
+      @include mobile {
+        width: 360px;
+        flex-direction: column;
+      }
       .group1 {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        @include mobile {
+          flex-direction: row;
+        }
         .box1 {
           width: 270px;
           // height: 170px;
@@ -913,6 +1154,9 @@
           border-radius: 30px;
           position: relative;
           cursor: pointer;
+          @include mobile {
+            width: 175px;
+          }
           .texthide {
             display: none;
             color: white;
@@ -928,7 +1172,9 @@
             overflow: hidden;
             border-radius: 30px;
             object-fit: cover;
-
+            @include mobile {
+              width: 175px;
+            }
             &:hover {
               filter: grayscale(50%);
               opacity: 0.4;
@@ -954,6 +1200,10 @@
         height: 50vh;
         position: relative;
         cursor: pointer;
+        @include mobile {
+          width: 350px;
+          height: 25vh;
+        }
         .texthide {
           display: none;
           color: white;
@@ -966,6 +1216,10 @@
           overflow: hidden;
           border-radius: 30px;
           object-fit: cover;
+          @include mobile {
+            width: 350px;
+            height: 25vh;
+          }
           &:hover {
             filter: grayscale(50%);
             opacity: 0.4;
@@ -987,6 +1241,9 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        @include mobile {
+          display: none;
+        }
         .group3 {
           display: flex;
           flex-direction: row;
@@ -1074,6 +1331,9 @@
     }
   }
   .communityPost {
+    @include mobile {
+      margin: auto;
+    }
     .CardHeader {
       font-size: 1.75rem;
       margin: 50px 0 10px;
@@ -1085,6 +1345,10 @@
       width: 1110px;
       gap: 2rem;
       margin-top: 10px;
+      @include mobile {
+        width: 360px;
+        gap: 1rem;
+      }
       .card {
         cursor: pointer;
         display: flex;
@@ -1094,7 +1358,9 @@
         border-radius: 2em;
         background: #ffffff;
         // background: linear-gradient(to right, #ffffff, #f7f5f3);
-
+        @include mobile {
+          // flex-direction: row;
+        }
         &:hover {
           box-shadow: $cardShadow;
         }
@@ -1123,6 +1389,10 @@
               -webkit-box-orient: vertical;
               white-space: normal;
               margin-bottom: 8px;
+              @include mobile {
+                font-size: 20px;
+                -webkit-line-clamp: 2;
+              }
             }
           }
           .tag {
@@ -1142,34 +1412,25 @@
             color: #fafafa;
           }
 
-          .tag-brown {
-            background: #d1913c;
-            background: linear-gradient(to bottom, #ffd194, #d1913c);
-            color: #fafafa;
-          }
+          // h4 {
+          //   font-size: 16px;
+          //   font-weight: 600;
+          // }
 
-          .tag-red {
-            background: #cb2d3e;
-            background: linear-gradient(to bottom, #ef473a, #cb2d3e);
-            color: #fafafa;
-          }
-
-          h4 {
-            font-size: 16px;
-            font-weight: 600;
-          }
-
-          p {
-            font-size: 16px;
-            font-weight: 300;
-            line-height: 1.5;
-          }
+          // p {
+          //   font-size: 16px;
+          //   font-weight: 300;
+          //   line-height: 1.5;
+          // }
         }
 
         .card__footer {
           display: flex;
           padding: 1rem;
           margin-top: auto;
+          @include mobile {
+            flex-direction: column;
+          }
           .user {
             display: flex;
             gap: 0.5rem;
@@ -1202,6 +1463,28 @@
   align-items: center;
   flex-direction: column;
 
+  @include mobile {
+    height: 30vh;
+  }
+
+  .ToTop {
+    width: 50px;
+    height: 50px;
+    font-size: 40px;
+    color: white;
+    border-radius: 50px;
+    background-color: $primarycolor;
+    border: none;
+    @include mobile {
+      position: absolute;
+      right: 10px;
+      // bottom: 50px;
+    }
+    svg {
+      vertical-align: baseline;
+    }
+  }
+
   .footer {
     width: 80%;
     margin: 30px auto 0 auto;
@@ -1209,13 +1492,19 @@
     flex-direction: row;
     justify-content: center;
     // align-items: flex-start;
+    @include mobile {
+      flex-direction: column;
+      height: 20vh;
+    }
     .followingUs {
       display: flex;
       justify-content: center;
       align-items: flex-start;
       flex-direction: column;
       width: 300px;
-      // margin: 50px 20px 20px;
+      @include mobile {
+        align-items: center;
+      }
       p {
         font-size: 16px;
         color: $bgcolor;
@@ -1244,6 +1533,9 @@
       .title {
         color: rgb(168, 168, 168);
       }
+      @include mobile {
+        display: none;
+      }
     }
     .PersonalSupport {
       margin: 10px 30px;
@@ -1256,6 +1548,9 @@
         color: #d3cfcf;
         font-weight: 400;
         line-height: 30px;
+      }
+      @include mobile {
+        display: none;
       }
     }
   }

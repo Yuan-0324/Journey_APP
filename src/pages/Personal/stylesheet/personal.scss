@@ -1063,7 +1063,8 @@
                 h3 {
                     margin: 0;
                     margin-top: 12px;
-                    font-size: 16px;
+                    margin-bottom: 12px;
+                    font-size: 18px;
                     font-weight: normal;
                     letter-spacing: 1px;
                     color: $primarycolor;
@@ -1129,12 +1130,15 @@
                             justify-content: center;
                             align-items: center;
                             margin-top: 10px;
-                            & > img {
+               
+                            & > div {
                                 cursor: pointer;
-                                border: 1px solid $secondarycolor;
+                                // border: 1px solid $secondarycolor;
                                 width: 55px;
                                 height: 55px;
-                                border-radius: 15px;
+                                background-size: cover;
+                                @include bdrs;
+                                border-radius: 50%;
                             }
                         }
                     }
@@ -2251,11 +2255,8 @@
 }
 
 .plus-container {
-    // display: flex;
     position: fixed;
     bottom: 0;
-    // left: 0;
-
     height: 300px;
     width: 300px;
     border: 1px solid #000;

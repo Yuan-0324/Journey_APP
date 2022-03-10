@@ -312,6 +312,11 @@
   width: 100%;
 }
 
+.guideMainPage .guideContainer .guideSearchResults .guideResult .guideContent .guideInformationArea img {
+  width: 25px;
+  margin-top: -10px;
+}
+
 .guideMainPage .guideContainer .guideSearchResults .guideResult .guideContent .guideInformationArea .guideName {
   font-size: 22px;
   font-weight: bold;

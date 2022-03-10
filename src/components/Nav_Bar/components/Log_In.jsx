@@ -14,6 +14,7 @@ import Sign_up_phone from './SignUp_group/Sign_up_phone';
 import Sign_up_position from './SignUp_group/Sign_up_position';
 import Sign_up_interested from './SignUp_group/Sign_up_interested';
 import Sign_up_finish from './SignUp_group/Sign_up_finish';
+import ForgetPassword from './ForgetPassword';
 
 // ---- 更新 ---- 
 
@@ -29,6 +30,7 @@ function Navigation() {
   const [position, setPosition] = useState(false);
   const [interested, setInterested] = useState(false);
   const [finish, setFinish] = useState(false)
+  const [forget, setForget] = useState(false);
 
 
   //{/* Data Hook */}
@@ -156,6 +158,7 @@ function Navigation() {
         {openLoginModal && < Login
           loginModal={setOpenLoginModal}
           signUpModal={setSignIndex}
+          setForget={setForget}
         />}
 
         {/* signUp */}
@@ -234,6 +237,11 @@ function Navigation() {
         {/* finish */}
         {finish && <Sign_up_finish
           finishModal={setFinish}
+        />}
+
+        {/* 忘記密碼 */}
+        {forget && <ForgetPassword setForget={setForget} forget={setForget}
+          loginModal={setOpenLoginModal}
         />}
       </header>
     </>

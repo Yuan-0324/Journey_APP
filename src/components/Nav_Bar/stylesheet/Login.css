@@ -13,7 +13,7 @@
   right: 0;
   z-index: 1200;
   width: 480px;
-  height: 730px;
+  height: 100vh;
   border: none;
   border-radius: 10px;
   -webkit-box-shadow: 3px 3px 5px #4b4a4a;
@@ -70,10 +70,6 @@
   margin-top: 15px;
   margin-bottom: 5px;
   font-weight: 500;
-}
-
-.loginModalBackground .loginModalContainer .loginModalbody .userInput .pswText {
-  margin-top: 35px;
 }
 
 .loginModalBackground .loginModalContainer .loginModalbody .userInput input {
@@ -166,7 +162,7 @@
   border: none;
   -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
           box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  margin: 20px auto 15px;
+  margin: 15px auto 15px;
 }
 
 .loginModalBackground .loginModalContainer .loginModalfooter button:hover {
@@ -186,6 +182,12 @@
   -webkit-box-pack: left;
       -ms-flex-pack: left;
           justify-content: left;
+}
+
+.loginModalBackground .loginModalContainer .loginModalfooter button .lineIcon {
+  width: 35px;
+  height: 35px;
+  margin: 3px 58px 0 12px;
 }
 
 .signUpModalBackground {
@@ -246,6 +248,66 @@
   margin-bottom: 20px;
 }
 
+.signUpModalBackground .signUpModalContainer .forgetarea label {
+  position: relative;
+  font-weight: 400;
+  margin-top: 20px;
+  margin-right: 255px;
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
+.signUpModalBackground .signUpModalContainer .forgetarea .alertEmail {
+  opacity: 0;
+  margin-left: -21px;
+  margin-right: 5px;
+  color: red;
+}
+
+.signUpModalBackground .signUpModalContainer .forgetarea input {
+  width: 340px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px #bfbfbf solid;
+  background: #f8f8f8;
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 5px;
+  padding-left: 5px;
+}
+
+.signUpModalBackground .signUpModalContainer .forgetarea input::-webkit-input-placeholder {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.signUpModalBackground .signUpModalContainer .forgetarea input:-ms-input-placeholder {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.signUpModalBackground .signUpModalContainer .forgetarea input::-ms-input-placeholder {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.signUpModalBackground .signUpModalContainer .forgetarea input::placeholder {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.signUpModalBackground .signUpModalContainer .forgetarea input:last-child {
+  margin-top: 30px;
+  border: none;
+  border-radius: 5px;
+  background-color: #1697d5;
+  color: white;
+  font-size: 16px;
+  line-height: 30px;
+  height: 30px;
+  width: 150px;
+}
+
 .signUpModalBackground .signUpModalContainer .signUpModalBody button {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -255,6 +317,7 @@
   width: 340px;
   border-radius: 5px;
   background-color: white;
+  font-size: 18px;
   color: black;
   border: none;
   -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -263,11 +326,12 @@
 }
 
 .signUpModalBackground .signUpModalContainer .signUpModalBody button:hover {
-  background-color: darkgrey;
+  background-color: #1697d5;
+  color: #f8f8f8;
 }
 
 .signUpModalBackground .signUpModalContainer .signUpModalBody button .emailIcon {
-  margin: 12px 60px 0 10px;
+  margin: 12px 46px 0 10px;
   -webkit-box-pack: left;
       -ms-flex-pack: left;
           justify-content: left;
@@ -323,9 +387,23 @@
 .signUpModalBackground_Name .signUpModalContainer_Name .signUpModalBody_Name label {
   position: relative;
   font-weight: 400;
-  margin-right: 255px;
+  margin-right: 257px;
   margin-bottom: 5px;
   font-size: 20px;
+}
+
+.signUpModalBackground_Name .signUpModalContainer_Name .signUpModalBody_Name .alertlastName {
+  opacity: 0;
+  margin-left: -21px;
+  margin-right: 5px;
+  color: red;
+}
+
+.signUpModalBackground_Name .signUpModalContainer_Name .signUpModalBody_Name .alertuserName {
+  opacity: 0;
+  margin-left: -21px;
+  margin-right: 5px;
+  color: red;
 }
 
 .signUpModalBackground_Name .signUpModalContainer_Name .signUpModalBody_Name .lastName {
@@ -451,6 +529,20 @@
   margin-right: 215px;
   margin-bottom: 5px;
   font-size: 20px;
+}
+
+.signUpModalBackground_Mail .signUpModalContainer_Mail .signUpModalBody_Mail .alertemail {
+  opacity: 0;
+  margin-left: -21px;
+  margin-right: 5px;
+  color: red;
+}
+
+.signUpModalBackground_Mail .signUpModalContainer_Mail .signUpModalBody_Mail .alertverify {
+  opacity: 0;
+  margin-left: -21px;
+  margin-right: 5px;
+  color: red;
 }
 
 .signUpModalBackground_Mail .signUpModalContainer_Mail .signUpModalBody_Mail .email {
@@ -611,9 +703,15 @@
   font-weight: 400;
 }
 
-.signUpModalBackground_Password .signUpModalContainer_Password .signUpModalBody_Password .submitBtn {
+.signUpModalBackground_Password .signUpModalContainer_Password .signUpModalBody_Password .Btn {
   border: none;
-  background-color: rgba(255, 255, 255, 0);
+  border-radius: 5px;
+  background-color: #1697d5;
+  color: white;
+  font-size: 16px;
+  line-height: 30px;
+  height: 30px;
+  width: 50px;
 }
 
 .signUpModalBackground_Birthday {
@@ -1045,9 +1143,10 @@
 
 .signUpModalBackground_Interested .signUpModalContainer_Interested .signUpModalBody_Interested .bigpic :checked + label:before {
   content: "✓";
-  background-color: grey;
-  -webkit-transform: scale(1);
-          transform: scale(1);
+  background-color: #55add6;
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+  border: #55add6;
 }
 
 .signUpModalBackground_Interested .signUpModalContainer_Interested .signUpModalBody_Interested #lastone {

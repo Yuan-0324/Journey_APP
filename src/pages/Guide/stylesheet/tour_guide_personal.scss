@@ -110,6 +110,10 @@
                     padding-bottom: 10px;
                     font-size: 25px;
                     font-weight: 600;
+                    img{
+                        width: 30px;
+                        margin-top: -5px;
+                    }
                 }
                 .guideLevel {
                     padding-bottom: 10px;
@@ -141,6 +145,11 @@
                     right: 0;
                     top: 5px;
                     letter-spacing: 15px;
+                    .editBtn{
+                        border: none;
+                        background: none;
+                        color: $primarycolor;
+                    }
                 }
                 .guideLocation {
                     .locationIcon {

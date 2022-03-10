@@ -41,7 +41,7 @@ const Send_Invitation = () => {
 
     // 取得 社團邀約 資料
     const fetchSociety = async () => {
-        let result = await Axios.post('http://localhost:8000/personal/invitation.reply/society/send', { email: currentUser.email });
+        let result = await Axios.post('http://localhost:8000/personal/invitation/reply/society/send', { email: currentUser.email });
         setSocietyList(result.data);
         societyPostStatus.current = false;
     }
@@ -124,7 +124,6 @@ const Send_Invitation = () => {
                 }
             </div>
 
-
             <div className="notice-send-activities">
                 <h1 className="notice-send-topic"><span>寄出的活動申請</span><AiFillCaretRight /></h1>
                 {
@@ -156,9 +155,6 @@ const Send_Invitation = () => {
                         </div> : ''
                 }
             </div>
-
-
-
 
             <div className="notice-send-club">
                 <h1 className="notice-send-topic"><span>寄出的社團請求</span> <AiFillCaretRight /></h1>

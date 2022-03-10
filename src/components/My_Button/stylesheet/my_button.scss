@@ -1,0 +1,63 @@
+@import '../../../styles/var';
+
+.mix-chat-calendar {
+    * {
+        user-select: none;
+    }
+    position: fixed;
+    width: 75px;
+    height: 75px;
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    z-index: 100;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 1px solid $primarycolor;
+    & > * {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 35px;
+        height: 35px;
+        transform: translate(-50%, -50%);
+    }
+    .chat-icon {
+        z-index: 2000;
+        top: 38%;
+        color: $primarycolor;
+        left: 38%
+    }
+    .calendar-icon {
+        z-index: 1500;
+        width: 26px;
+        height: 26px;
+        top: 62%;
+        left: 62%;
+        color: $secondarycolor;
+        background-color: #fff;
+    }
+    .calendarIcon{
+        position: absolute;
+        width: 19px;
+        height: 19px;
+        transform:rotate(-20deg);
+        left: 9px;
+        top: 20px;
+    }
+    .chatIcon{
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        transform:rotate(-20deg);
+        left: 45px;
+        top: 35px;
+    }
+    span{
+        position: absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+

@@ -22,15 +22,9 @@ import { storage } from '../../../firebase';
 const ActivityListItem = ({ data }) => {
 
     //firebase專區
-    // let ListEventUser_ID = data.user_ID;
-    // let ListEventEventID = data.eventID;
-    // console.log(typeof ListEventUser_ID);
-    // console.log(data.eventID);
+  
     const submitStatue = useRef(false);
-    // console .log(data);
-    // 
-
-    
+  
     let eventIDdata=data.eventID;
     let user_ID=data.user_ID
     // console.log(user_ID);   

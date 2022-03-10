@@ -34,27 +34,32 @@ const Section01ContentInformation = ({ postNewEvent, setPostNewEvent }) => {
 
 
 
-    const [people, setNum] = useState(1)
+    const [people, setNum] = useState(0)
     function add() {
-        setNum(function (prev) {
-            
-                return prev + 1
+        setPostNewEvent(function (prev) {
+            return { ...postNewEvent, ['Num']: prev.Num + 1 };
+               
             
         }
+        // console.log();
         )
-        inputAcceptNum()
+        // console.log(postNewEvent.Num.value);
+        // inputAcceptNum()
     }
+   
     function del() {
-        setNum(function (prev) {
+        setPostNewEvent(function (prev) {
             if (prev == 1) {
                 return prev;
             } else {
-                return prev - 1
+                return { ...postNewEvent, ['Num']: prev.Num - 1 }
             }
         }
         )
-        inputAcceptNum()
+      
+        // inputAcceptNum()
     }
+    console.log(postNewEvent.Num);
     //接收資料
     //活動名稱
     const inputName = (e) => {
@@ -106,12 +111,12 @@ const Section01ContentInformation = ({ postNewEvent, setPostNewEvent }) => {
     }
     
     //活動人數
-    const inputAcceptNum = (e) => {
-        postNewEvent.Num = people
-        setPostNewEvent(postNewEvent);
-        console.log(postNewEvent.Num);
-        console.log(typeof postNewEvent.Num);
-    }
+    // const inputAcceptNum = (e) => {
+    //     postNewEvent.Num = people
+    //     setPostNewEvent(postNewEvent);
+    //     console.log(postNewEvent.Num);
+    //     console.log(typeof postNewEvent.Num);
+    // }
     //活動場所
     const inputPlace = (e) => {
         var result = "";
@@ -245,7 +250,7 @@ const Section01ContentInformation = ({ postNewEvent, setPostNewEvent }) => {
                             
 
                             <input  type="button" value="-" className="numBtn" onClick={del} />
-                            <input   onClick={inputAcceptNum} className='people' id="people" type="text" value={people}  name="acceptNum" />
+                            <input    className='people' id="people" type="text" value={postNewEvent.Num}  name="acceptNum" />
                             <input  type="button" value="+" className="numBtn"
                                 onClick={add} />
                         </span>

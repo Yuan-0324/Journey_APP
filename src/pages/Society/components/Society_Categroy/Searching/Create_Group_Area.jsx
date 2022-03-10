@@ -5,12 +5,10 @@ import { AiOutlineArrowLeft } from 'react-icons/ai';
 import context from '../../../../../context';
 
 const Create_Group_Area = ({setCreatGroupaArea,setjustForGroup,groupPicsave,groupPicSit}) => {
-    console.log(groupPicsave);
-    console.log(groupPicSit);
 
     const currentUser = useContext(context);
     let userId = currentUser.userInfo.id;
-    let userImg = currentUser.userInfo.img;
+    let userImg = localStorage.getItem('selfie');
     let userName = currentUser.userInfo.lastName+currentUser.userInfo.firstName;
     let userEmail = currentUser.userInfo.email;
 
@@ -102,24 +100,22 @@ const Create_Group_Area = ({setCreatGroupaArea,setjustForGroup,groupPicsave,grou
                         <img className='img-fluid' src={userImg} alt=""/>
                     </div>
 
-                        <div className='d-flex flex-column justify-content-center'>
+                        <div className='create-group-member'>
 
-                            <div className='a-black'>{userName}</div>
+                            <div className='create-group-name a-black'>{userName}</div>
 
-                            <div>管理員</div>
+                            <div className='create-group-righter'>管理員</div>
 
                         </div>
                     </div>
                 </div>
 
-                <div className='mb-3'>
-                    <div className='h4'>社團名稱</div>
-                    <div className="inputer d-flex align-item-center">
-                         <input className='inputer-input ml-3' type="text" placeholder='輸入社團名稱' onChange={typeGroupName}/>
-                    </div>
+                <div className='inputer mb-3'>
+                    <div className='h4 ml-4'>社團名稱</div>
+                    <input className='inputer-input ml-4 mt-1 pl-2' type="text" placeholder='輸入社團名稱' onChange={typeGroupName}/>
                 </div>
 
-                <button className='btn btn-outline-success mt-5' onClick={postCreateGroup}>建立</button>
+                <button className='create-group-btn mt-5' onClick={postCreateGroup}>建立</button>
         </div>
     );
 }

@@ -16,6 +16,7 @@
   transition: width 4s;
   -webkit-transition-timing-function: ease-in-out;
           transition-timing-function: ease-in-out;
+  overflow: visible;
 }
 
 #logIn ul {
@@ -37,6 +38,22 @@
   padding: 0 0 0 20px;
 }
 
+@media (max-width: 375px) {
+  #logIn ul {
+    margin: 0px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #logIn ul:hover .navbar {
+    display: block;
+    position: fixed;
+    top: 90px;
+    right: 50px;
+  }
+}
+
 #logIn ul .navbar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -47,9 +64,25 @@
           flex-direction: row;
 }
 
+@media (max-width: 375px) {
+  #logIn ul .navbar {
+    display: none;
+    background-color: white;
+    -webkit-box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+}
+
 #logIn ul .navbar li {
   padding: 0 20px;
   font-size: 20px;
+}
+
+@media (max-width: 375px) {
+  #logIn ul .navbar li {
+    padding: 0px 5px;
+  }
 }
 
 #logIn ul .navbar li:nth-child(4) span {
@@ -104,6 +137,16 @@
 
 #logIn ul .logo {
   max-width: 190px;
+}
+
+@media (max-width: 375px) {
+  #logIn ul .logo {
+    width: 170px;
+    margin: 25px 10px;
+  }
+  #logIn ul .logo:hover .navLink {
+    display: block;
+  }
 }
 
 #loggedIn {
@@ -287,10 +330,6 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-transition: width 4s;
-  transition: width 4s;
-  -webkit-transition-timing-function: ease-in-out;
-          transition-timing-function: ease-in-out;
 }
 
 #scrolled ul {

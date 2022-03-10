@@ -19,9 +19,9 @@ import logo from '../../../../images/JourneyIcon.png';
 
 
 // 個人資料顯示，包含個人 Banner
-const FirstImage = ({ data }) => {
+const FirstImage = ({data}) => {
     // console.log(data);
-
+  
     // --- History ---
     const history = useHistory();
 
@@ -53,7 +53,7 @@ const FirstImage = ({ data }) => {
     // ---- 初次渲染 Banner ----
 
     let fetchData = async () => {
-
+                                                
         const forsetRef = ref(storage, `/event/${currentPath.id}/${data}/activity${currentPath.id}.png`);
         let url = await getDownloadURL(forsetRef);
         setState({
@@ -65,6 +65,7 @@ const FirstImage = ({ data }) => {
         fetchData();
         window.scroll(0, 270)
         submitStatue.current = false;
+        // console.log(data.eventID)
     }, []);
     // ---- 上傳 Banner 視窗 ----
 
@@ -135,53 +136,55 @@ const FirstImage = ({ data }) => {
         })
     }
 
+    //修改路徑
+        // ;
 
 
-    return (
-        <div className='activityImageChang'>
-            {/* 自己頁面的更換 */}
-            {
-                state.changeModal && <div className='change-modal'>
-                    <div className='change-container'>
-                        <div onClick={closeBanner} className='close-btn'><MdCancel /></div>
-                        {
-                            state.tempImgUrl ? <>
-                                <img className='temp-img-show' src={state.tempImgUrl} alt="" />
-                                <button onClick={bannerSend} className='confirm-banner'>確認送出</button>
-                                <div style={state.statusBar} className='show-status'>
-                                    <img src={logo} alt="" />
-                                    <div className='progress-bar-show'>
-                                        <div style={{ width: state.processBar }}></div>
+        return (
+            <div className='activityImageChang'>
+                {/* 自己頁面的更換 */}
+                {
+                    state.changeModal && <div className='change-modal'>
+                        <div className='change-container'>
+                            <div onClick={closeBanner} className='close-btn'><MdCancel /></div>
+                            {
+                                state.tempImgUrl ? <>
+                                    <img className='temp-img-show' src={state.tempImgUrl} alt="" />
+                                    <button onClick={bannerSend} className='confirm-banner'>確認送出</button>
+                                    <div style={state.statusBar} className='show-status'>
+                                        <img src={logo} alt="" />
+                                        <div className='progress-bar-show'>
+                                            <div style={{ width: state.processBar }}></div>
+                                        </div>
                                     </div>
-                                </div>
-                            </> : <>
-                                <h3>選擇檔案</h3>
-                                <div className='upload-wrap'>
-                                    <input onChange={bannerRevceive} type="file" accept='image/png, image/jpeg' />
-                                    <FiUpload />
-                                </div>
+                                </> : <>
+                                    <h3>選擇檔案</h3>
+                                    <div className='upload-wrap'>
+                                        <input  onChange={bannerRevceive} type="file" accept='image/png, image/jpeg' />
+                                        <FiUpload />
+                                    </div>
 
-                            </>
-                        }
+                                </>
+                            }
+                        </div>
                     </div>
-                </div>
-            }
-            {/* 顯示瀏覽照片 */}
-            {
-                state.showBanner && <div className='change-modal'>
-                    <div className='change-container'>
-                        <div onClick={bannerShowBtn} className='close-btn'><MdCancel /></div>
-                        <img className='temp-img-show' src={state.personalBanner} alt="" />
-                        {/* --------- 如果是本人顯示更換按鈕 ------- */}
-                        {userInfo.id == currentPath.id ? <button onClick={changeBanner} className='confirm-banner change-btn'>更換照片</button> : ''}
+                }
+                {/* 顯示瀏覽照片 */}
+                {
+                    state.showBanner && <div className='change-modal'>
+                        <div className='change-container'>
+                            <div onClick={bannerShowBtn} className='close-btn'><MdCancel /></div>
+                            <img className='temp-img-show' src={state.personalBanner} alt="" />
+                            {/* --------- 如果是本人顯示更換按鈕 ------- */}
+                            {userInfo.id == currentPath.id ? <button onClick={changeBanner} className='confirm-banner change-btn'>更換照片</button> : ''}
+                        </div>
                     </div>
+                }
+                <div onClick={bannerShowBtn} className='activityImageChangItem' style={{ backgroundImage: `url('${state.personalBanner}')` }} >
+                    {/* <img className='touchHide' src={touch}></img> */}
                 </div>
-            }
-            <div onClick={bannerShowBtn} className='activityImageChangItem' style={{ backgroundImage: `url('${state.personalBanner}')` }} >
-                {/* <img className='touchHide' src={touch}></img> */}
+
             </div>
-
-        </div>
-    )
-}
-export default FirstImage;
+        )
+    }
+    export default FirstImage;

@@ -30,7 +30,7 @@ const Personal_Categroy = () => {
         <div className="personal-categroy">
 
             <div className='personal-guide'>
-                <img src="https://picsum.photos/id/1062/300/300" alt=""></ img>
+                {/* <img src="https://picsum.photos/id/1062/300/300" alt=""></ img> */}
                 <h3>嚮導簡介</h3>
             </div>
 

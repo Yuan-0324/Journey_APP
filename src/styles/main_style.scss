@@ -1,4 +1,10 @@
 @import "./var";
+@mixin mobile {
+  @media (max-width: 375px){
+    @content;
+  }
+}
+
 
 // ------- 個頁面初始值 --------
 * {
@@ -30,4 +36,8 @@ body {
   *:focus {
     outline: none;
   }
+  @include mobile {
+    overflow-x: hidden;
+  }
 }
+

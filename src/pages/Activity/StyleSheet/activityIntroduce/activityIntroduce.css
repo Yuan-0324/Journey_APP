@@ -67,6 +67,10 @@
   margin-top: 120px;
 }
 
+.activityIntroduceBody .wrap .wrapTitle .wrapTitleItem {
+  padding-bottom: 10px;
+}
+
 .activityIntroduceBody .wrap .wrapTitle .wrapTitleItem h1 {
   font-size: 40px;
   font-weight: bolder;
@@ -420,6 +424,54 @@
   text-decoration: none;
 }
 
+.activityIntroduceBody .wrap .wrapBody .wrapLeft .main .container .applicantsArea {
+  width: 300px;
+  min-height: 170px;
+  border: 3px rgba(175, 175, 175, 0.315) solid;
+  border-radius: 30px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.activityIntroduceBody .wrap .wrapBody .wrapLeft .main .container .applicantsArea .applicantsNum {
+  font-size: 20px;
+}
+
+.activityIntroduceBody .wrap .wrapBody .wrapLeft .main .container .applicantsArea .applicants {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.activityIntroduceBody .wrap .wrapBody .wrapLeft .main .container .applicantsArea .applicants .applicantsPeople {
+  margin-top: -40px;
+  margin-left: 110px;
+}
+
+.activityIntroduceBody .wrap .wrapBody .wrapLeft .main .container .applicantsArea .applicants .applicantsPeople .applicant {
+  line-height: 45px;
+  cursor: pointer;
+}
+
+.activityIntroduceBody .wrap .wrapBody .wrapLeft .main .container .applicantsArea .applicants .applicantsPeople .applicant .memberImg {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.activityIntroduceBody .wrap .wrapBody .wrapLeft .main .container .applicantsArea .applicants .applicantsPeople .applicant .memberImg:hover {
+  -webkit-box-shadow: 1px 1px 1px #707070;
+          box-shadow: 1px 1px 1px #707070;
+}
+
+.activityIntroduceBody .wrap .wrapBody .wrapLeft .main .container .applicantsArea .applicants .applicantsPeople .applicant .memberName {
+  cursor: pointer;
+}
+
+.activityIntroduceBody .wrap .wrapBody .wrapLeft .main .container .applicantsArea .applicants .applicantsPeople .applicant .memberName:hover {
+  font-weight: 600;
+}
+
 .activityIntroduceBody .wrap .wrapBody .activityIntroduceNavbar {
   position: -webkit-sticky;
   position: sticky;
@@ -437,22 +489,53 @@
   width: 350px;
   top: 0;
   margin-left: 10px;
-  padding: 20px 20px 20px;
-  height: 700px;
-  border: #000 solid 1px;
+  background-color: rgba(255, 255, 255, 0.578);
+  padding: 20px 20px 100px 20px;
   border-radius: 5px;
 }
 
-.activityIntroduceBody .wrap .wrapBody .activityIntroduceNavbar .navbarItem h2 {
-  font-size: 36px;
+.activityIntroduceBody .wrap .wrapBody .activityIntroduceNavbar .navbarItem .navbarItemFirst {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.activityIntroduceBody .wrap .wrapBody .activityIntroduceNavbar .navbarItem .navbarItemFirst h2 {
+  font-size: 30px;
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+}
+
+.activityIntroduceBody .wrap .wrapBody .activityIntroduceNavbar .navbarItem .navbarItemFirst .activityIntroduceEdit {
+  color: #1697d5;
+  margin-left: 3px;
+  line-height: 35px;
+  font-size: 25px;
+  font-weight: 800;
+  display: block;
+}
+
+.activityIntroduceBody .wrap .wrapBody .activityIntroduceNavbar .navbarItem .navbarItemFirst .activityIntroduceEdit span {
+  color: #1697d5;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.activityIntroduceBody .wrap .wrapBody .activityIntroduceNavbar .navbarItem .navbarItemFirst .activityIntroduceEditHide {
+  display: none;
+}
+
+.activityIntroduceBody .wrap .wrapBody .activityIntroduceNavbar .navbarItem .navbarItemText {
+  font-weight: 600;
 }
 
 .activityIntroduceBody .wrap .wrapBody .activityIntroduceNavbar .navbarItem h3 {
   line-height: 36px;
   font-size: 20px;
-  padding-bottom: 25px;
+  padding-bottom: 10px;
 }
 
 .activityIntroduceBody .wrap .wrapBody .activityIntroduceNavbar .navbarItem h3 a {
@@ -464,12 +547,13 @@
   width: 36px;
   height: 36px;
   border-radius: 18px;
+  margin-right: 10px;
 }
 
 .activityIntroduceBody .wrap .wrapBody .activityIntroduceNavbar .navbarItem table tr td {
   font-size: 20px;
   padding-right: 25px;
-  padding-bottom: 25px;
+  padding-bottom: 10px;
 }
 
 .activityIntroduceBody .wrap .wrapBody .activityIntroduceNavbar .navbarItem .map {

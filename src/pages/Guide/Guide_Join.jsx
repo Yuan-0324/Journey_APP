@@ -72,7 +72,6 @@ const Guide_Join = () => {
 
 
     };
-    console.log(guideForm);
 
     //下一頁移動
     useEffect(async () => {
@@ -80,7 +79,6 @@ const Guide_Join = () => {
             e.preventDefault();
             $('html').animate({ scrollTop: $($(this).attr('href')).offset().top }, 500, 'linear');
         });
-       
     }, []);
 
     return (

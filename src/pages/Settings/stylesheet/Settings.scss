@@ -354,6 +354,12 @@ svg {
         p {
             color: $fontcolor;
             font-size: 22px;
+            span{
+                font-size: 18px; 
+                color: $primarycolor;
+                cursor: pointer;
+                margin-left: 30px;
+            }
         }
         .Content_Shadow {
             @include Content_Shadow();

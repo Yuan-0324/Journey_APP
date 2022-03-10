@@ -511,6 +511,13 @@ svg {
   font-size: 22px;
 }
 
+.Setting_Frame .Guide_Content p span {
+  font-size: 18px;
+  color: #1697d5;
+  cursor: pointer;
+  margin-left: 30px;
+}
+
 .Setting_Frame .Guide_Content .Content_Shadow {
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.5);

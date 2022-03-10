@@ -1,0 +1,271 @@
+.activityEdit {
+  background-image: url("../../../../images/main/background.png");
+  background-attachment: fixed;
+}
+
+.activityEdit .nextPage {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  z-index: 2;
+  display: inline-block;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  color: black;
+  font: normal 600 20px/1 "Josefin Sans", sans-serif;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  padding-top: 70px;
+  font-size: 15px;
+}
+
+.activityEdit .nextPage:hover {
+  opacity: 0.5;
+}
+
+.activityEdit .nextPage span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  margin-left: -8px;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-animation: sdb 1.5s infinite;
+          animation: sdb 1.5s infinite;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@-webkit-keyframes sdb {
+  0% {
+    -webkit-transform: rotate(-45deg) translate(-20px, 20px);
+            transform: rotate(-45deg) translate(-20px, 20px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotate(-45deg) translate(-30px, 30px);
+            transform: rotate(-45deg) translate(-30px, 30px);
+    opacity: 0;
+  }
+}
+
+@keyframes sdb {
+  0% {
+    -webkit-transform: rotate(-45deg) translate(-20px, 20px);
+            transform: rotate(-45deg) translate(-20px, 20px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotate(-45deg) translate(-30px, 30px);
+            transform: rotate(-45deg) translate(-30px, 30px);
+    opacity: 0;
+  }
+}
+
+.activityEdit #section01 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.activityEdit #section01 .section01Area .leftTitle .pageTitle {
+  position: absolute;
+  font-size: 25px;
+  left: 289px;
+  top: 115px;
+  font-weight: 600;
+  color: #264148;
+}
+
+.activityEdit #section01 .section01Area .section01Content {
+  width: 650px;
+  position: absolute;
+  top: 120px;
+  left: 445px;
+}
+
+.activityEdit #section01 .section01Area .section01Content .setName {
+  position: relative;
+  height: 42px;
+}
+
+.activityEdit #section01 .section01Area .section01Content .setName p {
+  font-size: 20px;
+  display: inline;
+  position: absolute;
+}
+
+.activityEdit #section01 .section01Area .section01Content .setName h3 {
+  font-size: 20px;
+  display: inline;
+  position: absolute;
+  position: absolute;
+  top: 3px;
+  left: 80px;
+}
+
+.activityEdit #section01 .section01Area .section01Content .setIntroduction {
+  position: relative;
+  height: 25px;
+}
+
+.activityEdit #section01 .section01Area .section01Content .setIntroduction p {
+  font-size: 20px;
+  display: inline;
+  position: absolute;
+}
+
+.activityEdit #section01 .section01Area .section01Content .setIntroduction input {
+  font-size: 16px;
+  width: 500px;
+  resize: none;
+  border-radius: 10px;
+  border: 1px #f8f8f8 solid;
+  -webkit-box-shadow: 1px 1px 3px #858585;
+          box-shadow: 1px 1px 3px #858585;
+  position: absolute;
+  left: 80px;
+}
+
+.activityEdit #section01 .section01Area .section01Content .activityType {
+  position: relative;
+  margin: 30px 0px 20px;
+  height: 30px;
+}
+
+.activityEdit #section01 .section01Area .section01Content .activityType p {
+  font-size: 20px;
+  display: inline;
+  position: absolute;
+}
+
+.activityEdit #section01 .section01Area .section01Content .activityType .activityTypeInput {
+  margin-left: 80px;
+}
+
+.activityEdit #section01 .section01Area .section01Content .activityType .activityTypeInput select {
+  font-size: 16px;
+  width: 250px;
+  padding: 5px 0px 5px 5px;
+  color: #000;
+  resize: none;
+  border-radius: 10px;
+  border: 1px #f8f8f8 solid;
+  -webkit-box-shadow: 1px 1px 3px #858585;
+          box-shadow: 1px 1px 3px #858585;
+}
+
+.activityEdit #section01 .section01Area .section01Content .acceptNum {
+  margin: 25px 0px;
+  position: relative;
+}
+
+.activityEdit #section01 .section01Area .section01Content .acceptNum p {
+  font-size: 20px;
+  display: inline;
+}
+
+.activityEdit #section01 .section01Area .section01Content .acceptNum span {
+  position: absolute;
+  left: 80px;
+}
+
+.activityEdit #section01 .section01Area .section01Content .acceptNum span #people {
+  width: 50px;
+  border: none;
+  text-align: center;
+  height: 30px;
+  font-size: 18px;
+  margin-right: 20px;
+  background: none;
+  border-bottom: 1px #264148 solid;
+}
+
+.activityEdit #section01 .section01Area .section01Content .acceptNum span .numBtn {
+  background-color: #fff;
+  font-size: 17px;
+  border-radius: 10px;
+  padding: 2px 5px;
+  width: 25px;
+  text-align: center;
+  border: 1px #c7c7c7 solid;
+  -webkit-box-shadow: 1px 1px 3px #c7c7c7;
+          box-shadow: 1px 1px 3px #c7c7c7;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.activityEdit #section01 .section01Area .section01Content .acceptNum span .numBtn:hover {
+  -webkit-box-shadow: 3px 3px 5px #c7c7c7;
+          box-shadow: 3px 3px 5px #c7c7c7;
+}
+
+.activityEdit #section01 .section01Area .section01Content .place {
+  position: relative;
+}
+
+.activityEdit #section01 .section01Area .section01Content .place p {
+  position: absolute;
+  font-size: 20px;
+  display: inline;
+}
+
+.activityEdit #section01 .section01Area .section01Content .place span {
+  position: absolute;
+  left: 80px;
+  font-size: 20px;
+}
+
+.activityEdit #section01 .section01Area .section01Content .place span label {
+  margin-right: 40px;
+}
+
+.activityEdit #section01 .section01Area .section01Content .activityEditContent {
+  margin-top: 75px;
+}
+
+.activityEdit #section01 .section01Area .section01Content .activityEditContent p {
+  font-size: 20px;
+  position: absolute;
+}
+
+.activityEdit #section01 .section01Area .section01Content .activityEditContent textarea {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1px #f8f8f8 solid;
+  -webkit-box-shadow: 1px 1px 3px #858585;
+          box-shadow: 1px 1px 3px #858585;
+  position: absolute;
+  left: 80px;
+  width: 500px;
+  background-color: #fff;
+}
+
+.activityEdit #section01 .submitBtn {
+  border-radius: 10px;
+  font-size: 20px;
+  background-color: #1697d5;
+  padding: 4px 15px;
+  border: 1px white solid;
+  color: white;
+  -webkit-box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
+  position: absolute;
+  bottom: 100px;
+  left: 75%;
+  height: 40px;
+}
+/*# sourceMappingURL=activityEdit.css.map */

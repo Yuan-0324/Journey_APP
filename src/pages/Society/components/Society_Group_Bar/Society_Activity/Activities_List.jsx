@@ -6,7 +6,7 @@ import axios from 'axios';
 import Society_Activities from './Society_Activities';
 import Context from '../../../../../context';
 
-const Activities_List = () => {
+const Activities_List = ({userId}) => {
     const { userInfo } = useContext(Context);
     const [ activityInfo, setActivityInfo ] = useState([]);
     const currentPath = useParams();
@@ -14,8 +14,7 @@ const Activities_List = () => {
     useEffect(async()=>{
         await axios.post(`http://localhost:8000/society/event/${currentPath.id}` )
             .then(res=>{
-                setActivityInfo(res.data)
-                console.log(activityInfo);}) 
+                setActivityInfo(res.data)}) 
     },[])
 
     // 個人在此社團身分
@@ -25,10 +24,10 @@ const Activities_List = () => {
     useEffect(() => {
         
         let id = societyID.id;
-        axios.post('http://localhost:8000/soceity/right',{societyID: id})
-            .then(res=>{
-            setGroupRight(res.data[0])
-            }) 
+        axios.post('http://localhost:8000/soceity/right',{societyID: id , userId:userId})
+        .then(res=>{
+        setGroupRight(res.data[0])
+      }) 
             
     }, []);
 

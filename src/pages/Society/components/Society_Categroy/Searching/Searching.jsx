@@ -21,6 +21,7 @@ const Searching = () => {
          .then(res=>{
             setSeachResult(res.data);
          })
+         // 從firebase取照片
          axios.post('http://127.0.0.1:8000/search/grouprand',{id: userId})
          .then(res=>{
             setSeachGroupResult(res.data);
@@ -34,6 +35,8 @@ const Searching = () => {
             setSeachResult(result);
          });
       axios.post('http://127.0.0.1:8000/search/group',{id: userId, typeInto:`%${e.target.value}%`})
+
+      // 從firebase取照片
          .then(res=>{
             let result = res.data;
             setSeachGroupResult(result);
@@ -51,7 +54,7 @@ const Searching = () => {
             <input className='search-input' type="text" placeholder='搜尋用戶/社團' onChange={doTheSearch} onInput={doTheSearch} onPaste={doTheSearch} onKeyDown={doTheSearch}/>
          </div>
 
-         {searchSwich ? <Searching_Group seachGroupResult={seachGroupResult}/> : <Searching_Member seachResult={seachResult}/> }
+         {searchSwich ? <Searching_Group seachGroupResult={seachGroupResult}/> : <Searching_Member seachResult={seachResult} userId={userId}/> }
 
          <div className="demo text-center cursor-pointer">
             <a onClick={()=>setSearchSwich(!searchSwich)}>{ searchSwich ? '用戶搜尋結果' : '社團搜尋結果' }<span></span></a>
