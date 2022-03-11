@@ -141,7 +141,7 @@ const App = () => {
             {/* 個人頁面 */}
 
             {
-              userInfo.id ? <Route path="/Personal/:id" component={Personal} exact /> : <Route path="/Personal/:id" component={Home} exact />
+              userInfo.id ? <Route path="/Personal/:id" component={Personal} exact /> : ''
             }
             {
               userInfo.id ? <Route path="/Personal/:id/:cate" component={Personal} excat /> : ''

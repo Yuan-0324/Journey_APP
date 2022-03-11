@@ -107,7 +107,7 @@ const Society_Discussion = () => {
       let newArrayData = {
         articleID: '',
         id: userId,
-        selfie: userImg,
+        api_selfie: userImg,
         lastName: userLastName,
         firstName: userFirstName,
         datetime: todayDate,

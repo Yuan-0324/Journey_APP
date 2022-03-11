@@ -578,7 +578,7 @@
     background-color: rgba(0, 0, 0, 0.9);
     top: 0;
     left: 0;
-    z-index: 1000;
+    z-index: 2000;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -768,7 +768,7 @@
     background-color: rgba(0, 0, 0, 0.9);
     top: 0;
     left: 0;
-    z-index: 1000;
+    z-index: 2000;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1104,6 +1104,7 @@
                     overflow: hidden;
                     background-color: #fff;
                     min-height: 250px;
+                    // padding: 10px;
                     h3 {
                         font-size: 16px;
                         letter-spacing: 1px;
@@ -2063,7 +2064,7 @@
                             // overflow: scroll;
                             .club-container {
                                 @include notice-content-set($secondarycolor);
-                                padding: 0px 10px;
+                                padding: 10px;
                                 margin-left: 25px;
                                 img {
                                     width: 45px;

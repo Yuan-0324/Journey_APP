@@ -1,9 +1,19 @@
 import React from "react";
 import { BsFacebook, BsYoutube, BsTwitter, BsInstagram } from "react-icons/bs";
+import { BiUpArrowAlt } from "react-icons/bi";
 
 const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 700,
+      behavior: "smooth",
+    });
+  };
   return (
     <footer id="footer">
+      <button className="ToTop" onClick={scrollToTop}>
+        <BiUpArrowAlt />
+      </button>
       <div className="footer">
         <div className="followingUs">
           <p>Follow us 追蹤最新消息</p>

@@ -51,7 +51,7 @@ textarea {
         background-color: rgb(238, 238, 238);
         margin-top: 50px;
         margin-bottom: 30px;
-        padding-bottom: 50px;
+        padding-bottom: 25px;
         display: flex;
 
         //-----Society_Categroy.jsx-----
@@ -83,7 +83,8 @@ textarea {
                     transition: all 0.5s ease-in-out;
                     padding: 18px 10px 18px 10px;
                     &:hover {
-                        background: linear-gradient(315deg, #6bc1e9 0%, #80ced7 74%);
+                        background-color: #738bdc;
+                        background-image: linear-gradient(315deg, #738bdc 0%, #48c3eb 74%);
                         color: #fff;
                         cursor: pointer;
                     }
@@ -141,7 +142,8 @@ textarea {
                     display: none;
                 }
                 .demo {
-                    background: linear-gradient(315deg, #6bc1e9 0%, #80ced7 74%);
+                    background-color: #738bdc;
+            background-image: linear-gradient(315deg, #738bdc 0%, #48c3eb 74%);
                     a {
                         font-size: 18px ;
                         display: block;
@@ -282,7 +284,6 @@ textarea {
         .col-right {
             height: 100%;
             width: 70%;
-            position: relative;
 
             //-----Society_Post.jsx-----
             .post-area {
@@ -792,14 +793,8 @@ textarea {
             }
         }
         .loading-img{
-            // width: 150px;
-            // height: 100px;  
-            padding-top: 10px;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            // height: 70px;
-            
+            width: 150px;
+            height: 100px;  
         }
     }
 }
@@ -1049,6 +1044,11 @@ textarea {
 }
 
 //-----About_Group.jsx-----
+// Edit_About.jsx
+.edit-about-place{
+    height: 450px;
+    overflow: scroll;
+}
 .about-group-set {
     @include bdrs;
     @include content-position;
@@ -1057,6 +1057,23 @@ textarea {
     background-color: #fff;
     align-items: center;
     position: relative;
+    & > div {
+        .mt-3 {
+            margin: 0;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            white-space: normal;
+            margin-bottom: 8px;
+            font-size: 18px ;
+        }
+    }
+    h5 {
+        font-size: 20px;
+    }
 
     .about-group-set-btn {
         position: absolute;
@@ -1370,7 +1387,8 @@ textarea {
             align-items: center;
             // border: 1px solid #000;
             overflow: hidden;
-            background-image: linear-gradient(315deg, #6bc1e9 0%, #80ced7 74%);
+            background-color: #738bdc;
+            background-image: linear-gradient(315deg, #738bdc 0%, #48c3eb 74%);
             background-size: 100% 200%;
             transition: all 1s;
             color: #ffffff;

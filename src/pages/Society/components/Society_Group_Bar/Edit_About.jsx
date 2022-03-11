@@ -36,12 +36,12 @@ const Edit_About = ({groupAboutData, setGroupPageData , closeEdit, setEditPost})
                 newElm = elm.substring(16, elm.length-6)
                 newResult.push({
                     "place": `${idx}`,"content":`${elm}`,"type":"h3",
-                    "html":`<textarea class='num${idx} h3 in-bg border-0' rows='1' placeholder='Story Title...'>${newElm}</textarea>`})
+                    "html":`<textarea class='num${idx} h3 in-bg border-0' cols='50' rows='1' placeholder='Story Title...'>${newElm}</textarea>`})
             }else if(elm.substring(0, 18) == `<pre class="mt-3">` || elm.substring(0, 18) == `<pre class='mt-3'>` || elm.substring(0, 18) == '<pre class=`mt-3`>'){
                 newElm = elm.substring(18, elm.length-6)
                 newResult.push({
                     "place": `${idx}`,"content":`${elm}`,"type":"p",
-                    "html":`<textarea class='num${idx} in-bg border-0 mt-2' rows='1' placeholder='What Happen...'>${newElm}</textarea>`})
+                    "html":`<textarea class='num${idx} in-bg border-0 mt-2' cols='80' style='font-size:18px' rows='1' placeholder='What Happen...'>${newElm}</textarea>`})
             }else{
                 newResult.push({
                     "place": `${idx}`, "content":`${elm}`,"type":"img", 
@@ -62,7 +62,7 @@ const Edit_About = ({groupAboutData, setGroupPageData , closeEdit, setEditPost})
             case 'title':
                 newArrayData={
                     "place": place.toString(), "content":"","type":"h3",
-                    "html": `<textarea class='num${place.toString()} h3 in-bg border-0' rows='1' placeholder='Story Title...'></textarea>`
+                    "html": `<textarea class='num${place.toString()} h3 in-bg border-0' cols='50' rows='1' placeholder='Story Title...'></textarea>`
                 }
                 break;
             case 'pic':
@@ -74,7 +74,7 @@ const Edit_About = ({groupAboutData, setGroupPageData , closeEdit, setEditPost})
             case 'paragragh':
                 newArrayData={
                     "place": place.toString(),"content":"","type":"p",
-                    "html":`<textarea class='num${place.toString()} in-bg border-0 mt-2' rows='1' placeholder='What Happen...'></textarea>`
+                    "html":`<textarea class='num${place.toString()} in-bg border-0 mt-2' cols='80' style='font-size:18px' rows='1' placeholder='What Happen...'></textarea>`
                 }
                 break;
             }  
@@ -155,27 +155,27 @@ const Edit_About = ({groupAboutData, setGroupPageData , closeEdit, setEditPost})
     //取消編輯，直接關閉即可
     
     return (
-        <div id='editPost'>
-            <div className='personal-article-edit'>
-                <div className='article-edit-container'>
-                    <div className='article-edit-head'><h1>新增</h1></div>
-                    <div className='title' onClick={addBrick}><h1>標題</h1></div>
-                    <div className='paragragh' onClick={addBrick}><h1>內文</h1></div>
-                    <div className='pic' onClick={addBrick}><h1>照片</h1></div>
+        <div id='editPost'  className='society-article-edit'>
+            <div className='article-edit-container'>
+                <div className='article-edit-head'><h1>新增</h1></div>
+                <div className='title' onClick={addBrick}><h1>標題</h1></div>
+                <div className='paragragh' onClick={addBrick}><h1>內文</h1></div>
+                <div className='pic' onClick={addBrick}><h1>照片</h1></div>
+            </div>
+
+            <div onClick={(evt) => { evt.stopPropagation() }} className='edit-main-container'>
+                <h1>編輯文章<span onClick={closeEdit}><AiOutlineCloseCircle /></span></h1>
+                
+                <div className='edit-about-place'>
+                {personalArticle.map((elm,idx)=>
+                    <Article_Addition key={idx}
+                        data={elm}
+                        onDeleteBrick={deleteBrick}
+                        onSetInput = {setInputData}
+                    />)}
                 </div>
-                <div onClick={(evt) => { evt.stopPropagation() }} className='edit-main-container'>
-                    <h1>編輯文章<span onClick={closeEdit}><AiOutlineCloseCircle /></span></h1>
-                    
-                    <div>
-                    {personalArticle.map((elm,idx)=>
-                        <Article_Addition key={idx}
-                            data={elm}
-                            onDeleteBrick={deleteBrick}
-                            onSetInput = {setInputData}
-                        />)}
-                    </div>
-                    <button onClick={()=>okEditArticle(personalArticle)}>確認</button>
-                </div>
+
+                <button onClick={()=>okEditArticle(personalArticle)}>確認</button>
             </div>
         </div>
     )

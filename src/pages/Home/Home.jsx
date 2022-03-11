@@ -15,6 +15,7 @@ import Weather_Section from "./components/Weather/Weather_Section";
 import CTA from "./components/CTA";
 import Community from "./components/Community/Community";
 import Footer from "./components/Footer";
+import CarAnimation from "./components/CarAnimation";
 
 const Home = () => {
   const { setToken } = useContext(context);
@@ -176,6 +177,7 @@ const Home = () => {
       <Trending_Guide />
       <CTA />
       <Community />
+      <CarAnimation />
       <Footer />
     </div>
   );

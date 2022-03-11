@@ -1462,6 +1462,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
 
   @include mobile {
     height: 30vh;
@@ -1475,6 +1476,10 @@
     border-radius: 50px;
     background-color: $primarycolor;
     border: none;
+    // margin: 0px 0px 50px;
+    position: absolute;
+    // bottom: 280px;
+    top:-20px;
     @include mobile {
       position: absolute;
       right: 10px;
@@ -1487,7 +1492,7 @@
 
   .footer {
     width: 80%;
-    margin: 30px auto 0 auto;
+    margin: 0px auto 0 auto;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -1562,6 +1567,80 @@
     color: #f8f8f8;
     font-weight: 300;
     font-size: 16px;
+  }
+}
+
+#carAnime {
+  position: relative;
+  width: 100%;
+  height: 30vh;
+  background-color: #eae9e9;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 50px 0px 70px;
+
+  .animeDesc {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 200px;
+    h3,
+    h6 {
+      color: $fontcolor;
+    }
+    button {
+      background-color: #ffae18;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 10px;
+      font-size: 16px;
+      margin-top: 5px;
+    }
+  }
+
+  .anime {
+    .palmTree {
+      position: absolute;
+      right: 150px;
+      bottom: 0px;
+    }
+
+    .moon {
+      position: absolute;
+      width: 150px;
+      right: 600px;
+      bottom: 170px;
+      // z-index: 200;
+    }
+
+    .CarWheel {
+      position: absolute;
+      bottom: -50px;
+      // width: 150px;
+
+      .wheel1 {
+        position: absolute;
+        z-index: 500;
+        // right: 900px;
+        bottom: 30px;
+        left: -75px;
+      }
+      .wheel2 {
+        position: absolute;
+        z-index: 500;
+        // right: 900px;
+        bottom: 30px;
+        left: 85px;
+      }
+      .car {
+        position: absolute;
+        bottom: -30px;
+        right: -200px;
+        z-index: 50;
+      }
+    }
   }
 }
 /*-------------FooterEnd---------- */

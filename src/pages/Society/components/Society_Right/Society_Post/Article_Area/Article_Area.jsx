@@ -59,7 +59,7 @@ const Article_Area = ({data, articleListIdx, articleList, setArticleList,userImg
         
         // !!!!!axios.put!!!!!修改文章
         axios.put('http://127.0.0.1:8000/editpost/article', {articleID:articleList[0].articleID, content:cont})
-
+        
         let newArr = [...articleList];
         newArr[articleListIdx].content = cont;
 
@@ -82,7 +82,7 @@ const Article_Area = ({data, articleListIdx, articleList, setArticleList,userImg
         time = time.join(':')
         return { day, timeWsec, time };
     }
-
+    // console.log(data.selfie);
     return (
 
         <>
@@ -91,7 +91,7 @@ const Article_Area = ({data, articleListIdx, articleList, setArticleList,userImg
 
         <div className='article-container'>
             <div className='article-title'>
-                <img src={data.selfie} alt=""></img>
+                <img src={data.api_selfie} alt=""></img>
                 <div className='title-content'>
                     <div className='d-flex align-items-center'>
                     <h1>{data.lastName} {data.firstName}</h1>

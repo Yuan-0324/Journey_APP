@@ -338,7 +338,7 @@ const Personal_Header = ({ personalBanner, setPersonalBanner }) => {
 
             {/* 顯示瀏覽照片 */}
             {
-                state.showBanner && <div className='change-modal'>
+                state.showBanner && <div className='personal-change-modal'>
                     <div className='change-container'>
                         <div onClick={bannerShowBtn} className='close-btn'><MdCancel /></div>
                         <img className='temp-img-show' src={personalBanner} alt="" />
