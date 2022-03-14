@@ -79,7 +79,7 @@ const Recieve_Invitation = () => {
                                 <h3 className="content-name"><span>王美秀</span> 已向您發出參加活動申請！</h3>
                             </div>
 
-                            <h5 className="content-date">23小時前</h5>
+                            <h5 className="content-date">21小時前</h5>
 
                             <div className="apply-reply-btn">
                                 <button className="accept-apply">接受</button>
@@ -119,7 +119,7 @@ const Recieve_Invitation = () => {
                                 <h3 className="content-name"><span>吳秀卿</span> 已向您發出參加活動申請！</h3>
                             </div>
 
-                            <h5 className="content-date">23小時前</h5>
+                            <h5 className="content-date">10小時前</h5>
 
                             <div className="apply-reply-btn">
                                 <button className="accept-apply">接受</button>
@@ -132,7 +132,7 @@ const Recieve_Invitation = () => {
                                 <h3 className="content-name"><span>陳美麗</span> 已向您發出參加活動申請！</h3>
                             </div>
 
-                            <h5 className="content-date">2天前</h5>
+                            <h5 className="content-date">1天前</h5>
 
                             <div className="apply-reply-btn">
                                 <button className="accept-apply">接受</button>

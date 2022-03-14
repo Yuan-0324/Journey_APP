@@ -6,9 +6,9 @@ const  ActivityListIntroduce =({data})=>  {
         <>
             <div className="introduce">
                 <h2>活動內容</h2>
-                <p>
+                <pre>
                     {data.content}
-                </p>
+                </pre>
             </div>
             <hr />
             {/* <!-- 注意事項 --> */}

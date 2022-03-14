@@ -14,7 +14,7 @@ const Personal_Activity = ({ activity }) => {
                 <h4 className='evt-name'>{ activity.title }</h4>
                 <p className='evt-content'>{ activity.introduction }</p>
                 <h6 className='evt-location'><IoLocationSharp /><span>{ activity.location }</span></h6>
-                <div className='evt-state'><span>{ new Date(activity.eventDate).toLocaleDateString() < new Date().toLocaleDateString()? '即將舉辦':'活動結束' }</span></div>
+                <div className='evt-state'><span>{ new Date(activity.eventDate).toLocaleDateString() > new Date().toLocaleDateString()? '即將舉辦':'活動結束' }</span></div>
             </div>
         </div>
     )

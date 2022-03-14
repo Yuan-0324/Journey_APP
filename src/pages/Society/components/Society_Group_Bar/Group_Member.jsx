@@ -108,14 +108,13 @@ const kickMember =async(e)=>{
 // 陣列數量
 const [cola,setCola] = React.useState([
     {name:'管理員', dropId:'0', did:0 ,member:[
-        {id:1, number:1, api_selfie:"https://firebasestorage.googleapis.com/v0/b/genuine-wall-311416.appspot.com/o/member%2F1%2FheadShot1.png?alt=media&token=249d26bf-77cf-4c5d-9888-e9cc7bbdcf37", lastName:"徐", firstName:"千翔", appellation:"會長", right:1, confirmed_join:1, be_invited:0},
-        {id:2, number:2,api_selfie:"https://firebasestorage.googleapis.com/v0/b/genuine-wall-311416.appspot.com/o/member%2F2%2FheadShot2.png?alt=media&token=1cdab98e-c285-4aa2-b337-8b2082f84696", lastName:"潘", firstName:"芷芹", appellation:"副會長", right:1, confirmed_join:1, be_invited:0},
+        {id:1, number:1, api_selfie:"https://firebasestorage.googleapis.com/v0/b/genuine-wall-311416.appspot.com/o/member%2F19%2FheadShot19.png?alt=media&token=9b7d4114-460b-413f-bc93-2afbf84d0247", lastName:"林", firstName:"爸爸", appellation:"會長", right:1, confirmed_join:1, be_invited:0},
 
     ]},
     {name:'社團成員',dropId:'1', did:1 ,member:[
-        {id:3, number:3, api_selfie:"https://firebasestorage.googleapis.com/v0/b/genuine-wall-311416.appspot.com/o/member%2F1%2FheadShot1.png?alt=media&token=249d26bf-77cf-4c5d-9888-e9cc7bbdcf37", lastName:"林", firstName:"與諶", appellation:"會長", right:1, confirmed_join:1, be_invited:0},
-        {id:4, number:4,api_selfie:"https://firebasestorage.googleapis.com/v0/b/genuine-wall-311416.appspot.com/o/member%2F2%2FheadShot2.png?alt=media&token=1cdab98e-c285-4aa2-b337-8b2082f84696", lastName:"和", firstName:"幼婷", appellation:"副會長", right:1, confirmed_join:1, be_invited:0},
-
+        {id:3, number:3, api_selfie:"https://firebasestorage.googleapis.com/v0/b/genuine-wall-311416.appspot.com/o/member%2F5%2FheadShot5.png?alt=media&token=2c51389a-736d-4a07-8ded-56e710e74ca9", lastName:"王", firstName:"美秀", appellation:"", right:0, confirmed_join:1, be_invited:0},
+        {id:4, number:4,api_selfie:"https://firebasestorage.googleapis.com/v0/b/genuine-wall-311416.appspot.com/o/member%2F3%2FheadShot3.png?alt=media&token=b6f4b071-9aee-4c5c-9b43-6d642726e17e", lastName:"邱", firstName:"正立", appellation:"", right:0, confirmed_join:1, be_invited:0},
+        {id:2, number:4,api_selfie:"https://firebasestorage.googleapis.com/v0/b/genuine-wall-311416.appspot.com/o/member%2F6%2FheadShot6.png?alt=media&token=d4f7b485-6dc7-43cc-a677-8c685b508769", lastName:"李", firstName:"晶晶", appellation:"副會長", right:0, confirmed_join:1, be_invited:0},
     ]}
 ])
 

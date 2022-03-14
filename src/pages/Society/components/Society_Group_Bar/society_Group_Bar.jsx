@@ -113,7 +113,7 @@ const Society_Group_Bar = ({justForGroup,setGroupPicsave,setGroupPicSit}) =>{
                         <p className='h3 ml-5 pt-3' >{groupPageData.society_name ? groupPageData.society_name : ((justForGroup)? justForGroup : "<<< 請輸入社團名稱" )}</p>
                         <span className='ml-4 pt-4'>{groupPageData.society_num ? groupPageData.society_num : 0}成員</span>
                     </div>
-                {((groupRight.confirmed_join==(0||null||undefined) && groupRight.be_invited==(0||undefined||null) && groupRight.right==("0"||undefined||null)) && societyID.id!=0) && <div className='attend-group d-flex justify-content-center align-items-center mt-3 cursor-pointer' onClick={attendNewGroup}><IoIosAdd />加入社團</div>}
+                {((groupRight.confirmed_join==(0||null||undefined) && groupRight.be_invited==(0||undefined||null) && groupRight.right==("0"||undefined||null)) && societyID.id!=0) && <div className='attend-group d-flex justify-content-center align-items-center mt-3 cursor-pointer mr-5' onClick={attendNewGroup}><IoIosAdd />加入社團</div>}
                 </div>
             </div>
 

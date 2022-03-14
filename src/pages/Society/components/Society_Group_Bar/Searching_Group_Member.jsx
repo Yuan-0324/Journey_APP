@@ -21,9 +21,9 @@ const Searching_Group_Member = ({followedMember,userId,invitperson}) =>{
 
             {followedMember.map((elm,idx)=>
             
-            <div key={idx} className='d-flex align-items-center mt-2 ml-2 mr-2 cursor-pointer'  data-person={elm.id} onClick={gotoTheRoute}>
+            <div key={idx} className='d-flex align-items-center mt-2 ml-2 mr-2 cursor-pointer'  data-person={elm.id} >
             {/* 要放上個人頁面路徑 */}
-                <div className='selfie rounded-circle overflow-hidden mr-3 d-flex justify-content-center' data-person={elm.id}>
+                <div className='selfie rounded-circle overflow-hidden mr-3 d-flex justify-content-center' data-person={elm.id} onClick={gotoTheRoute}>
                     <img className='img-fluid' src={elm.api_selfie} alt="" data-person={elm.id}/>
                 </div>
 

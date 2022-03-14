@@ -93,9 +93,9 @@ const App = () => {
 
   useEffect(() => {
     myContext();
-    window.addEventListener('storage', function (e) {
-      localStorage.setItem(e.key, e.oldValue)
-    })
+    // window.addEventListener('storage', function (e) {
+    //   localStorage.setItem(e.key, e.oldValue)
+    // })
   }, []);
 
 
@@ -155,8 +155,8 @@ const App = () => {
               userInfo.id ? <Route path='/Setting/:cate' component={Setting} exact /> : ''
             }
             
-            <Route patj='/forget' component={Forget} exact/>
-            <Route path='/:error' component={Error_Page} />
+            <Route path='/forget' component={Forget} exact/>
+            {/* <Route path='/:error' component={Error_Page} /> */}
           </Switch>
 
           {/* {userInfo.id ? <Calendar /> : ''}

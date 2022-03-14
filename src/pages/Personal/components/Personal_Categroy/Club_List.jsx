@@ -38,7 +38,7 @@ const Club_List = () => {
     return (
         <div className='personal-club'>
             <div className='club-container'>
-                <h3>我參加的社團</h3>
+                <h3>參加的社團</h3>
                 <div className="club-list">
                     {
                         clubList.map(club => <Personal_CLub key={club.clubId} club={club} />)
