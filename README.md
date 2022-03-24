@@ -1,71 +1,34 @@
-# Getting Started with Create React App
+# Journey 揪你
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### `目標客群：`
+(新)熟齡族群。
+### `宗旨：`
+熟齡族群人數日益龐大，在工作的閒暇之餘或退休之後，「Journey揪你」提供一個對熟齡友善的網站，在揪你上參與活動(娛樂)、規劃旅遊(嚮導)、分享生活(社群)，讓揪友們創造新的感動與回憶。
+### `網站功能：`
+#### 1. 首頁：
+首頁動畫及介紹Journey揪你，根據天氣預報提供雨天備案或晴天出遊，揪友可以快速搜尋，以及顯示推薦熱門項目。
+#### 2. 會員中心：
+可使用Email、Google、Facebook、Line進行註冊，註冊介面針對熟齡族群使用漸進式註冊，註冊完畢後可以登入進行會員資料修改。
+#### 3. 活動：
+利用搜尋功能，輸入關鍵字尋找自己想要參加的活動。也可以發起活動，號招更多志趣相投的揪友一同參與。活動頁面可以方便快速看到活動報名人數和管理報名者。
+#### 4. 嚮導：
+利用進階搜尋，快速搜尋出目的地的揪你嚮導，預約後讓他帶領你深度遊覽他的城市。閒暇之餘你也可以成為嚮導，簡單快速的註冊，分享你城市的故事給新的朋友。
+#### 5. 社群：
+提供搜尋他人及社團的功能。
 
-## Available Scripts
+(1.) 文章介面: 簡約式部落格發布文章介面，瀏覽追蹤的人和社團的文章，文章留言與更多人互動交流。
 
-In the project directory, you can run:
+(2.) 社團介面：呈現我所參加的社團以及推薦社團，建立新社團。各社團界面包含關於社團、社團文章、社團活動、成員管理、媒體空間，聚集相同興趣的使用者，提供平台讓他們認識、辦活動。
+#### 6. 個人頁面：
+使用者可以輕鬆的追蹤自己的好友並管理。經營個人品牌形象，分享生活、旅遊的大小事。通知功能收集了嚮導、活動、社團的通知，方便使用者管理自己收到及送出的申請，並統一做回覆。評價系統可以簡單的為自己參加過的嚮導做評價。
+#### 7. 聊天室:
+輕鬆的與朋友聊天，也可以即時向嚮導或活動主辦人溝通。還可以傳送貼圖，豐富聊天內容。
+#### 8. 個人行事曆：
+匯集journey上所有嚮導和活動日程，也可直接在行事曆點選，檢視更詳細的嚮導、活動內容，不用再害怕遺漏任何重要日程。
 
-### `npm start`
+### `我負責範圍：`
+整個專案的前後端整合、個人頁面的呈現、即是聊天室。
+內容包括：多層式架構留言板、邀約通知功能、評價系統、社群好友追蹤功能。
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# Journey_App
